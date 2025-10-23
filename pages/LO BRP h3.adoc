@@ -1,0 +1,1071 @@
+== Verstrekkingen
+
+=== De autorisatietabel
+
+==== Inleiding
+
+****
+In verband met de bescherming van de persoonlijke levenssfeer van de personen over wie gegevens uit de basisregistratie personen (hierna: basisregistratie) worden verstrekt en in het kader van een doelmatige en zorgvuldige gegevensverstrekking voorziet de Wet- en regelgeving in autorisatiecriteria ten aanzien van de gegevensverstrekking. Bij wet en/of algemene maatregel van bestuur wordt bepaald wie gegevens uit de basisregistratie mag krijgen. Daarnaast wordt vastgesteld voor welk doel deze gegevens gebruikt mogen worden en welke gegevens daarvoor benodigd zijn. Het erkennen van afnemers en het vaststellen welke gegevens onder welke voorwaarden systematisch verstrekt mogen of moeten worden is een taak van de verantwoordelijk Minister. Het daadwerkelijk verstrekken conform de vastgelegde autorisatie is de taak van BRP-V.
+
+Indien een afnemer geautoriseerd wordt om gegevens uit de basisregistratie te ontvangen, leidt dit tot een autorisatietabelregel. Een afnemer kan geautoriseerd worden voor één of meer soorten van gegevensverstrekking: spontaan (waaronder conditioneel), selectie en/of verstrekking op basis van een zoekvraag (ad hoc). Het zoekcriterium kan persoon- of adresgeoriënteerd zijn.
+
+In een autorisatieprocedure wordt een nieuwe autorisatietabelregel, voorzien van een ingangsdatum geldigheid aan BRP-V verzonden, opdat de gegevensverstrekking conform kan plaatsvinden. Indien een autorisatietabelregel van een afnemer om wat voor reden dan ook aangepast moet worden, wordt de gewijzigde of beëindigde autorisatietabelregel via dezelfde procedure naar BRP-V gezonden.
+
+Een afnemer kan voor het uitvoeren van één of meer taken beschikken over één of meer autorisaties. Elke autorisatie wordt neergelegd in één autorisatietabelregel. In de autorisatie­tabel kunnen derhalve voor één afnemer meerdere tabelregels voorkomen.
+
+Autorisatietabelregels die gewijzigd dan wel beëindigd zijn, moeten gedurende minimaal twintig jaar bewaard blijven om in geval van inzageverzoeken van burgers en het verstrekken van correcties aan afnemers na te kunnen gaan of er krachtens die tabelregels verstrekt is.
+****
+
+==== Indeling autorisatietabelregel
+
+In een autorisatietabelregel is naast de afnemerbeschrijving plaats voor de omschrijving van spontane (waaronder conditionele), selectie en ad hoc gegevensverstrekkingen. Per type komt één omschrijving voor. Tenslotte zijn geldigheidsdatums opgenomen onder tabelregeldatums.
+
+In de omschrijving van elk type gegevensverstrekking kan een voorwaardenregel voorkomen. De syntax van de voorwaardenregels wordt in een volgende paragraaf beschreven.
+
+In <<_gegevenswoordenboek>>, Gegevenswoordenboek, wordt de opbouw van de autorisatietabelregel in detail beschreven (tabel <<t35,35>>).
+
+===== Afnemerbeschrijving
+
+De afnemerbeschrijving bevat de volgende componenten.
+
+[unordered.stack]
+*Afnemersindicatie* (Rubriek 35.95.10):: De afnemersindicatie van de afnemer.
+
+*Aantekening* (Rubriek 35.95.11):: Een opsomming van aantekeningen. Deze rubriek wordt gebruikt om op de PL voorkomende aantekeningen om te zetten naar afnemersindicaties. +
+Een aantekening wordt gerepresenteerd door middel van een afnemersaanduiding die gedefinieerd is in tabel 55 (element 93.10). Deze kan gevolgd worden door de wildcard "/++*++" of een reeks tekens, opgebouwd conform de syntax van het element _tekst_. Dit veld komt alleen voor in oude versies van de autorisatietabelregel.
+
+*Indicatie geheimhouding* (Rubriek 35.95.12):: Indien deze indicatie "aan" staat (waarde "1") en de afnemer behoort tot de afnemers, waarvoor de burger om geheimhouding heeft verzocht (zie rubriek <<e7010,07.70.10>>), zullen er geen gegevens verstrekt worden. Indien deze indicatie "uit" staat (waarde "0"), worden er gegevens verstrekt, ook als er om geheimhouding is verzocht.
+
+*Verstrekkingsbeperking* (Rubriek 35.95.13):: Deze rubriek kan de waarden "0", "1" of "2" hebben, die het volgende betekenen:
++
+[horizontal,labelwidth=5%,itemwidth=95%]
+0 =::: aan een burger desgevraagd inzage geven in de bij zijn PL opgenomen afnemersindicatie van de afnemer en aan de burger desgevraagd melden welke verstrekkingen er zijn gedaan aan de afnemer, en geen beperkingen met betrekking tot het zichtbaar en beschikbaar zijn van deze informatie voor gemeentefunctionarissen;
+1 =::: aan een burger desgevraagd inzage geven in de bij zijn PL opgenomen afnemersindicatie van de afnemer en aan de burger desgevraagd melden welke verstrekkingen er zijn gedaan aan de afnemer, en deze informatie slechts zichtbaar en beschikbaar maken voor gemeentefunctionarissen die daar expliciet voor zijn geautoriseerd;
+2 =::: aan een burger geen inzage geven in de bij zijn PL opgenomen afnemersindicatie van de afnemer en aan de burger niet melden welke verstrekkingen er zijn gedaan aan de afnemer, en deze informatie slechts zichtbaar en beschikbaar maken voor gemeentefunctionarissen die daar expliciet voor zijn geautoriseerd.
+
+*Bijzondere betrekking kind verstrekken* (Rubriek 35.95.14):: Deze rubriek bepaalt of gegevens uit een categorie <<c09-59,09>> Kind waarin rubriek <<e8910,09.89.10>> Registratie betrekking voorkomt met de waarde "L" wel of niet verstrekt worden aan de afnemer. De rubriek kan de waarden "0" of "1" hebben, die het volgende betekenen:
++
+[horizontal,labelwidth=5%,itemwidth=95%]
+0 =::: niet verstrekken
+1 =::: verstrekken
+
+*Afnemernaam* (Rubriek 35.95.20):: De naam van de afnemer.
+
+===== Omschrijving van de verschillende typen gegevensverstrekkingen
+
+De omschrijving van een spontane gegevensverstrekking is opgebouwd uit de volgende componenten.
+
+[unordered.stack]
+*Rubrieknummer spontaan* (Rubriek 35.95.40):: Een opsomming van rubrieknummers van de gegevens die spontaan verstrekt moeten worden.
+
+*Voorwaardenregel spontaan* (Rubriek 35.95.41):: De voorwaarden waaraan een PL moet voldoen om in aanmerking te komen voor het automatisch plaatsen van een afnemersindicatie bij de persoonslijst, dan wel voor het versturen van een conditionele gegevensverstrekking. +
+Bij het vergelijken van de PL met de voorwaardenregel spontaan worden categorieën waarin element <<e8410,84.10>>, Indicatie onjuist is opgenomen, uitgesloten.
+
+*Sleutelrubriek* (Rubriek 35.95.42):: Een opsomming van rubrieknummers van de gegevens die, indien één of meerdere van die gegevens wijzigen in een PL en de PL na wijziging aan de in de voorwaardenregel spontaan vervatte voorwaarden voldoet, aanleiding zijn om over te gaan tot het automatisch plaatsen van een afnemersindicatie bij de persoonslijst dan wel het versturen van een conditionele gegevensverstrekking.
+
+*Conditionele verstrekking* (Rubriek 35.95.43):: Conditionele verstrekking geeft aan of er voor de afnemer automatisch een afnemersindicatie geplaatst moet worden bij de persoonslijst (waarde is "0") of dat er aan de afnemer een conditionele gegevensverstrekking moet worden gedaan (waarde is "1"), indien één of meerdere sleutelrubrieken wijzigen op een PL en de PL na wijziging aan de in de voorwaardenregel spontaan vervatte voorwaarden voldoet.
+
+*Medium spontaan* (Rubriek 35.95.44):: Het medium dat voor de spontane gegevensverstrekking aan de afnemer gebruikt moet worden, zoals dat met de afnemer is afgesproken en in het Autorisatiebesluit is vastgelegd. Als de spontane mutatie via de berichtendienst wordt verstrekt, dan wordt in deze rubriek de waarde "N" opgenomen. In andere gevallen bevat deze rubriek de waarde "A". +
+In geval van gemeentedeelwijzigingen en intergemeentelijke infrastructurele wijzigingen is RvIG bevoegd om met afnemers af te spreken dat bij de spontane gegevensverstrekking gebruik wordt gemaakt van een ander medium dan in deze rubriek is vastgelegd.
+
+De omschrijving van een selectie is opgebouwd uit de volgende componenten.
+
+[unordered.stack]
+*Rubrieknummer selectie* (Rubriek 35.95.50):: Een opsomming van rubrieknummers van de gegevens die verstrekt moeten worden bij een selectie waarbij geen afnemersindicaties bij persoonslijsten geplaatst worden.
+
+*Voorwaardenregel selectie* (Rubriek 35.95.51):: De voorwaarden waaraan een PL moet voldoen om voor selectieplaatsing of selectieverstrekking in aanmerking te komen. +
+Bij het vergelijken van de PL met de voorwaardenregel selectie worden categorieën waarin element <<e8410,84.10>>, Indicatie onjuist is opgenomen, uitgesloten.
+
+*Selectiesoort* (Rubriek 35.95.52):: Selectiesoort geeft aan of dat er een selectieverstrekking moet plaats vinden (waarde is "0") of dat de afnemersindicatie van de afnemer bij de geselecteerde PL'en moet worden geplaatst (waarde is "1"), of dat bij de geselecteerde PL'en de afnemersindicatie van de afnemer logisch (waarde is "2") of voorwaardelijk fysiek (waarde is "3") of onvoorwaardelijk fysiek (waarde is "4") verwijderd moet worden.
+
+*Berichtaanduiding* (Rubriek 35.95.53):: De waarde "1" bij deze aanduiding geeft aan of er bij het uitvoeren van een selectie met plaatsen afnemersindicatie bij persoonslijsten voor een afnemer vulberichten (<<Ag11,Ag11>>-berichten) aan die afnemer verstrekt moeten worden dan wel of er bij het uitvoeren van een selectie (logisch of fysiek) verwijderen afnemersindicatie bij persoonslijsten voor een afnemer selectieverstrekkingen (<<Sv01,Sv01>>-berichten) aan die afnemer verstrekt moeten worden. De waarde "0" geeft aan dat er geen gegevens van de geselecteerde PL'en worden verstrekt.
+
+*Eerste selectiedatum* (Rubriek 35.95.54):: De datum waarop de selectie voor het eerst uitgevoerd moet worden.
+
+*Selectieperiode* (Rubriek 35.95.55):: De periode in maanden tussen twee opvolgende selecties. Indien de selectieperiode de waarde "00" heeft, betreft het een eenmalige selectie.
+
+*Medium selectie* (Rubriek 35.95.56)::
+Het medium dat voor selectieverstrekkingen aan de afnemer gebruikt moet worden, zoals dat met de afnemer is afgesproken en in het Autorisatiebesluit is vastgelegd. Als de selectie via de berichtendienst wordt verstrekt, dan wordt in deze rubriek de waarde "N" opgenomen. In andere gevallen bevat deze rubriek de waarde "A".
+
+De omschrijving van een ad hoc gegevensverstrekking is opgebouwd uit de volgende componenten.
+
+[unordered.stack]
+*Rubrieknummer ad hoc* (Rubriek 35.95.60):: Een opsomming van rubrieknummers van de gegevens die verstrekt mogen worden bij een ad hoc gegevensverstrekking.
+
+*Voorwaardenregel ad hoc* (Rubriek 35.95.61):: De voorwaarden waaraan een PL moet voldoen om:
++
+--
+* in aanmerking te komen voor ad hoc gegevensverstrekking;
+* het ad hoc plaatsen van de afnemersindicatie bij de persoonslijst toe te staan;
+* het beantwoorden van ad hoc adresvragen toe te staan.
+--
++
+Bij het vergelijken van de PL met de voorwaardenregel ad hoc worden categorieën waarin element <<e8410,84.10>>, Indicatie onjuist is opgenomen, uitgesloten.
+
+*Plaatsingsbevoegdheid persoonslijst* (Rubriek 35.95.62):: Plaatsingsbevoegdheid geeft de bevoegdheid aan (waarde "1") van de betreffende afnemer om ad hoc afnemersindicaties op persoonslijsten te plaatsen, mits de PL voldoet aan de voorwaardenregel ad hoc. De waarde "0" geeft aan dat de afnemer niet plaatsingsbevoegd is.
+
+*Afnemersverstrekkingen ad hoc* (Rubriek 35.95.63):: Een opsomming van afnemersindicaties, anders dan die van de betreffende afnemer zelf, waarvan aan de afnemer gemeld mag worden dat ze op de PL voorkomen.
+
+*Adresvraagbevoegdheid* (Rubriek 35.95.66):: Adresbevoegdheid geeft de bevoegdheid aan (waarde "1") van de betreffende afnemer om door middel van ad hoc adresvragen gegevens te vragen van ingeschrevenen op een adres, mits de PL van één van die ingeschrevenen voldoet aan de voorwaardenregel ad hoc. De waarde "0" geeft aan dat de afnemer niet adresvraagbevoegd is.
+
+*Medium ad hoc* (Rubriek 35.95.67):: Het medium dat voor de ad hoc gegevensverstrekking aan de afnemer gebruikt moet worden, zoals dat met de afnemer is afgesproken en in het Autorisatiebesluit is vastgelegd. Als de ad hoc verstrekkingen via de berichtendienst dan wel via de Ad hoc webservice of API's voor ad hoc bevraging van BRP-V plaats vindt, in deze rubriek de waarde "N" opgenomen. In andere gevallen bevat deze rubriek de waarde "A".
+
+De adresgeoriënteerde gegevensverstrekking wordt niet meer gebruikt.
+
+[unordered.stack]
+*Rubrieknummer adresgeoriënteerd* (Rubriek 35.95.70):: Een opsomming van rubrieknummers van de gegevens die verstrekt moeten worden bij adresgeoriënteerde gegevensverstrekking. Dit veld komt alleen voor in oude versies van de autoristietabelregel.
+
+*Voorwaardenregel adresgeoriënteerd* (Rubriek 35.95.71):: De voorwaarden waaraan een PL moet voldoen om in aanmerking te komen voor adresgeoriënteerde gegevensverstrekking. +
+Bij het vergelijken van de PL met de voorwaardenregel adresgeoriënteerd worden categorieën waarin element <<e8410,84.10>>, Indicatie onjuist is opgenomen, uitgesloten. Dit veld komt alleen voor in oude versies van de autoristietabelregel.
+
+*Medium adresgeoriënteerd* (Rubriek 35.95.73):: Het medium dat voor de adresgeoriënteerde gegevensverstrekking aan de afnemer gebruikt moet worden, zoals dat met de afnemer is afgesproken en in het Autorisatiebesluit is vastgelegd. Adresgeoriënteerde gegevensverstrekkingen vinden in principe plaats via de berichtendienst. +
+In dat geval wordt in deze rubriek de waarde "N" opgenomen. In andere gevallen bevat deze rubriek de waarde "A". Dit veld komt alleen voor in oude versies van de autoristietabelregel.
+
+===== Tabelregeldatums
+
+[unordered.stack]
+*Datum ingang tabelregel* (Rubriek 35.99.98):: Met ingang van deze datum is de tabelregel geldig.
+*Datum beëindiging tabelregel* (Rubriek 35.99.99):: Tot deze datum is de tabelregel geldig.
+
+==== Syntax van de voorwaardenregels
+
+In deze paragraaf wordt de syntax van de voorwaardenregels beschreven.
+
+===== Notatiewijze
+
+Bij de notatie van de syntax hebben "::=" en "|" de volgende betekenis:
+
+::= "bestaat uit"
+
+| "of"
+
+===== Voorwaardenregel
+
+[horizontal,labelwidth=35,itemwidth=65]
+voorwaardenregel ::=:: metavoorwaarde : voorwaarde | +
+voorwaarde
+
+metavoorwaarde ::=:: lijstinvoer | +
+kloptkwantor | +
+lijstinvoer, kloptkwantor
+
+voorwaarde ::=:: (voorwaarde) | +
+voorwaarde logopvwd voorwaarde | +
+ALS voorwaarde DAN voorwaarde | +
+vergelijking | +
+voorkomenvraag | +
+NIET voorwaarde | +
+WAAR | +
+ONWAAR
+
+===== Betekenis van de syntaxelementen in de voorwaardenregels
+
+(in alfabetische volgorde)
+
+[horizontal,labelwidth=35,itemwidth=65]
+alfanumrubriekaanduiding ::=:: alfanumrubrieknummer | +
+alfanumrubrieknummer @ scope | +
+alfanumrubrieknummer @@ scopepl | +
+alfanumrubrieknummer @ scope @ scopepl
+
+alfanumrubriekextract ::=:: alfanumrubriekaanduiding ? /reguliere-expressie/ cijfer
+
+alfanumrubrieknummer ::=::
+<<e0210,01.02.10>> | <<e0220,01.02.20>> | <<e0230,01.02.30>> | <<e0240,01.02.40>> | <<e0320,01.03.20>> | +
+<<e0410,01.04.10>> | <<e6110,01.61.10>> | <<e8120,01.81.20>> | <<e8230,01.82.30>> | <<e8820,01.88.20>> | +
+<<e0210,02.02.10>> | <<e0220,02.02.20>> | <<e0230,02.02.30>> | <<e0240,02.02.40>> | <<e0320,02.03.20>> | +
+<<e0410,02.04.10>> | <<e8120,02.81.20>> | <<e8230,02.82.30>> | +
+<<e0210,03.02.10>> | <<e0220,03.02.20>> | <<e0230,03.02.30>> | <<e0240,03.02.40>> | <<e0320,03.03.20>> | +
+<<e0410,03.04.10>> | <<e8120,03.81.20>> | <<e8230,03.82.30>> | +
+<<e6510,04.65.10>> | <<e7310,04.73.10>> | <<e8230,04.82.30>> | <<e8820,04.88.20>> | +
+<<e0210,05.02.10>> | <<e0220,05.02.20>> | <<e0230,05.02.30>> | <<e0240,05.02.40>> | <<e0320,05.03.20>> | +
+<<e0410,05.04.10>> | <<e0620,05.06.20>> | <<e0720,05.07.20>> | <<e0740,05.07.40>> | <<e1510,05.15.10>> | +
+<<e8120,05.81.20>> | <<e8230,05.82.30>> | +
+<<e0820,06.08.20>> | <<e8120,06.81.20>> | <<e8230,06.82.30>> | <<e8820,06.88.20>> | +
+<<e6720,07.67.20>> | <<e7120,07.71.20>> | <<e8710,07.87.10>> | <<e8820,07.88.20>> | +
+<<e1010,08.10.10>> | <<e1020,08.10.20>> | <<e1110,08.11.10>> | <<e1115,08.11.15>> | <<e1130,08.11.30>> | +
+<<e1140,08.11.40>> | <<e1150,08.11.50>> | <<e1160,08.11.60>> | <<e1170,08.11.70>> | <<e1180,08.11.80>> | +
+<<e1190,08.11.90>> | <<e1210,08.12.10>> | <<e1330,08.13.30>> | <<e1340,08.13.40>> | <<e1350,08.13.50>> | +
+<<e7210,08.72.10>> | <<e8820,08.88.20>> | +
+<<e0210,09.02.10>> | <<e0220,09.02.20>> | <<e0230,09.02.30>> | <<e0240,09.02.40>> | <<e0320,09.03.20>> | +
+<<e8120,09.81.20>> | <<e8230,09.82.30>> | <<e8910,09.89.10>> | +
+<<e3210,11.32.10>> | <<e8230,11.82.30>> | +
+<<e3510,12.35.10>> | <<e3520,12.35.20>> | <<e3540,12.35.40>> | <<e3570,12.35.70>> | <<e8230,12.82.30>> | +
+<<e3140,13.31.40>> | <<e3150,13.31.50>> | <<e3810,13.38.10>> | <<e8230,13.82.30>> | +
+<<e1110,16.11.10>> | <<e1115,16.11.15>> | <<e1130,16.11.30>> | <<e1140,16.11.40>> | <<e1150,16.11.50>> | +
+<<e1160,16.11.60>> | <<e1170,16.11.70>> | <<e1180,16.11.80>> | <<e1190,16.11.90>> | <<e1910,16.19.10>> | +
+<<e7210,16.72.10>> | <<e8820,16.88.20>> | +
+<<e1610,17.16.10>> | <<e1620,17.16.20>> | <<e1710,17.17.10>> | <<e1720,17.17.20>> | <<e8820,17.88.20>> | +
+<<e0210,51.02.10>> | <<e0220,51.02.20>> | <<e0230,51.02.30>> | <<e0240,51.02.40>> | <<e0320,51.03.20>> | +
+<<e0410,51.04.10>> | <<e6110,51.61.10>> | <<e8120,51.81.20>> | <<e8230,51.82.30>> | <<e8410,51.84.10>> | +
+<<e8820,51.88.20>> | +
+<<e0210,52.02.10>> | <<e0220,52.02.20>> | <<e0230,52.02.30>> | <<e0240,52.02.40>> | <<e0320,52.03.20>> | +
+<<e0410,52.04.10>> | <<e8120,52.81.20>> | <<e8230,52.82.30>> | <<e8410,52.84.10>> | +
+<<e0210,53.02.10>> | <<e0220,53.02.20>> | <<e0230,53.02.30>> | <<e0240,53.02.40>> | <<e0320,53.03.20>> | +
+<<e0410,53.04.10>> | <<e8120,53.81.20>> | <<e8230,53.82.30>> | <<e8410,53.84.10>> | +
+<<e6510,54.65.10>> | <<e7310,54.73.10>> | <<e8230,54.82.30>> | <<e8410,54.84.10>> | <<e8820,54.88.20>> | +
+<<e0210,55.02.10>> | <<e0220,55.02.20>> | <<e0230,55.02.30>> | <<e0240,55.02.40>> | <<e0320,55.03.20>> | +
+<<e0410,55.04.10>> | <<e0620,55.06.20>> | <<e0720,55.07.20>> | <<e0740,55.07.40>> | <<e1510,55.15.10>> | +
+<<e8120,55.81.20>> | <<e8230,55.82.30>> | <<e8410,55.84.10>> | +
+<<e0820,56.08.20>> | <<e8120,56.81.20>> | <<e8230,56.82.30>> | <<e8410,56.84.10>> | <<e8820,56.88.20>> | +
+<<e1010,58.10.10>> | <<e1020,58.10.20>> | <<e1110,58.11.10>> | <<e1115,58.11.15>> | <<e1130,58.11.30>> | +
+<<e1140,58.11.40>> | <<e1150,58.11.50>> | <<e1160,58.11.60>> | <<e1170,58.11.70>> | <<e1180,58.11.80>> | +
+<<e1190,58.11.90>> | <<e1210,58.12.10>> | <<e1330,58.13.30>> | <<e1340,58.13.40>> | <<e1350,58.13.50>> | +
+<<e7210,58.72.10>> | <<e8410,58.84.10>> | <<e8820,58.88.20>> | +
+<<e0210,59.02.10>> | <<e0220,59.02.20>> | <<e0230,59.02.30>> | <<e0240,59.02.40>> | <<e0320,59.03.20>> | +
+<<e8120,59.81.20>> | <<e8230,59.82.30>> | <<e8410,59.84.10>> | <<e8910,59.89.10>> | +
+<<e8410,60.84.10>> | +
+<<e3210,61.32.10>> | <<e8230,61.82.30>> | <<e8410,61.84.10>> | +
+<<e1110,66.11.10>> | <<e1115,66.11.15>> | <<e1130,66.11.30>> | <<e1140,66.11.40>> | <<e1150,66.11.50>> | +
+<<e1160,66.11.60>> | <<e1170,66.11.70>> | <<e1180,66.11.80>> | <<e1190,66.11.90>> | <<e1910,66.19.10>> | +
+<<e7210,66.72.10>> | <<e8410,66.84.10>> | <<e8820,66.88.20>>
+
+alfanumrubriekwaarde ::=:: alfanumrubriekwaarde logopvgl alfanumrubriekwaarde | +
+alfanumrubriekaanduiding | +
+alfanumrubriekextract | +
+/reguliere-expressie/ | +
+"tekst"
+
+cijfer ::=:: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+datrubriekaanduiding ::=:: datrubrieknummer | +
+datrubrieknummer @ scope | +
+datrubrieknummer @@ scopepl | +
+datrubrieknummer @ scope @ scopepl
+
+datrubrieknummer ::=::
+<<e0310,01.03.10>> | <<e8220,01.82.20>> | <<e8320,01.83.20>> | <<e8330,01.83.30>> | <<e8510,01.85.10>> | +
+<<e8610,01.86.10>> | +
+<<e0310,02.03.10>> | <<e6210,02.62.10>> | <<e8220,02.82.20>> | <<e8320,02.83.20>> | <<e8330,02.83.30>> | +
+<<e8510,02.85.10>> | <<e8610,02.86.10>> | +
+<<e0310,03.03.10>> | <<e6210,03.62.10>> | <<e8220,03.82.20>> | <<e8320,03.83.20>> | <<e8330,03.83.30>> | +
+<<e8510,03.85.10>> | <<e8610,03.86.10>> | +
+<<e8220,04.82.20>> | <<e8320,04.83.20>> | <<e8330,04.83.30>> | <<e8510,04.85.10>> | <<e8610,04.86.10>> | +
+<<e0310,05.03.10>> | <<e0610,05.06.10>> | <<e0710,05.07.10>> | <<e8220,05.82.20>> | <<e8320,05.83.20>> | +
+<<e8330,05.83.30>> | <<e8510,05.85.10>> | <<e8610,05.86.10>> | +
+<<e0810,06.08.10>> | <<e8220,06.82.20>> | <<e8320,06.83.20>> | <<e8330,06.83.30>> | <<e8510,06.85.10>> | +
+<<e8610,06.86.10>> | +
+<<e6620,07.66.20>> | <<e6710,07.67.10>> | <<e6810,07.68.10>> | <<e7110,07.71.10>> | +
+<<e0920,08.09.20>> | <<e1030,08.10.30>> | <<e1320,08.13.20>> | <<e1420,08.14.20>> | <<e8320,08.83.20>> | +
+<<e8330,08.83.30>> | <<e8510,08.85.10>> | <<e8610,08.86.10>> | +
+<<e0310,09.03.10>> | <<e8220,09.82.20>> | <<e8320,09.83.20>> | <<e8330,09.83.30>> | <<e8510,09.85.10>> | +
+<<e8610,09.86.10>> | +
+<<e3920,10.39.20>> | <<e3930,10.39.30>> | <<e8320,10.83.20>> | <<e8330,10.83.30>> | <<e8510,10.85.10>> | +
+<<e8610,10.86.10>> | +
+<<e8220,11.82.20>> | <<e8320,11.83.20>> | <<e8330,11.83.30>> | <<e8510,11.85.10>> | <<e8610,11.86.10>> | +
+<<e3530,12.35.30>> | <<e3550,12.35.50>> | <<e3560,12.35.60>> | <<e8220,12.82.20>> | <<e8320,12.83.20>> | +
+<<e8330,12.83.30>> | <<e8510,12.85.10>> | <<e8610,12.86.10>> | +
+<<e3120,13.31.20>> | <<e3130,13.31.30>> | <<e3820,13.38.20>> | <<e8220,13.82.20>> | +
+<<e8510,14.85.10>> | +
+<<e0920,16.09.20>> | <<e1810,16.18.10>> | <<e8320,16.83.20>> | <<e8330,16.83.30>> | <<e8510,16.85.10>> | +
+<<e8610,16.86.10>> | +
+<<e1630,17.16.30>> | <<e1730,17.17.30>> | +
+<<e0310,51.03.10>> | <<e8220,51.82.20>> | <<e8320,51.83.20>> | <<e8330,51.83.30>> | <<e8510,51.85.10>> | +
+<<e8610,51.86.10>> | +
+<<e0310,52.03.10>> | <<e6210,52.62.10>> | <<e8220,52.82.20>> | <<e8320,52.83.20>> | <<e8330,52.83.30>> | +
+<<e8510,52.85.10>> | <<e8610,52.86.10>> | +
+<<e0310,53.03.10>> | <<e6210,53.62.10>> | <<e8220,53.82.20>> | <<e8320,53.83.20>> | <<e8330,53.83.30>> | +
+<<e8510,53.85.10>> | <<e8610,53.86.10>> | +
+<<e8220,54.82.20>> | <<e8320,54.83.20>> | <<e8330,54.83.30>> | <<e8510,54.85.10>> | <<e8610,54.86.10>> | +
+<<e0310,55.03.10>> | <<e0610,55.06.10>> | <<e0710,55.07.10>> | <<e8220,55.82.20>> | <<e8320,55.83.20>> | +
+<<e8330,55.83.30>> | <<e8510,55.85.10>> | <<e8610,55.86.10>> | +
+<<e0810,56.08.10>> | <<e8220,56.82.20>> | <<e8320,56.83.20>> | <<e8330,56.83.30>> | <<e8510,56.85.10>> | +
+<<e8610,56.86.10>> | +
+<<e0920,58.09.20>> | <<e1030,58.10.30>> | <<e1320,58.13.20>> | <<e1420,58.14.20>> | <<e8320,58.83.20>> | +
+<<e8330,58.83.30>> | <<e8510,58.85.10>> | <<e8610,58.86.10>> | +
+<<e0310,59.03.10>> | <<e8220,59.82.20>> | <<e8320,59.83.20>> | <<e8330,59.83.30>> | <<e8510,59.85.10>> | +
+<<e8610,59.86.10>> | +
+<<e3920,60.39.20>> | <<e3930,60.39.30>> | <<e8320,60.83.20>> | <<e8330,60.83.30>> | <<e8510,60.85.10>> | +
+<<e8610,60.86.10>> | +
+<<e8220,61.82.20>> | <<e8320,61.83.20>> | <<e8330,61.83.30>> | <<e8510,61.85.10>> | <<e8610,61.86.10>> | +
+<<e8510,64.85.10>> | +
+<<e0920,66.09.20>> | <<e1810,66.18.10>> | <<e8320,66.83.20>> | <<e8330,66.83.30>> | <<e8510,66.85.10>> | +
+<<e8610,66.86.10>>
+
+datrubriekwaarde ::=:: datum | +
+datum matop periode
+
+datum ::=:: datrubriekaanduiding | +
+peildatum | +
+cijfer cijfer cijfer cijfer cijfer cijfer cijfer cijfer
+
+groeprubriekaanduiding ::=:: groeprubrieknummer | +
+groeprubrieknummer @ scope | +
+groeprubrieknummer @@ scopepl | +
+groeprubrieknummer @ scope @ scopepl
+
+groeprubrieknummer ::=::
+<<c01-51,01.00.00>> | <<g01,01.01.00>> | <<g02,01.02.00>> | <<g03,01.03.00>> | <<g04,01.04.00>> | +
+<<g20,01.20.00>> | <<g61,01.61.00>> | <<g81,01.81.00>> | <<g80,01.82.00>> | <<g83,01.83.00>> | +
+<<g85,01.85.00>> | <<g86,01.86.00>> | <<g88,01.88.00>> | +
+{empty}::
+<<c02-52,02.00.00>> | <<g01,02.01.00>> | <<g02,02.02.00>> | <<g03,02.03.00>> | <<g04,02.04.00>> | +
+<<g62,02.62.00>> | <<g81,02.81.00>> | <<g82,02.82.00>> | <<g83,02.83.00>> | <<g85,02.85.00>> | +
+<<g86,02.86.00>> | +
+<<c03-53,03.00.00>> | <<g01,03.01.00>> | <<g02,03.02.00>> | <<g03,03.03.00>> | <<g04,03.04.00>> | +
+<<g62,03.62.00>> | <<g81,03.81.00>> | <<g82,03.82.00>> | <<g83,03.83.00>> | <<g85,03.85.00>> | +
+<<g86,03.86.00>> | +
+<<c04-54,04.00.00>> | <<g05,04.05.00>> | <<g63,04.63.00>> | <<g64,04.64.00>> | <<g65,04.65.00>> | +
+<<g73,04.73.00>> | +
+<<g82,04.82.00>> | <<g83,04.83.00>> | <<g85,04.85.00>> | <<g86,04.86.00>> | <<g88,04.88.00>> | +
+<<c05-55,05.00.00>> | <<g01,05.01.00>> | <<g02,05.02.00>> | <<g03,05.03.00>> | <<g04,05.04.00>> | +
+<<g06,05.06.00>> | <<g07,05.07.00>> | <<g15,05.15.00>> | <<g81,05.81.00>> | <<g82,05.82.00>> | +
+<<g83,05.83.00>> | <<g85,05.85.00>> | <<g86,05.86.00>> | +
+<<c06-56,06.00.00>> | <<g08,06.08.00>> | <<g81,06.81.00>> | <<g82,06.82.00>> | <<g83,06.83.00>> | +
+<<g85,06.85.00>> | <<g86,06.86.00>> | <<g88,06.88.00>> | +
+<<c07,07.00.00>> | <<g66,07.66.00>> | <<g67,07.67.00>> | <<g68,07.68.00>> | <<g69,07.69.00>> | +
+<<g70,07.70.00>> | <<g71,07.71.00>> | <<g80,07.80.00>> | <<g87,07.87.00>> | <<g88,07.88.00>> | +
+<<c08-58,08.00.00>> | <<g09,08.09.00>> | <<g10,08.10.00>> | <<g11,08.11.00>> | <<g12,08.12.00>> | +
+<<g13,08.13.00>> | <<g14,08.14.00>> | <<g72,08.72.00>> | <<g75,08.75.00>> | <<g83,08.83.00>> | +
+<<g85,08.85.00>> | <<g86,08.86.00>> | <<g88,08.88.00>> | +
+<<c09-59,09.00.00>> | <<g01,09.01.00>> | <<g02,09.02.00>> | <<g03,09.03.00>> | <<g81,09.81.00>> | +
+<<g82,09.82.00>> | <<g83,09.83.00>> | <<g85,09.85.00>> | <<g86,09.86.00>> | <<g89,09.89.00>> | +
+<<c10-60,10.00.00>> | <<g39,10.39.00>> | <<g83,10.83.00>> | <<g85,10.85.00>> | <<g86,10.86.00>> | +
+<<c11-61,11.00.00>> | <<g32,11.32.00>> | <<g33,11.33.00>> | <<g82,11.82.00>> | <<g83,11.83.00>> | +
+<<g85,11.85.00>> | <<g86,11.86.00>> | +
+<<c12,12.00.00>> | <<g35,12.35.00>> | <<g36,12.36.00>> | <<g82,12.82.00>> | <<g83,12.83.00>> | +
+<<g85,12.85.00>> | <<g86,12.86.00>> | +
+<<c13,13.00.00>> | <<g31,13.31.00>> | <<g38,13.38.00>> | <<g82,13.82.00>> | +
+<<c14-64,14.00.00>> | <<g40,14.40.00>> | <<g85,14.85.00>> | +
+<<g09,16.09.00>> | <<g11,16.11.00>> | <<g18,16.18.00>> | <<g19,16.19.00>> | <<g72,16.72.00>> | +
+<<g83,16.83.00>> | <<g85,16.85.00>> | <<g86,16.86.00>> | <<g88,16.88.00>> | +
+<<g16,17.16.00>> | <<g17,17.17.00>> | <<g88,17.88.00>> | +
+<<c01-51,51.00.00>> | <<g01,51.01.00>> | <<g02,51.02.00>> | <<g03,51.03.00>> | <<g04,51.04.00>> | +
+<<g20,51.20.00>> | <<g61,51.61.00>> | <<g81,51.81.00>> | <<g82,51.82.00>> | <<g83,51.83.00>> | +
+<<g84,51.84.00>> | <<g85,51.85.00>> | <<g86,51.86.00>> | <<e8810,51.88.10>> | +
+<<c02-52,52.00.00>> | <<g01,52.01.00>> | <<g02,52.02.00>> | <<g03,52.03.00>> | <<g04,52.04.00>> | +
+<<g62,52.62.00>> | <<g81,52.81.00>> | <<g82,52.82.00>> | <<g83,52.83.00>> | <<e8410,52.84.10>> | +
+<<g85,52.85.00>> | <<g86,52.86.00>> | +
+<<c03-53,53.00.00>> | <<g01,53.01.00>> | <<g02,53.02.00>> | <<g03,53.03.00>> | <<g04,53.04.00>> | +
+<<g62,53.62.00>> | <<g81,53.81.00>> | <<g82,53.82.00>> | <<g83,53.83.00>> | <<g84,53.84.00>> | +
+<<g85,53.85.00>> | <<g86,53.86.00>> | +
+<<c04-54,54.00.00>> | <<g05,54.05.00>> | <<g63,54.63.00>> | <<g64,54.64.00>> | <<g65,54.65.00>> | +
+<<g73,54.73.00>> | <<g82,54.82.00>> | <<g83,54.83.00>> | <<g84,54.84.00>> | <<g85,54.85.00>> | +
+<<g86,54.86.00>> | <<g88,54.88.00>> | +
+<<c05-55,55.00.00>> | <<g01,55.01.00>> | <<g02,55.02.00>> | <<g03,55.03.00>> | <<g04,55.04.00>> | +
+<<g06,55.06.00>> | <<g07,55.07.00>> | <<g15,55.15.00>> | <<g81,55.81.00>> | <<g82,55.82.00>> | +
+<<g83,55.83.00>> | <<g84,55.84.00>> | <<g85,55.85.00>> | <<g86,55.86.00>> | +
+<<c06-56,56.00.00>> | <<g08,56.08.00>> | <<g81,56.81.00>> | <<g82,56.82.00>> | <<g83,56.83.00>> | +
+<<g84,56.84.00>> | <<g85,56.85.00>> | <<g86,56.86.00>> | <<g88,56.88.00>> | +
+<<c08-58,58.00.00>> | <<g09,58.09.00>> | <<g10,58.10.00>> | <<g11,58.11.00>> | <<g12,58.12.00>> | +
+<<g13,58.13.00>> | <<g14,58.14.00>> | <<g72,58.72.00>> | <<g75,58.75.00>> | <<g83,58.83.00>> | +
+<<g84,58.84.00>> | <<g85,58.85.00>> | <<g86,58.86.00>> | <<g88,58.88.00>> | +
+<<c09-59,59.00.00>> | <<g01,59.01.00>> | <<g02,59.02.00>> | <<g03,59.03.00>> | <<g81,59.81.00>> | +
+<<g82,59.82.00>> | <<g83,59.83.00>> | <<g84,59.84.00>> | <<g85,59.85.00>> | <<g86,59.86.00>> | +
+<<g89,59.89.00>> | +
+<<c10-60,60.00.00>> | <<g39,60.39.00>> | <<g83,60.83.00>> | <<g84,60.84.00>> | <<g85,60.85.00>> | +
+<<g86,60.86.00>> | +
+<<c11-61,61.00.00>> | <<g32,61.32.00>> | <<g33,61.33.00>> | <<g82,61.82.00>> | <<g83,61.83.00>> | +
+<<g84,61.84.00>> | <<g85,61.85.00>> | <<g86,61.86.00>> | +
+<<c14-64,64.00.00>> | <<g40,64.40.00>> | <<g85,64.85.00>> | +
+<<g09,66.09.00>> | <<g11,66.11.00>> | <<g18,66.18.00>> | <<g19,66.19.00>> | <<g72,66.72.00>> | +
+<<g83,66.83.00>> | <<e8410,66.84.10>> | <<g85,66.85.00>> | <<g86,66.86.00>> | <<g88,66.88.00>>
+
+kloptkwantor ::=:: KLOPT1 | KLOPTA
+
+lijstcriterium ::=:: lijstkolom GA1 lijstrubriek | +
+lijstcriterium ENVWD lijstcriterium
+
+lijstinvoer ::=:: LIJST (lijstcriterium)
+
+lijstkolom ::=:: kolom1-9
+
+lijstrubriek ::=:: alfanumrubrieknummer | +
+numrubrieknummer | +
+datrubrieknummer
+
+logopvgl ::=:: ENVGL | OFVGL
+
+logopvwd ::=:: ENVWD | OFVWD
+
+matop ::=:: + | -
+
+numrubriekaanduiding ::=:: numrubrieknummer | +
+numrubrieknummer @ scope | +
+numrubrieknummer @@ scopepl | +
+numrubrieknummer @ scope @ scopepl
+
+numrubrieknummer ::=::
+<<e0110,01.01.10>> | <<e0120,01.01.20>> | <<e0330,01.03.30>> | <<e2010,01.20.10>> | <<e2020,01.20.20>> | +
+<<e8110,01.81.10>> | <<e8210,01.82.10>> | <<e8310,01.83.10>> | <<e8810,01.88.10>> | +
+<<e0110,02.01.10>> | <<e0120,02.01.20>> | <<e0330,02.03.30>> | <<e8110,02.81.10>> | <<e8210,02.82.10>> | +
+<<e8310,02.83.10>> | +
+<<e0110,03.01.10>> | <<e0120,03.01.20>> | <<e0330,03.03.30>> | <<e8110,03.81.10>> | <<e8210,03.82.10>> | +
+<<e8310,03.83.10>> | +
+<<e0510,04.05.10>> | <<e6310,04.63.10>> | <<e6410,04.64.10>> | <<e8210,04.82.10>> | <<e8310,04.83.10>> | +
+<<e8810,04.88.10>> | +
+<<e0110,05.01.10>> | <<e0120,05.01.20>> | <<e0330,05.03.30>> | <<e0630,05.06.30>> | <<e0730,05.07.30>> | +
+<<e8110,05.81.10>> | <<e8210,05.82.10>> | <<e8310,05.83.10>> | +
+<<e0830,06.08.30>> | <<e8110,06.81.10>> | <<e8210,06.82.10>> | <<e8310,06.83.10>> | <<e8810,06.88.10>> | +
+<<e6910,07.69.10>> | <<e7010,07.70.10>> | <<e8010,07.80.10>> | <<e8020,07.80.20>> | <<e8810,07.88.10>> | +
+<<e0910,08.09.10>> | <<e1120,08.11.20>> | <<e1310,08.13.10>> | <<e1410,08.14.10>> | <<e7510,08.75.10>> | +
+<<e8310,08.83.10>> | <<e8810,08.88.10>> | +
+<<e0110,09.01.10>> | <<e0120,09.01.20>> | <<e0330,09.03.30>> | <<e8110,09.81.10>> | <<e8210,09.82.10>> | +
+<<e8310,09.83.10>> | +
+<<e3910,10.39.10>> | <<e8310,10.83.10>> | +
+<<e3310,11.33.10>> | <<e8210,11.82.10>> | <<e8310,11.83.10>> | +
+<<e3610,12.36.10>> | <<e8210,12.82.10>> | <<e8310,12.83.10>> | +
+<<e3110,13.31.10>> | <<e3160,13.31.60>> | <<e8210,13.82.10>> | +
+<<e4010,14.40.10>> | +
+<<e0910,16.09.10>> | <<e1120,16.11.20>> | <<e8310,16.83.10>> | <<e8810,16.88.10>> | +
+<<e8810,17.88.10>> | +
+<<e0110,51.01.10>> | <<e0120,51.01.20>> | <<e0330,51.03.30>> | <<e2010,51.20.10>> | <<e2020,51.20.20>> | +
+<<e8110,51.81.10>> | <<e8210,51.82.10>> | <<e8310,51.83.10>> | <<e8810,51.88.10>> | +
+<<e0110,52.01.10>> | <<e0120,52.01.20>> | <<e0330,52.03.30>> | <<e8110,52.81.10>> | <<e8210,52.82.10>> | +
+<<e8310,52.83.10>> | +
+<<e0110,53.01.10>> | <<e0120,53.01.20>> | <<e0330,53.03.30>> | <<e8110,53.81.10>> | <<e8210,53.82.10>> | +
+<<e8310,53.83.10>> | +
+<<e0510,54.05.10>> | <<e6310,54.63.10>> | <<e6410,54.64.10>> | <<e8210,54.82.10>> | <<e8310,54.83.10>> | +
+<<e8810,54.88.10>> | +
+<<e0110,55.01.10>> | <<e0120,55.01.20>> | <<e0330,55.03.30>> | <<e0630,55.06.30>> | <<e0730,55.07.30>> | +
+<<e8110,55.81.10>> | <<e8210,55.82.10>> | <<e8310,55.83.10>> | +
+<<e0830,56.08.30>> | <<e8110,56.81.10>> | <<e8210,56.82.10>> | <<e8310,56.83.10>> | <<e8810,56.88.10>> | +
+<<e0910,58.09.10>> | <<e1120,58.11.20>> | <<e1310,58.13.10>> | <<e1410,58.14.10>> | <<e7510,58.75.10>> | +
+<<e8310,58.83.10>> | <<e8810,58.88.10>> | +
+<<e0110,59.01.10>> | <<e0120,59.01.20>> | <<e0330,59.03.30>> | <<e8110,59.81.10>> | <<e8210,59.82.10>> | +
+<<e8310,59.83.10>> | +
+<<e3910,60.39.10>> | <<e8310,60.83.10>> | +
+<<e3310,61.33.10>> | <<e8210,61.82.10>> | <<e8310,61.83.10>> | +
+<<e4010,64.40.10>> | +
+<<e0910,66.09.10>> | <<e1120,66.11.20>> | <<e8310,66.83.10>> | <<e8810,66.88.10>>
+
+numrubriekwaarde ::=:: numrubriekwaarde logopvgl numrubriekwaarde | +
+numrubriekaanduiding | +
+Een waarde die valt onder de in <<_gegevenswoordenboek>> bij de definitie van een numrubrieknummer (= element) vermelde "Mogelijke waarden"
+
+peildatum ::=:: selectiedatum | +
+vandaagdatum
+
+periode ::=:: cijfer cijfer cijfer cijfer cijfer cijfer cijfer cijfer | +
+cijfer cijfer cijfer cijfer cijfer cijfer | +
+cijfer cijfer cijfer cijfer
+
+reguliere-expressie ::=:: Een reguliere expressie zoals beschreven in de nadere toelichting
+
+relop ::=:: txtop | +
+GD1 | GDA | KD1 | KDA | GDOG1 | GDOGA | KDOG1 | KDOGA
+
+scope ::=:: scopestapel | +
+scopevoorkomen
+
+scopepl ::=:: scopeplaanduiding
+
+scopeplaanduiding ::=:: PL1 | +
+PL2
+
+scopestapel ::=:: scopestapelaanduiding | +
+scopestapelaanduiding . volgende | +
+scopestapelaanduiding . vorige
+
+scopestapelaanduiding ::=:: A-Z
+
+scopevoorkomen ::=:: scopevrkaanduiding | +
+scopevrkaanduiding . volgende | +
+scopevrkaanduiding . vorige
+
+scopevrkaanduiding ::=:: a-z
+
+[#e8920]
+selectiedatum ::=:: 19.89.20
+
+string ::=:: string symbool | +
+symbool
+
+symbool ::=:: // | /" | /? | +
+Een van de tekens zoals genoemd in het overzicht van de in de BRP te gebruiken tekens met uitzondering van de tekens " en /
+
+tekst ::=:: string | +
+string/* | +
+Een waarde die valt onder de in <<_gegevenswoordenboek>> bij de definitie van een alfanumrubrieknummer (= element) vermelde "Mogelijke waarden"
+
+txtop ::=:: GA1 | GAA | OGA1 | OGAA
+
+[#e8930]
+vandaagdatum ::=:: 19.89.30
+
+vergelijking ::=:: numrubriekaanduiding relop numrubriekwaarde | +
+alfanumrubriekaanduiding relop alfanumrubriekwaarde | +
+datrubriekaanduiding relop datrubriekwaarde | +
+numrubriekaanduiding relop alfanumrubriekaanduiding
+
+voorkomenvraag ::=:: vrkop numrubriekaanduiding | +
+vrkop alfanumrubriekaanduiding | +
+vrkop datrubriekaanduiding | +
+vrkop groeprubriekaanduiding | +
+vrkaop groeprubriekaanduiding
+
+vrkaop ::=:: KVA
+
+vrkop ::=:: KV | KNV
+
+===== Verklaring van de operatoren (in alfabetische volgorde)
+
+[horizontal,labelwidth=10,itemwidth=90]
+{plus}:: Plus (voor datumwaarden).
+-:: Min (voor datumwaarden).
+ALS DAN:: Zie nadere toelichting op de syntax.
+ENVGL:: EN (logische EN binnen een vergelijking).
+ENVWD:: EN (logische EN binnen een voorwaardenregel). ENVWD heeft voorrang boven OFVWD.
+GA1:: Gelijk aan, geldt voor minimaal één van de voorkomende rubrieken.
+GAA:: Gelijk aan, geldt voor alle voorkomende rubrieken.
+GD1:: Groter dan, geldt voor minimaal één van de voorkomende rubrieken.
+GDA:: Groter dan, geldt voor alle voorkomende rubrieken.
+GDOG1:: Groter dan of gelijk aan, geldt voor minimaal één van de voorkomende rubrieken.
+GDOGA:: Groter dan of gelijk aan, geldt voor alle voorkomende rubrieken.
+KD1:: Kleiner dan, geldt voor minimaal één van de voorkomende rubrieken.
+KDA:: Kleiner dan, geldt voor alle voorkomende rubrieken.
+KDOG1:: Kleiner dan of gelijk aan, geldt voor minimaal één van de voorkomende rubrieken.
+KDOGA:: Kleiner dan of gelijk aan, geldt voor alle voorkomende rubrieken.
+KLOPT1:: Klopt, de voorwaarde klopt voor minimaal één van de mogelijke scope-combinaties.
+KLOPTA:: Klopt, de voorwaarde klopt voor alle mogelijke scope-combinaties.
+KNV:: Komt niet voor.
+KV:: Komt voor.
+KVA:: Komt voor. Dit geldt voor alle rubrieken die in een groep kunnen voorkomen.
+LIJST:: Duidt een bij een selectie of telling bijgevoegd CSV-invoerbestand aan. De lijstkolom (kolom1 tot en met kolom9) geeft het nummer van de kolom uit het CSV-bestand aan dat gelijk moet zijn aan de aangegeven rubriek op de PL. Het cijfer in lijstkolom staat voor het nummer van de kolom. De eerste regel in de lijst bevat het rubrieknummer van de betreffende kolom.
+NIET:: Ontkenning, draait de uitkomst van de voorwaarde om.
+OFVGL:: OF (logische OF binnen een vergelijking).
+OFVWD:: OF (logische OF binnen een voorwaardenregel).
+OGA1:: Ongelijk aan, geldt voor minimaal één van de voorkomende rubrieken.
+OGAA:: Ongelijk aan, geldt voor alle voorkomende rubrieken.
+ONWAAR:: Onwaar, dit is equivalent aan NIET WAAR.
+Volgende:: De scopestapelaanduiding geldt voor alle voorkomens van de rubriekaanduiding die aan de scopestapelaanduiding voorafgaat in categoriestapels die volgen op de aangeduide categoriestapel dan wel de scopevrkaanduiding geldt voor alle volgende historische voorkomens van de rubriekaanduiding die aan de scopevrkaanduiding voorafgaat in dezelfde categoriestapel.
+Vorige:: De scopestapelaanduiding geldt voor alle voorkomens van de rubriekaanduiding die aan de scopestapelaanduiding voorafgaat in categoriestapels die voorafgaan aan de aangeduide categoriestapel dan wel de scopevrkaanduiding geldt voor alle voorafgaande historische voorkomens van de rubriekaanduiding die aan de scopevrkaanduiding voorafgaat in dezelfde categoriestapel.
+WAAR:: Waar, dit is equivalent aan NIET ONWAAR.
+
+===== Verklaring van de te gebruiken speciale herkenningstekens
+
+[horizontal,labelwidth=10,itemwidth=90]
+(:: Haakje openen.
+):: Haakje sluiten.
+":: Begin- en einde tekstmarkering.
+/:: Begin- en einde markering van reguliere expressie.
+/":: "-teken binnen een tekst.
+++/++++/++:: Echte slash.
+.:: Teken (punt) dat aangeeft dat er een operator vorige of volgende volgt in een scope-beschrijving.
+?:: Teken dat aangeeft dat er een reguliere expressie volgt.
+@:: Teken dat aangeeft dat er een scope-aanduiding volgt.
+++:++:: Scheidingsteken tussen metavoorwaarde en voorwaarde +
+Of een teken dat de punt achter de categorieaanduidingen in alfanumrubrieknummers, datrubrieknummers, groeprubrieknummers en numrubrieknummers kan vervangen, en dan aangeeft dat zowel actuele als historische voorkomens van het betreffende element zijn bedoeld.
+,:: Scheidingsteken (komma) tussen metavoorwaarden.
+
+===== Verklaring van de te gebruiken wildcards
+
+[horizontal,labelwidth=10,itemwidth=90]
+/?:: Willekeurig teken.
+/++*++:: Willekeurige reeks tekens.
+
+===== Nadere toelichting op de syntax
+
+(in alfabetische volgorde)
+
+[unordered.stack]
+*ALS DAN*:: Met de ALS DAN voorwaardenregel wordt aangegeven dat het DAN-gedeelte van de voorwaardenregel alleen van toepassing is, indien voldaan is aan het ALS-gedeelte van de voorwaardenregel. +
+Bijvoorbeeld: de regel (ALS KV <<e8110,01.81.10>> DAN KV <<e8120,01.81.20>>) betekent dat als rubriek <<e8110,01.81.10>> voorkomt, ook rubriek <<e8120,01.81.20>> dient voor te komen. +
+Indien niet voldaan is aan het ALS-gedeelte, is de gehele voorwaarde WAAR; m.a.w. +
+ALS voorwaarde1 DAN voorwaarde2 is equivalent aan NIET voorwaarde1 OFVWD voorwaarde2.
+
+*Groeprubriekaanduiding*:: De groeprubriekaanduiding is de aanduiding van een hele gegevensgroep of categorie. +
+Bijvoorbeeld: de regel (ALS KV <<g03,01.03.00>> DAN KVA <<g03,01.03.00>>) betekent dat als een willekeurige rubriek van groep Geboorte voorkomt, dan alle rubrieken van groep Geboorte dienen voor te komen in de actuele categorie Persoon.
+
+*Lijstinvoer*:: Alleen in een selectie of een telling is het mogelijk om als metavoorwaarde een lijst rubriekwaarden mee te geven. Alleen PL'en worden geselecteerd, waarvan de betreffende rubriek een waarde heeft die voorkomt in de lijst. +
+Bijvoorbeeld: de regel (LIJST(kolom1 GA1 <<e0110,01.01.10>>)) betekent dat het A-nummer van de Persoon voor moet komen in de 1^e^ kolom van de lijst. De eerste regel in de lijst bevat het rubrieknummer van de betreffende kolom. In dit geval <<e0110,01.01.10>>. De rest van de kolom bevat de te selecteren A-nummers; een A-nummer per regel.
+
+*Matop-operatie*:: De matop-operatie heeft altijd betrekking op een datum en een periode, en die zijn onderverdeeld in jaren, maanden en dagen. Daardoor kan de matop-operatie niet zomaar decimaal worden uitgevoerd, maar moet deze volgens het volgende voorbeeld worden uitgewerkt: +
++
+19890501 – 00170602 = +
+19890501 – 17 jaar, 6 maanden en 2 dagen = +
+19720501 – 6 maanden en 2 dagen = +
+19711101 – 2 dagen = +
+19711030 +
++
+Afhankelijk van het formaat van de gebruikte periode dient het resultaat van de matop-operatie te worden aangepast en wel als volgt: +
+formaat periode = jjjj, uitkomst = jjjj0000; +
+formaat periode = jjjjmm, uitkomst = jjjjmm00; +
+formaat periode = jjjjmmdd, uitkomst = jjjjmmdd.
++
+Een drietal voorbeelden ter illustratie: +
+19930426 – 00350210 = 19580216 +
+19930426 – 00350000 = 19580426 +
+19930426 – 0035 = 19580000
+
+*Numrubriekwaarde*:: Indien in een vergelijking een numrubriekwaarde voorkomt, moet dat altijd een van de waarden zijn die volgens het Gegevenswoordenboek (<<_gegevenswoordenboek>>) kunnen voorkomen bij het ook in de vergelijking voorkomende numrubrieknummer.
+
+*Onjuiste gegevens*:: Als in de voorwaardenregel rubrieken van groep Onjuist expliciet aanwezig zijn, zullen bij de evaluatie van de voorwaardenregel ook alle eventueel aanwezige onjuist verklaarde categorieën beschouwd worden.
+
+*Peildatum*:: Peildatum selectiedatum mag alleen in een selectievoorwaardenregel voorkomen. Peildatum vandaagdatum mag alleen in voorwaardenregels voor spontaan, ad hoc, adresgeoriënteerd en telling voorkomen.
+
+*Periode*:: Een tijdvak (formaat = jjjj of jjjjmm of jjjjmmdd) dat een aantal jaren, maanden en dagen aangeeft.
+
+*Scope*:: Het is mogelijk om onderscheid te maken tussen verschillende meervoudig aanwezige categorieën (ook wel stapels genoemd) of verschillende voorkomens binnen een categorie met respectievelijk een scopestapel en een scopevoorkomen. +
++
+Een _overeenkomstige_ scopevrkaanduiding en scopestapelaanduiding (d.w.z. dezelfde letter uit het alfabet) betekent dat de aangeduide categorievoorkomens deel uitmaken van de aangeduide categoriestapel; bijvoorbeeld scope @a verwijst naar een afzonderlijke voorkomen in scope @A. +
++
+Het gebruik van verschillende aanduidingen impliceert ook het voorkomen van evenzoveel verschillende scopes; bijvoorbeeld de regel <<e0310,09.03.10>>@A GA1 <<e0310,09.03.10>>@B impliceert tenminste twee kinderen die op dezelfde datum zijn geboren. +
++
+Het is niet toegestaan om dezelfde aanduiding (d.w.z. dezelfde letter) bij verschillende categorieën te gebruiken. +
++
+Het is mogelijk om bij de scope-aanduiding een relatieve scopetoevoeging op te geven met ".vorige" en ".volgende". Bijvoorbeeld <<e8510,53.85.10>>@a OGA1 <<e8510,53.85.10>>@a.vorige betekent dat de ingangsdatum geldigheid van een historisch voorkomen ongelijk aan de ingangsdatum geldigheid van het vorige historisch voorkomen dient te zijn. In geval van n voorkomens zal deze bepaling n maal worden uitgevoerd. +
++
+Het is ook mogelijk om onderscheid te maken tussen verschillende persoonslijsten. Een overeenkomstige scopeplaanduiding betekent dat de aangeduide rubrieken deel uitmaken van dezelfde persoonslijst. Het gebruik van verschillende aanduidingen impliceert dat er verschillende persoonslijsten worden aangeduid: het is niet toegestaan om dezelfde aanduiding (d.w.z. dezelfde lettercombinatie PL1 of PL2) bij verschillende persoonslijsten te gebruiken. Het is ook mogelijk om te verwijzen naar een bepaalde stapel of voorkomen op een bepaalde persoonslijst, bijvoorbeeld <<e0310,09.03.10>>@A@PL1 om naar de geboortedatum van één van de kinderen op de persoonslijst PL1 te verwijzen. Als er wel naar een bepaalde persoonslijst wordt verwezen, maar niet naar een bepaalde stapel of voorkomen van een categorie, dan wordt @@ gebruikt: <<e0310,01.03.10>>@@PL1 verwijst naar de geboortedatum op persoonslijst PL1.
+
+*Reguliere expressie*:: Een reguliere expressie beschrijft een tekstpatroon dat gebruikt wordt om tekst te herkennen. Gewone letters en cijfers in de reguliere expressie herkennen hetzelfde karakter in de tekst. Enkele tekens hebben een speciale betekenis:
++
+--
+** Een punt (.) staat voor een willekeurig karakter met uitzondering van de besturings-karakters.
+** Vierkante haken geven een lijst van mogelijke karakters; bijvoorbeeld ++[++xyz++]++.
+** Binnen de vierkante haken kan een minteken gebruikt worden om een reeks van karakters op te geven; bijvoorbeeld ++[++a-zA-Z++]++ is het patroon voor alle kleine letters en hoofdletters uit het alfabet.
+** Een dakje als eerste teken binnen de vierkante haken verandert de karakterverzameling in het omgekeerde: bijvoorbeeld ++[++^0-9++]++ herkent alles wat geen cijfer is.
+--
++
+Bovenstaande basispatronen kunnen worden gecombineerd middels de volgende constructies: +
++
+--
+** Een rechtopstaande streep (|) om alternatieve tekstpatronen aan te geven; bijvoorbeeld "M|V" herkent "M" of "V".
+** Een tekstpatroon gevolgd door een {plus}, ? en ++*++ teken geeft aan hoe vaak het voorgaande tekstpatroon voor mag komen. Het plusteken ({plus}) geeft aan dat het voorafgaande patroon ten minste één keer moet voorkomen. Het vraagteken (?) geeft aan dat het voorgaande patroon ten hoogste één keer mag voorkomen. Het asteriskteken (++*++) geeft aan dat het voorgaande patroon nul of meer keer mag voorkomen.
+** Door middel van haken is het mogelijk om patronen samen te stellen. Bijvoorbeeld "(va|moe)der" is hetzelfde als "vader|moeder" en "(groot)?vader" herkent zowel "vader" als "grootvader".
+--
++
+Tekens die een speciale betekenis hebben, dienen vooraf gegaan te worden door een ++\++ (backslash) indien deze als een normaal teken behandeld moeten worden.
+
+*Tekst*:: Indien in een vergelijking een alfanumrubriekwaarde voorkomt, moet dat altijd een van de waarden zijn die volgens het Gegevenswoordenboek (<<_gegevenswoordenboek>>) kunnen voorkomen bij het ook in de vergelijking voorkomende alfanumrubrieknummer.
+
+*Tekstextractie*:: Het is mogelijk om met behulp van een reguliere expressie een gedeelte van de waarde van een alfanumerieke rubriek te extraheren. Het gedeelte dat geëxtraheerd moet worden, dient afgebakend te zijn met haakjes. Deze wordt geïdentificeerd met een cijfer dat overeen komt met het volgnummer van het openingshaakje van het afgebakende deel. +
++
+Bijvoorbeeld: de uitdrukking <<e3540,12.35.40>>@A ? /B(….)/1 geeft als tekstwaarde de vier letters terug die direct volgend zijn op hoofdletter B. +
++
+Het cijfer 0 duidt de gehele waarde van de rubriek aan. Als de extractie niets oplevert, dan is het resultaat gelijk aan lege tekst ("").
+
+*Selectiedatum*:: De selectiedatum is te bepalen door de selectieperiode een aantal keer op te tellen bij de Eerste selectiedatum (berekening als bij de matop-operatie). Indien de selectie voor de eerste keer wordt uitgevoerd 0 keer, bij de tweede 1 keer en daarna bij elke selectie 1 keer meer.
+
+*Vandaagdatum*:: Dit is de datum waarop de voorwaardenregel gecontroleerd wordt.
+
+*Vergelijking van datums*:: Bij een vergelijking van datums is het mogelijk om alleen het jaartal of het jaartal en de maand van een bepaalde datum in een vergelijking te betrekken. Welk deel van de datum in de vergelijking betrokken moet worden, is afhankelijk van de waarde van het rechterlid van de vergelijking. +
++
+Indien het rechterlid een waarde jjjj0000 bevat, wordt alleen het jaartal in de vergelijking betrokken. Indien het rechterlid een waarde jjjjmm00 bevat, wordt alleen het jaartal en de maand in de vergelijking betrokken. Indien het rechterlid een waarde jjjjmmdd of 00000000 bevat wordt de gehele waarde in de vergelijking betrokken. +
++
+Als voorbeeld beschouwen we de volgende voorwaardenregel: <<e0310,01.03.10>> GD1 <<e8930,19.89.30>> – 0035. Stel de persoon in kwestie is op 19580427 geboren en het is vandaag 19930426. De vergelijking verloopt dan als volgt: +
++
+19580427 GD1 19930426 – 0035 +
+19580427 GD1 19580000 +
+1958 GD1 1958 +
+ONWAAR +
++
+De persoon voldoet niet aan de voorwaardenregel. Ter completering van het voorbeeld beschouwen we de volgende voorwaardenregel: <<e0310,01.03.10>> GD1 <<e8930,19.89.30>> – 00350000. We nemen dezelfde persoon en dezelfde dag van vandaag. De vergelijking verloopt nu als volgt: +
++
+19580427 GD1 19930426 – 00350000 +
+19580427 GD1 19580426 +
+WAAR +
++
+De persoon voldoet nu wel aan de voorwaardenregel.
+
+*Vergelijking van numerieke met alfanumerieke rubrieken*:: Indien gebruik wordt gemaakt van de mogelijkheid om numerieke rubrieken te vergelijken met alfanumerieke rubrieken, moet vooraf de alfanumerieke inhoud worden getransformeerd naar een numerieke inhoud. Indien dit niet mogelijk is dan moet de alfanumerieke rubriek beschouwd worden als een niet voorkomende rubriek.
+
+*Vergelijkingen met betrekking tot rubrieken die meermalen kunnen voorkomen*:: Er is met betrekking tot de vergelijkende operatoren (relop) een onderscheid aangegeven voor afvragingen op rubrieken die meermalen kunnen voorkomen (bijvoorbeeld rubriek <<e0310,09.03.10>> Geboortedatum kind). Hierdoor is het mogelijk om in de afvraging aan te geven of slechts één of dat alle voorkomende rubrieken moeten voldoen aan de afvraging. Bijvoorbeeld op de vraag "<<e0310,09.03.10>> GD1 19841231" is het antwoord bevestigend indien één of meer van de aanwezige kinderen na 1984 geboren is, en op de vraag "<<e0310,09.03.10>> GDA 19841231" indien alle kinderen na 1984 geboren zijn. +
++
+Zowel in het linker- als in het rechterlid van een vergelijking kan een rubriek voorkomen die meerdere keren op een PL kan voorkomen. Het is niet toegestaan dat zowel in het linker- als in het rechterlid een rubriek is opgenomen die meerdere keren op een PL kan voorkomen.
+
+*Voorkomen van rubrieken*:: Indien een te toetsen rubriek niet voorkomt op de PL geven de relop-operatoren alle een negatief resultaat, met uitzondering van de afvragingen op ongelijkheid (OGA1 en OGAA), die een positief resultaat geven.
+
+*Voorwaardenregels met betrekking tot scopes die meermalen kunnen voorkomen*:: Indien in een voorwaardenregel gebruik gemaakt wordt van scopes, zullen er meerdere combinaties mogelijk zijn met elk een eigen uitkomst. Een voorwaardenregel waarbij KLOPT1 als kloptkwantor is opgegeven, heeft eindresultaat WAAR indien voor tenminste één scope-combinatie de voorwaardenregel WAAR is. Als KLOPTA als kloptkwantor is opgegeven, is het eindresultaat alleen WAAR indien de voorwaardenregel voor alle mogelijke scope-combinaties WAAR is. Indien er geen kloptkwantor is opgegeven, wordt standaard uitgegaan van KLOPTA.
+
+=== Afnemerssystemen
+
+==== Inleiding
+
+Hoewel het Logisch Ontwerp bedoeld is voor alle tot de BRP-stelsel behorende systemen, dus zowel de gemeentelijke BRP-systemen, het RNI-systeem, de centrale componenten als de afnemerssystemen, heeft het LO voor een belangrijk deel betrekking op de gemeentelijke BRP-systemen, het RNI-systeem en de centrale componenten.
+
+Voor de gemeentelijke bevolkingsregistraties en de RNI is automatisering verplicht gesteld. Voor de persoonsregistraties van afnemers bestaat er formeel geen automatiseringsverplichting.
+
+Afnemers dienen rekening te houden met het feit dat het onmogelijk is om zonder een geautomatiseerd systeem gebruik te maken van de systematische BRP-gegevensverstrekking. De daarvoor benodigde systemen dienen zodanig gebouwd te zijn dat enerzijds de berichten aan de BRP kunnen worden verzonden en anderzijds dat de aangeboden berichten kunnen worden opgehaald en verwerkt.
+
+==== Specifieke eisen aan afnemerssystemen
+
+De volgende onderdelen van het LO zijn niet alleen van toepassing op de gemeentelijke BRP-systemen maar ook op die van de afnemers.
+
+* Het berichtenverkeer voor wat betreft de paragrafen:
+** <<_inleiding_23>> Algemeen en Inleiding
+** <<_spontane_gegevensverstrekkingen>> Spontane gegevensverstrekkingen
+** <<_selecties>> Selecties
+** <<_ad_hoc_vragen_via_de_berichtendienst>> Ad hoc vragen
+** <<_ad_hoc_adresvragen_via_de_berichtendienst>> Ad hoc adresvragen
+** <<_plaatsen_afnemersindicatie_bij_pl_2>> Plaatsen afnemersindicatie op persoonslijst
+** <<_verwijderen_afnemersindicatie_bij_pl>> Verwijderen afnemersindicatie van persoonslijst
+** <<_onderhoud_landelijke_tabellen>> Onderhoud overige tabellen
+** <<_vrij_bericht>> Vrij bericht
+** <<_beschrijving_van_de_brp_berichten_3>> Opbouw van de BRP-berichten, voor zover het de volgende berichten betreft: +
+<<Af01,Af01>>, <<Af11,Af11>>, <<Ag01,Ag01>>, <<Ag11,Ag11>>, <<Ag21,Ag21>>, <<Ag31,Ag31>>, <<Ap01,Ap01>>, <<Av01,Av01>>, <<Dt01,Dt01>>, <<Dw01,Dw01>>, <<Gv01,Gv01>>, <<Gv02,Gv02>>, <<Ha01,Ha01>>, <<Hf01,Hf01>>, <<Hq01,Hq01>>, <<Ng01,Ng01>>, <<Pf01,Pf01>>, <<Pf02,Pf02>>, <<Pf03,Pf03>>, <<Sv01,Sv01>>, <<Sv11,Sv11>>, <<Vb01,Vb01>>, <<Wa11,Wa11>>, <<Xa01,Xa01>>, <<Xf01,Xf01>>, <<Xq01,Xq01>> en de verwerkbevestiging.
+* Het Berichtenafhandelingssysteem (<<_berichtenafhandelingssysteem>>), met name voor wat betreft de verwerking van inkomende berichten en het aanmaken van uitgaande berichten.
+* Het uitwisselen van informatie via alternatieve media (zie <<_alternatieve_media>>)
+* Het berichtenverkeer met de BRP-Verstrekkingsvoorziening (zie <<_brp_verstrekkingsvoorziening_2>>).
+* Het protocol voor de uitwisseling van berichten en de aansluitspecificaties (zie <<_berichtendienst_turbospd_interface>>).
+* De beveiligingseisen.
+* De eisen ten aanzien van beschikbaarheid, responstijden en de bewaartermijnen van berichten.
+* Het verwerken van mutaties op de landelijke tabellen met uitzondering van de autorisatietabel (zie <<_actualiseren_landelijke_tabellen>>).
+
+Voor wat betreft de waarborg van de privacy:
+
+* dient het verwerken van persoonsgegevens te geschieden op een wijze die toelaatbaar is ingevolge de Algemene Verordening Gegevensbescherming (AVG);
+* gebeurt de opname van een afnemer in de autorisatietabel of wijziging van zijn autorisaties/bevoegdheden uitsluitend via de in de Wet BRP voorgeschreven aanvraag- en goedkeuringsprocedure.
+
+Een afnemer kan geautoriseerd zijn voor:
+
+* verkrijgen van relevante wijzigingen in de basisregistratie, omdat de persoon ook door de afnemer geregistreerd wordt (spontane gegevensverstrekking); ook conditionele verstrekking (verstrekking van een gegeven na wijziging van een bepaalde rubriek) valt hieronder;
+* gegevensverstrekking over meerdere in de basisregistratie opgenomen personen die aan eenzelfde criterium voldoen (selectie);
+* informatie op basis van een zoekvraag (ad hoc gegevensverstrekkking) over een in de basisregistratie opgenomen persoon of over in de basisregistratie opgenomen personen die op één adres wonen (ad hoc adres gegevensverstrekking).
+
+=== BRP-Verstrekkingsvoorziening
+
+==== Inleiding
+
+****
+In deze paragraaf wordt de BRP-Verstrekkingsvoorziening beschreven.
+****
+
+==== Doelstelling van BRP-V
+
+****
+BRP-V bevat een kopie van alle persoonslijsten (PL'en) uit de gemeentelijke basis­registraties en uit de RNI. De verstrekking van PL-gegevens aan afnemers vindt geconcentreerd vanuit BRP-V plaats. Daarnaast kunnen de afnemers de PL-gegevens direct benaderen, 24 uur per dag en 7 dagen per week. Die concentratie van de gegevens­verstrekking op één punt is efficiënter dan implementatie bij iedere gemeente afzonderlijk en biedt bovendien mogelijkheden om aanvullende dienstverlening online en op maat aan afnemers te leveren.
+****
+
+==== Plaats van BRP-V in het BRP-stelsel
+
+****
+__BRP-V als ontvanger van gegevens__ +
+BRP-V ontvangt gegevens uit BRP-systemen en uit het RNI-systeem, maar is – in technische en juridische zin – geen BRP-afnemer. BRP-V is een voorziening binnen het BRP-stelsel om online gegevensverstrekking aan afnemers vanuit een centraal punt mogelijk te maken. Ten behoeve van BRP-V is een speciaal bijhoudingsbericht gedefinieerd (zie <<_synchronisatie_met_brp_verstrekkingen>>). Er is weliswaar een tabelregel voor BRP-V opgesteld, maar dat is om te zorgen dat BRP-V kan beschikken over een geldig BRP-mailboxadres; de opsomming van gegevenselementen is leeg.
+
+__BRP-V als verstrekker van gegevens__ +
+Uit BRP-V worden namens de Minister van BZK gegevens verstrekt aan afnemers. Afnemers die gegevens uit BRP-V willen ontvangen, dienen te beschikken over een autorisatiebesluit.
+****
+
+==== Plaatsen en verwijderen van afnemersindicaties
+
+Afnemersindicaties staan niet op, maar bij de PL, en bovendien alleen in BRP-V en niet in gemeentelijke systemen of de RNI. Afnemersindicaties kunnen worden geplaatst of verwijderd, zelfs als de bijhouding van de PL is opgeschort. Het plaatsen van een afnemersindicatie bij een PL kan het gevolg zijn van:
+
+* Een <<Ap01,Ap01>>-bericht van de afnemer
+* Een selectie (mits <<e9552,35.95.52>> Selectiesoort = "1")
+* Een conditionele verstrekking n.a.v. een actualisering van een sleutelrubriek (mits <<e9543,35.95.43>> Conditionele verstrekking = "0")
+
+Het verwijderen van een afnemersindicatie bij een PL kan het gevolg zijn van:
+
+* Een <<Av01,Av01>>-bericht van de afnemer
+* Een selectie (mits <<e9552,35.95.52>> Selectiesoort = "2", "3" of "4")
+
+===== Plaatsen afnemersindicatie bij PL
+
+Wanneer een afnemersindicatie bij een PL wordt geplaatst, worden de volgende groepen opgenomen:
+
+[none]
+* <<g40,14.40>> Afnemer
+* <<g85,14.85>> Geldigheid
+
+===== Logisch verwijderen afnemersindicatie bij PL
+
+Wanneer een afnemersindicatie logisch wordt verwijderd bij een PL (de betreffende categorie wordt historisch), wordt de volgende groep opgenomen:
+
+[none]
+* 14.85 Geldigheid
+
+===== Voorwaardelijk fysiek verwijderen afnemersindicatie bij PL
+
+Wanneer een afnemersindicatie voorwaardelijk fysiek wordt verwijderd bij een PL wordt de categorie waarin de betreffende indicatie historisch voorkomt in zijn geheel fysiek bij de PL verwijderd, mits element <<e8510,85.10>> Ingangsdatum geldigheid in die categorie tenminste 20 jaar voor de actuele datum (rubriek <<e8930,19.89.30>> dan wel <<e8920,19.89.20>> als het om een selectie gaat) ligt.
+
+===== Onvoorwaardelijk fysiek verwijderen afnemersindicatie bij PL
+
+Wanneer een afnemersindicatie onvoorwaardelijk fysiek wordt verwijderd bij een PL wordt de categorie waarin de betreffende indicatie actueel en/of historisch voorkomt in zijn geheel fysiek bij de PL verwijderd, ongeacht de datum in 85.10 Ingangsdatum geldigheid in die categorie.
+
+==== Spontane gegevensverstrekking
+
+Een afnemer is geautoriseerd voor spontane gegevensverstrekking als element <<e9544,35.95.44>> Medium spontaan de waarde "N" of "A" heeft.
+
+Om te bepalen of een van de in deze paragraaf beschreven verstrekkingen gedaan moet worden, moet BRP-V vaststellen wat de verschillen zijn tussen de ontvangen versie van een PL en de al in BRP-V aanwezige versie van die PL of vaststellen dat het om een voor BRP-V nieuwe PL gaat. In het eerste geval wordt nagegaan of de ontvangen versie van de PL recenter is dan de reeds aanwezige versie. Dit gebeurt onder andere door het vergelijken van de datumtijdstempel en het versienummer. Als de ontvangen PL recenter is dan de al aanwezige, wordt bepaald of het in beide PL'en om dezelfde persoon gaat. Er kan een PL aangeleverd worden, geïdentificeerd door het A-nummer, die in feite een andere persoon betreft dan op dat moment in BRP-V is geregistreerd. Om dit te onderkennen wordt een vergelijking uitgevoerd tussen de groepen <<g01,01>>, <<g02,02>> en <<g03,03>> op de PL'en. Indien het om dezelfde persoon gaat, gaat BRP-V na of een van de hierna beschreven verstrekkingen moet plaatsvinden.
+
+===== Afnemersindicatie is aanwezig bij persoonslijst
+
+Een van de belangrijkste functies van BRP-V is de spontane verstrekking van geactualiseerde gegevens.
+
+====== Spontane mutaties
+
+Door de ontvangen, gewijzigde PL te vergelijken met de reeds aanwezige, oude PL worden de verschillen daartussen bepaald en worden vervolgens berichten aangemaakt aan de hand van de bij de PL aanwezige afnemersindicaties.
+
+Op grond van de verschillen tussen beide PL'en wordt een <<Gv01,Gv01>>- dan wel een <<Gv02,Gv02>>-bericht dan wel een <<Ag31,Ag31>>-bericht opgesteld en verzonden naar de geautoriseerde afnemers.
+
+Afnemers krijgen hierdoor bij iedere constatering van een actualisering van een gegeven, waarop ze volgens hun autorisatie bij spontane gegevensverstrekking (rubriek <<e9540,35.95.40>>) recht hebben, automatisch een melding. Deze melding bevat naast het A‑nummer van de persoon, de gewijzigde gegevens waar de afnemer voor geautoriseerd is (zowel oude als nieuwe situatie), alsmede de betreffende groepen procedure en onjuist (zie <<_meeverstrekking_van_de_groepen_procedure_en_onjuist>>). Als niet duidelijk is wat de correctie of mutatie is geweest wordt een <<Ag31,Ag31>>-bericht verzonden.
+
+Per melding aan een afnemer wordt een BRP-bericht samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
+
+Een uitzondering op het voorschrift voor spontane mutaties geldt voor de wijzigingen van A‑nummers in de categorie persoon (rubriek <<e0110,01.01.10>>) en voor het afvoeren van PL'en.
+
+====== Bericht wijziging A‑nummer t.b.v. afnemers
+
+De constatering van een wijziging van het A‑nummer in de categorie persoon (rubriek <<e0110,01.01.10>>) wordt verstrekt aan de hand van de bij de PL aanwezige afnemersindicaties.
+
+Afnemers krijgen bij deze constatering automatisch een melding. Deze melding, het <<Wa11,Wa11>>-bericht, bevat naast het nieuwe ook het oude A‑nummer van de persoon, alsmede de naam- en geboortegegevens indien de afnemer voor deze gegevens bij spontane gegevensverstrekking geautoriseerd is (rubriek <<e9540,35.95.40>>). Ook de datum geldigheid van het nieuwe A‑nummer en, indien van toepassing, de betreffende groepen procedure en onjuist (zie <<_meeverstrekking_van_de_groepen_procedure_en_onjuist>>) worden verstrekt.
+
+Per melding aan een afnemer wordt een BRP-bericht samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
+
+====== Bericht afvoeren PL
+
+Een door de gemeente gemelde afvoering van een PL wordt door BRP-V verstrekt aan die afnemers die een afnemersindicatie bij de betreffende PL hebben staan.
+
+Deze krijgen hierdoor bij afvoering van de PL automatisch een melding, ongeacht de gegevens waarvoor zij bij spontane gegevensverstrekking (rubriek <<e9540,35.95.40>>) zijn geautoriseerd. Deze melding, bericht afvoeren PL (<<Ng01,Ng01>>), bevat naast het A‑nummer van de persoon ook de groep <<g67,67>> Opschorting uit de categorie <<c07,07>> Inschrijving. Indien de gemeente de PL heeft afgevoerd wegens een dubbelinschrijving, en op de afgevoerde PL het A-nummer van de overblijvende PL heeft geregistreerd, bevat het <<Ng01,Ng01>>-bericht ook dat 'volgende A-nummer'.
+
+Per melding aan een afnemer wordt een BRP-bericht samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
+
+===== Afnemersindicatie is niet aanwezig bij persoonslijst
+
+====== Het automatisch plaatsen van een afnemersindicatie bij persoonslijsten op basis van sleutelrubrieken
+
+Indien een afnemer geautoriseerd is voor het automatisch plaatsen van zijn afnemersindicatie op basis van sleutelrubrieken (rubriek <<e9543,35.95.43>> heeft de waarde "0") kan de constatering van een opname of wijziging van een gegeven waarvoor de afnemer bij de sleutelrubrieken (rubriek <<e9542,35.95.42>>) geautoriseerd is, aanleiding geven tot het plaatsen van een afnemersindicatie. Verder geldt dat de afnemersindicatie van de afnemer (rubriek <<e4010,14.40.10>>) nog niet mag voorkomen bij de PL en dat historische rubrieken niet mogen worden gebruikt als sleutelrubriek. Benadrukt wordt dat met opname van gegevens ook bedoeld wordt de eerste opname van gegevens, dus als er nog geen PL met dit A‑nummer in BRP-V aanwezig is.
+
+Op grond van deze feiten wordt de afnemersindicatie geplaatst, tenzij de indicatie geheimhouding (rubriek <<e9512,35.95.12>>) in de autorisatietabelregel "aan" staat en de indicatie geheim (rubriek <<e7010,07.70.10>>) op de PL van de betrokken persoon op "2", "4", "6" of "7" staat.
+
+Resultaat van het plaatsen van de afnemersindicatie is de verstrekking van een vulbericht.
+
+Een wijziging van het A‑nummer (rubriek <<e0110,01.01.10>>) leidt niet tot het plaatsen van een afnemersindicatie op basis van sleutelrubrieken, maar alleen tot het bericht wijziging A‑nummer t.b.v. afnemers (<<Wa11,Wa11>>) voor die afnemers waarvan de afnemersindicatie reeds bij de persoon voorkomt.
+
+====== Het versturen van een conditionele gegevensverstrekking
+
+Indien een afnemer geautoriseerd is voor het ontvangen van conditionele gegevensverstrekkingen (rubriek <<e9543,35.95.43>> heeft de waarde "1") kan de constatering van een opname of wijziging van een gegeven waarvoor de afnemer bij de sleutelrubrieken (rubriek <<e9542,35.95.42>>) geautoriseerd is, aanleiding geven tot het versturen van een conditionele gegevensverstrekking. Verder geldt dat de afnemersindicatie van de afnemer (rubriek <<e4010,14.40.10>>) niet mag voorkomen bij de PL. Benadrukt wordt dat met opname van gegevens ook bedoeld wordt eerste opname van gegevens, dus als er nog geen PL met dit A‑nummer in BRP-V aanwezig is.
+
+Tenzij de indicatie geheimhouding (rubriek <<e9512,35.95.12>>) in de autorisatietabelregel "aan" staat en de indicatie geheim (rubriek <<e7010,07.70.10>>) op de PL van de betrokken persoon op "2", "4", "6" of "7" staat, wordt op grond van bovenstaande feiten een conditionele gegevensverstrekking verstuurd. De conditionele gegevensverstrekking bevat alle rubrieken waarvoor de afnemer bij spontane gegevensverstrekking geautoriseerd is (rubriek <<e9540,35.95.40>>), alsmede, indien van toepassing, de betreffende groepen procedure en onjuist (zie <<_meeverstrekking_van_de_groepen_procedure_en_onjuist>>).
+
+Per verstrekking aan een afnemer wordt een BRP-bericht samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
+
+Een constatering van een wijziging van het A‑nummer (rubriek <<e0110,01.01.10>>) leidt niet tot het versturen van een conditionele gegevensverstrekking, maar alleen tot het bericht wijziging A‑nummer t.b.v. afnemers (<<Wa11,Wa11>>) voor die afnemers waarvan de afnemersindicatie bij de persoon voorkomt.
+
+==== Selectie
+
+Een afnemer is geautoriseerd voor selectieverstrekking als element <<e9556,35.95.56>> Medium selectie de waarde 'N' of 'A' heeft.
+
+===== Aanmaak selectieberichten zonder plaatsen afnemersindicatie bij persoonslijsten
+
+De selecties worden uitgevoerd aan de hand van de selectiedatum. Aan de hand van de in de autorisatietabelregel vastgelegde voorwaardenregel selectie (rubriek <<e9551,35.95.51>>) worden de PL'en geselecteerd waarvan aan de betreffende afnemer gegevens verstrekt zullen worden. Welke gegevens van de geselecteerde PL'en worden verstrekt, is ook in de autorisatietabelregel vastgelegd (rubriek <<e9550,35.95.50>>).
+
+Een selectie zonder plaatsing van afnemersindicaties (rubriek <<e9552,35.95.52>> heeft de waarde "0"; rubriek <<e9553,35.95.53>> heeft dan de waarde "1") leidt tot het verzamelen van de te verstrekken gegevens (rubriek <<e9550,35.95.50>>) met daarbij, indien van toepassing, de groepen procedure en onjuist (zie <<_meeverstrekking_van_de_groepen_procedure_en_onjuist>>). Als de indicatie geheimhouding (rubriek <<e9512,35.95.12>>) in de autorisatietabelregel "aan" staat en de indicatie geheim (rubriek <<e7010,07.70.10>>) in de PL op "2", "4", "6" of "7" staat, wordt de PL niet geselecteerd.
+
+Aan de hand van de bovengenoemde gegevens worden de BRP-berichten samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
+
+===== Aanmaak selectieberichten met plaatsen afnemersindicatie bij persoonslijsten
+
+De selecties worden uitgevoerd aan de hand van de selectiedatum. Aan de hand van de in de autorisatietabelregel vastgelegde voorwaardenregel selectie (rubriek <<e9551,35.95.51>>) worden de PL'en geselecteerd waarbij de afnemersindicatie (rubriek <<e9510,35.95.10>>) van de betreffende afnemer zal worden geplaatst. Daarbij geldt aanvullend dat de afnemersindicatie van de afnemer (rubriek <<e4010,14.40.10>>) nog niet mag voorkomen bij een te selecteren PL.
+
+Een selectie met plaatsing van afnemersindicaties (rubriek <<e9552,35.95.52>> heeft de waarde "1") wordt verwerkt in BRP-V. Als de indicatie geheimhouding (rubriek <<e9512,35.95.12>>) in de autorisatietabelregel "aan" staat en de indicatie geheim (rubriek <<e7010,07.70.10>>) in de PL op "2", "4", "6" of "7" staat, wordt de PL niet geselecteerd.
+
+Indien rubriek <<e9553,35.95.53>> de waarde "1" heeft, is het resultaat van het plaatsen van de afnemersindicatie de verstrekking van een vulbericht. Indien rubriek <<e9553,35.95.53>> de waarde "0" heeft, wordt geen vulbericht verstrekt.
+
+===== Aanmaak selectieberichten bij verwijderen afnemersindicatie bij persoonslijsten
+
+De selecties worden uitgevoerd aan de hand van de selectiedatum. Aan de hand van de in de autorisatietabelregel vastgelegde voorwaardenregel selectie (rubriek <<e9551,35.95.51>>) en de hierna te noemen algemeen geldende selectievoorwaarde worden de PL'en geselecteerd waarbij de afnemersindicatie (rubriek <<e9510,35.95.10>>) van de betreffende afnemer zal worden verwijderd. Welke gegevens van de geselecteerde PL'en worden verstrekt, is in de autorisatietabelregel vastgelegd (rubriek <<e9550,35.95.50>>).
+
+De algemeen geldende selectievoorwaarde is afhankelijk van de waarde van rubriek <<e9552,35.95.52>>:
+
+* In geval rubriek <<e9552,35.95.52>> de waarde "2" (logisch verwijderen) heeft, geldt dat de afnemersindicatie van de afnemer actueel bij de PL moet voorkomen.
+* In geval rubriek <<e9552,35.95.52>> de waarde "3" (voorwaardelijk fysiek verwijderen) heeft, mag de afnemersindicatie van de afnemer niet actueel bij de PL voorkomen en moet er van de afnemer een historische afnemersindicatie voorkomen, waarvoor geldt dat de ingangsdatum geldigheid van de categorie <<c14-64,14>> die is ontstaan bij het logisch verwijderen van die afnemersindicatie tenminste twintig jaar voor de selectiedatum (rubriek <<e8920,19.89.20>>) ligt.
+* In geval rubriek <<e9552,35.95.52>> de waarde "4" (onvoorwaardelijk fysiek verwijderen) heeft, geldt dat de afnemersindicatie van de afnemer actueel of historisch bij de PL moet voorkomen.
+
+Indien rubriek <<e9553,35.95.53>> de waarde "1" heeft, is het resultaat van het verwijderen van de afnemersindicatie de verstrekking van een selectieverstrekking. Indien rubriek <<e9553,35.95.53>> de waarde "0" heeft, wordt geen selectieverstrekking verstrekt.
+
+Aan de hand van de bovengenoemde gegevens worden de BRP-berichten samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
+
+==== Ad hoc gegevensverstrekking
+
+Een afnemer is geautoriseerd voor ad hoc gegevensverstrekking als element <<e9567,35.95.67>> Medium ad hoc de waarde "N" of "A" heeft.
+
+===== Ad hoc vragen
+
+Een afnemer verzoekt om gegevens door het opgeven van een identificatie en geeft hierbij aan welke gegevens hij wenst te ontvangen.
+
+De volgende ad hoc vragen kunnen worden gesteld:
+
+* Ad hoc vraag via de berichtendienst (bericht <<Hq01,Hq01>>);
+* Ad hoc adresvraag via de berichtendienst (bericht <<Xq01,Xq01>>);
+* Ad hoc vraag via de Ad hoc webservice (indicatieAdresvraag is "0");
+* Ad hoc adresvraag via de Ad hoc webservice (indicatieAdresvraag is "1");
+* Ad hoc gegevens m.b.t. bewoningen (relaties tussen personen en adresseerbare objecten in de BAG) via het endpoint /bewoningen in de BRP API;
+* Ad hoc persoonsgegevens via het endpoint /personen in de BRP API;
+* Ad hoc gegevens m.b.t. reisdocumenten via het endpoint /reisdocumenten in de BRP API;
+* Ad hoc gegevens m.b.t. verblijfplaatshistorie via het endpoint /verblijfplaatshistorie in de BRP API.
+
+Om te bepalen of gegevensverstrekking aan een afnemer dient plaats te vinden, wordt gecontroleerd:
+
+* Of de vraag syntactisch correct is;
+* Of de afnemer geautoriseerd is voor ad hoc gegevensverstrekking (rubriek <<e9560,35.95.60>>) voor de identificerende gegevens;
+* Of de afnemer geautoriseerd is voor ad hoc gegevensverstrekking (rubriek <<e9560,35.95.60>>) voor de gevraagde gegevens;
+* Of de identificatie van het adres of van de persoon uniek is (alleen bij vragen via de berichtendienst);
+* Of de gevonden PL(-en) voldoen aan de voorwaardenregel ad hoc (rubriek <<e9561,35.95.61>>);
+* Of het niet zo is dat voor de afnemer de indicatie geheimhouding (rubriek <<e9512,35.95.12>> in de autorisatietabel "aan" staat én de indicatie geheim (rubriek <<e7010,07.70.10>>) op de gevonden PL(-en) op "2", "4", "6" of "7" staat;
+* Of er niet meer dan het maximumaantal toegestane resultaten voldoen aan de zoekcriteria.
+
+Afhankelijk van de soort ad hoc vraag die wordt gesteld, kunnen nog andere voorwaarden gelden. Alleen van PL'en die aan alle voorwaarden voldoen, worden de gegevens verzameld die aan de afnemer moeten worden verstrekt. Indien van toepassing, worden ook de betreffende groepen procedure en onjuist verstrekt (zie <<_meeverstrekking_van_de_groepen_procedure_en_onjuist>>). Voor ad hoc (adres)vragen via de berichtendienst en de Ad hoc webservice geldt dat indien de inhoud van een historische rubriek wordt gevraagd, de gehele historie van dit gegeven wordt verstrekt. Bij de BRP API werkt dit anders en zijn historische gegevens in een apart endpoint ondergebracht.
+
+====== Ad hoc adresvragen
+
+Een afnemer verzoekt om gegevens over personen die op een bepaald adres woonachtig zijn door het opgeven van een adresidentificatie of een persoonsidentificatie. Bij adresidentificatie wordt in één keer gezocht naar alle PL'en die voldoen aan de opgegeven zoekcriteria en die dus op het opgegeven adres zijn ingeschreven. Bij persoonsidentificatie wordt eerst één of meer personen gevonden, en wordt vervolgens gezocht naar alle PL'en die op het zelfde adres zijn ingeschreven als de gevonden personen.
+
+Om te bepalen of gegevensverstrekking aan een afnemer dient plaats te vinden bij een ad hoc adresvraag, wordt naast bovenstaande voorwaarden ook gecontroleerd:
+
+* Of de afnemer geautoriseerd is voor ad hoc adresvragen (rubriek <<e9566,35.95.66>> heeft de waarde "1");
+* Of de identificatie van het adres of van de persoon uniek is (alleen bij vragen via de berichtendienst);
+* Of bij de gevraagde gegevens tenminste het A-nummer (rubriek <<e0110,01.01.10>>) is gevraagd.
+
+In geval van adresidentificatie geldt verder dat gegevensverstrekking aan een afnemer alleen dan plaatsvindt voor zover de op het opgegeven adres ingeschreven PL'en aan de volgende voorwaarden voldoen:
+
+* de functie van het adres (brief- of woonadres) op de PL komt overeen met hetgeen in het request bericht is opgegeven (de wijze waarop dit gebeurt, verschilt voor de berichtendienst en de Ad hoc webservice);
+* de PL voldoet aan de voorwaarde voor ad hoc gegevensverstrekking in de autorisatietabelregel (rubriek <<e9561,35.95.61>>);
+* geheimhouding is niet van toepassing voor de PL. Dat wil zeggen de indicatie geheimhouding (rubriek <<e9512,35.95.12>>) in de autorisatietabelregel staat niet "aan" of, indien die indicatie wel "aan" staat, de indicatie geheim op de PL (rubriek <<e7010,07.70.10>>) heeft een andere waarde dan "2", "4", "6" of "7".
+
+In geval van persoonsidentificatie wordt het adres van de gevonden personen bepaald, en wordt vervolgens gezocht naar alle PL'en die aan bovenstaande voorwaarden voldoen, én die op de gevonden adressen zijn ingeschreven.
+
+Afhankelijk van de soort ad hoc adresvraag die wordt gesteld, kunnen nog andere voorwaarden gelden. Alleen wanneer aan alle voorwaarden is voldaan, worden de gevraagde gegevens van alle op het opgegeven adres dan wel op het op de gevonden PL voorkomende adres ingeschreven PL'en verzameld, die voldoen aan de hiervoor genoemde voorwaarden. Indien van toepassing, worden ook de betreffende groepen procedure verstrekt. Indien de inhoud van een historische rubriek wordt gevraagd, wordt de gehele historie van dit gegeven verstrekt.
+
+Een gedetailleerde beschrijving van de berichten waarmee een ad hoc vraag kan worden gesteld, en waarmee BRP-V het antwoord erop kan geven, is beschreven in <<_berichtenboek>>.
+
+===== Ad hoc plaatsen afnemersindicatie
+
+Een afnemer verzoekt om het ad hoc plaatsen van zijn afnemersindicatie door het opgeven van een identificatie.
+
+Om te bepalen of de afnemersindicatie geplaatst dient te worden, wordt gecontroleerd:
+
+* Of de vraag syntactisch correct is;
+* Of de afnemer geautoriseerd is voor het plaatsen van afnemersindicaties (rubriek <<e9562,35.95.62>> Plaatsingsbevoegdheid persoonslijst heeft de waarde "1";
+* Of de afnemer geautoriseerd is voor ad hoc gegevensverstrekking (rubriek <<e9560,35.95.60>>) voor de identificerende gegevens;
+* Of de identificatie van de persoon uniek is;
+* Of de gevonden PL(-en) voldoen aan de voorwaardenregel ad hoc (rubriek <<e9561,35.95.61>>);
+* Of er nog geen afnemersindicatie bij de gevonden PL voor de afnemer aanwezig is in rubriek <<e4010,14.40.10>>.
+* Of het niet zo is dat voor de afnemer de indicatie geheimhouding (rubriek <<e9512,35.95.12>> in de autorisatietabel "aan" staat én de indicatie geheim (rubriek <<e7010,07.70.10>>) op de gevonden PL op "2", "4", "6" of "7" staat.
+
+Alleen als aan al deze voorwaarden is voldaan wordt de afnemersindicatie bij de PL opgenomen. Ten gevolge van het plaatsen van de afnemersindicatie wordt een vulbericht verstrekt.
+
+===== Ad hoc verwijderen afnemersindicatie
+
+Een afnemer verzoekt om het ad hoc verwijderen van zijn afnemersindicatie door het opgeven van een identificatie.
+
+Om te bepalen of de afnemersindicatie verwijderd dient te worden, wordt gecontroleerd:
+
+* Of de vraag syntactisch correct is;
+* Of de identificatie van de persoon uniek is;
+* Of er wel een afnemersindicatie bij de gevonden PL voor de afnemer aanwezig is in rubriek <<e4010,14.40.10>>.
+
+Alleen als aan al deze voorwaarden is voldaan wordt de afnemersindicatie bij de PL verwijderd. Indien in de autorisatietabelregel van de afnemer rubriek <<e9513,35.95.13>> Verstrekkingsbeperking de waarde "2" heeft, dient de afnemersindicatie volledig bij persoonslijst te worden verwijderd. Indien in de autorisatietabelregel van de afnemer rubriek <<e9513,35.95.13>> Verstrekkingsbeperking een andere waarde dan "2" heeft, dient de afnemersindicatie historisch te worden, met als ingangsdatum geldigheid de systeemdatum.
+
+==== Verstrekking op basis van plaatsing van een afnemersindicatie
+
+Het plaatsen van een afnemersindicatie vindt in de volgende situaties plaats:
+
+* plaatsen afnemersindicatie op basis van sleutelrubrieken;
+* selectie met plaatsen afnemersindicatie;
+* bericht plaatsen afnemersindicatie.
+
+Het plaatsen leidt tot verstrekking (in een vulbericht) van alle gegevens waarvoor de afnemer geautoriseerd is bij spontane gegevensverstrekking (rubriek <<e9540,35.95.40>>). Deze gegevens worden, indien van toepassing, aangevuld met de betreffende groepen procedure en onjuist (zie <<_meeverstrekking_van_de_groepen_procedure_en_onjuist>>).
+
+Verstrekkingen als gevolg van selectie met plaatsen afnemersindicatie kunnen worden onderdrukt (rubriek <<e9553,35.95.53>> heeft waarde "0"). Het onderdrukken van de vulberichten heeft tot gevolg dat er in het geheel geen berichten verstuurd worden als gevolg van de selectie met plaatsen afnemersindicatie.
+
+Er zijn twee soorten vulberichten: in de situatie dat er gegevens verstrekt worden naar aanleiding van het bericht plaatsen afnemersindicatie (<<Ap01,Ap01>>-bericht) zal dit geschieden door middel van het <<Ag01,Ag01>>-bericht. Dat <<Ag01,Ag01>>-bericht wordt verzonden via het medium ad hoc (rubriek <<e9567,35.95.67>>). In de overige situaties zal dit geschieden door middel van het <<Ag11,Ag11>>-bericht. Indien er gegevens worden verstrekt naar aanleiding van een selectie met plaatsen afnemersindicatie, dan wordt het <<Ag11,Ag11>>-bericht verzonden via het medium selectie (rubriek <<e9556,35.95.56>>). Indien er gegevens worden verstrekt naar aanleiding van het plaatsen afnemersindicatie op basis van sleutelrubrieken, dan wordt het <<Ag11,Ag11>>-bericht bericht verzonden via het medium spontaan (rubriek <<e9544,35.95.44>>).
+
+Aan de hand van bovengenoemde gegevens wordt een BRP-bericht samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
+
+==== (Mee)verstrekking van de groepen procedure en onjuist
+
+Bij verstrekking van algemene gegevens aan een afnemer is het van belang om aan te geven of die gegevens in onderzoek zijn of geweest zijn dan wel gecorrigeerd zijn. Om dit te bereiken, wordt de groep <<g83,83>> Procedure of de groep <<g84,84>> Onjuist meeverstrekt. Het is ook mogelijk dat er in een bepaalde situatie alleen proceduregegevens worden opgestuurd. Dit is het geval indien er een onderzoek gestart, gewijzigd of beëindigd wordt zonder dat er andere gegevens in die categorie wijzigen en indien gegevens, welke eigenlijk verstrekt hadden moeten worden, niet voorkomen in een bepaalde categorie maar tegelijkertijd wel in onderzoek zijn.
+
+Een gegeven dat nooit behoort tot de verzameling gegevens die in onderzoek staan, is het element <<e0110,01.10>> A‑nummer in de categorieën <<c01-51,01/51?? Persoon en <<c21-71,21/71>> Verwijzing. Bij verstrekking van uitsluitend dit element worden dan ook nooit onderzoeksgegevens verstrekt.
+
+De betreffende groepen die bij de diverse categorieën kunnen voorkomen, zijn:
+
+* Procedure (groep <<g83,83>>)
+** <<e8310,83.10>> Aanduiding gegevens in onderzoek
+** <<e8320,83.20>> Datum ingang onderzoek
+** <<e8330,83.30>> Datum einde onderzoek
+* Onjuist (groep <<g84,84>>)
+** <<e8410,84.10>> Indicatie onjuist, dan wel strijdigheid met de openbare orde
+
+===== Meeverstrekking bij spontane mutaties
+
+Bij het verstrekken van spontane mutaties via <<Gv01,Gv01>>- en <<Gv02,Gv02>>-berichten kunnen zich de volgende situaties voordoen, waarbij de <<g83,83>> Procedure en/of <<g84,84>> Onjuist (mee)verstrekt worden:
+
+. Er is sprake van het starten, wijzigen of beëindigen van een onderzoek. +
+In dit geval worden de oude en nieuwe waarden van de onderzoeksgegevens verstrekt, waarbij element <<e8330,83.30>> Datum einde onderzoek alleen dan voorkomt in het bericht als dat element voorkomt bij de oude of de nieuwe onderzoeksgegevens. Zowel bij de oude als de nieuwe gegevens kunnen elementen voorkomen met lengte 0 (nul). De verstrekking vindt alleen plaats als het onderzoek zich uitstrekt of heeft uitgestrekt tot de gegevens waarvoor de betrokken afnemer bij spontane gegevensverstrekking is geautoriseerd.
+. Er is sprake van het actualiseren of corrigeren van gegevens waarbij er daarna bij de historische gegevens (oude situatie) en/of bij de actuele gegevens (nieuwe situatie) onderzoeksgegevens voorkomen. +
+In dit geval worden de bij die gegevens voorkomende onderzoeksgegevens meeverstrekt, voor zover het onderzoek zich uitstrekt of heeft uitgestrekt tot de verder verstrekte gegevens aan de afnemer. Dit geldt ook als na het actualiseren of corrigeren bij de historische gegevens (oude situatie) en bij de actuele gegevens (nieuwe situatie) de onderzoeksgegevens met dezelfde waarden voorkomen. +
+In de verstrekking komen bij de actuele en historische gegevens dezelfde elementen uit groep <<g83,83>> Procedure voor. Zowel bij de oude als de nieuwe gegevens kunnen derhalve elementen voorkomen met lengte 0 (nul). Een element uit groep <<g83,83>> dat noch bij de actuele, noch bij de historische gegevens voorkomt, wordt niet meeverstrekt. +
+In geval van een correctie wordt bij de historische gegevens element <<e8410,84.10>> meeverstrekt. Bij de actuele gegevens wordt dit element met lengte 0 (nul) meeverstrekt, omdat dit gegeven actueel niet voorkomt.
+. Er is sprake van het corrigeren van gegevens zonder dat er onderzoeksgegevens voorkomen. +
+In dit geval wordt bij de historische gegevens element <<e8410,84.10>> meeverstrekt. Bij de actuele gegevens wordt dit element met lengte 0 (nul) meeverstrekt, omdat dit gegeven actueel niet voorkomt.
+
+===== Meeverstrekking bij bericht wijziging A‑nummer t.b.v. afnemers
+
+Een afnemer ontvangt bij wijziging van het A‑nummer (rubriek <<e0110,01.01.10>>) een <<Wa11,Wa11>>-bericht, waarbij de naam en geboortegegevens meegezonden worden, mits de afnemer bij spontane gegevensverstrekking voor deze gegevens geautoriseerd is.
+
+In dit geval en indien de naam en/of geboortegegevens onderdeel uitmaken van de gegevens die in onderzoek zijn of geweest zijn, worden de elementen <<e8310,83.10>>, <<e8320,83.20>> en, zo dat element voorkomt, <<e8330,83.30>> uit de actuele categorie meeverstrekt.
+
+===== Meeverstrekking bij conditionele gegevensverstrekkingen, selecties zonder plaatsen afnemersindicatie, ad hoc (adres)vragen, vulberichten en foutherstelberichten
+
+Bij deze verstrekkingen aan afnemers zal bij de aan hen verstrekte gegevens die in onderzoek zijn of geweest zijn, de groep <<g83,83>> Procedure worden meeverstrekt. Uit historische categorieën waarbij is vastgesteld dat er gegevens in voorkomen die onjuist dan wel strijdig met de openbare orde zijn (groep <<g84,84>> Onjuist komt voor), zullen geen gegevens worden verstrekt. Derhalve zal de groep <<g84,84>> Onjuist niet meeverstrekt worden.
+
+In de volgende situaties moeten proceduregegevens worden meeverstrekt:
+
+[unordered.stack]
+*Bij actuele gegevens*:: Indien de te verstrekken gegevens onderdeel uitmaken van de gegevens die in onderzoek zijn of zijn geweest, dan worden de elementen <<e8310,83.10>>, <<e8320,83.20>> en, zo dat element voorkomt, <<e8330,83.30>> uit de actuele categorie meeverstrekt.
+*Bij historische gegevens*:: Indien de te verstrekken gegevens onderdeel uitmaken van de gegevens die in onderzoek zijn of zijn geweest, dan worden de elementen <<e8310,83.10>>, <<e8320,83.20>> en, zo dat element voorkomt, <<e8330,83.30>> uit de betreffende categorie meeverstrekt. +
+Nogmaals wordt hier opgemerkt dat van een historische categorie, waarbij aangegeven is dat hij incorrecte gegevens bevat (element <<e8410,84.10>> komt voor), geen gegevens verstrekt worden.
+
+===== Meeverstrekking bij ad hoc vragen via webservice en BRP API
+
+Bij de verstrekking van gegevens via de Ad hoc webservice en de BRP API zullen de elementen <<e8310,83.10>> en <<e8320,83.20>> meeverstrekt worden als één of meer van de betreffende gegevens in onderzoek staan. Wanneer een onderzoek is afgerond, wordt groep <<g83,83>> echter niet meeverstrekt.
+
+===== Meeverstrekking bij verwijsgegevens aan gemeenten en de RNI
+
+Bij de verstrekking van verwijsgegevens aan gemeenten en aan de RNI zullen de elementen <<e8310,83.10>> en <<e83.20 meeverstrekt worden als één of meer van de betreffende verwijsgegevens in onderzoek staan.
+
+==== Meeverstrekken van verificatie en RNI-deelnemergegevens
+
+Bij verstrekking aan een afnemer van gegevens van een PL die deel uitmaakt van de RNI, is het van belang om aan te geven wanneer de gegevens op de PL geverifieerd zijn en welke RNI‑deelnemer de in een categorie opgenomen gegevens heeft aangeleverd. Om dit te bereiken, worden de verificatiegegevens (mee)verstrekt als ze voorkomen en worden de gegevens over de RNI-deelnemer meeverstrekt als er gegevens worden verstrekt uit een categorie waarin die gegevensgroepen voorkomt.
+
+De betreffende groepen die bij de diverse categorieën kunnen voorkomen, zijn:
+
+* Verificatie (groep <<g71,71>>), kan alleen in categorie <<c07,07>> voorkomen
+** <<e7110,71.10>> Datum verificatie
+** <<e7120,71.20>> Omschrijving verificatie
+* RNI‑deelnemer (groep <<g88,88>>), kan voorkomen in de categorieën <<c01-51,01/51>>, <<c04-54,04/54>>, <<c06-56,06/56>>, <<c07,07>> en <<c08-58,08/58>>
+** <<e8810,88.10>> RNI-deelnemer
+** <<e8820,88.20>> Omschrijving verdrag
+
+[discrete]
+====== Verificatiegegevens
+
+Als een RNI‑deelnemer of de RNI‑registratiehouder bij een contact met een persoon waarvan de PL is opgenomen in de RNI, de PL-gegevens heeft geverifieerd en deze juist zijn gebleken, wordt dat vastgelegd op de PL in groep <<g71,71>> Verificatie.
+
+[discrete]
+====== Gegevens over de RNI-deelnemer
+
+Als een RNI‑deelnemer de beschikking krijgt over nieuwe gegevens van een persoon waarvan in de RNI een PL is opgenomen, worden met die gegevens de benodigde actualiseringen uitgevoerd. Bij het verwerken van die actualiseringen wordt bij de gegevens in groep 88 RNI‑deelnemer vastgelegd welke RNI‑deelnemer betrokken is en op basis van welk verdrag de RNI‑deelnemer die gegevens heeft verkregen. Datzelfde geldt als er op basis van gegevens van een RNI‑deelnemer een nieuwe PL wordt aangelegd.
+
+===== (Mee)verstrekking bij spontane mutaties
+
+Bij het verstrekken van spontane mutaties via <<Gv01,Gv01>>-berichten worden altijd de gegevens uit de groep <<g71,71>> Verificatie meeverstrekt als die groep voorkomt in de categorie <<c07,07>> Inschrijving en worden de gegevens uit de groep <<g88,88>> RNI deelnemer meeverstrekt als deze groep voorkomt in de betreffende categorie. Indien er alleen gegevens in groep <<g71,71>> wijzigen, wordt daarvan een spontane mutatie verstrekt, waarbij alle elementen uit groep <<g71,71>> worden verstrekt. Ook indien er in een categorie alleen gegevens in groep <<g88,88>> wijzigen, wordt daarvan een spontane mutatie verstrekt, waarbij alle elementen uit groep <<g88,88>> worden verstrekt, maar alleen aan afnemers die spontaan voor gegevens uit die categorie geautoriseerd zijn.
+
+Bij de actuele gegevens in het bericht worden de gegevens uit groep <<g71,71>> of <<g88,88>> opgenomen zoals ze zijn na de actualisering of correctie; bij de historische gegevens worden die gegevens opgenomen zoals ze voor de actualisering of correctie waren. Dit geldt ook als na het actualiseren of corrigeren bij de historische gegevens (oude situatie) en bij de actuele gegevens (nieuwe situatie) de gegevens uit groep <<g71,71>> of <<g88,88>> met dezelfde waarden voorkomen.
+
+In de verstrekking komen bij de actuele en historische gegevens dezelfde elementen uit groep <<g71,71>> dan wel groep <<g88,88>> voor. Zowel bij de oude als de nieuwe gegevens kunnen derhalve elementen voorkomen met lengte 0 (nul). Een element uit groep <<g88,88>> dat noch bij de actuele, noch bij de historische gegevens voorkomt, wordt niet meeverstrekt. Ingeval een <<g88,88>> na de actualisering of correctie niet meer aanwezig is en daarvoor wel óf voor de actualisering of correctie niet aanwezig was en daarna wel, komen die gegevens voor met lengte 0 (nul). Ingeval een groep <<g71,71>> dan wel <<g88,88>> in zijn geheel noch bij de actuele, noch bij de historische gegevens voorkomt, wordt die groep niet meeverstrekt.
+
+===== Meeverstrekking bij conditionele gegevensverstrekkingen, selecties zonder plaatsen afnemersindicatie, ad hoc (adres)vragen, vulberichten en foutherstelberichten
+
+Bij deze verstrekkingen aan afnemers zullen bij de aan hen verstrekte gegevens de groepen <<g71,71>> Verificatie en/of <<g88,88>> RNI‑deelnemer worden meeverstrekt. Uit historische categorieën waarbij is vastgesteld dat er gegevens in voorkomen die onjuist dan wel strijdig met de openbare orde zijn (groep <<g84,84>> Onjuist komt voor), worden geen gegevens verstrekt, dus ook niet de in zo'n categorie voorkomende groep <<g88,88>>.
+
+Voor het meeverstrekken van de gegevens geldt dat voor elke categorie waaruit gegevens worden verstrekt en waarin groep <<g88,88>> voorkomt, de in de betrokken categorie voorkomende inhoud van de elementen <<e8810,88.10>> en, zo dat element voorkomt, <<e8820,88.20>> worden meeverstrekt. Als groep <<g71,71>> voorkomt in categorie <<c07,07>> Inschrijving worden de elementen <<e7110,71.10>> en <<e7120,71.20>> altijd meeverstrekt.
+
+==== Niet verstrekken van gegevens van levenloos geboren kinderen
+
+De gegevens van een levenloos geboren kind kunnen worden geregistreerd in de BRP. Omdat een levenloos ter wereld gekomen kind geacht wordt nooit te hebben bestaan, worden de gegevens van levenloos geboren kinderen, herkenbaar aan de waarde "L" in rubriek <<e8910,09/59.89.10>> Registratie betrekking, alleen verstrekt aan afnemers die voor het uitvoeren van hun taak gegevens van levenloos geboren kinderen nodig hebben. In de autorisatietabelregel van de zo'n afnemer komt rubriek <<e9514,35.95.14>> Bijzondere betrekking verstrekken voor met de waarde "1". In dat geval worden de gegevens van levenloos geboren kinderen verstrekt als er gegevens van kinderen worden verstrekt.
+
+Het opnemen, wijzigen, corrigeren of verwijderen van gegevens van kinderen waarbij in categorie <<c09-59,09/59>> Kind rubriek <<e8910,09.89.10>> Registratie betrekking voorkomt, kan alleen tot gegevensverstrekking leiden aan afnemers waarbij rubriek <<e9514,35.95.14>> Bijzondere betrekking kind verstrekken voorkomt met waarde "1".
+
+==== Protocollering
+
+De privacyprocedures zoals beschreven in <<_bijhouding>> gelden ook voor BRP-V. BRP-V protocolleert daarom alle verstrekkingen, onder meer ten behoeve van het inzagerecht van de burger. De registratie van protocolgegevens van BRP-V voldoet aan de gestelde eisen. Dat geldt zowel voor de gegevens die bij een protocollering worden vastgelegd als voor de zaken die geprotocolleerd worden. De protocolgegevens worden bewaard voor de periode van 20 jaar.
+
+Een burger kan niet rechtstreeks om inzage vragen bij de beheerder van BRP-V. Indien een burger inzage wil in de gegevens die in de afgelopen tijd vanuit BRP-V over hem verstrekt zijn aan afnemers, moet hij die gegevens opvragen bij zijn gemeente van inschrijving of bij een RNI-loket. Voor een ingezetene kan een daartoe bevoegde ambtenaar van de gemeente het verzoek indienen via de KWM, waarna het protocolleringsoverzicht geheel automatisch door BRP-V wordt verstrekt (via de POM). Voor een niet-ingezetene kan een medewerker van het RNI-loket het verzoek registreren en indienen bij de FrontOffice van RvIG, waarna het protocolleringsoverzicht door de FrontOffice wordt verzonden naar de burger.
+
+Voor de verstrekking van protocolgegevens geldt dat die niet worden verstrekt indien deze betrekking hebben op gegevensverstrekkingen in het belang van de veiligheid van de staat of de opsporing en vervolging van strafbare feiten. Hierbij geldt ook hetgeen bepaald is in <<_indeling_autorisatietabelregel>> bij de waarde 2 van rubriek <<e9513,35.95.13>>.
+
+Daarnaast worden de gelogde, met behulp van de webservices Opvragen PL en Opvragen afnemersindicaties gedane, raadplegingen van gemeenten en RNI, die ook in de protocollering zijn opgeslagen, niet aan de burger verstrekt.

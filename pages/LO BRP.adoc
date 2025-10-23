@@ -1,0 +1,79 @@
+//Titel
+= Logisch Ontwerp BRP
+//Document attributen - moeten direct onder de titel geplaatst zijn
+:doctype: book
+:docinfo1:
+:version-label: Versie
+:revnumber: 2025.Q3
+:revdate: 1 juli 2025
+:!chapter-signifier:
+:appendix-caption: Bijlage
+:table-caption: Tabel
+:figure-caption: Figuur
+:sectnums:
+:sectnumlevels: 4
+:toc: left
+:toc-title: Inhoud
+:toclevels: 3
+:xrefstyle: short
+:chapter-refsig: hoofdstuk
+:section-refsig: paragraaf
+:appendix-refsig: bijlage
+:stem: latexmath
+:eqnums: all
+
+//Wijzigingenoverzicht - geen genummerde paragraaf 
+
+:sectnums!:
+
+[discrete]
+== Overzicht wijzigingen
+
+De hieronder genoemde pagina's zijn gewijzigd ten opzichte van de vorige versie (versie 2025.Q2) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van een aantal wijzigingen, die behoren tot LO 2025.Q3. Deze versie treedt op 1 juli 2025 in werking.
+
+W118 Uitfaseren mailboxserver fase I
+
+* Paragraaf 1.5.2, 2.2.2.1, 3.1.2.2, 3.3.7.1, 4.7, 5.1.1.1, 5.1.1.4, 5.1.5, 5.1.7.1-3, 5.1.10, 5.2.1, 5.3.1, 5.3.9, 5.3.9.1, 5.3.9.7, 5.4.1, 5.4.9, 6.2.1, A.2.4, A.3.2.2, A.6.1, A.7.1
+
+W193 Uitbreiden tabel 34
+
+* Paragraaf 4.2.8.7, 4.7, B.24
+
+W204 BRP Tabellen API
+
+* Paragraaf 5.1.1.5, 5.4.1, 5.4.4
+
+W210 2e Aanvulling op W180 Oplossen verschillen BAG-BRP
+
+* Paragraaf 4.5, B.19
+
+W213 Afschermen gegevens gerelateerden in Ad hoc webservice
+
+* Paragraaf 5.3.8.3
+
+Tekstuele wijzigingen
+
+* Paragraaf 2.3.2.1, 3.3.7.1, 4.1.1.3, 5.1.1.2-3, 5.1.3.1, 5.1.4, 5.2.1, 5.2.17.1, 5.2.23.3, 5.3.12.2, 5.5.2, 6.4.1, B.2
+
+
+:sectnums:
+
+// Hoofdstukken en bijlagen zijn opgeslagen in afzonderlijke bestanden 
+
+include::LO BRP h1.adoc[]
+
+include::LO BRP h2.adoc[]
+
+include::LO BRP h3.adoc[]
+
+include::LO BRP h4.adoc[]
+
+include::LO BRP h5.adoc[]
+
+include::LO BRP h6.adoc[]
+
+[appendix]
+include::LO BRP bA.adoc[]
+
+[appendix]
+include::LO BRP bB.adoc[]

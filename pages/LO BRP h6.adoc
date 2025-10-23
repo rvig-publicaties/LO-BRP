@@ -1,0 +1,1909 @@
+== Stelselcomponenten
+
+=== Inleiding
+
+Om de BRP te kunnen laten functioneren, is er een groot aantal systemen actief. Een selectie van die systemen wordt in dit deel van LO BRP nader toegelicht.
+
+=== Berichtendienst (Turbo)sPd-interface
+
+==== Inleiding
+
+Onder de berichtendienst wordt in dit Logisch Ontwerp verstaan: het geheel van systemen en koppelvlakken dat de asynchrone uitwisseling van BRP-berichten mogelijk maakt. Voor die uitwisseling zijn er drie “smaken”: berichtenuitwisseling via de mailboxserver, via de webservice StuurGBAbericht en via de BRP Berichten API. Doordat de eerste variant ook de oudste is, wordt in deze paragraaf over de berichtendienst gesproken als het geheel aan systemen en koppelvlakken dat de berichtenuitwisseling via de mailboxserver mogelijk maakt. Deze paragraaf beschrijft dus de infrastructuur die BRP-systemen in staat stelt om onderling berichten uit te wisselen via de mailboxserver.
+
+Aan de orde komen:
+
+[unordered.stack]
+*De algemene opbouw van de berichtendienst*:: Deze paragrafen bevatten achtergrondinformatie en er worden een aantal begrippen gedefinieerd die in dit hoofdstuk worden gebruikt.
+*Een functionele beschrijving van de koppeling tussen een eindsysteem en de berichtendienst*:: Eindsystemen kunnen op verschillende manieren aan de berichtendienst worden gekoppeld. Deze manieren verschillen in de verdeling van de verschillende functies tussen eindsysteem en berichtendienst en in de gebruikte protocollen; alle manieren zijn echter gebaseerd op het functionele model dat in deze paragraaf wordt beschreven.
+*De verschillende protocollen*:: De protocollen die gebruikt kunnen worden om de berichtendienst te benaderen zijn speciaal voor de berichtendienst ontwikkeld. Het sPd protocol wordt in detail beschreven in <<_spd_protocol>>. +
+Het turbo-sPd protocol, een verdere ontwikkeling van het sPd protocol, wordt beschreven in <<_turbo_spd_protocol>>.
+*De onderliggende lagen*:: De hierboven genoemde protocollen zijn zogenaamde applicatieprotocollen op laag 7 van het OSI-referentiemodel. Voor het transport van gegevens maken deze protocollen gebruik van een al dan niet volledige OSI-protocolstack. In <<_tcpip>> (TCP/IP) wordt beschreven hoe de verschillende lagen van deze protocolstack voor de berichtendienst worden ingevuld. De lagen zelf worden niet beschreven. Zie ook de opmerking aan het eind van deze paragraaf.
+
+Aan het eind van dit hoofdstuk zijn nog opgenomen een overzicht van literatuur waarnaar in deze paragraaf wordt verwezen en een lijst met gebruikte termen en afkortingen
+
+==== Achtergronden van de berichtendienst
+
+===== Ontwikkeling van de berichtendienst
+
+Al in een vroeg stadium van de ontwikkeling van de GBA (1984) is besloten dat de berichtendienst niet gebaseerd zou moeten worden op directe verbindingen tussen deelnemende systemen, maar op het uitwisselen van berichten door middel van een berichtendienst. De belangrijkste argumenten voor deze beslissing waren:
+
+* Betere beveiliging: aangesloten systemen hoeven geen oproepen van buitenaf toe te staan, waardoor de risico's van inbraak belangrijk worden beperkt.
+* Minder zware operationele eisen: BRP-systemen kunnen berichten versturen aan andere deelnemers aan de berichtendienst ongeacht of de geadresseerde op dat moment operationeel is of niet.
+
+Een belangrijke factor was ook dat ongeveer terzelfder tijd een standaard op dit gebied werd ontwikkeld door CCITT (Consultative Committee for International Telegraphy and Telephony) in samenwerking met ISO (International Standards Organization). Binnen ISO wordt deze standaard aangeduid als MOTIS (Message-Oriented Text Interchange System), maar hij is beter bekend onder de CCITT aanduiding X.400. Deze naam zal hier ook verder worden gebruikt.
+
+De CCITT is een orgaan van de ITU, het samenwerkingsverband van de PTT's, en houdt zich bezig met het opstellen van telecommunicatiestandaards. Dat geldt ook voor de ISO, een overkoepelend orgaan van nationale standaardisatie organisaties. Een norm die door deze twee lichamen geratificeerd is, zal naar verwachting wereldwijd geïmplementeerd worden. Om die reden is de berichtendienst op X.400 gebaseerd.
+
+De berichtendienst is echter meer dan puur X.400. Het bevat naast de nodige op X.400 gebaseerde componenten een gedeelte dat het mogelijk maakt om de berichtendienst te benaderen met het zogenaamde sPd protocol. Het sPd protocol is een vereenvoudigde versie van het P7 protocol dat in de X.400 standaards is gedefinieerd. Het is ontwikkeld voor de GBA-praktijkproef omdat P7 op dat moment nog slechts in conceptvorm bestond, en gehandhaafd om de definitieve berichtendienst compatibel te maken met die uit de proef. Later is een uitbreiding op sPd ontwikkeld (turbo-sPd) die efficiënter gebruik van transportverbindingen mogelijk maakt.
+
+De functionele elementen van sPd zijn grotendeels ontleend aan de P7 standaard; de fysieke implementatie is echter zo eenvoudig mogelijk gehouden, en maakt dan ook geen gebruik van de daarvoor binnen OSI gehanteerde standaards (ASN.1, Abstract Syntax Notation One, met de bijbehorende encoding). Dit maakt het implementeren van sPd betrekkelijk eenvoudig.
+
+===== De berichtendienst en het X.400 model
+
+X.400 is in feite niet één standaard, maar een compleet samenstel van normen, die samen een complete beschrijving van een MHS (Message Handling System) vormen. Een dergelijk systeem is opgebouwd uit een aantal componenten, ieder met hun eigen specifieke functie. Deze componenten zijn ook terug te vinden in de berichtendienst, dat schematisch is weergegeven in onderstaande figuur. Daarbij moet worden opgemerkt dat de feitelijke configuratie al naar gelang de behoefte aan capaciteit en de eisen ten aanzien van continuïteit meer of minder exemplaren van sommige componenten kan bevatten.
+
+De belangrijkste componenten zijn:
+
+[unordered.stack]
+De *Message Transfer Agents (MTA's)*:: De MTA's zijn de knooppunten van de berichtendienst. Hun functie is het eigenlijke transport van berichten. Tevens genereren ze onder bepaalde omstandigheden delivery reports en non-delivery reports: gestandaardiseerde berichten waarin aan de afzender van een bericht wordt gemeld dat een bepaald bericht is afgeleverd bij de ontvanger, dan wel niet afgeleverd kon worden. De MTA's worden samen ook wel aangeduid als Message Transfer System (MTS).
+De *Message Stores (MS's)*:: De Message Store verzorgt de opslag van berichten binnen de berichtendienst. Bij het verzenden van berichten fungeert de MS van de afzender slechts als doorgeefluik: de berichten worden onmiddellijk doorgegeven aan de MTA waarop deze MS is aangesloten. De MTA verzorgt dan het eigenlijke transport. +
+De werkelijke functie van de MS ligt in het namens de geadresseerde in ontvangst nemen van berichten van de MTA. Deze berichten worden opgeslagen tot het moment dat de gebruiker de berichten ophaalt of de gestelde bewaartermijn wordt overschreden; in het laatste geval genereert de MS een non-receipt notification (als de afzender daarom heeft gevraagd). Daarnaast kan een MS nog een aantal andere functies vervullen, maar die zijn voor de BRP-toepassing niet van belang.
+De *Mailbox Server (MBS)*:: De Mailbox Server bedient de systemen die aansluiten via het sPd- of turbo-sPd protocol (sPd-gebruikers). De MBS vervult in X.400 termen een dubbelrol: opslag en beheer van berichten voor de sPd-gebruikers (de functie van een MS), en het transport van berichten (de functie van een MTA). Aangeboden berichten die bestemd zijn voor gebruikers die eveneens zijn aangesloten via het sPd protocol, worden direct afgeleverd; berichten voor gebruikers die op een andere manier zijn aangesloten worden overgedragen aan één van de X.400 MTA's voor verder transport.
+
+MTA en MS voldoen volledig aan de X.400-1988 standaard; voor de MBS geldt dit uiteraard niet.
+
+[.text-center]
+.Componenten van de berichtendienst
+image::../images/image70.svg[width=365,height=266]
+
+Alle genoemde componenten vallen onder de verantwoordelijkheid van de berichtendienst; in X.400 terminologie: ze behoren tot het _BRP management domein_ (in bovenstaande figuur aangegeven met een ellips). Dit is ook noodzakelijk, omdat de berichtendienst (voorlopig) de volledige verantwoordelijkheid draagt voor het berichtenverkeer tussen de BRP-systemen. Het BRP management domein is een _Private Management Domain_ (PRMD) volgens de X.400 definitie.
+
+Uit bovenstaande figuur is af te leiden dat er twee verschillende aansluitmogelijkheden op de berichtendienst beschikbaar zijn:
+
+[ordered.stack]
+*Koppeling met de MBS via sPd.*:: In het eindsysteem bevindt zich een component, de Mailbox Client (MC) die de communicatie tussen eindsysteem en berichtendienst verzorgt: tot stand brengen van de verbinding, aanmelden van de "gebruiker" bij de MBS, versturen en ophalen van berichten.
+
+*Koppeling met de MBS via turbo-sPd.*:: Gebruikers met een groot verwacht volume aan berichtenverkeer kunnen op verzoek toestemming krijgen van de beheerder om turbo-sPd te gebruiken. Functioneel is deze koppeling vrijwel gelijk aan de sPd koppeling; verderop zal duidelijk worden gemaakt dat het "gewone" sPd protocol een speciale subset is van turbo-sPd. Binnen de berichtendienst wordt dan ook nauwelijks onderscheid gemaakt tussen turbo-sPd en sPd; beide worden afgehandeld door dezelfde server.
+
+==== Functionele beschrijving van de berichtendienst
+
+In deze paragraaf zal een functionele beschrijving worden gegeven van de in de vorige paragraaf besproken componenten van de berichtendienst. De nadruk ligt daarbij op de diensten (services) die de verschillende componenten ter beschikking stellen aan een eindsysteem. In de volgende paragraaf wordt vervolgens beschreven hoe het eindsysteem van deze diensten gebruik maakt.
+
+===== Inleiding: abstract model van de berichtendienst
+
+Eerder is uiteengezet dat er 2 manieren zijn waarop een eindsysteem de berichtendienst kan benaderen. Binnen een BRP-systeem is het Berichtenafhandelingssysteem(BAS) de component die verantwoordelijk is voor het initiëren en uitvoeren van het berichtenverkeer. Voor de volledigheid zij hier nog opgemerkt dat het BAS ook het berichtenverkeer via alternatieve media verzorgt; dit is afzonderlijk uitgewerkt in <<_berichtenafhandelingssysteem>>.
+
+Voor de beschrijving van de koppeling met de berichtendienst zullen we gebruik maken van het algemene abstracte model dat de X.400 standaards gebruiken voor de beschrijving van Message Handling Systems. Dit model kent _objects_ (UA's, MS's, MTA's), _ports_ (verbindingspunten tussen objecten), en _services_ (diensten die een object aanbiedt door middel van zijn ports). Bij iedere port hoort een _Application Service Entity_ (ASE), waarin de diensten van de port worden gedefinieerd. Interacties tussen objecten kunnen plaats vinden nadat er een _binding_ heeft plaats gevonden tussen twee soortgelijke ports.
+
+In de grafische voorstellingen van het model geven open blokjes image:resources/images/image71.svg[width=30] gebruikers (_consumers_) aan van een dienst, gesloten blokjes image:resources/images/image72.svg[width=30] poorten waarop een dienst wordt aangeboden, en grijze blokjes image:resources/images/image73.svg[width=30] poorten die in beide richtingen kunnen opereren.
+
+Een _protocol_ is in dit model een exacte specificatie hoe de diensten van een object door een gebruiker kunnen worden aangevraagd. Een protocoldefinitie heeft dus twee aspecten: een functioneel aspect en een representatie-aspect. Het zal duidelijk zijn dat er een directe relatie bestaat tussen de functionele aspecten van een protocol en de functionaliteit van het object dat door middel van het protocol benaderd wordt.
+
+<<abstract-model-van-aansluiting-op-de-berichtendienst>> geeft een overzicht van de aansluitmogelijkheden met gebruik van deze conventies. Voor de objecten UA, MS en MTA, die in de X.400 standaards zijn gedefinieerd, omschrijft de standaard ook de verschillende ports. De diensten die de MC aan de applicatie aanbiedt zullen we beschrijven als de BUS - de **B**ericht **U**itwisseling **S**ervice. Het bijbehorende begrippen­apparaat is direct ontleend aan sPd.
+
+[.text-center]
+[#abstract-model-van-aansluiting-op-de-berichtendienst]
+.Abstract model van aansluiting op de berichtendienst
+image::../images/image74.svg[width=324,height=87]
+
+Er zij hier nogmaals benadrukt dat er *geen* verplichting is voor de eindsystemen om alle genoemde functionele elementen stuk voor stuk te implementeren. In de nu volgende beschrijvingen wordt er bijvoorbeeld van uitgegaan dat het BAS specifiek is voor de BRP-applicatie, en de MC een algemene interfacemodule voor de berichtendienst. Zo bepaalt het BAS *wanneer* er berichten moeten worden verstuurd; de MC regelt *hoe* er in dat geval een verbinding wordt opgebouwd. Evenzo bepaalt het BAS de *waarden* van de parameters die bij het verzenden van een bericht moeten worden ingevuld; de MC bepaalt hoe de parameters *verpakt* moeten worden. Bij de beschrijving van de BUS zal blijken dat de functionaliteit van de MC minimaal is, en dat het dus heel goed mogelijk is om in een BRP-systeem BAS en MC te integreren tot één implementatiemodule.
+
+===== De Mailbox Server
+
+====== Algemeen
+
+In dit onderdeel wordt de functionaliteit van de MBS in het kort beschreven. Dit gebeurt aan de hand van de commando's die door de MC kunnen worden aangeboden: de sPd-commando's.
+
+Het sPd-protocol is een interactief protocol, dat werkt volgens een vast model: vanuit de Mailbox Client wordt een sPd-commando naar de Mailbox Server gestuurd. De server voert de gevraagde operatie uit en stuurt een respons naar de MC. De MBS zal in het algemeen nooit zelf een actie ondernemen. De enige uitzondering op deze regel is dat de MBS zelf de transportverbinding kan verbreken als het eindsysteem te lang geen nieuwe opdrachten meer stuurt.
+
+[.text-center]
+.Componenten van de Mailbox Server
+image::../images/image75.svg[width=522,height=187]
+
+De Mailbox Server (MBS) als geheel bestaat uit de volgende delen:
+
+* de eigenlijke *Mailbox Server*, die de mailboxen beheert van aangeslotenen die van sPd gebruik maken en zorg draagt voor het verwerken van aangeboden en ontvangen berichten;
+* de *Mailbox Cleaner*, die berichten uit de mailboxen verwijdert. Berichten worden verwijderd op verzoek van de gebruiker of na het verstrijken van de gestelde bewaartermijn;
+* de *System Manager (SM)*, met de noodzakelijke functies voor aanmaken, verwijderen en beheer van de mailboxen.
+
+====== Het opzetten van de verbinding
+
+*Commando*:: Logon Request
+
+*Antwoord*:: Logon Confirmation
+
+*Toelichting*:: De MBS controleert of het systeem beschikbaar is, valideert de afzender aan de hand van de meegegeven elementen (UserName, UserPassword en het certificaatnummer van de afzender) en controleert of de mailbox van de gebruiker toegankelijk is. Indien de LogonConfirmation 'OK' bevat, kan worden doorgegaan. +
++
+De LogonConfirmation kan een korte mededeling van de beheerder bevatten (de System Manager Message). Als dat het geval is, wordt daarbij gemeld wanneer deze boodschap in de MBS is ingevoerd (de MessageEntryDateTimeStamp of MEDTS). Aan de hand van de MEDTS kan het eindsysteem controleren of de boodschap al eerder is ontvangen. +
++
+Indien het aantal logons het aantal toegestane logons overschrijdt, wordt de algemene foutcode "Logon limit exceeded" gegeven. De verdere toegang tot de mailbox wordt gedurende de rest van de dag geblokkeerd. +
++
+Indien een aangeslotene toegang heeft tot meerdere mailboxen kan hij, zonder de fysieke verbinding met het transportnetwerk te verbreken en een nieuwe op te bouwen, overschakelen van de ene mailbox naar de andere. Dit gebeurt door een LogonRequest te geven voor mailbox B nadat alle werkzaamheden aan bijv. mailbox A zijn afgerond; dus zonder eerst een LogoffRequest te geven. De MBS zal dan de sessie met mailbox A afsluiten en een nieuwe trachten te openen met mailbox B. Deze operatie wordt ook wel aangeduid als ReLogon, maar het is geen afzonderlijk sPd-commando. +
++
+Het is van groot belang dat er alleen bij LogonConfirmation = 'OK' wordt doorgegaan. Het niet juist verwerken van een 'Reject' bij een ReLogon zal tot gevolg hebben dat de sessie met de eerste mailbox wordt voortgezet.
+
+====== Het verzenden van een bericht
+
+*Commando*:: PutMessage
+
+*Antwoord*:: PutMessageConfirmation
+
+*Toelichting*:: Met het PutMessage commando worden berichten voor verzending aangeboden aan de MBS. Het PutMessage commando bestaat uit een Envelope, een Header en een Body. De Envelope bevat gegevens die van belang zijn voor het transport van het bericht door het MTS. De Heading bevat gegevens die bestemd zijn voor de verwerking van het bericht door de geadresseerde. De Body tenslotte bevat het eigenlijke bericht. +
++
+De MBS controleert de syntax en inhoud van de elementen van de Envelope en de Heading van het bericht. Voor een aantal niet verplichte elementen wordt, indien niet ingevuld, een default waarde opgenomen. +
++
+De MBS controleert of de verzender een zogenoemde 'testgebruiker' is; dit houdt in dat hij slechts naar een beperkt aantal geadresseerden berichten kan verzenden. Indien er andere geadresseerden zijn gespecificeerd, zal het bericht in zijn geheel worden afgekeurd.Indien er een fout is geconstateerd, zal dit aan de verzender worden medegedeeld via de PutMessageConfirmation. Het bericht wordt _niet_ geaccepteerd door de MBS. +
++
+Indien er geen fouten zijn gevonden, wordt er een volgnummer aan het bericht toegekend (het DispatchSequenceNumber) en de tijd van verzending (SubmissionTime). Samen met de MessageId worden deze elementen in de PutMessageConfirmation aan de verzender teruggegeven. +
++
+Vervolgens zal de MBS proberen het bericht af te leveren in de mailbox(en) van de geadresseerde(n). Dit kan om een aantal redenen niet lukken, bijv.: +
++
+--
+* de mailbox van de geadresseerde bestaat niet;
+* de mailbox van de geadresseerde is (tijdelijk) niet beschikbaar.
+--
++
+In dit geval wordt er een _NonDeliveryReport_ gemaakt, waarin de reden van het niet afleveren wordt vermeld; dit NonDeliveryReport wordt als een bericht in de mailbox van de verzender geplaatst. +
++
+Alle afgeleverde berichten krijgen in de mailbox van de ontvanger MSStatus 0 ('new') en zijn onmiddellijk beschikbaar om opgehaald te worden. +
++
+Door middel van het NotificationRequest veld kan de afzender aangeven of hij door de berichtendienst verwittigd wil worden als het bericht door de Mailbox Cleaner wordt verwijderd zonder dat het door de geadresseerde is opgehaald (_NonReceiptNotification_) of als de ontvanger het bericht heeft opgehaald (_ReceiptNotification_); dit laatste impliceert NonReceiptNotification. Ook deze rapporten worden door de MBS in de vorm van een bericht in de mailbox van de afzender geplaatst. De ReceiptNotification is overigens niet geïmplementeerd in het PutMessage commando. +
++
+Voor de BRP-toepassing gelden nadere voorschriften voor het gebruik van de NonReceiptNotification. +
++
+[#elementen-van-putmessage]
+.Elementen van PutMessage
+[.center,width="100%" ,cols="25%,25%,50%",options="header",]
+|===
+| |Element |Default/betekenis
+.5+|*PutEnvelope* |OriginatorORName |Default is de UserName van LogonRequest. Indien dit element wel ingevuld wordt, moet het gelijk zijn aan deze UserName!
+|ContentType |Type van de inhoud; heeft altijd de waarde 2
+|Priority |Default waarde is 0, normale prioriteit
+|DeferredDeliveryTime |Default is het tijdstip van aanleveren zoals aangegeven door "de netwerkklok". Met dit veld kan worden aangegeven dat het bericht pas op een later tijdstip hoeft te worden afgeleverd.
+|Attention |Default waarde is 0 (no attention).
+.6+|*MessageHeading* |MessageId |Door de afzender toegekende unieke identificatie van het bericht.
+|CrossReference |Indien het bericht een antwoord is op een ander bericht: de MessageId van dat bericht. Voor de berichtendienst heeft dit veld geen speciale betekenis; default waarde is leeg. Voor BRP-gebruik gelden nadere voorschriften.
+|OriginatorORName |Zie PutEnvelope
+|NumberOfRecipients |Aantal geadresseerden. +
+De volgende velden worden herhaald voor iedere geadresseerde:
+|RecipientORName |Mailbox nummer van de geadresseerde.
+|NotificationRequest |Indicatie of de verzender over dit bericht een ReceiptNotification of een NonReceiptNotification wil ontvangen; zie toelichting. Default waarde is 0 (geen notifications).
+|*MessageBody* |BodyString |Het te versturen bericht
+|===
+
+====== Het ophalen van berichten
+
+Het ophalen van berichten uit de mailbox gaat in 2 stappen:
+
+* Het maken van een overzicht van de inhoud van de mailbox, door middel van het ListMessages commando;
+* Het één voor één ophalen van de berichten met het GetMessage commando.
+
+Desgewenst kan voorafgaand aan het ListMessages commando nog een SummarizeMessages commando gegeven worden om te bepalen hoeveel berichten er totaal opgehaald moeten worden.
+
+*Commando*:: ListMessages
+
+*Antwoord*:: ListMessagesResult of ListMessagesConfirmation
+
+*Toelichting*:: Met behulp van het ListMessages commando kan de gebruiker een overzicht krijgen van de inhoud van zijn mailbox. In dit overzicht (ListMessagesResult) worden enkele belangrijke attributen van de geselecteerde berichten vermeld, waaronder het MSSequenceNumber. Dit nummer moet vervolgens bij het GetMessage commando worden meegegeven om het bericht op te halen. +
++
+[#elementen-van-listmessages]
+.Elementen van ListMessages
+[.center,width="100%",cols="25%,25%,50%",options="header"]
+|===
+|Element |Default |Betekenis
+|LimitNumber |40 ... 171 |Het overzicht in het ListMessagesResult zal de attributen van maximaal het hier opgegeven aantal berichten bevatten; als er meer berichten in de mailbox zijn, wordt dit vermeld in het NextMSSequenceNumber veld.
+
+De default waarde wordt bij het aanmaken van de mailbox bepaald door de beheerder op grond van de verwachte hoeveelheid berichten en de mogelijkheden van het aan te sluiten systeem.
+|MSStatus |0, 1 |Het overzicht zal alleen berichten beschrijven die nieuw zijn (status 0) en berichten die wel in een ListMessagesResult zijn vermeld, maar nog niet zijn opgehaald (status 1).
+|Priority |- |Er wordt geen selectie toegepast op prioriteit
+|FromMSSequenceNumber |0 .2+|Er wordt geen selectie toegepast op MSSequenceNumber
+|ToMSSequenceNumber |999999999
+|FromDeliveryTime |- .2+|Er wordt geen selectie toegepast op DeliveryTime
+|ToDeliveryTime |-
+|===
++
+Er komen in het ListMessages commando een aantal elementen voor die gebruikt kunnen worden om een zoekcriterium op te geven. De MBS zal onderzoeken of er berichten in de mailbox aanwezig zijn die voldoen aan de opgegeven criteria. +
++
+De MBS controleert de syntax en de inhoud van de elementen in het ListMessages commando. Alle elementen zijn optioneel; voor zover ze niet aanwezig zijn wordt een default waarde ingevuld. Bovenstaande tabel geeft een overzicht van de elementen en hun default waarden. +
++
+Indien er een fout is geconstateerd of indien er geen berichten kunnen worden geselecteerd (omdat er geen berichten in de mailbox aanwezig zijn of omdat geen van de berichten voldoet aan de selectiecriteria), wordt er een ListMessagesConfirmation teruggegeven met een foutboodschap. +
++
+Het MSStatus veld bestaat uit 3 posities. In ieder van deze posities is, naast de spatie, de waarde 0 ('new'), 1 ('listed') en 2 ('processed') toegestaan. Indien geen enkele waarde wordt opgegeven (alle 3 de posities bevatten een spatie) wordt de default waarde aangenomen. Indien één, twee of alle drie de posities van de MSStatus worden ingevuld, wordt voor geen van de posities een default aangenomen, maar worden de berichtnummers van de berichten die corresponderen met de opgegeven waarden teruggegeven. De waarden in de posities en de volgorde van de posities hebben geen relatie met elkaar. Dit betekent dat alle mogelijke combinaties kunnen worden opgegeven. +
++
+Indien er berichten in de mailbox van de gebruiker aanwezig zijn die voldoen aan de selectiecriteria, zullen per bericht de volgende attributen worden vermeld in het ListMessagesResult: +
++
+--
+* MSSequenceNumber
+* MSStatus
+* Priority
+* DeliveryTime
+* OriginatorORName.
+--
++
+Tevens wordt door middel van het al dan niet gevuld zijn van het NextMSSequenceNumber aangegeven of er meer berichten zijn dan "LimitNumber". De maximale waarde die voor LimitNumber kan worden opgegeven wordt bepaald door de algemene regel in sPd dat een Operation waar geen MessageBody in voorkomt niet langer mag zijn dan 5000 bytes; dit geeft een maximum van +
++
+[stem]
+++++
+\begin{equation}
+\frac{5000 \text{ (de maximale lengte)} - (13 + 17 + 5)\text{ (de vaste header)}}{29 \text{ (de lengte van één entry)}} = 171 \text{ entries}
+\end{equation}
+++++
++
+De default waarde wordt bepaald door de beheerder bij het aanmaken van de mailbox op grond van de verwachte omvang van het berichtenverkeer van de gebruiker en de technische mogelijkheden van het aan te sluiten systeem. +
++
+Voor alle berichten in het overzicht met MSStatus = 0 ('new') zal de MSStatus in de mailbox worden veranderd in 1 ('listed'). +
++
+Bij een normale verwerking verdient het aanbeveling om altijd de entries te vragen met de MSStatus 0 en 1. Het is immers mogelijk dat het antwoord van de MBS verloren gaat (bijvoorbeeld door het wegvallen van de verbinding), en niet verwerkt wordt door de MC. De MSStatus is dan wel veranderd van 'new' naar 'listed'. Bij het opzetten van een volgende verbinding moet hiermee rekening worden gehouden.
+
+*Commando*:: SummarizeMessages
+
+*Antwoord*:: SummarizeResult of SummarizeConfirmation
+
+*Toelichting*:: Het SummarizeMessages commando is een tweede manier (naast ListMessages) voor de gebruiker om een overzicht krijgen van de inhoud van zijn mailbox. Het ListMessages commando geeft gedetailleerde informatie geeft over een aantal berichten, maar het aantal berichten waarover in één keer informatie verkregen kan worden is daardoor beperkt (tot 171; zie de beschrijving van het ListMessages commando). Om een volledig overzicht te krijgen van alle berichten zal het ListMessages commando dus in het algemeen een aantal keren herhaald moeten worden. +
++
+Het SummarizeMessages commando geeft daarentegen in één keer het totaal aantal berichten dat aan de criteria voldoet. Dit commando kan dus gebruikt worden om aan het begin van een sessie te bepalen hoeveel berichten er verwerkt moeten worden. Op grond daarvan kan een schatting worden gemaakt van de totale verwerkingstijd. +
++
+[#elementen-van-summarizemessages]
+.Elementen van SummarizeMessages
+[.center,width="100%",cols="30%,15%,55%",options="header",]
+|===
+|Element |Default |Betekenis
+|MSStatus |0, 1 |Het overzicht zal alleen berichten beschrijven die nieuw zijn (status 0) en berichten die wel in een ListMessagesResult zijn vermeld, maar nog niet zijn opgehaald (status 1).
+|Priority |- |Er wordt geen selectie toegepast op prioriteit
+|FromMSSequenceNumber | 0 .2+| Er wordt geen selectie toegepast op MSSequenceNumber
+|ToMSSequenceNumber | 999999999
+|FromDeliveryTime |- .2+| Er wordt geen selectie toegepast op DeliveryTime
+|ToDeliveryTime |-
+|===
++
+Er komen in het SummarizeMessages commando net als in het ListMessages commando een aantal elementen voor die gebruikt kunnen worden om een zoekcriterium op te geven. De MBS zal onderzoeken of er berichten in de mailbox aanwezig zijn die voldoen aan de opgegeven criteria. +
++
+De MBS controleert de syntax en de inhoud van de elementen in het SummarizeMessages commando. Alle elementen zijn optioneel; voor zover ze niet aanwezig zijn wordt een default waarde ingevuld. Bovenstaande tabel geeft een overzicht van de elementen en hun default waarden. +
++
+Indien er een fout is geconstateerd wordt er een SummarizeConfirmation teruggegeven met een foutboodschap. In alle andere gevallen is het antwoord een SummarizeResult, dat de volgende velden bevat:
++
+--
+* NumberOfEntries (het aantal berichten dat voldoet aan de criteria; dit kan 0 zijn)
+* MSStatus
+* Priority.
+--
++
+Deze informatie wordt herhaald voor ieder mogelijke combinatie van de opgegeven waarden voor MSStatus en Priority. +
++
+De MSStatus wordt niet veranderd door een SummarizeMessages commando.
+
+*Commando*:: GetMessage
+
+*Antwoord*:: GetMessageResult of GetMessageConfirmation
+
+*Toelichting*:: Met behulp van dit commando kan door het eindsysteem een bericht uit de mailbox worden opgehaald. Het enige element dat meegegeven moet worden is het MSSequenceNumber, dat verkregen is via het ListMessages commando. +
++
+De MBS controleert de syntax van dit element en zal vervolgens proberen het bericht te vinden in de mailbox van de gebruiker. Indien dit niet lukt (verkeerd nummer, geen berichten aanwezig), zal dit gemeld worden via de GetMessageConfirmation met een foutboodschap. +
++
+Indien het bericht aanwezig is zal het worden verzonden naar het eindsysteem in het GetMessageResult. Dit GetMessageResult kan 3 soorten berichten bevatten:
+
+[unordered.stack]
+*MessageResult*:::: Een bericht, bestaande uit GetEnvelope, MessageHeading en MessageBody. Heading en Body hebben dezelfde structuur als in het PutMessage commando; de Envelope heeft een iets afwijkende structuur. De elementen van MessageResult zijn samengevat in <<elementen-van-messageresult>>.
+
+*DeliveryReport* (zonder Envelope):::: Daarin wordt het mislukken van een aflevering, een nondelivery, van een eerder door de gebruiker verzonden bericht gemeld. De elementen van een delivery report zijn vermeld in <<elementen-van-deliveryreport>>. Merk op dat RecipientORName, MailboxBlockDateTimeStamp en NonDeliveryReason herhaald worden voor iedere geadresseerde, waaraan het bericht niet kon worden afgeleverd.
+
+*StatusResult*:::: Een StatusResult bestaat uit een GetEnvelope (<<elementen-van-statusresult>>), en een StatusReport. In het StatusReport wordt aangegeven dat +
++
+--
+* een eerder door de gebruiker verzonden bericht, waarbij om een receipt notification is gevraagd, is opgehaald door de geadresseerde; of dat
+* een bericht, waarbij om een receipt- of non-receipt notification is gevraagd, niet is opgehaald door de geadresseerde.
+--
++
+Binnen het BRP beheersdomein komen ReceiptNotifications overigens in principe niet voor. sPd gebruikers kunnen er niet om vragen, terwijl gebruik er van voor P1- en P7-gebruikers verboden is. +
++
+Indien een verzonden bericht voor meerdere geadresseerden bestemd was, komt er voor iedere geadresseerde die het bericht heeft opgehaald (ReceiptNotification), respectievelijk die op dit punt in gebreke blijft (NonReceiptNotification), een apart StatusResult. De Elementen van het StatusResult antwoord zijn vermeld in <<elementen-van-statusresult>> +
++
+[#elementen-van-messageresult]
+.Elementen van MessageResult
+[.center,width="100%",cols="25%,35%,40%",options="header",]
+|===
+| |Element |Betekenis
+.6+|*GetEnvelope* |OriginatorORName |Het mailbox nummer van de afzender van het bericht.
+|ContentType |Het door de afzender opgegeven type; heeft altijd waarde 2 (P2). Andere waarden zijn niet toegestaan.
+|Priority |Prioriteit waarmee het bericht is verstuurd.
+|DeliveryTime |Tijdstip waarop het bericht is afgeleverd in de mailbox van de ontvanger.
+|SubmissionTime |Tijdstip waarop het bericht voor verzending is aangeboden.
+|ActualRecipientORName |Mailbox nummer van de geadresseerde. Opgenomen voor compatibiliteit met P7; binnen X.400 is het mogelijk dat een bericht wordt doorgestuurd naar een andere ontvanger dan de oorspronkelijke geadresseerde.
+.5+|*MessageHeading* |MessageId |Het referentienummer dat door de verzender aan het bericht is toegekend.
+|CrossReference |Indien het bericht een antwoord is op een andere bericht: de MessageId van dit bericht.
+|OriginatorORName |Zie GetEnvelope.
+|ActualRecipientORName |Zie GetEnvelope.
+|ActualNotificationRequest |In sPd altijd hetzelfde als het NotificationRequest dat de afzender heeft opgegeven; opgenomen voor compatibiliteit met P7.
+|*MessageBody* |BodyString |Het eigenlijke bericht.
+|===
++
+[#elementen-van-deliveryreport]
+.Elementen van DeliveryReport
+[.center,width="100%",cols="25%,35%,40%",options="header",]
+|===
+| |Element |Betekenis
+|*DeliveryReport* |ReportDeliveryTime |Tijdstip waarop het rapport in de mailbox van de aangeslotene is bezorgd.
+| |DispatchSequenceNumber |Het volgnummer dat door de MBS aan het oorspronkelijke bericht is toegekend bij het aanbieden door de verzender.
+| |NumberOfRecipients |Het aantal berichten dat niet kon worden afgeleverd. +
+De volgende velden worden voor ieder bericht herhaald:
+| |RecipientORName |Geadresseerde van het oorspronkelijke bericht.
+| |MailboxBlockDateTimeStamp |Tijdstip tot wanneer de mailbox van de geadresseerde niet bereikbaar is. Alleen van toepassing indien de NonDeliveryReason = 'Mailbox temporarily not available'.
+| |NonDeliveryReason |Reden van niet aflevering. De mogelijke waarden staan vermeld in <<spd-foutcodes-deliveryreport>>.
+|===
++
+[#elementen-van-statusresult]
+.Elementen van StatusResult
+[.center,width="100%",cols="25%,35%,40%",options="header",]
+|===
+| |Element |Betekenis
+|*GetEnvelope* |Zie <<elementen-van-messageresult>> |
+|*StatusReport* |ActualRecipientORName |Geeft aan welke geadresseerde het bericht niet heeft opgehaald
+| |NotificationType |Type van bericht: ReceiptNotification of NonReceiptNotification
+| |ReportedMessageId |MessageId van het bericht
+| |NonReceiptReason |"Expired"
+|===
++
+Van alle berichten die opgehaald zijn met het GetMessage commando wordt de MSStatus veranderd in 2 ('processed'). +
++
+Merk op dat het aanpassen van de MSStatus gebeurt op het moment dat de MBS het bericht aanbiedt aan het onderliggende transportnetwerk. Dat betekent dat, als er tijdens het verzenden van het antwoord een fout optreedt, de MSStatus is gewijzigd in 'processed' zonder dat het eindsysteem het bericht ontvangen heeft. Met andere woorden, het sPd protocol voorziet op dit niveau niet in een ontvangstbevestiging. De reden hiervoor is uiteraard dat deze faciliteit ook in P7 ontbreekt. +
++
+Bij het ontwerp van het BAS (dat moet voorzien in de mogelijkheid om het ophalen van berichten te hervatten nadat een storing is geconstateerd) moet met deze eigenaardigheid rekening worden gehouden. Het ligt voor de hand om het BAS het MSSequenceNumber van het laatste bericht waarvoor een GetMessage commando is gegeven te laten onthouden. Bij het hervatten van het ophalen van berichten dient dan met dit bericht te worden begonnen. Vervolgens kunnen met de standaard procedure de overige berichten worden opgehaald.
+
+====== Het verwijderen van berichten
+
+*Commando*:: DeleteMessages
+
+*Antwoord*:: DeleteMessagesConfirmation
+
+*Toelichting*:: De DeleteMessages operatie verwijdert één of meerdere berichten uit een mailbox. Het commando is voor algemeen gebruik beschikbaar, maar onder normale omstandigheden kan het verwijderen van berichten worden overgelaten aan de Mailbox Cleaner. +
++
+De Mailbox Cleaner zorgt er voor dat elke dag alle mailboxen worden nagelopen en geschoond. De normale gang van zaken is dat ieder bericht ouder dan de gestelde termijn uit de mailboxen wordt verwijderd, ongeacht of het bericht is verwerkt of niet. Dit houdt in dat een gebruiker zelf geen opgehaalde berichten hoeft te verwijderen. Om het aantal operaties zoveel mogelijk te beperken wordt het gebruikt van dit commando dan ook afgeraden. +
++
+Het verwijderen van berichten gebeurt aan de hand van het MSSequenceNumber. De gebruiker geeft één of meer nummers op, of een bepaald bereik van nummers (van … tot …). De MBS controleert de syntax van het commando, de aanwezigheid van de opgegeven berichten en de MSStatus van de berichten (alleen berichten met status 'processed' kunnen worden verwijderd). Indien er geen bereik of een lijst van nummers wordt opgegeven zal de MBS alle berichten met status 2 ('processed') verwijderen. +
++
+Indien het DeleteMessages commando een lijst nummers bevat en daarbij bevinden zich berichten die niet voorkomen of die niet kunnen worden verwijderd, wordt het gehele commando niet uitgevoerd. Als er een bereik wordt opgegeven hoeven niet alle berichtnummers binnen dit bereik ook daadwerkelijk voor te komen, maar alle berichten die binnen het bereik vallen moeten wel verwijderd kunnen worden; er mogen dus geen berichten met status 0 ('new') of 1 ('listed') in voorkomen. +
++
+Het resultaat van het commando wordt gemeld in de deletemessagesconfirmation. +
++
+[#elementen-van-deletemessages]
+.Elementen van DeleteMessages
+[.center,width="90%" ,cols="25%,35%,40%",options="header",]
+|===
+|Element |Default |Betekenis
+|FromMSSequenceNumber |0 .2+| Er wordt geen selectie toegepast op MSSequenceNumber
+|ToMSSequenceNumber |999999999
+|NumberOfNumbers |- | Het aantal te verwijderen berichten
+|DeleteNumbers |- |De lijst van MSSequenceNumbers van berichten die moeten worden verwijderd
+|===
+
+====== Het veranderen van het UserPassword
+
+*Commando*:: ChangePasswordRequest
+
+*Antwoord*:: ChangePasswordConfirmation
+
+*Toelichting*:: Het ChangePasswordRequest verandert het wachtwoord van de mailbox. Gebruik van dit commando zal veelal aan de systeembeheerder van het eindsysteem zijn voorbehouden. +
++
+De MBS controleert de elementen van dit commando (OldPassword en NewPassword) op syntax en gaat na of het meegegeven OldPassword identiek is aan het UserPassword dat in het systeem bekend is. +
++
+Indien er geen fouten zijn geconstateerd, wordt het UserPassword veranderd in het NewPassword; de gebruiker moet bij de volgende LogonRequest dit nieuwe password meegeven. +
++
+Er gelden stringente voorschriften voor het samenstellen van en het omgaan met een password;.
+
+====== Het verbreken van de verbinding
+
+*Commando*:: LogoffRequest
+
+*Antwoord*:: LogoffConfirmation
+
+*Toelichting*:: Met dit commando kan het eindsysteem de verbinding verbreken. +
+Nadat dit commando, waaraan geen verdere informatie wordt meegegeven, door de MBS is ontvangen kunnen verder geen commando's meer worden gegeven. De MC dient vervolgens de verbinding op de onderliggende lagen te verbreken; indien dit niet gebeurt zal de berichtendienst na een time-out zelf de verbinding verbreken.
+
+====== Foutcondities
+
+*Commando*:: "Niet te herkennen"
+
+*Antwoord*:: NoOperationConfirmation
+
+*Toelichting*:: Tijdens de uitvoering van een commando in de MBS of het overbrengen van een commando van de MC naar de MBS kunnen fouten optreden. Bij dit laatste kan nog onderscheid worden gemaakt tussen fouten op laag 7 (sPd) en fouten die optreden in een van de onderliggende lagen. +
++
+Als de fout optreedt tijdens de uitvoering van een sPd-commando wordt de fout gemeld via het Confirmation bericht dat correspondeert met het desbetreffende commando; zo resulteert een fout bij het verwerken van een GetMessage commando in een GetMessageConfirmation met foutcode. +
++
+Het is echter ook mogelijk dat de MBS het commando niet herkent als een geldig sPd commando. Verder zijn er in de MBS bepaalde controles op de algemene regels voor sPd commando's, die worden uitgevoerd voordat het commando wordt verwerkt. Ook daarbij kunnen fouten worden geconstateerd. In deze gevallen wordt door de MBS gereageerd met een NoOperationConfirmation met daarin een passende foutcode. Deze reactie, die ook wel Reject wordt genoemd, kan dus bij ieder commando voorkomen.
+
+==== De koppeling met het eindsysteem
+
+===== Verbinding met de berichtendienst
+
+====== Logon operatie
+
+*Argumenten*::
++
+[.center,width="90%" ,cols="40%,60%",]
+|===
+|UserName |De naam waaronder de gebruiker bij de berichtendienst bekend is.
+|UserPassword |Wachtwoord van de gebruiker.
+|===
+
+*Resultaat*::
++
+[.center,width="90%" ,cols="40%,60%",]
+|===
+|LogonResult |Status code
+|MessageEntryDTS |Systeemtijd waarop de SystemmanagerMessage in het systeem is ingebracht. Kan gebruikt worden om te controleren of de mededeling al eerder is ontvangen.
+|SystemManagerMessage |Korte mededeling van de beheerder.
+|===
+
+*Gebruik*:: Voordat er berichten verstuurd of ontvangen kunnen worden moet via deze operatie een verbinding met de berichtendienst tot stand worden gebracht. +
++
+Binnen de MBS is de gebruikersnaam een enkel getal van 7 cijfers. Voor BRP-systemen wordt de gebruikersnaam via een eenvoudig algoritme bepaald: voor gemeenten is het de gemeentecode (4 cijfers), aangevuld met "01"; voor afnemers is het de afnemersindicatie. Deze zes cijfers worden aangevuld met een laatste cijfer dat het management domein aangeeft; voor BRP-toepassingen is dit een 0. Het is echter van belang dat BRP-systemen in voorkomende gevallen in staat zijn om voor de eerste zes cijfers een andere waarde in te vullen dan hun 'eigen' gebruikersnaam; dit geldt met name bij de Schouwing- en Toetsingsprocedure. +
++
+Bij een LogonResult "OK" kunnen er berichten verstuurd en opgehaald worden. De reactie in andere gevallen hangt af van de foutcode; in bepaalde gevallen kan het BAS na korte tijd een nieuwe poging doen een verbinding op te zetten. Andere fouten dienen gemeld te worden aan de systeembeheerder; er dient eerst te worden uitgezocht wat de oorzaak van het probleem is alvorens een nieuwe poging wordt gewaagd. Hierop wordt verder ingegaan in <<_overzicht_foutcodes>>. +
++
+Bij gebruik van het sPd-protocol is het mogelijk om de Logon operatie te gebruiken om zonder de transportverbinding te verbreken in te loggen op een nieuwe mailbox (een ReLogon). In dat geval *moet* het BAS na een error of 'Reject' reageren met een Logoff (of met een ReLogon op een volgende mailbox, indien gewenst). Indien dat niet gebeurt, blijft de oorspronkelijke sessie gehandhaafd en worden volgende commando's op de oorspronkelijke mailbox uitgevoerd. +
++
+Als er een boodschap van de beheerder in het resultaat is opgenomen, en deze boodschap is nog niet eerder door het eindsysteem ontvangen, moet hij worden doorgegeven aan de systeembeheerder van het eindsysteem.
+
+====== Logoff operatie
+
+*Argumenten*:: Geen.
+
+*Resultaat*::
++
+[.center,width="90%" ,cols="40%,60%",]
+|===
+|LogoffResult |Status code
+|===
+
+*Gebruik*:: Als het BAS alle gereedstaande berichten heeft verstuurd en alle berichten in de mailbox heeft opgehaald, kan met deze operatie de sessie worden afgesloten. +
++
+Ongeacht de status van deze operatie dient het BAS na dit verzoek de sessie als beëindigd te beschouwen.
+
+===== Verzenden van berichten
+
+De door het BAS te versturen berichten kunnen direct afkomstig zijn van de applicatie, maar daarnaast kan het BAS in bepaalde gevallen zelf bepalen dat een reeds eerder verzonden bericht opnieuw voor verzending aan de MC moet worden aangeboden. Vanuit de berichtendienst bezien is een dergelijke herhaling een nieuw bericht, dat dus bijvoorbeeld weer zijn eigen DispatchSequenceNumber krijgt toegewezen.
+
+Uiteraard zal het BAS niet bij ieder bericht dat verstuurd moet worden een verbinding met de berichtendienst maken. De minimale frequentie voor een BRP-systeem is eenmaal per werkdag; dit zal ook in de meeste gevallen voldoende zijn. Het maximum wordt bepaald door het aantal toegestane Logon operaties per dag.
+
+====== PutMessage operatie
+
+*Argumenten*::
++
+[.center,width="90%" ,cols="40%,60%",options="header",]
+|===
+|Naam |Betekenis
+2+|PutEnvelope:
+|OriginatorORName |De ORName van de afzender.
+|ContentType |Type van de inhoud van het bericht; alleen type 2 (P2 formaat) wordt ondersteund.
+|Priority |Prioriteit waarmee het bericht verstuurd wordt; beïnvloedt voornamelijk het MTA-MTA verkeer.
+|DeferredDeliveryTime |Gewenst tijdstip van aflevering.
+|Attention |Gereserveerd voor toekomstig gebruik door de berichtendienst.
+2+|MessageHeading:
+|MessageId |Door de afzender toegekende unieke referentie voor het bericht.
+|CrossReference |Indien het bericht een antwoord is op een eerder door het eindsysteem ontvangen bericht: de MessageId van het eerder ontvangen bericht.
+|OriginatorORName |De ORName van de afzender.
+|NumberOfRecipients |Het aantal geadresseerden.
+|RecipientORName |De ORName(s) van de geadresseerde(n); wordt herhaald voor iedere geadresseerde.
+|NotificationRequest |Indicatie of door de MS waarbij de geadresseerde is aangesloten een bericht moet worden gegenereerd indien het bericht wordt verwijderd zonder dat het is opgehaald (NonReceiptNotification) of indien het bericht wordt opgehaald (ReceiptNotification). ReceiptNotification impliceert NonReceiptNotification. Wordt herhaald voor iedere geadresseerde.
+2+|MessageBody:
+|BodyString |Het eigenlijke bericht.
+|===
+
+*Resultaat*::
++
+[.center,width="90%" ,cols="40%,60%",]
+|===
+|PutMessageConfirmation: |
+|PutResult |Statuscode
+|DispatchSequenceNumber |Unieke referentie die door de berichtendienst wordt toegekend aan het aangeboden bericht.
+|SubmissionTime |Tijdstip waarop het bericht voor verzending is aangeboden
+|MessageId |De referentie die door de afzender is opgegeven in de MessageHeading.
+|===
+
+*Gebruik*:: Wanneer met de PutMessage operatie een bericht voor verzending wordt aangeboden zal de MC het bericht encoderen volgens de regels van het achterliggende protocol en vervolgens aanbieden aan de MBS. Wanneer de operatie succesvol is (PutResult = "OK") meldt de berichtendienst terug welke identificatie aan het bericht is toegekend, en op welk tijdstip het bericht voor verzending is aangenomen. De identificatie dient door het BAS te worden opgeslagen om in voorkomende gevallen een verband te leggen tussen een ontvangen StatusReport of DeliveryReport en het verzonden bericht (zie volgende paragraaf). In deze rapporten wordt de identificatie gebruikt om aan te geven op welk bericht het rapport betrekking heeft. +
++
+Het is mogelijk om bij het verzenden van het bericht meerdere geadresseerden op te geven. Het maximumaantal geadresseerden wordt bepaald door de mogelijkheden van het achterliggende protocol; voor sPd is dit 32. Indien dit niet voldoende is, kan gebruik worden gemaakt van groepsadressen. Groepsadressen worden gedefinieerd door de beheerder. Een voorwaarde hiervoor is natuurlijk dat de gehele groep dit bericht moet ontvangen en dat de gevraagde ontvangstbevestiging (NotificationRequest) ook voor allen gelijk is. +
++
+Sommige argumenten van de PutMessage operatie kunnen door het BAS zelf worden bepaald; andere dienen samen met de inhoud van het bericht door de applicatie te worden gespecificeerd. Voor een BAS dat volgens de BRP-richtlijnen is opgezet is dit samengevat in onderstaande tabel; daarin is ook aangegeven of het argument verplicht is (Mandatory, *M*) of optioneel (*O*).
++
+[#bron-putmessage-argumenten]
+.Bron PutMessage Argumenten
+[.center,width="90%" ,cols="31%,^8%,^8%,^8%,45%",options="header",]
+|===
+|Argument |M/O |Van appl |Door BAS |Gebruik
+5+|PutEnvelope
+|OriginatorORName |O | |• |Bij gebruik van het sPd-protocol kunnen hier standaard 7 spaties worden ingevuld; zie <<_de_mailbox_server>>.
+|ContentType |O | |• |Vaste waarde 2.
+|Priority |O |• | |
+|DeferredDeliveryTime |O | |• |
+|Attention |O | |• |Gereserveerd voor toekomstig gebruik door de berichtendienst zelf.
+5+|MessageHeading
+|MessageId |M | |• |Wordt door het BAS gegenereerd.
+|CrossReference |O | |• |Wordt bij een antwoordbericht door het BAS afgeleid uit zijn eigen administratie aan de hand van het door de applicatie op te geven E-REF; zie LO, <<_berichtenafhandelingssysteem>>. In alle andere berichten blijft dit veld leeg (zie punt 2 hieronder).
+|OriginatorORName |O | |• |Bij gebruik van het sPd-protocol kunnen hier standaard 7 spaties worden ingevuld; zie <<_autorisatie_van_gemeenten_en_rni>>.
+|NumberOfRecipients |M |• | |
+|RecipientORName |M |• |• |Kan door het BAS worden afgeleid uit het door de applicatie op te geven E-REF bij antwoordberichten; voor andere berichten zal het door de applicatie moeten worden opgegeven.
+|NotificationRequest |M |• |• |Kan door het BAS worden afgeleid volgens de LO-voorschriften (zie punt 3 hieronder) uit het berichttype. Voor andere toepassingen kan het BAS een standaardprocedure toepassen of kan de keuze aan de gebruiker worden gelaten.
+5+|MessageBody
+|BodyString |O |• | |
+|===
++
+Specifiek voor de BRP-toepassing gelden verder nog de volgende voorschriften:
++
+--
+. Er wordt zoveel mogelijk gebruik gemaakt van default waarden voor alle argumenten.
+. Een leeg CrossReference veld bevat één van de volgende waarden:
+** 12 spaties
+** 12 nullen
+** 1 nul gevolgd door 11 spaties
+** 11 spaties gevolgd door 1 nul.
+
++
+Een CrossReference veld dat verwijst naar een ander bericht bevat een exacte kopie van de MessageId van dat bericht.
+. Voor berichten waarop geen antwoord wordt verwacht, dus ook voor vrije berichten, is het aanvragen van een NonReceiptNotification verplicht.
+. Het gebruik van de ReceiptNotification is verboden. In het BRP-berichtenverkeer zijn de meeste cycli met een verwerkbevestiging afgesloten; dit biedt een betere waarborg dan een ReceiptNotification omdat daarmee wordt bevestigd dat het bericht niet alleen is ontvangen, maar ook correct is verwerkt. +
+In het PutMessage commando van sPd is de ReceiptNotification vooralsnog niet geïmplementeerd.
+--
++
+Het resultaat van de PutMessage operatie wordt teruggemeld in het PutResult. Als de status "OK" is, heeft de berichtendienst de verantwoordelijkheid voor de afhandeling van het bericht overgenomen. Het BAS kan het DispatchSequenceNumber en de SubmissionTime in het berichtenbestand verwerken en de status van het bericht aanpassen. +
++
+Als er een fout wordt geconstateerd bij het aanbieden van het bericht is de reactie van het BAS afhankelijk van de aard van de fout. Als het probleem van tijdelijke aard is kan het BAS het bericht na enige tijd opnieuw aanbieden; anders moet het BAS de foutmelding in het berichtenbestand verwerken en de foutboodschap doorsturen naar de systeembeheerder. Er zal eerst moeten worden nagegaan wat de oorzaak van het probleem is voordat het bericht opnieuw wordt aangeboden. +
++
+Ook de vraag of het na een fout nog zinvol is om volgende berichten aan te bieden is afhankelijk van de aard van de fout. +
++
+Als de verbinding met de MBS wordt verbroken voordat het PutResult is ontvangen, moet het BAS ervan uitgaan dat het bericht opnieuw moet worden aangeboden. In theorie is het mogelijk dat het bericht dan tweemaal wordt verstuurd, maar ieder eindsysteem dient zo te zijn opgezet dat het deze situatie onderkent en correct afhandelt. Voor de BRP-toepassing betekent dit dat het tweede bericht genegeerd kan worden.
+
+===== Ophalen van berichten
+
+Voor het ophalen van berichten zijn 3 operaties beschikbaar:
+
+* *SummarizeMessages*, waarmee het totaal aantal berichten in de Mailbox bepaald kan worden.
+* *ListMessages*, waarmee een lijst van de berichten in de Mailbox verkregen kan worden.
+* *GetMessage*, waarmee een enkel bericht kan worden opgehaald.
+
+De normale procedure voor het ophalen van berichten is:
+
+. Het BAS vraagt middels een ListMessages operatie om een lijst van berichten. Daarbij wordt gebruik gemaakt van alle default criteria; dit geeft een overzicht van alle berichten met status 'new' (nog niet verwerkt) en 'listed' (MSSequenceNumber is al wel een keer doorgegeven aan het eindsysteem, maar het bericht is nog niet opgehaald).
+. Het BAS vraagt aan de hand van deze lijst de vermelde berichten één voor één op met een serie GetMessage operaties en plaatst ze in het berichtenbestand.
+. Deze twee stappen worden herhaald totdat uit het resultaat van de ListMessages operatie blijkt dat er geen berichten meer aanwezig zijn.
+
+Bij het ontwerp van het BAS dient ook te worden voorzien in de mogelijkheid om deze procedure te hervatten, bijvoorbeeld nadat er een fout in de onderliggende lagen is geconstateerd. Het BAS dient het totaal aantal opgehaalde berichten te vergelijken met de limiet op het aantal berichten in de mailbox. Als deze aantallen EXACT gelijk zijn is er een gerede kans dat er nog meer berichten op aflevering staan te wachten in de interne wachtrijen van de berichtendienst. Deze situatie dient door het eindsysteem gesignaleerd te worden. De beheerder kan dan contact opnemen met de beheerder om uit te laten zoeken of dit het geval is, en zo ja, waardoor deze uitzonderlijke berichtenstroom wordt veroorzaakt.
+
+Het verdient aanbeveling om bij de daaropvolgende verwerking in het eindsysteem de berichten in volgorde van prioriteit af te handelen, maar dit is geen dwingend voorschrift.
+
+De SummarizeMessages operatie is bedoeld om, voordat het eigenlijke ophalen van berichten begint, te bepalen hoeveel berichten er in totaal moeten worden opgehaald.
+
+Merk op dat in deze procedure niet voorzien is in het verwijderen van opgehaalde berichten. Daarvoor zijn twee redenen aan te voeren:
+
+* De Cleaner die onderdeel uitmaakt van de berichtendienst kan berichten op een veel efficiëntere wijze verwijderen dan een eindsysteem dat op afstand via de berichtendienst kan.
+* In speciale gevallen kan het nodig zijn om reeds eerder verwerkte berichten opnieuw op te halen (bijvoorbeeld wanneer er een storing in het eindsysteem is geweest). Zolang de opgehaalde berichten in de mailbox staan biedt de berichtendienst daartoe de mogelijkheid: er kan bijvoorbeeld gevraagd worden om berichten die reeds eerder zijn opgehaald (status 'processed') of om berichten die na een bepaalde tijd in de mailbox zijn afgeleverd.
+
+Bij het ontwerp van het BAS dient er een voorziening te worden getroffen om indien nodig van deze optie gebruik te maken.
+
+====== SummarizeMessages operatie
+
+*Argumenten*::
++
+[.center,width="90%" ,cols="40%,60%",]
+|===
+|MSStatusSelection |Indien opgegeven bevat het antwoord alleen gegevens over berichten die de gespecificeerde status hebben.
+|Priority |Indien opgegeven bevat het antwoord alleen gegevens over berichten die de gespecificeerde prioriteit hebben.
+|FromMSSequenceNumber +
+ToMSSequenceNumber |Indien opgegeven bevat het antwoord alleen gegevens over berichten waarvan het volgnummer binnen het opgegeven bereik ligt.
+|FromDeliveryTime +
+ToDeliveryTime |Indien opgegeven bevat het antwoord alleen gegevens over berichten waarvan het tijdstip waarop het bericht aan de MS is overgedragen binnen het opgegeven bereik ligt.
+|===
+
+*Resultaten*::
++
+[.center,width="90%" ,cols="40%,60%",]
+|===
+|NumberOfCounts |Het aantal combinaties van MSStatus en Priority dat in de selectiecriteria is opgegeven. Voor ieder van deze combinaties wordt het aantal berichten teruggemeld dat aan de criteria voldoet.
+2+|Count:
+|NumberOfEntries |Het aantal berichten dat aan het criterium voldoet.
+|MSStatus +
+Priority |Status en prioriteit waarop NumberOfEntries betrekking heeft.
+2+|SummarizeConfirmation:
+|SummarizeError |Status code.
+|===
+
+*Gebruik*:: De Summarize operatie bepaalt voor elke gespecificeerde combinatie van prioriteit en status het aantal berichten in de Mailbox of de delivery queue van de gebruiker. De meest gebruikelijke gang van zaken is dat er geen expliciete selectiecriteria worden opgegeven. In dat geval gelden de defaults die ook voor ListMessages gelden: MSStatus 0 of 1 en Priority 1, 2 of 3. In dat geval bevat het antwoord dus 6 aantallen.
+
+======  ListMessages operatie
+
+*Argumenten*::
++
+[.center,width="90%" ,cols="40%,60%",]
+|===
+|LimitNumber |Indien opgegeven het maximumaantal antwoorden (MSEntries) dat teruggegeven kan worden in MSList.
+|MSStatusSelection |Indien opgegeven bevat het antwoord alleen gegevens over berichten die de gespecificeerde status hebben.
+|Priority |Indien opgegeven bevat het antwoord alleen gegevens over berichten die de gespecificeerde prioriteit hebben.
+|FromMSSequenceNumber +
+ToMSSequenceNumber |Indien opgegeven bevat het antwoord alleen gegevens over berichten waarvan het volgnummer binnen het opgegeven bereik ligt.
+|FromDeliveryTime +
+ToDeliveryTime |Indien opgegeven bevat het antwoord alleen gegevens over berichten waarvan het tijdstip waarop het bericht aan de MS is overgedragen binnen het opgegeven bereik ligt.
+|===
+
+*Resultaten*::
++
+[.center,width="90%" ,cols="40%,60%",]
+|===
+|NextMSSequenceNumber |Bevat het MSSequenceNumber van het eerstvolgende bericht indien de Mailbox of Retrieval Queue meer berichten bevat die aan de criteria voldoen dan LimitNumber.
+2+|MSList:
+|NumberOfMSEntries |Aantal entries in het antwoord, dat verder voor ieder geselecteerd bericht bevat:
+|MSSequenceNumber |Een volgnummer dat door de MS aan het bericht is toegekend en dat gebruikt moet worden om het bericht op te halen.
+|MSStatus |Status van het bericht in de MS: 'New', 'Listed' of 'Processed'.
+|Priority |Prioriteit van het bericht.
+|DeliveryTime |Tijdstip waarop het bericht aan de MS is overgedragen.
+|OriginatorORName |ORName van de afzender van het bericht.
+2+|ListMessagesConfirmation:
+|ListError |Status code.
+|===
+
+*Gebruik*:: Met deze operatie bepaalt het BAS de MSSequenceNumbers van de berichten die opgehaald moeten worden. Als er geen berichten zijn die aan de criteria voldoen, wordt in plaats van de lijst een statuscode teruggegeven. Merk op dat de foutcode die dit aangeeft ('No Entries') niet meetelt als 'error' om te bepalen of het maximumaantal fouten wordt overschreden. +
++
+Het maximumaantal elementen in de lijst wordt bepaald door het achterliggende protocol; voor sPd is dit 171. Het aantal kan echter nooit groter zijn dan de voor de gebruiker geldende limiet. +
++
+Indien er in de lijst berichten voorkomen met MSStatus 'Listed', is de vorige ophaalprocedure niet volledig uitgevoerd.
+
+====== GetMessage operatie
+
+*Argumenten*::
++
+[.center,width="90%" ,cols="40%,60%",]
+|===
+|MSSequenceNumber |Identificatie van het op te halen bericht.
+|===
+
+*Resultaat*::
++
+[.center,width="90%" ,cols="40%,60%"]
+|===
+|MSSequenceNumber |Identificatie van het opgehaalde bericht
+2+|GetEnvelope:
+|OriginatorORName |ORName van de afzender van het bericht.
+|ContentType |Type van de inhoud van het bericht; heeft de vaste waarde 2 (P2 formaat).
+|Priority |Prioriteit
+|DeliveryTime |Tijdstip waarop het bericht werd afgeleverd bij de MS
+|SubmissionTime |Tijdstip waarop het bericht voor verzending werd aangeboden.
+|ActualRecipientORName |ORName van de gebruiker waar het bericht werd afgeleverd; kan afwijken van de oorspronkelijk geadresseerde als het bericht aan een "AlternateRecipient" wordt afgeleverd.
+2+|MessageHeading:
+|MessageId |De referentie die door de afzender aan het bericht is toegekend.
+|CrossReference |Bij antwoordberichten: de referentie van het bericht waarop het onderhavige bericht een antwoord is.
+|OriginatorORName |De afzender van het bericht.
+|ActualRecipientORName |ORName van de gebruiker waar het bericht werd afgeleverd; kan afwijken van de oorspronkelijk geadresseerde.
+|ActualNotificationRequest |De non-receipt indicatie bij afleveren.
+2+|MessageBody:
+|BodyString |Het eigenlijke bericht.
+2+|StatusReport:
+|ActualRecipientORName |ORName van de gebruiker waar het bericht werd afgeleverd (voor een ReceiptNotification) dan wel uit de Mailbox werd verwijderd zonder gelezen te zijn (voor een NonReceiptNotification); kan afwijken van de oorspronkelijk geadresseerde.
+|NotificationType |Type van het rapport: Receipt of non-receipt.
+|ReportedMessageId |Het referentienummer dat door de afzender werd opgegeven voor het bericht waarop het StatusReport betrekking heeft.
+|NonReceiptReason |De reden waarom het bericht niet is opgehaald; zal in de berichtendienst meestal "Expired" zijn, wat aangeeft dat het bericht na het verstrijken van de bewaartermijn door de Cleaner is verwijderd.
+2+|DeliveryReport:
+|ReportDeliveryTime |Tijdstip waarop het NonDeliveryReport door de berichtendienst in de mailbox of de delivery queue werd geplaatst.
+|DispatchSequenceNumber |De identificatie die bij het verzenden van het bericht waarop het rapport betrekking heeft door de berichtendienst aan het bericht is toegekend; dit nummer is bij de PutMessage aan de afzender teruggemeld.
+|NumberOfRecipients |Het aantal geadresseerden waarop het rapport betrekking heeft. Voor alle geadresseerden worden de volgende elementen herhaald:
+|RecipientORName |De geadresseerde van het oorspronkelijke bericht.
+|MailboxBlockDateTimeStamp |Tijdstip tot wanneer de mailbox van de geadresseerde niet bereikbaar is. Alleen van toepassing indien de NonDeliveryReason = 'Recipient mailbox locked'.
+|NonDeliveryReason |Reden waarom het bericht niet kon worden afgeleverd.
+2+|GetMessageConfirmation:
+|GetError |Status code.
+|===
+
+*Gebruik*:: Er zijn vier mogelijke resultaten van een GetMessage operatie: +
++
+--
+* Een GetMessageConfirmation met een statuscode. Afhankelijk van de aard van de geconstateerde fout kan het BAS het bericht na korte tijd opnieuw proberen op te halen, of de foutboodschap doorsturen naar de systeembeheerder.
+* Een NonDeliveryReport. Een NonDeliveryReport wordt door een MTS gegenereerd als het bericht behorende bij het DispatchSequenceNumber niet kon worden afgeleverd in de mailbox van de geadresseerde. Het bericht bevat de reden waarom het bericht niet kon worden afgeleverd, met mogelijk een tijdstip waarop dit wel mogelijk zal zijn. Als het bericht aan meerdere adressen was gericht kunnen de argumenten waaruit het rapport is opgebouwd ook meerdere keren voorkomen, indien het bericht bij meerdere geadresseerden niet kan worden afgeleverd.
+* Een StatusResult. Een StatusResult geeft aan dat het bericht waarop het rapport betrekking heeft correct is afgeleverd door de berichtendienst in de mailbox van de geadresseerde. Het rapport is dan een bevestiging dat het bericht door de ontvanger is opgehaald (ReceiptNotification), of juist dat de geadresseerde het bericht niet binnen de gestelde tijd heeft opgehaald (NonReceiptNotification). +
+Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading van het bericht (zie PutMessage operatie).
+* Een MessageResult, waarin naast de adressering in de GetEnvelope de MessageHeading en de MessageBody staan.
+--
++
+Een NonDeliveryReport en NonReceiptNotification veranderen de status in het berichtenbestand en zijn in de meeste gevallen aanleiding tot het opnieuw verzenden van het bericht. ReceiptNotifications komen binnen het BRP beheersdomein in beginsel niet voor; BRP-applicaties moeten in staat zijn deze rapporten te herkennen, maar mogen ze negeren. +
++
+Als het bericht een nieuw ontvangen BRP-bericht betreft zal het BAS een uniek referentienummer (E-REF) aan het bericht toekennen voor intern gebruik in het BRP-systeem. In onderstaande tabel is aangegeven wat de bestemming is van de verschillende componenten van een MessageResult. Als het bericht al eerder is ontvangen zijn er twee mogelijkheden:
++
+--
+* De herhalingsteller in de kop van het bericht is verhoogd. In dat geval is het bericht door het BAS van de afzender opnieuw verstuurd. Dit betekent veelal dat het bijbehorende antwoord opnieuw zal moeten worden verstuurd.
+* De herhalingsteller in de kop van het bericht is niet verhoogd. In dat geval is het bericht na een geconstateerde fout bij het verzenden opnieuw aangeboden of door de berichtendienst opnieuw in de mailbox van de ontvanger geplaatst, of door het eindsysteem opnieuw opgehaald. Het tweede bericht kan genegeerd worden.
+--
++
+Een MessageResult wordt in het berichtenbestand verwerkt. Indien het BAS het bericht niet zelf kan afhandelen, wordt het bericht doorgegeven aan de applicatie. Van een ontvangen BRP-bericht heeft de applicatie de volgende elementen nodig:
++
+--
+* E-REF (bij een bericht waarop naderhand een antwoord verstuurd zal moeten worden)
+* OriginatorORName
+* BodyString
+--
++
+Voor vrije berichten gelden op dit punt geen dwingende voorschriften; het wordt aan de ontwerper van de applicatie overgelaten om te bepalen welke elementen naast de BodyString aan de gebruiker worden getoond. +
++
+[#bestemming-getmessage-resultaat]
+.Bestemming GetMessage resultaat
+[.center,width="90%" ,cols="34%,^8%,^8%,50%",options="header",]
+|===
+|Resultaat |naar appl |voor BAS |Gebruik
+|MSSequenceNumber | |• |Wordt opgeslagen in het BAS om dubbele verwerking van opgehaalde berichten te voorkomen.
+4+|GetEnvelope
+|OriginatorORName | |• |Bij gebruik van sPd gelijk aan de OriginatorORName in de MessageHeading.
+|ContentType | |• |Vaste waarde 2.
+|Priority |• |• |Kan gebruikt worden om de volgorde te beïnvloeden, maar dit is niet verplicht.
+|DeliveryTime | |• |Wordt alleen gebruikt voor rapportages.
+|SubmissionTime | |• |Idem.
+|ActualRecipientORName | | |Wordt binnen de BRP niet gebruikt.
+4+|MessageHeading
+|MessageId | |• |Wordt door het BAS opgeslagen in het B-REF veld en als CrossReference gebruikt indien een antwoord op dit bericht moeten worden verzonden.
+|CrossReference | |• |Wordt opgenomen in het E-REF2 veld. Dient te corresponderen met de E-REF van een eerder verzonden bericht; indien dit niet het geval is, dient een melding aan de beheerder te worden gegenereerd.
+|OriginatorORName |• | |De afzender van het bericht.
+|ActualRecipientORName | |• |Hoeft door het BAS alleen te worden gecontroleerd.
+|ActualNotificationRequest | | |Wordt binnen de BRP niet gebruikt.
+4+|MessageBody
+|BodyString |• | |
+|===
+
+===== Beheersfuncties
+
+In de voorgaande paragrafen is aangegeven dat veel fouten die zich bij de afhandeling van het berichtenverkeer kunnen voordoen niet automatisch door het BAS kunnen worden afgehandeld. Tussenkomst van de beheerder van het eindsysteem zal in deze gevallen noodzakelijk zijn.
+
+Globaal kunnen we de fouten indelen in 4 klassen:
+
+. Fouten met een tijdelijk of incidenteel karakter. Hieronder vallen bijvoorbeeld Mailboxen die tijdelijk onbereikbaar zijn vanwege activiteiten van de Mailbox Cleaner of het wegvallen van de transportnetwerkverbinding. Deze fouten kunnen in beginsel door het BAS zelf worden opgelost. Als hiervoor een automatische procedure wordt ontworpen is het wel van belang om een limiet te stellen aan het aantal pogingen dat gedaan wordt om de fout te herstellen. Dit voorkomt dat de beveiligingsmechanismen van de berichtendienst in werking treden.
+. Fouten die veroorzaakt zijn door gebruikers of beheerders in het eindsysteem. Voorbeelden van dergelijke fouten zijn onjuistheden in adrestabellen en netwerkparameters. Deze fouten dienen uiteraard door de betrokkenen zelf te worden gecorrigeerd.
+. Fouten in de applicatie. Als de berichtendienst bijvoorbeeld meldt dat er een syntaxfout in een sPd commando is geconstateerd, moet worden aangenomen dat de applicatie tekortkomingen vertoont. In dat geval dient contact te worden opgenomen met de leverancier van de applicatie.
+. Fouten in de berichtendienst. In dit geval dient contact te worden opgenomen met de beheerder.
+
+Bij de beschrijving van de sPd-foutcodes is aangegeven wat de meest waarschijnlijke classificatie is van de verschillende fouten.
+
+Voor het herstellen van fouten en voor het beheer van de verbinding zal de systeembeheerder van het eindsysteem moeten kunnen beschikken over een aantal speciale functies. De onderstaande lijst is niet uitputtend, maar moet gezien worden als een minimum:
+
+[unordered.stack]
+*Beheer van de aansluiting:*::
+* Wijzigen van het password;
+* Wijzigen van de overige parameters (certificaatnummer en ORName van de gebruikers);
+* Maken van een overzicht van de inhoud van de Mailbox door middel van de ListMessages operatie;
+* Handmatig verwijderen van berichten uit de Mailbox.
+
+*Besturen van de normale verwerking:*::
+* de normale procedure voor het ophalen en verzenden van berichten vervroegd uitvoeren of juist blokkeren;
+* het afbreken van de procedure tijdens de verwerking en het herstarten van de procedure. Herstarten moet ook mogelijk zijn nadat een fout in het transportnetwerk is geconstateerd.
+
+*Procedures in verband met back-up & recovery:*::
+* het ophalen en voor zover nodig opnieuw verwerken van reeds eerder opgehaalde berichten (ten behoeve van een herstel procedure in het eigen systeem);
+* het opnieuw versturen van alle berichten die tussen twee tijdstippen voor verzending aan de berichtendienst zijn aangeboden (ter ondersteuning van herstelprocedures in de berichtendienst, en ten behoeve van het opsporen en corrigeren van fouten);
+* idem voor één speciale geadresseerde (ten behoeve van herstelprocedures bij deze geadresseerde).
+
+*Beheer van het berichtenbestand:*::
+* het maken van overzichten van de huidige inhoud van het berichtenbestand, met selecties op datum/tijd en op geadresseerde/afzender;
+* het maken van overzichten van eerder geconstateerde fouten;
+* het controleren van de consistentie van het bestand;
+* het handmatig veranderen van een beperkt aantal velden in het bestand zoals de status van een bericht;
+* het maken van overzichten van aantallen verstuurde en ontvangen berichten.
+
+==== sPd protocol
+
+In deze paragraaf wordt de fysieke representatie van het sPd-protocol beschreven en worden richtlijnen voor de implementatie gegeven.
+
+===== Inleiding
+
+Bij de opzet van het sPd-protocol is rekening gehouden met mogelijke uitbreidingen. Indien het nodig blijkt, zullen er nieuwe records worden gedefinieerd, en items worden toegevoegd aan het einde van bestaande records. Om hiermee om te kunnen gaan, dient een module die binnenkomende sPd-records afhandelt zich te houden aan de volgende regels:
+
+. Als een record volgens de definitie een vaste lengte heeft, en de werkelijke lengte wijkt af van de gehanteerde definitie, mag het record niet worden verworpen.
+. Als een ontvangen record korter is dan verwacht, worden de ontbrekende velden geacht gevuld te zijn met spaties.
+. Als een ontvangen record langer is dan verwacht, mogen de extra velden worden genegeerd.
+. Als een record binnenkomt met een onbekende operation code, moet dit record worden geaccepteerd, maar het mag wel worden genegeerd - tenzij dit record het eerste record van een antwoord is.
+
+Regel 1 en 3 maken het mogelijk om aan het eind van een sPd record nieuwe (optionele) velden toe te voegen. Regel 4 maakt het mogelijk om nieuwe (eventueel herhaald voorkomende) velden toe te voegen aan een bestaande operatie; deze worden in sPd geïmplementeerd als aparte records met een expliciete herhalingsteller. Regel 2 zorgt voor achterwaartse compatibiliteit: een 'nieuwe' sPd implementatie kan hierdoor nog 'oude' records ontvangen, waarin de toegevoegde elementen nog ontbreken.
+
+In beginsel dient iedere implementatie alle sPd-elementen zoals hierna vermeld te ondersteunen. Op deze regel zijn twee uitzonderingen:
+
+* Het ondersteunen van de turbo-sPd extensies is niet verplicht.
+* De implementatie van SummarizeMessages is niet verplicht.
+
+===== sPd-operaties
+
+De oorspronkelijke definitie van het sPd-protocol is in het Engels gesteld; om aansluiting te houden bij de begrippen en definities van de X.400-standaards zijn alle trefwoorden onvertaald gelaten. Overigens zijn veel trefwoorden specifiek voor sPd; deze zijn niet in de X.400-standaards terug te vinden.
+
+Van alle sPd-operaties wordt in deze paragraaf aangegeven
+
+* de opbouw van de OperationRecords
+* de definitie, in de vorm van een gegevenswoordenboek (data dictionary). <<notatie-spd-data-dictionary>> geeft een overzicht van de hierbij gebruikte notatie.
+
+[#notatie-spd-data-dictionary]
+.Notatie sPd Data dictionary
+[.center,width="90%" ,cols="20%,80%",options="header",]
+|===
+|Symbool |Betekenis
+|.... = .... |bestaat uit
+|.... {plus} .... |en
+|( .... ) |de items tussen haakjes zijn niet verplicht
+|++{++ .... } |de items tussen accolades kunnen herhaald voorkomen
+|++[++ .... {vbar} .... ++]++ |keuze: de items links óf de items rechts van de streep komen voor
+|" ... " |item komt letterlijk voor in OperationRecord
+|++**++ .... ++**++ |De tekst tussen de sterretjes geeft commentaar aan
+|===
+
+*Algemene definities*
+
+[.center,width="90%",cols="27%,3%,70%a",frame=none,grid=none]
+|===
+|sPd protocol |= |++**++ sPd staat voor "Simple Pd". Het kan beschouwd worden als een tussenvorm tussen de echte Pd (P7) Protocol Data Unit en de binnen de applicatie gehanteerde formaten. Een interactie binnen sPd wordt geïnitieerd door een eindsysteem, dat een Operation met daarin een Request naar de Mailbox Server (MBS) stuurt. De MBS antwoordt eveneens met een Operation; afhankelijk van de gevraagde Operation en het resultaat van de verwerking in de MBS kan dat een Result of een Confirmation zijn. +
+
+Iedere Operation bestaat uit één of meer OperationRecords; ieder OperationRecord bevat een OperationCode waarmee de Operation wordt geïdentificeerd en een Length veld, met daarin de totale lengte van het OperationRecord. +
+
+Iedere Operation moet afgesloten worden met een speciaal TerminationRecord, dat alleen een Length veld met daarin '00000' bevat. +
+
+Een Result of Confirmation kan foutmeldingen in de vorm van een code bevatten. Voor iedere Operation is een bepaald bereik aan foutcodes gereserveerd. Een compleet overzicht met toelichting is te vinden in <<_overzicht_foutcodes>>. ++**++
+|Operation |= |++{++OperationRecord++}++ {plus} TerminationRecord
+|OperationRecord |= |Length {plus} OperationCode {plus} ++{++OperationItems++}++
+|OperationCode |= |++**++ Zie het commentaar in de tabel met Operations hieronder ++**++
+|OperationItems |= |++**++ worden gedefinieerd op de volgende pagina's ++**++
+|Operation |= |
+
+[width="100%",cols="<70%,3%,>27%",frame=none,grid=none]
+!===
+!++[++ LogonRequest!\| !++**++ 900 ++**++
+!LogonConfirmation!\| !++**++ 909 ++**++
+!LogoffRequest!\| !++**++ 990 ++**++
+!LogoffConfirmation!\| !++**++ 999 ++**++
+!PutMessage!\| !++**++ 120 -180 ++**++
+!PutMessageConfirmation!\| !++**++ 190 ++**++
+!GetMessage!\| !++**++ 200 ++**++
+!GetMessageResult!\| !++**++ 210 -280 ++**++
+!GetMessageConfirmation!\| !++**++ 290 ++**++
+!DeleteMessages!\| !++**++ 300 ++**++
+!DeleteMessagesConfirmation!\| !++**++ 309 ++**++
+!ListMessages!\| !++**++ 400 ++**++
+!ListMessagesResult!\| !++**++ 410 - 411 ++**++
+!ListMessagesConfirmation!\| !++**++ 419 ++**++
+!SummarizeMessages!\| !++**++ 500 ++**++
+!SummarizeResult!\| !++**++ 510 ++**++
+!SummarizeConfirmation!\| !++**++ 590 ++**++
+!ChangePasswordRequest!\| !++**++ 910 ++**++
+!ChangePasswordConfirmation!\| !++**++ 919 ++**++
+!NoOperationConfirmation++]++!\| !++**++ 009 ++**++
+!===
+
+|TerminationRecord |= |
+
+[width="100%",cols="<70%,>30%",frame=none,grid=none]
+!===
+!Length !++**++ = '00000'++**++
+!===
+
+|Length |= | ++**++ Totale lengte van het OperationRecord, inclusief OperationCode, exclusief Length. De maximale lengte van een MessageBody is 19000 octets (8-bit bytes). The totale lengte van een Operation die geen MessageBody bevat, en de totale lengte van alle OperationRecords die aan een MessageBody voorafgaan mag de 5000 octets niet te boven gaan. ++**++
+|===
+
+====== Logon
+
+*Definities*
+
+// alle tabellen met definities zo doen, met label en = teken in aparte kolommen!
+[.center,width="90%",cols="27%,3%,70%a",frame=none,grid=none]
+|===
+|LogonRequest |= |Length {plus} "900" {plus} UserName {plus} UserPassword
+|LogonConfirmation |= |Length {plus} "909" {plus} LogonResult {plus} (MessageEntryDTS {plus} SystemmanagerMessage)
+|===
+
+*Structuur*
+
+[.text-center]
+.Structuur LogonRequest
+image::../images/image76.svg[width=436,height=194]
+
+[.text-center]
+.Structuur LogonConfirmation
+image::../images/image77.svg[width=435,height=194]
+
+====== PutMessage
+
+*Definities*
+
+[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+|===
+|PutMessage |= |PutEnvelope {plus} |++**++ 120 ++**++ +
+|||MessageHeading {plus} |++**++ 150 ++**++ +
+|||MessageBody |++**++ 180 ++**++
+|PutEnvelope |= |Length {plus} "120" {plus} ( OriginatorORName ) {plus} |
+|||( ContentType ) {plus} |
+|||( Priority ) {plus} |
+|||( DeferredDeliveryTime ) {plus} |
+|||( Attention )|
+|MessageHeading |= |Length {plus} "150" {plus} |
+|||MessageId {plus} |++**++ Ref.nr 1 ++**++
+|||( CrossReference ) {plus} |++**++ Ref.nr 2 ++**++
+|||( OriginatorORName ) {plus} |
+|||NumberOfRecipients {plus} |
+|||++{++ RecipientORName {plus} |
+|||NotificationRequest ++}++ |
+|NotificationRequest |= |++[++"ReceiptNotification" \| |
+|||"NonReceiptNotification" \| |
+|||None ++]++ |
+|MessageBody |= |Length {plus} "180" {plus} (BodyString) |
+|PutMessageConfirmation |= |Length {plus} "190" {plus} PutResult {plus} |
+|||( DispatchSequenceNumber {plus} |
+|||SubmissionTime {plus} |
+|||MessageId ) |
+|||++**++ Alleen als er geen fout is opgetreden++**++ |
+|===
+
+*Aantekeningen*
+
+. De PutEnvelope bevat geen Recipient veld; in plaats daarvan worden altijd de Recipients uit de MessageHeading gebruikt.
+. Het Attention veld wordt niet gebruikt. Het is gereserveerd voor toekomstig gebruik door de berichtendienst zelf.
+. ReceiptNotification impliceert tevens NonReceiptNotification.
+. De velden van PutMessageConfirmation worden weggelaten als er een fout optreedt (dat wil zeggen: PutResult ≠ "0000").
+
+*Structuur*
+
+[.text-center]
+.Structuur PutEnvelope
+image::../images/image78.svg[width=435,height=194]
+
+[.text-center]
+.Structuur MessageHeading
+image::../images/image79.svg[width=436,height=195]
+
+[.text-center]
+.Structuur MessageBody
+image::../images/image80.svg[width=435,height=194]
+
+[.text-center]
+.Structuur PutMessageConfirmation
+image::../images/image81.svg[width=435,height=194]
+
+====== GetMessage
+
+*Definities*
+
+[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+|===
+|GetMessage |= |Length {plus} "200" {plus} MSSequenceNumber |
+|GetMessageResult |= |MSEntry {plus} |++**++ 210 ++**++
+|||++[++MessageResult \| |
+|||StatusResult \| |
+|||DeliveryReport++]++ |++**++ 260 ++**++
+|MSEntry |= |Length {plus} "210" {plus} MSSequenceNumber |
+|MessageResult |= |GetEnvelope {plus} |++**++ 220 ++**++
+|||MessageHeading {plus} |++**++ 250 ++**++
+|||MessageBody |++**++ 280 ++**++
+|GetEnvelope |= |Length {plus} "220" {plus} |
+|||OriginatorORName {plus} |
+|||ContentType {plus} |
+|||Priority {plus} |
+|||DeliveryTime {plus} |
+|||SubmissionTime {plus} |
+|||ActualRecipientORName |
+|MessageHeading |= |Length {plus} "250" {plus} |
+|||MessageId {plus} |++**++ Ref.nr 1 ++**++ +
+|||(CrossReference) {plus} |++**++ Ref.nr 2 ++**++
+|||OriginatorUserName {plus} |
+|||ActualRecipientORName {plus} |
+|||(ActualNotificationRequest) |
+|MessageBody |= |Length {plus} "280" {plus} BodyString |
+|StatusResult |= |GetEnvelope {plus} |++**++ 220 ++**++
+|||StatusReport |++**++ 270 ++**++
+|StatusReport |= |Length {plus} "270" {plus} |
+|||ActualRecipientORName {plus} |
+|||NotificationType {plus} |
+|||ReportedMessageId {plus} |
+|||NonReceiptReason |++**++ Expired++**++
+|NotificationType |= |++[++ "ReceiptNotification" \| |
+|||"NonReceiptNotification" ++]++ |
+|DeliveryReport |= |Length {plus} "260" {plus} ReportDeliveryTime {plus} |
+|||DispatchSequenceNumber {plus} |
+|||NumberOfRecipients {plus} |
+|||++{++RecipientORName {plus} Report++}++ |
+|Report |= |++[++DeliveryTime \| |
+|||MailboxBlockDateTimeStamp {plus} |
+|||NonDeliveryReason++]++ |
+|GetMessageConfirmation |= |Length {plus} "290" {plus} GetError |
+|===
+
+*Structuur*
+
+[.text-center]
+.Structuur GetMessage
+image::../images/image82.svg[width=435,height=194]
+
+[.text-center]
+.Structuur MSEntry
+image::../images/image83.svg[width=436,height=194]
+
+[.text-center]
+.Structuur GetEnvelope
+image::../images/image84.svg[width=435,height=194]
+
+[.text-center]
+.Structuur MessageHeading
+image::../images/image85.svg[width=435,height=194]
+
+[.text-center]
+.Structuur MessageBody
+image::../images/image86.svg[width=435,height=194]
+
+[.text-center]
+.Structuur StatusReport
+image::../images/image87.svg[width=435,height=194]
+
+[.text-center]
+.Structuur DeliveryReport
+image::../images/image88.svg[width=436,height=195]
+
+[.text-center]
+.Structuur GetMessageConfirmation
+image::../images/image89.svg[width=435,height=194]
+
+====== DeleteMessages
+
+*Definities*
+
+[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+|===
+|DeleteMessages |= |Length {plus} "300" {plus} |
+|||++[++(DeleteRange) \| DeleteNumbers++]++ |
+|DeleteRange |= |FromMSSequenceNumber {plus} |
+|||ToMSSequenceNumber |
+|DeleteNumbers |= |NumberOfNumbers {plus} ++{++MSSequenceNumber++}++ |
+|DeleteMessagesConfirmation |= |Length {plus} "309" {plus} DeleteResult |
+|===
+
+*Structuur*
+
+[.text-center]
+.Structuur DeleteMessages
+image::../images/image90.svg[width=436,height=195]
+
+[.text-center]
+.Structuur DeleteMessagesConfirmation
+image::../images/image91.svg[width=436,height=194]
+
+====== ListMessages
+
+*Definities*
+
+[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+|===
+|ListMessages |= |Length {plus} "400" {plus} |
+|||(LimitNumber) {plus} |
+|||(TypeSelection) {plus} |
+|||(RangeSelection) |
+|TypeSelection |= |++{++(MSStatus)++}++ {plus} (Priority) |
+|RangeSelection |= |++[++FromMSSequenceNumber {plus} |
+|||ToMSSequenceNumber \| |
+|||FromDeliveryTime {plus} |
+|||ToDeliveryTime++]++ |
+|ListMessagesResult |= |ListResult {plus} |++**++ 410 ++**++
+|||MSList |++**++ 411 ++**++
+|ListResult |= |Length {plus} "410" {plus} (NextMSSequenceNumber) |
+|MSList |= |Length {plus} "411" |
+|||NumberOfMSEntries {plus} |
+|||++{++MSEntry++}++ |
+|MSEntry |= |MSSequenceNumber {plus} |
+|||MSStatus {plus} |
+|||Priority {plus} |
+|||DeliveryTime {plus} |
+|||OriginatorORName |
+|ListMessagesConfirmation |= |Length {plus} "419" {plus} ListError |
+|===
+
+*Structuur*
+
+[.text-center]
+.Structuur ListMessages
+image::../images/image92.svg[width=436,height=194]
+
+[.text-center]
+.Structuur ListResult
+image::../images/image93.svg[width=435,height=194]
+
+[.text-center]
+.Structuur MSList
+image::../images/image94.svg[width=436,height=195]
+
+[.text-center]
+.Structuur ListMessagesConfirmation
+image::../images/image95.svg[width=436,height=194]
+
+====== SummarizeMessages
+
+*Definities*
+
+[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+|===
+|SummarizeMessages |= |Length {plus} "500" {plus} |
+|||(TypeSelection) {plus} |
+|||(RangeSelection) |
+|TypeSelection |= |++{++(MSStatus)++}++ {plus} (Priority) |
+|RangeSelection |= |++[++FromMSSequenceNumber {plus} |
+|||ToMSSequenceNumber \| |
+|||FromDeliveryTime {plus} |
+|||ToDeliveryTime++]++ |
+|SummarizeResult |= |Length {plus} "510" {plus} |
+|||NumberOfCounts {plus} |
+|||++{++Count++}++|
+|Count |= |NumberOfEntries {plus} |
+|||MSStatus {plus} |
+|||Priority |
+|SummarizeConfirmation |= |Length {plus} "590" {plus} SummarizeError |
+|===
+
+*Structuur*
+
+[.text-center]
+.Structuur SummarizeMessages
+image::../images/image96.svg[width=436,height=194]
+
+[.text-center]
+.Structuur SummarizeResult
+image::../images/image97.svg[width=436,height=195]
+
+[.text-center]
+.Structuur SummarizeConfirmation
+image::../images/image98.svg[width=436,height=194]
+
+====== ChangePassword
+
+*Definities*
+
+[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+|===
+|ChangePasswordRequest |= |Length {plus} "910" {plus} |
+|||OldPassword {plus} NewPassword |
+|ChangePasswordConfirmation |= |Length {plus} "919" {plus} ChangePasswordResult |
+|===
+
+*Structuur*
+
+[.text-center]
+.Structuur ChangePassword
+image::../images/image99.svg[width=435,height=194]
+
+[.text-center]
+.Structuur ChangePasswordConfirmation
+image::../images/image100.svg[width=434,height=194]
+
+====== Logoff
+
+*Definities*
+
+[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+|===
+|LogoffRequest |= |Length {plus} "990" ++**++ geen parameters ++**++ |
+|LogoffConfirmation |= |Length {plus} "999" {plus} LogoffResult |
+|===
+
+*Structuur*
+
+[.text-center]
+.Structuur Logoff
+image::../images/image101.svg[width=436,height=194]
+
+[.text-center]
+.Structuur LogoffConfirmation
+image::../images/image102.svg[width=436,height=194]
+
+====== Overige operaties
+
+*Definities*
+
+[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+|===
+|NoOperationConfirmation |= |Length {plus} "009" {plus} NoOperationError |
+|Termination |= |Length |
+|===
+
+*Structuur*
+
+[.text-center]
+.Structuur NoOperationConfirmation
+image::../images/image103.svg[width=434,height=194]
+
+[.text-center]
+.Structuur Termination
+image::../images/image104.svg[width=434,height=194]
+
+===== Gebruikte codes
+
+Onderstaande tabel geeft een overzicht van alle codes die binnen sPd worden gebruikt en hun betekenis.
+
+[#codes-in-spd-velden]
+.Codes in sPd velden
+[.center,width="90%",cols="25%,15%,15%,45%",options="header",]
+|===
+|Veld ^|Code ^|Default waarde |Betekenis
+.2+|Attention ^|0 ^|0 |Geen 'attention'
+^|1 ^| |Wel 'attention'
+|ContentType ^|2 ^|2 |P2; andere waarden worden niet ondersteund
+.3+|Priority ^|0 ^|0 |Normaal (normal)
+^|1 ^| |Lage prioriteit (low)
+^|2 ^| |Hoge prioriteit (urgent)
+.3+|NotificationRequest ^|0 ^|0 |Geen Notification
+^|1 ^| |NonReceiptNotification
+^|2 ^| |ReceiptNotification (dit impliceert NonReceiptNotification)
+.2+|NotificationType ^|0 ^|- |ReceiptNotification
+^|1 ^| |NonReceiptNotification
+|NonReceiptReason ^|0 ^| |Expired
+.3+|MSStatus ^|0 ^|0 & 1 |'New'
+^|1 ^| |'Listed'
+^|2 ^| |'Processed'
+|===
+
+Veel van de velden binnen sPd zijn optioneel, dat wil zeggen dat ze gevuld kunnen worden met spaties; als ze aan het eind van een operationrecord voorkomen mogen ze zelfs worden weggelaten. In dat geval vult de Mailbox Server default waarden in of onderneemt default acties. <<default-waarden-in-spd>> geeft een overzicht van alle velden in de commando's die door het eindsysteem kunnen worden gegeven, met daarbij een indicatie of het veld verplicht is (Mandatory, M) of optioneel (O). Voor optionele velden wordt bovendien toegelicht wat de reactie van de Mailbox Server in dat geval is. In het algemeen wordt aanbevolen om zoveel mogelijk van default waarden gebruik te maken.
+
+[#default-waarden-in-spd]
+.Default waarden in sPd
+[.center,width="90%",cols="30%,^10%,30%,30%",options="header",]
+|===
+|Commando en Veld |Type |Default waarde |Opmerkingen
+4+|*Logon*
+|UserName |M |- |
+|UserPassword |M |- |
+4+|*ChangePassword*
+|OldPassword |M |- |
+|NewPassword |M |- |
+4+|*PutEnvelope*
+|OriginatorORName |O |UserName uit Logon |
+|ContentType |O |2 |
+|Priority |O |0 |
+|DeferredDeliveryTime |O |Geen waarde |Bericht wordt niet opgehouden.
+|Attention |O |0 |
+4+|*MessageHeading*
+|MessageId |M |- |
+|CrossReference |O |Geen waarde |Verplicht voor BRP-toepassing.
+|OriginatorORName |O |ORName uit Envelope |
+|NumberOfRecipients |M |- |
+|RecipientORName |M |- |Er moet tenminste 1 waarde worden opgegeven.
+|NotificationRequest |M |- |
+|*MessageBody* |M |- |De eigenlijke body mag leeg zijn.
+4+|*GetMessage*
+|MSSequenceNumber |M |- |
+4+|*DeleteMessages*
+|DeleteRange: |O .3+|Laagste en hoogste waarden die in Mailbox voorkomen |DeleteRange en DeleteNumbers mogen niet tegelijk voorkomen.
+|FromMSSequenceNumber |O |
+|ToMSSequenceNumber |O |
+|DeleteNumbers: |O | .3+|Als deze velden voorkomen, dienen beide velden gevuld te zijn en dient er tenminste 1 waarde te zijn opgegeven. Als ze niet voorkomen, wordt DeleteRange gebruikt.
+|NumberOfNumbers |M |
+|MSSequenceNumber |M |
+4+|*ListMessages*
+|LimitNumber |O |Systeemparameter |Instelbaar per gebruiker.
+|MSStatus 1 |O |0 .3+|Defaults voor MSStatus worden alleen toegepast als alle 3 velden leeg zijn.
+|MSStatus 2 |O |1
+|MSStatus 3 |O |Geen waarde
+|PrioritySelection |O | |Default worden alle prioriteiten geselecteerd.
+|SequenceNumberRange: |O |Laagste en hoogste waarden die in Mailbox voorkomen. |
+|FromMSSequenceNumber |O ||
+|ToMSSequenceNumber |O ||
+|DeliveryTimeRange: |O |Geen waarde .3+|Indien afwezig wordt SequenceNumberRange toegepast. DeliveryTimeRange en SequenceNumberRange mogen niet beiden voorkomen.
+|FromDeliveryTime |O |
+|ToDeliveryTime |O |
+4+|*SummarizeMessages*
+|MSStatus 1 |O |0 .3+|Defaults voor MSStatus worden alleen toegepast als alle 3 velden leeg zijn.
+|MSStatus 2 |O |1
+|MSStatus 3 |O |Geen waarde
+|PrioritySelection |O |Alle prioriteiten |
+|SequenceNumberRange |O .3+|Laagste en hoogste waarden die in Mailbox voorkomen .3+|
+|FromMSSequenceNumber |O
+|ToMSSequenceNumber |O
+|DeliveryTimeRange: |O .3+|Geen waarde .3+|Indien afwezig wordt SequenceNumberRange toegepast. DeliveryTimeRange en SequenceNumberRange mogen niet beiden voorkomen.
+|FromDeliveryTime |O
+|ToDeliveryTime |O
+|===
+
+===== Overzicht foutcodes
+
+====== Inleiding
+
+De nu volgende tabellen geven een overzicht van alle foutcodes die in sPd voorkomen. Voor ieder sPd-commando is er een aparte groep foutcodes; daarnaast is er een algemene groep van codes die bij ieder commando kunnen voorkomen. Bij iedere code is aangegeven:
+
+* De numerieke waarde.
+* Het type van de fout. Fouten zijn onderverdeeld in 5 klassen; de klasse bepaalt welke reactie er van de gebruiker wordt verwacht (zie hieronder).
+* De (Nederlandse) omschrijving van de fout.
+* De (Engelse) sPd-naam van de fout. Deze benamingen worden in veel systemen en in de documentatie nog op grote schaal gebruikt, en zijn daarom ook in het overzicht opgenomen.
+* Een toelichting die mogelijke oorzaken en remedies aangeeft.
+
+De volgende klassen van fouten worden onderscheiden:
+
+[horizontal,labelwidth=5%,itemwidth=95%]
+*T*:: Tijdelijk probleem. Het eindsysteem kan na korte tijd (15-30 minuten) de actie opnieuw proberen. Als deze fouten zich echter herhaaldelijk voordoen, verdient het aanbeveling om contact op te nemen met de beheerder. Er dient dus een controle op het aantal gesignaleerde fouten in het eindsysteem te worden ingebouwd.
+*B*:: Tijdelijke blokkering (bijvoorbeeld door het overschrijden van een limiet). Nagegaan moet worden wat de oorzaak is van de overschrijding. Indien nodig kan contact worden opgenomen met de beheerder om de limieten tijdelijk of permanent te laten verhogen. Overigens worden deze blokkeringen aan het eind van de werkdag automatisch weer opgeheven.
+*G*:: Deze fouten wijzen op een probleem waarvan de oorzaak bij de gebruiker of de beheerder van het eindsysteem ligt.
+*S*:: Deze fouten wijzen op fouten in het eindsysteem zelf. De gebruiker dient het probleem voor te leggen aan de leverancier van de applicatie.
+*N*:: Fout in de berichtendienst. Deze fouten dienen altijd gemeld te worden aan de beheerder.
+
+De classificatie is overigens niet meer dan een indicatie. Het is altijd mogelijk dat de werkelijke oorzaak van een probleem ergens anders ligt. In twijfelgevallen kan de hulp van de beheerder worden ingeroepen. De beheerder heeft toegang tot de interne logfiles van de berichtendienst (zoals de 'exception log', waarin alle systeem fouten worden vastgelegd), en kan in sommige gevallen nadere informatie over de gesignaleerde problemen geven.
+
+Alle codes in het onderstaande overzicht liggen in het bereik 1000-1999. Foutcodes in het bereik 2000 - 2999 zijn gereserveerd voor gebruik binnen het eindsysteem; de MBS zal deze codes nooit gebruiken. Het is echter wel mogelijk dat bij revisies van de software van de berichtendienst nieuwe foutcodes worden toegevoegd. Alle eindsystemen moeten in staat zijn om deze nieuwe codes te verwerken; de fouten dienen daartoe in tabelvorm in het systeem opgenomen te worden. Het eindsysteem dient verder codes die niet in de tabel voorkomen te kunnen opvangen; deze dienen te worden afgehandeld als fouten van klasse *N*.
+
+Naast de hieronder genoemde codes kan bij een aantal sPd-operaties ook de code 0000 (OK) voorkomen, die aangeeft dat de operatie succesvol is verlopen. Deze code kan voorkomen in het LogonResult, PutResult, DeleteResult, ChangePasswordResult en LogoffResult. Bij de overige operaties (ListMessages, SummarizeMessages en GetMessage) blijkt impliciet uit het soort OperationRecord dat wordt teruggestuurd of de operatie succesvol is geweest of niet.
+
+====== Algemene foutcodes
+
+De fouten in deze groep kunnen bij alle sPd-operaties voorkomen. Ze wijzen bijvoorbeeld op protocolfouten of op problemen in de berichtendienst zelf. Sommige van deze fouten zullen worden gemeld in de antwoorden op een sPd operatie, andere in de algemene NoOperationConfirmation.
+
+[#algemene-spd-foutcodes]
+.Algemene sPd foutcodes
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1002 |S, B |*Commando niet toegestaan* (Invalid operation) +
+Deze code kan in vier gevallen voorkomen:
+
+* Er is een sPd-commando ontvangen zonder dat er eerst een Logon is gedaan;
+* De gebruiker heeft de limiet voor een bepaald type operaties overschreden;
+* Het wachtwoord van de mailbox is door systeembeheer toegekend;
+* Het wachtwoord van de mailbox is verlopen.
+
+In de laatste twee gevallen dient de gebruiker eerst het wachtwoord te wijzigen voordat er andere opdrachten gegeven kunnen worden.
+|1205 |N |*Interne fout in systeem* (Fatal error) +
+Er is een onverwachte systeemfout geconstateerd in de Mailbox server, of er zijn te veel ongeldige pogingen gedaan om in te loggen.
+|1263 |S |*Lengte van commando te groot* (Operation too long) +
+Er is een sPd-commando ontvangen met daarin een lengte veld groter dan 20000, of de interne buffer waarin de invoer wordt opgevangen is vol (de limiet hierop is eveneens 20000 tekens). Van eindsystemen wordt verwacht dat ze hierop controleren voordat ze een bericht voor verzending aanbieden.
+|1266 |S |*Bericht niet volledig ontvangen* (Input truncated) +
+De MBS heeft een tijdsoverschrijding geconstateerd tijdens het wachten op het resterende gedeelte van een commando. De meest waarschijnlijke verklaring is een onjuiste waarde in een lengteveld of het ontbreken van de afsluiting (Termination, 5 nullen), maar een fout in de onderliggende netwerklagen is ook mogelijk.
+|1271 |S |*Fout in de lengte van commando* (Invalid operation length) +
+Er is een fout geconstateerd in het lengteveld van een sPd-commando.
+|===
+
+
+====== Fouten in Logon operatie
+
+[#spd-foutcodes-logon]
+.sPd-foutcodes Logon
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1006 |G |*Limiet op aantal logon operaties overschreden* (Logon limit exceeded). +
+Uit beveiligingsoverwegingen is er een (voor iedere gebruiker afzonderlijk in te stellen) limiet op het aantal Logon operaties dat een gebruiker per dag mag doen. Deze limiet is overschreden. De gebruiker dient na te gaan wat de oorzaak is van deze overschrijding. Indien nodig kan contact worden opgenomen met de beheerder om de limiet, al dan niet tijdelijk, te laten verhogen.
+|1007 |G |*Te veel fouten geconstateerd* (Error limit exceeded). +
+Uit beveiligingsoverwegingen is er een (voor iedere gebruiker afzonderlijk in te stellen) limiet op het aantal fouten dat per dag gemaakt mag worden. Deze limiet is overschreden. De gebruiker dient na te gaan wat de oorzaak is van deze overschrijding. Indien nodig kan contact worden opgenomen met de beheerder om na te gaan welke fouten er zijn gemaakt, zodat maatregelen kunnen worden genomen om herhaling te voorkomen.
+|1031 |T |*Systeem geblokkeerd door beheerder* (System locked by manager). +
+De toegang tot de berichtendienst is geblokkeerd door de beheerder. Het eindsysteem kan na enige tijd (15-30 minuten) opnieuw verbinding zoeken. Indien deze situatie dan nog steeds bestaat kan contact worden opgenomen met de beheerder voor nadere inlichtingen.
+|1033 |G |*Gebruikersidentificatie ongeldig* (Security failure). +
+Bij een logon controleert de berichtendienst de geldigheid van het opgegeven wachtwoord, en het certificaatnummer van de gebruiker. Bij één van deze controles is een probleem geconstateerd.
+|1034 |G |*Opgegeven mailboxnummer ongeldig* (Unrecognised mailbox name). +
+Het mailboxnummer dat werd opgegeven in de Logon is niet geldig. Dit betekent dat de mailbox nog niet of niet meer bestaat.
+|1035 |G |*Mailbox in gebruik* (Mailbox busy). +
+Er is al een gebruiker ingelogd op de opgegeven mailbox. De gebruiker dient allereerst na te gaan of dat vanuit zijn eigen systeem is gebeurd. Zo niet, dan dient onmiddellijk contact te worden opgenomen met de beheerder: het kan wijzen òf op een technisch probleem in de berichtendienst (een mailbox sessie is niet correct afgesloten) òf op een beveiligingsprobleem.
+|1036 |N |*Geen Mailbox aanwezig* (Mailbox not present). +
+Deze fout wijst op een probleem bij de beheerder: de gebruikersnaam (mailboxnummer) is wel bekend in de berichtendienst, maar er is geen mailbox voor deze gebruiker aanwezig.
+|1037 |B |*Mailbox tijdelijk geblokkeerd* (Mailbox temporarily blocked). +
+De mailbox van de gebruiker is tijdelijk geblokkeerd door de beheerder. Neem contact op met de beheerder.
+|1038 |N |*Mailbox geblokkeerd door fatale fout* (Mailbox in fatal error). +
+De mailbox van de gebruiker is door de berichtendienst geblokkeerd nadat een fatale fout is geconstateerd.
+|1040 |N |*Systeem geblokkeerd* (System locked). +
+De toegang tot de berichtendienst is geblokkeerd doordat de berichtendienst zelf een fatale fout heeft ontdekt tijdens de "cleaning" procedure.
+|===
+
+
+====== Fouten in PutMessage
+
+[#spd-foutcodes-putmessage]
+.sPd-foutcodes PutMessage
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1001 |S |*Syntax fout* (Syntax error). +
+Een van de velden in een PutMessage bevat ongeldige tekens, heeft niet de juiste lengte of voldoet op een andere manier niet aan de regels.
+|1004 |S |*PutMessage parameters onjuist* (Invalid value). +
+Een van de velden in een PutMessage bevat een waarde die niet voldoet aan de regels.
+|1005 |S |*Verplicht veld ontbreekt in PutMessage* (Missing elements). +
+In een van de onderdelen van een PutMessage opdracht ontbreekt een verplicht veld of het onderdeel ontbreekt zelfs geheel.
+|1051 |S |*Geadresseerde verkeerd opgegeven* (Recipient improperly specified). +
+Het veld geadresseerde (Recipient) in een PutMessage commando bevat een fout. Van een eindsysteem wordt verwacht dat het formaat van dit veld gecontroleerd wordt. Voor een BRP-systeem geldt bovendien dat een geadresseerde altijd voor moet komen in de autorisatietabel.
+|1052 |G |*Geadresseerde niet bereikbaar vanuit deze mailbox* (Security error). +
+Deze fout kan alleen maar optreden als de afzender een testgebruiker is. Vanuit de mailbox van een dergelijke gebruiker is alleen een beperkt aantal andere mailboxen bereikbaar. De geadresseerde komt niet in deze lijst voor.
+|1053 |S |*Te veel geadresseerden* (Too many recipients). +
+In een PutMessage kunnen maximaal 32 geadresseerden worden opgegeven. Als een bericht aan meer adressen verstuurd moet worden moet het bericht meerdere malen worden aangeboden, of er moet in overleg met de beheerder een groepsadres worden gedefinieerd. Van een eindsysteem wordt verwacht dat het controleert of het maximum niet wordt overschreden.
+|1054 |S |*Afzender onjuist* (Originator invalid). +
+In het PutMessage commando is door het eindsysteem de OriginatorORName ingevuld met een ander adres dan bij de voorafgaande Logon operatie is gebruikt. Invullen van de Originator is niet verplicht, maar als het veld gevuld is moet het veld dezelfde waarde hebben als de Logon naam. De fout kan te wijten zijn aan de PutMessage zelf, maar het is ook mogelijk dat een voorgaande ReLogon is mislukt, en dat daarbij niet is gecontroleerd op de LogonResult.
+|1056 |S |*Geadresseerde ontbreekt* (Inconsistent request). +
+In het PutMessage commando is geen geadresseerde opgegeven. Van het eindsysteem wordt verwacht dat het op deze fout controleert.
+|1241 |S |*Berichtinhoud te lang* (Body too long). +
+Er is een bericht aangeboden waarvan de body meer dan 19000 tekens bevat. Van een eindsysteem wordt verwacht dat het de lengte controleert voordat het bericht aan de berichtendienst wordt aangeboden.
+|===
+
+
+====== Fouten in GetMessage
+
+[#spd-foutcodes-getmessage]
+.sPd-foutcodes GetMessage
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1071 |S |*Bericht niet gevonden* (Invalid MSSequenceNumber). +
+Het MSSequenceNumber dat werd opgegeven in een GetMessage commando komt niet voor in de Mailbox. Van een eindsysteem wordt verwacht dat het de nummers afleidt uit een ListMessages commando; in dat geval hoort deze fout niet voor te komen.
+|1072 |S |*Mailbox is leeg* (No entries). +
+De Mailbox van de gebruiker bevat geen berichten meer. Van een eindsysteem wordt verwacht dat het de nummers van de op te halen bericht afleidt uit een ListMessages commando; in dat geval hoort deze fout niet voor te komen.
+|===
+
+
+====== Fouten in Delivery Reports
+
+Onderstaande codes kunnen voorkomen als NonDeliveryReason in een DeliveryReport operation record (260).
+
+[#spd-foutcodes-deliveryreport]
+.sPd-foutcodes DeliveryReport
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1035 |T |*Geadresseerde tijdelijk onbereikbaar* (Recipient temporarily unavailable). +
+De MBS kon een aangeboden bericht niet binnen een redelijke termijn afleveren in de Mailbox van de geadresseerde.
+|1037 |B |*Mailbox van geadresseerde is geblokkeerd* (Recipient mailbox locked). +
+Een aangeboden bericht kon niet worden afgeleverd bij de geadresseerde omdat zijn Mailbox is geblokkeerd (door Systeembeheer of doordat een fout is opgetreden in de berichtendienst zelf).
+|1038 |N |*Bericht niet op tijd afgeleverd* (Message cleaned). +
+Er is een bericht aangeboden, geadresseerd aan een niet-sPd gebruiker van de berichtendienst. Het bericht is echter niet binnen de gestelde termijn afgeleverd aan de desbetreffende MTA, en is daarom door de cleaner verwijderd. Dit hoeft geen fout van de berichtendienst te zijn (als de andere MTA niet tot het BRP management domein behoort), maar de fout dient in ieder geval aan de beheerder gemeld te worden. Daar kan worden uitgezocht wat de oorzaak van het probleem is.
+|1039 |N |*Beveiligingsprobleem* (Security error). +
+Onder deze code worden alle fouten samengevat die te maken hebben met beveiliging van het berichtenverkeer (beveiligingsproblemen die te maken hebben met het verkrijgen van toegang tot de eigen Mailbox vallen hier dus niet onder).
+|1055 |G |*Geadresseerde niet bekend in de berichtendienst* (Unrecognised ORName). +
+De geadresseerde (Recipient) in een PutMessage commando is niet bekend. Voor een BRP-systeem geldt dat een geadresseerde altijd voor moet komen in de autorisatietabel.
+|1059 |G |*Geadresseerde niet bereikbaar vanuit deze mailbox* (Unauthorized recipient). +
+De afzender is niet geautoriseerd voor het verzenden van berichten naar deze geadresseerde.
+|1204 |B |*De mailbox van geadresseerde is vol* (Mailbox full). +
+Een eerder aangeboden bericht kon niet worden afgeleverd bij de geadresseerde omdat diens Mailbox vol is. Voor iedere gebruiker is een maximum op het aantal berichten dat zijn Mailbox kan bevatten; dit maximum is gebaseerd op een schatting van de te verwachten omvang van het berichtenverkeer. Het wordt aanbevolen om contact op te nemen met de beheerder om na te laten gaan wat de oorzaken van het vollopen van de mailbox is.
+|1247 |N |*Probleem bij afleveren van het bericht* (Delivery problem). +
+Deze code is een verzamelnaam voor alle fouten die kunnen optreden bij het afleveren van een bericht en die niet onder één van de andere codes zijn te rangschikken. De beheerder kan (uit de MBS log) nadere informatie over de geconstateerde problemen verschaffen.
+|===
+
+
+====== Fouten in DeleteMessages
+
+Onderstaande foutcodes kunnen voorkomen in een DeleteMessagesConfirmation. Als één van deze fouten optreedt wordt het commando in zijn geheel _niet_ uitgevoerd, en wordt er dus geen enkel bericht verwijderd.
+
+[#spd-foutcodes-deletemessages]
+.sPd-foutcodes DeleteMessages
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1005 |S |*Selectiecriteria ontbreken* (Missing elements). +
+In het DeleteMessages zijn geen criteria opgegeven welke berichten verwijderd moeten worden.
+|1091 |S |*Bericht niet aangetroffen* (Invalid MSSequenceNumber). +
+Het MSSequenceNumber dat was opgegeven in een DeleteMessages commando is niet aangetroffen.
+|1092 |S |*Ongeldig bereik opgegeven* (Invalid range). +
+Het ToMSSequenceNumber veld heeft een lagere waarde dan het FromMSSequenceNumber veld in een DeleteMessages commando. Dit dient door het eindsysteem gecontroleerd te worden.
+|1093 |S |*Berichten niet allemaal opgehaald* (New or listed messages present). +
+Bij een DeleteMessages commando zijn één of meer berichten opgegeven die nog niet zijn opgehaald (berichten met status 'new' of 'listed' kunnen niet worden verwijderd). Dit is overigens een afwijking ten opzicht van de P7 standaard; daar kunnen berichten met status 'Listed' wel verwijderd worden.
+|===
+
+
+====== Fouten in ListMessages
+
+[#spd-foutcodes-listmessages]
+.sPd-foutcodes ListMessages
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1111 |G |*Te veel berichten opgevraagd* (Invalid limit). +
+Het aantal berichten waarover in een ListMessages commando informatie werd opgevraagd is groter dan het maximum dat voor deze gebruiker geldt. Van eindsystemen wordt verwacht dat ze dit veld weglaten (in dat geval past de MBS de limiet voor deze gebruiker toe), of dat het maximum door de systeembeheerder kan worden ingesteld.
+|1112 |S |*Ongeldig bereik opgegeven* (Invalid range). +
+In een ListMessages commando is een bereik opgegeven voor MSSequenceNumber of voor DeliveryTime, waarbij de "tot" waarde kleiner is dan de "vanaf" waarde. Dit dient door het eindsysteem gecontroleerd te worden.
+|1113 |- |*Geen berichten gevonden* (No entries). +
+Er zijn geen berichten in de Mailbox van de gebruiker aanwezig die aan de gestelde criteria voldoen. In de oorspronkelijke P7 definitie (waarop sPd is gebaseerd) was dit een fout; in de 1988-versie van P7 is dit gewijzigd. De oorspronkelijke code is vanwege compatibiliteit gehandhaafd, maar dit is geen echte fout. Hij wordt ook niet als zodanig door de berichtendienst behandeld.
+|1114 |S |*Selectie criteria ongeldig* (Invalid filter). +
+De criteria in het ListMessages commando (status en prioriteit) bevatten één of meer ongeldige waarden.
+|===
+
+
+====== Fouten in SummarizeMessages
+
+[#spd-foutcodes-summarizemessages]
+.sPd-foutcodes SummarizeMessages
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1112 |S |*Ongeldig bereik opgegeven* (Invalid range). +
+In een SummarizeMessages commando is een bereik opgegeven voor MSSequenceNumber of voor DeliveryTime, waarbij de "tot" waarde kleiner is dan de "vanaf" waarde. Dit dient door het eindsysteem gecontroleerd te worden.
+|1114 |S |*Selectiecriteria ongeldig* (Invalid filter). +
+De criteria in het SummarizeMessages commando (status en prioriteit) bevatten één of meer ongeldige waarden.
+|===
+
+
+====== Fouten in ChangePassword
+
+[#spd-foutcodes-changepassword]
+.sPd-foutcodes ChangePassword
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1131 |S |*Oude wachtwoord ontbreekt* (Old password missing). +
+In het ChangePassword commando ontbreekt het oude password.
+|1132 |G |*Oude wachtwoord onjuist* (Old password invalid). +
+In het ChangePassword commando is het oude password niet juist opgegeven. Afhankelijk van de implementatie kan dit een fout van de gebruiker of van het eindsysteem zijn.
+|1133 |S |*Nieuwe wachtwoord ontbreekt* (New password missing). +
+In het ChangePassword commando ontbreekt het nieuwe wachtwoord. "Open" Mailboxen (dus zonder wachtwoord) zijn in de berichtendienst niet toegestaan.
+|1134 |G |*Nieuw wachtwoord voldoet niet aan de regels* (New password unacceptable). +
+Het nieuwe wachtwoord dat door de gebruiker is opgegeven voldoet niet aan de daarvoor gestelde regels.
+|===
+
+
+====== Reject foutcodes
+
+[#spd-reject-foutcodes]
+.sPd Reject foutcodes
+[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+|===
+|Code |Type |Betekenis
+|1321 |S |*Ongeldig sPd-commando* (Unrecognised operation). +
+Er is een fout geconstateerd in het OperationCode veld van een sPd-commando, wat betekent dat het commando niet herkend wordt.
+|1322 |S |*Opdracht niet correct afgesloten* (Data after terminator). +
+Er zijn aan het einde van een sPd-commando overtollige tekens aangetroffen (na de afsluiting met 5 nullen).
+|1323 |S |*Fout in de lengte van commando* (Operation record length error). +
+Er is een fout geconstateerd in het lengte veld van een sPd-commando.
+|1324 |S |*Commando niet correct afgesloten* (Unrecognised data before terminator). +
+Er zijn overtollige gegevens in een sPd-record daar waar een afsluiter (5 nullen) werd verwacht.
+|1325 |S |*Te veel opdrachten tegelijk gegeven* (Unexpected operation). +
+Er is in sPd een limiet (de WindowSize) op het aantal operaties dat tegelijkertijd in uitvoering kan worden genomen. Voor de gebruikers van "klassiek" sPd staat deze altijd op 1; voor turbo-sPd is hij per gebruiker instelbaar. Deze limiet is overschreden. Van eindsystemen wordt verwacht dat het maximum door de beheerder kan worden ingesteld en dat het aantal wordt gecontroleerd.
+|===
+
+
+====== Bewaken van de verbinding
+
+Één van de taken van de MC is het controleren en bewaken van de werking van de onderliggende lagen. Dit houdt de volgende functies in:
+
+[unordered.stack]
+*Time-out bewaking*:: Indien er een verbinding is gemaakt door de MC en er worden over deze verbinding gedurende enige tijd geen commando's of data ontvangen of verstuurd, zal de MC de verbinding na 2 minuten dienen te verbreken. Ook in de MBS is een dergelijke functie aanwezig; dit betekent dat als de MBS gedurende enige tijd geen commando's van de MC ontvangt, de MBS zelf de verbinding zal verbreken. Om het eindsysteem de gelegenheid te geven "de eer aan zichzelf te houden", is de time-out aan de kant van de berichtendienst iets ruimer dan genoemde 2 minuten.
+*Controleren op fouten*:: Indien er een fatale hardware- of softwarefout ontdekt wordt tijdens het verwerken van een commando of bericht, zal de MBS de verbinding met de MC verbreken. Verder is het altijd mogelijk dat in de onderliggende netwerklagen een onherstelbare fout wordt gedetecteerd. In al deze gevallen krijgt de MC van de netwerklaag een indicatie dat de verbinding verbroken is (een S-U-ABORT als op de sessielaag wordt gewerkt, een T‑DISCONNECT op de transport laag en een N-DISCONNECT op de netwerklaag). Het eindsysteem dient hierop te controleren.
+
+Bij het ontdekken van één van de genoemde fouten worden van het eindsysteem dus twee acties verwacht:
+
+. Het verbreken van de netwerkverbinding, indien nodig.
+. Het doorgeven van de foutmelding aan de bovenliggende lagen. Hoe dit gebeurt hangt af van de gekozen implementatie; één van de mogelijkheden is om de MC zelf het verwachte antwoord op het uitstaande sPd operatie te laten construeren, met daarin een passende foutcode. +
+Het is afhankelijk van het moment waarop de fout optreedt hoe de bovenliggende lagen op de fout reageren. De ervaring leert dat het meestal mogelijk is om na korte tijd de verbinding opnieuw op te zetten en de verwerking te hervatten.
+
+Wanneer er in de MBS een fatale fout wordt ontdekt, wordt over het algemeen de mailbox van de MC geblokkeerd of wordt het de betreffende MC onmogelijk gemaakt om verdere acties uit te voeren; de beheerder moet in dit geval worden gewaarschuwd. Onder fatale fouten vallen niet alleen interne fouten van de MBS, maar ook het overschrijden van een aantal limieten door de gebruiker. Om het ongecontroleerd omgaan met de berichtendienst te voorkomen is aan het aantal LogonRequests en het aantal errors een limiet per aangeslotene per dag gesteld. Bij het overschrijden daarvan wordt de verbinding verbroken en is het de aangeslotene die dag niet toegestaan verdere acties te ondernemen met de berichtendienst. Bij het opnieuw verbinding maken met de berichtendienst wordt dan een Fatal error gegeven.
+
+Voor de te gebruiken tekenset geldt het volgende:
+
+* Alle velden in het sPd protocol, met uitzondering van de MessageBody en de wachtwoorden, mogen alleen waarden van het type 'printable string' bevatten. Printable string is een beperkte tekenset, die compatibel is met ASCII, en gedefinieerd is in CCITT aanbeveling X.208. Hij omvat de tekens A…Z, a…z, 0…9, spatie, en de speciale tekens '(){plus}-/:=?,.
+* Een MessageBody en een wachtwoord mogen octets bevatten met ieder mogelijk bitpatroon (waarden 0 tot en met 255). Dit maakt het mogelijk om berichten te vercijferen, maar het stelt wel eisen aan de te gebruiken randapparatuur.
+
+==== Turbo-sPd protocol
+
+Het turbo-sPd protocol is een uitbreiding van "klassiek" sPd, bedoeld om tegemoet te komen aan de vraag naar grotere capaciteit van de aansluitingen.
+
+===== Turbo-sPd en ROSE
+
+Uit de voorgaande besprekingen van het sPd protocol en de MBS zal duidelijk zijn dat sPd een interactief protocol is, dat werkt volgens een vast model: vanuit de Mailbox Client wordt een sPd-commando naar de Mailbox Server gestuurd; de server voert de gevraagde operatie uit en stuurt een respons naar de MC. Dit model komt ook bij andere toepassingen dan X.400 voor; OSI heeft daarvoor een model ontwikkeld dat is vastgelegd in een aparte standaard: X.219, Remote Operations Service Element (ROSE). ROSE is geen op zich zelf staand protocol; het is veeleer een bouwsteen die in andere standaards wordt gebruikt. ROSE kan beschouwd worden als een serie gestandaardiseerde afspraken hoe twee samenwerkende applicaties gebruikmaken van de diensten van de onderliggende OSI-lagen.
+
+Voor sPd geldt dat de nodige ROSE-functionaliteit impliciet opgenomen is in het protocol zelf.
+
+De voornaamste bottleneck bij het gebruik van sPd ligt in het _synchrone_ karakter van het protocol. Een eindsysteem stelt een sPd-commando samen en verstuurt dat naar de MBS. De MBS decodeert het commando, voert het uit, stelt het antwoord samen (een Result of een Confirmation), en stuurt dit terug. Pas als dit antwoord ontvangen is door het eindsysteem kan het volgende commando verstuurd worden. Deze manier van werken stelt een bovengrens aan het aantal berichten dat per uur door een eindsysteem kan worden verzonden of ontvangen; deze bovengrens is slechts gedeeltelijk afhankelijk van de snelheid van de transportverbinding.
+
+Deze synchrone manier van werken is direct terug te voeren tot het oorspronkelijke P7-protocol waar sPd van is afgeleid. Dit protocol was gebaseerd op de ROSE "synchronous operation class" (class 1). De nieuwe ISO versie van P7 is gebaseerd op de ROSE "asynchronous operation class" (class 2). De essentie daarvan is dat een eindsysteem meerdere opdrachten tegelijk kan geven, waarbij er uiteraard een manier is gedefinieerd om de antwoorden die terugkomen van de berichtendienst te koppelen aan de oorspronkelijke opdracht. Dit is ook het principe van turbo-sPd.
+
+Het aantal opdrachten dat een eindsysteem tegelijkertijd kan laten uitvoeren wordt bij de MBS bepaald door een per mailbox instelbare parameter: de _WindowSize_. De default WindowSize is 1, wat neerkomt op de synchrone manier van werken die ook voor sPd geldt. De theoretische maximumwaarde voor WindowSize is 5, maar de verwachting is dat al bij een lagere waarde van WindowSize de capaciteit van de verbinding bepaald wordt door de snelheid van de transportverbinding en de snelheid waarmee berichten binnen MBS en eindsysteem kunnen worden verwerkt.
+
+Asynchroon werken legt een groter beslag op de capaciteit van de berichtendienst. Daarom zal van geval tot geval in overleg tussen de beheerder, de leverancier van de berichtendienst en de aangeslotene bepaald worden op welke waarde de WindowSize wordt ingesteld.
+
+In 'gewoon' sPd zijn de nodige ROSE-elementen impliciet opgenomen. Bij turbo-sPd worden ze expliciet gemaakt, door aan ieder commando een zogenaamde _ROSE-header_ vooraf te laten gaan. Door deze header optioneel te maken, en toe te staan dat ook gebruikers van gewoon sPd een ROSE-header toevoegen aan hun sPd commando's, wordt bereikt dat leveranciers van eindsystemen kunnen volstaan met één sPd-implementatie, die dan afhankelijk van de WindowSize van de gebruiker zowel in turbomode als voor synchroon sPd kan worden gebruikt. Omgekeerd kan binnen de berichtendienst dezelfde MBS voor beide varianten van sPd worden gebruikt.
+
+===== Turbo-sPd operaties
+
+We kunnen een turbo-sPd-operatie definiëren analoog aan de definities in <<_spd_operaties>> voor sPd:
+
+*Definities*
+
+[width="100%",cols="35%,3%,62%",frame=none,grid=none]
+|===
+|TurboOperation |= |(ROSEHeader) {plus} Operation {plus} +
+|||TerminationRecord
+|ROSEHeader |= |Length {plus} OperationCode {plus} InvokeId
+|Operation |= |++**++ een van de sPd-operaties
+|OperationCode |= |++**++ een code die het type van de er op volgende OperationRecords aangeeft++**++
+|InvokeId |= |++**++ een door de MC toegekend getal waarmee het commando wordt geïdentificeerd. De MC is vrij in het bepalen van de waarden, maar het wordt aanbevolen om de commando's opvolgend te nummeren, te beginnen bij 1 in iedere nieuwe sessie.++**++
+|===
+
+*Structuur*
+
+[.text-center]
+.Structuur ROSE header
+image::../images/image105.svg[width=434,height=194]
+
+*Gebruik*
+
+Zoals uit de definities blijkt is een ROSE-header altijd optioneel, en kan hij voor iedere sPd-operatie worden geplaatst. Er gelden echter de volgende dwingend voorgeschreven aanvullende regels:
+
+. Een Logon- of een Logoff-operatie worden nooit voorafgegaan door een ROSE-header. De MBS accepteert dit wel, maar het zou afwijken van de regels die binnen X.400 voor P7 en ROSE gelden.
+. Voor de overige operaties is een ROSE-header verplicht als de WindowSize van de gebruiker 2 of hoger is.
+
+Bij een WindowSize van 1 heeft een ROSE-header geen functie, maar het gebruik ervan is wel toegestaan. De MBS volgt in alle gevallen het gedrag van het eindsysteem: als een operatie vooraf werd gegaan door een ROSE-header, dan wordt bij het antwoord ook een ROSE-header teruggestuurd, met daarin exact dezelfde InvokeId als het eindsysteem heeft meegestuurd. Bevatte de operatie geen ROSE-header, dan wordt ook geen ROSE-header teruggestuurd, ook al heeft de gebruiker een WindowSize groter dan 1 (en voldoet de operatie daarmee dus niet aan bovengenoemde regel 2).
+
+De OperationCode in een ROSE-header heeft een van de volgende waarden:
+
+[#operationcodes-voor-rose-header]
+.OperationCodes voor ROSE-header
+[.center,width="90%" ,cols="10%,90%",options="header",]
+|===
+|Code |Betekenis
+|001 |Voor alle requests van het eindsysteem
+|002 |Voor alle bevestigende antwoorden
+|003 |Voor alle ontkennende antwoorden met uitzondering van Reject
+|004 |Voor alle Reject-antwoorden. Deze code wordt dus altijd gevolgd door een 'NoOperationConfirmation' (OperationCode 009).
+|===
+
+De syntax van de ROSE-header wordt in de MBS op een tamelijk laag niveau gecontroleerd. Als daarbij een fout wordt geconstateerd dan wordt als antwoord altijd een Reject gestuurd (OperationCode 009) en dus niet een negatief antwoord dat hoort bij het betreffende commando.
+
+Tuo-operaties worden altijd afgehandeld in volgorde van binnenkomst, dus de antwoorden komen bij een eindsysteem binnen in dezelfde volgorde als waarin de opdrachten zijn verstuurd. De enige uitzondering op deze regels zijn de bovengenoemde Rejects; deze worden verstuurd zodra daar aanleiding voor is, en deze kunnen dus eerder terugkomen dan de antwoorden op eerder uitgestuurde operaties. Het is daarom essentieel dat het eindsysteem commando's en antwoorden koppelt op basis van de InvokeId.
+
+Logon en Logoff zijn uitgesloten van 'turbomode'; alle uitstaande opdrachten moeten zijn afgehandeld voordat een sessie kan worden afgesloten of kan worden overgeschakeld naar een andere mailbox (ReLogon).
+
+==== TCP/IP
+
+===== Inleiding
+
+De in dit hoofdstuk beschreven functionaliteit vormt het uitgangspunt voor de implementatie van het berichtenverkeer tussen BRP- of VOA-systemen en de berichtendienst (MBS) op basis van het TCP/IP-protocol.
+
+De beschrijving die hier gegeven wordt, gaat uit van een systeemomgeving waarop een TCP/IP-stack aanwezig is. Deze TCP/IP-stack dient IP versie 4 te ondersteunen.
+
+De Transport Layer Security (TLS) techniekfootnote:[Specificatie datacommunicatienetwerk GBA, GBA-projectbureau, 's-Gravenhage, 1990] moet er in combinatie met de overige beveiligingsmaatregelen voor zorgen dat de datacommunicatie het vereiste niveau van beveiliging heeft. Tussen de TCP/IP-stack op de systeemomgeving en de bovenliggende applicatie heeft de functionaliteit de vorm van een software component, die we aanduiden met de naam 'TLS-softwarecomponent' .
+
+Aangezien er geen verdere voorwaarden aan het TCP/IP-protocol gesteld worden dan het gebruik van de juiste versie, betreft dit hoofdstuk hoofdzakelijk een uitwerking van de functionaliteit van de TLS-softwarecomponent. De hierna volgende paragrafen beschrijven het TCP/IP-protocol in vergelijk tot het OSI-lagenmodel, de omgeving waarin de TLS-softwarecomponent moet functioneren en de eisen waaraan deze component moet voldoen inclusief de exacte specificatie van componentdetails (met name de TLS-protocolparameters).
+
+===== Vergelijk TCP/IP-protocol en het OSI-lagenmodel
+
+Voor het op TCP/IP gebaseerde datatransport geldt dat wordt uitgegaan van het (turbo-)sPd-protocol dat gebruik maakt van het TLS-protocol over TCP/IP.
+
+In de TCP/IP-architectuur is niet het OSI-lagenmodel gevolgd; er wordt onderscheid gemaakt tussen de netwerklaag, de internetlaag, de transportlaag en de applicatielaag.
+
+We vergelijken de TCP-architectuur kort met het OSI-lagenmodel:
+
+* In de TCP/IP-architectuur is ieder netwerkproces boven de transportlaag een applicatie, ongeacht of er sprake is van gebruikersinteractie of een proces waar de gebruiker geen weet van heeft.
+* De taak van de OSI-presentatielaag is in de TCP/IP-architectuur ondergebracht in de applicatie.
+* De sessielaag zoals in het OSI-model is niet identificeerbaar als separate laag in de TCP/IP-architectuur. De transportlaag neemt de taken van de sessielaag voor zijn rekening.
+* De transportlaag in de TCP/IP-architectuur komt sterk overeen met die in het OSI-model. TCP/IP biedt echter in tegenstelling tot de OSI-transportlaag een transportlaagdienst zonder aflevergarantie (het UDP-protocol).
+* Het internetprotocol (IP) is in de TCP/IP-architectuur het protocol dat de netwerklaag representeert.
+* De datalinklaag is door TCP/IP zelden in gebruik, TCP/IP vertrouwt doorgaans op buiten de architectuur vallende bestaande datalinkprotocollen zoals Ethernet, FDDI en ATM.
+* TCP/IP definieert geen standaarden voor de fysieke laag.
+
+===== TCP/IP met TLS in de BRP omgeving
+
+====== De TLS-softwarecomponent in context
+
+Het BAS en de MBS communiceren beide via een TLS-softwarecomponent. Deze softwarecomponent verzorgt het TLS-protocol en zet de TCP/IP-verbinding op. Het BAS spreekt de TCP/IP-stack aan om een verbinding op te zetten met de MBS waarover vervolgens de communicerende systemen de TLS-sessie tot stand brengen. Aan de kant van de MBS bestaat een vergelijkbare opzet met een TLS-softwarecomponent die binnenkomende verbindingen afhandelt.
+
+Ter vergelijk: in het OSI-lagenmodel bevindt zich TLS op het niveau van de transportlaag direct boven de TCP/IP-stack
+
+[#spd-en-onderliggende-tcpip-lagen]
+.sPd en onderliggende TCP/IP-lagen
+[.center,width="90%" ,cols="^20%,^20%,^20%,^20%,^20%",options="header",]
+|===
+2+|BAS |Applicatielaag 2+|MBS
+2+|SPd |Presentatielaag 2+|sPd
+2+| |Sessielaag 2+|
+2+|TLS-protocol .2+|Transportlaag 2+|TLS-protocol
+.2+|TCP/IP-stack |TCP .2+|TCP/IP-stack |TCP
+|IP |Netwerklaag |IP
+2+||Data-linklaag 2+|
+2+|Fysieke netwerk |Fysieke laag 2+|Fysieke netwerk
+|===
+
+Voor de software-interface richting berichtenafhandeling door het BAS of de MBS geldt dat de component overeenkomstig de interface van de TCP/IP-stack beschikt over een read/write I/O interface. De TLS-component communiceert direct met de TCP/IP-stack.
+
+De TLS-softwarecomponent gebruikt voor het TLS beveiligde berichtenverkeer de gereserveerde (IANA) 'private mail system' TCP-poort 24.
+
+====== Basisfuncties TLS
+
+Er is een drietal basisfuncties binnen TLS te onderscheiden: authenticatie, sleuteluitwisseling en encryptie.
+
+Van deze functionaliteit maakt het berichtenverkeer gebruik voor de volgende beveiligingsmaatregelen:
+
+* TLS-serverauthenticatie: Het BAS kan de identiteit van de MBS verifiëren. Met behulp van een public-key mechanisme kan het BAS (i.e. de TLS-clientcomponent) de validiteit van een door de server verstrekt certificaat controleren.
+* TLS-clientauthenticatie: De MBS kan de identiteit van het BAS verifiëren. Met behulp van een public-key mechanisme kan het systeem (de TLS-servercomponent) de validiteit van een door de cliënt verstrekt certificaat controleren.
+* Een TLS-verbinding met encryptie: Alle informatie die cliënt en server uitwisselen is vercijferd door de verzender en wordt ontcijferd door de ontvanger. Het tussentijds wijzigen of afluisteren van de informatie is dus niet mogelijk.
+
+De initiatie van een TLS-sessie voor berichtenverkeer doorloopt eerst een uitwisseling van een aantal protocolstappen, waarin de authenticatie plaatsheeft en de verbinding met encryptie tot stand komt. Eerst vindt authenticatie plaats van de server richting cliënt, gevolgd door authenticatie van de cliënt richting server en de overeenstemming over de te gebruiken sleutels voor de encryptie van de verbinding.
+
+Deze sessie-initiatie is het TLS-handshakeprotocol, de eerste fase van het TLS-protocol. Naast het handshakeprotocol bestaan er nog 2 andere subprotocollen: Het record-protocol dat de onderliggende laag vormt voor alle TLS-berichten om integriteit en encryptie van data te regelen en het alert-protocol voor de foutafhandeling en het beëindigen van een sessie.
+
+====== Overige functionaliteit TLS-softwarecomponent
+
+TLS maakt in deze architectuur gebruik van certificaten verstrekt door een Certificate Authority (CA) voor cliënt en server. Een valide certificaat afkomstig van de MBS verstrekt door deze CA, wordt door de client als geldig geaccepteerd. De MBS voert dezelfde controle uit en accepteert deze als geldig indien het certificaat niet voorkomt in een Certificate Revocation List (CRL), waarin ingetrokken cliënt-certificaten zijn opgenomen die niet geldig zijn. Aan de cliëntzijde is de CRL niet nodig, de controlefunctionaliteit beperkt zich tot de serverzijde.
+
+Al het benodigde sleutelmateriaal – zowel privé-sleutel als publieke sleutel - wordt verstrekt door RvIG. Dit houdt in dat er géén generatie van public-key sleutelmateriaal plaatsvindt door de componenten (TLS-clients en -servers) en de component geen certificaat-aanvraagprocedure hoeft te ondersteunen.
+
+Naast de TLS-protocolfunctionaliteit moet de TLS-softwarecomponent beschikken over een beheerinterface voor installatie en verwijderen van het diverse sleutelmateriaal. Voor de TLS-clientcomponent betekent dit de opslag van het eigen sleutelmateriaal en de opslag van een CA-certificaat. Voor de TLS-servercomponent omvat dit de opslag van het eigen sleutelmateriaal, de opslag van een CA-certificaat en de toegang tot de CRL.
+
+De TLS-component dient verder in staat te zijn om logboekinformatie voor foutdiagnose en beveiligingsdoeleinden weg te schrijven. Hiervoor zal eveneens een beheerinterface aanwezig moeten zijn.
+
+====== Vooronderstellingen en afhankelijkheden
+
+De opzet van de TLS-architectuur is platform- en ontwikkelomgeving-onafhankelijk met het oog op de verschillende systemen en applicaties die in gebruik zijn.
+
+Ieder BRP- of VOA-systeem is voorzien van een TLS-clientcomponent die zonder tussenkomst van andere TLS-verbindingen kan communiceren met de TLS-servercomponent bij de MBS.
+
+We gaan uit van een systeemomgeving waarop een TCP/IP-stack aanwezig is. De TCP/IP-stack ondersteunt IP versie 4. De TLS-softwarecomponent heeft een interface met een TCP/IP-stack zonder tussenkomst van andere componenten.
+
+Er is uitgegaan van een systeemopzet waarbij de TLS-clientcomponent als geïntegreerd softwareonderdeel aanwezig is. De component biedt een directe interface richting de berichtenafhandeling van het systeem voor de verzending en ontvangst van data.
+
+De beheerinterface van de TLS-clientcomponent moet met het oog op gebruiksgemak aansluiten bij de bestaande omgeving, zodat de component een uniforme uitstraling heeft.
+
+De TLS-servercomponent aanwezig bij de MBS mag met het oog op performance ook in hardware zijn uitgevoerd, mits deze direct is aangesloten op de systeemhardware zonder tussenkomst van netwerken of andere systemen.
+
+Voor het inlezen van sleutelmateriaal en het wegschrijven van een logfile beschikt de TLS-softwarecomponent over toegang tot een lokaal bestandssysteem.
+
+De TLS-architectuur sluit voor het public-key infrastructuurgedeelte aan bij de eisen en wensen afkomstig van de taskforce PKI-overheidfootnote:[Bijlage 2 bij de prekwalificatie AT 100800-4-86 van 30 juni 1986 t.b.v. het Ministerie van Binnenlandse Zaken voor het netwerk Gemeentelijke Bevolkingsadministratie, Toelichting op te ontwikkelen GBA-protocollen, 1986.]. Het formaat van certificaten en de CRL moet in overeenstemming met de eisen en wensen zijn, zodat er (in de toekomst) gebruik gemaakt kan worden van certificaten verstrekt door een overheids-PKI. De in dit hoofdstuk vermelde formaten voldoen aan de door de taskforce gestelde richtlijnen.
+
+===== Kwaliteitsaspecten
+
+====== Toestemming RvIG
+
+Voor de implementatie van deze TLS-architectuur ligt het voor de hand gebruik te maken van bestaande toolkits, libraries, software en mogelijk hardwarecomponenten die de nodige cryptografische functionaliteit bieden. Voordat men gebruik maakt bij implementatie van een dergelijk hulpmiddel, is toestemming nodig van RvIG.
+
+Toestemming van RvIG voor het gebruik is geen ontheffing van de uit te voeren controle door de leverancier op de overeenstemming met de eisen in dit document. De eigen verantwoordelijkheid van de leverancier voor naleving van de in dit document opgenomen eisen blijft hierdoor dus ongewijzigd.
+
+====== Code-inspectie
+
+RvIG behoudt zich het recht voor een code-inspectie uit te voeren. Het gaat daarbij met name om de code die voorziet in het TLS-protocol en het beheer van sleutelmateriaal.
+
+====== Beschikbaarheid en responstijd
+
+De vereiste beschikbaarheid van de TLS-softwarecomponent is gelijk aan die van de berichtendienst.
+
+De doorvoersnelheid van de TLS-clientcomponent voor berichten moet voldoende zijn om aan de eis van verbindingscapaciteit te voldoen.
+
+De TLS-servercomponent dient verschillende TLS-verbindingen simultaan te ondersteunen. Het minimum aantal simultaan te ondersteunen verbindingen met een mailbox is 240. Voor de client component is dit niet nodig.
+
+De maximum responstijd van de TLS-component is 80 milliseconden.
+
+=== Terugmeldvoorziening (TMV)
+
+==== Beschrijving
+
+TMV2.0 is een applicatie die beheerd wordt door RvIG. Met die applicatie beheert RvIG de (gegevens over) terugmeldingen. Afnemers (de terugmelders) moeten terugmeldingen doen aan Digimelding. Digimelding stuurt de meldingen betreffende de BRP door aan TMV2.0. In TMV2.0 kunnen gemeenten en RNI (de bijhouders) die terugmeldingen bekijken, afhandelen en de resultaten daarvan bijwerken. Terugmelders moeten via Digimelding de status van de terugmelding ophalen uit TMV2.0.
+
+Op de website van Logius (www.logius.nl/diensten/digimelding) is de Digimeldingkoppelvlak-standaard beschreven.
+
+Gemeenten en RNI (de bijhouders) kunnen voor het benaderen van TMV 2.0 gebruik maken van de van toepassing zijnde TMV 2.0-webservice zoals beschreven in de Handleiding Aansluiten TMV 2.0 of van het TMV 2.0-portaal. De handleiding wordt gepubliceerd op de website van RvIG.
+
+=== BRP Verstrekkingsvoorziening
+
+==== Het berichtenverkeer
+
+===== Verwerking inkomende berichten
+
+De inkomende BRP-berichten kunnen in drie groepen verdeeld worden:
+
+. De berichten die gevolgen hebben voor de landelijke tabellen. Deze berichten worden in BRP-V verwerkt.
+. De vrije berichten worden rechtstreeks aan de beheerder aangeboden.
+. De overige berichten (plaatsen/verwijderen afnemersindicaties en het beantwoorden van ad-hoc (adres)vragen) worden door BRP-V behandeld.
+
+Voor alle berichten geldt dat zij worden verwerkt conform de betreffende berichtencyclus.
+
+Hoe inkomende ad hoc vragen, ad hoc adresvragen en berichten plaatsen/verwijderen afnemersindicatie op persoonslijst worden beantwoord, wordt hierna uitgewerkt.
+
+===== Aanmaken uitgaande berichten
+
+De uitgaande berichten worden door BRP-V samengesteld aan de hand van de inkomende berichten van afnemers, de inkomende <<Lg01,Lg01>>-berichten van gemeenten en de RNI, en op basis van de autorisatietabel. De uitgaande vrije berichten zijn direct afkomstig van de beheerder.
+
+Deze paragraaf beschrijft de verschillende typen systematische gegevensverstrekkingen aan afnemers. Voor de overige berichtencycli wordt verwezen naar het berichtenboek, <<_berichtenboek>> en de hieronder staande berichten.
+
+In tegenstelling tot de gang van zaken bij het verstrekken van gegevens door gemeenten speelt het geblokkeerd zijn van PL'en, dat zijn PL'en die betrokken zijn bij een intergemeentelijke verhuizing, geen rol in processen waarbij naar PL'en gezocht wordt bij selecties, bij ad hoc vragen en ad hoc adresvragen, en ook niet bij het samenstellen van uitgaande berichten.
+
+==== Gegevens in BRP-V
+
+===== Vulling van BRP-V
+
+BRP-V bevat de volledige gegevens van alle PL'en uit de BRP, zowel de actuele als de opgeschorte PL'en, inclusief de PL'en die zijn opgeschort met reden "F". Gegevenssets die eenmaal in BRP-V zijn opgenomen, blijven ook na opschorting van de PL in BRP-V opgenomen. PL'en die in de gemeente worden afgevoerd (opschorting met reden "F") worden in BRP-V logisch verwijderd en zijn niet benaderbaar voor afnemers.
+
+BRP-V bevat geen verwijsgegevens.
+
+BRP-V is initieel gevuld vanuit de BRP. Daartoe is in iedere gemeente een speciale selectie gedraaid. Omdat BRP-V geen gebruik maakt van het standaardmechanisme voor verstrekkingen aan afnemers worden er geen afnemersindicaties geplaatst. Iedere mutatie op een PL leidt tot een verstrekking van gegevens aan BRP-V en iedere verstrekking bevat altijd de volledige set gegevens van een persoon. De gegevens in BRP-V zijn derhalve altijd een volledige en exacte kopie van de gegevens in de BRP.
+
+De gegevens in BRP-V worden geautomatiseerd bijgehouden via het berichtenverkeer vanuit het BRP-stelsel. BRP-V haalt de BRP-berichten tenminste éénmaal per etmaal op. Daarmee loopt BRP-V dus maximaal 24 uur achter op de BRP. In incidentele gevallen zal geautomatiseerde afhandeling niet mogelijk zijn, maar is tussenkomst van de beheerder noodzakelijk. De beheerder kan de volgende acties ondernemen:
+
+. Een bericht (PL) geforceerd verwerken in BRP-V.
+. Een bericht (PL) niet verwerken.
+. Een bericht (PL) opnieuw opvragen.
+. Een PL deactiveren (handmatig op status W zetten). Deze actie is voor het geval een PL ten onrechte is opgenomen in BRP-V, die niet via het berichtenverkeer op status F kan worden gezet (bijvoorbeeld een aangehaakte PL die via een alternatief Medium in BRP-V is opgenomen).
+
+===== Gegevensset
+
+BRP-V bevat alle gegevens van een PL uit de categorieën 1 tot en met 14 alsmede de bijbehorende historische categorieën 51 – 64, zoals gedefinieerd in <<_gegevenswoordenboek>>. Categorie 15 is leeg.
+
+BRP-V kan geen dubbele A‑nummers (<<e0110,01.01.10>>) registreren. Het A‑nummer is daarom altijd te gebruiken als uniek identificerend gegeven binnen BRP-V. In voorkomende gevallen worden dubbele A‑nummers gesignaleerd. Na wijziging kunnen de betrokken gegevens alsnog in BRP-V worden opgenomen.
+
+BRP-V kan wel dubbele burgerservicenummers (<<e0120,01.01.20>>) opslaan. Een burgerservicenummer is technisch gezien niet per definitie uniek. Een dubbel voorkomend burgerservicenummer wordt gesignaleerd, zodat er een herstelactie kan plaatsvinden.
+
+In BRP-V kunnen alle tekens geregistreerd worden die binnen het BRP-tekenrepertoire zijn toegestaan. Binnenkomende berichten met tekens buiten het BRP-tekenrepertoire worden beantwoord door het sturen van een protocolfout.
+
+===== Bijhouden gegevens
+
+Omdat een bijhoudingsbericht voor BRP-V altijd de volledige PL bevat, worden de gegevens van de persoon in het geheel vervangen. Bij binnenkomst wordt gecontroleerd of de gegevens in het bijhoudingsbericht voldoen aan de regels in het Gegevenswoordenboek en de inhoud van de Landelijke Tabellen. Schendingen van deze regels in binnenkomende gegevens worden gesignaleerd maar in de meeste gevallen worden ze wel opgenomen. Als de gegevens door de gemeente worden gecorrigeerd, worden ze opnieuw geleverd. Op deze manier garandeert BRP-V dat de gegevens zoveel mogelijk een exacte kopie zijn van de PL in de gemeente.
+
+De beheerder van BRP-V heeft de mogelijkheid om selecties te maken en inzage te hebben in de PL'en ten behoeve van het beheer van BRP-V.
+
+Het gebruik van de opschortingsreden "W" (wissen) is alleen voor het interne gebruik van BRP-V. De beheerder kan deze opschortingsreden gebruiken voor het logisch verwijderen van PL'en die nooit opgenomen hadden mogen worden in BRP-V, hierbij kan gedacht worden aan vanuit de gemeente aangeleverde aangehaakte PL'en.
+
+==== Autorisatie van afnemers, gemeenten en RNI
+
+===== Autorisatie van afnemers
+
+In het BRP-aansluit- en autorisatietraject wordt een afnemer de mogelijkheid geboden eveneens een aansluiting aan te vragen op de Ad hoc webservice en/of op de BRP API.
+
+Aansluitingen op de Ad hoc webservice en de BRP API zijn ook mogelijk zonder aansluiting op de berichtendienst. Afnemers die van één van deze kanalen voor ad hoc gegevensverstrekkingen gebruik willen maken, moeten een aanvraag indienen voor een autorisatie voor ad hoc verstrekking.
+
+BRP-V hanteert voor de gegevensverstrekking de actuele BRP-autorisatietabelregel die voor de afnemer geldt.
+
+===== Autorisatie van gemeenten en RNI
+
+Op grond van de Wet BRP kunnen gemeenten en de RNI alle gegevens in BRP-V raadplegen ten behoeve van de bijhouding en in het kader van de uitoefening van de rechten van de betrokken ingeschrevene zelf. De gemeenten en RNI krijgen daartoe een autorisatietabelregel die begint met de 4 posities van de gemeentecode, gevolgd door 01.
+
+Voor gemeenten betekent dit een aansluiting op de webservices van BRP-V naast hun GABA (Gemeente als buitengemeentelijke afnemer) autorisatie.
+
+De gemeenten en RNI krijgen een autorisatietabelregel waarmee zij de webservices kunnen benaderen.
+
+Het raadplegen met behulp van de webservices Opvragen PL (<<_opvragen_persoonslijst_bij_brp_verstrekkingen>>) en Opvragen afnemersindicaties (<<_opvragen_afnemersindicaties>>) door de gemeenten en RNI hoeft niet geprotocolleerd te worden, maar moet wel gelogd worden. Het opvragen met behulp van de Ad hoc webservice (<<AdHocAdresVraagViaWebservice>>) door gemeenten en RNI moet wel geprotocolleerd worden. Technisch is er geen onderscheid tussen het protocolleren van een opvraging en het loggen van een raadpleging.
+
+Bij het verstrekken van een protocolleringsoverzicht mogen de gelogde gegevens niet opgenomen worden in het overzicht.
+
+==== Toegangsbeveiliging
+
+===== PKI
+
+BRP-V bevat een kopie van de BRP-gegevens in de onderscheiden gemeentelijke basisregistraties en de RNI. De inhoud en toegang tot BRP-V dienen derhalve adequaat beveiligd te zijn.
+
+Voor de beveiliging van het gegevensverkeer van afnemers met BRP-V wordt versleuteling toegepast. Sleutelmateriaal wordt ook gebruikt voor de authenticatie van afnemers. Gebruikers van de Ad hoc webservice en API's moeten beschikken over een gekwalificeerd PKI-overheid certificaat (zie http://www.pkioverheid.nl[www.pkioverheid.nl]).
+
+Met betrekking tot de beveiliging van BRP-V gelden de volgende eisen.
+
+* BRP-V is alleen benaderbaar voor systemen van gemeenten, RNI en afnemers van BRP-V.
+* Uitgangspunt is dat een afnemer alleen een koppeling met BRP-V kan realiseren met een eigen server en via een besloten netwerk (Diginetwerk). De koppeling is gebaseerd op HTTP, SOAP dan wel REST/JSON en TLS. De aansluiting van afnemers op BRP-V verloopt via een PKI. Hiervoor wordt dezelfde invulling gebruikt als bij het datatransport voor het 'reguliere' BRP-berichtenverkeer: TCP/IP met TLS. BRP-V fungeert in het PKI-stelsel als een server.
+* Een geautoriseerde afnemer kan met behulp van een geldig certificaat vanuit zijn systemen een beveiligde verbinding met BRP-V opzetten. Een afnemer kan de berichtafhandeling met BRP-V laten uitvoeren door een derde partij, een bewerker. Een bewerker die voor een of meerdere afnemers de berichtafhandeling uitvoert, kan voor de communicatie met BRP-V zijn eigen certificaat of dat van een van de betreffende afnemers gebruiken. Als de beveiligde verbinding tot stand is gekomen, dient een autorisatie plaats te vinden van de afnemer waarvoor de verbinding wordt opgezet. Dat gebeurt middels een afnemernaam/wachtwoord combinatie.
+* In een PKI worden certificaten alleen voor een bepaalde duur uitgegeven. Een afnemer of bewerker kan derhalve beschikken over nul, een of meerdere geldige certificaten. BRP-V accepteert alleen geldige certificaten. De certificatiedienstverlener (CSP) kan de geldigheid van een certificaat door middel van een Certificate Revocation List (CRL) intrekken.
+
+===== TLS- en HTTP- beveiliging
+
+De authenticatie en beveiliging vinden op twee manieren plaats:
+
+. TLS-beveiliging;
+. HTTP-beveiliging.
+
+====== TLS-beveiliging
+De TLS-beveiliging wordt puur gebruikt voor het technisch beveiligen van de transportlaag. Zowel aan de kant van de _client_ als van de _server_ worden X.509-certificaten gebruikt voor de authenticatie. Voor de specificatie van de certificaten en de procedures rondom de sleuteluitgifte is aangesloten bij de TLS-infrastructuur van de BRP.
+
+====== HTTP-beveiliging
+Om zoveel mogelijk aan te sluiten bij gangbare internetstandaarden wordt voor de authenticatie van de feitelijke afnemer gebruik gemaakt van standaard _Basic_ _authentication_ HTTP-beveiliging. Schematisch ziet dat er als volgt uit.
+
+[#schema-http-beveiliging]
+.Schema HTTP-beveiliging
+[.center,width="80%" ,cols="20%,80%",options="header"]
+|===
+|Protocol |Beveiliging
+|SOAP |
+|HTTP |Afnemernaam-/wachtwoordbeveiliging voor feitelijke afnemer
+|TLS |X.509-__client__certificaat voor sessiebeveiliging
+|TCP/IP |
+|===
+
+Het is vooralsnog aan afnemers toegestaan om meerdere sessies met BRP-V op te zetten. De beheerorganisatie behoudt zich evenwel het recht voor om het aantal sessies aan een limiet te binden – hetzij een limiet per afnemer, hetzij een globale limiet voor alle afnemers. BRP-V weigert een verbinding als het aantal sessies voor dezelfde afnemer deze limiet overschrijdt.
+
+===== Beveiliging Alternatieve Media
+
+Gezien de omvang van de door BRP-V geleverde gegevens is het noodzakelijk om de alternatieve media met deze gegevens in versleutelde vorm aan de afnemers te doen toekomen.
+
+Hierbij is gekozen voor een one-way versleuteling waarbij BRP-V het bestand met behulp van de publieke sleutel van de afnemer zal versleutelen en zal versturen aan de afnemer die dit bestand met zijn eigen private sleutel ontcijfert. Voor zowel de verzender als de ontvanger wordt gebruik gemaakt van dezelfde sleutels als die voor het BRP-berichtenverkeer zijn gedefinieerd.
+
+=== Informatieknooppunt (IKP)
+
+==== Beschrijving
+
+Deze applicatie IKP dient ter ondersteuning van de Landelijke Aanpak Adreskwaliteit (LAA). LAA is een samenwerkingsverband van gemeenten, de Minister van BZK en bestuursorganen die gebruik maken van de adresgegevens van personen die zijn opgenomen in de BRP. De deelnemende partijen hebben een gezamenlijk doel om incorrecte adresgegevens in de BRP te identificeren en te corrigeren. Dit is vastgelegd in artikel 2.37a van de wet BRP.
+
+De applicatie IKP wordt beheerd door RvIG. In IKP wordt de informatie van de signaalleveranciers aangevuld met gegevens die worden verkregen uit andere (basis)registraties van de overheid en verwerkt tot signalen voor adresonderzoek. Een signaal betreft een adresgegeven waarvan het vermoeden bestaat dat de registratie van personen op het adres onjuist is.
+
+==== Verwerking
+
+===== Selecteren
+
+Per gemeente is een maximum aantal te onderzoeken signalen afgesproken, de portiegrootte. De signaalleverancier levert niet meer signalen dan het gestelde maximum aantal, zo nodig door een (random) selectie uit te voeren.
+
+===== Actualiseren
+
+De door de signaalleveranciers aangeleverde signalen worden door RvIG gecompleteerd en geactualiseerd. Daarna worden te controleren gegevens ingelezen in de Web Applicatie Landelijke Aanpak Adreskwaliteit (WALAA).
+
+=== Web Applicatie Landelijke Aanpak Adreskwaliteit (WALAA)
+
+==== Beschrijving
+
+WALAA is een webapplicatie die dient ter ondersteuning bij het uitvoeren van de Landelijke Aanpak Adreskwaliteit (LAA). De aangeleverde signalen vanuit de signaalleveranciers aan het Informatieknooppunt (IKP), worden na actualisatie doorgezet naar WALAA en daarmee aangeboden aan de gemeente. WALAA geeft ondersteuning bij het uitvoeren van adresonderzoeken door gemeenten.

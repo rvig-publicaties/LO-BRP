@@ -1,0 +1,3400 @@
+== Bijhouding
+
+=== Algemeen
+
+==== Inschrijving in de BRP en vervolginschrijvingen
+
+****
+Als een persoon voldoet aan de in de Wet BRP gestelde inschrijvingscriteria, moet een in de Wet BRP vastgelegde verzameling gegevens over die persoon, in de vorm van de persoonslijst (PL), in de BRP opgenomen worden. Deze PL wordt opgenomen in de burgerzakenapplicatie van de gemeente waar de betreffende persoon zijn woon- of briefadres houdt of in de RNI als het een inschrijving van een niet-ingezetene betreft. Een eenmaal in de BRP opgenomen PL wordt niet meer verwijderd. Wel kan de bijhouding van de PL worden opgeschort. Dit gebeurt in geval van overlijden en een ten onrechte aangelegde PL. Als een persoon van ingezetene niet-ingezetene wordt door emigratie of Ministerieel besluit, wordt de PL ten dele opgeschort.
+
+De Wet BRP schrijft ook voor dat over ingeschreven personen de vastgestelde verzameling gegevens door de gemeente van inschrijving bijgehouden dient te worden. De bronnen van deze gegevens zijn Burgerlijke Stand, de burger, rechterlijke macht, et cetera.
+
+De BRP-gegevens worden dus decentraal bij de gemeenten en de RNI opgeslagen. Dit maakt gegevensuitwisseling noodzakelijk voor:
+
+[unordered.stack]
+*Inschrijving vanuit een andere gemeente*:: In dit geval zal de gegevensuitwisseling eenvoudig te realiseren zijn, aangezien beide gemeenten, waartussen de gegevensuitwisseling moet plaats vinden, in principe bekend zijn.
+*Het bewaren van landelijke consistentie*:: Met name in het geval van een (her)vestiging vanuit het buitenland of in het geval van de opheffing van een Ministerieel besluit, dient nagegaan te worden of de persoon ingeschreven is in de RNI, om te voorkomen dat een persoon meer dan eenmaal in de BRP wordt ingeschreven.
+
+Bij de inschrijving als ingezetene worden drie situaties onderscheiden:
+
+[unordered.stack]
+*Eerste inschrijving*:: Bij de eerste inschrijving worden, na vaststelling dat de in te schrijven persoon nog niet ingeschreven is, de actualiseringsprocedures uitgevoerd om de gegevens over de persoon op een PL vast te leggen. De eerste inschrijving kan plaatsvinden bij geboorte in Nederland en bij aangifte van verblijf en adres.
+*Vervolginschrijving vanuit een andere gemeente*:: Er is sprake van een vervolginschrijving vanuit een andere gemeente indien een persoon verhuist naar een andere gemeente dan zijn huidige gemeente van inschrijving. +
+In de gemeente van vestiging worden de nieuwe inschrijvingsgegevens toegevoegd en in de gemeente van vertrek wordt een verwijzing naar de gemeente van vestiging opgenomen. +
+Zo'n vervolginschrijving kan ook het gevolg zijn van het feit dat hij in verband met een infrastructurele wijziging in een andere gemeente ingeschreven wordt, zonder dat er een fysieke verhuizing heeft plaatsgevonden.
+*Vervolginschrijving vanuit RNI*:: Er is sprake van een vervolginschrijving vanuit RNI indien een persoon zich in een gemeente vestigt, terwijl hij in de RNI ingeschreven is. De persoon kan zich voor de eerste maal vestigen in Nederland, zich na terugkomst uit het buitenland of na opheffing van een Ministerieel besluit hervestigen in dezelfde of in een andere gemeente. +
+In de gemeente van vestiging worden de gegevens opnieuw vastgesteld, de nieuwe inschrijvingsgegevens toegevoegd en in de RNI wordt een verwijzing naar de gemeente van vestiging opgenomen.
+
+Bij de inschrijving als niet-ingezetene worden twee situaties onderscheiden:
+
+[unordered.stack]
+*Eerste inschrijving*:: Bij de eerste inschrijving worden, na vaststelling dat de in te schrijven persoon nog niet in de BRP ingeschreven is, de actualiseringsprocedures uitgevoerd om de gegevens over de persoon op een PL vast te leggen. De eerste inschrijving kan plaatsvinden via een inschrijfvoorziening (RNI-loket) of op verzoek van een Aangewezen Bestuursorgaan.
+*Emigratie*:: Er is sprake van een emigratie indien een persoon vanuit zijn huidige woongemeente in het buitenland gaat wonen. De gemeente neemt het nieuwe adres op, in de RNI wordt de RNI als gemeente van inschrijving toegevoegd en in de gemeente van vertrek wordt een verwijzing naar de RNI opgenomen.
+
+Omdat eerste inschrijving bij ingezetenen anders verloopt dan bij niet-ingezetenen, staat de eerste inschrijving als ingezetene beschreven in <<_eerste_inschrijving_2>> en als niet-ingezetene in <<_eerste_inschrijving_3>>.
+****
+
+==== Vervolginschrijving
+
+Bij een vervolginschrijving vestigt de persoon zich in een andere gemeente dan waar hij ingeschreven is (verder ook aangeduid als gemeente van vertrek) of hij vestigt zich in een gemeente terwijl hij thans als niet-ingezetene is ingeschreven. Met andere woorden: in de gemeente van vertrek of de RNI is een PL aanwezig. Er kan sprake zijn van de volgende situaties:
+
+* Een persoon wordt op grond van aangifte van een intergemeentelijke adreswijziging ingeschreven.
+* Een persoon wordt op grond van hervestiging in Nederland in verband met een immigratie of in verband met de opheffing van een Ministerieel besluit ingeschreven in een gemeente; de PL bevindt zich in de RNI.
+* Een persoon wordt als gevolg van een infrastructurele wijziging ingeschreven in een nieuwe of andere gemeente.
+
+Een vervolginschrijving kan dus alleen plaatsvinden nadat eerder een eerste inschrijving heeft plaatsgevonden. Dit betekent dat bij een vervolginschrijving de persoonsgegevens niet opnieuw ingebracht behoeven te worden, maar verkregen moeten worden uit de gemeente van vertrek of de RNI.
+
+Bij intergemeentelijke adreswijzigingen en hervestigingen wordt de gehele PL, inclusief de historie, via de berichtendienst naar de gemeente van vestiging overgebracht. In de gemeente van vertrek of de RNI worden de verwijsgegevens naar de gemeente van vestiging opgenomen. Hiertoe dient de van toepassing zijnde procedure vervolginschrijving in <<_berichtenboek>> uitgevoerd te worden.
+
+Bij infrastructurele wijzigingen is vaak sprake van het op grote schaal verhuizen en/of actualiseren van PL'en en verwijsgegevens. Daarom zijn hiervoor aparte richtlijnen opgesteld. Deze zijn beschreven in <<_intergemeentelijke_infrastructurele_wijzigingen>>.
+
+Bij een abusievelijke vervolginschrijving dient de betrokkene werkelijk ingeschreven te worden in de nieuwe gemeente en daarna weer "terug te verhuizen". Een dergelijke fout treedt bijvoorbeeld op wanneer met een correct afgeronde berichtencyclus vervolginschrijving een verkeerde persoon verhuisd is.
+
+Ten behoeve van een vervolginschrijving bij een intergemeentelijke adreswijziging of een hervestiging moeten de volgende procedures uitgevoerd worden:
+
+* Na ontvangst van de PL moeten er door de gemeente van vestiging actualiseringsprocedures uitgevoerd worden.
++
+Bij een intergemeentelijke adreswijziging is dit:
++
+--
+** Actualiseren verblijfplaats: vervolginschrijving intergemeentelijke adreswijziging.
+--
++
+De persoon moet worden ingeschreven in de BRP op het adres van een geldig adresseerbaar object in de BAG. Zie voor het betreffende voorschrift <<_actualiseren_verblijfplaats>>.
++
+Bij een hervestiging in Nederland in verband met een immigratie of de opheffing van een Ministerieel besluit zijn dit:
++
+--
+** Actualiseren inschrijving: wijziging in de opschorting.
+** Actualiseren verblijfplaats: hervestiging door immigratie.
+** Actualiseren verblijfplaats: wijziging in de documentindicatie (nadat de vestigingsgemeente de ontvangen brondocumenten heeft verwerkt).
+--
++
+De laatstgenoemde actualisering wordt alleen uitgevoerd als de indicatie document (<<e7510,08.75.10>>) voorkomt <<_actualiseren_verblijfplaats>>.
++
+De persoon moet worden ingeschreven in de BRP op het adres van een geldig adresseerbaar object in de BAG. Zie voor het betreffende voorschrift <<_actualiseren_verblijfplaats>>. Indien het een PL betreft die vanuit de RNI komt, moet van alle gegevens worden nagegaan of die moeten worden aangevuld of aangepast.
++
+* Na inschrijving in de nieuwe gemeente wordt in de gemeente van vertrek een verwijzing opgenomen naar de gemeente van vestiging. Dit geschiedt op basis van de verwijsgegevens die de gemeente van vestiging verstuurt naar de gemeente van vertrek.
+* Tevens moet gecontroleerd worden of er gerelateerden van de betrokkene in de gemeente van inschrijving zijn ingeschreven. Zie voor de betreffende voorschriften <<_gerelateerdengegevens>>.
+* Voorts bestaat de mogelijkheid dat het A‑nummer moet worden gewijzigd in een ander A‑nummer. Zie voor de betreffende voorschriften <<_wijziging_van_het_anummer>>.
+
+Bij een vervolginschrijving in de RNI worden de volgende procedures uitgevoerd:
+
+* De actualiseringsprocedure "Actualiseren verblijfplaats: Vervolginschrijving in de RNI" wordt uitgevoerd (<<_vervolginschrijving_in_de_rni>>).
+* Na inschrijving in de RNI wordt in de gemeente van waaruit de PL verstuurd is, een verwijzing opgenomen naar de RNI. De RNI stuurt daartoe naar de gemeente een bericht met de verwijsgegevens.
+* Bij de vervolginschrijving kan blijken dat er in de RNI reeds een PL aanwezig is met het betreffende A-nummer. De PL moet dan geweigerd worden, conform de werkwijze die het LO BRP beschrijft bij de Vervolginschrijving van gemeente naar RNI (<<_vervolginschrijving_van_gemeente_naar_rni>>).
+
+==== Actualiseren
+
+===== Inleiding
+
+De procedures met betrekking tot actualisering van BRP-gegevens betreffen veranderingen in de persoonlijke omstandigheden en/of de omgeving. Deze veranderingen zijn het gevolg van gebeurtenissen waarbij veelal de Burgerlijke Stand of de rechterlijke macht betrokken is, maar bijvoorbeeld ook het gevolg van (her)vestigingen, verhuizingen of infrastructurele wijzigingen. Een gevolg van zo'n verandering kan ook het voor het eerst opnemen van een gegeven zijn, bijvoorbeeld bij een eerste inschrijving. De gemeenten zijn verplicht deze veranderingen te verwerken in de basisregistratie opdat deze de meest actuele situatie weergeeft.
+
+De Wet BRP stelt regels ten aanzien van de bijhouding van de basisregistratie. De gemeenteambtenaren voeren de Wet BRP uit. Zij zijn daarbij niet verantwoordelijk voor de inhoud van het brondocument, maar wel voor de beoordeling ervan en het correct aanbrengen van de wijziging in de BRP conform het brondocument.
+
+De actualiseringsprocedures welke een gemeentelijk BRP-systeem minimaal moet kunnen uitvoeren, zijn:
+
+* Actualiseren persoon (<<_actualiseren_persoon>>)
+* Actualiseren ouder1 (<<_actualiseren_ouder1>>)
+* Actualiseren ouder2 (<<_actualiseren_ouder2>>)
+* Actualiseren nationaliteit (<<_actualiseren_nationaliteit>>)
+* Actualiseren huwelijk/geregistreerd partnerschap (<<_actualiseren_huwelijkgeregistreerd_partnerschap>>)
+* Actualiseren overlijden (<<_actualiseren_overlijden>>)
+* Actualiseren inschrijving (<<_actualiseren_inschrijving>>)
+* Actualiseren verblijfplaats (<<_actualiseren_verblijfplaats>>)
+* Actualiseren kind (<<_actualiseren_kind>>)
+* Actualiseren verblijfstitel (<<_actualiseren_verblijfstitel>>)
+* Actualiseren gezagsverhouding (<<_actualiseren_gezagsverhouding>>)
+* Actualiseren reisdocument (<<_actualiseren_reisdocument>>)
+* Actualiseren kiesrecht (<<_actualiseren_kiesrecht>>)
+* Actualiseren verwijzing (<<_actualiseren_verwijzing>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+* Onderzoekprocedure en correcties (<<_onderzoekprocedure_en_correcties>>)
+* Actualiseren bijzondere PL-situaties (<<_actualiseren_bijzondere_pl_situaties>>)
+* Actualiseren landelijke tabellen (<<_actualiseren_landelijke_tabellen>>)
+
+Bij deze procedures wordt ook aangegeven op welke wijze hier bij niet-ingezetenen mee moet worden omgegaan.
+
+Voor het verkrijgen van een goed inzicht in de actualiseringsprocedures is een gedegen kennis van de inhoud van het Gegevenswoordenboek (<<_gegevenswoordenboek>>) noodzakelijk. De actualiserings­procedures zijn namelijk mede gebaseerd op de regels die gelden voor het vóórkomen van gegevens op de persoonslijst, in de verwijzing en in de landelijke tabellen. In veel actualiseringsprocedures komt het aanleggen van historie ter sprake. In het Gegevenswoordenboek is een beschrijving opgenomen van de manier waarop historie moet worden aangelegd.
+
+===== Gebruikte termen
+
+De diverse actualiseringsprocedures worden beschreven met behulp van een aantal specifieke termen. (In <<_gegevenswoordenboek>> worden de gebruikte termen ten aanzien van de te registreren gegevens toegelicht):
+
+[unordered.stack]
+*Opnemen*:: Dit houdt in dat na de actualisering in de actuele categorie uitsluitend de opgesomde groepen voorkomen. Tenzij anders vermeld, heeft het opnemen van gegevens tot gevolg dat de reeds voorkomende categorie in zijn geheel historisch wordt. Voor de eerste opname van categorieën geldt dat er vanzelfsprekend geen actuele categorie voorkomt en er derhalve geen historie wordt aangemaakt.
+
+*Wijzigen*:: In de opgesomde groepen wordt voor de betreffende rubrieken de nieuwe waarde in de actuele categorie vastgelegd. Elementen binnen deze groepen, waarvan de waarde hetzelfde blijft, worden opnieuw opgenomen met deze waarde. +
+De overige groepen in de actuele categorie, die dus niet bij de wijziging genoemd zijn, blijven opgenomen in de nieuwe actuele categorie, voor zover de structuur in het Gegevenswoordenboek dit toestaat. Een uitzondering is de groep procedure. Indien vóór de wijziging in de actuele categorie een onderzoek voorkomt dat beëindigd is (element <<e8330,83.30>> komt voor), komt na de wijziging groep <<g83,83>> niet meer in de actuele categorie voor.
++
+Tenzij anders vermeld, heeft het wijzigen van gegevens tot gevolg dat de reeds voorkomende categorie in zijn geheel historisch wordt.
++
+Vervolgens geldt dat:
++
+--
+** alle voorschriften uit het Gegevenswoordenboek worden gehanteerd;
+** het mogelijk is dat een te wijzigen groep nog niet eerder voorkwam;
+** gegevens ook zodanig kunnen wijzigen dat ze actueel niet meer voorkomen.
+--
+
+*Overschrijven*:: Opgenomen waarden worden overschreven met de nieuwe waarden. Er wordt dus geen extra categorie aangelegd. Tenzij anders vermeld, heeft het overschrijven van gegevens tot gevolg dat er geen historie wordt aangelegd.
+
+*Verwijderen*:: De opgesomde gegevens worden uit de categorie verwijderd. Er wordt dus geen extra categorie aangelegd. Tenzij anders vermeld, heeft het verwijderen van gegevens tot gevolg dat er geen historie wordt aangelegd.
+
+===== Gecombineerde actualiseringen
+
+Indien meerdere actualiseringsprocedures voor één categorie worden uitgevoerd op basis van hetzelfde brondocument, moeten die actualiseringsprocedures als één gecombineerde procedure worden doorgevoerd. Dit heeft tot gevolg dat er slechts één historische categorie ontstaat, voor zover bij de actualisering historie wordt aangelegd.
+
+Dit voorschrift geldt alleen dan als de uit het brondocument afgeleide rechtsfeiten dezelfde ingangsdatum geldigheid hebben.
+
+===== Synchronisatie
+
+Tenzij anders vermeld, geldt voor alle in dit hoofdstuk opgenomen actualiseringsprocedures dat de actualisering leidt tot een synchronisatie met de BRP-Verstrekkingsvoorziening.
+
+===== Categorieën die meerdere malen actueel kunnen voorkomen
+
+In het algemeen geldt dat voor iedere gebeurtenis in de betreffende categorie, dat wil zeggen iedere voorkomende nationaliteit, ieder huwelijk/geregistreerd partnerschap, ieder kind, ieder reisdocument, er een nieuwe actuele categorie wordt aangelegd. Dit in tegenstelling tot het geval dat de gegevens van een eerder opgenomen gebeurtenis geactualiseerd moeten worden.
+
+Het aanleggen van historie heeft alleen betrekking op een actuele categorie van dezelfde gebeurtenis, dat wil zeggen: dezelfde nationaliteit, hetzelfde huwelijk/geregistreerd partnerschap, hetzelfde kind. Voor iedere ooit opgenomen gebeurtenis blijft er dus altijd een actuele categorie aanwezig.
+
+Bij de hier bedoelde gebeurtenissen geldt het volgende:
+
+* Een tweede huwelijk/geregistreerd partnerschap met dezelfde persoon wordt beschouwd als een nieuwe gebeurtenis. Er wordt een nieuwe categorie aangelegd.
+De categorie met ontbindingsgegevens omtrent het eerste huwelijk/geregistreerd partnerschap blijft actueel.
+* Een omzetting van een huwelijk/geregistreerd partnerschap wordt niet beschouwd als een nieuwe gebeurtenis zoals hier is bedoeld. Er wordt geen nieuwe categorie aangelegd.
+De categorie met de gegevens omtrent het om te zetten huwelijk respectievelijk geregistreerd partnerschap wordt historisch. In de actuele categorie komen de gegevens omtrent het omgezette geregistreerd partnerschap respectievelijk huwelijk.
+* Gegevens over de Nederlandse nationaliteit in groep <<g05,05>> en de groepen <<g63,63>>, <<g64,64>> en <<g65,65>> worden beschouwd als gegevens betreffende dezelfde gebeurtenis.
+Bijvoorbeeld: opname van de Nederlandse nationaliteit, vervolgens verlies en daarna vaststelling 'Niet Nederlanderschap' leidt tot één actuele en twee bijbehorende historische categorieën. Het is in dit voorbeeld dus niet juist om voor het vastleggen van de vaststelling 'Niet Nederlanderschap' een tweede actuele categorie aan te leggen.
+* Gegevens over onbekende nationaliteit(en) worden beschouwd als gegevens betreffende dezelfde gebeurtenis. Deze gegevens worden vastgelegd in één actuele categorie met eventuele historische categorieën.
+* Gegevens over staatloosheid worden beschouwd als gegevens betreffende dezelfde gebeurtenis. Deze gegevens worden vastgelegd in één actuele categorie met eventuele historische categorieën.
+* Voor de categorie reisdocument geldt dat voor ieder uitgegeven Nederlands reisdocument, alsmede voor het opnemen van de signalering, een categorie wordt aangelegd.
+
+===== Eerste opname van categorieën met gerelateerdengegevens
+
+Er is sprake van een eerste opname van een categorie met gerelateerdengegevens in de volgende situaties:
+
+* bij het opnemen van de gegevens over een nieuwe gerelateerde in een nieuwe actuele categorie Huwelijk/geregistreerd partnerschap of Kind;
+* bij het opnemen van de gegevens over een nieuwe ouder in een categorie Ouder1 of Ouder2.
+
+Indien bekend, worden vanaf het brondocument of de PL van de gerelateerde de aanvullende gerelateerdengegevens direct in de betreffende categorie opgenomen. Als bron geldt de akte of het document waaruit de relatie afgeleid is.
+
+===== Gerelateerdengegevens
+
+De in deze paragraaf beschreven procedures gelden uitsluitend binnengemeentelijk.
+
+====== Zoeken naar gerelateerden
+
+Bij iedere inschrijving dient gecontroleerd te worden of er gerelateerden van de betrokkene in de gemeente zijn ingeschreven. Ook het omgekeerde geldt, namelijk dat van alle overige in de gemeente ingeschreven personen wordt nagegaan of de nieuw ingeschrevene op de één of andere wijze aan die persoon gerelateerd is.
+
+Zoeken naar gerelateerden dient ook te gebeuren indien er bij een ingeschrevene één of meer van de gegevens in de groepen <<g01,01.01>> Identificatienummers, <<g02,01.02>> Naam, <<g03,01.03>> Geboorte en/of <<g04,01.04>> Geslacht geactualiseerd worden. Dit zoeken dient om vast te stellen of er na de genoemde actualiseringen nieuwe gerelateerden bepaald kunnen worden.
+
+Twee personen worden beschouwd als gerelateerden als de inhoud van de rubrieken uit de groepen Identificatienummers, Naam, Geboorte en Geslacht uit categorie <<c01-51,01>> van de ene PL gelijk is aan de inhoud van de rubrieken uit de overeenkomstige groepen uit één van de categorieën <<c02-52,02>>, <<c03-53,03>>, <<c05-55,05>> of <<c09-59,09>> van een andere PL. De vergelijking op de inhoud van rubrieken uit groep <<g01,01>> wordt uitsluitend uitgevoerd op rubrieken die op beide PL'en voorkomen. De vergelijking op de inhoud van rubrieken uit de groepen <<g02,02>>, <<g03,03>> en <<g04,04>> wordt uitsluitend uitgevoerd op alle rubrieken uit alleen die groepen die op beide PL'en voorkomen, waarbij geldt dat alle rubrieken in deze groepen gelijk moeten zijn. +
+Benadrukt wordt dat het hier gaat om een minimumeis. Met name in het geval dat een vergelijking van gegevens meerdere kandidaten oplevert, moet bepaald worden wie feitelijk de gerelateerde is.
+
+====== Aanvullen gerelateerdengegevens
+
+Wanneer één of meer gerelateerden gevonden zijn, worden de gerelateerdengegevens aangevuld. Het gaat hierbij om gegevens uit de groepen <<g01,01>> Identificatienummers, <<g03,03>> Geboorte en/of <<g04,04>> Geslacht uit categorie <<c01-51,01>> van de ene PL, die nog niet bij de gerelateerde in de categorie <<c02-52,02>>, <<c03-53,03>>, <<c05-55,05>> of <<c09-59,09>> voorkwamen en dus niet in de bovengenoemde vergelijking zijn meegenomen. Deze aanvullingen worden uitgevoerd door middel van het wijzigen van de betreffende groep. Indien de groep <<g03,03>> Geboorte in categorie <<c01-51,01>> uitsluitend standaardwaarden bevat, worden de geboortegegevens niet aangevuld in de categorieën <<c02-52,02>>, <<c03-53,03>> en <<c09-59,09>>.
+
+In de categorie <<c02-52,02>>, <<c03-53,03>>, <<c05-55,05>> of <<c09-59,09>>, die ontstaat bij het aanvullen van de gerelateerdengegevens, krijgen de elementen in de groepen <<g82,82>>, <<g85,85>> en <<g86,86>> de volgende waarden:
+
+* <<e8210,82.10>> = de code van de gemeente die de procedure uitvoert
+* <<e8220,82.20>> = de datum waarop de gegevens worden opgenomen
+* <<e8230,82.30>> = "PL gerelateerde"
+* <<e8510,85.10>> = de datum waarop de gegevens worden opgenomen
+* <<e8610,86.10>> = de datum waarop de gegevens worden opgenomen.
+
+====== Actualiseren gerelateerdengegevens
+
+Indien twee personen gerelateerd zijn aan elkaar, moeten actualiseringen in de groepen <<g01,01>> Identificatienummers, <<g02,02>> Naam, <<g03,03>> Geboorte en <<g04,04>> Geslacht in categorie <<c01-51,01>> van de PL van de ene gerelateerde altijd doorgevoerd worden in de overeenkomstige groepen in categorie <<c02-52,02>>, <<c03-53,03>>, <<c05-55,05>> of <<c09-59,09>> van de PL van de andere gerelateerde.
+
+===== Toevoegen kindgegevens
+
+Bij het stelsel onder het Besluit bevolkingsboekhouding (PK-stelsel) werden kinderen alleen opgenomen op de PK van het gezinshoofd. In het BRP-stelsel echter dienen kinderen opgenomen te worden op de PL'en van beide ouders. Bij de overgang van het PK-stelsel naar het GBA-stelsel zijn alleen kinderen op de PL van een persoon opgenomen die ook op de PK van die persoon stonden vermeld, waarbij kinderen geboren voor 1 januari 1966 niet verplicht hoefden te worden geconverteerd. Hierdoor kunnen kinderen ontbreken op de PL van de (andere) ouder.
+Ook voor kinderen die na de inwerkingtreding van de Wet GBA (01-10-1994) zijn geboren, kan het voorkomen dat ze niet op de PL van beide ouders voorkomen.
+
+Er is een procedure Toevoegen kindgegevens opgesteld om kindgegevens alsnog te kunnen toevoegen op de PL van de ouder waarbij die gegevens ontbreken.
+
+De procedure Toevoegen kindgegevens moet worden uitgevoerd in de volgende situaties:
+
+* een PL wordt in de basisregistratie van een gemeente opgenomen;
+* bij actualisering van gegevens in de groepen <<g01,01>> Identificatienummers, <<g02,02>> Naam of <<g03,03>> Geboorte in categorie <<c01-51,01>> Persoon van een actuele PL.
+
+De procedure bestaat uit twee delen, die hierna beschreven worden.
+
+In het eerste deel wordt nagegaan of de persoon die in de basisregistratie opgenomen wordt, een kind is van een of meerdere reeds opgenomen personen. De procedure hiervoor is als volgt:
+
+* Van de persoon die geboren is op of na 1 januari 1966 en waarvan de PL niet opgeschort is, worden de PL(‑en) van de ouder(s) gezocht. De procedure mag uitgevoerd worden voor elke persoon waarvan de PL niet opgeschort is.
+* Bij elke gevonden ouder, waarvan de PL niet opgeschort is, worden de kindgegevens toegevoegd indien deze nog niet voorkomen.
+* Indien de kindgegevens al voorkomen in een actuele categorie, dan worden eventueel ontbrekende gegevens aangevuld met behulp van de procedure aanvullen gerelateerden (<<_gerelateerdengegevens>>).
+* Eventueel ontbrekende oudergegevens op de PL van het kind worden aangevuld conform de procedure aanvullen gerelateerden.
+
+Het tweede deel van de procedure Toevoegen kindgegevens bestaat uit het nagaan of één of meerdere reeds ingeschreven personen een kind zijn van de persoon waarvoor deze procedure uitgevoerd wordt:
+
+* Van alle in de BRP ingeschreven personen die op of na 1 januari 1966 geboren zijn, dient nagegaan te worden of de op te nemen persoon als ouder op de betreffende PL voorkomt. De procedure mag uitgevoerd worden voor alle personen waarvan de PL niet is opgeschort).
+* De op deze wijze gevonden personen worden als kind aan de PL, van de persoon waarvoor de procedure Toevoegen kindgegevens uitgevoerd wordt, toegevoegd indien het nog niet voorkomt.
+* Indien de kindgegevens al voorkomen in een actuele categorie, dan worden eventueel ontbrekende gegevens aangevuld met behulp van de procedure aanvullen gerelateerden.
+* Eventueel ontbrekende oudergegevens op de PL van het kind worden aangevuld met behulp van de procedure aanvullen gerelateerden
+
+Hoe bepaald wordt of er een ouder-kind relatie bestaat en hoe kindgegevens op de PL van de ouder toegevoegd worden, is beschreven in de nu volgende paragrafen.
+
+====== Bepalen van een ouder-kind relatie
+
+Of tussen twee personen een ouder-kind relatie bestaat, dient bepaald te worden door het vergelijken van de identificerende gegevens in categorie <<c02-52,02>> Ouder1 of <<c03-53,03>> Ouder2 van de ene PL met de categorie <<c01-51,01>> Persoon van de andere PL. Historische categorieën worden niet betrokken bij het bepalen van een ouder-kind relatie.
+
+De wijze waarop bepaald wordt of de identificerende gegevens gelijk zijn, is hieronder beschreven. Uitgangspunt hierbij is dat de zekerheid dat een geconstateerde relatie ook daadwerkelijk een relatie is, zo groot mogelijk dient te zijn. Indien niet voldoende elementen voorkomen of bij de geringste afwijking mag geen relatie geconstateerd worden.
+
+Op beide PL'en dienen binnen de genoemde categorieën in ieder geval de volgende elementen voor te komen:
+
+* <<e0210,02.10>> Voornamen
+* <<e0240,02.40>> Geslachtsnaam
+* <<e0310,03.10>> Geboortedatum
+* <<e0320,03.20>> Geboorteplaats
+* <<e0330,03.30>> Geboorteland
+
+Als een van de elementen ontbreekt of als een van de elementen de standaardwaarde bevat, wordt er geacht geen relatie te bestaan.
+
+Indien aan de gestelde voorwaarde is voldaan, worden alle elementen in de groepen <<g02,02>> Naam en <<g03,03>> Geboorte in de genoemde categorieën met elkaar vergeleken. De elementen <<e0110,01.10>> A‑nummer en <<e0120,01.20>> Burgerservicenummer worden alleen vergeleken indien deze voorkomen op beide PL'en.
+
+Alleen indien alle elementen in de groepen <<g02,02>> Naam en <<g03,03>> Geboorte en eventueel <<g01,01>> Identificatienummers gelijk zijn, is er sprake van een relatie.
+
+====== Toevoegen van kindgegevens
+
+Indien op de PL van de ouder geen categorie <<c09-59,09>> of <<c09-59,59>> gevonden wordt met dezelfde identificerende gegevens als in de categorieën <<c01-51,01>> of <<c01-51,51>> op de PL van het kind, dan dient geconcludeerd te worden dat het kind nog niet voorkomt op de PL van de ouder en kan een categorie <<c09-59,09>> toegevoegd worden.
+
+Een kind komt nog niet voor op de PL van de ouder, indien:
+
+* het A‑nummer van categorie <<c01-51,01/51>> Persoon op de PL van het kind niet voorkomt in één van de categorieën <<c09-59,09/59>> Kind op de PL van de ouder en
+* de groepen <<g02,02>> Naam en <<g03,03>> Geboorte in de categorieën <<c01-51,01/51>> op de PL van het kind niet overeenkomen met de overeenkomstige groepen in de categorieën <<c09-59,09/59>> Kind op de PL van de ouder.
+
+Hierbij geldt dat alleen die elementen uit de groepen <<g02,02>> Naam en <<g03,03>> Geboorte vergeleken worden die op beide PL'en voorkomen en niet gevuld zijn met de standaardwaarde. +
+Dit betekent dat wanneer op de PL van een ouder een categorie <<c09-59,09>> voorkomt zonder groep <<g02,02>> Naam en <<g03,03>> Geboorte (bijvoorbeeld omdat er een ten onrechte opgenomen kind is afgevoerd), iedere vergelijking met kindgegevens in deze situatie altijd als uitkomst geeft dat het kind niet automatisch toegevoegd mag worden.
+
+Doordat bij de conversie van PK naar PL er geen verplichting bestond om historische gegevens van categorie Persoon te converteren, moet er in aanvulling op bovenstaand voorschrift een verificatie plaatsvinden. +
+Indien op de PL van de ouder een categorie <<c09-59,09/59>> voorkomt en rubriek <<e0210,09/59.02.10>> Voornamen is gelijk aan <<e0210,01/51.02.10>> op de PL van het kind of rubriek <<e0310,09/59.03.10>> Geboortedatum is gelijk aan <<e0310,01/51.03.10>> op de PL van het kind, dan mag geen automatische toevoeging van kindgegevens plaatsvinden.
+
+Het opnemen van de categorie <<c09-59,09>> Kind gaat als volgt in zijn werk:
+
+* Groep <<g01,09.01>> wordt gelijk aan groep <<g01,01.01>> op de PL van het kind.
+* Groep <<g02,09.02>> wordt gelijk aan groep <<g01,01.02>> op de PL van het kind.
+* Groep <<g03,09.03>> wordt gelijk aan groep <<g01,01.03>> op de PL van het kind.
+* Groep <<g82,09.82>> wordt gevuld met de volgende waarden:
+** <<e8210,09.82.10>> = de code van de gemeente die de procedure uitvoert
+** <<e8220,09.82.20>> = de datum opname van de categorie
+** <<e8230,09.82.30>> = "PL kind".
+* Rubriek <<e8510,09.85.10>> wordt gelijk aan de datum opname van de categorie.
+* Rubriek <<e8610,09.86.10>> wordt gelijk aan de datum opname van de categorie.
+
+===== Opschorting
+
+Indien een PL is opgeschort, worden actualiseringen met betrekking tot feiten die voor de datum opschorting hebben plaatsgevonden, conform de beschreven actualiseringsprocedures uitgevoerd. In het algemeen geldt dat het actualiseren van een opgeschorte PL niet is toegestaan indien het feiten betreft die zich hebben voorgedaan op een datum die ligt na het moment van opschorten. In die gevallen dat er toch een actualisering mag of moet worden uitgevoerd, wordt dit specifiek beschreven. In de volgende paragrafen is dit aan de orde:
+
+* <<_actualiseren_persoon>>, <<_actualiseren_ouder1>>, <<_actualiseren_ouder2>>, <<_actualiseren_huwelijkgeregistreerd_partnerschap>> en <<_actualiseren_kind>> (wijzigen van een A‑nummer)
+* <<_actualiseren_persoon>>, <<_actualiseren_bijzondere_pl_situaties>> (wijzigen van A-nummerverwijzingen)
+* <<_actualiseren_persoon>>, <<_actualiseren_ouder1>>, <<_actualiseren_ouder2>>, <<_actualiseren_huwelijkgeregistreerd_partnerschap>> en <<_actualiseren_kind>> (wijzigen van een burgerservicenummer)
+* <<_actualiseren_inschrijving>> (wijzigen van de synchroniciteit)
+* <<_actualiseren_verblijfplaats>>(wijzigen van categorie Verblijfplaats bij een intergemeentelijke infrastructurele wijziging)
+* <<_actualiseren_verblijfplaats>> (wijzigen van de documentindicatie)
+* <<_actualiseren_verblijfstitel>> (wijzigen van categorie Verblijfstitel)
+* <<_actualiseren_reisdocument>> (wijzigen van categorie Reisdocument)
+* <<_onderzoekprocedure_en_correcties>> (wijzigen van onderzoekgegevens).
+
+===== Blokkering
+
+In het algemeen geldt dat het aanbrengen van wijzigingen op een geblokkeerde PL niet is toegestaan. In die gevallen dat er toch wijzigingen moeten worden aangebracht, wordt dit specifiek beschreven. In de volgende paragraaf is dit aan de orde:
+
+* <<_actualiseren_inschrijving>> (wijzigen van de synchroniciteit).
+
+===== Correcties
+
+Correcties zijn aanpassingen als gevolg van foutief opgenomen gegevens of van ten onrechte niet opgenomen gegevens. Hierbij zijn drie soorten fouten te onderkennen:
+
+[unordered.stack]
+*Ten onrechte opgenomen gegevens*:: Dit kan alleen maar voorkomen bij niet-verplichte categorieën. Het betreft de opname van gegevens die in het geheel niet opgenomen hadden moeten worden. Dit is bijvoorbeeld het geval wanneer huwelijksgegevens opgenomen zijn bij de verkeerde persoon. De voorschriften met betrekking tot correcties op deze ten onrechte opgenomen gegevens worden beschreven in aparte actualiseringsprocedures.
+*Foutief opgenomen waarden*:: Dit betreft gegevens die wel opgenomen moeten zijn, maar waarvan de opgenomen waarden foutief zijn. De voorschriften met betrekking tot deze correcties worden beschreven in <<_onderzoekprocedure_en_correcties>>.
+*Ten onrechte niet opgenomen gegevens*:: Dit betreft niet vastgelegde gegevens die wel opgenomen hadden moeten zijn. De voorschriften met betrekking tot deze correcties worden beschreven in <<_onderzoekprocedure_en_correcties>>.
+
+===== Ingangsdatum geldigheid
+
+Een actualisering van een actuele categorie mag alleen maar uitgevoerd worden wanneer vaststaat dat het nieuwe gegeven actueler is dan hetgeen reeds op de PL opgenomen is. Dit wil zeggen dat de ingangsdatum geldigheid van het nieuwe gegeven recenter moet zijn dan de ingangsdatum geldigheid van het reeds opgenomen gegeven. +
+Wanneer een gedeelte van de ingangsdatum geldigheid van het nieuwe gegeven onbekend is, moet eerst vastgesteld worden dat deze datum recenter is alvorens tot actualisering overgegaan wordt. Wanneer dit niet het geval blijkt te zijn, kan eventueel overgegaan worden tot het corrigeren van de historie, zie <<_onderzoekprocedure_en_correcties>>.
+
+Het bovenstaande geldt niet bij correcties op een actuele categorie. In een dergelijk geval zijn in het verleden onjuiste gegevens opgenomen. Er moet dan een ingangsdatum geldigheid opgenomen kunnen worden die even recent of minder recent is dan de voorkomende ingangsdatum geldigheid.
+
+==== Actualiseren persoon
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen gegevens bij eerste inschrijving als ingezetene (<<_opnemen_gegevens_bij_eerste_inschrijving_als_ingezetene>>)
+* Opnemen gegevens bij eerste inschrijving als niet-ingezetene (<<_opnemen_gegevens_bij_eerste_inschrijving_als_niet_ingezetene>>)
+* Wijziging van het A‑nummer (<<_wijziging_van_het_anummer>>)
+* Wijziging van het burgerservicenummer (<<_wijziging_van_het_burgerservicenummer>>)
+* Wijziging in de naam (<<_wijziging_in_de_naam>>)
+* Wijziging in de geboorte (<<_wijziging_in_de_geboorte>>)
+* Wijziging in het geslacht (<<_wijziging_in_het_geslacht>>)
+* Wijziging in het naamgebruik (<<_wijziging_in_het_naamgebruik>>)
+* Adoptie ongeboren vrucht (<<_adoptie_ongeboren_vrucht>>)
+* Wijziging op verzoek burger in verband met adoptie (<<_wijziging_op_verzoek_burger_in_verband_met_adoptie>>)
+* Wijziging op verzoek burger in verband met geslachtswijziging (<<_wijziging_op_verzoek_burger_in_verband_met_geslachtswijziging>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+===== Opnemen gegevens bij eerste inschrijving als ingezetene
+
+Bij de eerste inschrijving worden de volgende groepen opgenomen:
+
+[none]
+* <<g01,01.01>> Identificatienummers
+* <<g02,01.02>> Naam
+* <<g03,01.03>> Geboorte
+* <<g04,01.04>> Geslacht
+* <<g61,01.61>> Naamgebruik
+* <<g81,01.81>> Akte of <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb01,Tb01>>-bericht.
+
+===== Opnemen gegevens bij eerste inschrijving als niet-ingezetene
+
+Bij de eerste inschrijving worden de volgende groepen opgenomen:
+
+[none]
+* <<g01,01.01>> Identificatienummers
+* <<g02,01.02>> Naam
+* <<g03,01.03>> Geboorte
+* <<g04,01.04>> Geslacht
+* <<g81,01.81>> Akte of <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Indien deze inschrijving wordt uitgevoerd op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep opgenomen:
+
+[none]
+* <<g88,01.88>> Deelnemer
+
+===== Wijziging van het A‑nummer
+
+Bij een wijziging van het A‑nummer worden de volgende groepen gewijzigd:
+
+[none]
+* <<g01,01.01>> Identificatienummers
+* <<g20,01.20>> A‑nummerverwijzingen
+* <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Hierbij wijzigt in groep <<g01,01.01>> alleen rubriek <<e0110,01.01.10>> A‑nummer en wordt in rubriek <<e2010,01.20.10>> Vorig A‑nummer het vervangen A‑nummer opgenomen. Als ingangsdatum geldigheid (rubriek <<e8510,01.85.10>>) wordt opgenomen de datum van opneming.
+
+Aangezien het A‑nummer kan voorkomen bij andere gemeenten (in de verwijsgegevens), bij de RNI (in de verwijsgegevens) en bij afnemers, moeten de gemeenten en de RNI op de hoogte worden gesteld van het wijzigen van het A‑nummer:
+
+* Ten behoeve van de verwijsketen worden er <<Wa01,Wa01>>-berichten verstuurd naar de geboortegemeente, indien deze in Nederland ligt, en naar alle vroegere gemeenten van inschrijving, daaronder ook begrepen de RNI, die voorkomen op de PL (<<_wijzigen_anummer_in_de_verwijsgegevens>>).
+
+Voor deze actualisering geldt dat deze ook uitgevoerd kan worden terwijl de bijhouding van de PL is opgeschort.
+
+Deze actualiseringsprocedure mag niet als correctieprocedure worden uitgevoerd.
+
+===== Wijziging van het burgerservicenummer
+
+Bij een wijziging van het burgerservicenummer worden de volgende groepen gewijzigd:
+
+[none]
+* <<g01,01.01>> Identificatienummers
+* <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Hierbij wijzigt in groep <<g01,01.01>> alleen rubriek <<e0120,01.01.20>> Burgerservicenummer. Als ingangsdatum geldigheid (rubriek <<e8510,01.85.10>>) wordt opgenomen de datum van opneming.
+
+Voor deze actualisering geldt dat deze ook uitgevoerd kan worden terwijl de bijhouding van de PL is opgeschort.
+
+Deze actualiseringsprocedure mag niet als correctieprocedure worden uitgevoerd.
+
+===== Wijziging in de naam
+
+Bij een wijziging in de naamgegevens worden de volgende groepen gewijzigd:
+
+[none]
+* <<g02,01.02>> Naam
+* <<g81,01.81>> Akte of <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,01.88>> Deelnemer
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Wijziging in de geboorte
+
+Indien de geboortegegevens wijzigen, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g03,01.03>> Geboorte
+* <<g81,01.81>> Akte of <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,01.88>> Deelnemer
+
+===== Wijziging in het geslacht
+
+Indien het geslacht wijzigt, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g04,01.04>> Geslacht
+* <<g81,01.81>> Akte of <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,01.88>> Deelnemer
+
+===== Wijziging in het naamgebruik
+
+Indien een ingeschrevene die gehuwd of geregistreerd partner is (geweest) daarom schriftelijk verzoekt, dan wel op basis van een rechterlijke uitspraak, wordt de aanduiding voor de wijze van aanschrijving gewijzigd. De volgende groepen worden gewijzigd:
+
+[none]
+* <<g61,01.61>> Naamgebruik
+* <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+===== Adoptie ongeboren vrucht
+
+De latere vermelding op de geboorteakte van de adoptie ongeboren vrucht heeft terugwerkende kracht tot aan de geboorte. De volgende groepen worden gewijzigd:
+
+[none]
+* <<g02,01.02>> Naam
+* <<g81,01.81>> Akte of <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+De gegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb01,Tb01>>-bericht.
+
+===== Wijziging op verzoek burger in verband met adoptie
+
+Op schriftelijk verzoek van de ingeschrevene tot het verwijderen van de verwijzingen naar de gegevens van voor de adoptie, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,51.02>> Naam
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+===== Wijziging op verzoek burger in verband met geslachtswijziging
+
+Op schriftelijk verzoek van de ingeschrevene tot het verwijderen van de verwijzingen naar de gegevens van voor de geslachtswijziging, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,51.02>> Naam
+* <<g04,51.04>> Geslacht
+* <<g61,51.61>> Naamgebruik
+* <<g81,51.81>> Akte
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+==== Actualiseren ouder1
+
+Op een PL'en van nooit-ingezetenen is deze paragraaf niet van toepassing.
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen oudergegevens bij eerste inschrijving (<<_opnemen_oudergegevens_bij_eerste_inschrijving>>)
+* Opnemen oudergegevens bij adoptie (<<_opnemen_oudergegevens_bij_adoptie>>)
+* Opnemen oudergegevens bij herroeping van adoptie (<<_opnemen_oudergegevens_bij_herroeping_van_adoptie>>)
+* Opnemen oudergegevens bij erkenning (<<_opnemen_oudergegevens_bij_erkenning>>)
+* Opnemen oudergegevens bij nietigverklaring van erkenning (<<_opnemen_oudergegevens_bij_nietigverklaring_van_erkenning>>)
+* Opnemen oudergegevens bij ontkenning (<<_opnemen_oudergegevens_bij_ontkenning>>)
+* Opnemen oudergegevens bij ontkenning, gevolgd door erkenning (<<_opnemen_oudergegevens_bij_ontkenning_gevolgd_door_erkenning>>)
+* Opnemen oudergegevens bij gerechtelijke vaststelling ouderschap (<<_opnemen_oudergegevens_bij_gerechtelijke_vaststelling_ouderschap>>)
+* Adoptie ongeboren vrucht (<<_adoptie_ongeboren_vrucht_2>>)
+* Wijziging in een identificatienummer (<<_wijziging_in_een_identificatienummer>>)
+* Wijziging in de naam (<<_wijziging_in_de_naam_2>>)
+* Wijziging in de geboorte (<<_wijziging_in_de_geboorte_2>>)
+* Wijziging in het geslacht (<<_wijziging_in_het_geslacht_2>>)
+* Wijziging in de datum familierechtelijke betrekking (<<_wijziging_in_de_datum_familierechtelijke_betrekking>>)
+* Wijziging op verzoek burger in verband met adoptie (<<_wijziging_op_verzoek_burger_in_verband_met_adoptie_2>>)
+* Wijziging op verzoek burger in verband met geslachtswijziging (<<_wijziging_op_verzoek_burger_in_verband_met_geslachtswijziging_2>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+In deze procedures worden de begrippen ouder' en 'oudergegevens' gehanteerd. Met 'ouder' wordt de ouder bedoeld, waarvan de gegevens in de actuele categorie <<c02-52,02>> zijn (of worden) opgenomen. Met 'oudergegevens' worden de (op te nemen) gegevens in de actuele categorie <<c02-52,02>> bedoeld. In sommige procedures is sprake van historische gegevens. Daar is dan de ouder bedoeld waarvan de gegevens in de historische categorieën <<c02-52,52>> zijn opgenomen, respectievelijk de gegevens in de historische categorieën <<c02-52,52>>.
+
+In geval er voor het eerst oudergegevens opgenomen moeten worden in categorie <<c02-52,02>> én <<c03-53,03>> of als er gegevens over nieuwe ouders opgenomen moeten worden in categorie <<c02-52,02>> én <<c03-53,03>>, dan moet altijd zowel de betrokken procedure uit deze paragraaf worden uitgevoerd, als de overeenkomstige procedure uit <<_actualiseren_ouder2>>. Het is daarbij onbepaald voor welke ouder de procedure uit welke paragraaf wordt uitgevoerd. Het maakt hierbij ook niet uit of zo'n ouder er in juridische zin wel of niet is.
+
+In alle andere gevallen bepalen de reeds opgenomen gegevens uit welke van deze paragrafen de actualiseringsprocedure wordt uitgevoerd.
+
+===== Opnemen oudergegevens bij eerste inschrijving
+
+Bij de eerste inschrijving worden de volgende groepen opgenomen:
+
+[none]
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+Indien vaststaat dat de ouder er in juridische zin niet is, worden er verder geen gegevens opgenomen. Anders worden aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g02,02.02>> Naam
+* <<g62,02.62>> Familierechtelijke betrekking
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,02.01>> Identificatienummers
+* <<g03,02.03>> Geboorte
+* <<g04,02.04>> Geslacht
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb01,Tb01>>-bericht.
+
+===== Opnemen oudergegevens bij adoptie
+
+Bij een adoptie worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+Indien vaststaat dat de ouder er in juridische zin niet is, worden er verder geen gegevens opgenomen. Anders worden aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g02,02.02>> Naam
+* <<g62,02.62>> Familierechtelijke betrekking
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,02.01>> Identificatienummers
+* <<g03,02.03>> Geboorte
+* <<g04,02.04>> Geslacht
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Opnemen oudergegevens bij herroeping van adoptie
+
+Bij een herroeping van een adoptie worden op de PL van het kind de volgende groepen opgenomen. Het betreft opname van de oudergegevens zoals die vóór de adoptie op de PL opgenomen waren.
+
+De volgende groepen worden opgenomen:
+
+[none]
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+Indien vaststaat dat de ouder er in juridische zin niet is, worden er verder geen gegevens opgenomen. Anders worden aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g02,02.02>> Naam
+* <<g62,02.62>> Familierechtelijke betrekking
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,02.01>> Identificatienummers
+* <<g03,02.03>> Geboorte
+* <<g04,02.04>> Geslacht
+
+===== Opnemen oudergegevens bij erkenning
+
+Bij een erkenning worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g02,02.02>> Naam
+* <<g62,02.62>> Familierechtelijke betrekking
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,02.01>> Identificatienummers
+* <<g03,02.03>> Geboorte
+* <<g04,02.04>> Geslacht
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Opnemen oudergegevens bij nietigverklaring van erkenning
+
+Bij een nietigverklaring van een erkenning worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+De oudergegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Opnemen oudergegevens bij ontkenning
+
+Bij een ontkenning ouderschap, die tot gevolg heeft dat er in juridische zin alleen een ouder is uit wie het kind geboren is, worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+De oudergegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Bij een ontkenning ouderschap, die tot gevolg heeft dat er in juridische zin vanaf geboorte een andere ouder is dan de ontkende ouder, worden de volgende groepen opgenomen:
+
+[none]
+* <<g02,02.02>> Naam
+* <<g62,02.62>> Familierechtelijke betrekking
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,02.01>> Identificatienummers
+* <<g03,02.03>> Geboorte
+* <<g04,02.04>> Geslacht
+
+De oudergegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Opnemen oudergegevens bij ontkenning, gevolgd door erkenning
+
+Bij een ontkenning door de ouder uit wie het kind geboren is, gevolgd door een gelijktijdige erkenning door de ouder, worden achtereenvolgens de actualiseringsprocedures Opnemen oudergegevens bij ontkenning en Opnemen oudergegevens bij erkenning uitgevoerd.
+
+===== Opnemen oudergegevens bij gerechtelijke vaststelling ouderschap
+
+Bij een gerechtelijke vaststelling ouderschap worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g02,02.02>> Naam
+* <<g62,02.62>> Familierechtelijke betrekking
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,02.01>> Identificatienummers
+* <<g03,02.03>> Geboorte
+* <<g04,02.04>> Geslacht
+
+De oudergegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Adoptie ongeboren vrucht
+
+De latere vermelding op de geboorteakte van de adoptie ongeboren vrucht heeft terugwerkende kracht tot aan de geboorte.
+
+Bij een adoptie ongeboren vrucht worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g02,02.02>> Naam
+* <<g62,02.62>> Familierechtelijke betrekking
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,02.01>> Identificatienummers
+* <<g03,02.03>> Geboorte
+* <<g04,02.04>> Geslacht
+
+De gegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb01,Tb01>>-bericht.
+
+===== Wijziging in een identificatienummer
+
+Na het bekend worden van het A‑nummer en/of burgerservicenummer van de ouder (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van het A‑nummer en/of burgerservicenummer van de ouder worden de volgende groepen gewijzigd:
+
+[none]
+* <<g01,02.01>> Identificatienummers
+* <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+Voor deze actualisering geldt dat deze ook kan worden uitgevoerd terwijl de bijhouding van de PL is opgeschort.
+
+===== Wijziging in de naam
+
+Indien de naamgegevens van de ouder wijzigen, wordt deze wijziging eveneens aangebracht in de oudergegevens van de ingeschrevene.
+
+In dit geval worden de volgende groepen gewijzigd:
+
+[none]
+* <<g02,02.02>> Naam
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+Op schriftelijk verzoek van de ingeschrevene kunnen in geval van geslachtswijziging deze wijzigingen ongedaan gemaakt worden. Uitgangspunt is dat de actualiseringen ten gevolge van de geslachtswijziging reeds zijn uitgevoerd.
+
+De volgende groep wordt overschreven:
+
+[none]
+* <<g02,02.02>> Naam
+
+===== Wijziging in de geboorte
+
+Na het bekend worden van de geboortegegevens van de ouder (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van de geboortegegevens van de ouder wordt deze wijziging eveneens aangebracht in de oudergegevens van de ingeschrevene.
+
+In deze gevallen worden de volgende groepen gewijzigd:
+
+[none]
+* <<g03,02.03>> Geboorte
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+===== Wijziging in het geslacht
+
+Na het bekend worden van de geslachtsgegevens van de ouder (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van de geslachtsgegevens van de ouder wordt deze wijziging eveneens aangebracht in de oudergegevens van de ingeschrevene.
+
+In deze gevallen worden de volgende groepen gewijzigd:
+
+[none]
+* <<g04,02.04>> Geslacht
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+===== Wijziging in de datum familierechtelijke betrekking
+
+Indien de datum familierechtelijke betrekking met de ouder wijzigt, wordt deze wijziging eveneens aangebracht in de oudergegevens van de ingeschrevene.
+
+In dit geval worden de volgende groepen gewijzigd:
+
+[none]
+* <<g62,02.62>> Familierechtelijke betrekking
+* <<g81,02.81>> Akte of <<g82,02.82>> Document
+* <<g85,02.85>> Geldigheid
+* <<g86,02.86>> Opneming
+
+===== Wijziging op verzoek burger in verband met adoptie
+
+Op schriftelijk verzoek van de ingeschrevene om de gegevens die verwijzen naar de oudergegevens van voor de adoptie te verwijderen, worden alle historische categorieën betreffende deze vroegere ouder verwijderd.
+
+===== Wijziging op verzoek burger in verband met geslachtswijziging
+
+Op schriftelijk verzoek van de ingeschrevene tot het verwijderen van de verwijzingen naar de gegevens van voor de geslachtswijziging van de ouder, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,52.02>> Naam
+* <<g04,52.04>> Geslacht
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+Op schriftelijk verzoek van de ingeschrevene om de gewijzigde gegevens van de ouder in verband met een geslachtswijziging van die ouder ongedaan te maken, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,02.02>> Naam
+* <<g04,02.04>> Geslacht
+
+Als de door de geslachtswijziging gewijzigde gegevens ook reeds voorkomen in een of meer historische categorieën, worden tevens in die categorieën de volgende gegevens overschreven:
+
+[none]
+* <<g02,52.02>> Naam
+* <<g04,52.04>> Geslacht
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+==== Actualiseren ouder2
+
+Op PL'en van nooit-ingezetenen is deze paragraaf niet van toepassing.
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen oudergegevens bij eerste inschrijving (<<_opnemen_oudergegevens_bij_eerste_inschrijving_2>>)
+* Opnemen oudergegevens bij adoptie (<<_opnemen_oudergegevens_bij_adoptie_2>>)
+* Opnemen oudergegevens bij herroeping van adoptie (<<_opnemen_oudergegevens_bij_herroeping_van_adoptie_2>>)
+* Opnemen oudergegevens bij erkenning (<<_opnemen_oudergegevens_bij_erkenning_2>>)
+* Opnemen oudergegevens bij nietigverklaring van erkenning (<<_opnemen_oudergegevens_bij_nietigverklaring_van_erkenning_2>>)
+* Opnemen oudergegevens bij ontkenning (<<_opnemen_oudergegevens_bij_ontkenning_2>>)
+* Opnemen oudergegevens bij ontkenning, gevolgd door erkenning (<<_opnemen_oudergegevens_bij_ontkenning_gevolgd_door_erkenning_2>>)
+* Opnemen oudergegevens bij gerechtelijke vaststelling ouderschap (<<_opnemen_oudergegevens_bij_gerechtelijke_vaststelling_ouderschap_2>>)
+* Adoptie ongeboren vrucht (<<_adoptie_ongeboren_vrucht_3>>)
+* Wijziging in een identificatienummer (<<_wijziging_in_een_identificatienummer_2>>)
+* Wijziging in de naam (<<_wijziging_in_de_naam_3>>)
+* Wijziging in de geboorte (<<_wijziging_in_de_geboorte_3>>)
+* Wijziging in het geslacht (<<_wijziging_in_het_geslacht_3>>)
+* Wijziging in de datum familierechtelijke betrekking (<<_wijziging_in_de_datum_familierechtelijke_betrekking_2>>)
+* Wijziging op verzoek burger in verband met adoptie (<<_wijziging_op_verzoek_burger_in_verband_met_adoptie_3>>)
+* Wijziging op verzoek burger in verband met geslachtswijziging (<<_wijziging_op_verzoek_burger_in_verband_met_geslachtswijziging_3>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+In deze procedures worden de begrippen 'ouder' en 'oudergegevens' gehanteerd. Met 'ouder' wordt de ouder bedoeld, waarvan de gegevens in de actuele categorie <<c03-53,03>> zijn (of worden) opgenomen. Met 'oudergegevens' worden de (op te nemen) gegevens in de actuele categorie <<c03-53,03>> bedoeld. In sommige procedures is sprake van historische gegevens. Daar is dan de ouder bedoeld waarvan de gegevens in de historische categorieën <<c03-53,53>> zijn opgenomen, respectievelijk de gegevens in de historische categorieën <<c03-53,53>>.
+
+In geval er voor het eerst oudergegevens opgenomen moeten worden in categorie <<c02-52,02>> én <<c03-53,03>> of als er gegevens over nieuwe ouders opgenomen moeten worden in categorie <<c02-52,02>> én <<c03-53,03>>, dan moet altijd zowel de betrokken procedure uit deze paragraaf worden uitgevoerd, als de overeenkomstige procedure uit <<_actualiseren_ouder1>>. Het is daarbij onbepaald voor welke ouder de procedure uit welke paragraaf wordt uitgevoerd. Het maakt hierbij ook niet uit of zo'n ouder er in juridische zin wel of niet is.
+
+In alle andere gevallen bepalen de reeds opgenomen gegevens uit welke van deze paragrafen de actualiseringsprocedure wordt uitgevoerd.
+
+===== Opnemen oudergegevens bij eerste inschrijving
+
+Bij de eerste inschrijving worden de volgende groepen opgenomen:
+
+[none]
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+Indien vaststaat dat de ouder er in juridische zin niet is, worden er verder geen gegevens opgenomen. Anders worden aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g02,03.02>> Naam
+* <<g62,03.62>> Familierechtelijke betrekking
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,03.01>> Identificatienummers
+* <<g03,03.03>> Geboorte
+* <<g04,03.04>> Geslacht
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb01,Tb01>>-bericht.
+
+===== Opnemen oudergegevens bij adoptie
+
+Bij een adoptie worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+Indien vaststaat dat de ouder er in juridische zin niet is, worden er verder geen gegevens opgenomen. Anders worden aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g02,03.02>> Naam
+* <<g62,03.62>> Familierechtelijke betrekking
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,03.01>> Identificatienummers
+* <<g03,03.03>> Geboorte
+* <<g04,03.04>> Geslacht
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Opnemen oudergegevens bij herroeping van adoptie
+
+Bij een herroeping van een adoptie worden op de PL van het kind de volgende groepen opgenomen. Het betreft opname van de oudergegevens zoals die vóór de adoptie op de PL opgenomen waren.
+
+De volgende groepen worden opgenomen:
+
+[none]
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+Indien vaststaat dat de ouder er in juridische zin niet is, worden er verder geen gegevens opgenomen. Anders worden aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g02,03.02>> Naam
+* <<g62,03.62>> Familierechtelijke betrekking
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,03.01>> Identificatienummers
+* <<g03,03.03>> Geboorte
+* <<g04,03.04>> Geslacht
+
+===== Opnemen oudergegevens bij erkenning
+
+Bij een erkenning worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g02,03.02>> Naam
+* <<g62,03.62>> Familierechtelijke betrekking
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,03.01>> Identificatienummers
+* <<g03,03.03>> Geboorte
+* <<g04,03.04>> Geslacht
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Opnemen oudergegevens bij nietigverklaring van erkenning
+
+Bij een nietigverklaring van een erkenning worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+De oudergegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Opnemen oudergegevens bij ontkenning
+
+Bij een ontkenning ouderschap, die tot gevolg heeft dat er in juridische zin alleen een ouder is uit wie het kind geboren is, worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+De oudergegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Bij een ontkenning ouderschap, die tot gevolg heeft dat er in juridische zin vanaf geboorte een andere ouder is dan de ontkende ouder, worden de volgende groepen opgenomen:
+
+[none]
+* <<g02,03.02>> Naam
+* <<g62,03.62>> Familierechtelijke betrekking
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,03.01>> Identificatienummers
+* <<g03,03.03>> Geboorte
+* <<g04,03.04>> Geslacht
+
+De oudergegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Opnemen oudergegevens bij ontkenning, gevolgd door erkenning
+
+Bij een ontkenning door de ouder uit wie het kind geboren is, gevolgd door een gelijktijdige erkenning door de ouder, worden achtereenvolgens de actualiseringsprocedures Opnemen oudergegevens bij ontkenning en Opnemen oudergegevens bij erkenning uitgevoerd.
+
+===== Opnemen oudergegevens bij gerechtelijke vaststelling ouderschap
+
+Bij een gerechtelijke vaststelling ouderschap worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g02,03.02>> Naam
+* <<g62,03.62>> Familierechtelijke betrekking
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,03.01>> Identificatienummers
+* <<g03,03.03>> Geboorte
+* <<g04,03.04>> Geslacht
+
+De oudergegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Adoptie ongeboren vrucht
+
+De latere vermelding op de geboorteakte van de adoptie ongeboren vrucht heeft terugwerkende kracht tot aan de geboorte.
+
+Bij een adoptie ongeboren vrucht worden op de PL van het kind de volgende groepen opgenomen:
+
+[none]
+* <<g02,03.02>> Naam
+* <<g62,03.62>> Familierechtelijke betrekking
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van de ouder aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,03.01>> Identificatienummers
+* <<g03,03.03>> Geboorte
+* <<g04,03.04>> Geslacht
+
+De gegevens die hierdoor historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb01,Tb01>>-bericht.
+
+===== Wijziging in een identificatienummer
+
+Na het bekend worden van het A‑nummer en/of burgerservicenummer van de ouder (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van het A‑nummer en/of burgerservicenummer van de ouder worden de volgende groepen gewijzigd:
+
+[none]
+* <<g01,03.01>> Identificatienummers
+* <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+Voor deze actualisering geldt dat deze ook kan worden uitgevoerd terwijl de bijhouding van de PL is opgeschort.
+
+===== Wijziging in de naam
+
+Indien de naamgegevens van de ouder wijzigen, wordt deze wijziging eveneens aangebracht in de oudergegevens van de ingeschrevene.
+
+In dit geval worden de volgende groepen gewijzigd:
+
+[none]
+* <<g02,03.02>> Naam
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+===== Wijziging in de geboorte
+
+Na het bekend worden van de geboortegegevens van de ouder (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van de geboortegegevens van de ouder wordt deze wijziging eveneens aangebracht in de oudergegevens van de ingeschrevene.
+
+In deze gevallen worden de volgende groepen gewijzigd:
+
+[none]
+* <<g03,03.03>> Geboorte
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+===== Wijziging in het geslacht
+
+Na het bekend worden van de geslachtsgegevens van de ouder (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van de geslachtsgegevens van de ouder wordt deze wijziging eveneens aangebracht in de oudergegevens van de ingeschrevene.
+
+In deze gevallen worden de volgende groepen gewijzigd:
+
+[none]
+* <<g04,03.04>> Geslacht
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+===== Wijziging in de datum familierechtelijke betrekking
+
+Indien de datum familierechtelijke betrekking met de ouder wijzigt, wordt deze wijziging eveneens aangebracht in de oudergegevens van de ingeschrevene.
+
+In dit geval worden de volgende groepen gewijzigd:
+
+[none]
+* <<g62,03.62>> Familierechtelijke betrekking
+* <<g81,03.81>> Akte of <<g82,03.82>> Document
+* <<g85,03.85>> Geldigheid
+* <<g86,03.86>> Opneming
+
+===== Wijziging op verzoek burger in verband met adoptie
+
+Op schriftelijk verzoek van de ingeschrevene om de gegevens die verwijzen naar de oudergegevens van voor de adoptie te verwijderen, worden alle historische categorieën betreffende deze vroegere ouder verwijderd.
+
+===== Wijziging op verzoek burger in verband met geslachtswijziging
+
+Op schriftelijk verzoek van de ingeschrevene tot het verwijderen van de verwijzingen naar de gegevens van voor de geslachtswijziging van de ouder, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,53.02>> Naam
+* <<g04,53.04>> Geslacht
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+Op schriftelijk verzoek van de ingeschrevene om de gewijzigde gegevens van de ouder in verband met een geslachtswijziging van die ouder ongedaan te maken, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,03.02>> Naam
+* <<g04,03.04>> Geslacht
+
+Als de door de geslachtswijziging gewijzigde gegevens ook reeds voorkomen in een of meer historische categorieën, worden tevens in die categorieën de volgende gegevens overschreven:
+
+[none]
+* <<g02,53.02>> Naam
+* <<g04,53.04>> Geslacht
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+==== Actualiseren nationaliteit
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen nationaliteit (<<_opnemen_nationaliteit>>)
+* Beëindigen nationaliteit (<<_beëindigen_nationaliteit>>)
+* Wijziging in de reden opnemen nationaliteit (<<_wijziging_in_de_reden_opnemen_nationaliteit>>)
+* Wijziging in de reden beëindigen nationaliteit (<<_wijziging_in_de_reden_beëindigen_nationaliteit>>)
+* Opnemen bijzonder Nederlanderschap (<<_opnemen_bijzonder_nederlanderschap>>)
+* Verlies bijzonder Nederlanderschap (<<_verlies_bijzonder_nederlanderschap>>)
+* Opnemen/wijzigen buitenlands persoonsnummer (<<_opnemenwijzigen_buitenlands_persoonsnummer>>)
+* Verwijderen van nationaliteitsgegevens (<<_verwijderen_van_nationaliteitsgegevens>>)
+* Correctie van ten onrechte opgenomen gegevens (<<_correctie_van_ten_onrechte_opgenomen_gegevens>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+===== Opnemen nationaliteit
+
+Bij het opnemen van een nationaliteit worden de volgende groepen opgenomen:
+
+[none]
+* <<g05,04.05>> Nationaliteit
+* <<g63,04.63>> Opnemen nationaliteit
+* <<g85,04.85>> Geldigheid
+* <<g86,04.86>> Opneming
+
+Zo nodig wordt de volgende groep opgenomen:
+
+[none]
+* <<g73,04.73>> Buitenlands persoonsnummer
+
+Tevens mag aanvullend de volgende groep worden opgenomen:
+
+[none]
+* <<g82,04.82>> Document
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,04.88>> Deelnemer
+
+Indien voor een persoon het bijzonder Nederlanderschap van toepassing is, mag deze procedure niet uitgevoerd worden, maar moet de procedure Verkrijging bijzonder Nederlanderschap worden uitgevoerd.
+
+Indien een persoon Nederlander wordt, moet voor alle andere reeds geregistreerde nationaliteiten de procedure Beëindigen nationaliteit dan wel de procedure Wijziging in de reden beëindigen nationaliteit worden uitgevoerd.
+
+===== Beëindigen nationaliteit
+
+Bij het beëindigen van een nationaliteit worden de volgende groepen opgenomen:
+
+[none]
+* <<g64,04.64>> Beëindigen nationaliteit
+* <<g85,04.85>> Geldigheid
+* <<g86,04.86>> Opneming
+
+Tevens mag aanvullend de volgende groep worden opgenomen:
+
+[none]
+* <<g82,04.82>> Document
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,04.88>> Deelnemer
+
+Indien voor een persoon het bijzonder Nederlanderschap niet langer van toepassing is, mag deze procedure niet uitgevoerd worden, maar moet de procedure Verlies bijzonder Nederlanderschap worden uitgevoerd.
+
+===== Wijziging in de reden opnemen nationaliteit
+
+Bij een wijziging in de reden opnemen nationaliteit worden de volgende groepen gewijzigd:
+
+[none]
+* <<g63,04.63>> Opnemen nationaliteit
+* <<g85,04.85>> Geldigheid
+* <<g86,04.86>> Opneming
+
+Tevens mag aanvullend de volgende groep worden gewijzigd:
+
+[none]
+* <<g82,04.82>> Document
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,04.88>> Deelnemer
+
+===== Wijziging in de reden beëindigen nationaliteit
+
+Bij een wijziging in de reden beëindigen nationaliteit worden de volgende groepen gewijzigd:
+
+[none]
+* <<g64,04.64>> Beëindigen nationaliteit
+* <<g85,04.85>> Geldigheid
+* <<g86,04.86>> Opneming
+
+Tevens mag aanvullend de volgende groep worden gewijzigd:
+
+[none]
+* <<g82,04.82>> Document
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,04.88>> Deelnemer
+
+===== Opnemen bijzonder Nederlanderschap
+
+Bij het toekennen van de aanduiding Bijzonder Nederlanderschap worden de volgende groepen opgenomen:
+
+[none]
+* <<g63,04.63>> Opnemen nationaliteit
+* <<g65,04.65>> Bijzonder Nederlanderschap
+* <<g85,04.85>> Geldigheid
+* <<g86,04.86>> Opneming
+
+Tevens mag aanvullend de volgende groep worden opgenomen:
+
+[none]
+* <<g82,04.82>> Document
+
+Indien een persoon de status Behandeld als Nederlander verkrijgt, moet voor alle andere reeds geregistreerde nationaliteiten de procedure Beëindigen nationaliteit dan wel de procedure Wijziging in de reden beëindiging nationaliteit worden uitgevoerd.
+
+===== Verlies bijzonder Nederlanderschap
+
+Bij het verlies van de aanduiding Bijzonder Nederlanderschap worden de volgende groepen opgenomen:
+
+[none]
+* <<g64,04.64>> Beëindigen nationaliteit
+* <<g85,04.85>> Geldigheid
+* <<g86,04.86>> Opneming
+
+Tevens mag aanvullend de volgende groep worden opgenomen:
+
+[none]
+* <<g82,04.82>> Document
+
+===== Opnemen/wijzigen buitenlands persoonsnummer
+
+Bij het registreren van een buitenlands persoonsnummer worden de volgende groepen gewijzigd:
+
+[none]
+* <<g73,04.73>> Buitenlands persoonsnummer
+* <<g86,04.86>> Opneming
+
+Deze wijziging leidt niet tot historie.
+
+===== Verwijderen van nationaliteitsgegevens
+
+Op schriftelijk verzoek van de ingeschrevene kunnen in geval van adoptie nationaliteitsgegevens verwijderd worden. In dat geval worden alle actuele en historische categorieën met betrekking tot de door de adoptie-uitspraak verloren nationaliteit(en) verwijderd van de PL.
+
+===== Correctie van ten onrechte opgenomen gegevens
+
+Indien een categorie Nationaliteit ten onrechte is opgenomen, wordt dit hersteld door de volgende groepen op te nemen:
+
+[none]
+* <<g64,04.64>> Beëindigen nationaliteit
+* <<g85,04.85>> Geldigheid
+* <<g86,04.86>> Opneming
+
+Tevens mag aanvullend de volgende groep worden opgenomen:
+
+[none]
+* <<g82,04.82>> Document
+
+De categorie die hierdoor historisch wordt, moet worden voorzien van de indicatie onjuist.
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,04.88>> Deelnemer
+
+==== Actualiseren huwelijk/geregistreerd partnerschap
+
+Op PL'en van nooit-ingezetenen is deze paragraaf niet van toepassing.
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen van één of meer huwelijken/geregistreerd partnerschappen (<<_opnemen_van_één_of_meer_huwelijkengeregistreerd_partnerschappen>>)
+* Omzetten van een huwelijk/geregistreerd partnerschap (<<_omzetten_van_een_huwelijkgeregistreerd_partnerschap>>)
+* Wijziging van huwelijkssluiting/aangaan geregistreerd partnerschap (<<_wijziging_van_huwelijkssluitingaangaan_geregistreerd_partnerschap>>)
+* Ontbinding van één of meer huwelijken/geregistreerd partnerschappen (<<_ontbinding_van_één_of_meer_huwelijkengeregistreerd_partnerschappen>>)
+* Wijziging van ontbinding huwelijk/geregistreerd partnerschap (<<_wijziging_van_ontbinding_huwelijkgeregistreerd_partnerschap>>)
+* Wijziging in de soort verbintenis (<<_wijziging_in_de_soort_verbintenis>>)
+* Wijziging in een identificatienummer (<<_wijziging_in_een_identificatienummer_3>>)
+* Wijziging in de naam (<<_wijziging_in_de_naam_4>>)
+* Wijziging in de geboorte (<<_wijziging_in_de_geboorte_4>>)
+* Wijziging in het geslacht (<<_wijziging_in_het_geslacht_4>>)
+* Correctie van ten onrechte opgenomen gegevens (<<_correctie_van_ten_onrechte_opgenomen_gegevens_2>>)
+* Wijziging op verzoek burger in verband met geslachtswijziging (<<_wijziging_op_verzoek_burger_in_verband_met_geslachtswijziging_4>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+===== Opnemen van één of meer huwelijken/geregistreerd partnerschappen
+
+Bij eerste inschrijving in de BRP dienen alle ooit gesloten huwelijken/ geregistreerd partnerschappen met betrekking tot de ingeschrevene opgenomen te worden. Ook elk daarna gesloten huwelijk/geregistreerd partnerschap dient opgenomen te worden.
+
+De volgende groepen worden opgenomen:
+
+[none]
+* <<g02,05.02>> Naam
+* <<g03,05.03>> Geboorte
+* <<g06,05.06>> Huwelijkssluiting/aangaan geregistreerd partnerschap
+* <<g15,05.15>> Soort verbintenis
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+Indien bekend, worden vanaf de PL van de echtgenoot/geregistreerd partner aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,05.01>> Identificatienummers
+* <<g04,05.04>> Geslacht
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Omzetten van een huwelijk/geregistreerd partnerschap
+
+Bij het omzetten van een huwelijk in een geregistreerd partnerschap en andersom, worden de volgende groepen in de categorie gewijzigd:
+
+[none]
+* <<g06,05.06>> Huwelijkssluiting/aangaan geregistreerd partnerschap
+* <<g15,05.15>> Soort verbintenis
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Wijziging van huwelijkssluiting/aangaan geregistreerd partnerschap
+
+Bij een wijziging van de gegevens van een huwelijkssluiting/aangaan geregistreerd partnerschap worden de volgende groepen in de categorie gewijzigd:
+
+[none]
+* <<g06,05.06>> Huwelijkssluiting/aangaan geregistreerd partnerschap
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+===== Ontbinding van één of meer huwelijken/geregistreerd partnerschappen
+
+Van elk ontbonden huwelijk/geregistreerd partnerschap moet altijd één actuele categorie overblijven met daarin de betreffende gegevens met betrekking tot de ontbinding huwelijk/ geregistreerd partnerschap.
+
+Bij ontbinding worden de volgende groepen gewijzigd:
+
+[none]
+* <<g07,05.07>> Ontbinding huwelijk/geregistreerd partnerschap
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+===== Wijziging van ontbinding huwelijk/geregistreerd partnerschap
+
+Bij een wijziging van de gegevens van een ontbinding huwelijk/geregistreerd partnerschap worden de volgende groepen in de categorie gewijzigd:
+
+[none]
+* <<g07,05.07>> Ontbinding huwelijk/geregistreerd partnerschap
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+===== Wijziging in de soort verbintenis
+
+Bij een wijziging van de gegevens over de soort verbintenis worden de volgende groepen gewijzigd:
+
+[none]
+* <<g15,05.15>> Soort verbintenis
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+===== Wijziging in een identificatienummer
+
+Na het bekend worden van het A‑nummer en/of burgerservicenummer van de echtgenoot/geregistreerd partner (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van het A‑nummer en/of burgerservicenummer van de echtgenoot/geregistreerd partner worden de volgende groepen gewijzigd:
+
+[none]
+* <<g01,05.01>> Identificatienummers
+* <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+Voor deze actualisering geldt dat deze ook kan worden uitgevoerd terwijl de bijhouding van de PL is opgeschort.
+
+===== Wijziging in de naam
+
+Indien de naamgegevens van de echtgenoot/geregistreerd partner wijzigen, wordt deze wijziging eveneens aangebracht in de huwelijk/geregistreerd partnerschapgegevens van de ingeschrevene.
+
+In dit geval worden de volgende groepen gewijzigd:
+
+[none]
+* <<g02,05.02>> Naam
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+===== Wijziging in de geboorte
+
+Na het bekend worden van de geboortegegevens van de echtgenoot/geregistreerd partner (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van de geboortegegevens van de echtgenoot/geregistreerd partner wordt deze wijziging eveneens aangebracht in de huwelijk/geregistreerd partnerschapgegevens van de ingeschrevene.
+
+In deze gevallen worden de volgende groepen gewijzigd:
+
+[none]
+* <<g03,05.03>> Geboorte
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+===== Wijziging in het geslacht
+
+Na het bekend worden van de geslachtsgegevens van de echtgenoot/geregistreerd partner (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van de geslachtsgegevens van de echtgenoot/geregistreerd partner wordt deze wijziging eveneens aangebracht in de huwelijk/geregistreerd partnerschapgegevens van de ingeschrevene.
+
+In deze gevallen worden de volgende groepen gewijzigd:
+
+[none]
+* <<g04,05.04>> Geslacht
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+===== Correctie van ten onrechte opgenomen gegevens
+
+Indien een categorie Huwelijk/geregistreerd partnerschap ten onrechte is opgenomen, wordt dit hersteld door de volgende groepen op te nemen:
+
+[none]
+* <<g81,05.81>> Akte of <<g82,05.82>> Document
+* <<g85,05.85>> Geldigheid
+* <<g86,05.86>> Opneming
+
+De categorie die hierdoor historisch wordt, moet worden voorzien van de indicatie onjuist.
+
+===== Wijziging op verzoek burger in verband met geslachtswijziging
+
+Op schriftelijk verzoek van de ingeschrevene tot het verwijderen van de verwijzingen naar de gegevens van voor de geslachtswijziging van de partner, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,55.02>> Naam
+* <<g04,55.04>> Geslacht
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+Op schriftelijk verzoek van de ingeschrevene om de gewijzigde gegevens van de partner in verband met een geslachtswijziging van die partner ongedaan te maken, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,05.02>> Naam
+* <<g04,05.04>> Geslacht
+
+Als de door de geslachtswijziging gewijzigde gegevens ook reeds voorkomen in een of meer historische categorieën, worden tevens in die categorieën de volgende gegevens overschreven:
+
+[none]
+* <<g02,55.02>> Naam
+* <<g04,55.04>> Geslacht
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+==== Actualiseren overlijden
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen overlijdensgegevens (<<_opnemen_overlijdensgegevens>>)
+* Wijziging in overlijden (<<_wijziging_in_overlijden>>)
+* Correctie van ten onrechte opgenomen gegevens (<<_correctie_van_ten_onrechte_opgenomen_gegevens_3>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+===== Opnemen overlijdensgegevens
+
+Bij een overlijden worden de volgende groepen opgenomen:
+
+[none]
+* <<g08,06.08>> Overlijden
+* <<g81,06.81>> Akte of <<g82,06.82>> Document
+* <<g85,06.85>> Geldigheid
+* <<g86,06.86>> Opneming
+
+Bij overlijden moet een eventueel huwelijk/geregistreerd partnerschap worden ontbonden, hetgeen inhoudt dat de gegevens van een huwelijk/geregistreerd partnerschap op de PL van de nog in leven zijnde echtgenoot/geregistreerd partner geactualiseerd moeten worden.
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb02,Tb02>>-bericht.
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,06.88>> Deelnemer
+
+===== Wijziging in overlijden
+
+Indien de overlijdensgegevens wijzigen, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g08,06.08>> Overlijden
+* <<g81,06.81>> Akte of <<g82,06.82>> Document
+* <<g85,06.85>> Geldigheid
+* <<g86,06.86>> Opneming
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,06.88>> Deelnemer
+
+===== Correctie van ten onrechte opgenomen gegevens
+
+Indien een categorie Overlijden ten onrechte is opgenomen, wordt dit hersteld door de volgende groepen op te nemen:
+
+[none]
+* <<g81,06.81>> Akte of <<g82,06.82>> Document
+* <<g85,06.85>> Geldigheid
+* <<g86,06.86>> Opneming
+
+De categorie die hierdoor historisch wordt, moet worden voorzien van de indicatie onjuist.
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,06.88>> Deelnemer
+
+==== Actualiseren inschrijving
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Eerste inschrijving (<<_eerste_inschrijving>>)
+* Wijziging in de blokkering (<<_wijziging_in_de_blokkering>>)
+* Wijziging in de opschorting (<<_wijziging_in_de_opschorting>>)
+* Wijziging in de opname (<<_wijziging_in_de_opname>>)
+* Wijziging in de gemeente persoonskaart (<<_wijziging_in_de_gemeente_persoonskaart>>)
+* Wijziging in geheim (<<_wijziging_in_geheim>>)
+* Wijziging in de PK‑conversie (<<_wijziging_in_de_pkconversie>>)
+* Wijziging in de synchroniciteit (<<_wijziging_in_synchroniciteit>>)
+
+Voor alle actualiseringen in deze categorie geldt dat daarbij geen historie wordt aangelegd.
+
+===== Eerste inschrijving
+
+Bij de eerste inschrijving in de BRP worden de volgende groepen opgenomen:
+
+[none]
+* <<g68,07.68>> Opname
+* <<g70,07.70>> Geheim
+* <<g80,07.80>> Synchroniciteit
+
+Zo nodig worden aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g69,07.69>> Gemeente PK
+* <<g87,07.87>> PK‑conversie
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb01,Tb01>>-bericht.
+
+Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezetene op verzoek van een aangewezen bestuursorgaan, wordt tevens de volgende groep opgenomen:
+
+[none]
+* <<g88,07.88>> Deelnemer
+
+===== Wijziging in de blokkering
+
+De groep <<g66,07.66>> Blokkering wordt uitsluitend ingevuld bij het versturen van de PL naar de volgende gemeente van inschrijving of naar de RNI.
+
+De volgende groep wordt gewijzigd:
+
+[none]
+* <<g66,07.66>> Blokkering
+
+Na correcte afronding van de berichtencyclus Vervolginschrijving (<<_vervolginschrijving_2>>), de berichtencyclus Vervolginschrijving van gemeente naar RNI (<<_vervolginschrijving_van_gemeente_naar_rni>>) alsmede de berichtencyclus Vervolginschrijving van RNI naar gemeente (<<_vervolginschrijving_van_rni_naar_gemeente>>), wordt de procedure Verwijderen geblokkeerde PL uitgevoerd (<<_verwijderen_geblokkeerde_pl>>).
+
+Verwijdering van de blokkering, door middel van de bovenstaande wijziging, van een ten onrechte geblokkeerde PL moet mogelijk zijn en vindt plaats:
+
+* na ontvangst van een <<If21,If21>>-bericht in de berichtencyclus Vervolginschrijving;
+* eventueel na ontvangst van een <<If01,If01>>-bericht met foutcode "B" in deze berichtencyclus Vervolginschrijving;
+* als het onderzoek na ontvangst van een protocolfout in deze berichtencyclus Vervolginschrijving daartoe aanleiding geeft;
+* na ontvangst van een <<Rf01,Rf01>>-bericht in de berichtencyclus Vervolginschrijving van gemeente naar RNI (<<_vervolginschrijving_van_gemeente_naar_rni>>);
+* als het onderzoek na ontvangst van een protocolfout in deze berichtencyclus Vervolginschrijving van gemeente naar RNI, daartoe aanleiding geeft;
+* na ontvangst van een <<Jf21,Jf21>>-bericht in de berichtencyclus Vervolginschrijving van RNI naar gemeente (<<_vervolginschrijving_van_rni_naar_gemeente>>);
+* eventueel na ontvangst van een <<Jf01,Jf01>>-bericht met foutcode "B" in deze berichtencyclus Vervolginschrijving van RNI naar gemeente;
+* als het onderzoek na ontvangst van een protocolfout in deze berichtencyclus Vervolginschrijving van RNI naar gemeente, daartoe aanleiding geeft.
+
+Zie ook <<_berichtenboek>>, Berichtenboek.
+
+===== Wijziging in de opschorting
+
+====== Aanvang opschorting
+
+De bijhouding van de gegevens op de PL wordt opgeschort bij overlijden en in het geval van een ten onrechte opgenomen PL. Bij emigratie en op basis van een Ministerieel besluit (bijv. vanwege een diplomatieke status) wordt de PL gedeeltelijk opgeschort en daarna als niet-ingezetene bijgehouden.
+
+Bij het opschorten wordt de volgende groep gewijzigd:
+
+[none]
+* <<g67,07.67>> Opschorting
+
+Bij opname van reden "F" (ten onrechte opgenomen PL) wordt de procedure Afvoeren PL uitgevoerd (<<_afvoeren_pl>>).
+
+====== Einde opschorting
+
+In geval van correctie van overlijden en na het weer in de BRP opnemen van een ten onrechte afgevoerde PL moet de opschorting van de PL beëindigd worden. Bij immigratie of beëindiging Ministerieel besluit wordt de PL verhuisd vanuit de RNI en de opschorting beëindigd.
+
+Bij het beëindigen van de opschorting wordt de volgende groep verwijderd:
+
+[none]
+* <<g67,07.67>> Opschorting
+
+Na beëindiging van de opschorting moet de PL geactualiseerd worden, eventueel op grond van binnengekomen documenten (<<_actualiseren_verblijfplaats>>).
+
+===== Wijziging in de opname
+
+De groep Opname wordt na de eerste inschrijving in de BRP niet meer geactualiseerd. Indien correcties noodzakelijk zijn, moet de volgende groep gewijzigd worden:
+
+[none]
+* <<g68,07.68>> Opname
+
+===== Wijziging in de gemeente persoonskaart
+
+Als het een wijziging betreft, waarvoor een verwijzing in de Gemeententabel (tabel <<t33,33>>) wordt opgenomen, behoeft deze wijziging niet op de PL te worden aangebracht.
+
+In andere gevallen wordt de volgende groep gewijzigd:
+
+[none]
+* <<g69,07.69>> Gemeente PK
+
+===== Wijziging in geheim
+
+Op verzoek van de ingeschrevene wordt geregistreerd dat het verstrekken van gegevens over die ingeschrevene aan bepaalde derden wel/niet is toegestaan (rubriek <<e7010,07.70.10>> krijgt de waarde "0", respectievelijk "7").
+
+De volgende groep wordt gewijzigd:
+
+[none]
+* <<g70,07.70>> Geheim
+
+===== Wijziging in de PK‑conversie
+
+Indien de gegevens van elk op de PK van de persoon opgenomen kind, waarvoor geldt dat er tussen dat kind en die persoon een familierechtelijke betrekking bestaat, geconverteerd zijn naar de PL van die persoon, wordt de volgende groep gewijzigd:
+
+[none]
+* <<g87,07.87>> PK‑conversie
+
+===== Wijziging in synchroniciteit
+
+Bij iedere wijziging op de PL –met uitzondering van het ophogen van het versienummer– dient de datumtijdstempel te worden bijgewerkt. Op het moment dat er een <<Lg01,Lg01>>-bericht wordt aangemaakt voor verzending wordt het versienummer opgehoogd met 1.
+
+De volgende groep wordt gewijzigd:
+
+[none]
+* <<g80,07.80>> Synchroniciteit
+
+Voor deze actualisering geldt dat deze ook uitgevoerd kan worden terwijl de bijhouding van de PL is opgeschort.
+
+Deze actualisering mag niet als correctieprocedure worden uitgevoerd.
+
+==== Actualiseren verblijfplaats
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen verblijfplaatsgegevens bij eerste inschrijving als ingezetene (<<_opnemen_verblijfplaatsgegevens_bij_eerste_inschrijving_als_ingezetene>>)
+* Vervolginschrijving intergemeentelijke adreswijziging (<<_vervolginschrijving_intergemeentelijke_adreswijziging>>)
+* Hervestiging door immigratie (<<_hervestiging_door_immigratie>>)
+* Wijziging adres binnengemeentelijk (<<_wijziging_adres_binnengemeentelijk>>)
+* Emigratie (<<_emigratie>>)
+* Wijzigingen in infrastructuur (<<_wijzigingen_in_infrastructuur>>)
+* Wijziging in de omschrijving van de aangifte adreshouding (<<_wijziging_in_de_omschrijving_van_de_aangifte_adreshouding>>)
+* Wijziging in de documentindicatie (<<_wijziging_in_de_documentindicatie>>)
+* Verwijderen van historische verblijfplaatsgegevens (<<_verwijderen_van_historische_verblijfplaatsgegevens>>)
+* Verwijderen van emigratie_ en immigratiegegevens (<<_verwijderen_van_emigratie_en_immigratiegegevens>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+===== Opnemen verblijfplaatsgegevens bij eerste inschrijving als ingezetene
+
+Bij de eerste inschrijving wordt er een categorie Verblijfplaats aangelegd. Het adres van de in te schrijven persoon in deze gemeente is het adres van een geldig adresseerbaar object in de BAG.
+
+Hierbij worden de volgende groepen opgenomen:
+
+[none]
+* <<g09,08.09>> Gemeente
+* <<g10,08.10>> Adreshouding
+* <<g11,08.11>> Adres
+* <<g72,08.72>> Adresaangifte
+* <<g85,08.85>> Geldigheid
+* <<g86,08.86>> Opneming
+
+Indien er sprake is van immigratie of opheffing van een Ministerieel besluit wordt aanvullend de volgende groep opgenomen:
+
+[none]
+* <<g14,08.14>> Immigratie
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb01,Tb01>>-bericht.
+
+===== Vervolginschrijving intergemeentelijke adreswijziging
+
+Bij een vervolginschrijving in een andere gemeente wordt de categorie Verblijfplaats geactualiseerd. Het adres van de in te schrijven persoon in deze gemeente is het adres van een geldig adresseerbaar object in de BAG.
+
+Hierbij worden de volgende groepen gewijzigd:
+
+[none]
+* <<g09,08.09>> Gemeente
+* <<g10,08.10>> Adreshouding
+* <<g11,08.11>> Adres
+* <<g72,08.72>> Adresaangifte
+* <<g85,08.85>> Geldigheid
+* <<g86,08.86>> Opneming
+
+===== Hervestiging door immigratie
+
+De procedure hervestiging door immigratie wordt uitgevoerd als een reeds ingeschreven persoon zich hervestigt in Nederland in verband met een immigratie of de opheffing van een Ministerieel besluit. De PL wordt in deze gevallen verhuisd vanuit de RNI. Het adres van de te hervestigen persoon in deze gemeente is het adres van een geldig adresseerbaar object in de BAG.
+
+Hierbij worden de volgende groepen opgenomen:
+
+[none]
+* <<g09,08.09>> Gemeente
+* <<g10,08.10>> Adreshouding
+* <<g11,08.11>> Adres
+* <<g14,08.14>> Immigratie
+* <<g72,08.72>> Adresaangifte
+* <<g85,08.85>> Geldigheid
+* <<g86,08.86>> Opneming
+
+Resultaat van de overige actualiseringen met betrekking tot de categorie Verblijfplaats is dat de groep Immigratie in de actuele categorie opgenomen blijft, totdat er sprake is van een emigratie.
+
+===== Wijziging adres binnengemeentelijk
+
+Bij een binnengemeentelijke adreswijziging wordt de categorie Verblijfplaats geactualiseerd. Het adres van de persoon in deze gemeente is het adres van een geldig adresseerbaar object in de BAG.
+
+Hierbij worden de volgende groepen gewijzigd:
+
+[none]
+* <<g10,08.10>> Adreshouding
+* <<g11,08.11>> Adres
+* <<g72,08.72>> Adresaangifte
+* <<g85,08.85>> Geldigheid
+* <<g86,08.86>> Opneming
+
+===== Emigratie
+
+De procedure emigratie wordt uitgevoerd, indien het volgende adres van de ingeschrevene niet in Nederland gesitueerd is of indien wordt vastgesteld dat de persoon naar een ander land is vertrokken of indien er voor de ingeschrevene een Ministerieel besluit van kracht wordt.
+
+Hierbij worden de volgende groepen gewijzigd:
+
+[none]
+* <<g13,08.13>> Adres buitenland
+* <<g72,08.72>> Adresaangifte
+* <<g85,08.85>> Geldigheid
+* <<g86,08.86>> Opneming
+
+===== Wijzigingen in infrastructuur
+
+Wijzigingen in de infrastructuur kunnen onderverdeeld worden in binnengemeentelijke en intergemeentelijke wijzigingen.
+
+Onder binnengemeentelijke infrastructurele wijzigingen worden uitsluitend de volgende gebeurtenissen verstaan:
+
+* straatnaamwijziging
+* wijziging in de Naam openbare ruimte
+* hernummering
+* postcodewijziging
+* gemeentedeelwijziging
+* woonplaatsnaamwijziging
+* wijziging in de Identificatiecode verblijfplaats
+* wijziging in de Identificatiecode nummeraanduiding.
+
+Onder intergemeentelijke infrastructurele wijzigingen worden uitsluitend de volgende gebeurtenissen verstaan:
+
+* gemeentenaamswijziging
+* grenscorrectie waarbij de betrokken gemeenten blijven bestaan
+* samenvoeging van gemeenten waarbij een of meerdere gemeenten verdwijnen
+* opdeling van een gemeente in een aantal nieuwe gemeenten.
+
+Bij een infrastructurele wijziging wordt de categorie Verblijfplaats geactualiseerd. Elk adres waarop een persoon is ingeschreven, is het adres van een geldig adresseerbaar object in de BAG.
+
+Afhankelijk van welke adresgegevens er wijzigen, worden een of meer van de volgende groepen gewijzigd:
+
+[none]
+* <<g09,08.09>> Gemeente
+* <<g11,08.11>> Adres
+
+De volgende groepen worden bij deze procedure altijd gewijzigd:
+
+[none]
+* <<g10,08.10>> Adreshouding
+* <<g72,08.72>> Adresaangifte
+* <<g85,08.85>> Geldigheid
+* <<g86,08.86>> Opneming
+
+Rubriek <<e7210,08.72.10>> krijgt de waarde "W"
+
+De procedurele aspecten rond intergemeentelijke infrastructurele wijzigingen zijn uiteengezet in paragraaf (<<_intergemeentelijke_infrastructurele_wijzigingen>>).
+
+===== Wijziging in de omschrijving van de aangifte adreshouding
+
+Bij een wijziging in de omschrijving van de aangifte adreshouding worden de volgende groepen gewijzigd:
+
+[none]
+* <<g72,08.72>> Adresaangifte
+* <<g86,08.86>> Opneming
+
+Deze wijziging leidt niet tot historie.
+
+===== Wijziging in de documentindicatie
+
+Indien bij vervolginschrijving vanuit de RNI de groep Documentindicatie voorkomt op de PL, moeten de gegevens uit de betreffende documenten nog op de PL opgenomen worden. In dat geval moeten de betreffende documenten achterhaald en verwerkt worden door het uitvoeren van actualiseringsprocedures. De documenten zijn terug te vinden bij RvIG, in de rol van bijhouder van de gegevens van niet-ingezetenen.
+
+Na het verwerken van de documenten wordt de volgende groep verwijderd:
+
+[none]
+* <<g75,08.75>> Documentindicatie
+
+Tevens worden eventueel voorkomende historische documentindicaties (groep <<g75,58.75>>) verwijderd.
+
+Bij deze verwijdering(en) wordt geen historie aangelegd.
+
+===== Verwijderen van historische verblijfplaatsgegevens
+
+Op schriftelijk verzoek kunnen in geval van adoptie alle historische verblijfplaatsgegevens van voor de adoptie van de PL verwijderd worden. Historische categorieën worden hierbij volledig verwijderd.
+
+===== Verwijderen van emigratie- en immigratiegegevens
+
+Op schriftelijk verzoek kunnen in geval van adoptie alle emigratie- en immigratiegegevens van voor de adoptie van de PL verwijderd worden.
+
+Groep <<g14,14>> Immigratie wordt hierbij verwijderd uit de desbetreffende actuele en/of historische categorieën.
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+Eventuele historische categorieën waarin groep <<g13,13>> Adres buitenland voorkomt, worden geheel verwijderd tezamen met alle daaraan voorafgaande adreshistorie.
+
+==== Actualiseren kind
+
+Op PL'en van nooit-ingezetenen is deze paragraaf niet van toepassing.
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen kindgegevens bij eerste inschrijving (<<_opnemen_kindgegevens_bij_eerste_inschrijving>>)
+* Opnemen kindgegevens bij geboorte (<<_opnemen_kindgegevens_bij_geboorte>>)
+* Opnemen kindgegevens bij adoptie (<<_opnemen_kindgegevens_bij_adoptie>>)
+* Opnemen kindgegevens bij herroeping van adoptie (<<_opnemen_kindgegevens_bij_herroeping_van_adoptie>>)
+* Opnemen kindgegevens bij erkenning (<<_opnemen_kindgegevens_bij_erkenning>>)
+* Opnemen kindgegevens bij nietigverklaring van erkenning (<<_opnemen_kindgegevens_bij_nietigverklaring_van_erkenning>>)
+* Opnemen kindgegevens bij ontkenning (<<_opnemen_kindgegevens_bij_ontkenning>>)
+* Opnemen kindgegevens bij ontkenning, gevolgd door erkenning (<<_opnemen_kindgegevens_bij_ontkenning_gevolgd_door_erkenning>>)
+* Opnemen kindgegevens van een levenloos geboren kind (<<_opnemen_kindgegevens_van_een_levenloos_geboren_kind>>)
+* Adoptie ongeboren vrucht (<<_adoptie_ongeboren_vrucht_4>>)
+* Wijziging in een identificatienummer (<<_wijziging_in_een_identificatienummer_4>>)
+* Wijziging in de naam (<<_wijziging_in_de_naam_5>>)
+* Wijziging in de geboorte (<<_wijziging_in_de_geboorte_5>>)
+* Verwijderen kindgegevens van een geadopteerd kind (<<_verwijderen_kindgegevens_van_een_geadopteerd_kind>>)
+* Verwijderen kindgegevens van een levenloos geboren kind (<<_verwijderen_kindgegevens_van_een_levenloos_geboren_kind>>)
+* Correctie van ten onrechte opgenomen gegevens (<<_correctie_van_ten_onrechte_opgenomen_gegevens_4>>)
+* Wijziging op verzoek burger in verband met geslachtswijziging (<<_wijziging_op_verzoek_burger_in_verband_met_geslachtswijziging_5>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+===== Opnemen kindgegevens bij eerste inschrijving
+
+Bij de eerste inschrijving van een persoon die ouder is van een of meer kinderen, worden voor elk kind de volgende groepen opgenomen:
+
+[none]
+* <<g02,09.02>> Naam
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van het betreffende kind aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,09.01>> Identificatienummers
+* <<g03,09.03>> Geboorte
+
+===== Opnemen kindgegevens bij geboorte
+
+Bij geboorte dan wel op een later tijdstip (b.v. bijschrijving op de PL van een ouder) wordt op de PL van elke betreffende ouder een categorie met kindgegevens opgenomen.
+
+Hierbij worden de volgende groepen opgenomen:
+
+[none]
+* <<g02,09.02>> Naam
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van het kind aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,09.01>> Identificatienummers
+* <<g03,09.03>> Geboorte
+
+===== Opnemen kindgegevens bij adoptie
+
+Bij een adoptie worden op de PL van elke betreffende adoptieouder de volgende groepen opgenomen:
+
+[none]
+* <<g02,09.02>> Naam
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van het kind aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,09.01>> Identificatienummers
+* <<g03,09.03>> Geboorte
+
+Op de PL van elke betreffende vroegere ouder worden vanaf de bron voor het betreffende kind de volgende groepen opgenomen:
+
+[none]
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+===== Opnemen kindgegevens bij herroeping van adoptie
+
+Bij een herroeping van een adoptie worden op de PL van elke betreffende oorspronkelijke ouder de volgende groepen opgenomen:
+
+[none]
+* <<g02,09.02>> Naam
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van het kind aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,09.01>> Identificatienummers
+* <<g03,09.03>> Geboorte
+
+Op de PL van elke betreffende adoptieouder worden in de categorie, waarin de gegevens van het betrokken kind zijn opgenomen, de volgende groepen opgenomen:
+
+[none]
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+===== Opnemen kindgegevens bij erkenning
+
+Bij een erkenning worden kindgegevens op de PL van de betreffende ouder opgenomen.
+
+Hierbij worden de volgende groepen opgenomen:
+
+[none]
+* <<g02,09.02>> Naam
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van het kind aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,09.01>> Identificatienummers
+* <<g03,09.03>> Geboorte
+
+===== Opnemen kindgegevens bij nietigverklaring van erkenning
+
+Bij een nietigverklaring van de erkenning worden op de PL van de betreffende ouder de volgende groepen opgenomen:
+
+[none]
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+De kindgegevens die hierbij historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+===== Opnemen kindgegevens bij ontkenning
+
+Bij een ontkenning worden op de PL van de betreffende ouder de volgende groepen opgenomen:
+
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+De kindgegevens die hierbij historisch worden, worden altijd voorzien van de indicatie onjuist.
+
+===== Opnemen kindgegevens bij ontkenning, gevolgd door erkenning
+
+Bij een ontkenning door de ouder uit wie het kind geboren is, gevolgd door een gelijktijdige erkenning door de ouder, wordt met betrekking tot de PL van de erkennende ouder de procedure Opnemen kindgegevens bij erkenning uitgevoerd. Met betrekking tot de PL van de ontkende vader wordt procedure Opnemen kindgegevens bij ontkenning uitgevoerd.
+
+=====  Opnemen kindgegevens van een levenloos geboren kind
+
+Op verzoek van een persoon die ouder is van een levenloos geboren kind, worden voor dat levenloos geboren kind de volgende groepen opgenomen:
+
+* <<g02,09.02>> Naam
+* <<g03,09.03>> Geboorte
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+* <<g89,09.89>> Registratie afstamming
+
+===== Adoptie ongeboren vrucht
+
+De latere vermelding op de geboorteakte van de adoptie ongeboren vrucht heeft terugwerkende kracht tot aan de geboorte.
+
+Bij een adoptie ongeboren vrucht worden op de PL van de betreffende adoptieouder de volgende groepen opgenomen:
+
+[none]
+* <<g02,09.02>> Naam
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+Indien bekend, worden vanaf de bron of de PL van het kind aanvullend de volgende groepen opgenomen:
+
+[none]
+* <<g01,09.01>> Identificatienummers
+* <<g03,09.03>> Geboorte
+
+Deze actualisering kan ook worden uitgevoerd na ontvangst van een <<Tb01,Tb01>>-bericht.
+
+===== Wijziging in een identificatienummer
+
+Na het bekend worden van het A‑nummer en/of burgerservicenummer van het kind (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van het A‑nummer en/of burgerservicenummer van het kind worden de volgende groepen gewijzigd:
+
+[none]
+* <<g01,09.01>> Identificatienummers
+* <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+Voor deze actualisering geldt dat deze ook kan worden uitgevoerd terwijl de bijhouding van de PL is opgeschort.
+
+===== Wijziging in de naam
+
+Indien de naamgegevens van het kind wijzigen, wordt deze wijziging eveneens aangebracht in de kindgegevens van de ingeschrevene.
+
+In dit geval worden de volgende groepen gewijzigd:
+
+[none]
+* <<g02,09.02>> Naam
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+===== Wijziging in de geboorte
+
+Na het bekend worden van de geboortegegevens van het kind (b.v. door de controle op het voorkomen van gerelateerden) of bij wijziging van de geboortegegevens van het kind worden deze wijzigingen eveneens aangebracht in de kindgegevens van de ingeschrevene.
+
+In deze gevallen worden de volgende groepen gewijzigd:
+
+[none]
+* <<g03,09.03>> Geboorte
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+===== Verwijderen kindgegevens van een geadopteerd kind
+
+Op schriftelijk verzoek van een vroegere ouder kunnen in geval van adoptie kindgegevens van dat adoptiekind van zijn PL verwijderd worden. Hierbij worden alle actuele en historische categorieën betreffende dat vroegere kind van de PL verwijderd. Uitgangspunt is dat de actualisering ten gevolge van de adoptie op de PL van de vroegere ouder reeds is uitgevoerd.
+
+===== Verwijderen kindgegevens van een levenloos geboren kind
+
+Op schriftelijk verzoek van een persoon bij wie een levenloos geboren kind staat geregistreerd, worden de gegevens van dat kind van zijn PL verwijderd. Hierbij worden alle actuele en historische categorieën betreffende dat levenloos geboren kind van de PL verwijderd.
+
+===== Correctie van ten onrechte opgenomen gegevens
+
+Indien een categorie Kind ten onrechte is opgenomen, wordt dit hersteld door de volgende groepen op te nemen:
+
+[none]
+* <<g81,09.81>> Akte of <<g82,09.82>> Document
+* <<g85,09.85>> Geldigheid
+* <<g86,09.86>> Opneming
+
+De categorie die hierbij historisch wordt, moet worden voorzien van de indicatie onjuist.
+
+Indien het een ten onrechte opgenomen categorie Kind van een levenloos geboren kind betreft, worden de gegevens van dat kind van de PL verwijderd. Hierbij worden alle actuele en historische categorieën betreffende dat levenloos geboren kind van de PL verwijderd.
+
+===== Wijziging op verzoek burger in verband met geslachtswijziging
+
+Op schriftelijk verzoek van de ingeschrevene tot het verwijderen van de verwijzingen naar de gegevens van voor de geslachtswijziging van het kind, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,59.02>> Naam
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+Op schriftelijk verzoek van de ingeschrevene om de gewijzigde gegevens van het kind in verband met een geslachtswijziging van dat kind ongedaan te maken, kunnen daarbij de volgende gegevens worden overschreven:
+
+[none]
+* <<g02,09.02>> Naam
+
+Als de door de geslachtswijziging gewijzigde gegevens ook reeds voorkomen in een of meer historische categorieën, worden tevens in die categorieën de volgende gegevens overschreven:
+
+[none]
+* <<g02,59.02>> Naam
+
+Als hierdoor een gegeven in een onjuiste historische categorie zou moeten worden overschreven, wordt die onjuiste historische categorie volledig van de PL verwijderd.
+
+==== Actualiseren verblijfstitel
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen/wijzigen verblijfstitel (<<_opnemenwijzigen_verblijfstitel>>)
+* Intrekken verblijfstitel (<<_intrekken_verblijfstitel>>)
+* Vervallen verblijfstitel (<<_vervallen_verblijfstitel>>)
+* Correctie van ten onrechte opgenomen gegevens (<<_correctie_van_ten_onrechte_opgenomen_gegevens_5>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+Voor alle actualiseringen in deze categorie geldt dat ze kunnen worden uitgevoerd zolang de bijhouding van de PL niet is opgeschort met reden "O".
+
+===== Opnemen/wijzigen verblijfstitel
+
+Bij het verkrijgen, wijzigen of verlengen van een verblijfstitel worden de volgende groepen opgenomen:
+
+[none]
+* <<g39,10.39>> Verblijfstitel
+* <<g85,10.85>> Geldigheid
+* <<g86,10.86>> Opneming
+
+===== Intrekken verblijfstitel
+
+Bij het intrekken van een verblijfstitel worden de volgende groepen opgenomen:
+
+[none]
+* <<g85,10.85>> Geldigheid
+* <<g86,10.86>> Opneming
+
+===== Vervallen verblijfstitel
+
+Bij het vervallen van een verblijfstitel worden de volgende groepen opgenomen:
+
+[none]
+* <<g85,10.85>> Geldigheid
+* <<g86,10.86>> Opneming
+
+===== Correctie van ten onrechte opgenomen gegevens
+
+Indien een categorie Verblijfstitel ten onrechte is opgenomen, wordt dit hersteld door de volgende groepen op te nemen:
+
+[none]
+* <<g85,10.85>> Geldigheid
+* <<g86,10.86>> Opneming
+
+De categorie die hierbij historisch wordt, moet worden voorzien van de indicatie onjuist.
+
+==== Actualiseren gezagsverhouding
+
+Op PL'en van nooit-ingezetenen is deze paragraaf niet van toepassing.
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen gezag minderjarige (<<_opnemen_gezag_minderjarige>>)
+* Opnemen curatele (<<_opnemen_curatele>>)
+* Wijziging in gezag minderjarige (<<_wijziging_in_gezag_minderjarige>>)
+* Einde gezagsverhouding (<<_einde_gezagsverhouding>>)
+* Correctie van ten onrechte opgenomen gegevens (<<_correctie_van_ten_onrechte_opgenomen_gegevens_6>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+===== Opnemen gezag minderjarige
+
+Indien er sprake is van het onder gezag stellen van een minderjarige worden, op basis van een mededeling van het gezagsregister, op de PL van de betreffende minderjarige de volgende groepen opgenomen:
+
+[none]
+* <<g32,11.32>> Gezag minderjarige
+* <<g85,11.85>> Geldigheid
+* <<g86,11.86>> Opneming
+
+De volgende groep mag aanvullend opgenomen worden:
+
+[none]
+* <<g82,11.82>> Document
+
+In afwijking van het bovenstaande wordt in de periode tussen 1 januari 2023 en 1 november 2023 in het geval er sprake is van erkenning ongeboren vrucht voor 1 januari 2023, het gezag ambtshalve door de gemeente opgenomen.
+
+===== Opnemen curatele
+
+Indien er sprake is van het onder curatele stellen van een persoon worden, op basis van een document uit het curateleregister, op de PL van de onder curatele gestelde persoon de volgende groepen opgenomen:
+
+[none]
+* <<g33,11.33>> Curatele
+* <<g85,11.85>> Geldigheid
+* <<g86,11.86>> Opneming
+
+De volgende groep mag aanvullend opgenomen worden:
+
+[none]
+* <<g82,11.82>> Document
+
+===== Wijziging in gezag minderjarige
+
+Indien eerder opgenomen gegevens met betrekking tot het gezag over een minderjarige ingeschrevene wijzigen worden, op basis van een mededeling uit het gezagsregister, de volgende groepen gewijzigd:
+
+[none]
+* <<g32,11.32>> Gezag minderjarige
+* <<g85,11.85>> Geldigheid
+* <<g86,11.86>> Opneming
+
+De volgende groep mag aanvullend opgenomen worden:
+
+[none]
+* <<g82,11.82>> Document
+
+===== Einde gezagsverhouding
+
+Bij de beëindiging van de gezagsverhouding, zowel voor beëindiging gezag minderjarige als voor Curatele, worden de volgende groepen opgenomen:
+
+[none]
+* <<g85,11.85>> Geldigheid
+* <<g86,11.86>> Opneming
+
+De volgende groep mag aanvullend opgenomen worden:
+
+[none]
+* <<g82,11.82>> Document
+
+===== Correctie van ten onrechte opgenomen gegevens
+
+Indien een categorie Gezagsverhouding ten onrechte is opgenomen wordt dit hersteld door de volgende groepen op te nemen:
+
+[none]
+* <<g85,11.85>> Geldigheid
+* <<g86,11.86>> Opneming
+
+De volgende groep mag aanvullend opgenomen worden:
+
+[none]
+* <<g82,11.82>> Document
+
+De categorie die hierbij historisch wordt, moet worden voorzien van de indicatie onjuist.
+
+==== Actualiseren reisdocument
+
+Op PL'en van nooit-ingezetenen is deze paragraaf niet van toepassing.
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Uitgifte Nederlands reisdocument (<<_uitgifte_nederlands_reisdocument>>)
+* Inhouding Nederlands reisdocument (<<_inhouding_nederlands_reisdocument>>)
+* Vermissing Nederlands reisdocument (<<_vermissing_nederlands_reisdocument>>)
+* Van rechtswege vervallen Nederlands reisdocument (<<_van_rechtswege_vervallen_nederlands_reisdocument>>)
+* Signalering (<<_signalering>>)
+* Verwijderen van reisdocumentgegevens (<<_verwijderen_van_reisdocumentgegevens>>)
+* Correctie van ten onrechte opgenomen gegevens (<<_correctie_van_ten_onrechte_opgenomen_gegevens_7>>)
+* Actualiseren akte en document (<<_actualiseren_akte_en_document>>)
+* Actualiseren van de ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>)
+
+Voor alle actualiseringen in deze categorie geldt dat daarbij geen historie wordt aangelegd.
+
+===== Uitgifte Nederlands reisdocument
+
+Bij het registreren van de uitgifte van een Nederlands reisdocument worden de volgende groepen opgenomen:
+
+[none]
+* <<g35,12.35>> Nederlands reisdocument
+* <<g82,12.82>> Document
+* <<g85,12.85>> Geldigheid
+* <<g86,12.86>> Opneming
+
+===== Inhouding Nederlands reisdocument
+
+Bij een inhouding of inlevering van een Nederlands reisdocument worden de volgende groepen gewijzigd:
+
+[none]
+* <<g35,12.35>> Nederlands reisdocument
+* <<g85,12.85>> Geldigheid
+* <<g86,12.86>> Opneming
+
+===== Vermissing Nederlands reisdocument
+
+Bij een vermissing van een Nederlands reisdocument worden de volgende groepen gewijzigd:
+
+[none]
+* <<g35,12.35>> Nederlands reisdocument
+* <<g85,12.85>> Geldigheid
+* <<g86,12.86>> Opneming
+
+===== Van rechtswege vervallen Nederlands reisdocument
+
+Bij een van rechtswege vervallen Nederlands reisdocument worden de volgende groepen gewijzigd:
+
+[none]
+* <<g35,12.35>> Nederlands reisdocument
+* <<g85,12.85>> Geldigheid
+* <<g86,12.86>> Opneming
+
+===== Signalering
+
+====== Opnemen signalering
+
+Indien aan een ingeschrevene geen reisdocument mag worden afgegeven, worden de volgende groepen opgenomen:
+
+[none]
+* <<g36,12.36>> Signalering
+* <<g82,12.82>> Document
+* <<g85,12.85>> Geldigheid
+* <<g86,12.86>> Opneming
+
+====== Verwijderen signalering
+
+Indien de aan de ingeschrevene toegekende verstrekkingsbelemmering niet langer van toepassing is, wordt de categorie waarin die signalering is opgenomen, verwijderd van de PL.
+
+===== Verwijderen van reisdocumentgegevens
+
+Een categorie met een Nederlands reisdocument dat 11 jaar of langer geleden is uitgegeven en waarvan de geldigheidsduur 5 jaar of korter was, moet worden verwijderd van de PL. Een categorie met een Nederlands reisdocument dat 16 jaar of langer geleden is uitgegeven en waarvan de geldigheidsduur langer dan 5 jaar was, moet worden verwijderd van de PL. Hierbij wordt de categorie betreffende dat Nederlands reisdocument in zijn geheel van de PL verwijderd.
+
+Aan deze verplichting tot verwijderen wordt voldaan door minimaal eenmaal per maand na te gaan voor welke categorieën de bewaartermijn verstreken is en daarvoor dan deze procedure uit te voeren.
+
+===== Correctie van ten onrechte opgenomen gegevens
+
+Indien een categorie Reisdocument ten onrechte op de PL is opgenomen, wordt dit hersteld door de betreffende categorie in zijn geheel van de PL te verwijderen.
+
+==== Actualiseren kiesrecht
+
+Op PL'en van nooit-ingezetenen is deze paragraaf niet van toepassing.
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Deelname, uitsluiting of wijziging Europees kiesrecht (<<_deelname_uitsluiting_of_wijziging_europees_kiesrecht>>)
+* Einde deelname of uitsluiting Europees kiesrecht (<<_einde_deelname_of_uitsluiting_europees_kiesrecht>>)
+* Aanvang of wijziging uitsluiting kiesrecht (<<_aanvang_of_wijziging_uitsluiting_kiesrecht>>)
+* Einde uitsluiting kiesrecht (<<_einde_uitsluiting_kiesrecht>>)
+* Correctie van ten onrechte opgenomen gegevens (<<_correctie_van_ten_onrechte_opgenomen_gegevens_8>>)
+* Actualiseren document (<<_actualiseren_akte_en_document>>)
+
+Voor alle actualiseringen in deze categorie geldt dat daarbij geen historie wordt aangelegd.
+
+===== Deelname, uitsluiting of wijziging Europees kiesrecht
+
+Na het bekend worden van gegevens over Europees kiesrecht of bij wijziging van deze gegevens, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g31,13.31>> Europees kiesrecht
+* <<g82,13.82>> Document
+
+===== Einde deelname of uitsluiting Europees kiesrecht
+
+Bij de beëindiging van de deelname of uitsluiting Europees kiesrecht wordt dit als volgt aangebracht op de PL:
+
+Indien geen gegevens voorkomen in groep <<g38,38>> Uitsluiting kiesrecht, dan wordt categorie <<c13,13>> Kiesrecht van de PL verwijderd.
+
+Indien wel gegevens voorkomen in groep <<g38,38>> Uitsluiting kiesrecht, dan worden de volgende groepen verwijderd:
+
+[none]
+* <<g31,13.31>> Europees kiesrecht
+* <<g82,13.82>> Document
+
+Deze procedure moet in ieder geval worden toegepast als een persoon emigreert.
+
+===== Aanvang of wijziging uitsluiting kiesrecht
+
+Na het bekend worden van gegevens over uitsluiting kiesrecht of bij wijziging van deze gegevens, wordt de volgende groep gewijzigd:
+
+[none]
+* <<g38,13.38>> Uitsluiting kiesrecht
+
+===== Einde uitsluiting kiesrecht
+
+Bij het opheffen van de uitsluiting kiesrecht wordt dit als volgt aangebracht op de PL:
+
+Indien geen gegevens voorkomen in groep <<g31,31>> Europees kiesrecht, dan wordt categorie <<c13,13>> Kiesrecht van de PL verwijderd.
+
+Indien wel gegevens voorkomen in groep <<g31,31>> Europees kiesrecht, dan wordt de volgende groep verwijderd:
+
+[none]
+* <<g38,13.38>> Uitsluiting kiesrecht
+
+===== Correctie van ten onrechte opgenomen gegevens
+
+Indien een categorie Kiesrecht ten onrechte op de PL is opgenomen, wordt dit hersteld door de betreffende categorie in zijn geheel van de PL te verwijderen.
+
+==== Actualiseren verwijzing
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Opnemen van de verwijzing (<<_opnemen_van_de_verwijzing>>)
+* Verwijderen van de verwijzing (<<_verwijderen_van_de_verwijzing>>)
+* Wijziging van het A‑nummer (<<_wijziging_van_het_anummer_2>>)
+* Wijziging van het burgerservicenummer‑ alleen uit te voeren als correctie (<<_wijziging_van_het_burgerservicenummer_2>>)
+* Wijziging in de naam – alleen uit te voeren als correctie (<<_wijziging_in_de_naam_6>>)
+* Wijziging in de geboorte – alleen uit te voeren als correctie (<<_wijziging_in_de_geboorte_6>>)
+* Wijziging in de gemeente – alleen uit te voeren als correctie (<<_wijziging_in_de_gemeente>>)
+* Wijziging in geheim (<<_wijziging_in_geheim_2>>)
+
+===== Opnemen van de verwijzing
+
+Bij opname van een verwijzing worden de volgende groepen opgenomen:
+
+[none]
+* <<g01,21.01>> Identificatienummers
+* <<g02,21.02>> Naam
+* <<g03,21.03>> Geboorte
+* <<g09,21.09>> Gemeente
+* <<g70,21.70>> Geheim
+* <<g85,21.85>> Geldigheid
+* <<g86,21.86>> Opneming
+
+===== Verwijderen van de verwijzing
+
+Indien een persoon zich hervestigt in een gemeente wordt de verwijzing in die gemeente verwijderd. De verwijzing kan ook verwijderd worden wanneer er sprake is van een ten onrechte opgenomen verwijzing.
+
+In beide gevallen worden alle actuele en historische verwijsgegevens met betrekking tot de ingeschrevene verwijderd.
+
+Indien als gevolg van een herindeling meerdere verwijsgegevens van dezelfde persoon binnen één gemeente bestaan, dienen alle verwijsgegevens behalve de meest recente, gelet op rubriek <<e0920,21.09.20>> Datum uitschrijving, verwijderd te worden.
+
+===== Wijziging van het A‑nummer
+
+Wijziging van het A‑nummer komt alleen voor indien op de PL van de ingeschrevene, die in de BRP van een andere gemeente (daaronder ook begrepen de RNI) is opgenomen, het A‑nummer wijzigt. Die gemeente c.q. de RNI stuurt daarvan een bericht, op basis waarvan de volgende groepen worden gewijzigd:
+
+[none]
+* <<g01,21.01>> Identificatienummers
+* <<g85,21.85>> Geldigheid
+* <<g86,21.86>> Opneming
+
+Hierbij wijzigt in groep <<g01,21.01>> alleen rubriek <<e0110,21.01.10>> A‑nummer.
+
+===== Wijziging van het burgerservicenummer
+
+Indien het burgerservicenummer wijzigt, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g01,21.01>> Identificatienummers
+* <<g85,21.85>> Geldigheid
+* <<g86,21.86>> Opneming
+
+Hierbij wijzigt in groep <<g01,21.01>> alleen rubriek <<e0120,21.01.20>> Burgerservicenummer.
+
+Omdat het bij wijziging van het burgerservicenummer om een correctie gaat, wordt de categorie die door deze wijziging historisch wordt, voorzien van de indicatie onjuist.
+
+===== Wijziging in de naam
+
+Indien de naamgegevens wijzigen, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g02,21.02>> Naam
+* <<g86,21.86>> Opneming
+
+Omdat het bij wijziging in de Naam om een correctie gaat, wordt de categorie die door deze wijziging historisch wordt, voorzien van de indicatie onjuist.
+
+===== Wijziging in de geboorte
+
+Indien de geboortegegevens wijzigen, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g03,21.03>> Geboorte
+* <<g86,21.86>> Opneming
+
+Omdat het bij wijziging in de Geboorte om een correctie gaat, wordt de categorie die door deze wijziging historisch wordt, voorzien van de indicatie onjuist.
+
+===== Wijziging in de gemeente
+
+Indien de gegevens van de nieuwe gemeente wijzigen, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g09,21.09>> Gemeente
+* <<g86,21.86>> Opneming
+
+Omdat het bij wijziging in de Gemeente om een correctie gaat, wordt de categorie die door deze wijziging historisch wordt, voorzien van de indicatie onjuist.
+
+===== Wijziging in geheim
+
+Indien de burger verzoekt om wijziging in de geheimhouding, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g70,21.70>> Geheim
+* <<g85,21.85>> Geldigheid
+* <<g86,21.86>> Opneming
+
+==== Actualiseren akte en document
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Brondocument met nieuwe gegevens
+* Sterker brondocument met identieke gegevens
+
+In deze paragraaf zijn wijzigingen beschreven betreffende de groepen Akte en Document, die voor alle categorieën op dezelfde manier verwerkt worden.
+
+===== Brondocument met nieuwe gegevens
+
+Indien een document wordt ontvangen waarin nieuwe gegevens over een ingeschrevene voorkomen die op zijn/haar PL verwerkt moeten worden, worden deze gegevens verwerkt door middel van de bij de betreffende categorie beschreven actualiseringsprocedures.
+
+===== Sterker brondocument met identieke gegevens
+
+Indien een sterker document wordt ontvangen waarin geen gegevens over een ingeschrevene voorkomen die afwijken van de reeds op zijn/haar PL voorkomende gegevens, dan wordt in de betreffende categorie het bestaande brondocument vervangen.
+
+In dat geval worden de volgende groepen gewijzigd:
+
+[none]
+* <<g81,81>> Akte of <<g82,82>> Document
+* <<g86,86>> Opneming
+
+Bij deze wijziging wordt geen historie aangelegd.
+
+==== Actualiseren ingangsdatum geldigheid
+
+Indien de datum geldigheid wijzigt, worden in de betreffende categorie de volgende groepen gewijzigd:
+
+[none]
+* <<g85,85>> Geldigheid
+
+Indien of groep <<g81,81>> Akte of groep <<g82,82>> document in de categorie voorkomt, wordt de volgende groep gewijzigd:
+
+[none]
+* <<g81,81>> Akte of <<g82,82>> Document
+
+Indien de groep <<g86,86>> Opneming in de categorie voorkomt, wordt de volgende groep gewijzigd:
+
+[none]
+* <<g86,86>> Opneming
+
+Deze procedure kan én als correctie én als actualisering worden uitgevoerd.
+
+In die categorieën waarin historie wordt aangelegd, leidt deze wijziging tot historie.
+
+==== Onderzoekprocedure en correcties
+
+===== Overzicht
+
+De gegevens die in dit verband bij de diverse categorieën kunnen worden opgenomen, zijn:
+
+* *Procedure (groep <<g83,83>>)*
+[none]
+** <<e8310,83.10>> Aanduiding gegevens in onderzoek
+** <<e8320,83.20>> Datum ingang onderzoek
+** <<e8330,83.30>> Datum einde onderzoek
+
+* *Onjuist (groep <<g84,84>>)*
+[none]
+** <<e8410,84.10>> Indicatie onjuist dan wel strijdigheid met de openbare orde
+
+Uitgangspunt is dat de in een BRP-systeem opgeslagen gegevens correct zijn. Het kan echter voorkomen dat er twijfels rijzen omtrent de correctheid van de in een bepaalde categorie opgeslagen gegevens. De redenen hiervoor kunnen onder andere zijn dat de burger dit aangeeft of dat de ambtenaar twijfelt aan die correctheid. Vaak zullen deze twijfels betrekking hebben op actuele gegevens, maar het kan ook voorkomen dat er getwijfeld wordt aan de correctheid van historische gegevens.
+
+Proceduregegevens kunnen ook opgenomen worden indien de PL is opgeschort. Indien er twijfel is omtrent de opschorting kunnen aan de categorie, waarin de gebeurtenis die aanleiding was voor de opschorting geactualiseerd is (categorie <<c06-56,06>> Overlijden of <<c08-58,08>> Verblijfplaats), proceduregegevens worden toegevoegd.
+
+Proceduregegevens mogen niet opgenomen, gewijzigd of beëindigd worden in een categorie <<c04-54,04/54>> Nationaliteit als in de actuele categorie <<c04-54,04>> is opgenomen dat de bijhouding van de gegevens in die categorie is beëindigd. In zo'n categorie <<c04-54,04/54>> mogen ook geen gegevens over de onjuistheid worden opgenomen, tenzij de beëindiging van de bijhouding zelf onjuist is.
+
+Bij het opnemen of wijzigen van elementen uit groep <<g83,83>> en/of het opnemen van element <<e8410,84.10>> ontstaat geen historie. Ook wordt de datum in element <<e8610,86.10>> niet gewijzigd.
+
+===== Onderzoek van actuele gegevens
+
+Indien twijfel bestaat omtrent de juistheid van gegevens, die in een actuele categorie op een PL voorkomen, worden in de betreffende categorie die gegevens in onderzoek geplaatst. De gegevens waar nooit twijfel over kan bestaan en die dus ook nooit in onderzoek kunnen staan zijn de rubrieken <<e0110,01.01.10>> A‑nummer persoon en <<e0110,21.01.10>> A‑nummer uitgeschreven persoon. Daarnaast geldt dat de gegevens van groep <<g83,83>> zelf nooit in onderzoek kunnen staan.
+
+Het in onderzoek plaatsen gebeurt door het wijzigen van groep <<g83,83>> Procedure. Element <<e8330,83.30>> Datum einde onderzoek komt na deze wijziging niet voor in de groep. Bij deze wijziging wordt geen historie aangelegd.
+
+Het resultaat van het onderzoek kan tweeërlei zijn, namelijk:
+
+1. De gegevens bleken toch correct. In dat geval wordt element <<e8330,83.30>> Datum einde onderzoek gewijzigd. Deze wijziging leidt niet tot het aanleggen van historie. Dit heeft tot gevolg dat bij een eventueel later onderzoek deze onderzoeksgegevens weer worden gewijzigd.
+2. De gegevens bleken niet correct. In dat geval wordt de betreffende categorie geactualiseerd conform de correctieprocedure.
+
+Daarnaast is er nog de mogelijkheid dat een categorie die in onderzoek is, geactualiseerd (eventueel gecorrigeerd) wordt op basis van een beschikbaar gekomen brondocument, terwijl de actualisering (of correctie) waartoe dat brondocument aanleiding geeft op zich niets met het lopende onderzoek te maken heeft. In dat geval zijn er 3 situaties te onderscheiden, te weten:
+
+1. De situatie dat het brondocument tevens uitsluitsel geeft omtrent de gegevens in onderzoek. In dit geval moet vooraf aan de actualisering eerst het resultaat van het onderzoek worden verwerkt volgens de hierboven reeds genoemde procedures.
+2. De situatie dat het brondocument uitsluitsel geeft omtrent een deel van de gegevens in onderzoek. In dit geval wordt in de actuele categorie element <<e8330,83.30>> gewijzigd. Deze wijziging leidt niet tot het aanleggen van historie. Vervolgens wordt de actualisering of de correctie uitgevoerd. Daarna moeten in de actuele categorie weer correcte onderzoeksgegevens opgenomen worden op de hierboven beschreven wijze.
+3. De situatie dat het brondocument geen uitsluitsel geeft omtrent gegevens in onderzoek. In dit geval moet de categorie volgens de normale procedure geactualiseerd of gecorrigeerd worden. Na de actualisering komen de onderzoeksgegevens ongewijzigd voor in de actuele categorie en, in het geval dat betrokken categorie een categorie is waarvoor historie wordt aangelegd, in de historisch geworden categorie.
+
+In <<voorkomen-groep-83-en-84-in-actuele-categorieen>> is aangegeven hoe, als resultaat van de beschreven werkwijze, proceduregegevens kunnen voorkomen in actuele categorieën. De met een "X" aangemerkte elementen komen voor, de met een "-" aangemerkte niet.
+
+[#voorkomen-groep-83-en-84-in-actuele-categorieen]
+.Voorkomen groep 83 en 84 in actuele categorieën
+[width="100%",cols="60%,^10%,^10%,^10%,^10%",options="header",]
+|===
+| |<<e8310,83.10>> |<<e8320,83.20>> |<<e8330,83.30>> |<<e8410,84.10>>
+|1. Gegevens zijn niet in onderzoek |- |- |- |-
+|2. Gegevens zijn in onderzoek |X |X |- |-
+|3. Gegevens correct na onderzoek |X |X |X |-
+|===
+
+===== Correcties op actuele categorieën
+
+Naast de reeds bij de betreffende categorieën beschreven procedure "Correctie van ten onrechte opgenomen gegevens", moet iedere andere actualiseringsprocedure ook als correctieprocedure kunnen worden uitgevoerd, tenzij anders is vermeld in de actualiseringsprocedure. Voor actualiseringen waarbij geen historie wordt aangelegd, geldt daarvoor geen gewijzigd voorschrift.
+
+Voor correcties waarbij historie wordt aangelegd, komt in de historie groep <<g84,84>> Onjuist voor; bij correcties met voorafgaand onderzoek komt groep <<g83,83>> Procedure en groep <<g84,84>> Onjuist voor.
+
+===== Onderzoek van historische gegevens
+
+In het geval dat een actueel gegeven in onderzoek wordt geplaatst, moeten ook de historische categorieën, die eveneens dat gegeven bevatten, in onderzoek worden geplaatst. Tevens is het mogelijk om historische gegevens in onderzoek te plaatsen, terwijl er geen gegevens uit de bijbehorende actuele categorie in onderzoek geplaatst worden.
+
+In beide gevallen geldt voor de historische categorieën vervolgens het voorschrift beschreven in (<<_correcties_van_historie>>).
+
+De gegevens waar nooit twijfel over kan bestaan en die dus ook nooit in onderzoek kunnen staan zijn de rubrieken <<e0110,51.01.10>> A‑nummer persoon en <<e0110,71.01.10>> A‑nummer uitgeschreven persoon. Daarnaast geldt dat de gegevens van groep <<g83,83>> zelf nooit in onderzoek kunnen staan.
+
+De proceduregegevens en de indicatie onjuist kunnen in historische categorieën voorkomen in de onderstaande vormen.
+
+In <<voorkomen-groep-83-en-84-in-historische-categorieen>> zijn de verschillende mogelijkheden opgesomd. De met een "X" aangemerkte elementen komen voor, de met een "-" aangemerkte niet.
+
+[#voorkomen-groep-83-en-84-in-historische-categorieen]
+.Voorkomen groep 83 en 84 in historische categorieën
+[width="100%",cols="60%,^10%,^10%,^10%,^10%",options="header",]
+|===
+| |<<e8310,83.10>> |<<e8320,83.20>> |<<e8330,83.30>> |<<e8410,84.10>>
+|1. Gegevens zijn niet in onderzoek |- |- |- |-
+|2. Gegevens zijn in onderzoek |X |X |- |-
+|3. Gegevens correct na onderzoek |X |X |X |-
+|4. Indicatie onjuist na onderzoek |X |X |X |X
+|5. Indicatie onjuist zonder onderzoek |- |- |- |X
+|6. Correctie zonder onderzoek, waarbij er onderzoek is naar een andere set gegevens |X |X |- |X
+|===
+
+===== Correcties van historie
+
+Correcties op historische categorieën worden altijd verwerkt via speciale correctieprocedures. De voorgeschreven werkwijze met betrekking tot deze correcties is als volgt:
+
+* Aan een incorrecte historische categorie wordt het gegeven indicatie onjuist toegevoegd (groep <<g84,84>>). Groep <<g83,83>> hoeft in dat geval niet voor te komen. +
+Zo nodig wordt er een extra historische categorie aangelegd waarin de incorrecte gegevens vervangen worden. Hierbij wordt de werkelijke datum geldigheid van de categorie opgenomen. Dit zal in het algemeen dezelfde datum geldigheid zijn als die van de incorrecte categorie. +
+Als een indicatie onjuist voorkomt, wordt een historische categorie niet nogmaals gewijzigd, dus ook niet nogmaals in onderzoek geplaatst door het opnemen van proceduregegevens. Dus het later ontdekken van nog één of meerdere incorrecties is niet meer van invloed op de reeds onjuiste categorie. Het feit dat bij de eerdere correctie niet alle fouten bekend waren, betekent echter wel dat er historische categorieën met onjuiste gegevens zijn. Alle categorieën die dit gegeven of deze gegevens bevatten en waarin geen indicatie onjuist is opgenomen, moeten op hun beurt gecorrigeerd worden.
+* Het kan echter ook zo zijn dat er sprake is van het moeten opnemen van een nog niet eerder vastgelegd gegeven. Dit gegeven moet dan vastgelegd worden in een zo nodig nieuw aan te maken historische categorie. De voorschriften voor het al dan niet aanleggen van historie zijn analoog aan die welke gelden bij het vastleggen van een nieuw gegeven in een actuele categorie.
+
+Wanneer er een nieuwe historische categorie moet worden aangemaakt, dan moet in de historie vastgesteld worden (aan de hand van de datums geldigheid van de reeds bestaande categorieën) tussen welke categorieën een extra categorie moet worden opgenomen. De inhoud van deze categorieën en het betreffende op te nemen gegeven bepalen de inhoud van de nieuw te creëren categorie.
+
+===== Correcties op zowel actuele als historische categorieën
+
+Indien een correctie betrekking heeft op zowel actuele als historische categorieën moeten wijzigingen via beide bovenstaande manieren worden uitgevoerd.
+
+==== Actualiseren bijzondere PL-situaties
+
+===== Overzicht
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Verwijderen geblokkeerde PL (<<_verwijderen_geblokkeerde_pl>>)
+* Afvoeren PL (<<_afvoeren_pl>>)
+* Meerdere personen met één A‑nummer (<<_meerdere_personen_met_één_anummer>>)
+* Een persoon met meerdere PL'en met elk hetzelfde A‑nummer (<<_een_persoon_met_meerdere_plen_met_elk_hetzelfde_anummer>>)
+* Een persoon met meerdere PL'en met een verschillend A‑nummer (<<_een_persoon_met_meerdere_plen_met_een_verschillend_anummer>>)
+
+===== Verwijderen geblokkeerde PL
+
+Een geblokkeerde PL moet worden verwijderd in de volgende gevallen:
+
+* na correcte afronding van de berichtencyclus Vervolginschrijving (<<_vervolginschrijving_2>>), dat wil zeggen na ontvangst van de juiste verwijsgegevens in het <<Iv01,Iv01>>-bericht en het versturen van de verwerkbevestiging;
+* na correcte afronding van de berichtencyclus Vervolginschrijving van gemeente naar RNI (<<_vervolginschrijving_van_gemeente_naar_rni>>), dat wil zeggen na ontvangst van de juiste verwijsgegevens in het <<Rv01,Rv01>>-bericht en het versturen van de verwerkbevestiging;
+* na correcte afronding van de berichtencyclus Vervolginschrijving van RNI naar gemeente (<<_vervolginschrijving_van_rni_naar_gemeente>>), dat wil zeggen na ontvangst van de juiste verwijsgegevens in het <<Jv01,Jv01>>-bericht en het versturen van de verwerkbevestiging.
+
+In de berichtencyclus Opnemen verwijsgegevens (<<_opnemen_verwijsgegevens>>) kan een geblokkeerde PL ook verwijderd worden. Daar het in deze cyclus gaat om het herstellen van een fout moet eerst toestemming gevraagd worden aan de gegevensbeheerder van de gemeente die beheerder is van de PL, alvorens de PL daadwerkelijk te verwijderen.Een geblokkeerde PL moet in de volgende gevallen worden verwijderd:
+
+* na een cyclus Opnemen verwijsgegevens die het gevolg is van een met een <<If31,If31>>-bericht afgesloten cyclus Vervolginschrijving;
+* na een cyclus Opnemen verwijsgegevens die het gevolg is van een met een <<Rf31,Rf31>>-bericht afgesloten cyclus Vervolginschrijving van gemeente naar RNI;
+* na een cyclus Opnemen verwijsgegevens die het gevolg is van een met een <<Jf31,Jf31>>-bericht afgesloten cyclus Vervolginschrijving van RNI naar gemeente.
+
+In alle gevallen blijft alleen de Verwijzing over; de PL is uit het PL-bestand verwijderd.
+
+===== Afvoeren PL
+
+Een met reden "F" opgeschorte PL (ten onrechte opgenomen) wordt afgevoerd. Dit houdt in dat de PL voor alle procedures waarin gezocht wordt naar een persoon, zoals aanvullen gerelateerden, vervolginschrijving, niet meer bestaat. De PL blijft opgenomen in de BRP ten behoeve van eventueel nader onderzoek door de houder van de basisregistratie.
+
+===== Meerdere personen met één A‑nummer
+
+Indien er meerdere personen met hetzelfde A‑nummer zijn ingeschreven in de gemeente en/of de RNI, dan krijgen alle betrokkenen een nieuw A‑nummer toegekend (<<_wijziging_van_het_anummer>>). Als beschrijving document (rubriek <<e8230,01.82.30>>) wordt opgenomen de vermelding van een dubbel A‑nummer.
+
+===== Een persoon met meerdere PL'en met elk hetzelfde A‑nummer
+
+Indien een persoon meerdere keren is ingeschreven onder hetzelfde A‑nummer, dan moet eerst worden bepaald in welke van de gemeenten ofwel de RNI de betreffende persoon op dat moment ingeschreven moet zijn.
+
+Deze gemeente respectievelijk de RNI bepaalt vervolgens welke PL wordt gehandhaafd. Met behulp van actualiseringsprocedures en correcties wordt van de desbetreffende PL een correcte PL gemaakt. Tevens worden nog de volgende groepen gewijzigd:
+
+[none]
+* <<g20,01.20>> A‑nummerverwijzingen
+* <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Hierbij wordt in de groep <<g20,01.20>> in rubriek <<e2010,01.20.10>> Vorig A‑nummer het A‑nummer van de overbodige PL opgenomen. Als ingangsdatum geldigheid (rubriek <<e8510,01.85.10>>) wordt opgenomen de datum van opneming. Als omschrijving document (rubriek <<e8230,01.82.30>>) wordt opgenomen de vermelding van een dubbele inschrijving
+
+Voor deze actualisering geldt dat deze ook uitgevoerd kan worden terwijl de bijhouding van de PL is opgeschort.
+
+Vervolgens geeft de gemeente van inschrijving ofwel de RNI aan de gemeente of aan de RNI die een overbodige PL heeft, toestemming om de overbodige PL af te voeren. Voorafgaand aan het afvoeren, worden op de overbodige PL nog de volgende groepen gewijzigd:
+
+[none]
+* <<g20,01.20>> A‑nummerverwijzingen
+* <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Hierbij wordt in groep <<g20,01.20>> in rubriek <<e2020,01.20.20>> Volgend A‑nummer het A‑nummer van de gehandhaafde PL opgenomen. Als ingangsdatum geldigheid (rubriek <<e8510,01.85.10>>) wordt opgenomen de datum van opneming. Als omschrijving document (rubriek <<e8230,01.82.30>>) wordt opgenomen de vermelding van een dubbele PL.
+
+Voor deze actualisering geldt dat deze ook uitgevoerd kan worden terwijl de bijhouding van de PL is opgeschort.
+
+Tot slot moet de gemeente of de RNI die een overbodige PL had, correcte verwijsgegevens opnemen. Hiertoe stuurt de gemeente van inschrijving ofwel de RNI verwijsgegevens naar de gemeente of naar de RNI die een overbodige PL had (<<_opnemen_verwijsgegevens>>).
+
+*N.B.* +
+De hiervoor beschreven situatie kan zich ook voordoen binnen één gemeente, d.w.z. de te handhaven PL en de af te voeren PL(-en) zijn opgenomen in een en dezelfde gemeente. Uiteraard is het versturen van verwijsgegevens dan niet aan de orde.
+
+===== Een persoon met meerdere PL'en met een verschillend A‑nummer
+
+Indien een persoon meerdere keren is ingeschreven onder verschillende A‑nummers, dan moet eerst worden bepaald in welke van de gemeenten ofwel de RNI de betreffende persoon op dat moment ingeschreven moet zijn.
+
+Deze gemeente respectievelijk de RNI bepaalt vervolgens welke PL wordt gehandhaafd. Met behulp van actualiseringsprocedures en correcties wordt van de desbetreffende PL een correcte PL gemaakt. Tevens worden nog de volgende groepen gewijzigd:
+
+[none]
+* <<g20,01.20>> A‑nummerverwijzingen
+* <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Hierbij wordt in de groep <<g20,01.20>> in rubriek <<e2010,01.20.10>> Vorig A‑nummer het A‑nummer van de overbodige PL opgenomen. Als ingangsdatum geldigheid (rubriek <<e8510,01.85.10>>) wordt opgenomen de datum van opneming. Als omschrijving document (rubriek <<e8230,01.82.30>>) wordt opgenomen de vermelding van een dubbel toegekend A‑nummer.
+
+Voor deze actualisering geldt dat deze ook uitgevoerd kan worden terwijl de bijhouding van de PL is opgeschort.
+
+Aangezien het A‑nummer van de overbodige PL(-en) kan voorkomen bij andere gemeenten (in de verwijsgegevens), bij de RNI (in de verwijsgegevens), moeten de gemeenten, de RNI op de hoogte worden gesteld van het vervallen van dit A‑nummer:
+
+* Ten behoeve van de verwijsketen worden er <<Wa01,Wa01>>-berichten verstuurd naar de geboortegemeente, indien deze in Nederland ligt, en naar alle vroegere gemeenten van inschrijving, daaronder ook begrepen de RNI, die voorkomen op de overbodige PL (<<_wijzigen_anummer_in_de_verwijsgegevens>>).
+
+In de <<Wa01,Wa01>>-berichten wordt het A‑nummer van de te handhaven PL opgenomen als nieuw A‑nummer en het A‑nummer van de overbodige PL als oud A‑nummer.
+
+Vervolgens geeft de gemeente van inschrijving ofwel de RNI aan de gemeente of aan de RNI die een overbodige PL heeft, toestemming om de overbodige PL af te voeren (<<_afvoeren_pl>>). Voorafgaand aan het afvoeren, worden op de overbodige PL nog de volgende groepen gewijzigd:
+
+[none]
+* <<g20,01.20>> A‑nummerverwijzingen
+* <<g82,01.82>> Document
+* <<g85,01.85>> Geldigheid
+* <<g86,01.86>> Opneming
+
+Hierbij wordt in groep <<g20,01.20>> in rubriek <<e2020,01.20.20>> Volgend A‑nummer het A‑nummer van de gehandhaafde PL opgenomen. Als ingangsdatum geldigheid (rubriek <<e8510,01.85.10>>) wordt opgenomen de datum van opneming. Als omschrijving document (rubriek <<e8230,01.82.30>>) wordt opgenomen de vermelding van een dubbel toegekend A‑nummer.
+
+Voor deze actualisering geldt dat deze ook uitgevoerd kan worden terwijl de bijhouding van de PL is opgeschort.
+
+Tot slot moet de gemeente of de RNI die een overbodige PL had, correcte verwijsgegevens opnemen. Hiertoe stuurt de gemeente van inschrijving ofwel de RNI verwijsgegevens naar de gemeente of naar de RNI die een overbodige PL had.
+
+*N.B.* +
+De hiervoor beschreven situatie kan zich ook voordoen binnen één gemeente, d.w.z. de te handhaven PL en de af te voeren PL(-en) zijn opgenomen in een en dezelfde gemeente. Uiteraard is het versturen van verwijsgegevens dan niet aan de orde.
+
+==== Actualiseren landelijke tabellen
+
+===== Overzicht
+
+De verspreiding van wijzigingen op de landelijke tabellen vindt plaats via de berichtendienst. Na ontvangst van tabelberichten worden de juiste actualiseringsprocedures aangeroepen. Ook moet het mogelijk zijn om, in bijzondere gevallen, de procedures handmatig uit te voeren.
+
+De mogelijke actualiseringsprocedures zijn:
+
+* Actualiseren overige tabellen
+
+===== Actualiseren overige tabellen
+
+Onderstaande <<sleutelelement-per-mogelijk-te-actualiseren-landelijke-tabel>> geeft aan welke landelijke tabellen met deze procedure kunnen worden geactualiseerd. Per tabel is een zogenaamd sleutelelement vermeld. Dit element wordt bij een wijziging gebruikt om aan te geven welke tabelregel gewijzigd moet worden.
+
+[#sleutelelement-per-mogelijk-te-actualiseren-landelijke-tabel]
+.Sleutelelement per mogelijk te actualiseren landelijke tabel
+[width="100%",cols="10%,40%,10%,40%",options="header",]
+|===
+|Nr. |Tabel |Element |Sleutelelement
+|<<t32,32>> |Nationaliteiten |<<e0511,05.11>> |Nationaliteitscode
+|<<t33,33>> |Gemeenten |<<e9210,92.10>> |Gemeentecode
+|<<t34,34>> |Landen |<<e9410,94.10>> |Landcode
+|<<t37,37>> |Reden opnemen/beëindigen nationaliteit |<<e9610,96.10>> |Code opnemen/beëindigen nationaliteit
+|<<t39,39>> |Akteaanduiding |<<e8121,81.21>> |Akteaanduiding
+|<<t41,41>> |Reden ontbinding/nietigverklaring huwelijk/geregistreerd partnerschap |<<e0741,07.41>> |Code ontbinding/nietigverklaring
+|<<t48,48>> |Nederlands reisdocument |<<e3511,35.11>> |Code Nederlands reisdocument
+|<<t49,49>> |Autoriteit verstrekking |<<e3541,35.41>> |Code autoriteit van afgifte
+|<<t56,56>> |Verblijfstitels |<<e3911,39.11>> |Code verblijfstitel
+|<<t59,59>> |BRP-deelnemers |<<e9710,97.10>> |Code BRP-deelnemer
+|<<t60,60>> |RNI-deelnemers |<<e8811,88.11>> |Code RNI-deelnemer
+|<<t61,61>> |Gezagsverhouding |<<e3211,32.11>> |Code gezagsverhouding
+|===
+
+Er zijn twee functies voor het actualiseren van de tabelregels. Het beëindigen van een tabelregel komt in dit geval overeen met een wijziging. De twee functies zijn:
+
+[unordered.stack]
+*Toevoegen*:: Hierbij wordt een tabelnummer en een nieuwe tabelregel aangeleverd. De nieuwe tabelregel moet in de betreffende tabel worden opgenomen.
+
+*Wijzigen*:: Hierbij wordt een tabelnummer en een gewijzigde tabelregel (met daarin het sleutelelement) aangeleverd. In de betreffende tabel moet de tabelregel waarvan het sleutelelement de gespecificeerde waarde heeft, worden overschreven met de gewijzigde tabelregel.
+
+==== Privacyprocedures
+
+===== Inleiding
+
+In de Wet BRP wordt een afzonderlijke regeling met betrekking tot de bescherming van de persoonlijke levenssfeer gegeven, die materieel geheel voldoet aan de Algemene verordening gegevensbescherming (AVG). De AVG geldt als zodanig niet voor de BRP maar is voor bepaalde onderdelen, in het bijzonder voor het toezicht door de Autoriteit Persoonsgegevens en voor de schadevergoedings­regeling, in de Wet BRP van overeenkomstige toepassing verklaard.
+
+Voor het LO zijn voornamelijk de in de Wet BRP neergelegde bepalingen met betrekking tot het inzage- en correctierecht en de protocolplicht van belang. Deze punten worden in dit hoofdstuk nader uitgewerkt. Daarnaast worden op andere plaatsen in het Logisch Ontwerp de consequenties van de verstrekkingsvoorwaarden beschreven.
+
+De privacyprocedures, welke een gemeentelijk BRP-systeem minimaal moet kunnen uitvoeren, zijn:
+
+* procedure protocolplicht (<<_protocolplicht>>);
+* procedure inzagerecht (<<_inzagerecht>>);
+* procedure correctierecht (<<_correctierecht>>).
+
+In de volgende paragrafen worden de hierboven genoemde procedures nader uiteengezet.
+
+===== Protocolplicht
+
+In het kader van het op een verantwoorde wijze voeren van een persoonsregistratie en om invulling te kunnen geven aan het inzagerecht van de burger dient een deugdelijke registratie gevoerd te worden van alle van belang zijnde handelingen met betrekking tot de BRP-gegevens. De bijhouding van deze registratie wordt aangeduid met de term protocollering.
+
+In deze paragraaf wordt aangegeven welke handelingen geprotocolleerd dienen te worden en welke gegevens ten aanzien van deze handelingen achterhaald moeten kunnen worden om invulling te kunnen geven aan de rechten van de burger.
+
+Vooropgesteld dient te worden dat de in deze paragraaf opgenomen voorschriften minimumeisen zijn. Afhankelijk van de werkwijze binnen de gemeente of van het systeem kan het eenvoudiger zijn om meer te protocolleren dan hier voorgeschreven.
+
+In de nu volgende subparagrafen worden per soort handeling de protocolleringsvoorschriften gespecificeerd. De te onderscheiden handelingen hierbij zijn:
+
+* verstrekkingen;
+* inzage verlenen aan een burger in de van hem geregistreerde gegevens;
+* inschrijvingen en actualiseringen;
+* illegale pogingen om gegevens verstrekt te krijgen;
+* bewaartermijn protocolgegevens.
+
+====== Protocollering van verstrekkingen
+
+Om te bepalen welke verstrekkingen wel en welke niet geprotocolleerd moeten worden, dient in de eerste plaats onderscheid gemaakt te worden tussen te herleiden en niet te herleiden verstrekkingen.
+
+_Herleidbare verstrekkingen_
+
+Te herleiden verstrekkingen zijn verstrekkingen op grond van een autorisatiebesluit van de verantwoordelijk Minister of van een gemeentelijke verordening waarbij achteraf, door het vergelijken van het besluit en de gegevens in het bestand van de bevraagde, zonder meer valt af te leiden wanneer welke gegevens aan welke instantie zijn verstrekt. Te denken valt hierbij aan uitgevoerde selecties of spontane verstrekkingen op basis van geplaatste afnemersindicaties op persoonslijsten. Binnen de herleidbare verstrekkingen wordt onderscheid gemaakt tussen:
+
+* verstrekkingen waarvan aan de burger géén mededeling mag worden gedaan in verband met de veiligheid van de staat of de voorkoming, opsporing of vervolging van strafbare feiten. Dit type verstrekkingen mag niet worden geprotocolleerd;
+* verstrekkingen waarvan aan de burger wél mededeling moet worden gedaan als hij verzoekt om inzage. Dit type verstrekkingen mag wel worden geprotocolleerd, maar het hoeft niet. Het is ook mogelijk dat deze verstrekkingen worden herleid op het moment dat de burger om een overzicht ervan vraagt.
+
+_Niet-herleidbare verstrekkingen_
+
+Niet te herleiden verstrekkingen zijn alle overige verstrekkingen. Te denken valt hierbij aan conditionele verstrekkingen als gevolg van actualiseringen waarbij geen historie ontstaat, ad hoc vragen, ad hoc adresvragen en herstelverstrekkingen. Binnen de niet te herleiden verstrekkingen wordt onderscheid gemaakt tussen:
+
+* verstrekkingen waarvan aan de burger géén mededeling mag worden gedaan in verband met de veiligheid van de staat of de voorkoming, opsporing of vervolging van strafbare feiten. Dit type verstrekkingen mag niet worden geprotocolleerd;
+* verstrekkingen waarvan aan de burger wél mededeling moet worden gedaan als hij verzoekt om inzage. Dit type verstrekkingen moet altijd worden geprotocolleerd.
+
+Er worden ook gegevens uitgewisseld die niet gelden als verstrekking en die dus ook niet hoeven te worden geprotocolleerd:
+
+* Synchronisatieberichten (<<Lq01,Lq01>> en <<La01,La01>>). Deze vorm van gegevensuitwisseling vindt plaats in het kader van de bijhouding van de BRP-V en behoeft niet te worden geprotocolleerd.
+* Gebruik van gegevens door colleges van B&W (in de praktijk is dat de afdeling Burgerzaken) ten behoeve van verificatie. Hierbij valt te denken aan het verifiëren van stukken en aangiften in het kader van het bijhouden van de BRP. Dit type gebruik hoeft niet te worden geprotocolleerd.
+* Gebruik van de gegevens door colleges van B&W (in de praktijk is dat de afdeling Burgerzaken) ten behoeve van het maken van documenten die de afdeling zelf afgeeft, zoals paspoorten, rijbewijzen en dergelijke. Indien het gebruik van die gegevens voor die taak zijn grondslag vindt in of krachtens een gemeentelijke verordening, dan hoeft dit type gebruik niet te worden geprotocolleerd.
+* Raadplegingen door RvIG-beheerders in het kader van het beheer van BRP-V. Deze hoeven niet te worden geprotocolleerd.
+* Verstrekkingen aan de burger zelf. Deze verstrekkingen hoeven niet te worden geprotocolleerd.
+
+Bij elke protocollering moeten volgende gegevens achterhaald kunnen worden:
+
+* over wie gegevens verstrekt zijn (b.v. door registratie van het A‑nummer);
+* op welke datum de verstrekking plaats gevonden heeft;
+* de ambtenaar die of het systeem dat de verstrekking verricht heeft;
+* de verstrekte gegevens van de persoon (b.v. door registratie van de nummers van de gevraagde of de verstrekte rubrieken);
+* degene aan wie de inhoud van genoemde rubrieken verstrekt is.
+
+====== Protocollering van inzage
+
+Inzage van de gegevens van een burger door de betreffende burger zelf hoeft niet te worden geprotocolleerd.
+
+Om te voorkomen dat aan niet geautoriseerde personen inzage wordt verleend, zal een persoon zich dienen te identificeren. Indien de gemeente verleende inzages wil kunnen verantwoorden, verdient het aanbeveling de inzage wel te protocolleren.
+
+Indien inzages geprotocolleerd worden, dienen achteraf de volgende zaken achterhaald te kunnen worden:
+
+* over wie is inzage verleend (b.v. door registratie A‑nummer);
+* op welke datum de inzage plaats gevonden heeft;
+* de ambtenaar of het systeem die de inzage verricht heeft;
+* de gegevens waarvoor de burger inzage gevraagd heeft;
+* met behulp van welk document of de wijze waarop de betreffende burger zich geïdentificeerd heeft.
+
+====== Logging van inschrijving en actualisering
+
+Handelingen die door of met behulp van het systeem worden uitgevoerd bij het actualiseren van gegevens en het inschrijven van nieuwe gegevens in de BRP dienen te allen tijde gelogd te worden.
+
+Hierbij dient achteraf bepaald te kunnen worden:
+
+* de persoon waarvan persoonsgegevens opgenomen of geactualiseerd zijn (b.v. door registratie A‑nummer);
+* op welke datum de inschrijving of actualisering plaats gevonden heeft;
+* de ambtenaar die of het systeem dat de inschrijving of actualisering verricht heeft.
+
+====== Logging van illegale pogingen
+
+Elke geconstateerde poging van een onbevoegde om zich toegang te verschaffen tot het BRP-systeem, hiermee bepaalde procedures uit te voeren of gegevens verstrekt te krijgen, dient gelogd te worden.
+
+Hierbij dient achteraf bepaald te kunnen worden:
+
+* wie de illegale poging ondernam, indien bekend;
+* wanneer de illegale poging ondernomen is;
+* de procedure die de onbevoegde gebruikt heeft/wilde gebruiken;
+* welke gegevens waarop de onbevoegde geen recht had, de onbevoegde wilde hebben;
+* de ambtenaar of het systeem dat de illegale vraag afgehandeld heeft.
+
+====== Bewaartermijn protocolgegevens
+
+Om invulling te kunnen geven aan het recht van de burger om opgave te verlangen van de gegevens die in de afgelopen twintig jaar over hem zijn verstrekt, dienen de protocolgegevens over verstrekkingen twintig jaar na het moment van verstrekken, te worden bewaard. Voor de bewaartermijn van de protocolgegevens van de andere procedures wordt geadviseerd een zelfde termijn aan te houden.
+
+===== Inzagerecht
+
+Het inzagerecht houdt in dat een persoon op zijn verzoek kosteloos inzage gegeven moet worden in alle hem betreffende gegevens die in een BRP-systeem zijn opgenomen. Een gewaarmerkt afschrift van die gegevens kan verkregen worden tegen betaling van leges als het college van burgemeester en wethouders dit verlangt. Indien alleen een afschrift getoond kan worden of indien inzage via het beeldscherm niet mogelijk is, kunnen voor het afschrift geen kosten in rekening gebracht worden.
+
+Niet-ingezetenen kunnen hun inzagerecht uitoefenen bij de Inschrijfvoorzieningen. De taken en termijnen die voor de colleges van burgemeester en wethouders worden genoemd, zijn van overeenkomstige toepassing op de inschrijfvoorzieningen.
+
+Gegevens, die in de vorm van een code zijn opgenomen in het BRP-systeem, dienen bij het geven van inzage en het afgeven van een afschrift omgezet te worden in de bij de codes horende omschrijvingen.
+
+Het inzagerecht zoals neergelegd in de Wet BRP heeft betrekking op alle BRP-gegevens, die een ingeschrevene betreffen, te weten:
+
+[unordered.stack]
+*Persoonslijst en afnemersindicaties bij de persoonslijst*:: Een volledig overzicht van zijn PL wordt binnen vier weken na de eerste inschrijving in de basisregistratie, alsmede binnen vier weken nadat een ingeschrevene, die geen ingezetene was, weer ingezetene is geworden, aan de ingeschrevene toegezonden door het college van burgemeester en wethouders van de gemeente van inschrijving. +
+Elke persoon wordt op zijn verzoek door het college van burgemeester en wethouders van de gemeente, waar hij is ingeschreven, binnen vier weken kosteloos inzage verleend in de gegevens die op zijn PL voorkomen. +
+Elke persoon wordt op zijn verzoek door het college van burgemeester en wethouders van de gemeente, waar hij is ingeschreven, zo spoedig mogelijk, doch in elk geval binnen vier weken een, desverlangd gewaarmerkt, afschrift verstrekt van de gegevens die op zijn PL voorkomen. +
+Indien er bij de PL van de ingeschrevene een afnemersindicatie voorkomt, hetzij actueel, hetzij historisch, waarvoor geldt dat in de autorisatietabelregel van de betrokken afnemer rubriek <<e9513,35.95.13>> Verstrekkingsbeperking de waarde "2" heeft, dan wordt die afnemersindicatie noch ter inzage gegeven noch opgenomen in een overzicht, afschrift, uittreksel, verklaring of wat voor geschrift dan ook.
+
+*Verwijsgegevens*:: Elke persoon wordt op zijn verzoek door het college van burgemeester en wethouders van een gemeente binnen vier weken kosteloos inzage in de hem betreffende verwijsgegevens in de basisregistratie van die gemeente verleend. +
+Elke persoon wordt op zijn verzoek door het college van burgemeester en wethouders van een gemeente zo spoedig mogelijk, doch in elk geval binnen vier weken een, desverlangd gewaarmerkt, afschrift van de hem betreffende verwijsgegevens in de basisregistratie van die gemeente verstrekt.
+
+*Protocolgegevens*:: Elke persoon wordt op zijn verzoek binnen vier weken een afschrift verstrekt van alle verstrekkingen van hem betreffende gegevens, die in de twintig jaar voorafgaande aan het verzoek zijn gedaan door het college van burgemeester en wethouders waaraan het verzoek werd gericht. Het college van burgemeester en wethouders kan volstaan met een in algemene termen gestelde mededeling omtrent de verstrekking, tenzij het belang van de verzoeker daardoor onevenredig wordt geschaad. +
+Protocolgegevens worden niet verstrekt indien deze betrekking hebben op gegevensverstrekkingen in het belang van de veiligheid van de staat of de opsporing en vervolging van strafbare feiten. Voor de goede orde zij vermeld dat hieronder ook verstrekkingen vallen aan afnemers, waarvoor geldt dat rubriek <<e9513,35.95.13>> Verstrekkingsbeperking in de autorisatietabelregel de waarde "2" heeft.
+
+*Overige, de ingeschrevene betreffende gegevens*:: Elke persoon wordt op zijn verzoek door het college van burgemeester en wethouders van een gemeente binnen vier weken kosteloos inzage in overige, hem betreffende gegevens in de basisregistratie van die gemeente verleend (b.v. gegevens over de ingeschrevene, opgenomen bij ouders en kinderen). +
+Elke persoon wordt op zijn verzoek door het college van burgemeester en wethouders van een gemeente zo spoedig mogelijk, doch in elk geval binnen vier weken een, desverlangd gewaarmerkt, afschrift van overige, hem betreffende gegevens in de basisregistratie van die gemeente verstrekt.
+
+===== Correctierecht
+
+Het correctierecht houdt in dat een college van burgemeester en wethouders op schriftelijk verzoek van een persoon de in haar basisregistratie onjuist opgenomen gegevens over die persoon corrigeert. De correctie dient binnen vier weken te geschieden en is kosteloos. De termijn van vier weken kan, voor zover noodzakelijk, met telkens acht weken worden verlengd, indien het verzoek betrekking heeft op gegevens over de burgerlijke staat of de nationaliteit.
+
+Niet-ingezetenen kunnen hun inzagerecht uitoefenen bij de laatste woongemeenten als de correctie de periode betreft waarin betrokkene nog ingezetene was of waarna hij nog ingezetene is geweest en bij Inschrijfvoorzieningen als de huidige periode van niet-ingezetenschap betreft. De taken en termijnen die voor de colleges van burgemeester en wethouders worden genoemd, zijn van overeenkomstige toepassing op de inschrijfvoorzieningen.
+
+Alles wat uit (wettelijke) brondocumenten correct is overgenomen kan slechts worden gecorrigeerd na overleggen van een meer recent of sterker brondocument. Correctie doet het college van burgemeester en wethouders met behulp van de correctieprocedures uit <<_bijhouding>>.
+
+Het college van burgemeester en wethouders doet, indien het voldoet aan een verzoek tot correctie van gegevens, hiervan terstond schriftelijk mededeling aan de verzoeker.
+
+Een beslissing van het college van burgemeester en wethouders om niet te voldoen aan een verzoek tot correctie van gegevens wordt gelijkgesteld met een besluit in de zin van de Algemene Wet bestuursrecht.
+
+Indien een verzoek van de burger niet wordt gevolgd of indien de burger bezwaar maakt tegen ambtshalve correctie van gegevens, staat binnen twee maanden na bovengenoemde mededeling beroep open bij de rechtbank.
+
+Uitgevoerde correcties moeten op schriftelijk verzoek van de burger worden gemeld aan alle personen en instanties die, vanaf één jaar voorafgaand aan dat verzoek tot aan het moment dat de correcties zijn aangebracht, de oorspronkelijke gegevens verstrekt hebben gekregen. Er zijn vier situaties te onderscheiden, namelijk:
+
+. Verstrekking van correcties op actuele gegevens aan afnemers, die op grond van de inhoud van de autorisatietabelregel ten tijde van het uitvoeren van de correctie recht hebben op een spontane verstrekking van de gecorrigeerde gegevens.
+. Verstrekking van correcties op actuele gegevens aan afnemers, die op grond van de inhoud van de autorisatietabelregel ten tijde van het uitvoeren van de correctie geen recht hebben op een spontane verstrekking van die gecorrigeerde gegevens en de oorspronkelijke gegevens via ad hoc dan wel selectieverstrekkingen hebben gekregen. RvIG doet mededeling van de correcties aan de afnemers waaraan naar het weten van RvIG in de hiervoor aangeduide periode de oorspronkelijke gegevens zijn verstrekt.
+. Verstrekking van correcties op actuele gegevens aan personen en instanties die de oorspronkelijke gegevens verstrekt hebben gekregen anders dan op grond van een autorisatietabelregel. Het college van burgemeester en wethouders doet mededeling van de correcties aan alle personen en instanties waaraan naar het weten van het college van burgemeester en wethouders in de hiervoor aangeduide periode op enigerlei wijze de oorspronkelijke gegevens zijn verstrekt.
+. Verstrekking van correcties op historische gegevens. Bij correctie van historische gegevens. RvIG doet mededeling van de correcties aan alle afnemers, personen en instanties waaraan naar het weten van RvIG in de hiervoor aangeduide periode op enigerlei wijze de oorspronkelijke gegevens zijn verstrekt. Dit houdt in dat ook verstrekt moet worden aan afnemers die slechts geautoriseerd zijn voor de betrokken actuele gegevens, maar die de oorspronkelijke, inmiddels historische, gegevens wel hebben ontvangen.
+
+Met betrekking tot het onder 2, 3 en 4 genoemde geldt nog dat de gemeente deze verstrekkingen niet hoeft te doen indien dat onmogelijk is dan wel indien dat een onevenredige inspanning zou betekenen. Vanwege intergemeentelijke verhuizingen kan het voorkomen dat de gemeente die het verzoek heeft ontvangen, andere gemeenten moet betrekken bij het afhandelen van het verzoek. Bij het herleiden van gedane verstrekkingen kan de gemeente gebruik maken van de betrokken huidige en eventueel vorige versies van de autorisatietabelregels en de gegevens die zijn vastgelegd bij het protocolleren van verstrekkingen.
+
+Het correctierecht houdt ook in dat een burger in bepaalde welomschreven gevallen kan verzoeken om gegevens van de PL te verwijderen. De verwijdering dient binnen vier weken te geschieden en is kosteloos. Het college van burgemeester en wethouders doet terstond na de verwijdering van de gegevens schriftelijk mededeling hiervan aan de betreffende burger. Van deze verwijdering wordt geen mededeling gedaan aan afnemers.
+
+De bedoelde gevallen zijn:
+
+* Op schriftelijk verzoek van een adoptiekind van 16 jaar of ouder worden op de PL van het kind:
+** de voornamen, adellijke titel/predicaat, voorvoegsels en geslachtsnaam die het kind door de adoptie verloren heeft, overschreven dan wel verwijderd (<<_actualiseren_persoon>>);
+** de gegevens verwijderd over de ouder of ouders, waarmee door de adoptie de familierechtelijke betrekking is verbroken (<<_actualiseren_ouder1>>) en (<<_actualiseren_ouder2>>);
+** de gegevens verwijderd over de nationaliteit(en) die het kind door de adoptie verloren heeft (<<_actualiseren_nationaliteit>>);
+** de gegevens verwijderd over de verblijfplaats(en), emigratie en immigratie van het kind voor de adoptie (<<_actualiseren_verblijfplaats>>).
+* Op schriftelijk verzoek van een voormalige ouder van een geadopteerd kind worden van de PL van de voormalige ouder de gegevens verwijderd over het kind waarmee door de adoptie de familierechtelijke betrekking is verbroken (<<_actualiseren_kind>>) +
+Op schriftelijk verzoek van een persoon worden op zijn/haar PL overschreven dan wel verwijderd de gegevens betreffende geslacht, voornamen, adellijke titel/predicaat en naamgebruik die op grond van een rechterlijke last tot wijziging van het geslacht dan wel een aangifte van wijziging van het geslacht in zijn/haar geboorteakte zijn gewijzigd (<<_actualiseren_persoon>>)
+* Op schriftelijk verzoek van een persoon worden op grond van een rechterlijke last tot- dan wel een aangifte van wijziging van het geslacht in de geboorteakte op zijn persoonslijst in categorie <<c02-52,02>>, <<c03-53,03>>, <<c05-55,05>> dan wel <<c09-59,09>> het geslacht, de voornamen en de adellijke titel/ predicaat van de betrokken gerelateerde gewijzigd dan wel overschreven met de waarden die voor het doorvoeren van de wijziging waren opgenomen. +
+Hierbij geldt dat categorie <<c09-59,09>> uitgezonderd is voor wat betreft het geslacht. +
+Zie <<_actualiseren_ouder1>>, <<_actualiseren_ouder2>>, <<_actualiseren_huwelijkgeregistreerd_partnerschap>> en <<_actualiseren_kind>>
+* Op schriftelijk verzoek van een persoon worden op grond van een rechterlijke last tot- dan wel een aangifte van wijziging van het geslacht in de geboorteakte van betrokken gerelateerde op zijn persoonslijst het geslacht, de voornamen en de adellijke titel/predicaat in categorie <<c02-52,52>>, <<c03-53,53>>, <<c05-55,55>> dan wel <<c09-59,59>> overschreven. Het verzoek kan betreffen het overschrijven van de gegevens zoals die waren voor de wijziging van het geslacht of het overschrijven van de gegevens zoals die door de verwerking van de wijziging van het geslacht zijn gewijzigd. +
+Hierbij geldt dat categorie <<c09-59,59>> uitgezonderd is voor wat betreft het geslacht. Bij dit verzoek geldt dat zo'n verzoek slechts is toegestaan als de wijzigingen ten gevolge van de geslachtswijziging al in de betrokken actuele categorieën <<c02-52,02>>, <<c03-53,03>>, <<c05-55,05>> dan wel <<c09-59,09>> zijn verwerkt. +
+Zie <<_actualiseren_ouder1>>, <<_actualiseren_ouder2>>, <<_actualiseren_huwelijkgeregistreerd_partnerschap>> en <<_actualiseren_kind>>.
+
+Indien op basis van een verzoek als hierboven bedoeld na een adoptie of een geslachtswijziging, een onjuiste historische categorie is betrokken, wordt die betreffende onjuiste historische categorie niet aangepast, maar in zijn geheel verwijderd.
+
+===== Opnemen en verwijderen gegevens van een levenloos geboren kind
+
+Een ouder heeft het recht om de gegevens van een levenloos geboren kind op zijn persoonslijst te laten opnemen. De registratie vindt op verzoek van een individuele ouder plaats, dus:
+
+* is het geen verplichting om bij registratie van de gegevens van een levenloos geboren kind, ook de gegevens van andere levenloos geboren kinderen te registreren;
+* als een ouder een verzoek doet voor registratie van de gegevens van een levenloos geboren kind, worden niet op basis van dit verzoek die gegevens ook bij de andere ouder geregistreerd.
+
+Omdat de rechtsgevolgen bij levend geboren en levenloos geboren kinderen verschillen, wordt bij de gegevens van levenloos geboren kinderen een markering (<<e8910,09.89.10>> = L), opgenomen, zodat er onderscheid kan worden gemaakt. Dat onderscheid komt tot uiting bij de verstrekking van gegevens: gegevens omtrent levenloos geboren kinderen worden niet verstrekt, ook niet bij verstrekkingen die aan de balie plaatsvinden. Er is een uitzondering: aan afnemers die voor de uitvoering van hun taak gegevens omtrent geregistreerde levenloos geboren kinderen nodig hebben, worden die gegevens wel verstrekt.
+
+De ouder heeft ook het recht om de gegevens van een geregistreerd levenloos geboren kind weer van zijn persoonslijst te verwijderen. In dat geval blijven er geen gegevens op de persoonslijst achter waaruit blijkt dat er ooit sprake is geweest van registratie van dit levenloos geboren kind. Ook bij verwijdering geldt dat de ouder dit per kind kan aangeven en dat de persoonslijsten van beide ouders op dit punt kunnen verschillen.
+
+==== Synchroniciteitsselectie
+
+RvIG kan de gemeente en RNI verzoeken om een selectie te draaien om de synchroniciteit met de BRP-Verstrekkingsvoorziening te controleren. Hierbij wordt voor alle geselecteerde PL'en een <<Lg01,Lg01>>-bericht verstrekt via de berichtendienst. In uitzonderingssituaties kan in onderlinge afspraak deze selectie via een alternatief medium (de ftp-server of SecureTransfer) worden geleverd. Zie paragraaf <<_alternatieve_media>>.
+
+Voor deze selectie gelden de volgende voorwaarden:
+
+* Gemeente en RvIG maken in onderling overleg een afspraak over de selectiedatum;
+* BRP-V geeft een selectie-interval op, in de vorm van twee datumtijdstempels; het eerste datumtijdstempel heeft de betekenis van 'datumtijd vanaf', het tweede datumtijdstempel heeft de betekenis van 'datumtijd tot'. Daarbij geldt dat de 'datumtijd vanaf' inclusief en de 'datumtijd tot' exclusief de datumtijd is die in dat element is opgenomen. Veelal zal verzocht worden om een complete selectie van alle PL'en.
+* Alle op selectiedatum elektronisch beschikbare PL'en (actueel, geblokkeerd en opgeschort) waarvan rubriek <<e8020,07.80.20>> Datumtijdstempel ligt in het selectie-interval worden geselecteerd;
+* Het versienummer van de geselecteerde PL'en wordt als gevolg van deze selectie niet opgehoogd.
+
+=== Specifiek ingezetenen
+
+==== Eerste inschrijving
+
+===== Inschrijving als ingezetene op grond van de geboorteakte
+
+Het inschrijven van een kind op grond van de geboorteakte vindt alleen plaats indien de ouder uit wie het kind geboren is als ingezetene in de gemeente is ingeschreven.
+
+De gemeente van inschrijving van het kind is de gemeente waar de ouder uit wie het kind geboren is als ingezetene is ingeschreven. De geboortegemeente van het kind is de gemeente waar de geboorteakte wordt opgemaakt.
+
+Bij het inschrijven op grond van de geboorteakte zijn de volgende situaties mogelijk:
+
+* De gemeente van inschrijving is eveneens de geboortegemeente.
+* De gemeente van inschrijving is een andere dan de geboortegemeente. Bij deze zo geheten toevallige geboorte zal de geboortegemeente de gemeente van inschrijving in kennis stellen van de geboorte en tevens de gegevens van de geboorteakte van het kind doen toekomen.
+
+Ten behoeve van het inschrijven van een kind op grond van de geboorteakte moeten, na verificatie dat het kind inderdaad nog niet in de BRP is ingeschreven, ten minste de volgende actualiseringsprocedures worden uitgevoerd:
+
+* actualiseren persoon;
+* actualiseren ouder1;
+* actualiseren ouder2;
+* actualiseren inschrijving;
+* actualiseren verblijfplaats.
+
+Het kind moet worden ingeschreven in de BRP op het adres van een geldig adresseerbaar object in de BAG. Zie voor het betreffende voorschrift <<_actualiseren_verblijfplaats>>.
+
+Daarnaast moeten actualiseringsprocedures worden uitgevoerd aan de hand van alle bekende gegevens. In géén geval worden de volgende procedures uitgevoerd:
+
+* actualiseren huwelijk/geregistreerd partnerschap;
+* actualiseren overlijden;
+* actualiseren kind;
+* actualiseren verblijfstitel;
+* actualiseren kiesrecht;
+* actualiseren verwijzing.
+
+Tevens moet een actualisering doorgevoerd worden op de PL van de gerelateerde(n). Zie voor het betreffende voorschrift <<_gerelateerdengegevens>>
+
+In geval van een toevallige geboorte neemt de geboortegemeente, nadat het kind is ingeschreven in de BRP, een verwijzing op naar de gemeente van eerste inschrijving. Dit geschiedt op basis van de verwijsgegevens, die de gemeente van eerste inschrijving verstuurt naar de geboortegemeente.
+
+===== Inschrijving als ingezetene op grond van een aangifte van verblijf en adres
+
+Inschrijving op grond van een aangifte van verblijf en adres geldt voor:
+
+* Personen die in Nederland geboren zijn, maar die niet op grond van de geboorteakte ingeschreven kunnen worden.
+* Personen die zich voor de eerste keer in Nederland vestigen (eventueel na het opheffen van een Ministerieel besluit).
+
+Bij eerste inschrijving op grond van aangifte van verblijf en adres dient, alvorens tot daadwerkelijke inschrijving over te gaan, gecontroleerd te worden
+
+* of de persoon niet reeds ingeschreven is in de BRP;
+* of er niet reeds een inschrijvingsprocedure gestart is in een andere gemeente;
+
+Deze controle gebeurt door een vraag te stellen aan de BvBSN met behulp van de webservice Presentievraag. In deze presentievraag dienen de identificerende gegevens van de in te schrijven persoon opgenomen te worden.
+
+Indien uit het antwoord van de BvBSN op de presentievraag blijkt dat de persoon nog niet ingeschreven is en er ook nog geen inschrijvingsprocedure voor de persoon gestart is, kan overgegaan worden tot het daadwerkelijk inschrijven van de persoon.
+
+Indien de persoon reeds ingeschreven is, bevat het antwoord van de BvBSN de gemeente van inschrijving of RNI van de persoon. Met behulp van de procedure Vervolginschrijving (<<_vervolginschrijving>>) wordt vervolgens de PL opgehaald.
+
+Indien in een andere gemeente reeds een inschrijvingsprocedure loopt, bevat het antwoord van de BvBSN de code van de gemeente of RNI die de procedure gestart heeft. Met deze gemeente of RNI dient contact opgenomen te worden om na te gaan wat er aan de hand is.
+
+Indien uit het antwoord van de BvBSN op de presentievraag blijkt dat er reeds een persoon is ingeschreven met hetzelfde persoonsnummer uit hetzelfde EU-land, dient te worden onderzocht of dit dezelfde persoon betreft. Als dat het geval is, wordt met behulp van de procedure Vervolginschrijving (<<_vervolginschrijving>>) vervolgens de PL opgehaald.
+
+Ten behoeve van de inschrijving op grond van een aangifte van verblijf en adres moeten, na verificatie dat de ingeschrevene inderdaad nog niet in de BRP is ingeschreven, op basis van de bij de aangifte bekende gegevens ten minste de volgende actualiseringsprocedures worden uitgevoerd:
+
+* actualiseren persoon;
+* actualiseren ouder1;
+* actualiseren ouder2;
+* actualiseren inschrijving;
+* actualiseren verblijfplaats.
+
+De persoon moet worden ingeschreven in een gemeente op het adres van een geldig adresseerbaar object in de BAG. Zie voor het betreffende voorschrift <<_actualiseren_verblijfplaats>>.
+
+Daarnaast moeten actualiseringsprocedures worden uitgevoerd aan de hand van alle bekende gegevens. In géén geval worden de volgende procedures uitgevoerd:
+
+* actualiseren overlijden;
+* actualiseren verblijfstitel;
+* actualiseren verwijzing.
+
+Tevens geldt dat gecontroleerd dient te worden of er gerelateerden van de betrokkene in de gemeente van inschrijving zijn ingeschreven. Zie hiervoor de betreffende voorschriften in <<_gerelateerdengegevens>>.
+
+In geval van een eerste inschrijving op grond van een aangifte van verblijf en adres van een persoon die op of na 01-10-1994 (inwerkingtreding van de Wet GBA) in Nederland is geboren in een andere gemeente dan de inschrijvingsgemeente, neemt de geboortegemeente, nadat de persoon is ingeschreven in de BRP, een verwijzing op naar de gemeente van eerste inschrijving. Dit geschiedt op basis van de verwijsgegevens, die de gemeente van eerste inschrijving verstuurt naar de geboortegemeente.
+
+==== Intergemeentelijke infrastructurele wijzigingen
+
+In deze paragraaf worden de procedurele aspecten rond intergemeentelijke infrastructurele wijzigingen uiteengezet. Onder intergemeentelijke infrastructurele wijzigingen worden de volgende gebeurtenissen verstaan:
+
+* gemeentenaamswijziging;
+* grenscorrectie waarbij de betrokken gemeenten blijven bestaan;
+* samenvoeging van gemeenten waarbij een of meerdere gemeenten verdwijnen;
+* opdeling van een gemeente in een aantal nieuwe gemeenten.
+
+Bij een gemeentenaamswijziging worden de volgende activiteiten uitgevoerd:
+
+* voorbereiding;
+* actualiseren van PL'en;
+* intact houden van de verwijsketen;
+* versturen van kennisgevingen aan afnemers.
+
+Bij de overige gebeurtenissen dienen de volgende activiteiten uitgevoerd te worden:
+
+* voorbereiding;
+* aanpassen van adressen;
+* overbrengen van PL'en;
+* actualiseren van PL'en;
+* intact houden van de verwijsketen;
+* versturen van kennisgevingen aan afnemers.
+
+Deze activiteiten worden in de volgende paragrafen nader toegelicht.
+
+===== Voorbereiding
+
+Gemeenten en afnemers worden door RvIG tijdig geïnformeerd over de op handen zijnde infrastructurele wijziging.
+
+De betrokken gemeenten dragen er zorg voor dat bij aanvang van de reorganisatie van de BRP-bestanden geen berichtencycli meer open staan. Dit wordt bereikt door berichten die het begin zijn van een nieuwe cyclus enkele dagen voor de reorganisatie, niet meer te verzenden of te verwerken. Nog openstaande cycli dienen zo snel mogelijk afgehandeld te worden.
+
+Tevens dienen de betrokken gemeenten ervoor zorg te dragen dat een back-up gemaakt wordt van de situatie voor de reorganisatie, om bij problemen tijdens de reorganisatie altijd terug te kunnen naar de initiële situatie.
+
+De verantwoordelijk Minister zorgt, voor zover nodig, voor het tijdig aanpassen van de tabel <<t33,33>> 'Gemeententabel' en het creëren van de benodigde nieuwe mailboxen in de mailboxserver en de BRP Berichten API. Indien nodig worden reeds bestaande mailboxen geblokkeerd gedurende de reorganisatie van de BRP-bestanden.
+
+Het aanpassen van tabel <<t33,33>> 'Gemeententabel' bestaat onder andere uit het toevoegen van eventuele nieuwe gemeenten of gemeentenamen en het opnemen van element <<e9212,92.12>> Nieuwe gemeentecode bij de op te heffen gemeenten.
+
+===== Overbrengen van PL'en
+
+De actuele PL'en van personen die als gevolg van de herindeling in een andere gemeente ingeschreven dienen te worden, moeten overgebracht worden naar die betreffende gemeente.
+
+Indien de huidige gemeente van inschrijving bij de herindeling wordt opgeheven, dienen daarnaast alle opgeschorte PL'en en de verwijsgegevens naar een bij de herindeling betrokken gemeente overgebracht te worden.
+
+De persoonslijsten en verwijsgegevens worden overgebracht op een door de betrokken gemeenten onderling afgestemde wijze. Indien mogelijk, kan hierbij gebruik gemaakt worden van de berichtencyclus Vervolginschrijving. Het is mogelijk om gebruik te maken van een alternatief medium voor transport van de gegevens.
+
+===== Actualiseren van PL'en
+
+De PL'en worden geactualiseerd conform de actualiseringsprocedure zoals die is beschreven in <<_wijzigingen_in_infrastructuur>>.
+
+===== Terugmeldingen
+
+TMV2.0 bevat voorzieningen die de gevolgen van herindelingen voor reeds aanwezige, niet afgehandelde, terugmeldingen verwerkt.
+
+===== Intact houden van de verwijsketen
+
+Een bij de herindeling betrokken gemeente waaruit in verband met de herindeling PL'en verhuisd zijn naar een andere gemeente, dient voor elke verhuisde PL verwijsgegevens naar de nieuwe gemeente van inschrijving op te nemen.
+
+Van een gemeente die als gevolg van de herindeling komt te vervallen dienen alle verwijsgegevens overgebracht te worden naar de gemeente waar de opgeschorte PL'en naar toe verhuisd worden. De gemeente die de verwijsgegevens en opgeschorte PL'en opneemt, dient tevens verwijsgegevens te ontvangen van alle actuele PL'en die van de op te heffen gemeente naar één van de overige, bij de herindeling betrokken gemeenten verhuisd worden. De gemeentecode van de gemeente die de verwijsgegevens en opgeschorte PL'en ontvangt, wordt ingevuld in element <<e9212,92.12>> Nieuwe gemeentecode in de tabelregels van de op te heffen gemeenten.
+
+Elke betrokken gemeente dient nadat de uitwisseling van PL'en en/of verwijsgegevens afgerond is, na te gaan of verwijsgegevens van een persoon meerdere keren voorkomen. In dat geval dienen alle, behalve de meest recente, verwijsgegevens verwijderd te worden. Tevens dienen de verwijsgegevens, die verwijzen naar de eigen gemeente of naar de gemeente waarvan de betreffende gemeente de verwijsgegevens overneemt, verwijderd te worden.
+
+=== Specifiek niet-ingezetenen
+
+==== Eerste inschrijving
+
+===== Inschrijving bij een RNI-loket
+
+Als uit informatie van de in te schrijven persoon blijkt dat deze ingeschreven moet worden als ingezetene, dan vindt geen inschrijving in de RNI plaats.
+
+Verder geldt als voorwaarde voor inschrijving in de RNI dat de identiteit van de persoon deugdelijk moet worden vastgesteld. Deze activiteit wordt ondersteund door apparatuur en systemen die eigenschappen van reisdocumenten bevatten en de echtheid en geldigheid van deze documenten controleren/tonen. Daarbij worden onder andere Edison TD en NDS en het document RNI procesbeschrijving en werkplekinrichting gebruikt.
+
+Tot slot wordt, voordat tot inschrijving kan worden overgegaan, vastgesteld dat de persoon nog niet in de BRP is ingeschreven en dat er niet al een inschrijvingsprocedure loopt. Deze actie wordt in de volgende paragraaf beschreven.
+
+====== Controleren eerdere inschrijvingen en eerdere verzoeken tot inschrijving
+
+Er wordt vastgesteld of de persoon al in de BRP ingeschreven is of wordt. Daarbij worden de volgende situaties onderscheiden:
+
+* de persoon is al in de BRP ingeschreven;
+* er loopt al een inschrijvingsprocedure voor de persoon;
+* de persoon komt voor in Niet Gehonoreerde Verzoeken (NGV);
+* de persoon is nog niet in de BRP ingeschreven, er loopt geen inschrijvingsprocedure en de persoon komt niet voor in de NGV.
+
+Ten behoeve van de controle of een van bovenstaande situaties zich voordoet, wordt een zoekvraag in de RNI uitgevoerd en wordt een presentievraag gesteld aan de BvBSN.
+
+In de presentievraag worden de identificerende gegevens van de in te schrijven persoon opgenomen. Uit het antwoord op de presentievraag kan blijken:
+
+. De persoon is al ingeschreven in de BRP. Er vindt geen eerste inschrijving plaats; de inschrijvingsprocedure wordt afgebroken.
+. Er loopt voor de persoon mogelijk al een inschrijvingsprocedure in de BRP. Bij de beantwoording kijkt de BvBSN of met de betreffende identificerende gegevens er de afgelopen periode al eerder een presentievraag is gesteld vanuit een gemeente of de RNI. Er moet dan uitgezocht worden wat er aan de hand is.
+. De presentievraag heeft te veel resultaten opgeleverd. Er moet nogmaals een vraag worden gesteld waarbij meer of andere identificerende gegevens worden meegegeven.
+. Indien uit het antwoord van de BvBSN op de presentievraag blijkt dat er reeds een persoon is ingeschreven met hetzelfde persoonsnummer uit het hetzelfde EU-land, dient te worden onderzocht of dit dezelfde persoon betreft. Als dat het geval is, wordt met behulp van de procedure Vervolginschrijving (<<_vervolginschrijving>>) vervolgens de PL opgehaald.
+. Er is niemand gevonden die aan de opgegeven identificatie voldoet. Er kan worden overgegaan tot het daadwerkelijk inschrijven van de persoon in de RNI.
+
+Zoals bij punt 2 aangegeven, kan het antwoord van de presentievraag aangeven dat er mogelijk al een inschrijving is gestart. Deze signalering functioneert alleen als de vorige presentievraag met de betreffende gegevens kortgeleden is gesteld. Daarom wordt ook de RNI-registratie zelf onderzocht of er sprake is van een eerdere inschrijvingsprocedure voor de persoon.
+
+Daaruit kan blijken:
+
+* Een eerder verzoek tot inschrijving is afgewezen of geannuleerd. Beoordeeld moet worden of het nieuwe verzoek tot inschrijving wel gehonoreerd kan worden.
+* Een eerder verzoek tot inschrijving is nog in behandeling. Eén van beide verzoeken wordt dan afgewezen.
+
+====== Aanleg van een PL bij de eerste inschrijving
+
+Ten behoeve van het aanleggen van een PL in het kader van de eerste inschrijving, worden ten minste de volgende actualiseringsprocedures uitgevoerd:
+
+* actualiseren Persoon, waarbij groep <<g61,01.61>> Naamgebruik niet wordt opgenomen (<<_actualiseren_persoon>>);
+* actualiseren Nationaliteit (<<_actualiseren_nationaliteit>>);
+* actualiseren Inschrijving (<<_actualiseren_inschrijving>>);
+* actualiseren Verblijfplaats (<<_actualiseren_verblijfplaats>>).
+
+De volgende actualiseringsprocedures mogen worden uitgevoerd:
+
+* actualiseren Akte en Document (<<_actualiseren_akte_en_document>>);
+* actualiseren Ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>);
+* actualiseren Tijdelijk verblijfsadres (<<_actualiseren_tijdelijk_verblijfsadres>>);
+* actualiseren Contactgegevens (<<_actualiseren_contactgegevens>>).
+
+In géén geval worden de volgende procedures uitgevoerd:
+
+* actualiseren Ouder1;
+* actualiseren Ouder2;
+* actualiseren Huwelijk/geregistreerd partnerschap;
+* actualiseren Overlijden;
+* actualiseren Kind;
+* actualiseren Verblijfstitel;
+* actualiseren Gezagsverhouding;
+* actualiseren Reisdocument;
+* actualiseren Kiesrecht;
+* actualiseren Einde geldigheid tijdelijk verblijfsadres
+* actualiseren Verwijzing.
+
+===== Inschrijving op basis van een opgave van een RNI-deelnemer
+
+Een RNI-deelnemer kan de RNI-registratiehouder verzoeken tot inschrijving. De deelnemer stuurt daartoe een opgave aan de RNI-registratiehouder zodat deze voor de niet-ingezetene een persoonslijst aan kan leggen.
+
+De deelnemer moet voldoen aan de eis dat hij de gegevens van de persoon in kwestie voor zijn eigen bedrijfsprocessen verwerkt. Hij heeft daarbij de identiteit van de persoon deugdelijk vastgesteld en hij heeft de bronregels die van kracht zijn, toegepast.
+
+De deelnemer kan op basis van een verdrag verplicht zijn om gebruik te maken van gegevens die door een buitenlandse zusterorganisatie zijn verzameld. Die persoonsgegevens worden verzonden naar de betreffende deelnemer met, indien beschikbaar, een kopie van de documenten van de niet-ingezetene.
+
+Bij de behandeling van de Inschrijvingsopgave voert het RNI-systeem geautomatiseerde controles uit. De uitslag van de controles kan aangeven dat de RNI-registratiehouder nader onderzoek moet instellen.
+
+Eindconclusie van de behandeling is ofwel dat een PL kan worden aangelegd, ofwel dat het verzoek tot inschrijving niet gehonoreerd kan worden.
+
+====== Aanleg van een PL bij de eerste inschrijving
+
+Ten behoeve van het aanleggen van een PL in het kader van de eerste inschrijving, worden ten minste de volgende actualiseringsprocedures uitgevoerd:
+
+* actualiseren Persoon (<<_actualiseren_persoon>>), waarbij groep <<g61,01.61>> Naamgebruik niet wordt opgenomen;
+* actualiseren Inschrijving (<<_actualiseren_inschrijving>>);
+* actualiseren Verblijfplaats (<<_actualiseren_verblijfplaats>>).
+
+De volgende actualiseringsprocedures mogen worden uitgevoerd:
+
+* actualiseren Nationaliteit (<<_actualiseren_nationaliteit>>);
+* actualiseren Akte en Document (<<_actualiseren_akte_en_document>>);
+* actualiseren Ingangsdatum geldigheid (<<_actualiseren_ingangsdatum_geldigheid>>).
+
+In géén geval worden de volgende procedures uitgevoerd:
+
+* actualiseren Ouder1;
+* actualiseren Ouder2;
+* actualiseren Huwelijk/geregistreerd partnerschap;
+* actualiseren Overlijden;
+* actualiseren Kind;
+* actualiseren Verblijfstitel;
+* actualiseren Gezagsverhouding;
+* actualiseren Reisdocument;
+* actualiseren Kiesrecht;
+* actualiseren Verwijzing;
+
+===== Soorten persoonslijsten bij niet-ingezetenen
+
+In de RNI wordt onderscheid gemaakt tussen twee soorten PL'en:
+
+* PL'en van nooit-ingezetenen +
+Een PL van een nooit-ingezetene is een PL die is aangelegd via een eerste inschrijving in de RNI en daarna niet in als ingezetene ingeschreven is geweest. Voor zo'n PL is de RNI beperkte gegevensset van toepassing.
+* PL'en van voormalig ingezetenen +
+Een PL van een voormalig ingezetene is een PL die via een vervolginschrijving naar de RNI is gestuurd. Zo'n PL kan alle categorieën bevatten die bij ingezetenen voorkomen.
+
+==== Actualiseren van gegevens van niet-ingezetenen
+
+===== Actualiseren gegevens niet behorend tot RNI beperkte gegevensset
+
+Indien gegevens bekend worden die geen betrekking hebben op de RNI beperkte gegevensset, dan wordt er bij de afhandeling onderscheid gemaakt tussen een PL van een nooit-ingezetene en een PL van een voormalig ingezetene:
+
+[.underline]#PL van een nooit-ingezetene#
+
+Er vindt geen actualisering plaats. De actualiseringsprocedure 'Ontvangst document(en)' wordt uitgevoerd.
+
+[.underline]#PL van een voormalig ingezetene#
+
+Als gegevens bekend worden waarvan de ingangsdatum geldigheid (<<e8510,85.10>>) ligt vóór of op de datum opschorting bijhouding (<<e6710,07.67.10>>), dan worden deze gegevens conform de beschreven actualiseringsprocedures verwerkt.
+
+Als gegevens bekend worden, waarvan de ingangsdatum geldigheid ligt ná de datum opschorting bijhouding (<<e6710,07.67.10>>), dan vindt in de meeste gevallen geen actualisering plaats en wordt de actualiseringsprocedure 'Ontvangst document(en)' uitgevoerd. De paragraaf hierna beschrijft de situaties waarin toch moet worden geactualiseerd.
+
+===== Wijziging in de opschorting
+
+Voor alle PL'en in de RNI geldt, vanuit de BRP gegevensset gezien, een gedeeltelijke of gehele opschorting van de bijhouding. Op elke PL is daarom groep <<g67,07.67>> aanwezig. Binnen de RNI kan dus nooit sprake zijn van 'Einde opschorting'.
+
+Er zijn verschillende aanleidingen tot het opnemen/wijzigen van groep <<g67,07.67>> Opschorting:
+
+.Wijzigingen in de opschorting
+[width="100%",cols="25%,75%",options="header",]
+|===
+|Aanleiding |Wijziging groep <<g67,07.67>> Opschorting
+|Eerste inschrijving |Bij een eerste inschrijving in de RNI wordt de reden opschorting gevuld met "R" en wordt de datum opschorting gevuld met de datum inschrijving in de RNI (<<e0920,08.09.20>>).
+|Vervolginschrijving |Bij een vervolginschrijving vanuit de ingezetenen, worden de reden opschorting ("E" of "M") en datum opschorting overgenomen van de PL in het <<Rb01,Rb01>>-bericht.
+|Overlijden |Na ontvangst van een melding van overlijden voor een PL die is opgeschort met reden "R", "M" of "E", wordt zowel de reden opschorting bijhouding (deze krijgt de waarde "O") als de datum opschorting bijhouding gewijzigd.
+|Ten onrechte opgenomen PL |In het geval van een melding dat een PL ten onrechte is opgenomen (reden "F"), wordt zowel de reden opschorting bijhouding als de datum opschorting bijhouding gewijzigd. De procedure Afvoeren PL moet worden uitgevoerd (<<_afvoeren_pl>>).
+|Correctie overlijden of ten onrechte afgevoerde PL |In geval van een correctie van overlijden of na het weer in de RNI opnemen van een ten onrechte afgevoerde PL moet de PL hersteld worden in de juiste toestand. Zowel de reden opschorting bijhouding als de datum opschorting bijhouding wordt gewijzigd in de reden en datum die voorafgingen aan de melding overlijden of ten onrechte opgenomen PL.
+|===
+
+===== Wijziging in de Verificatie
+
+Bij een contact met de ingeschrevene door een RNI-deelnemer, kan een verificatie van de gegevens plaatsvinden. Deze verificatie kan op de PL worden opgenomen.
+
+Bij het registreren van een Verificatie, worden de volgende groepen gewijzigd:
+
+[none]
+* <<g71,07.71>> Verificatie
+* <<g88,07.88>> Deelnemer
+
+===== Opnemen verblijfplaatsgegevens bij eerste inschrijving
+
+Bij de eerste inschrijving wordt een categorie Verblijfplaats aangelegd.
+
+Hierbij worden de volgende groepen opgenomen:
+
+[none]
+* <<g09,08.09>> Gemeente
+* <<g13,08.13>> Adres buitenland
+* <<g72,08.72>> Adresaangifte
+* <<g85,08.85>> Geldigheid
+* <<g86,08.86>> Opneming
+
+Als de actualisering plaatsvindt op basis van een deelnemersopgave, dan wordt tevens de volgende groep opgenomen:
+
+[none]
+* <<g88,08.88>> Deelnemer
+
+===== Vervolginschrijving in de RNI
+
+Bij een vervolginschrijving van een gemeente naar de RNI worden de volgende groepen gewijzigd:
+
+[none]
+* <<g09,08.09>> Gemeente
+* <<g85,08.85>> Geldigheid
+* <<g86,08.86>> Opneming
+
+Deze wijzigingen leiden niet tot historie.
+
+===== Wijziging buitenlands adres (bij ingezetenen: Emigratie)
+
+De ingezetenen-procedure 'emigratie' geldt in de RNI als 'wijziging buitenlands adres'. Deze actualisering wordt uitgevoerd als van een persoon nieuwe gegevens omtrent het buitenlands adres bekend worden. Dat kan zijn:
+
+* wanneer een tot dan toe onbekend buitenlands adres bekend wordt, of
+* wanneer wordt vastgesteld dat het buitenlands adres is gewijzigd.
+
+Hierbij worden de volgende groepen gewijzigd:
+
+[none]
+* <<g13,08.13>> Adres buitenland
+* <<g72,08.72>> Adresaangifte
+* <<g85,08.85>> Geldigheid
+* <<g86,08.86>> Opneming
+
+Als de actualisering plaatsvindt op basis van een deelnemersopgave, dan wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,08.88>> Deelnemer
+
+===== Ontvangst document(en)
+
+Indien er van een als niet-ingezetene ingeschrevene, waarvan de bijhouding van de PL met reden "R" (RNI-PL), "E" (Emigratie) of "M" (Ministerieel besluit) is opgeschort, uit een ontvangen kennisgeving gegevens blijken die in verband met de opschorting niet worden bijgewerkt, dan wordt dit in de groep Documentindicatie vastgelegd. De betreffende gegevens worden niet op de PL opgenomen. Wel wordt dan de volgende groep gewijzigd:
+
+[none]
+* <<g75,08.75>> Documentindicatie
+
+Bij deze wijziging wordt geen historie aangelegd.
+
+===== Actualiseren Tijdelijk verblijfsadres
+
+Deze procedure wordt uitgevoerd bij een eerste inschrijving aan een RNI-loket of bij een wijziging van deze gegevens bij een RNI-loket of op verzoek van een Deelnemer.
+
+Hierbij worden de volgende groepen gewijzigd:
+
+[none]
+* <<g09,16.09>> Gemeente
+* <<g11,16.11>> Adres
+* <<g19,16.19>> Adrestype
+* <<g72,16.72>> Adresaangifte
+* <<g85,16.85>> Geldigheid
+* <<g86,16.86>> Opneming
+
+De volgende groepen kunnen worden gewijzigd:
+
+[none]
+* <<g83,16.83>> Procedure
+
+Als de actualisering plaatsvindt op basis van een deelnemersopgave, dan wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,16.88>> Deelnemer
+
+===== Actualiseren Einde geldigheid tijdelijk verblijfsadres
+
+Deze procedure wordt uitgevoerd bij ontvangst van een melding dat betrokkene niet langer tijdelijk op het adres verblijft.
+
+De volgende groep wordt gewijzigd:
+
+[none]
+* <<g18,16.18>> Einde geldigheid
+* <<g86,16.86>> Opneming
+
+Als de actualisering plaatsvindt op basis van een deelnemersopgave, dan wordt tevens de volgende groep gewijzigd:
+
+[none]
+* <<g88,16.88>> Deelnemer
+
+Deze wijziging leidt niet tot historie.
+
+===== Actualiseren Contactgegevens
+
+Deze procedure wordt uitgevoerd bij een eerste inschrijving aan een RNI-loket of bij een wijziging van deze gegevens bij een RNI-loket of op verzoek van een Deelnemer.
+
+Hierbij worden de volgende groepen opgenomen:
+
+[none]
+* <<g16,17.16>> Telefoon
+* <<g17,17.17>> E-mail
+
+Als de actualisering plaatsvindt op basis van een deelnemersopgave, dan wordt tevens de volgende groep opgenomen:
+
+[none]
+* <<g88,17.88>> Deelnemer
+

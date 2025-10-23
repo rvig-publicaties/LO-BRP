@@ -1,0 +1,245 @@
+== Algemene inleiding
+
+=== Begrippen en definities
+
+Dit Logisch Ontwerp BRP vormt onder meer de systeembeschrijving waar in de wet- en regelgeving BRP (Wet BRP, Besluit BRP en Regeling BRP) naar wordt verwezen. Vanwege de samenhang met andere dan in de systeembeschrijving bedoelde componenten, bevat dit Logisch Ontwerp ook beschrijvingen en toelichtingen die niet tot de systeembeschrijving behoren. Om dit verschil duidelijk te maken, zijn de delen die NIET tot de systeembeschrijving behoren, voorzien van een grijze achtergrond.
+
+Van het Logisch Ontwerp BRP verschijnt in principe vier keer per jaar een nieuwe versie. Het Logisch Ontwerp BRP is voorzien van een versieaanduiding en een versiedatum, in de volgende notatie:
+
+* Versienummer: jjjj.Qn[.m] waarin:
+** jjjj het jaartal van verschijnen is
+** Q staat voor 'kwartaal'
+** n het kwartaalnummer van verschijnen is, zodat het versienummer het tijdstip van inwerkingtreding als volgt weerspiegelt:
++
+[width="50%",cols="50%,50%",options="header",align="left"]
+|===
+|Kwartaalnummer |Inwerkingtreding
+|1 |januari-maart
+|2 |april-juni
+|3 |juli-september
+|4 |oktober-december
+|===
+** m het volgnummer van een eventuele tussentijdse release is, met dien verstande dat het volgnummer 0 van een hoofdrelease wordt weggelaten.
++
+* Versiedatum: dd ++<++maand++>++ jjjj.
+
+Naast dit Logisch Ontwerp BRP zijn er ook landelijke tabellen. Deze worden in dit Logisch Ontwerp BRP gedefinieerd, maar de inhoud van die tabellen maakt geen deel uit van dit Logisch Ontwerp BRP.
+
+In dit Logisch Ontwerp BRP worden de volgende begrippen gehanteerd:
+
+[horizontal,labelwidth=20%,itemwidth=80%]
+Afnemer:: Overheidsorgaan waaraan of derde aan wie op systematische wijze gegevens worden verstrekt of op grond van artikel 3.14 van de Wet BRP informatie beschikbaar wordt gesteld.
+Reisdocument:: Nederlands paspoort of Nederlandse Identiteitskaart.
+
+=== Het Logisch Ontwerp BRP
+
+Op 1 oktober 1994 trad de Wet GBA in werking. Hierin werd geregeld dat alle gemeenten hun bevolkingsregistratie automatiseerden en dat gebruikers van persoonsgegevens met een publiekrechtelijke taak deze gegevens konden verkrijgen, De wijze waarop dat functioneel en technisch diende te gebeuren was vastgelegd in het Logisch Ontwerp GBA.
+
+Op 6 januari 2014 trad de Wet BRP in werking. Hierin wordt naast hetgeen al in de Wet GBA werd geregeld ook bepaald dat in de BRP gegevens van niet-ingezetenen worden bijgehouden. De wijze waarop dat functioneel en technisch diende te gebeuren was vastgelegd in het Logisch Ontwerp RNI.
+
+De gegevens van de ingezetenen en niet-ingezetenen vormen tezamen de basisregistratie personen en met dit Logisch Ontwerp BRP resteert er nog slechts één functioneel/technische beschrijving van de bijhouding van en de verstrekking door de Minister van BZK: het Logisch Ontwerp BRP.
+
+=== Plaatsbepaling Logisch Ontwerp BRP
+****
+Het LO beschrijft de minimaal te stellen functionele en technische eisen aan de op elkaar aangesloten systemen binnen het BRP-stelsel.
+
+Bij het vervaardigen van het LO is gestreefd naar een zo groot mogelijke beleidsvrijheid van de aangesloten instanties. De in het Logisch Ontwerp vastgelegde voorschriften zijn minimaal noodzakelijk om de uniformiteit in de gegevensuitwisseling alsmede om een optimale aansluitbaarheid van de componenten te waarborgen.
+
+Het LO moet de centrale overheid een instrument in handen geven om de consistentie en de kwaliteit van de persoonsgegevens en de gegevensverstrekking naar de afnemers te garanderen.
+
+De in dit LO gegeven functionele eisen in verband met de bescherming van de persoonlijke levenssfeer zijn conform de AVG en Wet BRP.
+****
+
+=== Inhoud Logisch Ontwerp BRP
+
+****
+Samengevat heeft dit LO de volgende inhoud:
+
+* Een algemene beschrijving van de BRP (<<_algemene_inleiding>>).
+* De beschrijving van de bijhouding van gegevens in de BRP, onderscheiden in algemeen, specifiek voor ingezetenen en specifiek voor niet-ingezetenen. Hierin zijn ook de maatregelen ter bescherming van de persoonlijke gegevenssfeer opgenomen (<<_bijhouding>>)
+* De verstrekkingen die door de Minister worden gedaan vanuit de BRP-Verstrekkingsvoorziening (<<_verstrekkingen>>).
+* Een gedetailleerde beschrijving van de BRP-gegevens en de onderliggende gegevensstructuur. Deze is weergegeven in het Gegevenswoordenboek (<<_gegevenswoordenboek>>). Hierin wordt beschreven:
++
+--
+** de belangrijkste karakteristieken van de BRP-gegevens;
+** de structuur van de verwijsgegevens;
+** de structuur van de landelijke tabellen;
+** de beschrijving van de persoonslijst.
+--
++
+De inhoud van de landelijke tabellen zijn geen onderdeel van het LO maar worden separaat bijgehouden en verspreid.
++
+Reeds hier wordt er met nadruk op gewezen dat de voorgeschreven verzameling persoonsgegevens enerzijds de minimale door de gemeenten en de registratie niet-ingezetenen bij te houden verzameling persoonsgegevens is en anderzijds de maximale door de gemeenten onderling en tussen de gemeenten en de registratie niet-ingezetenen uit te wisselen verzameling persoonsgegevens is. Het staat gemeenten vrij, uiteraard binnen de grenzen van de AVG extra gegevens voor eigen beleidsdoeleinden bij te houden.
++
+* Een gedetailleerde beschrijving van de berichten en de tekenset die wordt gebruikt bij de uitwisseling van BRP-gegevens tussen de verschillende partijen. Deze beschrijving staat in het Berichtenboek (<<_berichtenboek>>).
+* Een beschrijving van de diverse stelselcomponenten die een rol vervullen bij de werking van de BRP als geheel (<<_stelselcomponenten>>).
+* De Dienstverleningsafspraken en beheereisen (<<_beheereisen_en_dienstverleningsafspraken>>).
+* Een beschrijving van de wijzigingen en conversies die zich in de loop van de tijd sinds 1994 in de BRP hebben voorgedaan. Wijzigingen en conversies waarvan in de huidige BRP geen gevolgen meer zichtbaar zijn, zijn daarbij weggelaten (<<_conversies>>).
+****
+
+=== Beschrijving BRP
+
+****
+Teneinde een totaalbeeld van de BRP te verkrijgen, zijn de te onderscheiden onderdelen en hun onderlinge samenhang in het kort beschreven.
+
+De BRP bestaat uit de volgende bestanddelen:
+
+* Wet BRP, het Besluit BRP en de Regeling BRP;
+* Technische architectuur.
+****
+
+==== Wet- en regelgeving BRP
+
+****
+De Wet basisregistratie personen (Wet BRP) vormt de juridische basis waarop de gemeentelijke basisregistratie berust. In een Algemene Maatregel van Bestuur (het Besluit BRP) worden een aantal voorschriften uit de Wet nader uitgewerkt en een nog gedetailleerdere uitwerking vindt in de Ministeriële Regeling (de Regeling BRP) plaats.
+****
+
+==== Stelselarchitectuur
+
+****
+De BRP is een landelijke registratie van in gemeenten en de RNI ingeschreven personen die gedecentraliseerd bij de gemeenten en centraal in de RNI, wordt gevoerd. Om met deze opzet te komen tot een goed georganiseerde en landelijk consistente BRP is het noodzakelijk op centraal niveau een aantal maatregelen te nemen en voorschriften uit te vaardigen op diverse gebieden:
+
+[unordered.stack]
+*Logisch Ontwerp BRP*:: In het LO worden de functionele eisen en voorwaarden gegeven voor de applicaties binnen het BRP-stelsel.
+*Gegevensbeheer*:: Op centraal niveau worden de landelijke tabellen, bijvoorbeeld de gemeententabel en de autorisatietabel, beheerd. De verantwoordelijk Minister stelt de landelijke tabellen vast. RvIG draagt zorg voor de verspreiding.
+*Netwerkbeheer*:: Op centraal niveau dienen afspraken omtrent de berichtenuitwisseling en technische faciliteiten gemaakt te worden en tevens moet de berichtendienst beheerd worden, zowel functioneel als technisch.
+*Schouwing en toetsing*:: Schouwing en toetsing bestaat uit een aantal procedures en gereedschappen waarmee gecontroleerd wordt of de BRP-systemen voldoen aan de specificaties zoals deze in het voorliggende LO gedefinieerd worden.
+
+De Wet BRP schrijft automatisering voor ten behoeve van een doelmatige verwerking en verstrekking van persoonsgegevens. Om de communicatie tussen alle applicaties binnen het BRP-stelsel (zoals gemeenten, RNI, afnemers, BRP-Verstrekkingsvoorziening en de beheervoorziening BSN) geautomatiseerd te laten plaatsvinden, wordt voorzien in meerdere vormen van geautomatiseerde uitwisseling (berichtendienst, webservices, API's) en verwerking van gegevens.
+
+De stelselarchitectuur bestaat uit de volgende componenten die aan de berichtendienst zijn verbonden en/of via webservices of API's communiceren:
+
+* Gemeentelijke systemen. Dit zijn de systemen waarin gemeenten, geautomatiseerd zoals wettelijk is voorgeschreven, de persoonsgegevens van hun burgers bijhouden en die zijn aangesloten op meerdere centrale componenten;
+* RNI, Registratie niet-ingezetenen. Dit is het systeem waarmee gegevens over niet-ingezetenen worden bijgehouden onder verantwoordelijkheid van de Minister van Binnenlandse Zaken en Koninkrijksrelaties. Aangewezen BestuursOrganen kunnen via webservices inschrijvings- en bijhoudingsverzoeken indienen;
+* Afnemersystemen. Dit zijn systemen van afnemers die zijn aangesloten op een of meer centrale componenten;
+* Aangewezen BestuursOrganen (ABO's). Dit zijn organisaties die worden aangewezen in artikel 31, Besluit BRP, vanwege een taak in de bijhouding van de gegevens van niet-ingezetenen;
+* IND, de Immigratie- en Naturalisatiedienst. De IND is in het stelsel opgenomen in verband met de aanlevering van verblijfstitelgegevens;
+* RvIG, Rijksdienst voor Identiteitsgegevens. RvIG verstuurt berichten in verband met de bijhouding van de landelijke tabellen en in verband met paspoortsignaleringen;
+* BRP-Verstrekkingsvoorziening (BRP-V). Dit is het onderdeel van de centrale voorzieningen, dat de verstrekkingen van BRP-gegevens aan afnemers verzorgt;
+* Berichtendienst. Dit is de centrale voorziening die de uitwisseling van gegevens tussen partijen via een op mailboxen gebaseerde berichtendienst mogelijk maakt;
+* Webservices BRP-V. Dit betreft Webservices om BRP-V ad hoc te bevragen, webservices voor het controleren van de PL en webservices voor het vervangen van het berichtenverkeer met de berichtendienst;
+* Webservices ABO. Dit betreft webservices waarmee de ABO verzoeken tot inschrijving of gegevenswijziging kan doen ten aanzien van niet-ingezetenen;
+* Webservices BvBSN. In het kader van de BRP gaat het om de webservice waarmee gemeenten en de RNI hun BSN-nummervoorraad kunnen aanvullen en om webservices om de presentievraag te stellen;
+* Terugmeldvoorziening (TMV). Dit is de centrale voorziening waarmee afnemers kunnen terugmelden aan de gemeenten dat er gerede twijfel bestaat over een authentiek gegeven; gemeenten reageren via de terugmeldvoorziening op deze meldingen;
+* Beheervoorziening BSN (BvBSN). Dit is de voorziening die de burgerservicenummers beheert. Omdat er een een-op-een-relatie bestaat tussen een geldig BSN en inschrijving in de BRP, is er een nauwe verwantschap tussen beide registraties;
+* Data Analyzing Fingerprint Tool (DAFT). Onderdeel van de BRP-Verstrekkingsvoorziening dat vergelijkingen van PL-versies uitvoert;
+* KwaliteitsMonitor (KwM). Dit is het dashboard waarop veilig tussen RvIG en de gemeenten wordt gecommuniceerd over kwaliteitszaken;
+* BestandsControleModule (BCM). Dit is de tool waarmee RvIG in de BRP-Verstrekkingsvoorziening controleert of de persoonslijsten aan de daaraan gestelde eisen voldoen en bij afwijking een lijst met bevindingen opstelt, die via de KwM met de gemeente wordt gedeeld;
+* ProtocolleringsOverzichtModule (POM). Dit is een tool die vanuit de vastgelegde verstrekkingen een voor de burger leesbaar overzicht produceert van die verstrekkingen. Een POM-overzicht wordt uitsluitend op verzoek van de burger gemaakt;
+* PIVA-BRP-Koppeling (PBK). Dit is een systeem dat de uitwisseling van persoonslijstgegevens tussen de drie landen in Caribisch Nederland, de drie bijzondere gemeenten in Caribisch Nederland en Europees Nederland ondersteunt. De belangrijkste reden voor het bestaan van PBK is dat op deze manier het A-nummer wordt hergebruikt als iemand vanuit een van de zeven genoemde registraties naar een van de andere zes verhuist;
+* Autorisatietabel. Dit is de technische vertaling van de door de Minister van BZK genomen autorisatiebesluiten, op basis waarvan de BRP-Verstrekkingsvoorziening afnemers voorziet van gegevens uit de BRP;
+* API's BRP-V: Dit betreft API's (Application Programming Interfaces) waarmee BRP-V ad hoc bevraagd kan worden op gegevens over personen en landelijke tabellen en waarmee berichten kunnen worden uitgewisseld;
+* Informatieknooppunt (IKP). Dit is een centrale voorziening waar adresgegevenssignalen vanuit verschillende signaalleveranciers bijeen worden gebracht en worden aangevuld met informatie uit andere (basis)registraties. Deze signalen worden geleverd aan gemeenten voor adresonderzoek. De resultaten van de adresonderzoeken dienen voor het doorvoeren van kwaliteitsverbeteringen in de BRP;
+* Web Applicatie Landelijke Aanpak Adreskwaliteit (WALAA). Dit is een webapplicatie die ondersteuning biedt bij het uitvoeren van adresonderzoeken voor de Landelijke Aanpak Adreskwaliteit (LAA). In WALAA worden de signalen aangeboden aan de gemeente en worden de resultaten van de onderzoeken vastgelegd.
+
+De beschrijving van de systemen van overheidsorganen maakt geen deel uit van het Logisch Ontwerp BRP. Het LO beperkt zich tot het beschrijven van de koppelvlakken met deze systemen. Concreet betekent dit dat voorgeschreven wordt welke berichten (inhoud) uitgewisseld kunnen worden en onder welke voorwaarden. Op het technisch vlak wordt een aantal operationele eisen gesteld, onder andere ten aanzien van de beschikbaarheid en de beveiliging van de systemen.
+
+Indien in het LO wordt gesproken over overheidsorganen, dan worden daaronder ook begrepen (tenzij anders aangegeven) de derden die op grond van de Wet BRP gegevens mogen ontvangen.
+****
+
+=== Statuswijzigingen van persoonslijsten in de Basisregistratie Personen
+
+****
+De ingezetenen en niet-ingezetenen vormen samen de Basisregistratie Personen (BRP). Eenmaal ingeschreven, wordt de persoonslijst (PL) van een persoon niet meer verwijderd. Wel kan een PL verhuizen van de registratie niet-ingezetenen naar de registratie ingezetenen en vice versa.
+
+Bij de ingezetenen heeft een PL van een (niet overleden) persoon de status 'actueel ingeschreven'. Deze 'PL-status' is een afgeleid kenmerk (het is geen rubriek op de PL). Als een PL is opgeschort, dan is groep <<g67,07.67>> Opschorting opgenomen. Deze groep bestaat uit twee rubrieken:
+
+* <<e6710,07.67.10>> Datum opschorting bijhouding
+* <<e6720,07.67.20>> Omschrijving reden opschorting bijhouding
+
+Bij niet-ingezetenen zijn bovengenoemde opschortingsgegevens altijd gevuld, want voor de niet-ingezetenen geldt dat de bijhouding van alle opgenomen PL'en geheel of gedeeltelijk is opgeschort. Van de PL-gegevenscategorieën die in de BRP zijn gedefinieerd, wordt in de RNI namelijk slechts een beperkt aantal categorieën bijgehouden. Oudergegevens, huwelijks-/partnergegevens en kindgegevens vallen daar bijvoorbeeld buiten.
+
+Binnen de BRP worden de volgende redenen van opschorting onderkend:
+
+[horizontal]
+E:: Emigratie
+M:: Ministerieel besluit
+R:: PL aangelegd in de RNI
+O:: Overlijden
+F:: Fout
+.:: (punt) Standaardwaarde indien onbekend
+
+PL'en waarvan de bijhouding is opgeschort met reden "R" betreffen PL'en die niet afkomstig zijn van een gemeente, maar initieel in de RNI zijn aangelegd.
+
+In de tabel hieronder worden de statuswijzigingen toegelicht.
+
+[width="100%",cols="<4%,<28%,<28%,<40%",options="header",]
+|===
+|Nr. |Situatie en statuswijziging |Gebeurtenissen (aanleiding) |Toelichting situatie
+.2+|1 .2+|Ingezetene:
+
+Eerste inschrijving PL.
+
+PL wordt actueel opgenomen als ingezetene.
+
+|Aangifte verblijf en adres in Nederland. |Inschrijving op grond van een aangifte van verblijf en adres volgens 2.2.1.1.
+
+Er is nog geen PL in de BRP en de persoon voldoet aan voorwaarden voor inschrijving als ingezetene.
+|Geboorte in Nederland. |Persoon is geboren in Nederland en de ouder uit wie het kind is voortgekomen is als ingezetene ingeschreven.
+|2|Niet-ingezetene:
+
+Eerste inschrijving PL.
+
+PL wordt opgenomen in de RNI.
+|Persoon verzoekt om inschrijving in de RNI.
+
+RNI-deelnemer (ABO) meldt persoon voor inschrijving in de RNI.
+
+|Er is nog geen PL in de BRP en de persoon voldoet niet aan de voorwaarden voor inschrijving als ingezetene.
+
+De reden opschorting is "R" en de opschortingsdatum is de datum inschrijving in de RNI.
+.2+|3 .2+|Ingezetene:
+
+Vervolginschrijving van een niet-ingezetene als ingezetene.
+
+PL verhuist van de RNI naar ingeschreven als ingezetene (actueel ingeschreven).
+|Aangifte verblijf en adres in Nederland. |Persoon is ingeschreven in de RNI, meldt een verblijf in Nederland en voldoet aan de eisen voor inschrijving als ingezetene.
+|Hervestiging. |Persoon is ingeschreven in de RNI.
+
+Immigratie na eerdere emigratie of beëindiging van Ministerieel besluit.
+|4|Ingezetene:
+
+Opschorting bijhouding PL reden "E" (Emigratie).
+
+PL-status wijzigt van 'actueel opgenomen' naar 'opgeschort (E)'.
+|Persoon vertrekt uit Nederland: emigratie, terwijl de PL is opgenomen als ingezetene. |
+De reden opschorting wijzigt in "E" en opschortingsdatum wordt gevuld.
+
+Deze gebeurtenis kan alleen optreden in de ingezetenen-registratie en is een tijdelijke PL-toestand (zie status 6).
+|5 |Ingezetene:
+
+Opschorting bijhouding PL reden "M" (Ministerieel besluit).
+
+PL-status wijzigt van 'actueel opgenomen' naar 'opgeschort (M)'.
+|Van kracht worden van een Ministerieel besluit dat bepaalt dat de gegevens van de betrokken persoon niet langer als ingezetene mogen worden bijgehouden.
+|De reden opschorting wijzigt in "M" en opschortingsdatum wordt gevuld.
+
+Deze gebeurtenis kan alleen optreden in de ingezetenen-registratie en is een tijdelijke PL-toestand (zie status 6).
+|6 |Niet-ingezetene:
+
+Vervolginschrijving in de RNI.
+
+PL verhuist van 'opgeschort (E/M)' naar de RNI.
+|De gemeente voert de actualiseringsprocedure Emigratie uit. |PL heeft de status 'opgeschort', de reden opschorting is "E" of "M", en wordt naar de RNI gestuurd met behulp van de berichtencyclus Verhuizen PL naar RNI.
+|7 |Ingezetene:
+
+Opschorting bijhouding met reden "O" (Overlijden).
+
+PL-status wijzigt van 'actueel opgenomen' naar 'opgeschort O)'.
+|Ontvangst van een melding van overlijden. |De reden opschorting wordt "O" en de opschortingsdatum wordt de overlijdensdatum.
+|8 |Niet-ingezetene:
+
+Opschorting bijhouding met reden "O" (Overlijden).
+|Ontvangst van een melding van overlijden. |De reden opschorting wijzigt in "O" en de opschortingsdatum wijzigt in de overlijdensdatum.
+|9 |Ingezetene:
+
+Opschorting bijhouding met reden "F" (Fout).
+
+PL-status wijzigt van 'actueel opgenomen' naar 'opgeschort (F)'.
+|Constatering door ambtenaar van situatie "ten onrechte opgenomen PL". |Redenen kunnen zijn: inschrijving hoort niet bij bestaand persoon, dubbele inschrijving of nummerfout.
+|10 |Niet-ingezetene:
+
+Opschorting bijhouding met reden "F" (Fout).
+|Constatering door ambtenaar van situatie "ten onrechte opgenomen PL". |Redenen kunnen zijn: inschrijving hoort niet bij bestaand persoon, dubbele inschrijving of nummerfout.
+|===
+****

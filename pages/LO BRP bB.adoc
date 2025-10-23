@@ -1,0 +1,1341 @@
+== Conversies
+
+=== Inleiding
+
+****
+Op 1 oktober 1994 is de Wet GBA in werking getreden en van alle op dat moment in Nederland wonende personen is de bijhouding van de persoonskaart gestopt en vanaf dat moment wordt (uitsluitend) de persoonslijst bijgehouden. Het overzetten (converteren) van gegevens van de persoonskaart naar de persoonslijst was beschreven in regels die moesten worden gevolgd. Sindsdien zijn er nog diverse momenten geweest, waarop veranderingen in de BRP tot een conversievoorschrift hebben geleid. In deze bijlage worden die situaties beschreven. Alle voorschriften die heden ten dage nog van toepassing zijn, staan elders in het LO. Deze bijlage beperkt zich tot de voorschriften die tijdens een van de conversies aan de orde was en waarvan het resultaat mogelijk nog zichtbaar is op de persoonslijst. Een voorbeeld daarvan is het opnemen van 'PKA' (gewaarmerkte persoonskaart) als brondocument in categorie 01. Voorschriften waarvan het resultaat niet meer zichtbaar op de persoonslijst mag zijn, staan ook niet in deze bijlage opgenomen. Een voorbeeld daarvan is de afnemersaantekening (zoals BV26) die tijdens de aansluiting van een afnemer is omgezet naar een afnemersindicatie. De overgebleven aantekeningen zijn op enig moment geschrapt.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Historisch overzicht
+
+****
+Deze paragraaf heeft de intentie een limitatieve opsomming te bevatten van alle versies in het Logisch Ontwerp die in de loop der jaren zijn uitgebracht. De bedoeling hiervan is met name om duidelijk te maken dat conversies en wijzigingen in het gegevensmodel die sinds 1 oktober 1994 hebben plaatsgevonden nog steeds hun sporen na kunnen laten op huidige persoonslijsten. Onderstaande opsomming bevat wat tot nog toe is achterhaald, maar mogelijk ontbreken hier nog conversies. Als dat zo is, meld die dan aan RvIG, dan wordt zo'n ontbrekende conversie in een volgende versie van het LO toegevoegd.
+
+[width="100%",cols="10%,20%,70%",options="header",]
+|===
+|Versie |Datum inwerkingtreding |Wijzigingen
+|1 |01-06-1990 |
+| |01-08-1991 |17 wijzigingen
+| |01-09-1992 |Toevoegen 3,5" diskette
+| |01-01-1993 |Vergroting maximale lengte voorwaardenregels
+| |01-03-1993 |Eisen mbt gebruik alternatieve media
+| |01-12-1993 |Deels terugwerkend tot 01-01-1993.
+Vooruitgeschoven tov LO 2: gemeentelijke ID-kaart, proc gem herindeling, geen A-nummer in foutberichten met foutreden H, toev conditionele geg.verstr.
+| |01-10-1994 |Conversie van de PK
+|2 |01-07-1995 |Vele uiteenlopende wijzigingen, o.a. toevoegen tabelwijzigingsberichten, aanvullen gerelateerden, aanvullen kindgegevens, toevoegen berichtencycli betreffende het Vestigingsregister, bericht wijzigen A-nummer ook naar (toevallige) geboortegemeente, toevoegen SoFinummer aan persoonslijst en toevoegen verblijfstitels aan persoonslijst.
+|2.1 |01-07-1995 |Betreft opnemen procedure initiële vulling SoFi-nummer, verduidelijking van berichten in Bijlage III Berichtenboek en extra mogelijk toegang tot GBA-netwerk via X.32 protocol
+|2.2 |01-11-1995 |Betreft toevoegen optionele berichtencyclus 'Opnemen/wijzigen verblijfstitel'
+|2.3 |18-10-1996 |Terugwerkend tot 01-01-1996 +
+Betreft bijstelling procedures infrastructurele wijzigingen en uitbreiding van het aantal netwerken voor het GBA-berichtenverkeer
+|2.4 |01-01-1998 |Toevoeging geregistreerd partnerschap {plus} verwijderen categorie 15 {plus} naamgebruik voor mannen {plus} akte van naamskeuze voor kinderen {plus} vervallen Datanet-1 als toegestaan transportnetwerk (LO 2.4)
+|2.4a |01-07-1998 |Betreft verplichting tot geautomatiseerd opnemen en wijzigen van verblijfstitels i.v.m. de invoering van de Koppelingswet
+|2.5 |12-04-1999 |Terugwerkend tot 01-01-1999
+Betreft aanpassing i.v.m. wijziging van de Kieswet betreffende het registreren van verzoekers niet-Nederlanders om te kunnen stemmen voor het Europees parlement
+|3.0 |01-02-2001 |Openstelling burgerlijk huwelijk voor partners van gelijk geslacht {plus} Adoptie door partners van gelijk geslacht {plus} Afstammingsrecht {plus} Ingangsdatum verblijfstitel {plus} Toevallige gebeurtenissen {plus} Uitbreiding Tb01-bericht {plus} Uitbreiding identificatiemogelijkheden bij de ad hoc adresvraag {plus} Verstrekken van rubriek 07.70.10 "Indicatie geheim" {plus} Berichtencyclus voor foutherstel {plus} Afvoeren PL in geval van een persoon met meerdere A-nummers {plus} geslacht onbekende ouders op basis van toepasselijk recht
+| |01-09-2001 |Overnemen gegevens van PIVA-PL dan wel GBA bij verhuizingen van en naar het Caribisch deel van het Koninkrijk (alleen in LO PGK en HUP)
+|3.1 |26-05-2004 |Terugwerkend tot 01-01-2003
+Betreft ingebruikneming nieuw datacommunicatieprotocol TCP/IP in plaats van X.25
+|3.2 |01-02-2004 |Betreft het verstrekken aan afnemers van gegevens betreffende een onderzoek en het van rechtswege vervallen van de gegevens over het verblijfsrecht bij het verkrijgen van de Nederlandse nationaliteit en de invoering van de Landelijk Raadpleegbare Deelverzameling.
+|3.3 |01-10-2005 |GBA- V {plus} overgang van X.25 naar TCP/IP {plus} Infrastructurele wijzigingen op (al dan niet opgeschorte) PL-en
+|3.4 |01-01-2007 |Bevat uitsluitend de wijziging BSN per 1 januari 2006. Dat is later achterhaald door de feiten (oa behandeling EK), waardoor dit LO is vervallen. BSN is ingevoerd met LO 3.6 (26 november 2007).
+|3.5 |01-04-2007 |Tweewaardigheid Indicatie geheim {plus} Bijzonder Nederlanderschap {plus} Synchroniciteit van GBA-V met gemeenten {plus} Verstrekken aan afnemers door GBA-V {plus} Speciale PL-situaties {plus} De Terugmeldvoorziening
+|3.6 |26-11-2007 |Burgerservicenummer {plus} vervallen verplichting om het Vestigingsregister te bevragen
+|3.7 |01-11-2009 |GBA aanpassen voor BAG {plus} Terugmeldvoorziening
+|3.8 |01-10-2012 |RNI, effectief per 6 januari 2014
+|3.9 |31-01-2015 |Conversie Nationaliteit ({plus} schrappen Lengte Houder en Bezit Buitenlands reisdocument)
+| |01-06-2015 |vastleggen BPN in 04.82.30 (alleen in HUP)
+|3.10 |01-10-2016 |BPN {plus} Adressen o.b.v. NEN
+|3.11 |03-02-2019 |Levenloos geboren kind
+|3.12 |01-07-2019 |TMV 2.0
+|3.13a |04-10-2020 |Gezagsverhouding in tabel 61 {plus} Vb02 voor berichtenverkeer via webservice
+|3.13.b |02-01-2022 |Tb02 i.v.m. overlijden naar RNI {plus} aanpassing omissie recht op overschrijven na geslachtswijzing
+|3.14 |02-01-2022 |Dubbelloop {plus} Documentindicatie {plus} Adellijke titel/predicaat {plus} A-nummervoorraad {plus} Italiaans persoonsnummer {plus} Wachtwoorden regels
+|4.0 |01-04-2022 |Samenvoeging LO GBA (LO 3.14) en LO RNI 2.15 tot LO BRP 4.0.0, zonder inhoudelijke wijzigingen
+|4.1 |22-10-2022 |Bereikbaarheidsgegevens arbeidsmigranten {plus} beperken recht op overschrijven gegevens na adoptie {plus} tabelberichten via StuurGBAbericht
+|4.2 |01-01-2023 |Ad hoc adresvraag ook op tijdelijk verblijfadres {plus} Haal Centraal API's fase I (Personen)
+|4.3 |15-05-2023 |LAA in Wet BRP
+|4.4 |15-07-2023 |Volledige registratie EU-kiesrechtgegevens {plus} BRP API's fase I-2 (Reisdocumenten)
+|4.5 |01-10-2023 |Melding aan medebewoner (Seintje) {plus} BRP API's fase I-3 (Bewoning)
+|2024.Q1 |01-01-2024 |Vaste koppeling BAG-BRP
+|2024.Q2 |22-04-2024 |Oplossen verschillen kolomnamen landelijke tabellen {plus} BRP API Fase II {plus} Uitbreiden BRP API met informatie over gezag {plus} Aanvulling op W180 Oplossen verschillen BAG-BRP
+|2024.Q3 |01-07-2024 |Nieuw endpoint in BRP API (verblijfplaatshistorie) {plus} Verbetering spontane verstrekking afgevoerde PL'en {plus} Nieuwe zoekingang in endpoint /personen in BRP API
+|2025.Q1 |01-01-2025 |LO Beveiligingseisen conform IB-richtlijnen {plus} Slimmer zoeken in BRP-V {plus} Groepsgewijze autorisatie informatievragen {plus} Versoepelen regels afsplitsen voorvoegsels {plus} Uitbreiden syntax voorwaardenregels
+|2025.Q2 |01-04-2025 |Aanpassingen aan BRP API + afschaffen fysieke gegevensdragers als alternatief medium
+|2025.Q3 |01-07-2025 |Uitfaseren mailboxserver fase I (BRP Berichten API), Uitbreiden tabel 34, BRP Tabellen API, 2e Aanvulling op W180 Oplossen verschillen BAG-BRP en Afschermen gegevens gerelateerden in Ad hoc webservice voor Mijn Overheid
+|===
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Conversie PK‑gegevens (tot 1-10-1994)
+
+****
+
+*Algemeen* +
+Het conversievoorschrift bestaat uit twee onderdelen, te weten:
+
+* conversie PK‑gegevens;
+* conversievoorschriften per element
+
+In de conversievoorschriften per element wordt steeds het vak van de PK vermeld, waarin het te converteren gegeven is opgenomen. Voor alle te converteren PK‑gegevens zijn op deze manier conversievoorschriften opgenomen.
+
+Archiefbladen (geëmigreerden, overleden personen, et cetera) zijn geen PK's en worden derhalve niet geconverteerd.
+
+*De te converteren gegevens* +
+Om de werkzaamheden die een conversie met zich meebrengt, zo beperkt mogelijk te houden, is besloten dat niet alle persoonsgegevens geconverteerd hoeven te worden. Met name de historische gegevens worden slechts in beperkte mate opgenomen. Het is een gemeente echter wel toegestaan, uit autonome overwegingen, meer gegevens te converteren.
+
+Tijdens de conversie worden de volgende gegevens geconverteerd en opgenomen in de daarbij genoemde categorie:
+
+[unordered.stack]
+*01 Persoon*:: Deze categorie wordt altijd geconverteerd.
+
+*02 Moeder (thans Ouder1)*:: Deze categorie wordt altijd geconverteerd. Indien er geen moeder op de PK voorkomt (vak 8, 2e regel), dan worden de groepen 01, 02, 03 en 62 niet opgenomen.
+
+*03 Vader (thans Ouder2)*:: Deze categorie wordt altijd geconverteerd. Indien er geen vader op de PK voorkomt (vak 8, 1e regel), dan worden de groepen 01, 02, 03 en 62 niet opgenomen.
+
+*04 Nationaliteit*:: Indien er nationaliteitsgegevens voorkomen op de PK (vak 5, eventueel met een verwijzing naar de vakken 24 en/of 35) wordt deze categorie altijd geconverteerd. +
+Voor iedere actuele nationaliteit wordt een categorie opgenomen.
+
+*05 Huwelijk/geregistreerd partnerschap*:: Indien er huwelijksgegevens op de PK voorkomen (de vakken 9 t/m 15), wordt deze categorie altijd geconverteerd. +
+Alle actuele en historische huwelijksgegevens worden opgenomen.
+
+*06 Overlijden*:: De PK van een overleden persoon wordt niet geconverteerd.
+
+*07 Inschrijving*:: Deze categorie wordt altijd geconverteerd. Daarbinnen worden de groepen 66 en 67 niet geconverteerd. De groepen 68 en 69 worden altijd geconverteerd. De groep 87 wordt ingevuld indien alle kindgegevens van de PK zijn overgenomen op de PL of indien er geen kindgegevens op de PK staan.
+
+*08 Verblijfplaats*:: Deze categorie wordt altijd geconverteerd vanuit de vakken 21 en 22 van de PK.
+
+*09 Kind*:: Indien er kindgegevens van kinderen geboren op 01‑01‑1966 of later op de PK voorkomen (vak 29), worden deze geconverteerd. Het betreft hier een familierechtelijke betrekking hetgeen inhoudt dat stiefkinderen, die niet in de GBA worden opgenomen, ook niet mee worden geconverteerd. +
+Bij het stelsel onder het Besluit bevolkingsboekhouding (PK-stelsel) werden kinderen alleen opgenomen op de PK van het gezinshoofd. In het BRP-stelsel echter dienen kinderen opgenomen te worden op de PL'en van beide ouders. Bij de overgang van het PK-stelsel naar het GBA-stelsel zijn alleen kinderen op de PL van een persoon opgenomen die ook op de PK van die persoon stonden vermeld. Hierdoor kunnen kinderen ontbreken op de PL van de andere ouder. +
+Ook voor kinderen die na de inwerkingtreding van de Wet GBA (01-10-1994) zijn geboren, kan het voorkomen dat ze niet op de PL van beide ouders voorkomen.
+
+*10 Verblijfstitel*:: De verblijfstitelgegevens worden niet geconverteerd vanaf de PK, aangezien deze gegevens daarop niet worden bijgehouden.
+
+*11 Gezagsverhouding*:: Indien er gegevens met betrekking tot ouderlijke macht, voogdij of curatele op de PK voorkomen (vak 23), wordt deze categorie altijd geconverteerd.
+
+*12 Reisdocument*:: Indien er aantekeningen met betrekking tot Nederlandse reisdocumenten op de PK voorkomen (vak 23), worden deze gegevens altijd geconverteerd. Voor ieder aanwezig Nederlands reisdocument wordt een categorie opgenomen. Dit geldt ook voor ingehouden en vermiste reisdocumenten. +
+Indien er één of meer aantekeningen met betrekking tot een buitenlands reisdocument op de PK voorkomt (vak 23), worden deze gegevens altijd geconverteerd. Daarbij wordt er altijd maar één categorie opgenomen met daarin de aanduiding buitenlands reisdocument.
+
+*13 Kiesrecht*:: Indien er een aantekening met betrekking tot het kiesrecht op de PK voorkomt (vak 23), wordt deze categorie altijd geconverteerd.
+
+*14 Afnemersindicatie*:: Afnemersindicaties komen niet op de PK voor en worden niet geconverteerd.
+
+*15 Aantekening*:: Indien de godsdienst (vak 6) en/of aantekeningen met betrekking tot afnemers (vak 23) op de PK voorkomen, dan worden deze altijd naar de categorie aantekening geconverteerd. Voor iedere godsdienst en afnemer wordt een categorie opgenomen.
+
+*21 Verwijzing*:: De verwijsgegevens worden niet geconverteerd.
+
+*Historie* +
+De gegevens, waarvan historie moet worden geconverteerd, zijn:
+
+[unordered.stack]
+*Categorie 05 (Huwelijk/geregistreerd partnerschap)*:: Alle historische en actuele gegevens moeten worden opgenomen.
+
+*Groep 08.14 (Immigratie)*:: De meest recente immigratiegegevens moeten worden opgenomen in de actuele verblijfplaats. +
+Indien historische categorieën worden opgenomen, moet daarin en ook in de actuele categorie de echte datum geldigheid worden opgenomen aangezien de historische categorieën binnen een PL gesorteerd worden op die datum geldigheid.
+
+*Bijzondere PK‑gegevens* +
+Naast de in de diverse vakken van de PK gestructureerd opgeslagen gegevens kunnen op de PK ook nog gegevens in de vakken 24 en 35 staan. Hierin zijn gegevens opgeslagen die ook voor de PL van belang kunnen zijn. Dat kunnen gegevens zijn die betrekking hebben op onder andere nationaliteitswijziging, adoptie en andere gebeurtenissen die van belang zijn voor de registratie. Vanuit de desbetreffende vakken op de PK wordt in dat geval verwezen naar vak 24 of 35.
+
+Aangezien het niet-gestructureerd opgeslagen gegevens betreft, wordt de conversie ervan niet gedekt door de conversievoorschriften. De in deze vakken opgeslagen gegevens moeten daarom door de individuele ambtenaar worden geïnterpreteerd en, indien van belang voor de registratie, opgenomen op de PL.
+
+*PL-bestand tot omslagdatum* +
+In het gemeentelijk GBA-systeem mogen tot de datum, waarop de Wet GBA in werking treedt, uitsluitend PL'en voorkomen van personen, waarvan ook de PK bij de gemeente aanwezig is. Hierdoor wordt een volledige aansluiting tussen het PK- en het GBA-stelsel verkregen.
+
+Dit betekent dat bij een wijziging die tot gevolg heeft dat de PK de gemeente verlaat, terwijl de PL niet verstuurd kan worden, er het volgende moet gebeuren:
+
+* De mutatie wordt aan alle daarvoor geautoriseerde afnemers gemeld.
+* De PL wordt verwijderd. Van de verwijdering op zich vindt geen verstrekking plaats (dus ook geen Ng01-bericht).
+
+*Initiële en gewijzigde vulling* +
+Indien er een categorie aan de verzameling in dit Gegevenswoordenboek gedefinieerde categorieën wordt toegevoegd, kan het nodig zijn om voor deze categorie een initiële vulling uit te voeren.
+
+Indien er een element aan de verzameling in dit Gegevenswoordenboek gedefinieerde elementen wordt toegevoegd, kan het nodig zijn om dit element op reeds bestaande PL'en aanvullend op te nemen.
+
+*Verwijderen van gegevens* +
+Indien er categorieën, groepen of elementen uit de verzameling in dit Gegevenswoordenboek gedefinieerde categorieën, groepen en elementen worden verwijderd, is er een procedure nodig om dat te bewerkstelligen. Daartoe is bij elke categorie, groep of element, waarvoor dit het geval is, bij de beschrijving het begrip "Verwijderprocedure" toegevoegd, waarin dan is opgenomen op welke manier de conversie, waarmee de betrokken gegevens moeten worden verwijderd, uitgevoerd moet worden.
+
+*Conversievoorschrift van PK naar PL* +
+
+01.01.10 A-nummer:: Het A‑nummer ingeschrevene (rubriek 01.01.10) wordt altijd geconverteerd. Het A‑nummer staat in vak 22 kolom 3 van de PK. De A‑nummers van de vader, de moeder, de (vroegere) echtgeno(o)t(e) en de kinderen (respectievelijk rubriek 02.01.10, 03.01.10, 05.01.10 en 09.01.10) hoeven niet geconverteerd te worden. +
+Conversie is op de verwijsgegevens (rubriek 21.01.10) niet van toepassing. +
+De A‑nummers van de gerelateerden dienen zo spoedig mogelijk op de PL ingevuld te worden. Dit is zowel tijdens de conversie als na afloop van de conversie door controle op het bestand te realiseren.
+
+01/02/03/05/09.02.10 Voornamen:: Indien de voornamen van de ingeschrevene voorkomen (vak 3b van de PK) wordt rubriek 01.02.10 altijd geconverteerd. +
+Indien er gegevens van de moeder op de PK voorkomen waarbij voornamen zijn opgenomen (vak 8, 2e regel van de PK) wordt rubriek 02.02.10 altijd geconverteerd. +
+Indien er gegevens van de vader op de PK voorkomen waarbij voornamen zijn opgenomen (vak 8, 1e regel van de PK) wordt rubriek 03.02.10 altijd geconverteerd. +
+Als er huwelijksgegevens op de PK voorkomen waarbij voornamen zijn opgenomen (vak 10 van de PK) wordt rubriek 05.02.10 altijd geconverteerd. +
+Als er kindgegevens op de PK voorkomen waarbij voornamen zijn opgenomen (vak 29 van de PK) wordt rubriek 09.02.10 altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.02.10) niet van toepassing.
+
+01/02/03/05/09.02.20 Adellijke titel/predicaat:: Indien een adellijke titel of predicaat van de ingeschrevene voorkomt (vak 3 van de PK) wordt rubriek 01.02.20 altijd geconverteerd. +
+Indien er gegevens van de moeder op de PK voorkomen waarbij een adellijke titel of predicaat is opgenomen (vak 8 van de PK) wordt rubriek 02.02.20 altijd geconverteerd. +
+Indien er gegevens van de vader op de PK voorkomen waarbij een adellijke titel of predicaat is opgenomen (vak 8 van de PK) wordt rubriek 03.02.20 altijd geconverteerd. +
+Als er huwelijksgegevens op de PK voorkomen waarbij een adellijke titel of predicaat is opgenomen (vak 9/10 van de PK) wordt rubriek 05.02.20 altijd geconverteerd. +
+Als er kindgegevens op de PK voorkomen waarbij een adellijke titel is opgenomen (vak 28/29 van de PK) wordt rubriek 09.02.20 altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.02.20) niet van toepassing.
+
+01/02/03/05/09.02.30 Voorvoegsel geslachtsnaam:: Indien de voorvoegsels van de ingeschrevene voorkomen (vak 3a van de PK) wordt rubriek 01.02.30 altijd geconverteerd. +
+Indien er gegevens van de moeder op de PK voorkomen waarbij voorvoegsels zijn opgenomen (vak 8 van de PK) wordt rubriek 02.02.30 altijd geconverteerd. +
+Indien er gegevens van de vader op de PK voorkomen waarbij voorvoegsels zijn opgenomen (vak 8 van de PK) wordt rubriek 03.02.30 altijd geconverteerd. +
+Als er huwelijksgegevens op de PK voorkomen waarbij voorvoegsels zijn opgenomen (vak 9 van de PK) wordt rubriek 05.02.30 altijd geconverteerd. +
+Als er kindgegevens op de PK voorkomen waarbij voorvoegsels zijn opgenomen (vak 28 van de PK) wordt rubriek 09.02.30 altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.02.30) niet van toepassing.
+
+01/02/03/05/09.02.40 Geslachtsnaam:: De geslachtsnaam van de ingeschrevene (rubriek 01.02.40) wordt altijd geconverteerd en is opgenomen in vak 3a van de PK. +
+Indien er gegevens van de moeder op de PK voorkomen (vak 8, 2e regel van de PK) wordt rubriek 02.02.40 altijd geconverteerd. +
+Indien er gegevens van de vader op de PK voorkomen (vak 8, 1e regel van de PK) wordt rubriek 03.02.40 altijd geconverteerd. +
+Als er huwelijksgegevens op de PK voorkomen (vak 9 van de PK) wordt rubriek 05.02.40 altijd geconverteerd. +
+Als er kindgegevens op de PK voorkomen (vak 28 van de PK) wordt rubriek 09.02.40 altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.02.40) niet van toepassing. +
+Indien er in een voorkomend geval alleen voornamen voorkomen, worden deze opgenomen als de geslachtsnaam.
+
+01/02/03/05/09.03.10 Geboortedatum:: De geboortedatum van de ingeschrevene (rubriek 01.03.10) wordt altijd geconverteerd en is opgenomen in vak 4 van de PK. +
+Indien er geboortegegevens van de moeder op de PK voorkomen (vak 8 van de PK) wordt rubriek 02.03.10 altijd geconverteerd. +
+Indien er geboortegegevens van de vader op de PK voorkomen (vak 8 van de PK) wordt rubriek 03.03.10 altijd geconverteerd. +
+Als er huwelijksgegevens op de PK voorkomen (vak 11 van de PK) wordt rubriek 05.03.10 altijd geconverteerd. +
+Als er kindgegevens op de PK voorkomen waarbij geboortegegevens zijn opgenomen (vak 30 van de PK) wordt rubriek 09.03.10 altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.03.10) niet van toepassing.
+
+01/02/03/05/09.03.20 Geboorteplaats:: De geboorteplaats van de ingeschrevene (rubriek 01.03.20) wordt altijd geconverteerd en is opgenomen in vak 4 van de PK. +
+Indien er geboortegegevens van de moeder op de PK voorkomen (vak 8 van de PK) wordt rubriek 02.03.20 altijd geconverteerd. +
+Indien er geboortegegevens van de vader op de PK voorkomen (vak 8 van de PK) wordt rubriek 03.03.20 altijd geconverteerd. +
+Als er huwelijksgegevens op de PK voorkomen (vak 12 van de PK) wordt rubriek 05.03.20 altijd geconverteerd. +
+Als er kindgegevens op de PK voorkomen waarbij geboortegegevens zijn opgenomen (vak 31 van de PK) wordt rubriek 09.03.20 altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.03.20) niet van toepassing.
+
+01/02/03/05/09.03.30 Geboorteland:: Het geboorteland van de ingeschrevene (rubriek 01.03.30) wordt altijd geconverteerd en is opgenomen in vak 4 van de PK. +
+Indien er geboortegegevens van de moeder op de PK voorkomen (vak 8 van de PK) wordt rubriek 02.03.30 altijd geconverteerd. +
+Indien er geboortegegevens van de vader op de PK voorkomen (vak 8 van de PK) wordt rubriek 03.03.30 altijd geconverteerd. +
+Als er huwelijksgegevens op de PK voorkomen (vak 12 van de PK) wordt rubriek 05.03.30 altijd geconverteerd. +
+Als er kindgegevens op de PK voorkomen waarbij geboortegegevens zijn opgenomen (vak 31 van de PK) wordt rubriek 09.03.30 altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.03.30) niet van toepassing.
+
+01.04.10 Geslachtsaanduiding:: De geslachtsaanduiding moet geconverteerd worden. Als het geslacht onbekend is, dan is dit links van vak 1 op de PK aangegeven. In dit geval is een chamoiskleurige kaart gebruikt. In alle andere gevallen betekent de chamoiskleurige PK dat het een man betreft. De lichtgrijze PK geeft aan dat het een vrouw betreft. Vergelijk het geslacht met de tekst in vak 8: dochter van/zoon van.
+
+01.61.10 Aanduiding naamgebruik:: Deze rubriek wordt altijd opgenomen. Indien er een aantekening met betrekking tot het naamgebruik voorkomt (vak 24 van de PK), wordt de betreffende aantekening geconverteerd. +
+Bij conversie is het invullen conform het gebruik in de gemeente toegestaan.
+
+01/02/03/05/09.81.10 Registergemeente akte:: Dit gegeven mag worden geconverteerd. In dat geval moet bij de verschillende geconverteerde categorieën de registergemeente van de onderhavige akte worden geconverteerd. +
+Indien de aktegegevens niet worden opgenomen in een bepaalde categorie moeten documentgegevens (groep 82) worden geconverteerd. +
+Conversie is op de overlijdensgegevens (rubriek 06.81.10) niet van toepassing.
+
+01/02/03/05/09.81.20 Aktenummer:: Dit gegeven mag worden geconverteerd. In dat geval moet bij de verschillende geconverteerde categorieën het aktenummer van de onderhavige akte worden geconverteerd. +
+Indien de aktegegevens niet worden opgenomen in een bepaalde categorie moeten documentgegevens (groep 82) worden geconverteerd. +
+Conversie is op de overlijdensgegevens (rubriek 06.81.20) niet van toepassing.
+
+01/02/03/04/05/09/11/12/13.82.10 Gemeente document:: Dit gegeven wordt altijd geconverteerd bij de voorkomende categorieën waarin geen aktegegevens voorkomen of waarvoor tijdens de conversie de aktegegevens niet zijn geconverteerd. De op te nemen waarde is:
++
+--
+* bij conversie van de PK, de gemeente waar de PK zich bevindt;
+* bij gebruik van het werkelijke brondocument, de gemeente waar de gegevens aan het brondocument ontleend zijn.
+--
++
+Conversie is op de overlijdensgegevens (rubriek 06.82.10) niet van toepassing.
+
+01/02/03/04/05/09/11/12/13.82.20 Datum document:: Dit gegeven wordt altijd geconverteerd bij de voorkomende categorieën waarin geen aktegegevens voorkomen of waarvoor tijdens de conversie de aktegegevens niet zijn geconverteerd. De op te nemen waarde is de conversiedatum. +
+Conversie is op de overlijdensgegevens (rubriek 06.82.20 niet van toepassing).
+
+01/02/03/04/05/09/11/12/13.82.30 Beschrijving document:: Dit gegeven wordt altijd geconverteerd bij de voorkomende categorieën waarin geen aktegegevens voorkomen of waarvoor tijdens de conversie de aktegegevens niet zijn geconverteerd. +
+Bij het geboortedocument van de ingeschrevene (rubriek 01.82.30) wordt "PKA" bij een gewaarmerkte en "PK" bij een niet-gewaarmerkte PK opgenomen. +
+In categorie 09 mag "PK kind" worden opgenomen als het gaat om een kind dat NIET op de PK van deze ouder is opgenomen. Dit mag slechts totdat de gemeente begint met het aanvullen van kindgegevens op basis van de Persoonslijst van het kind. +
+De op te nemen waarde bij alle andere categorieën is PK. +
+Als bij de aanleg van een persoonslijst gebruik wordt gemaakt van de door het Vestigingsregister toegezonden kopie van de PK, dan wordt Kopie PK opgenomen. +
+In alle gevallen mag in plaats van "PK", "PKA", "Kopie PK" of "PK kind" ook het werkelijk brondocument worden opgenomen. +
+Conversie is op de overlijdensgegevens (rubriek 06.82.30) niet van toepassing.
+
+01/02/03/04/05/06/08/09/10/11/12.83.10/20/30 Aanduiding gegevens in/Datum ingang/Datum einde onderzoek:: Dit gegeven wordt niet geconverteerd.
+
+51/52/53/54/55/56/58/59/60/61.84.10 Indicatie onjuist, dan wel strijdigheid met de openbare orde:: Dit gegeven wordt niet geconverteerd.
+
+01/02/03/04/05/08/09/10/11/12.85.10 Ingangsdatum geldigheid:: Dit gegeven wordt altijd geconverteerd in de categorieën, waarin dit element voorkomt. Indien bekend, mag de werkelijke datum worden opgenomen, en anders de standaardwaarde. +
+Indien historische gegevens in de diverse categorieën worden geconverteerd (hetgeen voor huwelijksgegevens verplicht is), wordt de werkelijke ingangsdatum geldigheid opgenomen in verband met de volgorde van die categorieën. +
+In categorie 01 mag in dit element ook de geboortedatum worden opgenomen, tenzij uit de PK blijkt dat de gegevens zijn gewijzigd. +
+Conversie is op de overlijdensgegevens (rubriek 06.85.10) niet van toepassing. +
+Conversie is op de verwijsgegevens (rubriek 21.85.10) niet van toepassing.
+
+01/02/03/04/05/08/09/10/11/12.86.10 Datum opneming:: Dit gegeven wordt altijd geconverteerd in de categorieën, waarin dit element voorkomt. De op te nemen waarde is de conversiedatum. +
+Conversie is op de overlijdensgegevens (rubriek 06.86.10) niet van toepassing. +
+Conversie is op de verwijsgegevens (rubriek 21.86.10) niet van toepassing.
+
+02/03.62.10 Datum ingang familierechtelijke betrekking:: Indien er gegevens van de moeder voorkomen (vak 8, tweede regel van de PK), dan wordt rubriek 02.62.10 altijd opgenomen. De op te nemen waarde mag de standaardwaarde zijn. +
+Indien er gegevens van de vader voorkomen (vak 8, eerste regel van de PK), dan wordt rubriek 03.62.10 altijd opgenomen. De op te nemen waarde mag de standaardwaarde zijn.
+
+04.05.10 Nationaliteit:: Deze rubriek moet altijd geconverteerd worden. Alle voorkomende nationaliteiten die niet verloren zijn, moeten geconverteerd worden. De gegevens omtrent nationaliteit zijn opgenomen in vak 5 en vak 24 van de PK.
+
+04.63.10 Reden verkrijging Nederlandse nationaliteit:: Indien er gegevens met betrekking tot het verkrijgen van de Nederlandse nationaliteit voorkomen (vak 5 van de PK), wordt dit gegeven altijd geconverteerd. De op te nemen waarde mag de standaardwaarde zijn.
+
+04.64.10 Reden verlies Nederlandse nationaliteit:: Dit gegeven behoeft niet geconverteerd te worden. Indien het gegeven wel geconverteerd wordt, dient het uit vak 35 van de PK overgenomen te worden.
+
+04.65.10 Aanduiding bijzonder Nederlanderschap:: Indien de aanduiding behandeld als Nederlander of vastgesteld niet-Nederlander op de PK voorkomt (vak 24 en/of 35), wordt dit gegeven geconverteerd. De op te nemen waarde is "B" in geval van een status behandeld als Nederlander, en "V" in geval van de aanduiding vastgesteld niet-Nederlander.
+
+05.06.10 Datum huwelijkssluiting:: Indien er huwelijksgegevens op de PK voorkomen, moet de datum huwelijkssluiting (vak 13 van de PK) geconverteerd worden.
+
+05.06.20 Plaats huwelijkssluiting:: Indien er huwelijksgegevens op de PK voorkomen, moet de plaats huwelijkssluiting (vak 13 van de PK) geconverteerd worden.
+
+05.06.30 Land huwelijkssluiting:: Indien er huwelijksgegevens op de PK voorkomen, moet het land huwelijkssluiting (vak 13 van de PK) geconverteerd worden.
+
+05.07.10 Datum huwelijksontbinding:: Indien er huwelijksontbindingsgegevens op de PK voorkomen, moet de datum huwelijksontbinding (vak 14 van de PK) geconverteerd worden.
+
+05.07.20 Plaats huwelijksontbinding:: Indien er huwelijksontbindingsgegevens op de PK voorkomen, moet de plaats huwelijksontbinding (vak 15 van de PK) geconverteerd worden.
+
+05.07.30 Land huwelijksontbinding:: Indien er huwelijksontbindingsgegevens op de PK voorkomen, moet het land huwelijksontbinding (vak 15 van de PK) geconverteerd worden.
+
+05.07.40 Reden huwelijksontbinding:: Indien er huwelijksontbindingsgegevens op de PK voorkomen, moet de reden huwelijksontbinding (vak 16 van de PK) geconverteerd worden.
+
+06.08.10/20/30 Datum/Plaats/Land overlijden:: Conversie is op de overlijdensgegevens niet van toepassing
+
+07.66.20 Datum ingang blokkering PL:: Dit gegeven wordt niet geconverteerd.
+
+07.67.10/20 Datum/Omschrijving reden opschorting bijhouding:: Dit gegeven wordt niet geconverteerd.
+
+07.68.10 Datum eerste inschrijving GBA:: Dit gegeven wordt altijd geconverteerd. De op te nemen waarde is de conversiedatum.
+
+07.69.10 Gemeente waar de PK zich bevindt:: Dit gegeven wordt altijd geconverteerd. De op te nemen waarde is de gemeentecode van de gemeente van conversie. Tot aan de datum van de inwerkingtreding van de Wet GBA moet in dit element bij iedere vervolginschrijving de gemeentecode van de gemeente van vestiging worden ingevuld door de gemeente van vestiging.
+
+07.70.10 Indicatie geheim:: De op te nemen waarde is 0. +
+Conversie is op de verwijsgegevens (rubriek 21.70.10) niet van toepassing.
+
+07.87.10 PK-gegevens volledig meegeconverteerd:: Indien de gegevens van alle kinderen van de PK zijn geconverteerd, wordt dit gegeven opgenomen. De op te nemen waarde is "P". Deze waarde wordt ook opgenomen als er op een PK geen kindgegevens voorkomen.
+
+08.09.10 Gemeente van inschrijving:: De gemeente van inschrijving (rubriek 08.09.10) wordt altijd geconverteerd. De op te nemen waarde is de gemeente waar de PK geconverteerd wordt. +
+Conversie is op de verwijsgegevens (rubriek 21.09.10) niet van toepassing.
+
+08.09.20 Datum inschrijving:: De eerste datum van inschrijving in de huidige gemeente van inschrijving wordt altijd geconverteerd. De op te nemen datum is de eerste datum bij de laatstgenoemde gemeente in vak 21 van de PK. Het is toegestaan om hier de geboortedatum op te nemen, zelfs als de PK pas later is aangelegd. +
+Conversie is op de verwijsgegevens (rubriek 21.09.20) niet van toepassing.
+
+08.10.10 Functie adres:: Functie adres wordt altijd geconverteerd. Als er op de PK in vak 22 geen functie adres opgenomen is, dan is er sprake van een woonadres.
+
+08.10.20 Gemeentedeel:: Indien het adres of de locatiebeschrijving niet uniek is binnen de gemeente, wordt dit gegeven altijd geconverteerd.
+
+08.10.30 Datum aangifte adreshouding:: Datum aanvang adreshouding van het huidige adres wordt altijd geconverteerd. Deze datum is opgenomen in vak 21 van de PK.
+
+08.11.10 Straatnaam:: Indien de straatnaam voorkomt (vak 22 van de PK), wordt dit gegeven altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.11.10) niet van toepassing.
+
+08.11.20 Huisnummer:: Indien er een huisnummer voorkomt (vak 22 van de PK), wordt dit gegeven altijd geconverteerd. Alleen het huisnummer in dit element opnemen en niet de eventueel voorkomende huisletter, huisnummertoevoeging en aanduiding bij huisnummer. +
+Conversie is op de verwijsgegevens (rubriek 21.11.20) niet van toepassing.
+
+08.11.30 Huisletter:: Indien er een huisletter voorkomt (vak 22 van de PK), wordt dit gegeven altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.11.30) niet van toepassing.
+
+08.11.40 Huisnummertoevoeging:: Indien er een huisnummertoevoeging voorkomt (vak 22 van de PK), wordt dit gegeven altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.11.40) niet van toepassing.
+
+08.11.50 Aanduiding bij huisnummer:: Indien er een aanduiding bij huisnummer voorkomt (vak 22 van de PK), wordt dit gegeven altijd geconverteerd. +
+Conversie is op de verwijsgegevens (rubriek 21.11.50) niet van toepassing.
+
+08.11.60 Postcode:: Indien de straatnaam (rubriek 08.11.10) en het huisnummer (rubriek 08.11.20) voorkomen, moet dit gegeven volgens het postcodeboek opgenomen worden. +
+Conversie is op de verwijsgegevens (rubriek 21.11.60) niet van toepassing.
+
+08.12.10 Locatiebeschrijving:: Indien het adres (groep 08.11) niet in te vullen is, is conversie van de locatiebeschrijving verplicht. Het is opgenomen in vak 22 van de PK. +
+Conversie is op de verwijsgegevens (rubriek 21.12.10) niet van toepassing.
+
+08.13.10/20 Land waarnaar vertrokken/Datum vertrek uit Nederland:: Conversie is op de emigratiegegevens niet van toepassing.
+
+08.14.10 Land vanwaar ingeschreven:: Indien het land vanwaar ingeschreven voorkomt (vak 22 van de PK) wordt dit gegeven altijd geconverteerd. Het gegeven wordt dan als actueel gegeven in categorie 08 verblijfplaats opgenomen. Als er meerdere landen voorkomen vanwaar de ingeschrevene is ingeschreven, dan wordt het land opgenomen van waaruit de ingeschrevene zich het meest recent gevestigd heeft.
+
+08.14.20 Datum vestiging in Nederland:: Indien de datum vestiging in Nederland voorkomt (vak 21 van de PK) wordt dit gegeven altijd geconverteerd. Het gegeven wordt dan als actueel gegeven in categorie 08 verblijfplaats opgenomen. Als de ingeschrevene zich meerdere keren in Nederland heeft laten inschrijven, dan wordt de meest recente datum van vestiging opgenomen.
+
+08.72.10 Omschrijving van de aangifte adreshouding:: Dit gegeven wordt altijd geconverteerd. De op te nemen waarde is "A".
+
+08.75.10 Indicatie document:: Dit gegeven wordt niet geconverteerd.
+
+10.39.10/20 Aanduiding/Datum einde verblijfstitel:: Dit gegeven wordt niet geconverteerd.
+
+11.32.10 Indicatie gezag minderjarige:: Indien een aantekening met betrekking tot voogdij en/of ouderlijke macht voorkomt (vak 23 van de PK) dan wordt dit gegeven altijd geconverteerd.
+
+11.33.10 Indicatie curateleregister:: Indien een aantekening curatele voorkomt (vak 23 van de PK), dan wordt dit gegeven altijd geconverteerd.
+
+12.35.10 Soort Nederlands reisdocument:: Indien er een aantekening met betrekking tot een Nederlands reisdocument voorkomt (vak 23 van de PK), dan wordt dit gegeven altijd geconverteerd. +
+Mogelijke aantekeningen: +
+ID converteren als ID; +
+Pas en PasC converteren als PN; +
+TK en TKC converteren als IB; +
+TKI (l is kleine letter L) converteren als IC; +
+PasCv, TKCv converteren als RV; +
+PasCm, TKCm converteren als RM; +
+PasCstv, PasCstm, PasCvd converteren als RD; +
+TKCstv, TKCstm, TKCvd converteren als RD.
+
+12.35.20 Nummer Nederlands reisdocument:: Indien er een aantekening met betrekking tot een Nederlands reisdocument voorkomt (vak 23 van de PK), dan wordt het nummer altijd geconverteerd.
+
+12.35.30 Datum uitgifte Nederlands reisdocument:: Indien er een aantekening met betrekking tot een Nederlands reisdocument voorkomt (vak 23 van de PK), dan wordt dit gegeven altijd geconverteerd. De op te nemen waarde mag de standaardwaarde zijn.
+
+12.35.40 Autoriteit van afgifte Nederlands reisdocument:: Indien er een aantekening met betrekking tot een Nederlands reisdocument voorkomt (vak 23 van de PK), dan wordt dit gegeven altijd geconverteerd. De op te nemen waarde mag de standaardwaarde zijn.
+
+12.35.50 Datum einde geldigheid Nederlands reisdocument:: Indien er een aantekening met betrekking tot een Nederlands reisdocument voorkomt (vak 23 van de PK), dan wordt dit gegeven altijd geconverteerd. Wanneer in de aantekening de aanduiding inh, intr, ing voorkomt, dan moet de standaardwaarde worden opgenomen. Wanneer zo'n aanduiding niet voorkomt wordt de datum van de PK overgenomen.
+
+12.35.60 Datum inhouding dan wel vermissing Nederlands reisdocument:: Indien er een aantekening met betrekking tot een vroeger Nederlands reisdocument voorkomt (vak 23 van de PK), dan wordt dit gegeven altijd geconverteerd.
+
+12.35.70 Aanduiding inhouding dan wel vermissing Nederlands reisdocument:: Indien er een aantekening met betrekking tot een vroeger Nederlands reisdocument voorkomt (vak 23 van de PK), dan wordt dit gegeven altijd geconverteerd.
+
+12.36.10 Signalering met betrekking tot het verstrekken van een Nederlands reisdocument:: Dit gegeven wordt niet geconverteerd.
+
+13.38.10 Aanduiding uitgesloten kiesrecht:: Indien er een aantekening met betrekking tot kiesrecht (vak 23 van de PK) voorkomt, wordt dit gegeven altijd geconverteerd. Mogelijke kiesrechtaantekeningen zijn UK en UKl (l is kleine letter L).
+
+13.38.20 Einddatum uitsluiting kiesrecht:: Indien de aantekening UK (uitsluiting door de rechter voor een bepaalde tijd) voorkomt (vak 23 van de PK), wordt dit gegeven altijd geconverteerd. De op te nemen waarde is de datum uit de aantekening.
+
+14.40.10 Afnemersindicatie:: Dit gegeven wordt niet geconverteerd.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Initiële vulling sofinummer (1-7-1995)
+
+****
+*Inleiding* +
+Met ingang van Logisch Ontwerp GBA, versie 2 kan het sofinummer worden opgenomen op de persoonslijst. Vanaf dat moment wordt op elke PL die aangelegd wordt het sofinummer met behulp van de berichtencyclus Opnemen/wijzigen sofinummer opgenomen in de categorie 01 Persoon. Door middel van de procedure aanvullen gerelateerden gegevens wordt het sofinummer ook in de overige categorieën op PL'en van gerelateerden opgenomen. Hierbij ontstaat historie.
+
+De opname van het sofinummer in categorie 01 Persoon van PL'en die aangelegd zijn voor inwerkingtreding van LO2 wordt met behulp van het in deze paragraaf beschreven conversievoorschrift uitgevoerd.
+
+Het conversievoorschrift bestaat uit de volgende stappen:
+
+. De Minister van Financiën maakt voor iedere gemeente een transponeringstabel aan op alternatief medium. In de transponeringstabel staan het A‑nummer en het bijbehorende sofinummer van elke persoon waarvan volgens de gegevens van het Ministerie van Financiën de PL zich in de betreffende gemeente bevindt.
+. De gemeente controleert de ontvangen transponeringstabel.
+. Als de transponeringstabel akkoord is bevonden, dan wordt deze verwerkt. Als de transponeringstabel niet akkoord is bevonden, dan wordt deze teruggestuurd naar de Minister van Financiën onder vermelding van de geconstateerde fouten.
+
+*Beschrijving transponeringstabel* +
+De door de Minister van Financiën voor een gemeente aangemaakte transponeringstabel wordt aangeleverd op alternatieve media, te weten één of meerdere ongelabelde 1600 BPI magneetbanden of 3,5 inch diskettes, zoals beschreven in bijlage IV van het LO GBA versie 2.0.
+
+Op elk medium staat één file met de naam GBAFI.DAT. Het eerste record op het eerste medium van een volumeset is een stuurrecord. Vervolgens volgen één of meer datarecords. Datarecords zijn oplopend gesorteerd op A‑nummer. Het laatste record op het laatste medium uit een volumeset is een sluitrecord.
+
+De structuur van het stuurrecord, de datarecords en het sluitrecord wordt hieronder beschreven.
+
+.Tabel A1.1 Velden in het stuurrecord
+[.center,width="80%" ,cols="25%,15%,60%",options="header",]
+|===
+|Veld |Lengte |Betekenis/inhoud
+|Recipient |4 |Gemeentecode van de gemeente waarvoor het alternatieve medium is aangemaakt
+|Padding characters |15 |15 spaties (Teletex code 20)
+|Afsluitkarakter |1 |Teletex karakter 0D (Carriage Return)
+|===
+
+.Tabel A1.2 Velden in het datarecord
+[.center,width="80%" ,cols="25%,15%,60%",options="header",]
+|===
+|Veld |Lengte |Betekenis/inhoud
+|A‑nummer |10 |A‑nummer van een persoon
+|Sofinummer |9 |Het bij het A‑nummer behorend sofinummer
+|Afsluitkarakter |1 |Teletex karakter 0D (Carriage Return)
+|===
+
+.Tabel A1.3 Velden in het sluitrecord
+[.center,width="80%" ,cols="25%,15%,60%",options="header",]
+|===
+|Veld |Lengte |Betekenis/inhoud
+|Aantal datarecords |6 |Aantal datarecords in de Transponeringstabel
+|Datum aanmaak |6 |Datum aanmaak van de transponeringstabel in het formaat dag, maand en jaar (laatste twee cijfers): DDMMJJ
+|Padding Characters |7 |7 spaties (Teletex code 20)
+|Afsluitkarakter |1 |Teletex karakter 0D (Carriage Return)
+|===
+
+*Controle van de transponeringstabel* +
+De van de Minister van Financiën ontvangen transponeringstabel moet voor verwerking inhoudelijk op de onderstaande punten gecontroleerd worden. Als aan een of meer controles niet wordt voldaan, dan wordt de transponeringstabel niet verwerkt en teruggestuurd naar de Minister van Financiën onder vermelding van de geconstateerde fouten.
+
+. De transponeringstabel bevat één stuurrecord, één of meer datarecords en één afsluitrecord, conform het hierboven beschreven formaat.
+. Het stuurrecord bevat de juiste gemeente van inschrijving.
+. De datarecords zijn oplopend gesorteerd op volgorde van A‑nummer.
+. Alle datarecords bevatten een geldig A‑nummer en een geldig sofinummer.
+. Het aantal datarecords komt overeen met in het sluitrecord vermelde aantal.
+. Er komen geen dubbele A‑nummers voor in de datarecords.
+
+*Verwerking van de transponeringstabel* +
+Bij verwerking van de transponeringstabel is enerzijds de te hanteren procedure van belang en anderzijds wanneer en op welke manier het sofinummer opgenomen wordt in een categorie. Deze twee aspecten worden in de nu volgende paragrafen beschreven. In de laatste paragraaf wordt aandacht besteed aan de mogelijke foutsituaties.
+
+*De procedure initiële vulling sofinummer* +
+Als de transponeringstabel voldoet aan de in paragraaf A1.3 Controle van de transponeringstabel beschreven controles, dan moet deze verwerkt worden. Voor start van de verwerking dient een back-up van de GBA-bestanden gemaakt te worden. Tijdens het verwerken van de transponeringstabel mogen geen andere actualiseringen plaatsvinden.
+
+Alle datarecords van de transponeringstabel moeten op uniforme wijze verwerkt worden conform de richtlijnen hiervoor in paragraaf A.4.4.2 Plaatsen sofinummer.
+
+Na verwerking van de transponeringstabel en controle hiervan, stelt de gemeente de Uitvoeringsorganisatie GBA hiervan op de hoogte. Hierbij wordt vermeld:
+
+* de datum waarop de transponeringstabel verwerkt is;
+* het aantal PL'en waarop in categorie 01 Persoon een sofinummer opgenomen is bij verwerking van de transponeringstabel;
+* het aantal door de Minister van Financiën aangeleverde sofinummers.
+
+*Plaatsen sofinummer* +
+De transponeringstabel dient zo snel mogelijk doch uiterlijk één maand na ontvangst van de tabel verwerkt te worden. Voor verwerking gelden de volgende regels:
+
+* In categorie 01 Persoon wordt het sofinummer opgenomen indien de PL voldoet aan de volgende criteria:
++
+--
+** het A‑nummer in categorie 01 Persoon komt voor in de transponeringstabel, en
+** er komt nog geen sofinummer voor in de categorie, en
+** de PL is niet opgeschort met reden "F", en
+** de PL is niet geblokkeerd, en
+** het A‑nummer is uniek binnen de gemeente.
+--
++
+Het op te nemen sofinummer is het nummer dat in de transponeringstabel bij het A‑nummer vermeld is.
++
+* In elke categorie 02 Moeder, 03 Vader, 05 Huwelijk en 09 Kind wordt een sofinummer opgenomen indien de PL voldoet aan de volgende criteria:
++
+--
+** het A‑nummer in de betreffende categorie komt voor in de transponeringstabel, en
+** er komt nog geen sofinummer voor in de categorie, en
+** de PL is niet opgeschort met reden "F", en
+** de PL is niet geblokkeerd.
+--
++
+Het op te nemen sofinummer is het nummer dat in de transponeringstabel bij het A‑nummer vermeld is.
+
+Opnemen van een sofinummer tijdens verwerking van de transponeringstabel gaat als volgt:
+
+* element 01.20 Sofinummer wordt in de betreffende categorie opgenomen met het bij het A‑nummer behorende sofinummer;
+* element 86.10 Datum van opneming wordt overschreven met de systeemdatum.
+
+Er wordt hierbij geen historische categorie aangelegd. Van opname van het sofinummer gaat geen melding naar het ARS.
+
+*Mogelijke foutsituaties* +
+Tijdens het plaatsen van het sofinummer kan een aantal fouten optreden. Deze worden hieronder beschreven. Per situatie wordt tevens aangegeven hoe gehandeld dient te worden.
+
+* Er zijn meerdere PL'en met een zelfde A‑nummer in categorie 01 Persoon. Het A‑nummer komt op tenminste twee PL'en in categorieën 01 Persoon voor. De gemeente corrigeert deze situatie op de wijze zoals beschreven in LO2, hoofdstuk 3.
+* Rubriek 01.01.20 Sofinummer komt al voor op de PL. Het hierin opgenomen sofinummer wijkt echter af van het in de transponeringstabel opgenomen sofinummer. Dit dient aan de Minister van Financiën gemeld te worden. Hierbij wordt aangegeven welk A‑nummer en sofinummer het betreft.
+* Een A‑nummer uit de transponeringstabel komt op geen enkele PL in categorie 01 Persoon voor. Er is geen actie vereist.
+* Een PL met een A‑nummer uit de transponeringstabel in categorie 01 Persoon, is geblokkeerd. Er is geen actie vereist.
+* Een PL met een A‑nummer uit de transponeringstabel in categorie 01 Persoon, is opgeschort met reden "F". Er is geen actie vereist.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Toevoegen geregistreerd partnerschap (1-1-1998)
+
+****
+Categorie 05/55 Huwelijk wordt categorie 05/55 Huwelijk/Geregistreerd Partnerschap::
+
+Groep 06 Huwelijkssluiting wordt groep 06 Huwelijkssluiting/aangaan geregistreerd partnerschap::
+
+Groep 07 Huwelijksontbinding wordt groep 07 Ontbinding huwelijk/geregistreerd partnerschap::
+
+Element 06.10 Datum huwelijkssluiting wordt element 06.10 Datum huwelijkssluiting/aangaan geregistreerd partnerschap::
+
+Element 06.20 Plaats huwelijkssluiting wordt element 06.20 Plaats huwelijkssluiting/aangaan geregistreerd partnerschap::
+
+Element 06.30 Land huwelijkssluiting wordt element 06.30 Land huwelijkssluiting/aangaan geregistreerd partnerschap::
+
+Element 07.10 Datum huwelijksontbinding wordt element 07.10 Datum ontbinding huwelijk/ geregistreerd partnerschap::
+
+Element 07.20 Plaats huwelijksontbinding wordt element 07.20 Plaats ontbinding huwelijk/ geregistreerd partnerschap::
+
+Element 07.30 Land huwelijksontbinding wordt element 07.30 Land ontbinding huwelijk/ geregistreerd partnerschap::
+
+Element 07.40 Reden huwelijksontbinding wordt element 07.40 Reden ontbinding huwelijk/ geregistreerd partnerschap::
+
+Groep 15 Soort verbintenis wordt toegevoegd:: Op 1 januari 1998 wordt in elke dan voorkomende niet "lege" categorie 05/55 Huwelijk/geregistreerd partnerschap het element 15.10 opgenomen met de waarde "H". Daarbij ontstaat er geen historie en blijft de datum in element 85.10 Ingangsdatum geldigheid en in element 86.10 Datum van opneming ongewijzigd. Dit voorschrift geldt ook voor categorieën 55 waarin element 84.10 Indicatie onjuist is opgenomen. +
+Een categorie 05/55 is "leeg" als daarin slechts de verplichte groepen of 81 of 82, 85 en 86 voorkomen.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Wijzigingen burgerlijke stand en ingangsdatum verblijfstitel (1-2-2001)
+
+****
+02/52/03/53/05/55.04.10 Geslachtsaanduiding:: Op 1 februari 2001 worden de volgende gegevens opgenomen: +
++
+--
+* In alle categorieën 02/52, waarin groep 02 voorkomt, wordt in element 04.10 de waarde "V" opgenomen.
+* In alle categorieën 03/53, waarin groep 02 voorkomt, wordt in element 04.10 de waarde "M" opgenomen.
+* In alle categorieën 05/55, waarin element 15.10 de waarde "H" heeft, wordt in rubriek 05/55.04.10 opgenomen:
+** de waarde "M", indien in rubriek 01.04.10 de waarde "V" voorkomt;
+** de waarde "V", indien in rubriek 01.04.10 de waarde "M" voorkomt.
+* In alle categorieën 05/55, waarin element 15.10 de waarde "P" heeft, wordt de inhoud van rubriek 01.04.10 op de PL van de partner van de persoon waarop de gegevens in categorie 05/55 betrekking hebben, opgenomen in rubriek 05/55.04.10. Indien de PL'en van beide betrokkenen niet in de basisregistratie van dezelfde gemeente zijn opgenomen, dient dat gegeven opgevraagd te worden in de gemeente van inschrijving van de partner. In die gevallen, waarin het gegeven niet tijdig beschikbaar is, wordt rubriek 05/55.04.10 niet opgenomen. Indien het gegeven daarna alsnog beschikbaar komt, dient procedure 2.1.8dan wel 2.1.3 uitgevoerd te worden.
+--
++
+Bovenstaande geldt ook voor categorieën 52, 53 en 55 waarin element 84.10, Indicatie onjuist is opgenomen. +
+Bij het opnemen van dit gegeven in een categorie ontstaat er geen historie en blijft de datum in element 85.10, Ingangsdatumgeldigheid en in element 86.10, Datum van opneming ongewijzigd.
+
+Categorie 02/52 Moeder wordt categorie 02/52 Ouder1::
+
+Categorie 03/53 Vader wordt categorie 03/53 Ouder2::
+
+11.32.10 Indicatie gezag minderjarige:: Op 1 februari 2001 wordt de inhoud van element 32.10 als volgt gewijzigd:
++
+--
+* In elke categorie 11 en 61 waarin in rubriek 11.32.10 de waarde "M" voorkomt, wordt die waarde vervangen door de waarde "1".
+* In elke categorie 11 en 61 waarin in rubriek 11.32.10 de waarde "V" voorkomt, wordt die waarde vervangen door de waarde "2".
+* In elke categorie 11 en 61 waarin in rubriek 11.32.10 de waarde "MD" voorkomt, wordt die waarde vervangen door de waarde "1D".
+* In elke categorie 11 en 61 waarin in rubriek 11.32.10 de waarde "VD" voorkomt, wordt die waarde vervangen door de waarde "2D".
+* In elke categorie 11 en 61 waarin in rubriek 11.32.10 de waarde "VM" voorkomt, wordt die waarde vervangen door de waarde "12".
+--
++
+Bovenstaande geldt ook voor categorieën 61 waarin element 84.10, Indicatie onjuist voorkomt. +
+Bij het opnemen van deze gegevens in een categorie ontstaat er geen historie en blijft de datum in element 85.10, Ingangsdatumgeldigheid en in element 86.10, Datum van opneming ongewijzigd.
+
+10.39.30 Ingangsdatum Verblijfstitel:: Op 1 februari 2001 wordt de inhoud van element 85.10 uit elke categorie 10/60 overgenomen in element 39.30. Dat geldt ook voor categorieën 60 waarin element 84.10, Indicatie onjuist is opgenomen. Uitzonderingen zijn die categorieën 10 en 60 waarin groep 39 niet voorkomt. +
+Bij het opnemen van dit gegeven in een categorie ontstaat er geen historie en blijft de datum in element 85.10, Ingangsdatumgeldigheid en in element 86.10, Datum van opneming ongewijzigd.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Batchprocedure vulling burgerservicenummer (26-11-2007)
+
+****
+*Inleiding* +
+Met ingang van Logisch Ontwerp GBA, versie 3.6 op 26 november 2007 is het burgerservicenummer in categorie 01 Persoon op de persoonslijst een verplichte rubriek.
+
+De opname van het burgerservicenummer in categorie 01 Persoon van PL en die aangelegd zijn vóór inwerkingtreding van LO 3.6 en waarbij rubriek 01.01.20 leeg is of niet het goede nummer bevat, wordt met behulp van de beschreven batchprocedure uitgevoerd. Ten behoeve van de batchprocedure levert BPR aan iedere gemeente een transponerings-tabel via een downloadserver. Deze transponeringstabel is als het ware een "landelijke tabel": elke gemeente ontvangt precies dezelfde tabel.
+
+*Beschrijving transponeringstabel* +
+De door BPR aangemaakte transponeringstabel wordt aan elke gemeente geleverd via een downloadserver. Op deze downloadserver staat één file met de naam GBA-BSN.DAT. Het eerste record is een stuurrecord. Vervolgens volgen één of meer datarecords. Het laatste record is een sluitrecord. De structuur van het stuurrecord, de datarecords en het sluitrecord wordt hieronder beschreven.
+
+[.center,width="80%" ,cols="30%,10%,60%",options="header",]
+|===
+|Veld |Lengte |Betekenis/inhoud
+|Aantal datarecords |6 |Aantal datarecords in de Transponeringstabel
+|Datum aanmaak |6 |Datum aanmaak van de transponeringstabel in het formaat dag, maand en jaar (laatste twee cijfers): DDMMJJ
+|Padding characters |15 |15 spaties (Teletex code 20)
+|Afsluitkarakter |1 |Tel60tex code 0D (Carriage Return)
+|===
+
+[.center,width="80%" ,cols="30%,10%,60%",options="header",]
+|===
+|Veld |Lengte |Betekenis/inhoud
+|A‑nummer |10 |A‑nummer van een persoon
+|Burgerservicenummer |9 |Het bij het A‑nummer behorend burgerservicenummer
+|Datum ingang onderzoek |8 |Indien er sprake is van onderzoek, wordt dit veld gevuld met de datum waarop de Wet algemene bepalingen burgerservicenummer (Wabb) in werking treedt: EEJJMMDD. Als er geen sprake is van onderzoek worden hier 8 spaties opgenomen.
+|Afsluitkarakter |1 |Teletex code 0D (Carriage Return)
+|===
+
+[.center,width="80%" ,cols="30%,10%,60%",options="header",]
+|===
+|Veld |Lengte |Betekenis/inhoud
+|Padding Characters |27 |27 Asterisks '++*++' (Teletex code 2A)
+|Afsluitkarakter |1 |Teletex code 0D (Carriage Return)
+|===
+
+*Controle van de transponeringstabel* +
+De transponeringstabel wordt door BPR op de volgende punten gecontroleerd:
+
+. De transponeringstabel bevat één stuurrecord, één of meer datarecords en één afsluitrecord, conform het in paragraaf A2.2 beschreven formaat.
+. Het aantal datarecords komt overeen met het in het stuurrecord vermelde aantal.
+. Alle datarecords bevatten een geldig A‑nummer en een geldig burgerservicenummer.
+. Er komen geen dubbele A‑nummers en burgerservicenummers voor in de datarecords.
+
+De van BPR ontvangen transponeringstabel moet door elke gemeente vóór verwerking inhoudelijk op de onderstaande punten gecontroleerd worden. Als aan een of meer controles niet wordt voldaan, dan wordt de transponeringstabel niet verwerkt en direct contact opgenomen met BPR, zodat de gemeente alsnog van een goede cd-rom kan worden voorzien.
+
+. De transponeringstabel bevat één stuurrecord, één of meer datarecords en één afsluitrecord, conform het in paragraaf A2.2 beschreven formaat.
+. Het aantal datarecords komt overeen met het in het stuurrecord vermelde aantal.
+. Alle burgerservicenummers in de transponeringstabel zijn technisch correct.
+
+*Uitvoeren batchprocedure* +
+De batchprocedure bestaat achtereenvolgens uit de volgende onderdelen, die in de volgende paragrafen worden beschreven:
+
+. Randvoorwaarden;
+. Verwerken transponeringstabel;
+. Controle verwerking transponeringstabel;
+. Plaatsen burgerservicenummers vanuit de voorraad;
+. Controle.
+
+Vervolgens dient het volgende te worden uitgevoerd:
+
+[start=6]
+. Actualiseren gerelateerdengegevens;
+. Draaien "spontane berichtenverkeer";
+. Informeren BPR.
+
+Randvoorwaarden
+
+Alvorens de transponeringstabel kan worden verwerkt, dient aan de volgende randvoorwaarden te worden voldaan:
+
+* de transponeringstabel voldoet aan de in paragraaf A.7.3 'Controle van de transponeringstabel' beschreven controles;
+* de gemeente heeft een back-up van de GBA-bestanden gemaakt;
+* de gemeente is afgesloten van de berichtendienst;
+* tijdens het verwerken van de transponeringstabel mogen door de gemeente geen andere mutaties op de PL plaatsvinden;
+* er is een voorraad burgerservicenummers beschikbaar in het systeem van de gemeente.
+
+*Verwerken transponeringstabel* +
+Alle datarecords van de transponeringstabel moeten op uniforme wijze verwerkt worden conform de volgende richtlijnen.
+
+Als wordt voldaan aan de volgende criteria wordt een burgerservicenummer uit de transponeringstabel opgenomen in categorie 01 Persoon:
+
+* het A nummer in de transponeringstabel is gelijk aan het A‑nummer in categorie 01 Persoon;
+* het burgerservicenummer in de transponeringstabel is niet gelijk aan een eventueel opgenomen burgerservicenummer in categorie 01 Persoon;
+* de PL is niet opgeschort met reden "F";
+* de PL is niet geblokkeerd.
+
+Bij een afwijkend burgerservicenummer dient het opnemen van dit burgerservicenummer uitgevoerd te worden als actualisering waarbij de oorspronkelijke categorie historisch wordt gemaakt.
+
+De volgende waarden worden opgenomen:
+
+[.center,width="80%" ,cols="45%,55%",options="header",]
+|===
+|Rubriek |Op te nemen waarde
+|01.01.20 Burgerservicenummer |burgerservicenummer uit de transponeringstabel
+|01.82.10 Gemeente document |code van de gemeente die de batch draait
+|01.82.20 Datum document |de datum waarop de Wabb in werking treedt
+|01.82.30 Beschrijving document |de waarde "Gewijzigde vulling burgerservicenummer"
+|01.85.10 Ingangsdatum geldigheid |de datum waarop de Wabb in werking treed
+|01.86.10 Datum van opneming |de datum waarop de Wabb in werking treedt
+|===
+
+Indien er sprake is van onderzoek bij het burgerservicenummer in de transponeringstabel (datum ingang onderzoek in de transponeringstabel is niet gelijk aan 8 spaties) dient dit als volgt opgenomen te worden in categorie 01 Persoon:
+
+* Als er nog geen groep 83 voorkomt in de oorspronkelijke categorie 01 Persoon, dan wordt rubriek 01.01.20 Burgerservicenummer in onderzoek geplaatst:
++
+[.center,width="80%" ,cols="15%,85%",options="header",]
+|===
+|Rubriek |Op te nemen waarde
+|01.83.10 |010120
+|01.83.20 |de datum waarop de Wabb in werking treedt
+|===
++
+* Als er sprake is van een beëindigd onderzoek in de oorspronkelijke categorie 01 Persoon, dus rubriek 01.83.30 is gevuld, dan wordt een nieuw onderzoek gestart en rubriek 01.01.20 Burgerservicenummer in onderzoek geplaatst:
++
+[.center,width="80%" ,cols="15%,85%",options="header",]
+|===
+|Rubriek |Op te nemen waarde
+|01.83.10 |010120
+|01.83.20 |de datum waarop de Wabb in werking treedt
+|===
++
+* Als er reeds een ander element of groep van de oorspronkelijke categorie 01 Persoon in onderzoek staat, dan wordt dit onderzoek verbreed naar de hele categorie 01 Persoon:
++
+[.center,width="80%" ,cols="15%,85%",options="header",]
+|===
+|Rubriek |Op te nemen waarde
+|01.83.10 |010000
+|01.83.20 |de datum waarop de Wabb in werking treedt
+|===
++
+* Als rubriek 01.01.20, groep 01 of de gehele oorspronkelijke categorie 01 Persoon reeds in onderzoek staat, dan wordt de datum ingang onderzoek aangepast:
++
+[.center,width="80%" ,cols="15%,85%",options="header",]
+|===
+|Rubriek |Op te nemen waarde
+|01.83.10 |ongewijzigd
+|01.83.20 |de datum waarop de Wabb in werking treedt
+|===
+
+*Controle verwerking transponeringstabel* +
+Nadat de transponeringstabel verwerkt is, dient gecontroleerd te worden of alle PL'en waarvan het A‑nummer voorkomt in de transponeringstabel, en die niet geblokkeerd zijn of opgeschort met reden "F", correct geactualiseerd zijn. Indien dit niet het geval is, dient de oorzaak hiervan onderzocht te worden en de leverancier en BPR hierover geïnformeerd te worden.
+
+*Plaatsen burgerservicenummers vanuit de voorraad* +
+Nadat de transponeringstabel is verwerkt, dienen alle PL'en waarop nog geen burgerservicenummer is opgenomen in categorie 01 Persoon alsnog hiervan te worden voorzien.
+
+Als wordt voldaan aan de volgende criteria wordt in categorie 01 Persoon een burgerservicenummer uit de eigen voorraad opgenomen:
+
+* de PL is niet opgeschort met reden "F";
+* de PL is niet geblokkeerd.
+
+Het opnemen van een burgerservicenummer uit eigen voorraad dient uitgevoerd te worden als actualisering waarbij de oorspronkelijke categorie historisch wordt gemaakt. De volgende waarden worden opgenomen:
+
+[.center,width="80%" ,cols="45%,55%",options="header",]
+|===
+|Rubriek |Op te nemen waarde
+|01.01.20 Burgerservicenummer |burgerservicenummer uit de voorraad
+|01.82.10 Gemeente document |code van de gemeente die de batch draait
+|01.82.20 Datum document |de datum waarop de Wabb in werking treedt
+|01.82.30 Beschrijving document |de waarde "Gewijzigde vulling burgerservicenummer"
+|01.85.10 Ingangsdatum geldigheid |de datum waarop de Wabb in werking treed
+|01.86.10 Datum van opneming |de datum waarop de Wabb in werking treedt
+|===
+
+*Controle* +
+Nadat de burgerservicenummers vanuit de voorraad zijn geplaatst, dient het volgende gecontroleerd te worden voor alle PL'en die niet geblokkeerd zijn of opgeschort met reden "F":
+
+* Elke PL in het PL-bestand bevat daadwerkelijk een burgerservicenummer in categorie 01 Persoon;
+* Elk burgerservicenummer in categorie 01 Persoon in het PL-bestand is uniek.
+
+Indien deze controles fouten oplevert, dan dient BPR hierover geïnformeerd te worden.
+
+*Actualiseren gerelateerdengegevens* +
+Na (of tijdens) het uitvoeren van de batchprocedure, dienen de overige categorieën op PL'en van gerelateerden te worden bijgewerkt conform de procedure 'actualiseren gerelateerdengegevens' (2.1.3) uit het Logisch Ontwerp GBA. In 82.30 van de gerelateerde categorieën dient dezelfde omschrijving als in rubriek 01.82.30 te worden opgenomen ("Gewijzigde vulling burgerservicenummer").
+
+*Draaien "spontaan" berichtenverkeer* +
+Nadat de batchprocedure inclusief controles uit paragraaf A.7.4.3 en A.7.4.5 zijn uitgevoerd en de gerelateerdengegevens zijn geactualiseerd, moet het "spontane berichtenverkeer" gedraaid worden.
+
+*Informeren BPR* +
+Nadat de gehele procedure is uitgevoerd, stelt de gemeente BPR hiervan op de hoogte door het sturen van een e-mail. Hierbij wordt vermeld:
+
+* de feitelijke datum waarop de batchprocedure is uitgevoerd;
+* het aantal PL'en waarop een burgerservicenummer is opgenomen vanuit de transponeringstabel;
+* het aantal PL'en waarop een burgerservicenummer is opgenomen vanuit de eigen voorraad;
+* het aantal PL'en waarop onderzoeksgegevens zijn opgenomen;
+* het aantal en de A‑nummers van de PL'en waarop geen burgerservicenummer kon worden opgenomen omdat de PL was opgeschort met reden "F";
+* het aantal en de A‑nummers van de PL'en waarop geen burgerservicenummer kon worden opgenomen omdat de PL was geblokkeerd;
+* het aantal en de A‑nummers van de PL'en waarop geen burgerservicenummer voorkomt door een andere oorzaak;
+* het aantal en de A‑nummers van de PL'en waarop het burgerservicenummer niet uniek is in de gemeente.
+
+Nadat BPR deze informatie heeft ontvangen, kan de gemeente weer aangesloten worden op het GBA-netwerk.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Wijzigingen vanwege Modernisering GBA (26-11-2007)
+
+****
+Toegevoegd worden
+
+--
+* Groep 20 A-nummerverwijzingen
+* Element 20.10 Vorig A-nummer
+* Element 20.20 Volgend A-nummer
+--
+
+07.70.10 Indicatie geheim:: wordt voor nieuwe gevallen beperkt tot de waarden 0 of 7.
+
+07.80.10 Versienummer:: Op 26 november 2007 wordt op elke PL in categorie 07 het element 80.10 opgenomen met de waarde 0001.
+
+07.80.20 Datumtijdstempel:: Op 1 april 2007 wordt op elke PL in categorie 07 het element 80.20 opgenomen met de waarde 20070401000000000.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Wijzigingen in verband met de BAG (1-11-2009)
+
+****
+08.11.10 Straatnaam:: In verband met de invoering van de Basisregistraties Adressen en Gebouwen (BAG). +
+Zie onder "Initiële vulling" bij element 11.80 Identificatiecode verblijfplaats.
+
+08.11.15 Naam openbare ruimte:: In verband met de invoering van de Basisregistraties Adressen en Gebouwen (BAG). +
+Zie onder "Initiële vulling" bij element 11.80 Identificatiecode verblijfplaats.
+
+08.11.20 Huisnummer:: In verband met de invoering van de Basisregistraties Adressen en Gebouwen (BAG). +
+Zie onder "Initiële vulling" bij element 11.80 Identificatiecode verblijfplaats.
+
+08.11.30 Huisletter:: In verband met de invoering van de Basisregistraties Adressen en Gebouwen (BAG). +
+Zie onder "Initiële vulling" bij element 11.80 Identificatiecode verblijfplaats.
+
+08.11.40 Huisnummertoevoeging:: In verband met de invoering van de Basisregistraties Adressen en Gebouwen (BAG). +
+Zie onder "Initiële vulling" bij element 11.80 Identificatiecode verblijfplaats.
+
+08.11.60 Postcode:: In verband met de invoering van de Basisregistraties Adressen en Gebouwen (BAG). +
+Zie onder "Initiële vulling" bij element 11.80 Identificatiecode verblijfplaats.
+
+08.11.70 Woonplaatsnaam:: In verband met de invoering van de Basisregistraties Adressen en Gebouwen (BAG). +
+Zie onder "Initiële vulling" bij element 11.80 Identificatiecode verblijfplaats.
+
+08.11.80 Identificatiecode verblijfplaats:: In verband met de invoering van de Basisregistraties Adressen en Gebouwen (BAG). +
+Voor iedere niet opgeschorte PL stelt de gemeente in de BAG vast welke Identificatiecode verblijfplaats, d.w.z. ligplaatsidentificatie, standplaats­identificatie of verblijfsobjectidentificatie er in de BAG bij het in de actuele in groep 11 of 12 vastgelegde adres hoort, dan wel stelt vast dat daar geen Identificatiecode verblijfplaats bij hoort. +
+Als er geen bijbehorende Identificatiecode verblijfplaats is en in rubriek 08.11.10 Straatnaam komt niet de standaardwaarde "." (punt) voor, wordt de groep 11 of 12 in categorie 08 in onderzoek geplaatst. In rubriek 08.83.10 wordt de waarde "081100" dan wel "081200" opgenomen, tenzij er al een onderzoek is opgenomen. Dat onderzoek wordt zo nodig uitgebreid tot de hele categorie. In rubriek 08.83.20 Datum ingang onderzoek wordt de datum opgenomen waarop dit voorschrift is uitgevoerd, tenzij er al een onderzoek is opgenomen en dat onderzoek ten gevolge van dit voorschrift niet wijzigt. +
+Als er geen bijbehorende Identificatiecode verblijfplaats is en in rubriek 08.11.10 Straatnaam komt wel de standaardwaarde "." (punt) voor, wordt categorie 08 niet geactualiseerd. +
+Als er wel een bijbehorende Identificatiecode verblijfplaats is, worden met behulp van de Identificatiecode verblijfplaats de gegevens voor rubriek 08.11.15 Naam openbare ruimte, 08.11.20 Huisnummer, 08.11.30 Huisletter, 08.11.40 Huisnummertoevoeging, 08.11.60 Postcode, 08.11.70 Woonplaatsnaam en 08.11.90 Identificatiecode nummeraanduiding aan de BAG ontleend. Voor rubriek 08.11.10 Straatnaam wordt de Naam openbare ruimte genomen, zo nodig ingekort conform de BOCO-regels. +
+Met de verzamelde gegevens wordt voor de PL een actualisering van categorie 08 doorgevoerd, zoals is beschreven in paragraaf 2.1.11. In de rubrieken 08.85.10 Datum ingang geldigheid en 08.86.10 Datum opneming wordt de datum opgenomen waarop de actualisering wordt uitgevoerd. Rubriek 08.10.30 Datum aanvang adreshouding wijzigt niet; daarin wordt de datum opgenomen uit deze rubriek in de categorie die door deze actualisering historisch wordt.
+
+08.11.90 Identificatiecode nummeraanduiding:: In verband met de invoering van de Basisregistraties Adressen en Gebouwen (BAG). +
+Zie onder "Initiële vulling" bij element 11.80 Identificatiecode verblijfplaats.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Wijzigingen in verband met de RNI (6-1-2014)
+
+****
+08.13.10 Land waarnaar vertrokken wordt Land adres buitenland
+
+08.13.20 Datum vertrek uit Nederland wordt Datum aanvang adres buitenland
+
+Toegevoegd worden:
+
+* Groep 71 Verificatie
+* Element 71.10 Datum verificatie
+* Element 71.20 Omschrijving verificatie
+* Groep 88 RNI-deelnemer
+* Element 88.10 RNI-deelnemer
+* Element 88.20 Omschrijving verdrag
+
+(Groep 71 komt uitsluitend in categorie 07 voor, groep 88 in categorie 01, 04, 06, 07 en 08)
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Conversieprocedure nationaliteitsgegevens (31-1-2015)
+
+****
+*Inleiding* +
+De benodigde aanpassingen in de voorkomens van categorie 04/54 vanwege het verplicht voorkomen van groep 63 of 64 en vanwege het beëindigen van de registratie van vreemde nationaliteiten worden in een keer doorgevoerd. Per PL worden eerst de wijzigingen doorgevoerd vanwege het verplicht voorkomen van groep 63 dan wel 64 en daarna de wijzigingen die nodig zijn vanwege het beëindigen van de registratie van vreemde nationaliteiten.
+
+De wijzigingen die nodig zijn vanwege het opnemen van groep 63 en 64 worden gedaan met behulp van de procedure 'Wijzigen' zoals beschreven in paragraaf 2.1.3 van het LO GBA. Groep 63 of 64 wordt toegevoegd, zonder dat er historie ontstaat. Daarbij wijzigt de datum geldigheid en de datum opneming niet.
+
+De wijzigingen die nodig zijn voor het beëindigen van de registratie van de betrokken nationaliteiten bij personen die Nederlander zijn of behandeld worden als Nederlander worden uitgevoerd zoals is beschreven in de procedure Beëindigen nationaliteit in paragraaf 2.1.7.3 dan wel de procedure Wijziging in de reden beëindiging nationaliteit in paragraaf 2.1.7.5. De eerste procedure wordt gebruikt als element 05.10 voorkomt in de actuele categorie, de tweede als element 64.10 voorkomt in de actuele categorie. Hierbij ontstaat dus historie. De in de nieuwe actuele categorie op te nemen datum in element 85.10 Datum ingang geldigheid en in element 86.10 Datum opname is de datum waarop LO GBA versie 3.9 van kracht wordt.
+
+Voor elke geraakte PL wordt een en niet meer dan een Lg01-bericht aan GBA-V gestuurd. Bij voorkeur worden in deze Lg01-berichten geen andere mutaties op de PL meegenomen.
+
+GBA-V kan besluiten n.a.v. de ontvangen Lg01-berichten, waarin deze wijzigingen zijn opgenomen, geen berichten van deze wijzigingen aan afnemers te verstrekken. Indien GBA-V besluit deze wijzigingen wel te verstrekken, volgt GBA-V daarbij inhoudelijk de procedure die is beschreven in paragraaf 7.6 Versturen van kennisgevingen aan Afnemers. In plaats van de in paragraaf 7.6 opgesomde berichten gaat het hier dan om Gv01-berichten. Zijn er meer wijzigingen dan deze in een Lg01-bericht, dan verstrekt GBA-V in ieder geval die andere wijzigingen wel.
+
+*Beschrijving per PL* +
+Uitgangspunt bij het navolgende voorschrift is dat er geen 'foute' categoriestapels zijn. Anders gezegd: er zijn geen categoriestapels 04 die niet voldoen aan de voorkomenvoorschriften en waarbij er voor elke nationaliteit een maar ook niet meer dan een categoriestapel is. Gegevens over de Nederlandse nationaliteit en de status bijzonder Nederlanderschap worden daarbij beschouwd als gegevens over een nationaliteit. Omdat er foute categoriestapels zijn en mogelijk niet alle fouten tijdig gecorrigeerd zijn, is in de procedure voorzien in uitvalsituaties. In die gevallen wordt in element 63.10 dan wel 64.10 de standaardwaarde "000" opgenomen. De PL'en die in de uitval terecht komen, dienen gesignaleerd te worden, zodat ze op een later moment zo nodig alsnog gecorrigeerd kunnen worden.
+
+In deze procedure worden alle PL'en meegenomen, actueel en opgeschort; dat laatste ongeacht de reden opschorting, dus ook eventueel aanwezige PL'en waarbij de reden opschorting "F" is. In de procedure worden ook PL'en die geblokkeerd zijn vanwege een intergemeentelijke verhuizing of vanwege de overbrenging naar de RNI meegenomen.
+
+In de procedure worden ook historische categorieën waarin element 84.10 Indicatie onjuist voorkomt meegenomen.
+
+Voor de leesbaarheid zijn bij element 05.10 Nationaliteit alleen de waarden opgenomen. Het betreft onderstaande waarden met betekenis:
+
+[horizontal,labelwidth=30,itemwidth=70]
+"0000":: Onbekend
+"0001":: Nederlandse nationaliteit
+"0499":: Staatloos
+
+Datzelfde geldt ook voor element 65.10 Bijzonder Nederlanderschap
+
+[horizontal,labelwidth=30,itemwidth=70]
+"B":: Behandeld als Nederlander
+"V":: Vastgesteld niet-Nederlander
+
+De betekenis van de nieuwe waarden die bij element 63.10 en 64.10 worden genoemd, is terug te vinden bij de beschrijving van de in tabel 37 door te voeren wijzigingen.
+
+Onderstaande procedures "[.underline]#Aanvullen element 63.10 of 64.10#" en "[.underline]#Beëindigen registratie vreemde nationaliteiten#" worden voor elke PL na elkaar uitgevoerd. Daarna wordt een Lg01-bericht aangemaakt.
+
+Dit voorschrift moet door alle gemeenten en de RNI worden uitgevoerd.
+
+*Aanvullen element 63.10 of 64.10* +
+In de navolgende procedure is uitgegaan van alle situaties, die in theorie kunnen voorkomen.
+
+Op basis van de inhoud van elke categorie 04/54 op de PL dient voor elke categorie 04/54 het volgende te gebeuren. Er is:
+
+. Een categorie 04 waarin element 05.10 voorkomt met waarde "0001". In deze categoriestapel wijzigt het volgende.
+[loweralpha]
+.. In de actuele categorie wijzigt niets.
+.. In alle categorieën 54 waarin element 63.10 of element 64.10 voorkomt, verandert niets.
+.. In alle andere categorieën 54 waarin element 05.10 dan wel element 65.10 niet voorkomt, wordt element 64.10 opgenomen met de waarde "000".
+.. In alle andere categorieën 54 waarin element 65.10 voorkomt, wordt element 63.10 opgenomen met de waarde "310".
+. Een categorie 04 waarin element 64.10 voorkomt. In deze categoriestapel wijzigt het volgende.
+[loweralpha]
+.. In de actuele categorie wijzigt niets.
+.. In alle categorieën 54 waarin element 63.10 of element 64.10 voorkomt, verandert niets.
+.. In alle andere categorieën 54 waarin element 05.10 dan wel element 65.10 niet voorkomt, wordt element 64.10 opgenomen met de waarde "000".
+.. In alle andere categorieën 54 waarin element 65.10 voorkomt, wordt element 63.10 opgenomen met de waarde "310".
+. Een categorie 04 waarin element 65.10 voorkomt met waarde "B" of "V". In deze categoriestapel wijzigt het volgende.
+[loweralpha]
+.. In de actuele categorie wordt element 63.10 opgenomen met code "310".
+.. In alle andere categorieën 54 waarin element 63.10 of element 64.10 voorkomt, verandert niets.
+.. In alle categorieën 54 waarin element 65.10 voorkomt, wordt element 63.10 opgenomen met code "310".
+.. In alle andere categorieën 54 waarin element 05.10 dan wel 65.10 niet voorkomt, wordt element 64.10 opgenomen met de waarde "000".
+. Een categorie 04 waarin element 05.10 voorkomt met een andere waarde dan "0001". In deze categoriestapel wijzigt het volgende.
+[loweralpha]
+.. In de actuele categorie wordt element 63.10 opgenomen. De op te nemen code is afhankelijk van de inhoud van element 05.10:
+[lowerroman]
+... Element 05.10 bevat de waarde "0000"; dan wordt in element 63.10 de waarde "311" opgenomen.
+... Element 05.10 bevat de waarde "0499"; dan wordt in element 63.10 de waarde "312" opgenomen.
+... Element 05.10 bevat een andere waarde dan "0000" of "0499"; dan wordt in element 63.10 de waarde "301" opgenomen.
+.. In alle categorieën 54 waarin element 05.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+.. In alle categorieën 54 waarin element 05.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000".
+. Een categorie 04 waarin element 05.10, element 64.10 en element 65.10 niet voorkomen. In deze categoriestapel wijzigt het volgende.
+[loweralpha]
+.. In de meest recente categorie 54 (dat is de categorie met de meest recente datum in element 85.10 Datum ingang geldigheid en zo nodig in element 86.10 Datum opneming) komt element 84.10 voor:
+[lowerroman]
+... Dan wordt in de actuele categorie element 64.10 opgenomen met de waarde "405".
+... In alle categorieën 54 waarin element 05.10 of element 65.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+... In alle categorieën 54 waarin element 05.10 dan wel element 65.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000".
+.. In de meest recente categorie 54 (dat is de categorie met de meest recente datum in element 85.10 Datum ingang geldigheid en zo nodig in element 86.10 Datum opneming) komt element 84.10 niet voor.
+[lowerroman]
+... In die categorie 54 komt element 05.10 voor met waarde "0001". Als dit voorkomt, is dat een foutsituatie, want element 64.10 zou dan voor moeten komen in de actuele categorie.
++
+--
+[arabic]
+.... Dan wordt in die categorie 54 element 63.10 opgenomen met de waarde "000" als element 63.10 nog niet voorkomt.
+.... Dan wordt in de actuele categorie element 64.10 opgenomen met waarde "000".
+.... In alle andere categorieën 54 waarin element 05.10 of element 65.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+.... In alle andere categorieën 54 waarin element 05.10 dan wel element 65.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000".
+.... De PL moet gesignaleerd worden en naderhand gecorrigeerd worden.
+--
++
+Ditzelfde geldt voor alle onderstaande situaties waarin het voorkomen van element 05.10 wordt genoemd in categorie 54 en de opgenomen waarde "0001" is en element 64.10 niet voorkomt in de actuele categorie.
++
+... In die categorie 54 komt element 65.10 voor met waarde "B" of "V".
+[arabic]
+.... Dan wordt in die categorie 54 element 63.10 opgenomen met de waarde "310".
+.... Dan wordt in de actuele categorie element 64.10 opgenomen met de waarde "410".
+.... In alle andere categorieën 54 waarin element 05.10 of element 65.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+.... In alle andere categorieën 54 waarin element 05.10 dan wel element 65.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000".
+... In die categorie 54 komt element 05.10 voor met waarde "0000".
+[arabic]
+.... Dan wordt in die categorie 54 element 63.10 opgenomen met de waarde "311".
+.... Dan wordt in de actuele categorie element 64.10 opgenomen met de waarde "411".
+.... In alle andere categorieën 54 waarin element 05.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+.... In alle andere categorieën 54 waarin element 05.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000"
+... In die categorie 54 komt element 05.10 voor met waarde "0499".
+[arabic]
+.... Dan wordt in die categorie 54 element 63.10 opgenomen met de waarde "312".
+.... Dan wordt in de actuele categorie element 64.10 opgenomen met de waarde "412".
+.... In alle andere categorieën 54 waarin element 05.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+.... In alle andere categorieën 54 waarin element 05.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000".
+... In die categorie 54 komt element 05.10 voor met een waarde anders dan "0001", "0000" of "0499".
+[arabic]
+.... Dan wordt in die categorie 54 element 63.10 opgenomen met de waarde "301".
+.... Dan wordt in de actuele categorie element 64.10 opgenomen met de waarde "401".
+.... In alle categorieën 54 waarin element 05.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+.... In alle categorieën 54 waarin element 05.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000".
+... In die categorie 54 komt element 05.10 dan wel element 65.10 niet voor.
+[arabic]
+.... Dan wordt in die categorie 54 element 64.10 opgenomen met de waarde "000".
+.... Dan wordt in de actuele categorie element 64.10 opgenomen met de waarde "000".
+.... In alle categorieën 54 waarin element 63.10 of element 64.10 voorkomt, verandert niets.
+.... In alle andere categorieën 54 waarin element 05.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+.... In alle andere categorieën 54 waarin element 05.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000".
+. Met betrekking tot eventueel op de PL aanwezige categorieën 04/54 die niet onder een van de hiervoor genoemde situaties vallen, geldt het volgende.
+[loweralpha]
+.. In categorieën 04/54 waarin element 05.10 of 65.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+.. In categorieën 04/54 waarin element 05.10 dan wel 65.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000".
+.. De PL moet gesignaleerd worden en naderhand zo nodig gecorrigeerd worden.
+. Nadat de van toepassing zijnde voorschriften uit de voorgaande stappen zijn uitgevoerd, wordt nagegaan of er in de categorie 04/54 nog categorieën 54 aanwezig zijn waarin groep 63 of 64 niet voorkomt. Indien dat het geval is, geldt het volgende.
+[loweralpha]
+.. In categorieën 04/54 waarin element 05.10 of 65.10 voorkomt, wordt element 63.10 opgenomen met waarde "000".
+.. In categorieën 04/54 waarin element 05.10 dan wel 65.10 niet voorkomt, wordt element 64.10 opgenomen met waarde "000".
+.. De PL moet gesignaleerd worden en naderhand zo nodig gecorrigeerd worden.
+
+*Beëindigen registratie vreemde nationaliteiten* +
+Op basis van de inhoud van de categorieën 04/54 op de PL dient het volgende te gebeuren. Uitgangspunt is dat de hiervoor beschreven procedure op de PL is uitgevoerd.
+
+. Als er geen actuele categorie 04 voorkomt waarin element 05.10 voorkomt met waarde "0001" of waarin element 65.10 voorkomt met waarde "B", dan is er geen actie nodig en ook niet toegestaan.
+. Als er wel een actuele categorie 04 voorkomt waarin element 05.10 voorkomt met waarde "0001" of waarin element 65.10 voorkomt met waarde "B", dan is de actie afhankelijk van de inhoud van die categorie.
+[loweralpha]
+.. Voor elke actuele categorie 04 waarin element 05.10 voorkomt met een waarde ongelijk aan "0001", wordt de procedure Beëindigen nationaliteit uitgevoerd, waarbij in element 64.10 de waarde "404" wordt opgenomen. De op te nemen datum ingang geldigheid (85.10) en datum opname (86.10) is de datum waarop LO 3.9 van kracht wordt.
+.. Voor elke actuele categorie 04 waarin element 64.10 voorkomt, wordt de procedure Wijziging in de reden beëindiging nationaliteit uitgevoerd, waarbij in element 64.10 de waarde "404" wordt opgenomen. De op te nemen datum ingang geldigheid (85.10) en datum opname (86.10) is de datum waarop LO 3.9 van kracht wordt.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Conversieprocedure reisdocumenten (31-1-2015)
+
+****
+*Conversie Gemeenten, RNI en GBA-V* +
+Onderstaande conversie moet op de datum dat LO 3.9 in werking treedt zowel door GBA-V, RNI als door alle gemeenten worden uitgevoerd.
+
+. Voor alle PL'en waarop een categorie 12 Reisdocument voorkomt die groep 37 Buitenlands reisdocument bevat, geldt dat die categorie in zijn geheel van de PL moet worden verwijderd, ongeacht of de PL is opgeschort of geblokkeerd.
+. Voor alle PL'en geldt dat rubriek 12.35.80 Lengte houder uit elke categorie 12 Reisdocument die op die PL voorkomt en die groep 35 Nederlands reisdocument bevat, moet worden verwijderd, ongeacht of de PL is opgeschort of geblokkeerd. Daarbij blijven alle overige rubrieken ongewijzigd.
+. Voor alle PL'en geldt dat groep 12.83 Procedure, waarin rubriek 12.83.10 Aanduiding gegevens in onderzoek de waarde "123580" bevat, in zijn geheel uit elke categorie 12 Reisdocument die op de PL voorkomt, moet worden verwijderd, ongeacht of de PL is opgeschort of geblokkeerd. Daarbij blijven alle overige rubrieken ongewijzigd.
+
+Het verwijderen van deze categorieën, groepen of rubrieken leidt niet tot wijziging van de datumtijdstempel (element 80.10) of het versienummer (element 80.20).
+
+Er gaan naar aanleiding van deze conversie geen Lg01-berichten naar GBA-V.
+
+De gemeentelijke applicatie en de RNI stuurt automatisch na het uitvoeren van deze conversie een vrij bericht naar GBA-V waarin is opgenomen:
+
+[width="100%",cols="5%a,65%a,30%",frame=none,grid=none]
+|===
+2+|* Code van de gemeente die de procedure heeft uitgevoerd: |de viercijferige gemeentecode
+2+|* Naam van de gemeente die de procedure heeft uitgevoerd: |de naam van de gemeente
+2+|* Datum waarop de conversie is afgerond:|(jj-mm-dd)
+2+|* Tijdstip waarop de conversie is afgerond: |(uu.mm)
+2+|* Aantal geconverteerde PL'en opgeschort reden: |nnnnnn
+2+|* Aantal geconverteerde PL'en opgeschort reden: |nnnnnn
+2+|* Aantal geconverteerde PL'en opgeschort reden: |nnnnnn
+2+|* Aantal geconverteerde PL'en opgeschort reden: |nnnnnn
+2+|* Aantal geconverteerde actuele PL'en: |nnnnnn
+|===
+
+GBA-V moet na afloop van de uitgevoerde procedure de volgende rapportage in CSV-formaat leveren:
+
+[width="100%",cols="5%a,65%a,30%",frame=none,grid=none]
+|===
+2+|* Aantal geconverteerde actuele PL'en: |nnnnnn
+2+|* Datum waarop de conversie is afgerond: |(jj-mm-dd)
+2+|* Tijdstip waarop de conversie is afgerond: |(uu.mm)
+2+|* Per gemeente van inschrijving (08.09.10): |
+| |* Gemeente van inschrijving (08.09.10): |de viercijferige gemeentecode
+| |* Aantal geconverteerde PL'en opgeschort reden E: |nnnnnnnn
+| |* Aantal geconverteerde PL'en opgeschort reden M: |nnnnnnnn
+| |* Aantal geconverteerde PL'en opgeschort reden O: |nnnnnnnn
+| |* Aantal geconverteerde PL'en opgeschort reden F: |nnnnnnnn
+| |* Aantal geconverteerde PL'en opgeschort reden W: |nnnnnnnn
+| |* Aantal geconverteerde actuele PL'en: |nnnnnnnn
+|===
+
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+=== Conversieprocedure buitenlands persoonsnummer (8-10-2016)
+
+****
+*Conversie Gemeenten en RNI* +
+Onderstaande conversie moet op de datum dat LO 3.10 in werking treedt zowel door alle gemeenten als door RNI worden uitgevoerd.
+
+Voor alle niet geblokkeerde PL'en waarop in categorie 04/54 een 04/54.05.10 voorkomt met één van de waarden:
+
+* 0052 Belgische
+* 0053 Bulgaarse
+* 0042 Sloveense
+* 0054 Deense
+* 0045 Estische
+* 0056 Finse
+* 0043 Kroatische
+* 0044 Letse
+* 0046 Litouwse
+* 0067 Luxemburgse
+* 0068 Maltese
+* 0072 Poolse
+* 0073 Portugese
+* 0074 Roemeense
+* 0027 Slowaakse
+* 0077 Spaanse
+* 0028 Tsjechische
+* 0080 Zweedse
+
+EN er een 04/54.82.30 voorkomt in hetzelfde categorievoorkomen, waarin rechte haken ++[++ en ++]++ in deze volgorde voorkomen. Als er meerdere 82.30 in één stapel voorkomen, waarvoor dit geldt, is dit uitsluitend van toepassing op de actuele categorie 04 of – als het daar niet van toepassing is – de meest recente historische categorie 54.
+
+WORDT:
+
+. De string tussen de rechte haken gecontroleerd op het voorkomen van uitsluitend cijfers (0..9, HEX: 30..39), hoofdletters (A..Z, HEX: 41..5A), kleine letters (a..z, HEX: 61..7A), een beperkt aantal speciale tekens ( (space, HEX: 20), {plus} (plus sign, HEX: 2B), - (hyphen, HEX: 2D), . (period, HEX: 2E), / (solidus, HEX: 2F)). Indien er andere tekens voorkomen, dient deze PL op een uitvallijst te komen en vindt voor deze stapel geen verdere conversie plaats.
+. Vastgesteld dat de string tussen de rechte haken ++[++ en ++]++ met weglating van spaties aan het begin en einde van die string maximaal 15 karakters lang is. Indien de string langer is, dient deze PL op de uitvallijst te komen en vindt voor deze stapel geen verdere conversie plaats.
+. De string tussen de rechte haken ++[++ en ++]++ met weglating van de spaties aan het begin en einde van de string geplaatst in de nieuw te creëren rubriek 04/54.73.10 in hetzelfde categorievoorkomen. Daarbij worden de rechte haken ++[++ en ++]++, de daardoor ingesloten string en de spatie(s) voorafgaand aan de openingshaak ++[++ verwijderd uit de betreffende 04/54.82.30. Als na uitvoering van deze actie een lege 04/54.82.30 overblijft, wordt deze gevuld met . (period, HEX: 2E). 04/54.82.20 en 04/54.86.10 worden gevuld met de datum inwerkingtreding LO 3.10. 04/54.82.10 wordt gevuld met de code van de gemeente/RNI die de conversie uitvoert.
+
+Indien stap 3 hierboven één of meer keer op een PL is uitgevoerd, leidt dit eenmalig tot wijziging van de datumtijdstempel (element 80.20) en het versienummer (element 80.10).
+
+Er gaat naar aanleiding van deze conversie voor elke geraakte PL een Lg01-bericht naar GBA-V.
+
+De gemeentelijke applicatie en de RNI stuurt automatisch na het uitvoeren van deze conversie een vrij bericht naar GBA-V waarin is opgenomen:
+
+* Code van de gemeente/RNI die de procedure heeft uitgevoerd: +
+de viercijferige gemeentecode
+* Naam van de gemeente/RNI die de procedure heeft uitgevoerd: +
+de naam van de gemeente
+* Datum waarop de conversie is afgerond: (jj-mm-dd)
+* Tijdstip waarop de conversie is afgerond: (uu.mm)
+* Aantal geconverteerde persoonsnummers (stap 3): nnnnn
+* Aantal uitgevallen persoonsnummers vanwege foutieve tekens (stap 1): nnnnnn
+* Aantal uitgevallen persoonsnummers vanwege lengte (stap 2): nnnnnn
+
+*Voorbereiding Conversie* +
+Voorafgaand aan de inwerkingtreding van LO 3.10 moet gecontroleerd worden dat er geen persoonsnummers voorkomen die ten onrechte (niet EU-nationaliteit, land dat geen persoonsnummers op reisdocumenten/ID-kaarten vermeldt), verkeerd (niet tussen rechte haken, niet in 04/54.82.30) of foutief (ander formaat dan in het betrokken land wordt gehanteerd) zijn opgenomen.
+
+*Nacontrole Conversie* +
+Na de conversie wordt in GBA-V gecontroleerd op 'achtergebleven' buitenlandse persoonsnummers in 04/54.82.30 en 01/51.82.30 en op consistentie van de geconverteerde persoonsnummers (formaat, controles die voor het persoonsnummer in het betreffende land gelden).
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Inkorting straatnaam volgens de NEN-norm (8-10-2016)
+
+****
+08.11.10 Straatnaam +
+Voor gegevens opgenomen voor datum inwerkingtreding LO 3.10 wordt afgekort conform de specificaties van de BOCO-norm. Voor gegevens opgenomen op of na datum inwerkingtreding LO 3.10 wordt afgekort conform de specificaties van de NEN-5825 ++[++2002++]++ norm. +
+In verband met de overgang naar de NEN-5825 ++[++2002++]++ norm. +
+Indien de inhoud van element 11.15 Naam openbare ruimte langer is dan 24 posities, dient de gemeente voor actuele adressen vast te stellen of afkorting van de openbare ruimte volgens de NEN 5825 ++[++2002++]++ norm tot een andere schrijfwijze leidt dan afkorting volgens de BOCO-norm. Als dat het geval is, dient een infrastructurele wijziging te worden uitgevoerd, waarbij de volgens NEN 5825 ++[++2002++]++ ingekorte naam openbare ruimte wordt opgenomen in element 11.10 Straatnaam. Dit moet gebeuren voor alle PL'en die staan ingeschreven, dan wel briefadres hebben op een adres waarin in element 11.15 Naam openbare ruimte de naam van de betrokken openbare ruimte voorkomt. De gemeente heeft hiervoor zes maanden de tijd te rekenen vanaf de datum inwerkingtreding LO 3.10.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Registratie levenloos geboren kinderen (1-2-2019)
+
+****
+Toegevoegd:
+
+* Groep 89 Registratie afstamming
+* Element 89.10 Registratie betrekking
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Gezagsverhouding vullen vanuit een tabel (4-10-2020)
+
+****
+Op 4 oktober 2020 wordt de inhoud van element 32.10 gevuld vanuit Tabel 61, Gezagsverhoudingtabel. Omdat alle voor die datum geldende waarden ongewijzigd in de tabel zijn opgenomen, is hiervoor geen conversie nodig.
+
+*Kleine beginletters adellijke titel/predicaat (2-2-2022)* +
+De beginletter van de omschrijving in tabel 38 Adellijke titel/predicaat wordt gewijzigd van een hoofdletter naar een kleine letter. Daarnaast wordt de schrijfwijze van het woord 'predikaat' gewijzigd in 'predicaat'. In onderstaande tabel wordt zichtbaar gemaakt wat dit betekent.
+
+De conversie van tabel 38 Adellijke titel/predicaat moet op de datum dat LO 3.14 in werking treedt door alle deelnemers in het BRP-stelsel worden uitgevoerd.
+
+[width="100%",cols="12%,22%,22%,22%,22%",options="header",]
+|===
+|Code |Omschrijving oud |Omschrijving nieuw |Soort oud |Soort nieuw
+|B |Baron |baron |titel |titel
+|BS |Barones |barones |titel |titel
+|G |Graaf |graaf |titel |titel
+|GI |Gravin |gravin |titel |titel
+|H |Hertog |hertog |titel |titel
+|HI |Hertogin |hertogin |titel |titel
+|JH |Jonkheer |jonkheer |predikaat |predicaat
+|JV |Jonkvrouw |jonkvrouw |predikaat |predicaat
+|M |Markies |markies |titel |titel
+|MI |Markiezin |markiezin |titel |titel
+|P |Prins |prins |titel |titel
+|PS |Prinses |prinses |titel |titel
+|R |Ridder |ridder |titel |titel
+|===
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Toevoegen bereikbaarheidsgegevens arbeidsmigranten (22-10-2022)
+
+****
+Toegevoegd:
+
+* Categorie 16/66 Tijdelijk verblijfsadres
+* Categorie 17 Contactgegevens
+* Groep 16 Telefoon
+* Groep 17 E-mail
+* Groep 18 Einde geldigheid
+* Groep 19 Adrestype
+* Element 16.10 Telefoonnummer
+* Element 16.20 Verificatie-indicatie
+* Element 16.30 Geldig vanaf
+* Element 17.10 E-mailadres
+* Element 17.20 Verificatie-indicatie
+* Element 17.30 Geldig vanaf
+* Element 18.10 Einddatum geldigheid
+* Element 19.10 Type adres
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Toevoegen kiesrechtgegevens (01-07-2023)
+
+****
+Toegevoegd:
+
+* Element 31.40 Adres EU-lidstaat van herkomst
+* Element 31.50 Plaats EU-lidstaat van herkomst
+* Element 31.60 Land EU-lidstaat van herkomst
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Vaste koppeling BAG-BRP (01-01-2024)
+
+****
+Met ingang van Logisch Ontwerp BRP 2024.Q1 wordt een vaste koppeling afgedwongen tussen het te registreren actuele woon- of briefadres in de BRP en een geldig adresseerbaar object in de BAG. Dit betekent dat zowel rubriek 08.11.80 Identificatiecode verblijfplaats als rubriek 08.11.90 Identificatiecode nummeraanduiding voor een actueel adres in de BRP altijd een geldige identificatiecode van een adres van een adresseerbaar object uit de BAG moet bevatten. De Identificatiecode nummeraanduiding moet altijd verwijzen naar het hoofdadres van het adresseerbaar object in de BAG tenzij de briefadresgever een gemeente of een organisatie is. In dat geval mag de Identificatiecode nummeraanduiding ook verwijzen naar een nevenadres van het adresseerbaar object in de BAG.
+
+Verder moeten alle gegevens over een verblijfplaats in beide administraties gelijk zijn. Daarbij zijn de gegevens in de BAG leidend. Dus de volgende rubrieken op de PL in de BRP moeten dezelfde waarden bevatten als de bijbehorende gegevens van het adres van het betreffende adresseerbare object in de BAG:
+
+[none]
+* 08.11.15 Naam openbare ruimte
+* 08.11.20 Huisnummer
+* 08.11.30 Huisletter
+* 08.11.40 Huisnummertoevoeging
+* 08.11.60 Postcode
+* 08.11.70 Woonplaatsnaam
+* 08.11.90 Identificatiecode nummeraanduiding
+
+Zolang het via element <<e1180,11.80>> gekoppelde adresseerbaar object in de BAG de indicatie “geconstateerd” heeft of zolang het gegeven van het adres, dat via element <<e1190,11.90>> gekoppeld is, in de BAG in onderzoek staat, mag, als daar een goede reden voor is, voor die rubriek een andere waarde in de BRP worden opgenomen dan in de BAG staat geregistreerd.
+
+Dit heeft de volgende 2 gevolgen:
+
+. De gemeente voert zo spoedig mogelijk de hierboven genoemde eisen door op alle PL'en van ingezetenen (dus niet overledenen) waarop nog een of meer van de onderstaande situaties voorkomen in de categorie 08 Verblijfplaats:
++
+--
+* '.' in 11.10
+* 11.50 komt voor
+* minstens één van de elementen 11.15, 11.70, 11.80 en 11.90 komt niet voor
+* 12.10 komt voor
+* bij éénzelfde BAG identificatiecode verblijfplaats in de BRP en BAG verschillende adresattributen
+* de Identificatiecode nummeraanduiding verwijst naar een nevenadres in de BAG:
+** bij een woonadres (element 10.10 Functie adres waarde "W").
+** bij een briefadres (element 10.10 Functie adres waarde "B") en het gebruiksdoel van het adresseerbare object in de BAG bevat "Woonfunctie".
+--
++
+Als er op 01-01-2024 een actueel adres in de BRP is opgenomen, dat niet aan de nieuwe eisen voldoet, en dit adres wordt historisch, dan moet dit historische adres ook nog door de gemeente worden gecorrigeerd, zodat het aan de nieuwe eisen voldoet.
+. Wijzigingen in het gegevensmodel: +
+Voor categorie 08 Verblijfplaats: schrappen van 11.50 en groep 12; verplicht voorkomen van 11.15, 11.20, 11.70, 11.80 en 11.90.
+
+Voor alle duidelijkheid: deze wijzigingen in groep 11 gelden niet voor categorie 16 Tijdelijk verblijfsadres. En groep 12 is nooit opgenomen in categorie 16.
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Toevoegen informatierubrieken BRP API (22-04-2024)
+
+****
+Toegevoegd:
+
+* Categorie AX Bewoning op een adres
+* Categorie PA Persoon
+* Groep BW Bewoning
+* Groep GL Geboorte/leeftijd
+* Groep GZ Gezag
+* Groep HP Huwelijk/geregistreerd partnerschap
+* Groep IN Inschrijving
+* Groep KD Kind
+* Groep NM Naam
+* Groep NT Nationaliteit
+* Groep OU Ouder
+* Groep VP Verblijfplaats
+* Element BW.01 Bewoningen
+* Element GL.01 Leeftijd
+* Element GZ.01 Gezagsrelaties
+* Element HP.01 Voorletters partner
+* Element IN.01 Geheimhouding persoonsgegevens
+* Element KD.01 Voorletters kind
+* Element NM.01 Voorletters
+* Element NM.02 Volledige naam
+* Element NM.03 Aanhef
+* Element NM.04 Aanspreekvorm
+* Element NM.05 Aanspreeknaam
+* Element NM.06 Naamgebruik in lopende tekst
+* Element NT.01 Type nationaliteit
+* Element OU.01 Voorletters ouder
+* Element VP.01 Begindatum adreshouding
+* Element VP.02 Type verblijfplaats
+* Element VP.03 Adresregel 1
+* Element VP.04 Adresregel 2
+* Element VP.05 Indicatie vestiging vanuit buitenland
+* Element VP.06 Indicatie vestiging vanuit onbekende verblijfplaats
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Toevoegen informatiecategorie BRP API (01-07-2024)
+
+****
+Toegevoegd:
+
+* Categorie PH Persoon (historie)
+* Categorie PX Persoon (kan zowel actuele als historische gegevens bevatten)
+* Element VP.07 Verblijfplaatshistorie
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Toevoegen informatierubrieken BRP API (01-01-2025)
+
+****
+Toegevoegd:
+
+* Groep AD Adressering
+* Element AD.01 Adressering
+* Element AD.02 Elektronische adressering
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Verwijderen informatierubriek BRP API (01-04-2025)
+
+****
+Verwijderd:
+
+* Groep IN Inschrijving
+* Element IN.01 Geheimhouding persoonsgegevens
+****
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+=== Toevoegen tabelrubrieken in tabel 34 (01-07-2025)
+
+****
+Toegevoegd:
+
+* 34.94.12 ISO 3166-1 Alpha-2 code
+* 34.94.13 ISO 3166-1 Alpha-3 code
+* 34.94.14 ISO 3166-1 Numerieke code
+* 34.94.15 ISO 3166-2 code
+* 34.94.16 ISO 3166 Engelse naam
+* 34.99.97 Indicatie einddatum fictief
+****

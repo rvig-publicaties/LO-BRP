@@ -1,0 +1,610 @@
+== Beheereisen en dienstverleningsafspraken
+
+=== Inleiding
+
+Deze bijlage beschrijft de beheereisen en het niveau van de dienstverlening voor alle partijen die zijn aangesloten op de BRP Verstrekkingsvoorziening (BRP-V), het informatieknooppunt (IKP) en de Terugmeldvoorziening (TMV) via webservices, API's of de berichtendienst.
+
+De verantwoordelijkheid voor de dienstverlening van de centrale voorzieningen van de BRP begint op het moment dat een compleet en correct bericht door een van de centrale voorzieningen is ontvangen en eindigt op het moment dat een correct bericht deze centrale voorziening heeft verlaten (i.c. aan de betreffende partij is verzonden).
+
+==== Doelgroep
+
+Deze dienstverleningsafspraken zijn van toepassing op alle gebruikers van BRP-V, TMV, IKP en berichtendienst.
+
+De gehanteerde normen en eisen zijn voor alle afnemers gelijk. De dienstverlening wordt niet tegen afwijkende eisen of afwijkende voorwaarden aan afzonderlijke partijen geleverd.
+
+=== Autorisatie en toegang
+
+==== De autorisatieprocedure
+
+De verstrekkingen aan afnemers zijn voor wat de feitelijke verstrekkingen betreft, gereguleerd door de autorisatiebesluiten. Daarnaast beschikt BRP-V over toegangsbeheer in verband met authenticatie. De toegang tot BRP-V kan per afnemer worden ingesteld. Met behulp van deze functie kan de toegang tot BRP-V -tijdelijk– aan- of juist uitgezet worden.
+
+===== Autorisatie voor organisaties zonder BRP-aansluiting
+
+Organisaties die nog niet zijn geautoriseerd voor gegevensverstrekking uit de BRP, volgen de uitgebreide aansluitprocedure. Deze procedure start met een schriftelijk verzoek aan RvIG (voor contactgegevens zie <<_autorisatie_voor_organisaties_met_brp_aansluiting>>). Uit dit verzoek moet de wettelijke grondslag blijken op basis waarvan een autorisatie verleend kan worden. Nadat het verzoek juridisch is getoetst, wordt een afspraak gemaakt met de Frontoffice RvIG (of de RvIG-contactpersoon) voor een toelichting van het aansluittraject aan de hand van een stappenplan.
+
+===== Autorisatie voor organisaties met BRP-aansluiting
+
+Organisaties die al zijn geautoriseerd voor gegevensverstrekking van persoonsgegevens uit de BRP, kunnen gebruik maken van een verkorte aansluitprocedure. Deze verkorte procedure bestaat uit het indienen van een aanvraagformulier en het versturen van het publieke deel van het 'Public Key Infrastructure' (PKI) Overheid-certificaat aan RvIG. Daarnaast moet de afnemer beschikken over een aangeschafte of zelfgebouwde clientapplicatie.
+
+Neem voor meer informatie over de aansluitprocedure of vragen hierover contact op met de Frontoffice RvIG (of de RvIG-contactpersoon):
+
+Rijksdienst voor Identiteitsgegevens +
+Postbus 10451, 2501 HL Den Haag +
+Wilhelmina van Pruisenweg 52, 2595 AN Den Haag +
+Telefoon: 088 900 1000 (lokaal tarief) +
+E-mailadres: info@rvig.nl
+
+==== De proefomgeving
+
+Er zijn afzonderlijke omgevingen voor exploitatie en testen: de productieomgeving, respectievelijk de proefomgeving. De proefomgeving is bedoeld voor zowel de ontwikkelaars, afnemers als voor RvIG, de beheerder van BRP-V.
+
+De proefomgeving is speciaal ingericht voor ontwikkelaars die hun BRP-V-clientsoftware willen testen. In de proefomgeving is een aantal sets met gegevens van gefingeerde personen beschikbaar die speciaal op testsituaties zijn afgestemd. Die sets gegevens zijn zodanig ontworpen dat de belangrijkste aspecten van het werken met BRP-V, waaronder de effecten van slim zoeken, aan de orde kunnen komen. De functionaliteiten die de testomgeving in deze biedt, zijn derhalve gelijk aan de functionaliteiten die in de productieomgeving beschikbaar zijn. Een uitzondering hierop is dat in de proefomgeving altijd sprake is van een volledige autorisatie en dit zal dus over het algemeen afwijken van de situatie in de productieomgeving, waar de gebruiker uitsluitend is geautoriseerd voor de gegevens die hij nodig heeft voor de uitvoering van zijn taak.
+
+==== Aansluittoets
+
+Een onderdeel van het aansluittraject is de aansluittoets op de proefomgeving. Een geautoriseerde afnemer krijgt voor de aansluittoets eerst een aansluiting op de proefomgeving. Ook voor de proefomgeving is een PKIO-certificaat benodigd. Doel van de aansluittoets is op de proefomgeving bevragingen of terugmeldingen te doen zoals afnemers dit ook verwachten te doen op de productieomgeving van BRP-V. Er zijn geen vaste test- of oefeningsscenario's. Aangezien de proefomgeving gefingeerde gegevens bevat, is een ketentest niet mogelijk. Meer informatie over de aansluittoets krijgt de afnemer wanneer deze zich aanmeldt voor het aansluittraject.
+
+==== Authenticatie
+
+Afnemers kunnen als gevolg van meerdere taakstellingen ook meerdere autorisaties hebben. De autorisatie van de afnemer wordt geïdentificeerd door een afnemerindicatie. Afnemers worden (per autorisatie / afnemerindicatie) geautoriseerd voor twee omgevingen: de proefomgeving (voor de aansluittoets) en de productieomgeving. Deze autorisaties bestaan uit een gebruikersaccount (veelal gelijk aan de afnemerindicatie) en een specifiek bij de omgeving behorend initieel wachtwoord.
+
+Authenticatie van de afnemer vindt naast controle op geldigheid van de combinatie gebruikersaccount en wachtwoord ook plaats op een geldig PKIO-certificaat met OIN (Organisatie Identificatie Nummer).
+
+Voor toegang tot de BRP API's geldt bovendien dat een OAuth-token benodigd is, dat wordt verstrekt via de Oauth 2.0 client credential flow. Het Oauth token heeft een beperkte geldigheidsduur. Indien de geldigheidsduur is verlopen dient de afnemer een nieuw token aan te vragen. De BRP API's maken geen gebruik van het Oauth token++_++refresh mechanisme.
+
+==== Beveiligingscertificaten
+
+Om aan te sluiten op BRP-V is een PKIO-certificaat nodig. Het PKIO- certificaat is noodzakelijk om de vereiste beveiligde verbinding te kunnen maken met BRP-V. De aansluitende organisatie moet dit PKIO-certificaat zelf aanvragen. Wanneer de aansluitende organisatie het PKIO-certificaat in bezit heeft, moet het PKIO-certificaat binnen de bevragingssoftware van afnemers zijn opgenomen in de lijst met vertrouwde certificaten.
+
+Er is slechts één certificaat per (gemeenschappelijke) server van een afnemer toegestaan.
+
+Aansluitingen op BRP-V vanuit verschillende servers met hetzelfde certificaat zijn niet toegestaan.
+
+Ook voor selectieverstrekkingen die via een bestand (op DVD of via FTPS) geleverd worden, moet met een PKIO-certificaat het resultaat versleuteld worden.
+
+Kijk voor meer informatie over het aanvragen en de werking van deze certificaten op de website www.pkioverheid.nl en/of bij uw Certification Service Provider (CSP). Op de website van RvIG is ook https://www.rvig.nl/veelgestelde-vragen-pkio-certificaat[een FAQ] opgenomen over PKIO-certificaten.
+
+==== Sessiebeheer
+
+Het is voorlopig aan afnemers toegestaan om meerdere gelijktijdige sessies met BRP-V op te zetten. Wel behoudt RvIG zich het recht voor om het aantal gelijktijdige sessies aan een limiet te binden, hetzij een limiet per afnemer, hetzij een globale limiet voor alle afnemers. BRP-V weigert een verbinding als het aantal sessies voor dezelfde afnemer deze limiet overschrijdt.
+
+==== API Gateway
+
+Afnemers die gebruik maken van de BRP API dienen te beschikken over een API Gateway die als 'consumer' van de BRP API wordt ingericht. Deze API Gateway onderhoudt dus de communicatie met BRP-V via de BRP API endpoints op de API Gateway van RvIG. Deze endpoints zijn bereikbaar via URLs die zijn gepubliceerd op de website van RvIG. Afnemers dienen gebruik te maken van DNS adressering en de communicatie te beveiligen met een wederzijdse TLS verbinding.
+
+=== Kwaliteit van de dienstverlening
+
+==== Beschikbaarheid
+
+===== Openstelling dienst
+
+De openstelling is de tijd waarbinnen de dienst beschikbaar is voor de afnemers. De openstellingtijden zijn met uitzondering van gepland onderhoud als volgt:
+
+.KPI's m.b.t. de openstelling dienst
+[width="100%",cols="35%,50%a,15%",options="header",]
+|===
+|Soort afspraak |Niveau |Criterium
+|Beschikbaarheid van BRP-V (productieomgeving) | De productieomgeving van BRP-V is 7++*++24 uur, alle dagen van het jaar, beschikbaar voor:
+
+* Het stellen van zoekvragen aan BRP-V
+* Het wijzigen van het wachtwoord
+
+|99%
+|Beschikbaarheid van BRP-V (proefomgeving) | De proefomgeving van BRP-V is op werkdagen van 9.00 uur tot 17.00 uur beschikbaar. Op overige tijden is deze zo mogelijk beschikbaar. |95%
+|===
+
+===== Openstelling Frontoffice RvIG
+
+Het service window is de tijd waarbinnen de afnemer ondersteuning mag verwachten van RvIG. Het service window geeft aan wanneer een verstoring, incident, vraag of klacht kan worden gemeld. Onderstaande tabel geeft inzicht in de service windows van de ondersteuning door de Frontoffice RvIG voor afnemers en leveranciers.
+
+.Openstelling FrontOffice RvIG
+[width="100%",cols="40%,30%,30%",options="header",]
+|===
+|Soort afspraak 2+|Niveau
+| |Productieomgeving |Proefomgeving
+|Ondersteuning voor het melden van incidenten door afnemers |Werkdagen van 8.30 uur tot 17.00 uur |Werkdagen van 8.30 uur tot 17.00 uur
+|Ondersteuning voor het melden van klachten en het stellen van vragen door afnemers |Werkdagen van 8.30 uur tot 17.00 uur |Werkdagen van 8.30 uur tot 17.00 uur
+|Ondersteuning voor het melden van calamiteiten door afnemers |Werkdagen van 8.30 uur tot 17.00 uur bij de Frontoffice RvIG;
+
+Buiten kantooruren via het noodnummer van RvIG (menukeuze 4)
+|n.v.t.
+|===
+
+===== Onderhoudswindow
+
+Het onderhoudswindow is de periode waarbinnen BRP-V mogelijk niet beschikbaar is voor de afnemer door het uitvoeren van noodzakelijk onderhoud. Het niet beschikbaar zijn van BRP-V in verband met systeembeheertaken is beperkt tot maximaal 50 uur per jaar. Dit onderhoud kan –wanneer noodzakelijk- plaatsvinden op zondag van 09.00 uur tot 17.00 uur en op dinsdagavond van 19.00 uur tot 23.00 uur. In uitzonderingsgevallen kan hiervan worden afgeweken. Bij onderhoud dat van invloed is op de performance of dienstverlening van een afnemer stelt RvIG afnemers hiervan uiterlijk twee weken vooraf op de hoogte via de website van RvIG op www.rvig.nl.
+
+Als afnemers door bepaalde (jaarlijkse) campagnes of activiteiten afhankelijk zijn van een volledige beschikbaarheid van BRP-V moet hiervoor contact worden opgenomen met de Frontoffice RvIG (of de RvIG-contactpersoon).
+
+==== Capaciteit- en performancebeheer
+
+Voor het vaststellen van de gemiddelde responsetijd wordt gekeken naar de servertijd binnen het systeem vanaf het moment dat een complete en correcte vraag of terugmelding wordt ontvangen tot het moment waarop een antwoord of bevestiging het systeem verlaat.
+
+.KPI's m.b.t. capaciteit en performance
+[width="100%",cols="70%,15%,15%",options="header",]
+|===
+|Performance indicator voor capaciteit en performance BRP-V 2+|
+| |Niveau |Criterium
+|Responsetijd van de webservices bij maximale belasting van 8 vragen per seconde |1 seconde |Minimaal 90%
+|Responsetijd van de webservices bij maximale belasting van 8 vragen per seconde |3 seconden |Minimaal 98%
+|Responsetijd van de API's bij maximale belasting van 24 vragen per seconde |0,25 seconde |Minimaal 90%
+|Responsetijd van de API's bij maximale belasting van 24 vragen per seconde |1 seconde |Minimaal 98%
+|===
+
+De Ad hoc webservice en een aantal API's faciliteren het zoeken met jokertekens (wildcards), maar de zoektijd neemt dan wel toe. Op de website van RvIG staan diverse tips over een snellere afhandeling van vragen door slim te zoeken.
+
+De gemiddelde responsetijd van de webservices en de API's kan ook worden beïnvloed door kortere of langere piekbelastingen in de vorm van het aantal gelijktijdig gestelde vragen (op een bepaald moment), het aantal gestelde vragen per minuut en het aantal gelijktijdige gebruikers (= het totaal aan openstaande sessies). Bij piekbelastingen geldt een aangepaste performancenorm, waarbij het systeem binnen maximaal 30 seconden een antwoord geeft. Als de zoektijd de tijdslimiet van 30 seconden echter overschrijdt, reageert BRP-V met een time-out. Pas in dat geval uw zoekvraag aan.
+
+===== Gelijktijdige bevragingen
+
+Het geautomatiseerd stellen van een reeks vragen op BRP-V (zogenaamde batchbevragingen) is niet toegestaan zonder expliciete schriftelijke toestemming van RvIG. Wanneer een afnemer meer dan 5.000 bevragingen in één uur wil uitvoeren, moeten de volgende regels in acht worden genomen:
+
+* Batchbevragingen moeten op uniek identificerende sleutelrubrieken (zoals A-nummer, BSN-nummer) plaatsvinden;
+* Batchbevragingen moeten buiten kantooruren (de uren zoals genoemd in het service window in <<_openstelling_dienst>>) plaatsvinden;
+* De afnemer moet rekening houden met het onderhoudswindow (de uren zoals genoemd in <<_onderhoudswindow>>) of het eventuele aangekondigde onderhoud buiten dit onderhoudswindow.
+* Het maximaal toegestane aantal batchbevragingen is 10.000 per uur. In alle andere gevallen moet contact worden opgenomen met de Frontoffice RvIG (of de RvIG-contactpersoon).
+
+===== Maximumaantal zoekresultaten
+
+Het maximale aantal gegevenssets in een zoekresultaat is tien (10) bij een ad hoc (adres)vraag via de Ad hoc webservice en de BRP API. Bij een ad hoc (adres)vraag via de berichtendienst is dat één (1). Bevragingen moeten zo zijn opgebouwd dat het resultaat dit aantal zoekresultaten niet overschrijdt. Een hoger aantal in het zoekresultaat levert bij de berichtendienst en de Ad hoc webservice een foutbericht met reden 'P' (te veel zoekresultaten) op. Bij de BRP API's is dat een HTTP 400 foutcode met code "tooManyResults". Pas in dat geval uw zoekvraag aan.
+
+===== Overige bijzondere acties afnemers
+
+====== Wijziging in gebruiksvolume
+
+Bij het aansluittraject is door afnemer het volume van het aantal bevragingen aangegeven. Indien de afnemer verwacht dat dit volume substantieel zal wijzigen (toe- of afname van meer dan 10 %) dient de afnemer dit aan te geven bij de Frontoffice RvIG (of de RvIG-contactpersoon).
+
+Het Frontoffice RvIG (of de RvIG-contactpersoon) zal op haar beurt contact opnemen met de afnemer indien de door de afnemer aangegeven volumes afwijken van de werkelijke volumes.
+
+====== Massaal plaatsen van afnemersindicaties/opschonen van bestanden
+
+Alle bijzondere acties die afnemers willen uitvoeren die tot gevolg hebben dat tijdelijk een verhoogd volume in het gebruik van BRP-V plaatsvindt (massale bevragingen of een substantiële verhoging van het aantal berichten door bijvoorbeeld het plaatsen van indicaties) dienen vooraf met de Frontoffice RvIG (of de RvIG-contactpersoon) afgestemd te worden.
+
+==== Incidentbeheer en afhandeling vragen en klachten
+
+Voor het melden van incidenten, storingen, klachten, informatieverzoeken, wijzigingen en andere verzoeken tot ondersteuning kan contact worden opgenomen met de Frontoffice RvIG, bij voorkeur door de geregistreerde contactpersoon van de aangesloten partij.
+
+Dit kan per email naar info@rvig.nl of telefonisch via (088) 900 10 00.
+
+Buiten deze openingstijden kan de Frontoffice RvIG ook benaderd worden via bovengenoemd e-mailadres.
+
+===== Afhandeling incidenten
+
+Onder een incident wordt verstaan: elke gebeurtenis die niet tot de standaardoperatie van een dienst behoort en die een interruptie of een vermindering van de kwaliteit van die dienst kan veroorzaken. Incidenten worden door afnemers of leveranciers gemeld bij de Frontoffice RvIG.
+
+Afhankelijk van de complexiteit worden incidenten direct opgelost of doorgezet naar een tweede- dan wel derdelijns oplosgroep.
+
+Als een achterliggende oplosgroep niet tot een definitieve oplossing kan komen, wordt voor een incident na de implementatie van een tijdelijke oplossing of workaround, een probleem gedefinieerd. Ook wordt voor incidenten die zich herhaaldelijk voordoen een probleem gedefinieerd om zo tot een structurele oplossing te komen. Een incident is opgelost zodra de dienstverlening weer hersteld is en het incident zich niet meer voordoet. In de volgende paragraaf wordt de afhandeling van incidenten, vragen en klachten beschreven. De prioriteit wordt bepaald door de combinatie van impact en ernst:
+
+.Prioriteit van incidenten
+[width="100%",cols="40%,15%,15%,15%,15%",options="header",]
+|===
+|Prioriteit uitgedrukt in impact en ernst |Individueel (4) |Lokaal (3) |Regionaal (2) |Landelijk (1)
+|Geen beperking (4) |4 |4 |3 |3
+|Workaround (3) |4 |3 |3 |2
+|Hinder (2) |3 |3 |2 |1
+|Onbeschikbaar (1) |3 |2 |1 |1
+|===
+
+De volgende performance-indicatoren gelden voor het oplossen van incidenten:
+
+.KPI's m.b.t. oplostijden in de productieomgeving
+[width="100%",cols="30%,35%,35%",options="header",]
+|===
+3+|Productieomgeving
+|Prioriteit |Oplostijd binnen service window |Minimaal te realiseren per maand
+|1 = spoed |4 uur |90%
+|2 = hoog |1 werkdag |90%
+|3 = midden |5 werkdagen |90%
+|4 = overig |15 werkdagen |90%
+|===
+
+.KPI's m.b.t. oplostijden in de proefomgeving
+[width="100%",cols="30%,35%,35%",options="header",]
+|===
+3+|Proefomgeving
+|Prioriteit |Oplostijd binnen service window |Minimaal te realiseren
+|1 = spoed |2 werkdagen |90%
+|2 = hoog |4 werkdagen |90%
+|3 = midden |10 werkdagen |90%
+|4 = overig |15 werkdagen |90%
+|===
+
+Een incident wordt na oplossing teruggekoppeld aan de melder en afgemeld nadat melder akkoord is.
+
+===== Vragen en klachten
+
+Vragen en/of klachten kunnen telefonisch, via e-mail of per brief worden gesteld en worden als volgt geclassificeerd:
+
+[unordered.stack]
+Prioriteit hoog++:++:: Vragen die betrekking hebben op meerdere afnemers / leveranciers en vragen die gevolgen hebben voor de beschikbaarheid van de dienstverlening
+Prioriteit overig++:++:: Alle andere vragen vallen onder de prioriteit overig.
+
+.KPI's m.b.t. beantwoording van vragen en klachten
+[width="100%",cols="40%,45%,15%",options="header",]
+|===
+|Soort afspraak |Niveau |Criterium
+|Beantwoording van vragen met hoge prioriteit |4 uur +
+(binnen de tijden van het service window) |95%
+|Beantwoording van overige vragen |5 werkdagen +
+(binnen de tijden van het service window) |98%
+|===
+
+==== Calamiteitenbeheer
+
+Er is sprake van een calamiteit bij een gebeurtenis die tot gevolg heeft dat de dienstverlening zodanig wordt getroffen dat aanzienlijke, niet vooraf te plannen, maatregelen moeten worden getroffen om deze te herstellen. Als een calamiteit zich voordoet, treedt een calamiteitenplan in werking. RvIG bepaalt of en wanneer een gebeurtenis definitief aan te merken is als calamiteit. Bij een calamiteit gelden de volgende procedurele afspraken:
+
+* Gedurende de calamiteit kunnen de overige dienstverleningsafspraken genoemd in dit document niet worden gegarandeerd;
+* Zodra een calamiteit wordt geconstateerd plaatst RvIG hierover informatie op de website. Zodra een calamiteit is opgelost wordt dit op de website vermeld en na enige tijd van de website verwijderd.
+
+==== Wijzigingsbeheer
+
+Wijzigingsbeheer garandeert een planmatige en gecontroleerde verwerking van wijzigingsvoorstellen (changes), om een probleem op te lossen of nieuwe functionaliteit toe te voegen. Afnemers kunnen via de Frontoffice RvIG (of de RvIG-contactpersoon) een wijzigingsverzoek indienen. Wijzigingsbeheer evalueert verzoeken of laat deze evalueren, beschrijft de impact en bereidt besluitvorming en communicatie voor. Geaccepteerde wijzigingen worden ingepland op de releasekalender, gecommuniceerd aan afnemers en vervolgens doorgevoerd tijdens de eerder gedefinieerde onderhoudswindow. In uitzonderingsgevallen, bijvoorbeeld naar aanleiding van incidenten of calamiteiten of in het geval van uitzonderlijk lange doorlooptijden, kan het doorvoeren van wijzigingen buiten de gedefinieerde onderhoudswindow plaatsvinden. Maatgevend voor de kwaliteit van het wijzigingsbeheer is het percentage succesvol en volgens de planning doorgevoerde wijzigingen zonder onaangekondigde verstoring van performance of continuïteit. RvIG hanteert voor BRP-V een gemiddelde van vier releases per jaar. Voor foutherstel kunnen tussentijdse patches worden geïnstalleerd.
+
+==== Betrouwbaarheid- en integriteitbeheer
+
+===== Informatiebeveiliging
+
+RvIG kent een duurzaam stelsel van beveiligingsmaatregelen in en rondom BRP-V. Het Informatiebeveiligingsbeleid wordt concreet gemaakt door voor verschillende objecten van informatiebeveiliging maatregelen te beschrijven en te nemen. RvIG hanteert als kaders voor de implementatie van informatiebeveiliging de Baseline informatiebeveiliging Overheid (BIO) en de Algemene verordening gegevensbescherming (AVG).
+
+Het stelsel van informatiebeveiligingsmaatregelen rondom BRP-V richt zich op de beschikbaarheid, integriteit en exclusiviteit van BRP-V. Deze drie aspecten worden als volgt gedefinieerd:
+
+* Beschikbaarheid. BRP-V moet conform afspraken beschikbaar zijn voor hiertoe geautoriseerde afnemers.
+* Integriteit. De informatie binnen de systemen van RvIG en die wordt uitgewisseld met webdiensten en authenticatievoorzieningen moet juist, volledig en tijdig zijn en de programmatuur van BRP-V moet volgens de gestelde specificaties werken.
+* Exclusiviteit. Gegevens van BRP-V mogen alleen worden ingezien door degenen die daartoe bevoegd zijn.
+
+Alle bij RvIG betrokken partijen zijn onderhevig aan het informatiebeleid en het informatiebeveiligingsplan van RvIG.
+
+Door middel van periodieke audits op de opzet en het bestaan van het stelsel van beveiligingsmaatregelen wordt bepaald of de beveiligingsmaatregelen zijn vastgelegd, of deze in ontwerp toereikend zijn om het gewenste niveau van informatiebeveiliging te borgen, of deze maatregelen in de praktijk zijn geïmplementeerd en worden nageleefd.
+
+===== Actualiteit van gegevens
+
+De persoonslijsten in de database van BRP-V zijn een kopie van de persoonslijsten in de verschillende systemen bij de gemeenten en bij de Registratie Niet-ingezetenen (RNI). Iedere wijziging in de persoonslijsten bij gemeenten/RNI leidt tot een synchronisatiebericht aan BRP-V. De software van BRP-V voert een controle uit op deze synchronisatieberichten voordat de persoonslijsten in de database worden opgenomen. Deze controle kan tot uitval van synchronisatieberichten leiden. De actualiteit van de database is afhankelijk van het BRP-berichtenverkeer en van de hoeveelheid uitval.
+
+De uitval wordt op werkdagen dagelijks weggewerkt. In uitzonderingsgevallen komt het voor dat een uitvalbericht nader onderzocht moet worden en/of dat er contact met een gemeente voor nodig is. Deze gevallen worden alsnog zo spoedig mogelijk verwerkt. Het aantal uitvalberichten per dag is momenteel te verwaarlozen.
+
+BRP-V ontvangt gemiddeld per dag ruim 100.000 synchronisatieberichten. Bij onderhoud tijdens het onderhoudswindow kunnen processen die zorg dragen voor het verzenden en ontvangen van berichten of voor het verwerken van de berichten tijdelijk stopgezet worden. In dat geval kan de actualiteit van de gegevens enigszins achter raken. Na afloop van het onderhoud worden deze processen direct weer opgestart en zal de achterstand binnen enkele uren weer zijn ingehaald.
+
+De actualiteit van de gegevens is sterk afhankelijk van het BRP- berichtenverkeer, de alertheid van de afnemer tot het doen van terugmeldingen en de voortgang van het onderzoek bij de gemeente.
+
+===== Gegevensverlies
+
+RvIG verplicht zich tot het nemen van maatregelen om schade als gevolg van gegevensverlies zoveel mogelijk te beperken. De maximumperiode gegevensverlies is 24 uur.
+
+De maximale duur van gegevensverlies heeft betrekking op:
+
+* De applicatie BRP-V;
+* Alle databases;
+* Logging (acties van gebruikers, acties van beheerders en processen).
+
+=== Continuïteit, betrouwbaarheid en beheer
+
+Voor een betrouwbare, continue werking van de complete BRP is het noodzakelijk dat naast de centrale voorzieningen, de gemeentelijke systemen (die immers de basisregistratie beheren) en de BvBSN aan hoge continuïteits- en betrouwbaarheidseisen voldoen. Uit het oogpunt van gezond systeembeheer zal in alle gemeentelijke systemen en de BvBSN zonder nadere regelgeving op dit gebied al een groot aantal technische en beheersmatige maatregelen op dit gebied geïmplementeerd worden.
+
+==== Back-up- en herstelprocedures
+
+De back-upprocedures bij de gemeentelijke systemen moeten zodanig zijn dat gegarandeerd de BRP-gegevens, zoals die 1 werkdag geleden waren, kunnen worden gereconstrueerd. De reconstructie mag hoogstens 1 werkdag in beslag nemen. De back-upgegevens dienen in een andere ruimte te worden bewaard dan de ruimte waarin de BRP-apparatuur is opgesteld, en bij voorkeur zelfs in een ander gebouw.
+
+Daarnaast dienen er in de gemeentelijke systemen voorzieningen te zijn getroffen die een reconstructie toelaten van de mutaties die na de laatste back-up zijn aangebracht. Daarbij kan gebruik worden gemaakt van:
+
+* Een log van alle transacties die na de laatste back-up hebben plaats gevonden, in een vorm die reconstructie van de transactie mogelijk maakt. Deze log dient gemaakt en bewaard te worden op een medium dat fysiek gescheiden is van het medium dat gebruikt wordt voor de opslag van de BRP-gegevens.
+* De netwerkfaciliteiten voor de opslag van berichten, ook nadat deze door het BRP-systeem zijn gelezen. De berichtendienst bewaart deze berichten maximaal twee dagen. Deze termijn kan in overleg met de beheerder verlengd worden in geval van uitzonderlijke omstandigheden. Deze berichten kunnen desgewenst opnieuw gelezen worden, en dus worden gebruikt om mutaties die door het netwerk zijn gegenereerd, te herhalen.
+* Organisatorische en systeemtechnische maatregelen, die garanderen dat al ontvangen berichten hetzij opnieuw kunnen worden verwerkt hetzij kunnen worden genegeerd.
+* Organisatorische maatregelen die bewerkstelligen dat alle brondocumenten, die gebruikt werden voor het inbrengen van mutaties (bijvoorbeeld akten of daarvan afgeleide formulieren, verhuisberichten), zodanig bewaard worden dat in geval van calamiteiten de mutaties van de afgelopen twee werkdagen binnen één werkdag opnieuw kunnen worden ingebracht.
+
+In geval door omstandigheden <<Ag01,Ag01>>-, <<Ag11,Ag11>>-, <<Ag21,Ag21>>-, <<Gv01,Gv01>>- en/of <<Gv02,Gv02>>-berichten niet of niet correct zijn verstuurd, moet BRP-V in staat zijn om de gegevens die in die berichten verstrekt hadden moeten worden, alsnog te verstrekken. BRP-V maakt daartoe gebruik van de berichtencyclus Foutherstel, uitgezonderd die situaties waarin de oorspronkelijke berichten niet verstuurd zijn en het alsnog sturen van de oorspronkelijke berichten tot geen enkele verwarring aanleiding kan geven.
+
+De gemeente dient te beschikken over mogelijkheden om een uitwijk te realiseren als het normale BRP-systeem langdurig buiten gebruik is gesteld. Hierbij valt te denken aan afspraken met andere gemeenten die over soortgelijke apparatuur en programmatuur beschikken, contracten met speciale uitwijkcentra, of regelingen in het contract met de leverancier van het systeem.
+
+In geval van een calamiteit dient de gemeentelijke dienstverlening gerelateerd aan de BRP binnen een termijn van 2x24 uur weer operationeel te zijn, eventueel door gebruik te maken van noodmaateregelen zoals een uitwijkvoorziening.
+
+Een gemeente moet binnen vier weken nadat zij als gevolg van een calamiteit uit moet wijken, haar gehele BRP-systeem weer operationeel hebben.
+
+==== Bewaartermijn berichten
+
+Op de berichtendienst aangesloten systemen moeten in staat zijn om op verzoek van de beheerder alle via de berichtendienst verzonden berichten vanaf een door de beheerder aan te geven moment opnieuw te verzenden. Dit moment mag maximaal 4 dagen voor het moment van het verzoek liggen. Dat wil zeggen dat alle verzonden berichten minimaal 4 dagen moeten worden bewaard. Dit geldt ook voor berichten waarop geen antwoord meer verwacht wordt en berichten die reeds beantwoord zijn.
+
+Via alternatieve media verzonden berichten dienen bewaard te blijven totdat de ontvanger ervan te kennen heeft gegeven dat de berichten verwerkt zijn of kunnen worden. De ontvanger doet hierover binnen één maand na verzending van de berichten mededeling aan de verzender. Als één maand na verzending van de berichten geen melding is binnengekomen van de ontvanger, mag aangenomen worden dat de ontvanger de berichten kan verwerken en mogen de berichten door de verzender verwijderd worden.
+
+==== Onderhoud systemen
+
+De documentatie van de aangesloten systemen moet volledig, actueel en toegankelijk zijn voor zover deze het onder het LO ressorterend gedeelte betreft. De documentatie moet opgeslagen zijn op een aan RvIG bekende en beveiligde plaats. Er dient een set met testgegevens aanwezig te zijn en in de documentatie te zijn opgenomen.
+
+Er dient voor de aangesloten BRP-systemen een organisatorisch/technische voorziening voor het onderhoud van programmatuur en apparatuur te zijn.
+
+In de aankoop- en huurovereenkomsten en in de bijbehorende onderhoudscontracten voor BRP-systemen, te sluiten met leveranciers (of gemeentelijke/regionale rekencentra), moeten minimaal de volgende punten zijn opgenomen:
+
+* De garantie van de leverancier dat het systeem aan de in dit LO beschreven eisen voldoet en dat gebleken afwijkingen of tekortkomingen in dit opzicht door de leverancier op zo kort mogelijke termijn zullen worden hersteld.
+* De garantie van de leverancier dat het systeem bij toekomstige wijzigingen en uitbreidingen van het LO in het kader van het onderhoudscontract zal worden aangepast.
+* Een regeling voor de eigendomsoverdracht van het systeem en bijbehorende documentatie aan de gebruikers als de leverancier door onvoorziene omstandigheden (bijv. faillissement) niet meer in staat is zijn onderhoudsverplichtingen na te komen.
+
+Er moet in de systeemdocumentatie zijn vastgelegd welke organisatorische/technische activiteiten moeten worden uitgevoerd in geval van gemeentelijke herindelingen of grenswijzigingen.
+
+==== Onderhoud gegevens
+
+In verband met mogelijke, op dit moment niet voorziene wijzigingen in en aanvullingen op de BRP-gegevens is het noodzakelijk dat de BRP-systemen voldoende flexibel zijn ontworpen om uitbreidingen te kunnen implementeren. Dit betekent onder meer dat in de gedefinieerde structuur voor de BRP-gegevens voldoende ruimte is opengehouden om uitbreidingen in het gegevenspakket te kunnen aanbrengen.
+
+Er moet in de gemeentelijke BRP-systemen een faciliteit aanwezig zijn om op basis van een door RvIG uit te geven opdracht, de PL en de verwijsgegevens te kunnen vernietigen c.q. ontoegankelijk te kunnen maken. Dit moet binnen 1 werkdag worden uitgevoerd.
+
+==== Personeel
+
+Voor elk aangesloten BRP-systeem dienen de volgende functionarissen te worden aangewezen en op verzoek bekend te worden gemaakt bij RvIG:
+
+* Een gegevensbeheerder die verantwoordelijk is voor de inhoud, integriteit en toegankelijkheid van de BRP-gegevens in de gemeente.
+* Een applicatiebeheerder die verantwoordelijk is voor het goed functioneren van de toepassingsprogrammatuur bij gemeente of afnemer.
+* Een systeembeheerder die verantwoordelijk is voor het goed functioneren van de apparatuur en systeemprogrammatuur bij gemeente of afnemer.
+* Een privacybeheerder die verantwoordelijk is voor de bescherming van de persoonlijke levenssfeer van de personen over wie gegevens in de BRP opgenomen zijn.
+
+In voorkomende gevallen kunnen meerdere van bovenstaande functies worden vervuld door één persoon.
+
+=== Statistiek, gebruiksgegevens en protocollering
+
+==== Statistiek en gebruiksgegevens
+
+Per afnemer wordt een administratie bijgehouden van het aantal bevragingen aan BRP-V. Deze administratie wordt onder meer gebruikt voor de doorberekening van gebruikskosten aan afnemers voor het gebruik van BRP-V.
+
+==== Protocollering
+
+De privacyprocedures zoals beschreven in hoofdstuk twee van het Logisch Ontwerp (LO) BRP zijn van kracht. Het systeem protocolleert daarom alle verstrekkingen, onder meer voor het inzagerecht van de burger. De bewaartermijn van deze protocolgegevens is 20 jaar.
+
+De registratie van protocolgegevens geschiedt volgens de in het LO gestelde eisen.
+
+=== Beheer
+
+==== Inleiding
+
+Om te komen tot een efficiënt gebruik van het netwerk zijn twee aspecten van belang: een goede beheerorganisatie en een gedisciplineerd gedrag van de gebruikers. In de volgende paragrafen wordt beschreven hoe deze doelstellingen kunnen worden bereikt.
+
+Met de voorschriften worden twee doelen beoogd:
+
+* __Het voldoen aan de eisen die in het Logisch Ontwerp BRP zijn genoemd__ +
+De voorschriften geven een concrete invulling aan een aantal eisen die elders zijn genoemd, bijvoorbeeld op het gebied van beveiliging, continuïteit en responsetijden.
+* __Voldoen aan het gebruikersprofiel__ +
+Voor het beheer van de berichtendienst is een model opgesteld van het gedrag van een logisch en zorgvuldig handelende gebruiker (het zogenaamde gebruikersprofiel), en is een schatting gemaakt van de omvang van het berichtenverkeer. Voorwaarde voor het hanteren van dit model is dat het gedrag van een individuele gebruiker niet te zeer afwijkt van dit gebruikersprofiel.
+
+Beheer kan in speciale gevallen met individuele gebruikers voor kortere of langere tijd afspraken maken waarbij op onderdelen van de voorschriften wordt afgeweken of de instellingen van de berichtendienst worden aangepast. Voorwaarde daarbij is dat:
+
+* De gebruiker aangeeft waarom het voor hem onmogelijk is om op deze onderdelen aan de voorschriften te voldoen;
+* Door het afwijkende gedrag de berichtendienst niet onevenredig zwaar wordt belast;
+* De beveiliging van de berichtendienst niet in gevaar wordt gebracht;
+* De berichtendienst als geheel beheersbaar blijft.
+
+Het is verder van belang dat dergelijke bijzondere omstandigheden bijtijds gemeld worden aan RvIG, zodat bijtijds de nodige maatregelen kunnen worden genomen. Voorbeelden van deze maatregelen zijn:
+
+* De gebruiker is bijvoorbeeld door een storing in zijn eigen systeem of door een bijzondere feestdag niet in staat is om zijn mailbox te legen. Zoals eerder uiteen is gezet worden alle berichten in de mailbox van de gebruiker op de mailboxserver na gemiddeld twee werkdagen automatisch verwijderd door de zogenaamde 'cleaner'. In BRP-V gebeurt dit na gemiddeld 5 werkdagen voor berichten die via de BRP Berichten API of via de webservice StuurGBAbericht moeten worden opgehaald. Als de berichten op dat moment nog niet zijn opgehaald door de geadresseerde  die is aangesloten op de mailboxserver wordt een non-receipt notification gegenereerd. De afzender die is aangesloten op de mailboxserver zal daar in het algemeen op reageren door een herhaalbericht te sturen. Het zal duidelijk zijn dat dit een ongewenste situatie is. Beheer beschikt over de mogelijkheid om in deze situaties de mailbox van de gebruiker uit te sluiten van het cleaning proces, waardoor de opslagtermijn wordt verlengd.
+* De gebruiker verwacht een piek in het berichtenverkeer, bijvoorbeeld omdat een eenmalige selectie via de berichtendienst moet worden verstuurd of ontvangen. Als deze tijdig worden gemeld kan voorkomen worden dat de mailbox van de gebruiker geblokkeerd wordt door overschrijden van limieten, en daarmee dat er ongelezen berichten achterblijven in de mailbox.
+
+==== Beheer BRP-V
+
+===== Toegangsbeheer
+
+De verstrekkingen aan afnemers en de raadplegingen door gemeenten en RNI zijn voor wat de feitelijke verstrekkingen betreft, gereguleerd door de autorisatietabelregels. Daarnaast beschikt BRP-V over toegangsbeheer in verband met authenticatie. De toegang tot BRP-V kan per afnemer, gemeente en RNI worden ingesteld. Middels deze functie kan de toegang tot BRP-V tijdelijk aan- of juist uitgezet worden.
+
+===== Wachtwoordbeheer
+
+De afnemer, gemeente en RNI krijgen toegang tot BRP-V met een naam/wachtwoord-combinatie. Dit wachtwoord moet eenmaal per drie maanden worden gewijzigd. Bij het verkrijgen van toegang mag het wachtwoord niet verlopen zijn. Is het wachtwoord wel verlopen, dan wordt een foutbericht met reden "X" verstuurd.
+
+De afnemer, gemeenten en RNI kunnen het wachtwoord wijzigen met de service changePassword. Daartoe worden het nieuwe wachtwoord als parameter meegestuurd.
+
+In het wachtwoord van de webservices van BRP-V zijn de volgende tekens toegestaan:
+
+* 'Letters': de tekens A-Z (decimaal 065 t/m 090) en de tekens a..z (decimaal 097 t/m 122).
+* 'Cijfers': de tekens 0-9 (decimaal 048 t/m 057).
+* 'Overige tekens': alle overige tekens met een decimale waarde groter dan 32 en kleiner dan 127.
+
+Er wordt gecontroleerd of elk gebruikt teken ligt in de (ASCII/UTF-8) reeks: 32 ++<++ x ++<++ 127 (hexadecimaal: 20 ++<++ x ++<++ 7f). De complete reeks is dan:
+
+a-z, A-Z, 0-9, !@#$%^&++*++()++_++-{plus}=++{++}++[]++'"++|++/++\++?.;:++><++,~++`++
+
+===== Regels voor de samenstelling van het wachtwoord:
+
+* Het wachtwoord bestaat uit minimaal 10 tekens en maximaal 64 tekens.
+* Een opeenvolgende reeks van 4 tekens mag niet met 1 oplopen (bijvoorbeeld "ABCD") of aflopen (bijvoorbeeld "8765").
+* Het wachtwoord bevat altijd minstens 3 van de 4 van de volgende eigenschappen:
+** Minimaal 1 hoofdletter;
+** Minimaal 1 kleine letter;
+** Minimaal 1 cijfer;
+** Minimaal 1 'speciaal teken'.
+* Het wachtwoord mag niet gelijk zijn aan 1 van de 10 voorafgaande wachtwoorden.
+
+Als het wachtwoord reeds verlopen is, kan gedurende een beperkte periode toch de service changePassword worden uitgevoerd. In het antwoordbericht wordt het resultaat teruggemeld met de codes en omschrijvingen zoals die in onderstaande tabel zijn opgenomen.
+
+[width="100%",cols="15%,85%",options="header",]
+|===
+|Code |Omschrijving
+|000 |Wachtwoord is met succes gewijzigd
+|101 |Technische fout
+|110 |Ongeldige combinatie gebruikersnaam/wachtwoord
+|111 |Service is niet geactiveerd voor dit account
+|112 |Termijn voor wijzigen wachtwoord is verstreken
+|113 |Samenstelling nieuw wachtwoord onjuist
+|114 |Nieuw wachtwoord is al eerder gebruikt
+|===
+
+===== Aansluittoets
+
+BRP-V kent voor afnemers, gemeenten en RNI een aansluittraject. Een onderdeel daarvan is de zgn. Aansluittoets. Afnemers, gemeenten of RNI die voor het eerst op BRP-V gaat aansluiten, dienen vooraf met succes de Aansluittoets voor BRP-V op de proefomgeving doorlopen te hebben. RvIG stelt de criteria vast en beoordeelt de uitgevoerde procedures.
+
+De Aansluittoets voor afnemers, gemeenten en RNI is ook bedoeld om zich de mogelijkheden van BRP-V eigen te maken. In de proefomgeving is daartoe een aantal sets met gegevens van gefingeerde personen opgenomen. Die sets gegevens zijn zodanig dat de belangrijkste aspecten van het werken met BRP-V, waaronder de effecten van slim zoeken, aan de orde kunnen komen. De functionaliteiten die de proefomgeving in deze biedt, zijn daarom gelijk aan de functionaliteiten die in de productieomgeving beschikbaar zijn. Een uitzondering hierop is dat in de proefomgeving altijd sprake is van een volledige autorisatie en dit zal dus over het algemeen afwijken van de situatie in de productieomgeving, waar de gebruiker uitsluitend is geautoriseerd voor de gegevens die hij nodig
+
+==== Voorschriften voor het gebruik van de berichtendienst
+
+===== Verbindingscapaciteit
+
+De capaciteit van de verbinding dient toereikend te zijn om te voldoen aan de eis dat al het berichtenverkeer (inkomend en uitgaand) van één werkdag binnen één uur kan worden afgehandeld.
+
+===== Wachtwoorden
+
+Wachtwoorden zijn een essentieel element van de beveiliging. Om effectief te zijn dienen wachtwoorden niet voor de hand liggende combinaties van tekens te bevatten, en regelmatig gewijzigd te worden. Deze uitgangspunten worden door de Mailbox Server als volgt afgedwongen:
+
+* Bij het aanmaken van een mailbox door beheer wordt de mailbox in een speciale toestand geplaatst. In deze toestand is de enige handeling die is toegestaan de ChangePassword operatie; op pogingen om andere acties uit te voeren wordt gereageerd met foutcode 1002 (Invalid Operation). Hetzelfde geldt wanneer de gebruiker het wachtwoord van de mailbox is vergeten en het wachtwoord vervolgens op verzoek van de gebruiker door netwerkbeheer is gewijzigd.
+* De geldigheidsduur van een wachtwoord is beperkt tot 90 dagen. Voor het verstrijken van deze termijn moet het wachtwoord worden veranderd. Indien de termijn verstreken is, wordt de toegang tot de mailbox beperkt; de enige handeling die dan is toegestaan is weer de ChangePassword operatie; op pogingen om andere handelingen uit te voeren zal de server weer reageren met foutcode 1002 (Invalid Operation).
+* Een eenmaal gebruikt wachtwoord mag niet opnieuw worden gebruikt. De server onthoudt gebruikte wachtwoorden; pogingen om een wachtwoord opnieuw te gebruiken zullen resulteren in foutcode 1134 (New Password Unacceptable).
+
+Een nieuw wachtwoord moet voldoen aan de regels die zijn opgesomd in onderstaande tabel.
+
+[width="100%",cols="5%,95%",]
+|===
+|1. |Een wachtwoord heeft een lengte van minimaal 6 en maximaal 8 tekens (bytes). Als een wachtwoord minder dan 8 tekens heeft wordt het door de server met spaties aangevuld tot 8 tekens. Ieder teken kan alle mogelijke waarden hebben (van 0 tot 255 decimaal).
+|2. |Een teken mag maximaal tweemaal voorkomen.
+|3. |De decimale waarden van een opeenvolgende reeks van 3 tekens mag niet met 1 oplopen (bijvoorbeeld ABC) of afdalen (bijvoorbeeld 876).
+|4. |Spaties (decimale waarde 32) mogen alleen voorkomen in de 7e en 8e byte.
+|5. |Een aaneengesloten reeks letters mag alleen een lengte van 1 of 3 hebben. Letters zijn de tekens A…Z (decimaal 65…90) en a…z (97…122).
+|6. |Een aaneengesloten reeks cijfers mag alleen een lengte van 1 of 3 hebben. Cijfers zijn de tekens 0…9 (decimaal 48…57).
+|7. |Een wachtwoord met tenminste 3 tekens anders dan letters, cijfers en spaties wordt beschouwd als door een computer gegenereerd. De regels 4, 5 en 6 zijn in dat geval niet van toepassing.
+|===
+
+==== Mailboxlimieten
+
+In de berichtendienst bestaat de mogelijkheid om limieten te stellen aan verschillende operaties die door de gebruiker kunnen worden uitgevoerd en aan het aantal malen dat speciale situaties zich voor kunnen doen. Deze limieten zijn in eerste instantie bedoeld om de gevolgen van storingen in de eindsystemen te beperken. Het blijkt bijvoorbeeld in de praktijk dat foutsituaties niet altijd correct worden afgehandeld, wat kan leiden tot zinloze herhalingen van fout verlopende operaties of tot het herhaald verzenden van berichten. Daarnaast kunnen deze limieten bijdragen aan de beveiliging van de berichtendienst en aan een consistent gedrag van de gebruikers.
+
+Limieten worden vastgesteld door beheer. Voor een gemeente worden de limieten volgens een vast model bepaald; voor een afnemer wordt een aantal limieten uitsluitend na overleg vastgesteld.
+
+Op het moment van toetreden worden alle instellingen die voor de gebruiker van toepassing zijn aan de beheerder van het eindsysteem gemeld. Dit geldt niet alleen voor de limieten maar ook voor de andere parameters.
+
+Voor sommige van de genoemde limieten geldt dat als de limiet wordt overschreden, de toegang tot de mailbox voor de rest van de werkdag wordt geblokkeerd. In overleg met beheer dient te worden vastgesteld wat de oorzaak van de overschrijding is. Wanneer de oorzaak van het probleem verholpen is, kan de blokkering door beheer worden opgeheven. Als de oorzaak van het probleem is dat de desbetreffende limieten te krap was gesteld, kan deze uiteraard worden aangepast.
+
+===== Limieten voor alle gebruikers
+
+[width="100%",cols="30%,70%",options="header",]
+|===
+|Limiet |Functie
+|Aantal logons per dag |Bij overschrijding van deze limiet wordt de toegang tot de mailbox geblokkeerd; verdere pogingen om in te loggen worden geweigerd met foutcode 1006 (Logon Limit Exceeded).
+|Incorrecte logons |Dit is een beveiligingsmaatregel. +
+Bij overschrijding wordt de toegang tot de mailbox geblokkeerd; verdere pogingen om in te loggen worden geweigerd met foutcode 1007 (Error Limit Exceeded).
+|Veranderen wachtwoord |Het wachtwoord dient minimaal eens per drie maanden te worden gewijzigd. Vaker wijzigen is uiteraard toegestaan; de beperking op het aantal malen wijzigen per dag is een beveiligingsmaatregel. +
+Bij overschrijding wordt de toegang tot de mailbox niet geblokkeerd; de server weigert alleen de opdracht met code 1002 (Invalid Operation).
+|DeleteMessages |Berichten worden in de berichtendienst automatisch verwijderd door de cleaner. Om die reden is het gebruik van DeleteMessages overbodig. +
+Bij overschrijding wordt de toegang tot de mailbox niet geblokkeerd; de server weigert alleen de opdracht met code 1002 (Invalid Operation).
+|Summarize |Summarize wordt uitsluitend op verzoek ter beschikking gesteld, en alleen aan systemen die op dit onderdeel een aangepaste testprocedure hebben doorlopen. +
+Bij overschrijding wordt de toegang tot de mailbox niet geblokkeerd; de server weigert alleen de opdracht met code 1002 (Invalid Operation).
+|Aantal fouten |Aantal fouten omvat alle foutcodes in alle operaties, met uitzondering van de Logon (deze worden separaat geteld). +
+Bij overschrijding wordt de lopende sessie afgebroken. Daarna wordt de toegang tot de mailbox geblokkeerd; verdere pogingen om in te loggen worden geweigerd met foutcode 1007 (Error Limit Exceeded).
+|===
+
+*Limieten die afhankelijk zijn van het type gebruiker*
+
+Onderstaande limieten zijn voor gemeenten afhankelijk van het inwoneraantal. Voor afnemers wordt van geval tot geval beoordeeld welke waarden gebruikt zullen worden.
+
+[width="100%",cols="30%,70%",options="header",]
+|===
+|Limiet |Functie
+|Aantal berichten in mailbox |Bij overschrijding van dit aantal wordt de mailbox niet geblokkeerd; de situatie is voor de gebruiker niet onmiddellijk herkenbaar. De enige indicatie is dat het aantal op te halen berichten EXACT gelijk is aan de limiet; eindsystemen dienen hierop te testen.
+|Aantal te verzenden berichten |Bij overschrijding van dit aantal wordt de mailbox niet geblokkeerd; alleen verdere PutMessage-operaties worden geweigerd (foutcode 1002, Invalid Operation).
+|Aantal te ontvangen berichten |Deze limiet is normaal gesproken gelijk aan de limiet op het aantal berichten in de mailbox.
+|Aantal ListMessages |Bij overschrijding van dit aantal wordt de mailbox niet geblokkeerd; alleen verdere ListMessages-operaties worden geweigerd (foutcode 1002, Invalid Operation).
+|Waarde LimitNumber |Het maximum aantal berichten waarover in 1 ListMessages-operatie informatie kan worden gevraagd. Indien het gevraagde aantal groter is dan deze limiet volgt een foutmelding.
+|===
+
+==== Beheer berichtendienst
+
+===== Beschikbaarheid en responsetijden berichtendienst
+
+De berichtendienst is wekelijks een aantal uren niet beschikbaar in verband met onderhoudswerkzaamheden. Het onderhoud vindt plaats tussen zondagmiddag 14.00 uur en zondagavond 20.00 uur. Buiten de onderhoudsperiode wordt een beschikbaarheid van 99,5% gegarandeerd op werkdagen tussen 08.30 en 17.00 en van 96% op de overige tijden.
+
+De berichtendienst geeft ook garanties voor de 'normale' aflevertijd van een bericht, dat wil zeggen de tijd waarbinnen een bericht in zijn geheel wordt afgeleverd als alle componenten normaal operationeel zijn. In bijzondere gevallen kan deze termijn overschreden worden. Daarom kent het netwerk ook een maximale aflevertijd. Als deze laatste termijn overschreden wordt, beschouwt het netwerk het aangeboden bericht als onbestelbaar en zal een non-delivery report worden gegenereerd. De aflevertijden zijn afhankelijk van de prioriteit van het bericht:
+
+[.center,width="60%" ,cols="30%,35%,35%",options="header"]
+|===
+|Prioriteit |Normale aflevertijd |Maximale aflevertijd
+|Urgent |15 minuten |4 uur
+|Normal |3 uur |24 uur
+|Low |24 uur |36 uur
+|===
+
+===== Service desk
+
+Voor het dagelijkse operationele beheer van de berichtendienst is een service desk in het leven geroepen. De RvIG-afdeling infrastructuur verricht onder meer de volgende functies:
+
+* Het invoeren van de gegevens van een nieuwe gebruiker en het inrichten van de daarvoor bestemde mailbox(en).
+* Het in overleg tijdelijk of permanent wijzigen van de instellingen (parameters en limieten) voor een gebruiker en het opheffen van de blokkering van gebruikers.
+* Het toekennen van nieuwe wachtwoorden in het geval een gebruiker het wachtwoord heeft laten verlopen of het wachtwoord is vergeten.
+* Het uitzonderen van de mailbox van de gebruiker van de eerdergenoemde 'cleaning' in het geval de gebruiker niet in staat is om bijtijds zijn mailbox te legen.
+
+Daarnaast houdt de service desk toezicht op het naleven van de gebruiksregels van het netwerk. Als het gedrag van een gebruiker systematisch afwijkt van het vastgestelde gebruikersprofiel zal contact met de gebruiker worden opgenomen. In goed overleg zal worden nagegaan of het mogelijk is om het netwerkgedrag zodanig te wijzigen dat alsnog voldaan wordt aan het gewenste gebruikersprofiel.
+
+===== Verhelpen storingen
+
+De RvIG-afdeling infrastructuur kan ook behulpzaam zijn bij het opsporen en verhelpen van storingen, en ook bij het herstellen van de gevolgen van storingen. In het bijzonder kan de RvIG-afdeling infrastructuur:
+
+* Aan de hand van de interne logging van de berichtendienst gedetailleerder informatie geven over opgetreden fouten.
+* Het berichtenverkeer van een gebruiker stap-voor-stap volgen om exact vast te stellen wat de oorzaak is van bepaalde fouten.
+* Bemiddelen bij het opnieuw doen versturen van eerder verzonden berichten door andere BRP-systemen, wanneer door een storing in het eindsysteem berichten verloren zijn gegaan. Overigens zal dit slechts bij uitzondering nodig zijn; in de meeste gevallen zullen deze berichten in de berichtendienst zelf nog beschikbaar zijn, omdat ze daar tenminste twee werkdagen blijven opgeslagen.
+* Het beschikbaar stellen van uitwijknummers indien de nummers die normaal gebruikt worden om de berichtendienst te bereiken niet beschikbaar zijn. Om van deze faciliteit gebruik te maken is het uiteraard wel van belang dat de beheerder van het eindsysteem de aan te spreken nummers eenvoudig kan wijzigen.
+
+=== Beheereisen berichtendienst
+
+==== Beschikbaarheid en responstijden
+
+Hiervoor gelden de volgende regels:
+
+[upperalpha]
+. Minimaal eens per werkdag (00.00-24.00 uur) moeten de via de berichtendienst binnengekomen berichten opgehaald worden en moeten de via de berichtendienst te verzenden berichten aangeboden worden aan het netwerk, ongeacht of een partij is aangesloten op de berichtendienst, de BRP Berichten API of de webservice StuurGBABericht.
+. In het berichtenbestand opgenomen berichten moeten binnen één werkdag verwerkt zijn en een eventueel antwoord moet dan ter verzending zijn aangeboden.
+. De gemeentelijke systemen en bijbehorende procedures moeten zodanig opgezet zijn dat de burger voor al zijn enkelvoudige handelingen, waarbij zo'n systeem betrokken is, slechts één keer aan de balie hoeft te verschijnen, waarbij een redelijke afhandelingstijd gewaarborgd is. Actualiseringen moeten binnen één werkdag zijn aangebracht en de synchronisatieberichten moeten dan ter verzending zijn aangeboden.
+. Voor de gemeentelijke systemen die zijn aangesloten op de mailboxserver geldt de eis dat ze aan gemiddeld 1 uur per dag verbinding met de Message Store services voldoende hebben voor het verwerken van de inkomende en aanleveren van de uitgaande berichten. Een systeem mag geen verbinding met de Message Store services onderhouden als dat niet noodzakelijk is.
+. Voor de gemeentelijke systemen geldt de eis dat eventuele herhaalberichten van via de mailboxserver verzonden berichten moeten worden verstuurd indien na 3 werkdagen een verwacht antwoord nog niet is ontvangen.
+
+De eisen genoemd onder A, D en E zijn ook van toepassing op de afnemerssystemen. Volledige ontvangst van alle berichten in die afnemerssystemen (b.v. spontane mutaties of antwoorden op ad hoc vragen) is dus alleen gegarandeerd als die afnemerssystemen minimaal eens per werkdag de binnengekomen berichten via de berichtendienst ophalen. De eisen genoemd onder A, B, C (in de zin van verwerking synchronisatieberichten en het op basis daarvan ter verzending aanbieden van spontane berichten) en E zijn ook van toepassing op BRP-V.
+
+==== Beveiliging
+
+De beveiligingsmaatregelen binnen de verschillende onderdelen van het BRP-systeem zullen met elkaar in evenwicht moeten zijn en tegen de volgende bedreigingen gericht moeten zijn:
+
+* Inzage van BRP-gegevens door onbevoegden;
+* Wijziging van BRP-gegevens door onbevoegden;
+* Moedwillige handelingen (sabotage, acties) om de goede werking van de BRP te verstoren.
+
+Daarbij zullen zowel preventieve (gericht op het voorkomen van bedreigingen) als correctieve maatregelen (gericht op het beperken van gevolgen) genomen moeten worden.
+
+De beveiligingsmaatregelen voor de BRP zijn vereist met het oog op de bescherming van de persoonlijke levenssfeer (privacy). Voor een uitgebreide beschouwing over de relatie tussen privacybescherming en te nemen beveiligingsmaatregelen wordt verwezen naar de Baseline informatiebeveiliging overheid (BIO). Ook in hoofdstuk 2 van het LO BRP wordt hierop ingegaan.
+
+Voor wat betreft de beveiligingsmaatregelen kan het totale BRP-systeem worden onderverdeeld in de volgende vijf onderdelen:
+
+* De Centrale Voorzieningen (berichtendienst, BRP-V, RNI, TMV, IKP) inclusief centrale beheersfuncties;
+* De afnemerssystemen;
+* De gemeentelijke systemen;
+* Transportnetwerk;
+* Alternatieve media.
+
+===== De centrale voorzieningen
+
+De belangrijkste beveiligingsmaatregelen zijn:
+
+* Logging van alle relevante gebeurtenissen.
+* Fysieke afscherming van alle netwerkcomponenten.
+* Versleuteling van de over het transportnetwerk te zenden BRP-gegevens, zodat inzage, infiltratie en wijzigingen door onbevoegden tijdens het datacommunicatietransport praktisch onmogelijk wordt.
+* Authenticiteitscontrole van de ontvangen gegevens, waardoor aan de ontvangstzijde zekerheid verkregen kan worden over de identiteit van de afzender.
+
+===== De afnemerssystemen
+
+De afnemerssystemen dienen te voldoen aan de in de Algemene Verordening gegevensbescherming (AVG) genoemde specifieke beveiligingsmaatregelen voor de persoonsgegevens. Daarnaast dienen deze systemen, voor zover de afnemer behoort tot de overheid, te voldoen aan de Baseline Informatiebeveiliging Overheid (BIO). Vanuit BRP-oogpunt is er geen reden om aanvullingen of wijzigingen op deze voorschriften te eisen.
+
+===== De gemeentelijke systemen
+
+De gemeentelijke systemen zijn voor wat betreft de daarin opgeslagen BRP-gegevens onderworpen aan de in de Wet BRP vastgelegde regelgeving inzake de bescherming van de persoonlijke levenssfeer. Aan de daaruit voortvloeiende noodzaak tot beveiliging van de BRP-gegevens wordt in ieder geval voldaan als de Baseline Informatiebeveiliging Overheid (BIO) materieel wordt gevolgd.
+
+===== Transportnetwerk
+
+Bij elk transportnetwerk waarvan het gebruik binnen de BRP is toegestaan, wordt er gebruik gemaakt van een Public Key Infrastructure (PKI). Deze PKI wordt beheerd door RvIG. Binnen de PKI krijgen alleen gebruikers met een geldig certificaat toegang tot de centrale voorzieningen. Ook verzorgt de PKI het versleutelen van het dataverkeer.
+
+Een lijst met transportnetwerken die beschikbaar zijn voor toegang tot de centrale voorzieningen is opvraagbaar bij RvIG.
+
+===== Alternatieve media
+
+Aan het transport van alternatieve media met BRP-berichten worden in het kader van de beveiliging de volgende eisen gesteld:
+
+* De geadresseerde moet bij ontvangst van de bestanden, zonder deze te raadplegen, vast kunnen stellen:
+** Uit hoeveel bestanden de zending dient te bestaan;
+** Het aantal berichten dat de ontvangen bestanden bevatten;
+** De afzender aan wie ontvangst van de bestanden gemeld dient te worden.
+
+Dit kan bijvoorbeeld door deze gegevens te vermelden in een begeleidende brief.
+
+* De beveiliging van de bestanden dient met voldoende waarborgen omkleed te zijn, om onbedoeld wissen van gegevens, beschadiging tijdens het transport en ongeautoriseerde toegang tot de bestanden en de gegevens erop, zowel voor, tijdens als na het transport te voorkomen.
+* Zowel geadresseerde als afzender dienen zodanig gespecificeerd te worden dat gedurende het transport op geen enkel moment onduidelijkheid kan bestaan over waar de bestanden naar toe moeten en van wie ze afkomstig zijn.
+
+Onder geadresseerde wordt hier verstaan degene binnen de ontvangende organisatie die verantwoordelijk gesteld is voor ontvangst en eventuele verwerking van de gegevens in de bestanden. Onder afzender wordt in deze context verstaan degene die binnen de verzendende organisatie verantwoordelijk is voor de verzonden bestanden.
+
+De geadresseerde stelt vast of het transport van de bestanden naar behoren verlopen is en of het juiste aantal bestanden ontvangen is. Hiervan doet de geadresseerde onverwijld melding aan de afzender.
+
