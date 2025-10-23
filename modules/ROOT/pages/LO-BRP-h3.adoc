@@ -465,8 +465,7 @@ scopevrkaanduiding . vorige
 
 scopevrkaanduiding ::=:: a-z
 
-[#e8920]
-selectiedatum ::=:: 19.89.20
+selectiedatum ::=:: [[e8920]]19.89.20
 
 string ::=:: string symbool | +
 symbool
@@ -480,8 +479,7 @@ Een waarde die valt onder de in <<_gegevenswoordenboek>> bij de definitie van ee
 
 txtop ::=:: GA1 | GAA | OGA1 | OGAA
 
-[#e8930]
-vandaagdatum ::=:: 19.89.30
+vandaagdatum ::=:: [[e8930]]19.89.30
 
 vergelijking ::=:: numrubriekaanduiding relop numrubriekwaarde | +
 alfanumrubriekaanduiding relop alfanumrubriekwaarde | +
