@@ -60,20 +60,20 @@ Tekstuele wijzigingen
 
 // Hoofdstukken en bijlagen zijn opgeslagen in afzonderlijke bestanden 
 
-include::LO BRP h1.adoc[]
+include::LO-BRP-h1.adoc[]
 
-include::LO BRP h2.adoc[]
+include::LO-BRP-h2.adoc[]
 
-include::LO BRP h3.adoc[]
+include::LO-BRP-h3.adoc[]
 
-include::LO BRP h4.adoc[]
+include::LO-BRP-h4.adoc[]
 
-include::LO BRP h5.adoc[]
+include::LO-BRP-h5.adoc[]
 
-include::LO BRP h6.adoc[]
-
-[appendix]
-include::LO BRP bA.adoc[]
+include::LO-BRP-h6.adoc[]
 
 [appendix]
-include::LO BRP bB.adoc[]
+include::LO-BRP-bA.adoc[]
+
+[appendix]
+include::LO-BRP-bB.adoc[]
