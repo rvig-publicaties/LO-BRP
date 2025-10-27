@@ -1143,7 +1143,7 @@ De berichtencyclus ziet er voor alle API's hetzelfde uit en is weergegeven in on
 
 [.text-center]
 .Schematische weergave ad hoc vragen via API's
-image:resources/images/image15.svg[width=567,height=243]
+image::image15.svg[width=567,height=243]
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -2060,7 +2060,7 @@ Als de gezochte persoon ook daar niet is te vinden, of als de identificatie in h
 
 Wanneer deze PL in een gemeente is ingeschreven en is geblokkeerd in verband met een verhuizing dan wel emigratie dan wel is opgeschort met reden "E" of "M", dan wordt een <<Tf21,Tf21>>-bericht gestuurd aan de gebeurtenisgemeente met foutreden "B". Is de PL ingeschreven in een gemeente en de bijhouding van de PL opgeschort met reden "O" (overleden), dan moet worden gecontroleerd of de ingangsdatum geldigheid van het rechtsfeit voor de opschorting ligt. Als dat niet het geval is, wordt er een <<Tf21,Tf21>>-bericht gestuurd met foutreden "O".
 
-a|image:resources/images/image33.svg[width=24] |Is de PL geblokkeerd i.v.m. vestiging in een gemeente of is de PL actueel, dan wordt een <<Tf21,Tf21>>-bericht gestuurd met foutreden "B"
+a|image:image33.svg[width=24] |Is de PL geblokkeerd i.v.m. vestiging in een gemeente of is de PL actueel, dan wordt een <<Tf21,Tf21>>-bericht gestuurd met foutreden "B"
 
 Is de bijhouding van de PL opgeschort met reden "O" (overleden), dan wordt een <<Tf21,Tf21>>-bericht gestuurd met foutreden "O".
 
@@ -2069,7 +2069,7 @@ Is de bijhouding van de PL opgeschort met reden "O" (overleden), dan wordt een <
 | |Ook indien het <<Tb02,Tb02>>-bericht niet te verwerken is, omdat er een actualisering moet worden uitgevoerd die inhoudt dat er een historische categorie zou moeten worden tussengevoegd (de Ingangsdatum geldigheid in het <<Tb02,Tb02>>-bericht ligt op of voor de Ingangsdatum geldigheid in de betrokken actuele categorie op de PL), wordt een <<Tf21,Tf21>>-bericht gestuurd met foutreden "N". Indien echter het <<Tb02,Tb02>>-bericht aanleiding is voor het uitvoeren van een actualisering waarbij in de historie element <<e8410,84.10>> wordt opgenomen, kan de Ingangsdatum geldigheid in het <<Tb02,Tb02>>-bericht op of voor de Ingangsdatum geldigheid van de betrokken actuele categorie op de PL liggen en is dat geen reden om een <<Tf21,Tf21>>-bericht te sturen.
 
 Een <<Tf21,Tf21>>-bericht met foutreden "N" wordt ook gestuurd indien de PL is opgeschort en het <<Tb02,Tb02>>-bericht gegevens over het overlijden bevat, waarbij de Ingangsdatum geldigheid in het <<Tb02,Tb02>>-bericht (<<e8510,06.85.10>>) voor de Datum opschorting bijhouding op de PL (<<e6710,07.67.10>>) ligt.
-a| image:resources/images/image34.svg[width=24] |
+a| image:image34.svg[width=24] |
 Wanneer in de RNI één unieke persoon te vinden is waarvan het A-nummer gelijk is aan het A-nummer uit categorie Persoon in het <<Tb02,Tb02>>-bericht en er geen reden is om een foutbericht met reden "B" of "O" te sturen, dan wordt gecontroleerd of het bericht een overlijdensmelding betreft. Als dat niet het geval is, wordt een <<Tf21,Tf21>>-bericht gestuurd met foutreden "N".
 |[.number]#&#x2464;# |Afhankelijk van de foutreden in de kop van het <<Tf21,Tf21>>-bericht worden de volgende acties ondernomen:
 
