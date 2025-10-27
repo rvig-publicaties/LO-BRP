@@ -21,6 +21,7 @@
 :appendix-refsig: bijlage
 :stem: latexmath
 :eqnums: all
+:imagesdir: ../images
 
 //Wijzigingenoverzicht - geen genummerde paragraaf 
 
