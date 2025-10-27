@@ -872,19 +872,19 @@ Elk in de inhoud van een bericht op te nemen element wordt als volgt opgenomen: 
 
 [.text-center]
 .Opbouw van een element
-image::../images/image8.svg[width=126,height=60]
+image::image8.svg[width=126,height=60]
 
 Alle elementen die tot één categorie of tabelregel behoren, worden voorafgegaan door het betreffende categorie- of tabelnummer en een categorie- of tabelregellengte. De categorie- of tabelregellengte bevat de lengte in tekens van de inhoud van de betreffende categorie of tabelregel. De categorielengte is de som van alle daarin voorkomende velden ELN, ELL en ELI.
 
 [.text-center]
 .Opbouw van een categorie
-image::../images/image10.svg[width=325,height=75]
+image::image10.svg[width=325,height=75]
 
 Het totaal van op te nemen gegevens wordt voorafgegaan door de berichtlengte van de berichtinhoud. De berichtlengte is de som van de lengtes van alle daarin voorkomende velden CAN, CAL, ELN, ELL en ELI.
 
 [.text-center]
 .Opbouw van een bericht
-image::../images/image12.svg[width=566,height=82]
+image::image12.svg[width=566,height=82]
 
 Ter illustratie van bovenbeschreven opbouw van de inhoud volgt onderstaand een voorbeeldbericht. Voor de nummering van de rubrieken wordt verwezen naar het Gegevenswoordenboek.
 
@@ -908,7 +908,7 @@ Dit bericht is als volgt opgebouwd (totale lengte = 97):
 
 [.text-center]
 .Opbouw van de inhoud van het voorbeeldbericht
-image::../images/image14.svg[width=566,height=124]
+image::image14.svg[width=566,height=124]
 
 ===== Opbouw van de inhoud in JSON-formaat
 In JSON-formaat wordt de structuur van berichten weergegeven door gegevenselementen te organiseren in sleutel/waarde-paren, waarbij een waarde een tekenreeks, een getal, een letterlijke waarde true, false of null, een lijst (array) of een ander JSON-object kan zijn. Daarbij worden de elementen uit de berichtkop op het hoogste niveau opgenomen. Bij de meeste berichten is het laatste element een element dat de inhoud van het bericht bevat: een structuur die (delen van) een persoonslijst bevat, wordt aangeduid met plData en de structuur die (delen van) een tabelregel bevat, wordt aangeduid met tabelData. Deze structuur is als volgt opgebouwd:
@@ -1573,7 +1573,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Vervolginschrijving
-image::../images/image16.svg[width=566,height=608]
+image::image16.svg[width=566,height=608]
 
 ===== Inleiding
 
@@ -1701,7 +1701,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Vervolginschrijving van gemeente naar RNI
-image::../images/image27.svg[width=566,height=486]
+image::image27.svg[width=566,height=486]
 
 ===== Inleiding
 
@@ -1784,7 +1784,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Vervolginschrijving van RNI naar gemeente
-image::../images/image29.svg[width=566,height=610]
+image::image29.svg[width=566,height=610]
 
 ===== Inleiding
 
@@ -1906,7 +1906,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Toevallige geboorte
-image::../images/image31.svg[width=566,height=665]
+image::image31.svg[width=566,height=665]
 
 ===== Inleiding
 
@@ -1995,7 +1995,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Toevallige gebeurtenis
-image::../images/image32.svg[width=566,height=682]
+image::image32.svg[width=566,height=682]
 
 ===== Inleiding
 
@@ -2110,7 +2110,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Opnemen verwijsgegevens
-image::../images/image35.svg[width=566,height=618]
+image::image35.svg[width=566,height=618]
 
 ===== Inleiding
 
@@ -2214,7 +2214,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Wijzigen A-nummer in de verwijsgegevens
-image::../images/image36.svg[width=566,height=617]
+image::image36.svg[width=566,height=617]
 
 ===== Inleiding
 
@@ -2294,7 +2294,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Opnemen/wijzigen verblijfstitel
-image::../images/image37.svg[width=566,height=514]
+image::image37.svg[width=566,height=514]
 
 ===== Inleiding
 
@@ -2371,7 +2371,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Synchronisatie met BRP-V
-image::../images/image38.svg[width=566,height=328]
+image::image38.svg[width=566,height=328]
 
 ===== Inleiding
 
@@ -2400,7 +2400,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Synchronisatievraag
-image::../images/image39.svg[width=566,height=553]
+image::image39.svg[width=566,height=553]
 
 ===== Inleiding
 
@@ -2448,7 +2448,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Synchroniciteit met BRP-V
-image::../images/image40.svg[width=566,height=329]
+image::image40.svg[width=566,height=329]
 
 ===== Inleiding
 
@@ -2470,7 +2470,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Aanvragen BSN voorraad
-image::../images/image41.svg[width=566,height=243]
+image::image41.svg[width=566,height=243]
 
 ===== Beschrijving
 
@@ -2507,7 +2507,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Presentievraag
-image::../images/image42.svg[width=566,height=243]
+image::image42.svg[width=566,height=243]
 
 ===== Beschrijving
 
@@ -2553,7 +2553,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Opvragen persoonslijst
-image::../images/image43.svg[width=566,height=243]
+image::image43.svg[width=566,height=243]
 
 ===== Beschrijving
 
@@ -2597,7 +2597,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Opvragen afnemersindicaties
-image::../images/image44.svg[width=566,height=243]
+image::image44.svg[width=566,height=243]
 
 ===== Beschrijving
 
@@ -2659,7 +2659,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Controleren PL
-image::../images/image45.svg[width=566,height=243]
+image::image45.svg[width=566,height=243]
 
 ===== Beschrijving
 
@@ -2740,7 +2740,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave VraagVoorraadAnrs
-image::../images/image46.svg[width=567,height=243]
+image::image46.svg[width=567,height=243]
 
 ===== Beschrijving
 
@@ -2867,7 +2867,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Verzoek ABO
-image::../images/image47.svg[width=566,height=243]
+image::image47.svg[width=566,height=243]
 
 ===== Beschrijving
 
@@ -2943,7 +2943,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Reactie op Verzoek ABO
-image::../images/image48.svg[width=566,height=243]
+image::image48.svg[width=566,height=243]
 
 ===== Beschrijving
 
@@ -3012,7 +3012,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Opvragen statusverzoek ABO
-image::../images/image49.svg[width=567,height=243]
+image::image49.svg[width=567,height=243]
 
 ===== Beschrijving
 
@@ -4294,7 +4294,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Spontane gegevensverstrekkingen BRP-V
-image::../images/image50.svg[width=566,height=765]
+image::image50.svg[width=566,height=765]
 
 ===== Inleiding
 
@@ -4333,7 +4333,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Selecties BRP-V
-image::../images/image51.svg[width=566,height=339]
+image::image51.svg[width=566,height=339]
 
 ===== Inleiding
 
@@ -4363,7 +4363,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Ad hoc vragen in BRP-V
-image::../images/image52.svg[width=566,height=760]
+image::image52.svg[width=566,height=760]
 
 ===== Inleiding
 
@@ -4432,7 +4432,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Ad hoc adresvragen in BRP-V
-image::../images/image53.svg[width=566,height=827]
+image::image53.svg[width=566,height=827]
 
 ===== Inleiding
 
@@ -4524,7 +4524,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave plaatsen Afnemersindicatie bij PL in BRP-V
-image::../images/image54.svg[width=566,height=740]
+image::image54.svg[width=566,height=740]
 
 ===== Inleiding
 
@@ -4598,7 +4598,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave verwijderen Afnemersindicatie bij PL in BRP-V
-image::../images/image55.svg[width=566,height=563]
+image::image55.svg[width=566,height=563]
 
 ===== Inleiding
 
@@ -4638,7 +4638,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Ad hoc (adres)vragen via de webservice
-image::../images/image56.svg[width=566,height=243]
+image::image56.svg[width=566,height=243]
 
 ===== Beschrijving
 
@@ -6639,7 +6639,7 @@ ifdef::backend-html5[''']
 ****
 [.text-center]
 .Schematische weergave Onderhoud autorisatietabel
-image::../images/image57.svg[width=566,height=284]
+image::image57.svg[width=566,height=284]
 ****
 
 ===== Inleiding
@@ -6685,7 +6685,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Onderhoud landelijke tabellen
-image::../images/image58.svg[width=566,height=243]
+image::image58.svg[width=566,height=243]
 
 ===== Inleiding
 
@@ -6814,7 +6814,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Protocolfouten
-image::../images/image59.svg[width=566,height=292]
+image::image59.svg[width=566,height=292]
 
 ===== Inleiding
 
@@ -6831,7 +6831,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Vrij bericht
-image::../images/image60.svg[width=566,height=162]
+image::image60.svg[width=566,height=162]
 
 ===== Inleiding
 
@@ -6856,7 +6856,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Vrij bericht via webservice
-image::../images/image61.svg[width=566,height=162]
+image::image61.svg[width=566,height=162]
 
 ===== Inleiding
 
@@ -6881,7 +6881,7 @@ ifdef::backend-html5[''']
 
 [.text-center]
 .Schematische weergave Verwerkbevestiging
-image::../images/image62.svg[width=565,height=744]
+image::image62.svg[width=565,height=744]
 
 ===== Inleiding
 
@@ -7176,13 +7176,13 @@ Dit geeft dus de volgende globale lay-out voor een single-volume set:
 
 [.text-center]
 .Single volume set lay-out
-image::../images/image63.svg[width=416,height=93]
+image::image63.svg[width=416,height=93]
 
 Voor een volume set die uit meerdere volumes bestaat, is de opbouw als volgt:
 
 [.text-center]
 .Meerdere volumes set layout
-image::../images/image64.svg[width=416,height=332]
+image::image64.svg[width=416,height=332]
 
 ===== Stuurrecords
 
@@ -7190,7 +7190,7 @@ Stuurrecords worden geplaatst aan het begin van ieder volume. Een stuurrecord he
 
 [.text-center]
 .Stuurrecord lay-out
-image::../images/image65.svg[width=459,height=112]
+image::image65.svg[width=459,height=112]
 
 De velden in het stuurrecord hebben de volgende betekenis:
 
@@ -7221,7 +7221,7 @@ Ook in het PutMessage formaat zitten nog een aantal elementen die overbodig zijn
 
 [.text-center]
 .PutMessage en GetMessage elementen
-image::../images/image66.svg[width=566,height=367]
+image::image66.svg[width=566,height=367]
 
 De volgende waarden worden voorgeschreven voor deze elementen:
 
@@ -7248,7 +7248,7 @@ Een bericht binnen de data records komt er dan als volgt uit te zien (uitgaande 
 
 [.text-center]
 .Bericht lay-out
-image::../images/image67.svg[width=416,height=356]
+image::image67.svg[width=416,height=356]
 
 Aangezien de recordlengte altijd groter is dan 87 bytes, past het vaste gedeelte van de PutMessage (header, envelope, en de eerste 8 bytes van de body) altijd volledig binnen het eerste record. De eerste 5 bytes van de body bevatten de lengte van de body zelf (inclusief de opcode, maar exclusief het lengte veld). Het aantal vervolgrecords nv is daaruit als volgt te bepalen:
 
@@ -7289,7 +7289,7 @@ Anderzijds hoeft het afsluitrecord geen informatie te bevatten. De meest eenvoud
 
 [.text-center]
 .Afsluitrecord lay-out
-image::../images/image68.svg[width=416,height=96]
+image::image68.svg[width=416,height=96]
 
 ==== Logische aspecten bij gebruik CSV
 

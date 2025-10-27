@@ -54,7 +54,7 @@ MTA en MS voldoen volledig aan de X.400-1988 standaard; voor de MBS geldt dit ui
 
 [.text-center]
 .Componenten van de berichtendienst
-image::../images/image70.svg[width=365,height=266]
+image::image70.svg[width=365,height=266]
 
 Alle genoemde componenten vallen onder de verantwoordelijkheid van de berichtendienst; in X.400 terminologie: ze behoren tot het _BRP management domein_ (in bovenstaande figuur aangegeven met een ellips). Dit is ook noodzakelijk, omdat de berichtendienst (voorlopig) de volledige verantwoordelijkheid draagt voor het berichtenverkeer tussen de BRP-systemen. Het BRP management domein is een _Private Management Domain_ (PRMD) volgens de X.400 definitie.
 
@@ -84,7 +84,7 @@ Een _protocol_ is in dit model een exacte specificatie hoe de diensten van een o
 [.text-center]
 [#abstract-model-van-aansluiting-op-de-berichtendienst]
 .Abstract model van aansluiting op de berichtendienst
-image::../images/image74.svg[width=324,height=87]
+image::image74.svg[width=324,height=87]
 
 Er zij hier nogmaals benadrukt dat er *geen* verplichting is voor de eindsystemen om alle genoemde functionele elementen stuk voor stuk te implementeren. In de nu volgende beschrijvingen wordt er bijvoorbeeld van uitgegaan dat het BAS specifiek is voor de BRP-applicatie, en de MC een algemene interfacemodule voor de berichtendienst. Zo bepaalt het BAS *wanneer* er berichten moeten worden verstuurd; de MC regelt *hoe* er in dat geval een verbinding wordt opgebouwd. Evenzo bepaalt het BAS de *waarden* van de parameters die bij het verzenden van een bericht moeten worden ingevuld; de MC bepaalt hoe de parameters *verpakt* moeten worden. Bij de beschrijving van de BUS zal blijken dat de functionaliteit van de MC minimaal is, en dat het dus heel goed mogelijk is om in een BRP-systeem BAS en MC te integreren tot één implementatiemodule.
 
@@ -98,7 +98,7 @@ Het sPd-protocol is een interactief protocol, dat werkt volgens een vast model: 
 
 [.text-center]
 .Componenten van de Mailbox Server
-image::../images/image75.svg[width=522,height=187]
+image::image75.svg[width=522,height=187]
 
 De Mailbox Server (MBS) als geheel bestaat uit de volgende delen:
 
@@ -890,11 +890,11 @@ Een Result of Confirmation kan foutmeldingen in de vorm van een code bevatten. V
 
 [.text-center]
 .Structuur LogonRequest
-image::../images/image76.svg[width=436,height=194]
+image::image76.svg[width=436,height=194]
 
 [.text-center]
 .Structuur LogonConfirmation
-image::../images/image77.svg[width=435,height=194]
+image::image77.svg[width=435,height=194]
 
 ====== PutMessage
 
@@ -939,19 +939,19 @@ image::../images/image77.svg[width=435,height=194]
 
 [.text-center]
 .Structuur PutEnvelope
-image::../images/image78.svg[width=435,height=194]
+image::image78.svg[width=435,height=194]
 
 [.text-center]
 .Structuur MessageHeading
-image::../images/image79.svg[width=436,height=195]
+image::image79.svg[width=436,height=195]
 
 [.text-center]
 .Structuur MessageBody
-image::../images/image80.svg[width=435,height=194]
+image::image80.svg[width=435,height=194]
 
 [.text-center]
 .Structuur PutMessageConfirmation
-image::../images/image81.svg[width=435,height=194]
+image::image81.svg[width=435,height=194]
 
 ====== GetMessage
 
@@ -1005,35 +1005,35 @@ image::../images/image81.svg[width=435,height=194]
 
 [.text-center]
 .Structuur GetMessage
-image::../images/image82.svg[width=435,height=194]
+image::image82.svg[width=435,height=194]
 
 [.text-center]
 .Structuur MSEntry
-image::../images/image83.svg[width=436,height=194]
+image::image83.svg[width=436,height=194]
 
 [.text-center]
 .Structuur GetEnvelope
-image::../images/image84.svg[width=435,height=194]
+image::image84.svg[width=435,height=194]
 
 [.text-center]
 .Structuur MessageHeading
-image::../images/image85.svg[width=435,height=194]
+image::image85.svg[width=435,height=194]
 
 [.text-center]
 .Structuur MessageBody
-image::../images/image86.svg[width=435,height=194]
+image::image86.svg[width=435,height=194]
 
 [.text-center]
 .Structuur StatusReport
-image::../images/image87.svg[width=435,height=194]
+image::image87.svg[width=435,height=194]
 
 [.text-center]
 .Structuur DeliveryReport
-image::../images/image88.svg[width=436,height=195]
+image::image88.svg[width=436,height=195]
 
 [.text-center]
 .Structuur GetMessageConfirmation
-image::../images/image89.svg[width=435,height=194]
+image::image89.svg[width=435,height=194]
 
 ====== DeleteMessages
 
@@ -1053,11 +1053,11 @@ image::../images/image89.svg[width=435,height=194]
 
 [.text-center]
 .Structuur DeleteMessages
-image::../images/image90.svg[width=436,height=195]
+image::image90.svg[width=436,height=195]
 
 [.text-center]
 .Structuur DeleteMessagesConfirmation
-image::../images/image91.svg[width=436,height=194]
+image::image91.svg[width=436,height=194]
 
 ====== ListMessages
 
@@ -1092,19 +1092,19 @@ image::../images/image91.svg[width=436,height=194]
 
 [.text-center]
 .Structuur ListMessages
-image::../images/image92.svg[width=436,height=194]
+image::image92.svg[width=436,height=194]
 
 [.text-center]
 .Structuur ListResult
-image::../images/image93.svg[width=435,height=194]
+image::image93.svg[width=435,height=194]
 
 [.text-center]
 .Structuur MSList
-image::../images/image94.svg[width=436,height=195]
+image::image94.svg[width=436,height=195]
 
 [.text-center]
 .Structuur ListMessagesConfirmation
-image::../images/image95.svg[width=436,height=194]
+image::image95.svg[width=436,height=194]
 
 ====== SummarizeMessages
 
@@ -1133,15 +1133,15 @@ image::../images/image95.svg[width=436,height=194]
 
 [.text-center]
 .Structuur SummarizeMessages
-image::../images/image96.svg[width=436,height=194]
+image::image96.svg[width=436,height=194]
 
 [.text-center]
 .Structuur SummarizeResult
-image::../images/image97.svg[width=436,height=195]
+image::image97.svg[width=436,height=195]
 
 [.text-center]
 .Structuur SummarizeConfirmation
-image::../images/image98.svg[width=436,height=194]
+image::image98.svg[width=436,height=194]
 
 ====== ChangePassword
 
@@ -1158,11 +1158,11 @@ image::../images/image98.svg[width=436,height=194]
 
 [.text-center]
 .Structuur ChangePassword
-image::../images/image99.svg[width=435,height=194]
+image::image99.svg[width=435,height=194]
 
 [.text-center]
 .Structuur ChangePasswordConfirmation
-image::../images/image100.svg[width=434,height=194]
+image::image100.svg[width=434,height=194]
 
 ====== Logoff
 
@@ -1178,11 +1178,11 @@ image::../images/image100.svg[width=434,height=194]
 
 [.text-center]
 .Structuur Logoff
-image::../images/image101.svg[width=436,height=194]
+image::image101.svg[width=436,height=194]
 
 [.text-center]
 .Structuur LogoffConfirmation
-image::../images/image102.svg[width=436,height=194]
+image::image102.svg[width=436,height=194]
 
 ====== Overige operaties
 
@@ -1198,11 +1198,11 @@ image::../images/image102.svg[width=436,height=194]
 
 [.text-center]
 .Structuur NoOperationConfirmation
-image::../images/image103.svg[width=434,height=194]
+image::image103.svg[width=434,height=194]
 
 [.text-center]
 .Structuur Termination
-image::../images/image104.svg[width=434,height=194]
+image::image104.svg[width=434,height=194]
 
 ===== Gebruikte codes
 
@@ -1598,7 +1598,7 @@ We kunnen een turbo-sPd-operatie definiëren analoog aan de definities in <<_spd
 
 [.text-center]
 .Structuur ROSE header
-image::../images/image105.svg[width=434,height=194]
+image::image105.svg[width=434,height=194]
 
 *Gebruik*
 

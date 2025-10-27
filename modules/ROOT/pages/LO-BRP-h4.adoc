@@ -28,15 +28,15 @@ De PL is onderverdeeld in een aantal categorieën met bij elkaar horende gegeven
 
 [.text-center]
 .Overzicht persoonslijst ingezetene
-image::../images/image1.svg[width=566,height=546]
+image::image1.svg[width=566,height=546]
 
 [.text-center]
 .Overzicht persoonslijst voormalig ingezetene
-image::../images/image2.svg[width=566,height=632]
+image::image2.svg[width=566,height=632]
 
 [.text-center]
 .Overzicht persoonslijst nooit-ingezetene
-image::../images/image3.svg[width=566,height=335]
+image::image3.svg[width=566,height=335]
 
 Het cijfer boven de verbindingslijn geeft aan hoeveel maal de betreffende categorie op een PL actueel kan voorkomen:
 
@@ -55,7 +55,7 @@ Een verwijzing bestaat uit een enkele categorie. Dit wordt weergegeven in onders
 
 [.text-center,#overzicht-verwijzing]
 .Overzicht verwijzing
-image::../images/image4.svg[width=445,height=42]
+image::image4.svg[width=445,height=42]
 
 ==== De afnemersindicatie
 
@@ -72,7 +72,7 @@ In <<overzicht-tabellen>> worden de binnen de BRP voorgeschreven tabellen weerge
 [.text-center]
 [#overzicht-tabellen]
 .Overzicht tabellen
-image::../images/image5.svg[width=566,height=446]
+image::image5.svg[width=566,height=446]
 
 ==== Afgeleide gegevens
 
@@ -102,7 +102,7 @@ De opbouw van het element- en rubrieknummer is weergegeven in onderstaand schema
 
 [.text-center]
 .Samenstelling rubriek- en elementnummer
-image::../images/image6.svg[width=239,height=162]
+image::image6.svg[width=239,height=162]
 
 Het rubrieknummer bestaat uit zes cijfers. De eerste twee cijfers geven het categorienummer op de PL, de code voor verwijsgegevens of de code voor de landelijke tabel weer. De laatste vier cijfers geven het elementnummer aan. Het elementnummer is weer opgebouwd uit een tweecijferig groepsnummer gevolgd door een nummer voor het gegeven binnen de groep.
 
