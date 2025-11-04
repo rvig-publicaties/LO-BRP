@@ -22,6 +22,8 @@
 :stem: latexmath
 :eqnums: all
 :imagesdir: ../images
+//Antora ui-bundle overrides:
+:page-toclevels: 3
 
 //Wijzigingenoverzicht - geen genummerde paragraaf 
 
