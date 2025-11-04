@@ -23,6 +23,7 @@
 :eqnums: all
 :imagesdir: ../images
 //Antora ui-bundle overrides:
+:page-role: home
 :page-toclevels: 3
 
 //Wijzigingenoverzicht - geen genummerde paragraaf 
