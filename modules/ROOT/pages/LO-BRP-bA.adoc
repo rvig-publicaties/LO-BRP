@@ -345,7 +345,7 @@ Per afnemer wordt een administratie bijgehouden van het aantal bevragingen aan B
 
 ==== Protocollering
 
-De privacyprocedures zoals beschreven in hoofdstuk twee van het Logisch Ontwerp (LO) BRP zijn van kracht. Het systeem protocolleert daarom alle verstrekkingen, onder meer voor het inzagerecht van de burger. De bewaartermijn van deze protocolgegevens is 20 jaar.
+De privacyprocedures zoals beschreven in <<_bijhouding>> van het Logisch Ontwerp (LO) BRP zijn van kracht. Het systeem protocolleert daarom alle verstrekkingen, onder meer voor het inzagerecht van de burger. De bewaartermijn van deze protocolgegevens is 20 jaar.
 
 De registratie van protocolgegevens geschiedt volgens de in het LO gestelde eisen.
 
@@ -384,7 +384,7 @@ De verstrekkingen aan afnemers en de raadplegingen door gemeenten en RNI zijn vo
 
 De afnemer, gemeente en RNI krijgen toegang tot BRP-V met een naam/wachtwoord-combinatie. Dit wachtwoord moet eenmaal per drie maanden worden gewijzigd. Bij het verkrijgen van toegang mag het wachtwoord niet verlopen zijn. Is het wachtwoord wel verlopen, dan wordt een foutbericht met reden "X" verstuurd.
 
-De afnemer, gemeenten en RNI kunnen het wachtwoord wijzigen met de service changePassword. Daartoe worden het nieuwe wachtwoord als parameter meegestuurd.
+De afnemer, gemeente en RNI kunnen het wachtwoord wijzigen met de service changePassword. Daartoe wordt het nieuwe wachtwoord als parameter meegestuurd.
 
 In het wachtwoord van de webservices van BRP-V zijn de volgende tekens toegestaan:
 
@@ -557,7 +557,7 @@ De beveiligingsmaatregelen binnen de verschillende onderdelen van het BRP-systee
 
 Daarbij zullen zowel preventieve (gericht op het voorkomen van bedreigingen) als correctieve maatregelen (gericht op het beperken van gevolgen) genomen moeten worden.
 
-De beveiligingsmaatregelen voor de BRP zijn vereist met het oog op de bescherming van de persoonlijke levenssfeer (privacy). Voor een uitgebreide beschouwing over de relatie tussen privacybescherming en te nemen beveiligingsmaatregelen wordt verwezen naar de Baseline informatiebeveiliging overheid (BIO). Ook in hoofdstuk 2 van het LO BRP wordt hierop ingegaan.
+De beveiligingsmaatregelen voor de BRP zijn vereist met het oog op de bescherming van de persoonlijke levenssfeer (privacy). Voor een uitgebreide beschouwing over de relatie tussen privacybescherming en te nemen beveiligingsmaatregelen wordt verwezen naar de Baseline informatiebeveiliging overheid (BIO). Ook in <<_bijhouding>> van het LO BRP wordt hierop ingegaan.
 
 Voor wat betreft de beveiligingsmaatregelen kan het totale BRP-systeem worden onderverdeeld in de volgende vijf onderdelen:
 

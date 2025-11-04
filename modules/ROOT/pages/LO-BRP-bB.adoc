@@ -1000,6 +1000,7 @@ Op basis van de inhoud van de categorieën 04/54 op de PL dient het volgende te 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
+[#ConversieprocedureReisdocumenten]
 === Conversieprocedure reisdocumenten (31-1-2015)
 
 ****
@@ -1204,6 +1205,7 @@ Toegevoegd:
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
+[#VasteKoppelingBAGBRP]
 === Vaste koppeling BAG-BRP (01-01-2024)
 
 ****
