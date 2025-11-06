@@ -4,8 +4,8 @@
 :doctype: book
 :docinfo1:
 :version-label: Versie
-:revnumber: 2025.Q4
-:revdate: 11 november 2025
+:revnumber: 2026.Q1
+:revdate: 1 januari 2026
 :!chapter-signifier:
 :appendix-caption: Bijlage
 :table-caption: Tabel
@@ -30,7 +30,7 @@
 [discrete]
 == Overzicht wijzigingen
 
-De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2025.Q3) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2025.Q4. Deze versie treedt op 11 november 2025 in werking.
+De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2025.Q4) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2026.Q1. Deze versie treedt op 1 januari 2026 in werking.
 
 W181 Invoering BSN op CN
 
