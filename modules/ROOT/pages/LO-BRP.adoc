@@ -34,11 +34,11 @@ De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versi
 
 W181 Invoering BSN op CN
 
-* Paragrafen 2.2.1.2, 2.3.1.1, 2.3.1.2, 2.3.1.3, 2.3.2.6, 4.6
+* <<_inschrijving_als_ingezetene_op_grond_van_een_aangifte_van_verblijf_en_adres>>, <<_inschrijving_bij_een_rni_loket>>, <<_inschrijving_op_basis_van_een_opgave_van_een_rni_deelnemer>>, <<_soorten_persoonslijsten_bij_niet_ingezetenen>>, <<WijzigingBuitenlandsAdresBijIngezetenenEmigratie>>, <<_beschrijving_van_de_elementen>>
 
 Tekstuele wijzigingen
 
-* Paragrafen 4.6, 4.11.3, 5.3.4, 5.3.12.3
+* <<_beschrijving_van_de_elementen>>, <<_beschrijving_van_de_elementen_2>>, <<_ad_hoc_vragen_via_de_berichtendienst>>, <<_controles_6>>
 
 
 :sectnums:

@@ -872,7 +872,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Paragrafen 2.2.1.2, 2.3.1.1, 2.3.1.2, 2.3.1.3, 2.3.2.6, 4.6</p>
+<p><a href="#_inschrijving_als_ingezetene_op_grond_van_een_aangifte_van_verblijf_en_adres">paragraaf 2.2.1.2</a>, <a href="#_inschrijving_bij_een_rni_loket">paragraaf 2.3.1.1</a>, <a href="#_inschrijving_op_basis_van_een_opgave_van_een_rni_deelnemer">paragraaf 2.3.1.2</a>, <a href="#_soorten_persoonslijsten_bij_niet_ingezetenen">paragraaf 2.3.1.3</a>, <a href="#WijzigingBuitenlandsAdresBijIngezetenenEmigratie">paragraaf 2.3.2.6</a>, <a href="#_beschrijving_van_de_elementen">paragraaf 4.6</a></p>
 </li>
 </ul>
 </div>
@@ -882,7 +882,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Paragrafen 4.6, 4.11.3, 5.3.4, 5.3.12.3</p>
+<p><a href="#_beschrijving_van_de_elementen">paragraaf 4.6</a>, <a href="#_beschrijving_van_de_elementen_2">paragraaf 4.11.3</a>, <a href="#_ad_hoc_vragen_via_de_berichtendienst">paragraaf 5.3.4</a>, <a href="#_controles_6">paragraaf 5.3.12.3</a></p>
 </li>
 </ul>
 </div>
@@ -8531,7 +8531,7 @@ Een PL van een voormalig ingezetene is een PL die via een vervolginschrijving na
 </div>
 </div>
 <div class="sect4">
-<h5 id="_wijziging_buitenlands_adres_bij_ingezetenen_emigratie">2.3.2.6. Wijziging buitenlands adres (bij ingezetenen: Emigratie)</h5>
+<h5 id="WijzigingBuitenlandsAdresBijIngezetenenEmigratie">2.3.2.6. Wijziging buitenlands adres (bij ingezetenen: Emigratie)</h5>
 <div class="paragraph">
 <p>De ingezetenen-procedure 'emigratie' geldt in de RNI als 'wijziging buitenlands adres'. Deze actualisering wordt uitgevoerd als van een persoon nieuwe gegevens omtrent het buitenlands adres bekend worden. Dat kan zijn:</p>
 </div>
@@ -44107,7 +44107,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <div class="sect3">
 <h4 id="_opbouw_van_api_berichten">5.1.9. Opbouw van API berichten</h4>
 <div class="paragraph">
-<p>De API&#8217;s van BRP-V zijn uitsluitend te benaderen via Diginetwerk. Het zijn web API&#8217;s waarmee over HTTPS gecommuniceerd kan worden. Headers en response codes zijn dan ook conform de HTTP standaard (RFC 7230) en de input en output bestaan altijd uit JSON-berichten (content-type: application/json, of application/hal&#43;json). In foutsituaties wordt een HTTP-statusbericht gestuurd conform RFC 7231 en RFC 7807 in problem/json (content-type: application/problem&#43;json). Voor elk API endpoint worden in <a href="#_berichten_in_verband_met_de_bijhouding">paragraaf 5.2</a> en <a href="#_berichten_in_verband_met_verstrekkingen">paragraaf 5.3</a> achtereenvolgens beschreven: de functionaliteit van het endpoint, de methode en de URI waarmee het endpoint aangeroepen kan worden, de parameters die in de URI moeten worden gebruikt (path-parameters en query parameters), de elementen die in de input JSON mogen of zelfs moeten worden meegegeven bij het aanroepen van de API, en de elementen die in de output JSON worden terug gegeven door de API. De API&#8217;s zijn benaderbaar via de basis-URLs die zijn gepubliceerd op de website van RvIG.</p>
+<p>De API&#8217;s van BRP-V zijn uitsluitend te benaderen via Diginetwerk. Het zijn web API&#8217;s waarmee over HTTPS gecommuniceerd kan worden. Headers en response codes zijn dan ook conform de HTTP standaard (RFC 7230) en de input en output bestaan altijd uit JSON-berichten (content-type: application/json, of application/hal&#43;json). In foutsituaties wordt een HTTP-statusbericht gestuurd conform RFC 7231 en RFC 7807 in problem/json (content-type: application/problem&#43;json). Voor elk API endpoint worden in <a href="#_berichtuitwisseling_via_de_brp_berichten_api">paragraaf 5.1.10</a>, <a href="#_berichten_in_verband_met_de_bijhouding">paragraaf 5.2</a>, <a href="#_berichten_in_verband_met_verstrekkingen">paragraaf 5.3</a> en <a href="#_overige_berichten_2">paragraaf 5.4</a> achtereenvolgens beschreven: de functionaliteit van het endpoint, de methode en de URI waarmee het endpoint aangeroepen kan worden, de parameters die in de URI moeten worden gebruikt (path-parameters en query parameters), de elementen die in de input JSON mogen of zelfs moeten worden meegegeven bij het aanroepen van de API, en de elementen die in de output JSON worden terug gegeven door de API. De API&#8217;s zijn benaderbaar via de basis-URLs die zijn gepubliceerd op de website van RvIG.</p>
 </div>
 <div class="paragraph">
 <p>De berichtencyclus ziet er voor alle API&#8217;s hetzelfde uit en is weergegeven in onderstaand diagram.</p>
@@ -70795,7 +70795,7 @@ E-mailadres: <a href="mailto:info@rvig.nl">info@rvig.nl</a></p>
 <div class="sect3">
 <h4 id="_protocollering_7">A.5.2. Protocollering</h4>
 <div class="paragraph">
-<p>De privacyprocedures zoals beschreven in hoofdstuk twee van het Logisch Ontwerp (LO) BRP zijn van kracht. Het systeem protocolleert daarom alle verstrekkingen, onder meer voor het inzagerecht van de burger. De bewaartermijn van deze protocolgegevens is 20 jaar.</p>
+<p>De privacyprocedures zoals beschreven in <a href="#_bijhouding">hoofdstuk 2</a> van het Logisch Ontwerp (LO) BRP zijn van kracht. Het systeem protocolleert daarom alle verstrekkingen, onder meer voor het inzagerecht van de burger. De bewaartermijn van deze protocolgegevens is 20 jaar.</p>
 </div>
 <div class="paragraph">
 <p>De registratie van protocolgegevens geschiedt volgens de in het LO gestelde eisen.</p>
@@ -71297,7 +71297,7 @@ Bij overschrijding wordt de lopende sessie afgebroken. Daarna wordt de toegang t
 <p>Daarbij zullen zowel preventieve (gericht op het voorkomen van bedreigingen) als correctieve maatregelen (gericht op het beperken van gevolgen) genomen moeten worden.</p>
 </div>
 <div class="paragraph">
-<p>De beveiligingsmaatregelen voor de BRP zijn vereist met het oog op de bescherming van de persoonlijke levenssfeer (privacy). Voor een uitgebreide beschouwing over de relatie tussen privacybescherming en te nemen beveiligingsmaatregelen wordt verwezen naar de Baseline informatiebeveiliging overheid (BIO). Ook in hoofdstuk 2 van het LO BRP wordt hierop ingegaan.</p>
+<p>De beveiligingsmaatregelen voor de BRP zijn vereist met het oog op de bescherming van de persoonlijke levenssfeer (privacy). Voor een uitgebreide beschouwing over de relatie tussen privacybescherming en te nemen beveiligingsmaatregelen wordt verwezen naar de Baseline informatiebeveiliging overheid (BIO). Ook in <a href="#_bijhouding">hoofdstuk 2</a> van het LO BRP wordt hierop ingegaan.</p>
 </div>
 <div class="paragraph">
 <p>Voor wat betreft de beveiligingsmaatregelen kan het totale BRP-systeem worden onderverdeeld in de volgende vijf onderdelen:</p>
@@ -74696,7 +74696,7 @@ Voor categorie 08 Verblijfplaats: schrappen van 11.50 en groep 12; verplicht voo
 <div id="footer">
 <div id="footer-text">
 Versie 2025.Q4<br>
-Last updated 2025-11-04 10:12:38 +0100
+Last updated 2025-11-06 14:33:18 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">
