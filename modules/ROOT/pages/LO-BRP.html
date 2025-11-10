@@ -504,8 +504,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Logisch Ontwerp BRP</h1>
 <div class="details">
-<span id="revnumber">versie 2025.Q4,</span>
-<span id="revdate">11 november 2025</span>
+<span id="revnumber">versie 2026.Q1,</span>
+<span id="revdate">1 januari 2026</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhoud</div>
@@ -702,7 +702,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_brp_api_personen">5.3.12. BRP API - Personen</a></li>
 <li><a href="#_brp_api_reisdocumenten">5.3.13. BRP API - Reisdocumenten</a></li>
 <li><a href="#_brp_api_verblijfplaatshistorie">5.3.14. BRP API - Verblijfplaatshistorie</a></li>
-<li><a href="#_berichten_2">5.3.15. Berichten</a></li>
+<li><a href="#_brp_protocolleringsoverzicht_api">5.3.15. BRP Protocolleringsoverzicht API</a></li>
+<li><a href="#_berichten_2">5.3.16. Berichten</a></li>
 </ul>
 </li>
 <li><a href="#_overige_berichten_2">5.4. Overige berichten</a>
@@ -744,7 +745,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_terugmeldvoorziening_tmv">6.3. Terugmeldvoorziening (TMV)</a>
 <ul class="sectlevel3">
-<li><a href="#_beschrijving_18">6.3.1. Beschrijving</a></li>
+<li><a href="#_beschrijving_19">6.3.1. Beschrijving</a></li>
 </ul>
 </li>
 <li><a href="#_brp_verstrekkingsvoorziening_2">6.4. BRP Verstrekkingsvoorziening</a>
@@ -757,13 +758,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_informatieknooppunt_ikp">6.5. Informatieknooppunt (IKP)</a>
 <ul class="sectlevel3">
-<li><a href="#_beschrijving_19">6.5.1. Beschrijving</a></li>
+<li><a href="#_beschrijving_20">6.5.1. Beschrijving</a></li>
 <li><a href="#_verwerking">6.5.2. Verwerking</a></li>
 </ul>
 </li>
 <li><a href="#_web_applicatie_landelijke_aanpak_adreskwaliteit_walaa">6.6. Web Applicatie Landelijke Aanpak Adreskwaliteit (WALAA)</a>
 <ul class="sectlevel3">
-<li><a href="#_beschrijving_20">6.6.1. Beschrijving</a></li>
+<li><a href="#_beschrijving_21">6.6.1. Beschrijving</a></li>
 </ul>
 </li>
 </ul>
@@ -864,7 +865,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <h2 id="_overzicht_wijzigingen" class="discrete">Overzicht wijzigingen</h2>
 <div class="paragraph">
-<p>De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2025.Q3) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2025.Q4. Deze versie treedt op 11 november 2025 in werking.</p>
+<p>De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2025.Q4) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2026.Q1. Deze versie treedt op 1 januari 2026 in werking.</p>
 </div>
 <div class="paragraph">
 <p>W181 Invoering BSN op CN</p>
@@ -1198,6 +1199,9 @@ Reisdocument
 </li>
 <li>
 <p>ProtocolleringsOverzichtModule (POM). Dit is een tool die vanuit de vastgelegde verstrekkingen een voor de burger leesbaar overzicht produceert van die verstrekkingen. Een POM-overzicht wordt uitsluitend op verzoek van de burger gemaakt;</p>
+</li>
+<li>
+<p>ProtocolleringsOverzichtAanvraagModule (POAM). Dit is een tool waarmee MijnOverheid via een API een protocolleringsoverzicht kan opvragen voor een burger. Daartoe roept de POAM de webservice van de POM aan om dat overzicht te genereren en in de Berichtenbox van de burger te plaatsen;</p>
 </li>
 <li>
 <p>PIVA-BRP-Koppeling (PBK). Dit is een systeem dat de uitwisseling van persoonslijstgegevens tussen de drie landen in Caribisch Nederland, de drie bijzondere gemeenten in Caribisch Nederland en Europees Nederland ondersteunt. De belangrijkste reden voor het bestaan van PBK is dat op deze manier het A-nummer wordt hergebruikt als iemand vanuit een van de zeven genoemde registraties naar een van de andere zes verhuist;</p>
@@ -39982,6 +39986,24 @@ Endpoint in het kader van het experimentbesluit dataminimalisatie BRP, alleen te
 </ul>
 </div>
 </li>
+<li>
+<p>API&#8217;s in verband met het opvragen van het protocolleringsoverzicht door MijnOverheid:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>BRP Protocolleringsoverzicht API</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#brp_protocolleringsoverzicht_api">/protocolleringsoverzicht</a><br>
+API waarmee MijnOverheid een protocolleringsoverzicht kan opvragen voor een burger, bij de POM. Het protocolleringsoverzicht wordt in de MijnOverheid Berichtenbox van de burger geplaatst.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -43043,7 +43065,7 @@ Mailbox Tabelberichten; uitwisseling van tabelberichten (<a href="#Dt01">Dt01</a
 <p>De inhoud van BRP-berichten is sterk gerelateerd aan de structuur van de BRP-gegevens. De inhoud is opgebouwd uit één of meer rubriekinhouden, voorafgegaan door de identificatie van de desbetreffende categorie of tabel en de respectievelijke elementnummers.</p>
 </div>
 <div class="paragraph">
-<p>Deze paragraaf bevat een beschrijving van de opbouwmethode van de kop van het bericht en de inhoud ervan. Bij die beschrijving moet onderscheid worden gemaakt tussen de opbouw van berichten die worden uitgewisseld via de mailboxserver en de webservice StuurGBAbericht en tussen berichten die worden uitgewisseld via de BRP Berichten API. In het eerste geval wordt gebruik gemaakt van het zogenaamde TLV-formaat (Tag, Length, Value) en in het tweede geval van een JSON-formaat. In paragraaf <a href="#_berichten">paragraaf 5.2.23</a>, <a href="#_berichten_2">paragraaf 5.3.15</a> en <a href="#_berichten_3">paragraaf 5.4.9</a> is voor ieder bericht afzonderlijk aangegeven welke elementen in de inhoud kunnen voorkomen. Hierbij wordt, indien van toepassing, aangegeven dat lengte 0 (nul) voor de element- en/of categorielengte mag worden gebruikt.</p>
+<p>Deze paragraaf bevat een beschrijving van de opbouwmethode van de kop van het bericht en de inhoud ervan. Bij die beschrijving moet onderscheid worden gemaakt tussen de opbouw van berichten die worden uitgewisseld via de mailboxserver en de webservice StuurGBAbericht en tussen berichten die worden uitgewisseld via de BRP Berichten API. In het eerste geval wordt gebruik gemaakt van het zogenaamde TLV-formaat (Tag, Length, Value) en in het tweede geval van een JSON-formaat. In paragraaf <a href="#_berichten">paragraaf 5.2.23</a>, <a href="#_berichten_2">paragraaf 5.3.16</a> en <a href="#_berichten_3">paragraaf 5.4.9</a> is voor ieder bericht afzonderlijk aangegeven welke elementen in de inhoud kunnen voorkomen. Hierbij wordt, indien van toepassing, aangegeven dat lengte 0 (nul) voor de element- en/of categorielengte mag worden gebruikt.</p>
 </div>
 <div class="paragraph">
 <p>Gezien het grote aantal mogelijkheden in berichtsamenstelling en de variëteit in rubriekdefinities is voor het uitwisselingsformaat gekozen voor een universele en flexibele opbouwmethode.</p>
@@ -45215,17 +45237,17 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.2</p>
+<p><a href="#_vervolginschrijving_van_gemeente_naar_gemeente">5.2.2</a></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vervolginschrijving</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vervolginschrijving van gemeente naar gemeente</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.3</p>
+<p><a href="#_vervolginschrijving_van_gemeente_naar_rni">5.2.3</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45235,7 +45257,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.4</p>
+<p><a href="#_vervolginschrijving_van_rni_naar_gemeente">5.2.4</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45245,7 +45267,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.5</p>
+<p><a href="#_toevallige_geboorte">5.2.5</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45255,7 +45277,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.6</p>
+<p><a href="#_toevallige_gebeurtenis">5.2.6</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45265,7 +45287,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.7</p>
+<p><a href="#_opnemen_verwijsgegevens">5.2.7</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45275,7 +45297,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.8</p>
+<p><a href="#_wijzigen_anummer_in_de_verwijsgegevens">5.2.8</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45290,7 +45312,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.9</p>
+<p><a href="#_opnemenwijzigen_verblijfstitel_2">5.2.9</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45305,7 +45327,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.10</p>
+<p><a href="#_synchronisatie_met_brp_verstrekkingen">5.2.10</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45315,7 +45337,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.11</p>
+<p><a href="#_synchronisatievraag">5.2.11</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45330,7 +45352,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.12</p>
+<p><a href="#_synchroniciteit_met_brp_verstrekkingen">5.2.12</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45354,7 +45376,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.13</p>
+<p><a href="#_webservice_aanvragen_bsn_voorraad_bij_bvbsn">5.2.13</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45365,7 +45387,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.14</p>
+<p><a href="#_webservice_presentievraag_aan_bvbsn">5.2.14</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45384,7 +45406,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.15</p>
+<p><a href="#_opvragen_persoonslijst_bij_brp_verstrekkingen">5.2.15</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45395,7 +45417,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.16</p>
+<p><a href="#_opvragen_afnemersindicaties">5.2.16</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45406,7 +45428,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.17</p>
+<p><a href="#_controleren_pl">5.2.17</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45425,7 +45447,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.18</p>
+<p><a href="#_aanvragen_a_nummervoorraad_bij_brp_verstrekkingen_via_webservice">5.2.18</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45436,7 +45458,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.19</p>
+<p><a href="#_aanvragen_a_nummervoorraad_bij_brp_verstrekkingen_via_api">5.2.19</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45455,7 +45477,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.20</p>
+<p><a href="#_indienen_verzoek_abo_aan_rni">5.2.20</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45466,7 +45488,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.21</p>
+<p><a href="#_beantwoorden_verzoek_abo_door_rni">5.2.21</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -45477,7 +45499,7 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.2.22</p>
+<p><a href="#_statusverzoeken_abo_opvragen_aan_rni">5.2.22</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53549,7 +53571,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.2</p>
+<p><a href="#_spontane_gegevensverstrekkingen">5.3.2</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53559,7 +53581,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.3</p>
+<p><a href="#_selecties">5.3.3</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53569,7 +53591,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.4</p>
+<p><a href="#_ad_hoc_vragen_via_de_berichtendienst">5.3.4</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53579,7 +53601,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.5</p>
+<p><a href="#_ad_hoc_adresvragen_via_de_berichtendienst">5.3.5</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53589,7 +53611,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.6</p>
+<p><a href="#_plaatsen_afnemersindicatie_bij_pl_2">5.3.6</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53599,7 +53621,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.7</p>
+<p><a href="#_verwijderen_afnemersindicatie_bij_pl">5.3.7</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53623,7 +53645,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.8</p>
+<p><a href="#AdHocAdresVraagViaWebservice">5.3.8</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53639,7 +53661,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.9</p>
+<p><a href="#_berichtenverkeer_via_de_webservice_stuurgbabericht">5.3.9</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53663,7 +53685,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.10</p>
+<p><a href="#_brp_aantal_bewoners_api">5.3.10</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53673,7 +53695,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.11</p>
+<p><a href="#_brp_api_bewoning">5.3.11</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53683,7 +53705,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.12</p>
+<p><a href="#_brp_api_personen">5.3.12</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53693,7 +53715,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.13</p>
+<p><a href="#_brp_api_reisdocumenten">5.3.13</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -53703,11 +53725,26 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.3.14</p>
+<p><a href="#_brp_api_verblijfplaatshistorie">5.3.14</a></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BRP API - Verblijfplaatshistorie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>API&#8217;s in verband met het opvragen van het protocolleringsoverzicht door MijnOverheid:</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="#_brp_protocolleringsoverzicht_api">5.3.15</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BRP Protocolleringsoverzicht API</p></td>
 </tr>
 </tbody>
 </table>
@@ -55113,7 +55150,7 @@ Als de resultaatcode een foutcode bevat, dan wordt hier een toelichting op de fo
 </div>
 <div class="paragraph">
 <p><strong>&lt;gbabericht&gt;</strong><br>
-Bevat het complete BRP-bericht. De codering is Teletex of UTF-8. Het BRP-bericht is opgebouwd zoals in <a href="#_opbouw_van_de_berichtendienst_berichten">paragraaf 5.1.7</a> en in <a href="#_berichten">paragraaf 5.2.23</a>, <a href="#_berichten_2">paragraaf 5.3.15</a> en <a href="#_berichten_3">paragraaf 5.4.9</a> is beschreven. Het <a href="#Vb01">Vb01</a>-bericht wordt niet via deze webservice ontvangen.</p>
+Bevat het complete BRP-bericht. De codering is Teletex of UTF-8. Het BRP-bericht is opgebouwd zoals in <a href="#_opbouw_van_de_berichtendienst_berichten">paragraaf 5.1.7</a> en in <a href="#_berichten">paragraaf 5.2.23</a>, <a href="#_berichten_2">paragraaf 5.3.16</a> en <a href="#_berichten_3">paragraaf 5.4.9</a> is beschreven. Het <a href="#Vb01">Vb01</a>-bericht wordt niet via deze webservice ontvangen.</p>
 </div>
 <div class="paragraph">
 <p>Als er geen bericht gevonden wordt, is dit element afwezig.</p>
@@ -55134,7 +55171,7 @@ Referentie bevat gegevens waarmee het bij onduidelijkheden en dergelijke mogelij
 </div>
 <div class="paragraph">
 <p><strong>&lt;gbabericht&gt;</strong><br>
-Het te versturen BRP-bericht. De codering is Teletex of UTF-8. Het BRP-bericht is opgebouwd zoals in <a href="#_opbouw_van_de_berichtendienst_berichten">paragraaf 5.1.7</a> en in <a href="#_berichten">paragraaf 5.2.23</a>, <a href="#_berichten_2">paragraaf 5.3.15</a> en <a href="#_berichten_3">paragraaf 5.4.9</a> is beschreven. Het <a href="#Vb01">Vb01</a>-bericht wordt niet via deze webservice verstuurd.</p>
+Het te versturen BRP-bericht. De codering is Teletex of UTF-8. Het BRP-bericht is opgebouwd zoals in <a href="#_opbouw_van_de_berichtendienst_berichten">paragraaf 5.1.7</a> en in <a href="#_berichten">paragraaf 5.2.23</a>, <a href="#_berichten_2">paragraaf 5.3.16</a> en <a href="#_berichten_3">paragraaf 5.4.9</a> is beschreven. Het <a href="#Vb01">Vb01</a>-bericht wordt niet via deze webservice verstuurd.</p>
 </div>
 <div class="paragraph">
 <p><strong>&lt;actie&gt;<br>
@@ -56436,13 +56473,6 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">indicatieGezagMinderjarige</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Afgeleid van <a href="#e8310">11.83.10</a> Aanduiding gegevens in onderzoek</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">datumIngangOnderzoekGezag</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gebaseerd op <a href="#e8320">11.83.20</a> Datum ingang onderzoek</p></td>
@@ -57635,13 +57665,6 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">datumIngangGeldigheid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gebaseerd op <a href="#e8510">08.85.10</a> Ingangsdatum geldigheid</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PA.VP.02 Type verblijfplaats</p></td>
@@ -57893,14 +57916,6 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">datumIngangGeldigheid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Afgeleid van <a href="#e8310">08.83.10</a> Aanduiding gegevens in onderzoek</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">datumVan</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Afgeleid van <a href="#e8310">08.83.10</a> Aanduiding gegevens in onderzoek</p></td>
@@ -58019,14 +58034,6 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">inOnderzoek</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
 <td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">datumIngangGeldigheid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Afgeleid van <a href="#e8310">08.83.10</a> Aanduiding gegevens in onderzoek</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -58186,14 +58193,6 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">datumIngangGeldigheid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Afgeleid van <a href="#e8310">08.83.10</a> Aanduiding gegevens in onderzoek</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">datumVan</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Afgeleid van <a href="#e8310">08.83.10</a> Aanduiding gegevens in onderzoek</p></td>
@@ -58225,14 +58224,6 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">inOnderzoek</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
 <td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">datumIngangGeldigheid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Afgeleid van <a href="#e8310">08.83.10</a> Aanduiding gegevens in onderzoek</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -58901,26 +58892,6 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">datumIngangOnderzoek</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gebaseerd op <a href="#e8320">10.83.20</a> Datum ingang onderzoek</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">indicatieGezagMinderjarige</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e3210">11.32.10</a> Indicatie gezag minderjarige</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">omschrijving</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Omschrijving van de indicatie zoals vermeld in tabel <a href="#t61">61</a> Gezagverhoudingtabel</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -60103,9 +60074,200 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_berichten_2">5.3.15. Berichten</h4>
+<h4 id="_brp_protocolleringsoverzicht_api">5.3.15. BRP Protocolleringsoverzicht API</h4>
 <div class="sect4">
-<h5 id="_inleiding_31">5.3.15.1. Inleiding</h5>
+<h5 id="_beschrijving_17">5.3.15.1. Beschrijving</h5>
+<div class="paragraph">
+<p>De BRP protocolleringsoverzicht API is een API van de POAM, die uitsluitend is te gebruiken door MijnOverheid en een protocolleringsoverzicht opvraagt via de webservice van de POM en deze vervolgens aan de burger verstrekt via de MijnOverheid Berichtenbox.</p>
+</div>
+<div class="paragraph">
+<p>URI: {basis_url}/protocolleringsoverzicht</p>
+</div>
+<div class="paragraph">
+<p>Method: POST</p>
+</div>
+<div class="paragraph">
+<p>Voor gedetailleerde functionele en technische specificaties van de BRP Protocolleringsoverzicht API, zie de website van RvIG.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_input_18">5.3.15.2. Input</h5>
+<div class="paragraph">
+<p>De input is een JSON-object waarin de volgende elementen kunnen voorkomen:</p>
+</div>
+<table class="tableblock frame-all grid-all center" style="width: 99%;">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element naam</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Verplicht?</th>
+<th class="tableblock halign-left valign-top">Mogelijke waarden / corresponderende rubriek in BRP-V</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bsn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Het burgerservicenummer van de burger voor wie het protocolleringsoverzicht wordt aangevraagd.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">begindatum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De begindatum van de periode waarvoor het protocolleringsoverzicht wordt opgevraagd. Deze mag niet voor 6 januari 2013 liggen, aangezien er voor deze datum geen protocolleringen zijn vastgelegd.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">einddatum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De einddatum van de periode waarvoor het protocolleringsoverzicht wordt opgevraagd (inclusief). Deze moet minimaal één dag voor de systeemdatum liggen en maximaal 1 jaar na de begindatum.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_controles_9">5.3.15.3. Controles</h5>
+<div class="paragraph">
+<p>Na ontvangst van het request bericht controleert de API:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Of de syntax van het request bericht en de waarden van de zoekcriteria voldoen aan de eisen in de vorige paragraaf;</p>
+</li>
+<li>
+<p>Of de vraag afkomstig is van MijnOverheid.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Als aan deze twee voorwaarden is voldaan, wordt het verzoek in behandeling genomen en verwerkt. De POAM roept de webservice van de POM aan om het protocolleringsoverzicht van de burger met het opgegeven BSN op te vragen. Na ontvangst plaatst de POAM het overzicht in de MijnOverheid Berichtenbox van de burger.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_output_22">5.3.15.4. Output</h5>
+<div class="paragraph">
+<p>De output is een JSON-object met de volgende elementen:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 15%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element naam</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Mogelijke waarden / corresponderende rubriek in BRP-V</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geeft aan of het verzoek succesvol is verwerkt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bericht</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De tekst van de succes- of de foutmelding. Bij succes is dat: “De aanvraag is succesvol ingediend”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_foutsituaties_3">5.3.15.5. Foutsituaties</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 15%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Foutsituatie</th>
+<th class="tableblock halign-left valign-top">HTTP status code</th>
+<th class="tableblock halign-left valign-top">Foutmelding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Het BSN is niet meegestuurd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BSN is verplicht</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Het BSN is niet geldig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Het BSN moet een positief getal zijn van maximaal 9 posities. BSNs van 8 posities worden zowel met als zonder voorloopnul geaccepteerd</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De begindatum is niet meegestuurd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Begindatum is verplicht</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De begindatum heeft een ongeldig formaat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Begindatum moet formaat jjjj-mm-dd hebben</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De begindatum is niet groter dan of gelijk aan 6 januari 2013</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De begindatum moet groter of gelijk zijn aan 6 januari 2013</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De einddatum is niet meegestuurd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einddatum is verplicht</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De einddatum heeft een ongeldig formaat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einddatum moet formaat jjjj-mm-dd hebben</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De einddatum ligt op of na de huidige datum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De einddatum moet kleiner zijn dan de systeemdatum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De begindatum ligt na de einddatum.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De begindatum moet kleiner of gelijk zijn aan de einddatum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De periode tussen de begin- en einddatum is groter dan 1 jaar.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De periode mag niet groter zijn dan 1 jaar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">De aanvraag is al in behandeling</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Er is al een aanvraag in behandeling voor de gevraagde periode voor deze burger</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Overige technische fouten</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Er is een interne serverfout opgetreden</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_berichten_2">5.3.16. Berichten</h4>
+<div class="sect4">
+<h5 id="_inleiding_31">5.3.16.1. Inleiding</h5>
 <div class="paragraph">
 <p>In de beschrijving van de berichten worden de volgende onderdelen vermeld:</p>
 </div>
@@ -60158,7 +60320,7 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="_beschrijving_van_de_brp_berichten_2">5.3.15.2. Beschrijving van de BRP-berichten</h5>
+<h5 id="_beschrijving_van_de_brp_berichten_2">5.3.16.2. Beschrijving van de BRP-berichten</h5>
 <div id="Af01" class="hdlist">
 <table>
 <colgroup>
@@ -62446,7 +62608,7 @@ Inhoud bevat
 <hr>
 </div>
 <div class="sect4">
-<h5 id="_overzicht_foutredenen_en_statusmeldingen_2">5.3.15.3. Overzicht foutredenen en statusmeldingen</h5>
+<h5 id="_overzicht_foutredenen_en_statusmeldingen_2">5.3.16.3. Overzicht foutredenen en statusmeldingen</h5>
 <div class="paragraph">
 <p>De in de berichten voorkomende foutredenen en statusmeldingen zijn in de onderstaande opsomming opgenomen. Indien bij de omschrijving van de betekenis "datum" of "code" voorkomt, wil dat zeggen dat in het betreffende bericht ook de bedoelde datum of gemeentecode voorkomt.</p>
 </div>
@@ -62799,7 +62961,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.4.2</p>
+<p><a href="#_onderhoud_autorisatietabel">5.4.2</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -62817,7 +62979,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.4.3</p>
+<p><a href="#_onderhoud_landelijke_tabellen">5.4.3</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -62827,7 +62989,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.4.4</p>
+<p><a href="#_brp_tabellen_api">5.4.4</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -62845,7 +63007,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.4.5</p>
+<p><a href="#_protocolfouten_2">5.4.5</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -62855,7 +63017,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.4.6</p>
+<p><a href="#_vrij_bericht">5.4.6</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -62865,7 +63027,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.4.7</p>
+<p><a href="#_vrij_bericht_via_webservice">5.4.7</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -62875,7 +63037,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.4.8</p>
+<p><a href="#_verwerkbevestiging">5.4.8</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -62901,7 +63063,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.4.3</p>
+<p><a href="#_onderhoud_landelijke_tabellen">5.4.3</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -62911,7 +63073,7 @@ Inhoud bevat
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>5.4.7</p>
+<p><a href="#_vrij_bericht_via_webservice">5.4.7</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -63106,7 +63268,7 @@ Na controle of het bericht afkomstig is van RvIG wordt de wijziging afhankelijk 
 <div class="sect3">
 <h4 id="_brp_tabellen_api">5.4.4. BRP Tabellen API</h4>
 <div class="sect4">
-<h5 id="_beschrijving_17">5.4.4.1. Beschrijving</h5>
+<h5 id="_beschrijving_18">5.4.4.1. Beschrijving</h5>
 <div class="paragraph">
 <p>De BRP Tabellen API is een API waarmee het voor gemeenten, RNI en afnemers mogelijk is om de landelijke tabellen te raadplegen.</p>
 </div>
@@ -63191,7 +63353,7 @@ Na controle of het bericht afkomstig is van RvIG wordt de wijziging afhankelijk 
 </table>
 </div>
 <div class="sect4">
-<h5 id="_input_18">5.4.4.2. Input</h5>
+<h5 id="_input_19">5.4.4.2. Input</h5>
 <div class="paragraph">
 <p>De input bestaat uit een aantal optionele query parameters:</p>
 </div>
@@ -63239,13 +63401,13 @@ Na controle of het bericht afkomstig is van RvIG wordt de wijziging afhankelijk 
 </div>
 </div>
 <div class="sect4">
-<h5 id="_controles_9">5.4.4.3. Controles</h5>
+<h5 id="_controles_10">5.4.4.3. Controles</h5>
 <div class="paragraph">
 <p>Na ontvangst van het request bericht voert de API geen controles uit, maar stelt direct het response bericht samen.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_output_22">5.4.4.4. Output</h5>
+<h5 id="_output_23">5.4.4.4. Output</h5>
 <div class="paragraph">
 <p>De output is een JSON-object met de volgende elementen:</p>
 </div>
@@ -69772,7 +69934,7 @@ Het is afhankelijk van het moment waarop de fout optreedt hoe de bovenliggende l
 <div class="sect2">
 <h3 id="_terugmeldvoorziening_tmv">6.3. Terugmeldvoorziening (TMV)</h3>
 <div class="sect3">
-<h4 id="_beschrijving_18">6.3.1. Beschrijving</h4>
+<h4 id="_beschrijving_19">6.3.1. Beschrijving</h4>
 <div class="paragraph">
 <p>TMV2.0 is een applicatie die beheerd wordt door RvIG. Met die applicatie beheert RvIG de (gegevens over) terugmeldingen. Afnemers (de terugmelders) moeten terugmeldingen doen aan Digimelding. Digimelding stuurt de meldingen betreffende de BRP door aan TMV2.0. In TMV2.0 kunnen gemeenten en RNI (de bijhouders) die terugmeldingen bekijken, afhandelen en de resultaten daarvan bijwerken. Terugmelders moeten via Digimelding de status van de terugmelding ophalen uit TMV2.0.</p>
 </div>
@@ -70026,7 +70188,7 @@ Het is afhankelijk van het moment waarop de fout optreedt hoe de bovenliggende l
 <div class="sect2">
 <h3 id="_informatieknooppunt_ikp">6.5. Informatieknooppunt (IKP)</h3>
 <div class="sect3">
-<h4 id="_beschrijving_19">6.5.1. Beschrijving</h4>
+<h4 id="_beschrijving_20">6.5.1. Beschrijving</h4>
 <div class="paragraph">
 <p>Deze applicatie IKP dient ter ondersteuning van de Landelijke Aanpak Adreskwaliteit (LAA). LAA is een samenwerkingsverband van gemeenten, de Minister van BZK en bestuursorganen die gebruik maken van de adresgegevens van personen die zijn opgenomen in de BRP. De deelnemende partijen hebben een gezamenlijk doel om incorrecte adresgegevens in de BRP te identificeren en te corrigeren. Dit is vastgelegd in artikel 2.37a van de wet BRP.</p>
 </div>
@@ -70053,7 +70215,7 @@ Het is afhankelijk van het moment waarop de fout optreedt hoe de bovenliggende l
 <div class="sect2">
 <h3 id="_web_applicatie_landelijke_aanpak_adreskwaliteit_walaa">6.6. Web Applicatie Landelijke Aanpak Adreskwaliteit (WALAA)</h3>
 <div class="sect3">
-<h4 id="_beschrijving_20">6.6.1. Beschrijving</h4>
+<h4 id="_beschrijving_21">6.6.1. Beschrijving</h4>
 <div class="paragraph">
 <p>WALAA is een webapplicatie die dient ter ondersteuning bij het uitvoeren van de Landelijke Aanpak Adreskwaliteit (LAA). De aangeleverde signalen vanuit de signaalleveranciers aan het Informatieknooppunt (IKP), worden na actualisatie doorgezet naar WALAA en daarmee aangeboden aan de gemeente. WALAA geeft ondersteuning bij het uitvoeren van adresonderzoeken door gemeenten.</p>
 </div>
@@ -74695,8 +74857,8 @@ Voor categorie 08 Verblijfplaats: schrappen van 11.50 en groep 12; verplicht voo
 </div>
 <div id="footer">
 <div id="footer-text">
-Versie 2025.Q4<br>
-Last updated 2025-11-06 14:33:18 +0100
+Versie 2026.Q1<br>
+Last updated 2025-11-10 18:47:46 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">
