@@ -1137,7 +1137,7 @@ De webservices van BRP-V zijn uitsluitend te benaderen via het Diginetwerk. Ze m
 
 ==== Opbouw van API berichten
 
-De API's van BRP-V zijn uitsluitend te benaderen via Diginetwerk. Het zijn web API's waarmee over HTTPS gecommuniceerd kan worden. Headers en response codes zijn dan ook conform de HTTP standaard (RFC 7230) en de input en output bestaan altijd uit JSON-berichten (content-type: application/json, of application/hal{plus}json). In foutsituaties wordt een HTTP-statusbericht gestuurd conform RFC 7231 en RFC 7807 in problem/json (content-type: application/problem{plus}json). Voor elk API endpoint worden in <<_berichten_in_verband_met_de_bijhouding>> en <<_berichten_in_verband_met_verstrekkingen>> achtereenvolgens beschreven: de functionaliteit van het endpoint, de methode en de URI waarmee het endpoint aangeroepen kan worden, de parameters die in de URI moeten worden gebruikt (path-parameters en query parameters), de elementen die in de input JSON mogen of zelfs moeten worden meegegeven bij het aanroepen van de API, en de elementen die in de output JSON worden terug gegeven door de API. De API's zijn benaderbaar via de basis-URLs die zijn gepubliceerd op de website van RvIG.
+De API's van BRP-V zijn uitsluitend te benaderen via Diginetwerk. Het zijn web API's waarmee over HTTPS gecommuniceerd kan worden. Headers en response codes zijn dan ook conform de HTTP standaard (RFC 7230) en de input en output bestaan altijd uit JSON-berichten (content-type: application/json, of application/hal{plus}json). In foutsituaties wordt een HTTP-statusbericht gestuurd conform RFC 7231 en RFC 7807 in problem/json (content-type: application/problem{plus}json). Voor elk API endpoint worden in <<_berichtuitwisseling_via_de_brp_berichten_api>>, <<_berichten_in_verband_met_de_bijhouding>>, <<_berichten_in_verband_met_verstrekkingen>> en <<_overige_berichten_2>> achtereenvolgens beschreven: de functionaliteit van het endpoint, de methode en de URI waarmee het endpoint aangeroepen kan worden, de parameters die in de URI moeten worden gebruikt (path-parameters en query parameters), de elementen die in de input JSON mogen of zelfs moeten worden meegegeven bij het aanroepen van de API, en de elementen die in de output JSON worden terug gegeven door de API. De API's zijn benaderbaar via de basis-URLs die zijn gepubliceerd op de website van RvIG.
 
 De berichtencyclus ziet er voor alle API's hetzelfde uit en is weergegeven in onderstaand diagram.
 
@@ -1569,10 +1569,10 @@ De berichtencycli 5.2.2 t/m 5.2.12 kunnen behalve met de mailboxserver ook via d
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
-==== Vervolginschrijving
+==== Vervolginschrijving van gemeente naar gemeente
 
 [.text-center]
-.Schematische weergave Vervolginschrijving
+.Schematische weergave Vervolginschrijving van gemeente naar gemeente
 image::image16.svg[width=566,height=608]
 
 ===== Inleiding
@@ -1667,7 +1667,7 @@ Eventueel kan bij de burger worden geverifieerd of de melding terecht is. Vervol
 . het aantal malen dat een categorie actueel voorkomt conform het voorschrift voor de PL is;
 . het voorkomen van historie voor een categorie in overeenstemming is met het voorschrift voor de PL;
 . alle voor een categorie verplichte elementen voorkomen indien die categorie voorkomt. Elementen kunnen afhankelijk van de aan- of afwezigheid van andere elementen verplicht zijn. Bij deze controle worden categorieën waarin element <<e8410,84.10>>, Indicatie onjuist is opgenomen, uitgesloten. +
-Ook worden bij deze controle uitgesloten de met ingang van Logisch Ontwerp BRP 2024.Q1 geldende voorschriften voor de elementen van groep <<g11,11>> Adres en <<g12,12>> Locatie betreffende de vaste koppeling BAG-BRP (zoals beschreven in bijlage B.19).
+Ook worden bij deze controle uitgesloten de met ingang van Logisch Ontwerp BRP 2024.Q1 geldende voorschriften voor de elementen van groep <<g11,11>> Adres en <<g12,12>> Locatie betreffende de vaste koppeling BAG-BRP (zoals beschreven in <<VasteKoppelingBAGBRP>>).
 
 Is aan deze voorwaarden voldaan, dan moet de PL worden opgenomen in het PL‑bestand van de gemeente.
 
@@ -1735,7 +1735,7 @@ Bij de uit te voeren stappen kunnen foutsituaties optreden die de volgende actie
 . het aantal malen dat een categorie actueel voorkomt conform het voorschrift voor de PL is;
 . het voorkomen van historie voor een categorie in overeenstemming is met het voorschrift voor de PL;
 . alle voor een categorie verplichte elementen voorkomen indien die categorie voorkomt. Elementen kunnen afhankelijk van de aan- of afwezigheid van andere elementen verplicht zijn. Bij deze controle worden categorieën waarin element <<e8410,84.10>>, Indicatie onjuist is opgenomen, uitgesloten. +
-Ook worden bij deze controle uitgesloten de met ingang van Logisch Ontwerp BRP 2024.Q1 geldende voorschriften voor de elementen van groep <<g11,11>> Adres en <<g12,12>> Locatie betreffende de vaste koppeling BAG-BRP (zoals beschreven in bijlage B.19).
+Ook worden bij deze controle uitgesloten de met ingang van Logisch Ontwerp BRP 2024.Q1 geldende voorschriften voor de elementen van groep <<g11,11>> Adres en <<g12,12>> Locatie betreffende de vaste koppeling BAG-BRP (zoals beschreven in <<VasteKoppelingBAGBRP>>).
 
 Is aan deze voorwaarden voldaan, dan moet de PL worden opgenomen in het PL‑bestand van de RNI.
 
@@ -1870,7 +1870,7 @@ Bij ontvangst van de PL controleert de gemeente van vestiging of deze PL aan de 
 . het aantal malen dat een categorie actueel voorkomt conform het voorschrift voor de PL is. Bij deze controle wordt ingeval de PL is opgeschort met reden "R" het verplicht voorkomen van categorie <<c02-52,02>> Ouder1 en <<c03-53,03>> Ouder2 uitgesloten;
 . het voorkomen van historie voor een categorie in overeenstemming is met het voorschrift voor de PL;
 . alle voor een categorie verplichte elementen voorkomen indien die categorie voorkomt. Elementen kunnen afhankelijk van de aan- of afwezigheid van andere elementen verplicht zijn. Bij deze controle worden categorieën waarin element <<e8410,84.10>>, Indicatie onjuist is opgenomen, uitgesloten. +
-Ook worden bij deze controle uitgesloten de met ingang van Logisch Ontwerp BRP 2024.Q1 geldende voorschriften voor de elementen van groep <<g11,11>> Adres en <<g12,12>> Locatie betreffende de vaste koppeling BAG-BRP (zoals beschreven in bijlage B.19). +
+Ook worden bij deze controle uitgesloten de met ingang van Logisch Ontwerp BRP 2024.Q1 geldende voorschriften voor de elementen van groep <<g11,11>> Adres en <<g12,12>> Locatie betreffende de vaste koppeling BAG-BRP (zoals beschreven in <<VasteKoppelingBAGBRP>>). +
 Bovendien wordt, ingeval de PL is opgeschort met reden "R", bij deze controle het verplicht voorkomen van element <<e6110,61.10>> Aanduiding naamgebruik in categorie <<c01-51,01/51>> Persoon uitgesloten.
 
 Is aan deze voorwaarden voldaan, dan moet de PL worden opgenomen in het PL‑bestand van de gemeente.
@@ -2116,7 +2116,7 @@ image::image35.svg[width=566,height=618]
 
 De cyclus Opnemen verwijsgegevens is gedefinieerd voor de volgende situaties:
 
-. Bij de cyclus Vervolginschrijving (<<_vervolginschrijving_2>>, <<_vervolginschrijving_van_gemeente_naar_rni>> en <<_vervolginschrijving_van_rni_naar_gemeente>>) kan zich de situatie voordoen dat de verwijsgegevens niet zijn opgenomen in de gemeente van vertrek of RNI terwijl de PL wel correct is opgenomen in de gemeente van vestiging of RNI. In dat geval moeten de verwijsgegevens alsnog worden opgenomen om de verwijsketen te completeren.
+. Bij de cyclus Vervolginschrijving (<<_vervolginschrijving_van_gemeente_naar_gemeente>>, <<_vervolginschrijving_van_gemeente_naar_rni>> en <<_vervolginschrijving_van_rni_naar_gemeente>>) kan zich de situatie voordoen dat de verwijsgegevens niet zijn opgenomen in de gemeente van vertrek of RNI terwijl de PL wel correct is opgenomen in de gemeente van vestiging of RNI. In dat geval moeten de verwijsgegevens alsnog worden opgenomen om de verwijsketen te completeren.
 
 . Bij de cyclus Toevallige geboorte (<<_toevallige_geboorte>>) kan zich de situatie voordoen dat de verwijsgegevens niet zijn opgenomen terwijl de PL wel correct is aangelegd. Ook in dat geval moeten de verwijsgegevens alsnog worden opgenomen om de verwijsketen te completeren.
 
@@ -5292,6 +5292,7 @@ Als de vraag niet afkomstig is van een gemeente, dan wordt nog gecontroleerd:
 * Of de afnemer geautoriseerd is voor de gegevens in de zoekcriteria (komen de met de zoekcriteria corresponderende rubrieken voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?);
 * Of de afnemer geautoriseerd is voor de gevraagde gegevens (komen de rubrieken voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?). Daarbij geldt:
 ** Als de afnemer vraagt om PA.NM.03 Aanhef, PA.NM.04 Aanspreekvorm, PA.NM.05 Aanspreeknaam of PA.NM.06 Naamgebruik in lopende tekst, dan wordt gecontroleerd of de afnemer is geautoriseerd voor PA.AD.01 Adressering of voor PA.AD.02 Elektronische adressering;
+** Als de afnemer vraagt om PA.VP.01 Begindatum adreshouding, dan wordt gecontroleerd of de afnemer is geautoriseerd voor 08.10.30 Datum aanvang adreshouding. of voor 08.13.20 Datum aanvang adres buitenland;
 ** Als de afnemer vraagt om PA.VP.03 Adresregel 1 of PA.VP.04 Adresregel 2, dan wordt gecontroleerd of de afnemer is geautoriseerd voor PA.AD.01 Adressering;
 ** Als de afnemer vraagt om <<e1350,08.13.50>> Regel 3 adres buitenland of om <<e1310,08.13.10>> Land adres buitenland, dan wordt gecontroleerd of de afnemer is geautoriseerd voor deze rubrieken, of voor PA.AD.01 Adressering.
 

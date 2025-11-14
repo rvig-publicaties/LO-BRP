@@ -1593,7 +1593,7 @@ De volgende groep wordt gewijzigd:
 [none]
 * <<g66,07.66>> Blokkering
 
-Na correcte afronding van de berichtencyclus Vervolginschrijving (<<_vervolginschrijving_2>>), de berichtencyclus Vervolginschrijving van gemeente naar RNI (<<_vervolginschrijving_van_gemeente_naar_rni>>) alsmede de berichtencyclus Vervolginschrijving van RNI naar gemeente (<<_vervolginschrijving_van_rni_naar_gemeente>>), wordt de procedure Verwijderen geblokkeerde PL uitgevoerd (<<_verwijderen_geblokkeerde_pl>>).
+Na correcte afronding van de berichtencyclus Vervolginschrijving (<<_vervolginschrijving_van_gemeente_naar_gemeente>>), de berichtencyclus Vervolginschrijving van gemeente naar RNI (<<_vervolginschrijving_van_gemeente_naar_rni>>) alsmede de berichtencyclus Vervolginschrijving van RNI naar gemeente (<<_vervolginschrijving_van_rni_naar_gemeente>>), wordt de procedure Verwijderen geblokkeerde PL uitgevoerd (<<_verwijderen_geblokkeerde_pl>>).
 
 Verwijdering van de blokkering, door middel van de bovenstaande wijziging, van een ten onrechte geblokkeerde PL moet mogelijk zijn en vindt plaats:
 
@@ -2654,7 +2654,7 @@ De mogelijke actualiseringsprocedures zijn:
 
 Een geblokkeerde PL moet worden verwijderd in de volgende gevallen:
 
-* na correcte afronding van de berichtencyclus Vervolginschrijving (<<_vervolginschrijving_2>>), dat wil zeggen na ontvangst van de juiste verwijsgegevens in het <<Iv01,Iv01>>-bericht en het versturen van de verwerkbevestiging;
+* na correcte afronding van de berichtencyclus Vervolginschrijving (<<_vervolginschrijving_van_gemeente_naar_gemeente>>), dat wil zeggen na ontvangst van de juiste verwijsgegevens in het <<Iv01,Iv01>>-bericht en het versturen van de verwerkbevestiging;
 * na correcte afronding van de berichtencyclus Vervolginschrijving van gemeente naar RNI (<<_vervolginschrijving_van_gemeente_naar_rni>>), dat wil zeggen na ontvangst van de juiste verwijsgegevens in het <<Rv01,Rv01>>-bericht en het versturen van de verwerkbevestiging;
 * na correcte afronding van de berichtencyclus Vervolginschrijving van RNI naar gemeente (<<_vervolginschrijving_van_rni_naar_gemeente>>), dat wil zeggen na ontvangst van de juiste verwijsgegevens in het <<Jv01,Jv01>>-bericht en het versturen van de verwerkbevestiging.
 
@@ -3030,15 +3030,15 @@ Inschrijving op grond van een aangifte van verblijf en adres geldt voor:
 Bij eerste inschrijving op grond van aangifte van verblijf en adres dient, alvorens tot daadwerkelijke inschrijving over te gaan, gecontroleerd te worden
 
 * of de persoon niet reeds ingeschreven is in de BRP;
-* of er niet reeds een inschrijvingsprocedure gestart is in een andere gemeente;
+* of er niet reeds een inschrijvingsprocedure gestart is in een andere gemeent of openbaar lichaam;
 
 Deze controle gebeurt door een vraag te stellen aan de BvBSN met behulp van de webservice Presentievraag. In deze presentievraag dienen de identificerende gegevens van de in te schrijven persoon opgenomen te worden.
 
-Indien uit het antwoord van de BvBSN op de presentievraag blijkt dat de persoon nog niet ingeschreven is en er ook nog geen inschrijvingsprocedure voor de persoon gestart is, kan overgegaan worden tot het daadwerkelijk inschrijven van de persoon.
+Indien uit het antwoord van de BvBSN op de presentievraag blijkt dat de persoon nog niet in de BRP ingeschreven is en er ook nog geen inschrijvingsprocedure voor de persoon gestart is, kan overgegaan worden tot het daadwerkelijk inschrijven van de persoon.
 
-Indien de persoon reeds ingeschreven is, bevat het antwoord van de BvBSN de gemeente van inschrijving of RNI van de persoon. Met behulp van de procedure Vervolginschrijving (<<_vervolginschrijving>>) wordt vervolgens de PL opgehaald.
+Indien de persoon wel al in de BRP ingeschreven is, bevat het antwoord van de BvBSN de gemeente of openbaar lichaam van inschrijving of RNI van de persoon. Met behulp van de procedure Vervolginschrijving (<<_vervolginschrijving>>) wordt vervolgens de PL opgehaald. Betreft het een persoon die zich vanuit Caribisch Nederland in Nederland vestigt, dan dient zijn persoonslijst uit de basisadministratie van het openbaar lichaam als brondocument bij het actualiseren van de persoonslijst uit de RNI.
 
-Indien in een andere gemeente reeds een inschrijvingsprocedure loopt, bevat het antwoord van de BvBSN de code van de gemeente of RNI die de procedure gestart heeft. Met deze gemeente of RNI dient contact opgenomen te worden om na te gaan wat er aan de hand is.
+Indien al een inschrijvingsprocedure loopt, bevat het antwoord van de BvBSN de code van de gemeente of het openbaar lichaam of RNI die de procedure gestart heeft. Met deze gemeente, openbaar lichaam of RNI dient contact opgenomen te worden om na te gaan wat er aan de hand is.
 
 Indien uit het antwoord van de BvBSN op de presentievraag blijkt dat er reeds een persoon is ingeschreven met hetzelfde persoonsnummer uit hetzelfde EU-land, dient te worden onderzocht of dit dezelfde persoon betreft. Als dat het geval is, wordt met behulp van de procedure Vervolginschrijving (<<_vervolginschrijving>>) vervolgens de PL opgehaald.
 
@@ -3151,7 +3151,7 @@ Ten behoeve van de controle of een van bovenstaande situaties zich voordoet, wor
 In de presentievraag worden de identificerende gegevens van de in te schrijven persoon opgenomen. Uit het antwoord op de presentievraag kan blijken:
 
 . De persoon is al ingeschreven in de BRP. Er vindt geen eerste inschrijving plaats; de inschrijvingsprocedure wordt afgebroken.
-. Er loopt voor de persoon mogelijk al een inschrijvingsprocedure in de BRP. Bij de beantwoording kijkt de BvBSN of met de betreffende identificerende gegevens er de afgelopen periode al eerder een presentievraag is gesteld vanuit een gemeente of de RNI. Er moet dan uitgezocht worden wat er aan de hand is.
+. Er loopt voor de persoon mogelijk al een inschrijvingsprocedure in de BRP of in de basisadministratie van een openbaar lichaam. Bij de beantwoording kijkt de BvBSN of met de betreffende identificerende gegevens er de afgelopen periode al eerder een presentievraag is gesteld vanuit een gemeente, openbaar lichaam of de RNI. Er moet dan uitgezocht worden wat er aan de hand is.
 . De presentievraag heeft te veel resultaten opgeleverd. Er moet nogmaals een vraag worden gesteld waarbij meer of andere identificerende gegevens worden meegegeven.
 . Indien uit het antwoord van de BvBSN op de presentievraag blijkt dat er reeds een persoon is ingeschreven met hetzelfde persoonsnummer uit het hetzelfde EU-land, dient te worden onderzocht of dit dezelfde persoon betreft. Als dat het geval is, wordt met behulp van de procedure Vervolginschrijving (<<_vervolginschrijving>>) vervolgens de PL opgehaald.
 . Er is niemand gevonden die aan de opgegeven identificatie voldoet. Er kan worden overgegaan tot het daadwerkelijk inschrijven van de persoon in de RNI.
@@ -3201,6 +3201,8 @@ De deelnemer moet voldoen aan de eis dat hij de gegevens van de persoon in kwest
 
 De deelnemer kan op basis van een verdrag verplicht zijn om gebruik te maken van gegevens die door een buitenlandse zusterorganisatie zijn verzameld. Die persoonsgegevens worden verzonden naar de betreffende deelnemer met, indien beschikbaar, een kopie van de documenten van de niet-ingezetene.
 
+Een speciale RNI-deelnemer is de Minister van BZK in zijn rol als verantwoordelijke voor de verbinding tussen de BRP en de PIVA. De RNI zal op aanwijzing van de minister voor elke nieuwe inschrijving in de basisadministratie van een openbaar lichaam een PL voor een nooit-ingezetene aanleggen, of, als die persoon al in de RNI voorkomt, diens PL actualiseren. Zolang de persoon ingezetene blijft van het openbaar lichaam, ligt de bijhoudingstaak exclusief bij het openbaar lichaam. Alleen de minister van BZK draagt zorg voor de synchronisatie van de PL in de basisadministratie van het openbaar lichaam naar de PL in de RNI. Deze synchronsiatie betreft alleen de beperkte gegevensset van de RNI. 
+
 Bij de behandeling van de Inschrijvingsopgave voert het RNI-systeem geautomatiseerde controles uit. De uitslag van de controles kan aangeven dat de RNI-registratiehouder nader onderzoek moet instellen.
 
 Eindconclusie van de behandeling is ofwel dat een PL kan worden aangelegd, ofwel dat het verzoek tot inschrijving niet gehonoreerd kan worden.
@@ -3237,7 +3239,23 @@ In géén geval worden de volgende procedures uitgevoerd:
 In de RNI wordt onderscheid gemaakt tussen twee soorten PL'en:
 
 * PL'en van nooit-ingezetenen +
-Een PL van een nooit-ingezetene is een PL die is aangelegd via een eerste inschrijving in de RNI en daarna niet in als ingezetene ingeschreven is geweest. Voor zo'n PL is de RNI beperkte gegevensset van toepassing.
+Een PL van een nooit-ingezetene is een PL die is aangelegd:
++
+--
+** via een eerste inschrijving in de RNI, of
+--
+** via een eerste inschrijving in de basisadministratie van een openbaar lichaam die door de Minister van BZK als ABO is aangemeld bij de RNI. Een nooit-ingezetene-PL in de RNI die toebehoort aan een actueel in de basisadministratie van een openbaar lichaam ingeschreven persoon is als volgt te herkennen:
++
+--
+*** Rubriek 08.13.10 (Land adres buitenland) bevat de landcode van een van de openbare lichamen uit Landentabel 34.
+**** 5106: Bonaire
+**** 5108: Saba
+**** 5109: Sint Eustatius
+*** Rubriek 08.88.10 (RNI-deelnemer) bevat de ABO-code van de Minister van BZK uit tabel 60.
+--
++
+De nooit-ingezetene is na inschrijving nooit als ingezetene ingeschreven geweest. Voor zo'n PL is de RNI beperkte gegevensset van toepassing.
++
 * PL'en van voormalig ingezetenen +
 Een PL van een voormalig ingezetene is een PL die via een vervolginschrijving naar de RNI is gestuurd. Zo'n PL kan alle categorieën bevatten die bij ingezetenen voorkomen.
 
@@ -3313,12 +3331,15 @@ Bij een vervolginschrijving van een gemeente naar de RNI worden de volgende groe
 
 Deze wijzigingen leiden niet tot historie.
 
+[#WijzigingBuitenlandsAdresBijIngezetenenEmigratie]
 ===== Wijziging buitenlands adres (bij ingezetenen: Emigratie)
 
 De ingezetenen-procedure 'emigratie' geldt in de RNI als 'wijziging buitenlands adres'. Deze actualisering wordt uitgevoerd als van een persoon nieuwe gegevens omtrent het buitenlands adres bekend worden. Dat kan zijn:
 
 * wanneer een tot dan toe onbekend buitenlands adres bekend wordt, of
 * wanneer wordt vastgesteld dat het buitenlands adres is gewijzigd.
+
+Een speciaal geval is wanneer een persoon van een openbaar lichaam emigreert naar Nederland: die laat zich uitschrijven uit de basisadministratie van dat openbaar lichaam en laat daarbij een adres in Nederland registreren in groep 13 Adres buitenland. Dat (ongestructureerde) Nederlandse adres wordt gesynchroniseerd naar de RNI en komt ook daar terecht in groep 13 Adres buitenland.
 
 Hierbij worden de volgende groepen gewijzigd:
 

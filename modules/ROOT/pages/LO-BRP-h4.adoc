@@ -565,7 +565,7 @@ Voor categorie <<c08-58,58>> geldt: of groep <<g13,13>> komt voor of de groepen 
 Groep <<g84,84>> kan uitsluitend in categorie <<c08-58,58>> voorkomen. +
 Groep <<g88,88>> kan uitsluitend voorkomen op een PL die deel uitmaakt van de RNI.
 Gebruik:: {empty}
-Procedure oplossen verschillen BAG-BRP:: De benodigde acties om met ingang van LO 2024.Q1 correcte BAG adresgegevens in de BRP te verkrijgen, zijn beschreven in Bijlage B.19 Vaste koppeling BAG-BRP (01-01-2024).
+Procedure oplossen verschillen BAG-BRP:: De benodigde acties om met ingang van LO 2024.Q1 correcte BAG adresgegevens in de BRP te verkrijgen, zijn beschreven in <<VasteKoppelingBAGBRP>>.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -1257,7 +1257,7 @@ Elementopsomming::
 Voorwaarden:: Indien de groep voorkomt, komen de elementen <<e3510,35.10>>, <<e3520,35.20>>, <<e3530,35.30>>, <<e3540,35.40>> en <<e3550,35.50>> verplicht voor. +
 Indien een van de elementen <<e3560,35.60>> of <<e3570,35.70>> voorkomt, dan komen ze beide voor.
 Gebruik:: {empty}
-Verwijderprocedure:: Met ingang van LO 3.9 is de rubriek 12.35.80 Lengte houder uit de gegevensverzameling verwijderd. De daarvoor benodigde procedure is beschreven in bijlage B.12 Conversieprocedure reisdocumenten.
+Verwijderprocedure:: Met ingang van LO 3.9 is de rubriek 12.35.80 Lengte houder uit de gegevensverzameling verwijderd. De daarvoor benodigde procedure is beschreven in <<ConversieprocedureReisdocumenten>> Conversieprocedure reisdocumenten.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -2375,7 +2375,7 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 13.10
 Elementnaam:: Land adres buitenland
-Toelichting:: Een code, opgenomen in tabel <<t34,34>>, Landentabel, die het land (buiten Nederland) aangeeft alwaar de ingeschrevene verblijft. In tegenstelling tot bij de gemeente, kan bij de RNI de waarde Nederland (6030) wel voorkomen. +
+Toelichting:: Een code, opgenomen in tabel <<t34,34>>, Landentabel, die het land (buiten Nederland) aangeeft alwaar de ingeschrevene verblijft. In tegenstelling tot bij de gemeente, kan bij de RNI de waarde Nederland (6030) wel voorkomen (bijv als een nooit-ingezetene die via inschrijving in de basisadministratie van een openbaar lichaam in de RNI staat, zich uitschrijft uit die basisregistratie en daarbij een adres in Nederland opgeeft). +
 Bij het ingaan van een Ministerieel besluit dient hier de standaardwaarde opgenomen te worden.
 Lengte:: 4
 Type:: Numeriek
@@ -5972,7 +5972,7 @@ Mogelijke waarden::
 | | 2+|adresseerbaarObjectIdentificatie |boolean |Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
 | | 2+|nummeraanduidingIdentificatie |boolean |Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
 | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,08.83.20>> dan wel <<e8320,58.83.20>> Datum ingang onderzoek
-| 3+|indicatieVastgesteldVerblijftNietOpAdres |boolean | Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
+| 3+|verblijftNietOpAdresVanaf |date | Afgeleid van <<e8310,08.83.10>> en <<e8320,08.83.20>> dan wel <<e8310,58.83.10>> en <<e8320,58.83.20>> Aanduiding gegevens in onderzoek en Datum ingang onderzoek
 | 5+|Als type = "Locatie"
 | 3+|gemeenteVanInschrijving |object |
 | | 2+|code |string |<<e0910,08.09.10>> dan wel <<e0910,58.09.10>> Gemeente van inschrijving
@@ -5999,7 +5999,7 @@ Mogelijke waarden::
 | | 2+|gemeenteVanInschrijving |boolean |Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
 | | 2+|functieAdres |boolean |Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
 | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,08.83.20>> dan wel <<e8320,58.83.20>> Datum ingang onderzoek
-| 3+|indicatieVastgesteldVerblijftNietOpAdres |boolean |Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
+| 3+|verblijftNietOpAdresVanaf |date |Afgeleid van <<e8310,08.83.10>> en <<e8320,08.83.20>> dan wel <<e8310,58.83.10>> en <<e8320,58.83.20>> Aanduiding gegevens in onderzoek en Datum ingang onderzoek
 | 5+|Als type = "VerblijfplaatsBuitenland"
 | 3+|verblijfadres |object |
 | | 2+|regel1 |string |<<e1330,08.13.30>> dan wel <<e1330,58.13.30>> Regel 1 adres buitenland
