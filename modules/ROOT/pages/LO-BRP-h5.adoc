@@ -180,7 +180,7 @@ Endpoint in het kader van het experimentbesluit dataminimalisatie BRP, alleen te
 * API's in verband met het opvragen van het protocolleringsoverzicht door MijnOverheid:
 ** BRP Protocolleringsoverzicht API
 *** <<brp_protocolleringsoverzicht_api,/protocolleringsoverzicht>> +
-API waarmee MijnOverheid een protocolleringsoverzicht kan opvragen voor een burger, bij de POM. Het protocolleringsoverzicht wordt in de MijnOverheid Berichtenbox van de burger geplaatst.
+API waarmee MijnOverheid een protocolleringsoverzicht over een bepaalde periode kan opvragen voor een burger, bij de POM. Het protocolleringsoverzicht wordt in de MijnOverheid Berichtenbox van de burger geplaatst.
 
 
 ===== Overige berichten
@@ -5955,7 +5955,7 @@ ifdef::backend-html5[''']
 
 ===== Beschrijving
 
-De BRP protocolleringsoverzicht API is een API van de POAM, die uitsluitend is te gebruiken door MijnOverheid en een protocolleringsoverzicht opvraagt via de webservice van de POM en deze vervolgens aan de burger verstrekt via de MijnOverheid Berichtenbox.
+De BRP protocolleringsoverzicht API is een API van de POAM, die uitsluitend is te gebruiken door MijnOverheid en een protocolleringsoverzicht over een bepaalde periode voor een bepaald BSN opvraagt via de webservice van de POM en deze vervolgens aan de burger verstrekt via de MijnOverheid Berichtenbox.
 
 URI: ++{++basis++_++url}/protocolleringsoverzicht
 
