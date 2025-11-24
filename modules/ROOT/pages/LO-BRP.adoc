@@ -32,13 +32,17 @@
 
 De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2025.Q4) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2026.Q1. Deze versie treedt op 1 januari 2026 in werking.
 
-W181 Invoering BSN op CN
+W201 Deprecated elementen in BRP API
 
-* <<_inschrijving_als_ingezetene_op_grond_van_een_aangifte_van_verblijf_en_adres>>, <<_inschrijving_bij_een_rni_loket>>, <<_inschrijving_op_basis_van_een_opgave_van_een_rni_deelnemer>>, <<_soorten_persoonslijsten_bij_niet_ingezetenen>>, <<WijzigingBuitenlandsAdresBijIngezetenenEmigratie>>, <<_beschrijving_van_de_elementen>>
+* <<_output_19>>
+
+W215 Centraal protocolleringsoverzicht via MO
+
+* <<_stelselarchitectuur>>, <<_berichtenverkeer_algemeen>>, <<_inleiding_23>>, <<_brp_protocolleringsoverzicht_api>>
 
 Tekstuele wijzigingen
 
-* <<_beschrijving_van_de_elementen>>, <<_beschrijving_van_de_elementen_2>>, <<_ad_hoc_vragen_via_de_berichtendienst>>, <<_controles_6>>
+* N.v.t.
 
 
 :sectnums:
