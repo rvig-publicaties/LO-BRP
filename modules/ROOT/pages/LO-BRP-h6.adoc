@@ -75,7 +75,7 @@ Eerder is uiteengezet dat er 2 manieren zijn waarop een eindsysteem de berichten
 
 Voor de beschrijving van de koppeling met de berichtendienst zullen we gebruik maken van het algemene abstracte model dat de X.400 standaards gebruiken voor de beschrijving van Message Handling Systems. Dit model kent _objects_ (UA's, MS's, MTA's), _ports_ (verbindingspunten tussen objecten), en _services_ (diensten die een object aanbiedt door middel van zijn ports). Bij iedere port hoort een _Application Service Entity_ (ASE), waarin de diensten van de port worden gedefinieerd. Interacties tussen objecten kunnen plaats vinden nadat er een _binding_ heeft plaats gevonden tussen twee soortgelijke ports.
 
-In de grafische voorstellingen van het model geven open blokjes image:image71.svg[width=30] gebruikers (_consumers_) aan van een dienst, gesloten blokjes image:image72.svg[width=30] poorten waarop een dienst wordt aangeboden, en grijze blokjes image:image73.svg[width=30] poorten die in beide richtingen kunnen opereren.
+In de grafische voorstellingen van het model geven open blokjes image:image71.svg[width=20,pdfwidth=20] gebruikers (_consumers_) aan van een dienst, gesloten blokjes image:image72.svg[width=25,pdfwidth=25] poorten waarop een dienst wordt aangeboden, en grijze blokjes image:image73.svg[width=30,pdfwidth=30] poorten die in beide richtingen kunnen opereren.
 
 Een _protocol_ is in dit model een exacte specificatie hoe de diensten van een object door een gebruiker kunnen worden aangevraagd. Een protocoldefinitie heeft dus twee aspecten: een functioneel aspect en een representatie-aspect. Het zal duidelijk zijn dat er een directe relatie bestaat tussen de functionele aspecten van een protocol en de functionaliteit van het object dat door middel van het protocol benaderd wordt.
 
@@ -188,7 +188,7 @@ Desgewenst kan voorafgaand aan het ListMessages commando nog een SummarizeMessag
 +
 [#elementen-van-listmessages]
 .Elementen van ListMessages
-[.center,width="100%",cols="25%,25%,50%",options="header"]
+[.center,width="100%",cols="30%,20%,50%",options="header"]
 |===
 |Element |Default |Betekenis
 |LimitNumber |40 ... 171 |Het overzicht in het ListMessagesResult zal de attributen van maximaal het hier opgegeven aantal berichten bevatten; als er meer berichten in de mailbox zijn, wordt dit vermeld in het NextMSSequenceNumber veld.
@@ -224,9 +224,7 @@ Tevens wordt door middel van het al dan niet gevuld zijn van het NextMSSequenceN
 +
 [stem]
 ++++
-\begin{equation}
-\frac{5000 \text{ (de maximale lengte)} - (13 + 17 + 5)\text{ (de vaste header)}}{29 \text{ (de lengte van één entry)}} = 171 \text{ entries}
-\end{equation}
+\frac{5000 \, \text{(de maximale lengte)} - (13 + 17 + 5) \, \text{(de vaste header)}}{29 \, \text{(de lengte van één entry)}} = 171 \, \text{entries}
 ++++
 +
 De default waarde wordt bepaald door de beheerder bij het aanmaken van de mailbox op grond van de verwachte omvang van het berichtenverkeer van de gebruiker en de technische mogelijkheden van het aan te sluiten systeem. +
@@ -245,7 +243,7 @@ Het SummarizeMessages commando geeft daarentegen in één keer het totaal aantal
 +
 [#elementen-van-summarizemessages]
 .Elementen van SummarizeMessages
-[.center,width="100%",cols="30%,15%,55%",options="header",]
+[.center,width="100%",cols="30%,20%,50%",options="header",]
 |===
 |Element |Default |Betekenis
 |MSStatus |0, 1 |Het overzicht zal alleen berichten beschrijven die nieuw zijn (status 0) en berichten die wel in een ListMessagesResult zijn vermeld, maar nog niet zijn opgehaald (status 1).
@@ -280,24 +278,26 @@ De MSStatus wordt niet veranderd door een SummarizeMessages commando.
 +
 De MBS controleert de syntax van dit element en zal vervolgens proberen het bericht te vinden in de mailbox van de gebruiker. Indien dit niet lukt (verkeerd nummer, geen berichten aanwezig), zal dit gemeld worden via de GetMessageConfirmation met een foutboodschap. +
 +
-Indien het bericht aanwezig is zal het worden verzonden naar het eindsysteem in het GetMessageResult. Dit GetMessageResult kan 3 soorten berichten bevatten:
-
-[unordered.stack]
-*MessageResult*:::: Een bericht, bestaande uit GetEnvelope, MessageHeading en MessageBody. Heading en Body hebben dezelfde structuur als in het PutMessage commando; de Envelope heeft een iets afwijkende structuur. De elementen van MessageResult zijn samengevat in <<elementen-van-messageresult>>.
-
-*DeliveryReport* (zonder Envelope):::: Daarin wordt het mislukken van een aflevering, een nondelivery, van een eerder door de gebruiker verzonden bericht gemeld. De elementen van een delivery report zijn vermeld in <<elementen-van-deliveryreport>>. Merk op dat RecipientORName, MailboxBlockDateTimeStamp en NonDeliveryReason herhaald worden voor iedere geadresseerde, waaraan het bericht niet kon worden afgeleverd.
-
-*StatusResult*:::: Een StatusResult bestaat uit een GetEnvelope (<<elementen-van-statusresult>>), en een StatusReport. In het StatusReport wordt aangegeven dat +
+Indien het bericht aanwezig is zal het worden verzonden naar het eindsysteem in het GetMessageResult. Dit GetMessageResult kan 3 soorten berichten bevatten: +
 +
 --
+[unordered.stack]
+*MessageResult*:::: Een bericht, bestaande uit GetEnvelope, MessageHeading en MessageBody. Heading en Body hebben dezelfde structuur als in het PutMessage commando; de Envelope heeft een iets afwijkende structuur. De elementen van MessageResult zijn samengevat in <<elementen-van-messageresult>>. +
++
+*DeliveryReport* (zonder Envelope):::: Daarin wordt het mislukken van een aflevering, een nondelivery, van een eerder door de gebruiker verzonden bericht gemeld. De elementen van een delivery report zijn vermeld in <<elementen-van-deliveryreport>>. Merk op dat RecipientORName, MailboxBlockDateTimeStamp en NonDeliveryReason herhaald worden voor iedere geadresseerde, waaraan het bericht niet kon worden afgeleverd. +
+
+*StatusResult*:::: Een StatusResult bestaat uit een GetEnvelope (<<elementen-van-statusresult>>), en een StatusReport. In het StatusReport wordt aangegeven dat
 * een eerder door de gebruiker verzonden bericht, waarbij om een receipt notification is gevraagd, is opgehaald door de geadresseerde; of dat
 * een bericht, waarbij om een receipt- of non-receipt notification is gevraagd, niet is opgehaald door de geadresseerde.
+
++
+Binnen het BRP beheersdomein komen ReceiptNotifications overigens in principe niet voor. sPd gebruikers kunnen er niet om vragen, terwijl gebruik er van voor P1- en P7-gebruikers verboden is.
+
++
+Indien een verzonden bericht voor meerdere geadresseerden bestemd was, komt er voor iedere geadresseerde die het bericht heeft opgehaald (ReceiptNotification), respectievelijk die op dit punt in gebreke blijft (NonReceiptNotification), een apart StatusResult. De Elementen van het StatusResult antwoord zijn vermeld in <<elementen-van-statusresult>>.
 --
 +
-Binnen het BRP beheersdomein komen ReceiptNotifications overigens in principe niet voor. sPd gebruikers kunnen er niet om vragen, terwijl gebruik er van voor P1- en P7-gebruikers verboden is. +
-+
-Indien een verzonden bericht voor meerdere geadresseerden bestemd was, komt er voor iedere geadresseerde die het bericht heeft opgehaald (ReceiptNotification), respectievelijk die op dit punt in gebreke blijft (NonReceiptNotification), een apart StatusResult. De Elementen van het StatusResult antwoord zijn vermeld in <<elementen-van-statusresult>> +
-+
+
 [#elementen-van-messageresult]
 .Elementen van MessageResult
 [.center,width="100%",cols="25%,35%,40%",options="header",]
@@ -316,6 +316,7 @@ Indien een verzonden bericht voor meerdere geadresseerden bestemd was, komt er v
 |ActualNotificationRequest |In sPd altijd hetzelfde als het NotificationRequest dat de afzender heeft opgegeven; opgenomen voor compatibiliteit met P7.
 |*MessageBody* |BodyString |Het eigenlijke bericht.
 |===
+
 +
 [#elementen-van-deliveryreport]
 .Elementen van DeliveryReport
@@ -330,6 +331,7 @@ De volgende velden worden voor ieder bericht herhaald:
 | |MailboxBlockDateTimeStamp |Tijdstip tot wanneer de mailbox van de geadresseerde niet bereikbaar is. Alleen van toepassing indien de NonDeliveryReason = 'Mailbox temporarily not available'.
 | |NonDeliveryReason |Reden van niet aflevering. De mogelijke waarden staan vermeld in <<spd-foutcodes-deliveryreport>>.
 |===
+
 +
 [#elementen-van-statusresult]
 .Elementen van StatusResult
@@ -342,10 +344,13 @@ De volgende velden worden voor ieder bericht herhaald:
 | |ReportedMessageId |MessageId van het bericht
 | |NonReceiptReason |"Expired"
 |===
+
 +
-Van alle berichten die opgehaald zijn met het GetMessage commando wordt de MSStatus veranderd in 2 ('processed'). +
+Van alle berichten die opgehaald zijn met het GetMessage commando wordt de MSStatus veranderd in 2 ('processed').
+
 +
-Merk op dat het aanpassen van de MSStatus gebeurt op het moment dat de MBS het bericht aanbiedt aan het onderliggende transportnetwerk. Dat betekent dat, als er tijdens het verzenden van het antwoord een fout optreedt, de MSStatus is gewijzigd in 'processed' zonder dat het eindsysteem het bericht ontvangen heeft. Met andere woorden, het sPd protocol voorziet op dit niveau niet in een ontvangstbevestiging. De reden hiervoor is uiteraard dat deze faciliteit ook in P7 ontbreekt. +
+Merk op dat het aanpassen van de MSStatus gebeurt op het moment dat de MBS het bericht aanbiedt aan het onderliggende transportnetwerk. Dat betekent dat, als er tijdens het verzenden van het antwoord een fout optreedt, de MSStatus is gewijzigd in 'processed' zonder dat het eindsysteem het bericht ontvangen heeft. Met andere woorden, het sPd protocol voorziet op dit niveau niet in een ontvangstbevestiging. De reden hiervoor is uiteraard dat deze faciliteit ook in P7 ontbreekt.
+
 +
 Bij het ontwerp van het BAS (dat moet voorzien in de mogelijkheid om het ophalen van berichten te hervatten nadat een storing is geconstateerd) moet met deze eigenaardigheid rekening worden gehouden. Het ligt voor de hand om het BAS het MSSequenceNumber van het laatste bericht waarvoor een GetMessage commando is gegeven te laten onthouden. Bij het hervatten van het ophalen van berichten dient dan met dit bericht te worden begonnen. Vervolgens kunnen met de standaard procedure de overige berichten worden opgehaald.
 
@@ -367,7 +372,7 @@ Het resultaat van het commando wordt gemeld in de deletemessagesconfirmation. +
 +
 [#elementen-van-deletemessages]
 .Elementen van DeleteMessages
-[.center,width="90%" ,cols="25%,35%,40%",options="header",]
+[.center,width="100%",cols="30%,20%,50%",options="header",]
 |===
 |Element |Default |Betekenis
 |FromMSSequenceNumber |0 .2+| Er wordt geen selectie toegepast op MSSequenceNumber
@@ -388,7 +393,7 @@ De MBS controleert de elementen van dit commando (OldPassword en NewPassword) op
 +
 Indien er geen fouten zijn geconstateerd, wordt het UserPassword veranderd in het NewPassword; de gebruiker moet bij de volgende LogonRequest dit nieuwe password meegeven. +
 +
-Er gelden stringente voorschriften voor het samenstellen van en het omgaan met een password;.
+Er gelden stringente voorschriften voor het samenstellen van en het omgaan met een password.
 
 ====== Het verbreken van de verbinding
 
@@ -419,7 +424,7 @@ Het is echter ook mogelijk dat de MBS het commando niet herkent als een geldig s
 
 *Argumenten*::
 +
-[.center,width="90%" ,cols="40%,60%",]
+[.center,width="100%",cols="40%,60%",]
 |===
 |UserName |De naam waaronder de gebruiker bij de berichtendienst bekend is.
 |UserPassword |Wachtwoord van de gebruiker.
@@ -427,7 +432,7 @@ Het is echter ook mogelijk dat de MBS het commando niet herkent als een geldig s
 
 *Resultaat*::
 +
-[.center,width="90%" ,cols="40%,60%",]
+[.center,width="100%",cols="40%,60%",]
 |===
 |LogonResult |Status code
 |MessageEntryDTS |Systeemtijd waarop de SystemmanagerMessage in het systeem is ingebracht. Kan gebruikt worden om te controleren of de mededeling al eerder is ontvangen.
@@ -450,7 +455,7 @@ Als er een boodschap van de beheerder in het resultaat is opgenomen, en deze boo
 
 *Resultaat*::
 +
-[.center,width="90%" ,cols="40%,60%",]
+[.center,width="100%",cols="40%,60%",]
 |===
 |LogoffResult |Status code
 |===
@@ -469,7 +474,7 @@ Uiteraard zal het BAS niet bij ieder bericht dat verstuurd moet worden een verbi
 
 *Argumenten*::
 +
-[.center,width="90%" ,cols="40%,60%",options="header",]
+[.center,width="100%",cols="40%,60%",options="header",]
 |===
 |Naam |Betekenis
 2+|PutEnvelope:
@@ -491,7 +496,7 @@ Uiteraard zal het BAS niet bij ieder bericht dat verstuurd moet worden een verbi
 
 *Resultaat*::
 +
-[.center,width="90%" ,cols="40%,60%",]
+[.center,width="100%",cols="40%,60%",]
 |===
 |PutMessageConfirmation: |
 |PutResult |Statuscode
@@ -508,7 +513,7 @@ Sommige argumenten van de PutMessage operatie kunnen door het BAS zelf worden be
 +
 [#bron-putmessage-argumenten]
 .Bron PutMessage Argumenten
-[.center,width="90%" ,cols="31%,^8%,^8%,^8%,45%",options="header",]
+[.center,width="100%",cols="31%,^8%,^8%,^8%,45%",options="header",]
 |===
 |Argument |M/O |Van appl |Door BAS |Gebruik
 5+|PutEnvelope
@@ -584,7 +589,7 @@ Bij het ontwerp van het BAS dient er een voorziening te worden getroffen om indi
 
 *Argumenten*::
 +
-[.center,width="90%" ,cols="40%,60%",]
+[.center,width="100%",cols="40%,60%",]
 |===
 |MSStatusSelection |Indien opgegeven bevat het antwoord alleen gegevens over berichten die de gespecificeerde status hebben.
 |Priority |Indien opgegeven bevat het antwoord alleen gegevens over berichten die de gespecificeerde prioriteit hebben.
@@ -596,7 +601,7 @@ ToDeliveryTime |Indien opgegeven bevat het antwoord alleen gegevens over bericht
 
 *Resultaten*::
 +
-[.center,width="90%" ,cols="40%,60%",]
+[.center,width="100%",cols="40%,60%",]
 |===
 |NumberOfCounts |Het aantal combinaties van MSStatus en Priority dat in de selectiecriteria is opgegeven. Voor ieder van deze combinaties wordt het aantal berichten teruggemeld dat aan de criteria voldoet.
 2+|Count:
@@ -613,7 +618,7 @@ Priority |Status en prioriteit waarop NumberOfEntries betrekking heeft.
 
 *Argumenten*::
 +
-[.center,width="90%" ,cols="40%,60%",]
+[.center,width="100%",cols="40%,60%",]
 |===
 |LimitNumber |Indien opgegeven het maximumaantal antwoorden (MSEntries) dat teruggegeven kan worden in MSList.
 |MSStatusSelection |Indien opgegeven bevat het antwoord alleen gegevens over berichten die de gespecificeerde status hebben.
@@ -626,7 +631,7 @@ ToDeliveryTime |Indien opgegeven bevat het antwoord alleen gegevens over bericht
 
 *Resultaten*::
 +
-[.center,width="90%" ,cols="40%,60%",]
+[.center,width="100%",cols="40%,60%",]
 |===
 |NextMSSequenceNumber |Bevat het MSSequenceNumber van het eerstvolgende bericht indien de Mailbox of Retrieval Queue meer berichten bevat die aan de criteria voldoen dan LimitNumber.
 2+|MSList:
@@ -650,14 +655,14 @@ Indien er in de lijst berichten voorkomen met MSStatus 'Listed', is de vorige op
 
 *Argumenten*::
 +
-[.center,width="90%" ,cols="40%,60%",]
+[.center,width="100%",cols="40%,60%",]
 |===
 |MSSequenceNumber |Identificatie van het op te halen bericht.
 |===
 
 *Resultaat*::
 +
-[.center,width="90%" ,cols="40%,60%"]
+[.center,width="100%",cols="40%,60%"]
 |===
 |MSSequenceNumber |Identificatie van het opgehaalde bericht
 2+|GetEnvelope:
@@ -722,7 +727,7 @@ Voor vrije berichten gelden op dit punt geen dwingende voorschriften; het wordt 
 +
 [#bestemming-getmessage-resultaat]
 .Bestemming GetMessage resultaat
-[.center,width="90%" ,cols="34%,^8%,^8%,50%",options="header",]
+[.center,width="100%",cols="34%,^8%,^8%,50%",options="header",]
 |===
 |Resultaat |naar appl |voor BAS |Gebruik
 |MSSequenceNumber | |• |Wordt opgeslagen in het BAS om dubbele verwerking van opgehaalde berichten te voorkomen.
@@ -812,7 +817,7 @@ Van alle sPd-operaties wordt in deze paragraaf aangegeven
 
 [#notatie-spd-data-dictionary]
 .Notatie sPd Data dictionary
-[.center,width="90%" ,cols="20%,80%",options="header",]
+[.center,width="80%",cols="20%,80%",options="header",]
 |===
 |Symbool |Betekenis
 |.... = .... |bestaat uit
@@ -824,9 +829,9 @@ Van alle sPd-operaties wordt in deze paragraaf aangegeven
 |++**++ .... ++**++ |De tekst tussen de sterretjes geeft commentaar aan
 |===
 
-*Algemene definities*
-
-[.center,width="90%",cols="27%,3%,70%a",frame=none,grid=none]
+*Algemene definities*::
++
+[.center,width="100%",cols="30%,3%,67%a",frame=none,grid=none]
 |===
 |sPd protocol |= |++**++ sPd staat voor "Simple Pd". Het kan beschouwd worden als een tussenvorm tussen de echte Pd (P7) Protocol Data Unit en de binnen de applicatie gehanteerde formaten. Een interactie binnen sPd wordt geïnitieerd door een eindsysteem, dat een Operation met daarin een Request naar de Mailbox Server (MBS) stuurt. De MBS antwoordt eveneens met een Operation; afhankelijk van de gevraagde Operation en het resultaat van de verwerking in de MBS kan dat een Result of een Confirmation zijn. +
 
@@ -841,7 +846,7 @@ Een Result of Confirmation kan foutmeldingen in de vorm van een code bevatten. V
 |OperationItems |= |++**++ worden gedefinieerd op de volgende pagina's ++**++
 |Operation |= |
 
-[width="100%",cols="<70%,3%,>27%",frame=none,grid=none]
+[width="100%",cols="<67%,3%,>30%",frame=none,grid=none]
 !===
 !++[++ LogonRequest!\| !++**++ 900 ++**++
 !LogonConfirmation!\| !++**++ 909 ++**++
@@ -877,16 +882,16 @@ Een Result of Confirmation kan foutmeldingen in de vorm van een code bevatten. V
 
 ====== Logon
 
-*Definities*
-
+*Definities*::
++
 // alle tabellen met definities zo doen, met label en = teken in aparte kolommen!
-[.center,width="90%",cols="27%,3%,70%a",frame=none,grid=none]
+[.center,width="100%",cols="30%,3%,67%a",frame=none,grid=none]
 |===
 |LogonRequest |= |Length {plus} "900" {plus} UserName {plus} UserPassword
 |LogonConfirmation |= |Length {plus} "909" {plus} LogonResult {plus} (MessageEntryDTS {plus} SystemmanagerMessage)
 |===
 
-*Structuur*
+*Structuur*::
 
 [.text-center]
 .Structuur LogonRequest
@@ -898,14 +903,15 @@ image::image77.svg[width=435,height=194]
 
 ====== PutMessage
 
-*Definities*
-
-[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+*Definities*::
++
+[.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
 |PutMessage |= |PutEnvelope {plus} |++**++ 120 ++**++ +
 |||MessageHeading {plus} |++**++ 150 ++**++ +
 |||MessageBody |++**++ 180 ++**++
-|PutEnvelope |= |Length {plus} "120" {plus} ( OriginatorORName ) {plus} |
+|PutEnvelope |= |Length {plus} "120" {plus} |
+|||( OriginatorORName ) {plus} |
 |||( ContentType ) {plus} |
 |||( Priority ) {plus} |
 |||( DeferredDeliveryTime ) {plus} |
@@ -928,14 +934,13 @@ image::image77.svg[width=435,height=194]
 |||++**++ Alleen als er geen fout is opgetreden++**++ |
 |===
 
-*Aantekeningen*
-
+*Aantekeningen*::
 . De PutEnvelope bevat geen Recipient veld; in plaats daarvan worden altijd de Recipients uit de MessageHeading gebruikt.
 . Het Attention veld wordt niet gebruikt. Het is gereserveerd voor toekomstig gebruik door de berichtendienst zelf.
 . ReceiptNotification impliceert tevens NonReceiptNotification.
 . De velden van PutMessageConfirmation worden weggelaten als er een fout optreedt (dat wil zeggen: PutResult ≠ "0000").
 
-*Structuur*
+*Structuur*::
 
 [.text-center]
 .Structuur PutEnvelope
@@ -955,9 +960,9 @@ image::image81.svg[width=435,height=194]
 
 ====== GetMessage
 
-*Definities*
-
-[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+*Definities*::
++
+[.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
 |GetMessage |= |Length {plus} "200" {plus} MSSequenceNumber |
 |GetMessageResult |= |MSEntry {plus} |++**++ 210 ++**++
@@ -1001,7 +1006,7 @@ image::image81.svg[width=435,height=194]
 |GetMessageConfirmation |= |Length {plus} "290" {plus} GetError |
 |===
 
-*Structuur*
+*Structuur*::
 
 [.text-center]
 .Structuur GetMessage
@@ -1037,9 +1042,9 @@ image::image89.svg[width=435,height=194]
 
 ====== DeleteMessages
 
-*Definities*
-
-[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+*Definities*::
++
+[.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
 |DeleteMessages |= |Length {plus} "300" {plus} |
 |||++[++(DeleteRange) \| DeleteNumbers++]++ |
@@ -1049,7 +1054,7 @@ image::image89.svg[width=435,height=194]
 |DeleteMessagesConfirmation |= |Length {plus} "309" {plus} DeleteResult |
 |===
 
-*Structuur*
+*Structuur*::
 
 [.text-center]
 .Structuur DeleteMessages
@@ -1061,9 +1066,9 @@ image::image91.svg[width=436,height=194]
 
 ====== ListMessages
 
-*Definities*
-
-[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+*Definities*::
++
+[.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
 |ListMessages |= |Length {plus} "400" {plus} |
 |||(LimitNumber) {plus} |
@@ -1088,7 +1093,7 @@ image::image91.svg[width=436,height=194]
 |ListMessagesConfirmation |= |Length {plus} "419" {plus} ListError |
 |===
 
-*Structuur*
+*Structuur*::
 
 [.text-center]
 .Structuur ListMessages
@@ -1108,9 +1113,9 @@ image::image95.svg[width=436,height=194]
 
 ====== SummarizeMessages
 
-*Definities*
-
-[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+*Definities*::
++
+[.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
 |SummarizeMessages |= |Length {plus} "500" {plus} |
 |||(TypeSelection) {plus} |
@@ -1129,7 +1134,7 @@ image::image95.svg[width=436,height=194]
 |SummarizeConfirmation |= |Length {plus} "590" {plus} SummarizeError |
 |===
 
-*Structuur*
+*Structuur*::
 
 [.text-center]
 .Structuur SummarizeMessages
@@ -1145,16 +1150,16 @@ image::image98.svg[width=436,height=194]
 
 ====== ChangePassword
 
-*Definities*
-
-[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+*Definities*::
++
+[.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
 |ChangePasswordRequest |= |Length {plus} "910" {plus} |
 |||OldPassword {plus} NewPassword |
 |ChangePasswordConfirmation |= |Length {plus} "919" {plus} ChangePasswordResult |
 |===
 
-*Structuur*
+*Structuur*::
 
 [.text-center]
 .Structuur ChangePassword
@@ -1166,9 +1171,9 @@ image::image100.svg[width=434,height=194]
 
 ====== Logoff
 
-*Definities*
-
-[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+*Definities*::
++
+[.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
 |LogoffRequest |= |Length {plus} "990" ++**++ geen parameters ++**++ |
 |LogoffConfirmation |= |Length {plus} "999" {plus} LogoffResult |
@@ -1186,15 +1191,15 @@ image::image102.svg[width=436,height=194]
 
 ====== Overige operaties
 
-*Definities*
-
-[.center,width="90%",cols="27%,3%,50%,>20%",frame=none,grid=none]
+*Definities*::
++
+[.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
 |NoOperationConfirmation |= |Length {plus} "009" {plus} NoOperationError |
 |Termination |= |Length |
 |===
 
-*Structuur*
+*Structuur*::
 
 [.text-center]
 .Structuur NoOperationConfirmation
@@ -1210,7 +1215,7 @@ Onderstaande tabel geeft een overzicht van alle codes die binnen sPd worden gebr
 
 [#codes-in-spd-velden]
 .Codes in sPd velden
-[.center,width="90%",cols="25%,15%,15%,45%",options="header",]
+[.center,width="100%",cols="25%,15%,15%,45%",options="header",]
 |===
 |Veld ^|Code ^|Default waarde |Betekenis
 .2+|Attention ^|0 ^|0 |Geen 'attention'
@@ -1234,7 +1239,7 @@ Veel van de velden binnen sPd zijn optioneel, dat wil zeggen dat ze gevuld kunne
 
 [#default-waarden-in-spd]
 .Default waarden in sPd
-[.center,width="90%",cols="30%,^10%,30%,30%",options="header",]
+[.center,width="100%",cols="30%,^10%,30%,30%",options="header",]
 |===
 |Commando en Veld |Type |Default waarde |Opmerkingen
 4+|*Logon*
@@ -1324,7 +1329,7 @@ De fouten in deze groep kunnen bij alle sPd-operaties voorkomen. Ze wijzen bijvo
 
 [#algemene-spd-foutcodes]
 .Algemene sPd foutcodes
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1002 |S, B |*Commando niet toegestaan* (Invalid operation) +
@@ -1351,7 +1356,7 @@ Er is een fout geconstateerd in het lengteveld van een sPd-commando.
 
 [#spd-foutcodes-logon]
 .sPd-foutcodes Logon
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1006 |G |*Limiet op aantal logon operaties overschreden* (Logon limit exceeded). +
@@ -1381,7 +1386,7 @@ De toegang tot de berichtendienst is geblokkeerd doordat de berichtendienst zelf
 
 [#spd-foutcodes-putmessage]
 .sPd-foutcodes PutMessage
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1001 |S |*Syntax fout* (Syntax error). +
@@ -1409,7 +1414,7 @@ Er is een bericht aangeboden waarvan de body meer dan 19000 tekens bevat. Van ee
 
 [#spd-foutcodes-getmessage]
 .sPd-foutcodes GetMessage
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1071 |S |*Bericht niet gevonden* (Invalid MSSequenceNumber). +
@@ -1425,7 +1430,7 @@ Onderstaande codes kunnen voorkomen als NonDeliveryReason in een DeliveryReport 
 
 [#spd-foutcodes-deliveryreport]
 .sPd-foutcodes DeliveryReport
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1035 |T |*Geadresseerde tijdelijk onbereikbaar* (Recipient temporarily unavailable). +
@@ -1453,7 +1458,7 @@ Onderstaande foutcodes kunnen voorkomen in een DeleteMessagesConfirmation. Als �
 
 [#spd-foutcodes-deletemessages]
 .sPd-foutcodes DeleteMessages
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1005 |S |*Selectiecriteria ontbreken* (Missing elements). +
@@ -1471,7 +1476,7 @@ Bij een DeleteMessages commando zijn één of meer berichten opgegeven die nog n
 
 [#spd-foutcodes-listmessages]
 .sPd-foutcodes ListMessages
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1111 |G |*Te veel berichten opgevraagd* (Invalid limit). +
@@ -1489,7 +1494,7 @@ De criteria in het ListMessages commando (status en prioriteit) bevatten één o
 
 [#spd-foutcodes-summarizemessages]
 .sPd-foutcodes SummarizeMessages
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1112 |S |*Ongeldig bereik opgegeven* (Invalid range). +
@@ -1503,7 +1508,7 @@ De criteria in het SummarizeMessages commando (status en prioriteit) bevatten é
 
 [#spd-foutcodes-changepassword]
 .sPd-foutcodes ChangePassword
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1131 |S |*Oude wachtwoord ontbreekt* (Old password missing). +
@@ -1521,7 +1526,7 @@ Het nieuwe wachtwoord dat door de gebruiker is opgegeven voldoet niet aan de daa
 
 [#spd-reject-foutcodes]
 .sPd Reject foutcodes
-[.center,width="90%" ,cols="10%,5%,85%",options="header",]
+[.center,width="100%",cols="10%,5%,85%",options="header",]
 |===
 |Code |Type |Betekenis
 |1321 |S |*Ongeldig sPd-commando* (Unrecognised operation). +
@@ -1582,9 +1587,9 @@ In 'gewoon' sPd zijn de nodige ROSE-elementen impliciet opgenomen. Bij turbo-sPd
 
 We kunnen een turbo-sPd-operatie definiëren analoog aan de definities in <<_spd_operaties>> voor sPd:
 
-*Definities*
-
-[width="100%",cols="35%,3%,62%",frame=none,grid=none]
+*Definities*::
++
+[width="90%",cols="35%,3%,62%",frame=none,grid=none]
 |===
 |TurboOperation |= |(ROSEHeader) {plus} Operation {plus} +
 |||TerminationRecord
@@ -1594,26 +1599,28 @@ We kunnen een turbo-sPd-operatie definiëren analoog aan de definities in <<_spd
 |InvokeId |= |++**++ een door de MC toegekend getal waarmee het commando wordt geïdentificeerd. De MC is vrij in het bepalen van de waarden, maar het wordt aanbevolen om de commando's opvolgend te nummeren, te beginnen bij 1 in iedere nieuwe sessie.++**++
 |===
 
-*Structuur*
-
+*Structuur*::
++
 [.text-center]
 .Structuur ROSE header
 image::image105.svg[width=434,height=194]
 
-*Gebruik*
-
-Zoals uit de definities blijkt is een ROSE-header altijd optioneel, en kan hij voor iedere sPd-operatie worden geplaatst. Er gelden echter de volgende dwingend voorgeschreven aanvullende regels:
-
+*Gebruik*::
++
+Zoals uit de definities blijkt is een ROSE-header altijd optioneel, en kan hij voor iedere sPd-operatie worden geplaatst. Er gelden echter de volgende dwingend voorgeschreven aanvullende regels: +
++
+--
 . Een Logon- of een Logoff-operatie worden nooit voorafgegaan door een ROSE-header. De MBS accepteert dit wel, maar het zou afwijken van de regels die binnen X.400 voor P7 en ROSE gelden.
 . Voor de overige operaties is een ROSE-header verplicht als de WindowSize van de gebruiker 2 of hoger is.
-
-Bij een WindowSize van 1 heeft een ROSE-header geen functie, maar het gebruik ervan is wel toegestaan. De MBS volgt in alle gevallen het gedrag van het eindsysteem: als een operatie vooraf werd gegaan door een ROSE-header, dan wordt bij het antwoord ook een ROSE-header teruggestuurd, met daarin exact dezelfde InvokeId als het eindsysteem heeft meegestuurd. Bevatte de operatie geen ROSE-header, dan wordt ook geen ROSE-header teruggestuurd, ook al heeft de gebruiker een WindowSize groter dan 1 (en voldoet de operatie daarmee dus niet aan bovengenoemde regel 2).
-
-De OperationCode in een ROSE-header heeft een van de volgende waarden:
-
+--
++
+Bij een WindowSize van 1 heeft een ROSE-header geen functie, maar het gebruik ervan is wel toegestaan. De MBS volgt in alle gevallen het gedrag van het eindsysteem: als een operatie vooraf werd gegaan door een ROSE-header, dan wordt bij het antwoord ook een ROSE-header teruggestuurd, met daarin exact dezelfde InvokeId als het eindsysteem heeft meegestuurd. Bevatte de operatie geen ROSE-header, dan wordt ook geen ROSE-header teruggestuurd, ook al heeft de gebruiker een WindowSize groter dan 1 (en voldoet de operatie daarmee dus niet aan bovengenoemde regel 2). +
++
+De OperationCode in een ROSE-header heeft een van de volgende waarden:+
++
 [#operationcodes-voor-rose-header]
 .OperationCodes voor ROSE-header
-[.center,width="90%" ,cols="10%,90%",options="header",]
+[.center,width="100%",cols="10%,90%",options="header",]
 |===
 |Code |Betekenis
 |001 |Voor alle requests van het eindsysteem
@@ -1621,11 +1628,11 @@ De OperationCode in een ROSE-header heeft een van de volgende waarden:
 |003 |Voor alle ontkennende antwoorden met uitzondering van Reject
 |004 |Voor alle Reject-antwoorden. Deze code wordt dus altijd gevolgd door een 'NoOperationConfirmation' (OperationCode 009).
 |===
-
-De syntax van de ROSE-header wordt in de MBS op een tamelijk laag niveau gecontroleerd. Als daarbij een fout wordt geconstateerd dan wordt als antwoord altijd een Reject gestuurd (OperationCode 009) en dus niet een negatief antwoord dat hoort bij het betreffende commando.
-
-Tuo-operaties worden altijd afgehandeld in volgorde van binnenkomst, dus de antwoorden komen bij een eindsysteem binnen in dezelfde volgorde als waarin de opdrachten zijn verstuurd. De enige uitzondering op deze regels zijn de bovengenoemde Rejects; deze worden verstuurd zodra daar aanleiding voor is, en deze kunnen dus eerder terugkomen dan de antwoorden op eerder uitgestuurde operaties. Het is daarom essentieel dat het eindsysteem commando's en antwoorden koppelt op basis van de InvokeId.
-
++
+De syntax van de ROSE-header wordt in de MBS op een tamelijk laag niveau gecontroleerd. Als daarbij een fout wordt geconstateerd dan wordt als antwoord altijd een Reject gestuurd (OperationCode 009) en dus niet een negatief antwoord dat hoort bij het betreffende commando. +
++
+Tuo-operaties worden altijd afgehandeld in volgorde van binnenkomst, dus de antwoorden komen bij een eindsysteem binnen in dezelfde volgorde als waarin de opdrachten zijn verstuurd. De enige uitzondering op deze regels zijn de bovengenoemde Rejects; deze worden verstuurd zodra daar aanleiding voor is, en deze kunnen dus eerder terugkomen dan de antwoorden op eerder uitgestuurde operaties. Het is daarom essentieel dat het eindsysteem commando's en antwoorden koppelt op basis van de InvokeId. +
++
 Logon en Logoff zijn uitgesloten van 'turbomode'; alle uitstaande opdrachten moeten zijn afgehandeld voordat een sessie kan worden afgesloten of kan worden overgeschakeld naar een andere mailbox (ReLogon).
 
 ==== TCP/IP
@@ -1666,7 +1673,7 @@ Ter vergelijk: in het OSI-lagenmodel bevindt zich TLS op het niveau van de trans
 
 [#spd-en-onderliggende-tcpip-lagen]
 .sPd en onderliggende TCP/IP-lagen
-[.center,width="90%" ,cols="^20%,^20%,^20%,^20%,^20%",options="header",]
+[.center,width="80%" ,cols="^20%,^20%,^20%,^20%,^20%",options="header",]
 |===
 2+|BAS |Applicatielaag 2+|MBS
 2+|SPd |Presentatielaag 2+|sPd

@@ -467,6 +467,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 		margin: 0px;
 		padding: 0px;
 	}
+	td.hdlist2 td.hdlist2 p {
+		margin: 0px;
+	}
 	div.hdlist table tbody tr td.hdlist2 div.openblock div.content div.hdlist table {
 		margin-left: 10px;
 	}
@@ -504,7 +507,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Logisch Ontwerp BRP</h1>
 <div class="details">
-<span id="revnumber">versie 2026.Q1,</span>
+<span id="revnumber">versie: 2026.Q1,</span>
 <span id="revdate">1 januari 2026</span>
 </div>
 <div id="toc" class="toc2">
@@ -868,12 +871,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2025.Q4) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2026.Q1. Deze versie treedt op 1 januari 2026 in werking.</p>
 </div>
 <div class="paragraph">
-<p>W181 Invoering BSN op CN</p>
+<p>W201 Deprecated elementen in BRP API</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#_inschrijving_als_ingezetene_op_grond_van_een_aangifte_van_verblijf_en_adres">paragraaf 2.2.1.2</a>, <a href="#_inschrijving_bij_een_rni_loket">paragraaf 2.3.1.1</a>, <a href="#_inschrijving_op_basis_van_een_opgave_van_een_rni_deelnemer">paragraaf 2.3.1.2</a>, <a href="#_soorten_persoonslijsten_bij_niet_ingezetenen">paragraaf 2.3.1.3</a>, <a href="#WijzigingBuitenlandsAdresBijIngezetenenEmigratie">paragraaf 2.3.2.6</a>, <a href="#_beschrijving_van_de_elementen">paragraaf 4.6</a></p>
+<p><a href="#_output_19">paragraaf 5.3.12.4</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>W215 Centraal protocolleringsoverzicht via MO</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_stelselarchitectuur">paragraaf 1.5.2</a>, <a href="#_berichtenverkeer_algemeen">paragraaf 5.1.1</a>, <a href="#_inleiding_23">paragraaf 5.3.1</a>, <a href="#_brp_protocolleringsoverzicht_api">paragraaf 5.3.15</a></p>
 </li>
 </ul>
 </div>
@@ -883,7 +896,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#_beschrijving_van_de_elementen">paragraaf 4.6</a>, <a href="#_beschrijving_van_de_elementen_2">paragraaf 4.11.3</a>, <a href="#_ad_hoc_vragen_via_de_berichtendienst">paragraaf 5.3.4</a>, <a href="#_controles_6">paragraaf 5.3.12.3</a></p>
+<p>N.v.t.</p>
 </li>
 </ul>
 </div>
@@ -11586,8 +11599,8 @@ Bij het specificeren van elementlengten in het berichtenuitwisselingsformaat wor
 <colgroup>
 <col style="width: 3%;">
 <col style="width: 37%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
@@ -11899,6 +11912,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g01">01</a>
@@ -12074,6 +12091,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g01">01</a>
@@ -12251,6 +12272,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g01">01</a>
@@ -12428,6 +12453,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g05">05</a>
@@ -12591,6 +12620,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g01">01</a>
@@ -12782,6 +12815,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g08">08</a>
@@ -12916,6 +12953,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g66">66</a>
@@ -13057,6 +13098,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g09">09</a>
@@ -13242,6 +13287,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g01">01</a>
@@ -13428,6 +13477,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g39">39</a>
@@ -13537,6 +13590,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g32">32</a>
@@ -13663,6 +13720,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g35">35</a>
@@ -13780,6 +13841,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g31">31</a>
@@ -13875,6 +13940,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g40">40</a>
@@ -13959,6 +14028,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g09">09</a>
@@ -14109,6 +14182,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g16">16</a>
@@ -14202,6 +14279,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#g01">01</a>
@@ -14782,6 +14863,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e0110">01.10</a>
@@ -14867,6 +14952,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e0210">02.10</a>
@@ -14967,6 +15056,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e0310">03.10</a>
@@ -15059,6 +15152,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e0410">04.10</a>
@@ -15135,6 +15232,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e0510">05.10</a>
@@ -15211,6 +15312,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e0610">06.10</a>
@@ -15303,6 +15408,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e0710">07.10</a>
@@ -15403,6 +15512,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e0810">08.10</a>
@@ -15495,6 +15608,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e0910">09.10</a>
@@ -15579,6 +15696,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1010">10.10</a>
@@ -15671,6 +15792,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1110">11.10</a>
@@ -15829,6 +15954,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1210">12.10</a>
@@ -15905,6 +16034,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1310">13.10</a>
@@ -16015,6 +16148,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1410">14.10</a>
@@ -16099,6 +16236,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1510">15.10</a>
@@ -16175,6 +16316,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1610">16.10</a>
@@ -16267,6 +16412,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1710">17.10</a>
@@ -16359,6 +16508,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1810">18.10</a>
@@ -16435,6 +16588,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e1910">19.10</a>
@@ -16511,6 +16668,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e2010">20.10</a>
@@ -16595,6 +16756,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e3110">31.10</a>
@@ -16713,6 +16878,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e3210">32.10</a>
@@ -16789,6 +16958,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e3310">33.10</a>
@@ -16865,6 +17038,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e3510">35.10</a>
@@ -16998,6 +17175,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e3610">36.10</a>
@@ -17074,6 +17255,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e3810">38.10</a>
@@ -17158,6 +17343,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e3910">39.10</a>
@@ -17250,6 +17439,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e4010">40.10</a>
@@ -17326,6 +17519,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e6110">61.10</a>
@@ -17402,6 +17599,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e6210">62.10</a>
@@ -17478,6 +17679,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e6310">63.10</a>
@@ -17554,6 +17759,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e6410">64.10</a>
@@ -17630,6 +17839,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e6510">65.10</a>
@@ -17706,6 +17919,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e6620">66.20</a>
@@ -17782,6 +17999,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e6710">67.10</a>
@@ -17866,6 +18087,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e6810">68.10</a>
@@ -17942,6 +18167,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e6910">69.10</a>
@@ -18018,6 +18247,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e7010">70.10</a>
@@ -18094,6 +18327,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e7110">71.10</a>
@@ -18178,6 +18415,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e7210">72.10</a>
@@ -18254,6 +18495,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e7310">73.10</a>
@@ -18330,6 +18575,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e7510">75.10</a>
@@ -18406,6 +18655,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8010">80.10</a>
@@ -18490,6 +18743,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8110">81.10</a>
@@ -18574,6 +18831,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8210">82.10</a>
@@ -18666,6 +18927,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8310">83.10</a>
@@ -18758,6 +19023,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8410">84.10</a>
@@ -18834,6 +19103,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8510">85.10</a>
@@ -18910,6 +19183,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8610">86.10</a>
@@ -18986,6 +19263,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8710">87.10</a>
@@ -19062,6 +19343,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8810">88.10</a>
@@ -19146,6 +19431,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#e8910">89.10</a>
@@ -34659,6 +34948,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#gbw">BW</a>
@@ -34711,6 +35004,10 @@ Groepsopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#gad">AD</a>
@@ -34938,6 +35235,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eAD01">AD.01</a>
@@ -35006,6 +35307,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eBW01">BW.01</a>
@@ -35066,6 +35371,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eGL01">GL.01</a>
@@ -35126,6 +35435,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eGZ01">GZ.01</a>
@@ -35186,6 +35499,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eHP01">HP.01</a>
@@ -35246,6 +35563,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eKD01">KD.01</a>
@@ -35306,6 +35627,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eNM01">NM.01</a>
@@ -35406,6 +35731,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eNT01">NT.01</a>
@@ -35466,6 +35795,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eOU01">OU.01</a>
@@ -35526,6 +35859,10 @@ Elementopsomming
 <td class="hdlist2">
 <div class="hdlist">
 <table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
 <tr>
 <td class="hdlist1">
 <a href="#eVP01">VP.01</a>
@@ -36155,7 +36492,7 @@ Mogelijke waarden
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">volledigeNaam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.02 Volledige naam van de bewoner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM02">PA.NM.02</a> Volledige naam van de bewoner</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -36170,7 +36507,7 @@ Mogelijke waarden
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">datum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gebaseerd op 01.03.10 Geboortedatum op de PL van de bewoner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gebaseerd op <a href="#e0310">01.03.10</a> Geboortedatum op de PL van de bewoner</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -36212,7 +36549,7 @@ Mogelijke waarden
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">volledigeNaam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.02 Volledige naam van de bewoner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM02">PA.NM.02</a> Volledige naam van de bewoner</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -36227,7 +36564,7 @@ Mogelijke waarden
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">datum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gebaseerd op 01.03.10 Geboortedatum op de PL van de bewoner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gebaseerd op <a href="#e0310">01.03.10</a> Geboortedatum op de PL van de bewoner</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -36692,41 +37029,36 @@ Mogelijke waarden
 <col style="width: 3%;">
 <col style="width: 3%;">
 <col style="width: 3%;">
-<col style="width: 3%;">
-<col style="width: 28%;">
+<col style="width: 31%;">
 <col style="width: 10%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="5">Element naam</th>
+<th class="tableblock halign-left valign-top" colspan="4">Element naam</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Mogelijke waarden / corresponderende rubriek in BRP-V</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">gezag</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">array of objects</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eGZ01">PA.GZ.01</a> Gezagsrelaties</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EenhoofdigOuderlijkGezag" / "GezagNietTeBepalen" / "GezamenlijkGezag" / "TijdelijkGeenGezag" / "TweehoofdigOuderlijkGezag" / "Voogdij"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"EenhoofdigOuderlijkGezag" / "GezagNietTeBepalen" / "GezamenlijkGezag" / "GezamenlijkOuderlijkGezag" / "TijdelijkGeenGezag" / "Voogdij"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">minderjarige</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">burgerservicenummer</p></td>
@@ -36736,13 +37068,11 @@ Mogelijke waarden
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">naam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -36753,18 +37083,21 @@ Mogelijke waarden
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">leeftijd</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eGL01">PA.GL.01</a> Leeftijd van de PL van de minderjarige</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "EenhoofdigOuderlijkGezag"</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">inOnderzoek</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geeft aan dat de gezagsrelatie in onderzoek is</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "EenhoofdigOuderlijkGezag":</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">ouder</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
@@ -36773,13 +37106,11 @@ Mogelijke waarden
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">burgerservicenummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0120">01.01.20</a> Burgerservicenummer van de PL van de ouder</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">naam</p></td>
@@ -36790,18 +37121,15 @@ Mogelijke waarden
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">volledigeNaam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM02">PA.NM.02</a> Volledige naam van de PL van de ouder</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "GezagNietTeBepalen"</p></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "GezagNietTeBepalen":</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">toelichting</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -36809,11 +37137,9 @@ Mogelijke waarden
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "GezamenlijkGezag"</p></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "GezamenlijkGezag":</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">ouder</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
@@ -36822,13 +37148,11 @@ Mogelijke waarden
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">burgerservicenummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0120">01.01.20</a> Burgerservicenummer van de PL van de ouder</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">naam</p></td>
@@ -36839,13 +37163,11 @@ Mogelijke waarden
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">volledigeNaam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM02">PA.NM.02</a> Volledige naam van de PL van de ouder</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">derde</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
@@ -36853,6 +37175,17 @@ Mogelijke waarden
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"BekendeDerde" / "OnbekendeDerde"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "BekendeDerde":</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">burgerservicenummer</p></td>
@@ -36862,13 +37195,11 @@ Mogelijke waarden
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">naam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -36878,30 +37209,15 @@ Mogelijke waarden
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "TijdelijkGeenGezag"</p></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "GezamenlijkOuderlijkGezag":</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">toelichting</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reden waarom gezag niet is vast te stellen op basis van gegevens in de BRP en wet- en regelgeving.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "TweehoofdigOuderlijkGezag"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">ouders</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">array of objects</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">burgerservicenummer</p></td>
@@ -36911,13 +37227,11 @@ Mogelijke waarden
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">naam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -36927,11 +37241,19 @@ Mogelijke waarden
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "Voogdij"</p></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "TijdelijkGeenGezag":</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">toelichting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reden waarom gezag niet is vast te stellen op basis van gegevens in de BRP en wet- en regelgeving.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "Voogdij":</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">derden</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">array of objects</p></td>
@@ -36939,6 +37261,17 @@ Mogelijke waarden
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"BekendeDerde" / "OnbekendeDerde"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "BekendeDerde":</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">burgerservicenummer</p></td>
@@ -36948,13 +37281,11 @@ Mogelijke waarden
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">naam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -38580,7 +38911,7 @@ Mogelijke waarden
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "Adres"</p></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "Adres":</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -38912,7 +39243,7 @@ Mogelijke waarden
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "Locatie"</p></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "Locatie":</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -39097,7 +39428,7 @@ Mogelijke waarden
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "VerblijfplaatsBuitenland"</p></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "VerblijfplaatsBuitenland":</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -39365,7 +39696,7 @@ Mogelijke waarden
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "VerblijfplaatsOnbekend"</p></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Als type = "VerblijfplaatsOnbekend":</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -39995,8 +40326,8 @@ Endpoint in het kader van het experimentbesluit dataminimalisatie BRP, alleen te
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#brp_protocolleringsoverzicht_api">/protocolleringsoverzicht</a><br>
-API waarmee MijnOverheid een protocolleringsoverzicht kan opvragen voor een burger, bij de POM. Het protocolleringsoverzicht wordt in de MijnOverheid Berichtenbox van de burger geplaatst.</p>
+<p><a href="#_brp_protocolleringsoverzicht_api">/protocolleringsoverzicht</a><br>
+API waarmee MijnOverheid een protocolleringsoverzicht over een bepaalde periode kan opvragen voor een burger, bij de POM. Het protocolleringsoverzicht wordt in de MijnOverheid Berichtenbox van de burger geplaatst.</p>
 </li>
 </ul>
 </div>
@@ -44190,12 +44521,12 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 3%;">
-<col style="width: 3%;">
-<col style="width: 29%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 3.0303%;">
+<col style="width: 3.0303%;">
+<col style="width: 29.2929%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -44270,8 +44601,8 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <colgroup>
 <col style="width: 3%;">
 <col style="width: 37%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -44413,10 +44744,10 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -44504,8 +44835,8 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <col style="width: 3%;">
 <col style="width: 3%;">
 <col style="width: 34%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -44700,10 +45031,10 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -44718,7 +45049,9 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><p class="tableblock">berichtTransportIdsParam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">array of strings</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Een UUID of meerdere UUID&#8217;s van het bericht of de berichten die opgehaald moet(en) worden. Indien meerdere UUID&#8217;s, dan scheiden met een komma. Deze query parameter verwijst naar het berichtenId zoals deze bij de BRP berichten API bekend is, niet te verwarren met het BerichtId dat door de verzender is opgegeven. U verkrijgt deze UUID&#8217;s middels GET {basis_url}/berichten.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Een UUID of meerdere UUID&#8217;s van het bericht of de berichten die opgehaald moet(en) worden. Indien meerdere UUID&#8217;s, dan scheiden met een komma. Deze query parameter verwijst naar het berichtenId zoals deze bij de BRP berichten API bekend is, niet te verwarren met het BerichtId dat door de verzender is opgegeven. U verkrijgt deze UUID&#8217;s middels GET {basis_url}/berichten.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -44733,8 +45066,8 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <col style="width: 3%;">
 <col style="width: 3%;">
 <col style="width: 34%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -44927,10 +45260,10 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -44945,7 +45278,9 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <td class="tableblock halign-left valign-top"><p class="tableblock">berichtTransportIdsParam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">array of strings</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Een of meerdere UUID&#8217;s van berichten die verwijderd moeten worden. Indien meerdere UUID&#8217;s, dan scheiden met een komma. Deze parameter verwijst naar het  berichtTransportId zoals deze bij de BRP berichten API bekend is, niet te verwarren met het BerichtId dat door de verzender is opgegeven. U verkrijgt deze UUID&#8217;s middels een request naar /api/v1/berichten.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Een of meerdere UUID&#8217;s van berichten die verwijderd moeten worden. Indien meerdere UUID&#8217;s, dan scheiden met een komma. Deze parameter verwijst naar het  berichtTransportId zoals deze bij de BRP berichten API bekend is, niet te verwarren met het BerichtId dat door de verzender is opgegeven. U verkrijgt deze UUID&#8217;s middels een request naar /api/v1/berichten.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -44959,8 +45294,8 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <colgroup>
 <col style="width: 3%;">
 <col style="width: 37%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -45084,10 +45419,10 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -45130,8 +45465,8 @@ Protocolfouten kunnen op iedere plaats in een berichtencyclus worden verstuurd. 
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -46115,17 +46450,17 @@ De ontvangst van een verwerkbevestiging betekent dat de vervolginschrijvingsproc
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="number">&#x2465;</span></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Afhankelijk van de foutreden in de kop van het <a href="#Jf01">Jf01</a>-bericht worden de volgende acties ondernomen:</p>
-</div>
-<div class="paragraph">
-<p><strong>Foutreden A</strong></p>
-</div>
-<div class="paragraph">
-<p>Als de gevonden PL in de RNI actueel blijkt te zijn, dient de RNI een correctie uit te voeren. Daarna kan de vervolginschrijvingsprocedure opnieuw worden gestart.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Foutreden A</strong></p>
+</div>
+<div class="paragraph">
+<p>Als de gevonden PL in de RNI actueel blijkt te zijn, dient de RNI een correctie uit te voeren. Daarna kan de vervolginschrijvingsprocedure opnieuw worden gestart.</p>
+</div>
+<div class="paragraph">
 <p><strong>Foutreden B</strong></p>
 </div>
 <div class="ulist">
@@ -46664,17 +46999,17 @@ De ontvangst van een verwerkbevestiging betekent dat de procedure correct is afg
 </div>
 <div class="paragraph">
 <p>De gebeurtenisgemeente zal de situatie moeten onderzoeken.</p>
-</div>
-<div class="paragraph">
-<p><strong>Foutreden U</strong></p>
-</div>
-<div class="paragraph">
-<p>Blijkbaar komt het A-nummer van de hoofdpersoon dubbel voor in de gemeente van inschrijving of de RNI in het PL-bestand of in het verwijsbestand. De gebeurtenisgemeente neemt contact op met de gemeente van inschrijving of de RNI om de dubbelopneming op te lossen.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Foutreden U</strong></p>
+</div>
+<div class="paragraph">
+<p>Blijkbaar komt het A-nummer van de hoofdpersoon dubbel voor in de gemeente van inschrijving of de RNI in het PL-bestand of in het verwijsbestand. De gebeurtenisgemeente neemt contact op met de gemeente van inschrijving of de RNI om de dubbelopneming op te lossen.</p>
+</div>
+<div class="paragraph">
 <p><strong>Foutreden V</strong></p>
 </div>
 <div class="paragraph">
@@ -47415,8 +47750,8 @@ Als tussen RvIG en de gemeente of RNI het uitvoeren van een synchroniciteitssele
 <caption class="title">Tabel 14. Foutcodes Opvragen BSN nummervoorraad</caption>
 <colgroup>
 <col style="width: 15%;">
-<col style="width: 40%;">
-<col style="width: 45%;">
+<col style="width: 35%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -47499,8 +47834,8 @@ Als tussen RvIG en de gemeente of RNI het uitvoeren van een synchroniciteitssele
 <caption class="title">Tabel 15. Foutcodes Presentievraag</caption>
 <colgroup>
 <col style="width: 15%;">
-<col style="width: 40%;">
-<col style="width: 45%;">
+<col style="width: 35%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -55344,10 +55679,10 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -55362,7 +55697,9 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <td class="tableblock halign-left valign-top"><p class="tableblock">Burgerservicenummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0120">01.01.20</a> Burgerservicenummer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#e0120">01.01.20</a> Burgerservicenummer</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -55410,8 +55747,8 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -55521,10 +55858,10 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 </div>
 <table class="tableblock frame-all grid-all center" style="width: 99%;">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -55539,13 +55876,17 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"BewoningMetPeildatum" / "BewoningMetPeriode"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>"BewoningMetPeildatum" / "BewoningMetPeriode"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">adresseerbaarObjectidentificatie</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1180">08/58.11.80</a> Identificatiecode verblijfplaats</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1180">08/58.11.80</a> Identificatiecode verblijfplaats</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type="BewoningMetPeildatum":</p></td>
@@ -55554,7 +55895,9 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <td class="tableblock halign-left valign-top"><p class="tableblock">peildatum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type="BewoningMetPeriode":</p></td>
@@ -55563,13 +55906,17 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <td class="tableblock halign-left valign-top"><p class="tableblock">datumVan</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">datumTot</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -55604,7 +55951,7 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <p>Of de afnemer geautoriseerd is voor het medium ad hoc (<a href="#e9567">35.95.67</a> Medium ad hoc = "N" of "A");</p>
 </li>
 <li>
-<p>Of de afnemer geautoriseerd is voor AX.BW.01 Bewoningen (komt deze rubriek voor in <a href="#e9560">35.95.60</a> Rubrieknummer ad hoc?).</p>
+<p>Of de afnemer geautoriseerd is voor <a href="#eBW01">AX.BW.01</a> Bewoningen (komt deze rubriek voor in <a href="#e9560">35.95.60</a> Rubrieknummer ad hoc?).</p>
 </li>
 </ul>
 </div>
@@ -55642,8 +55989,8 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -55656,7 +56003,7 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">bewoningen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON-object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AX.BW.01 Bewoningen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eBW01">AX.BW.01</a> Bewoningen</p></td>
 </tr>
 </tbody>
 </table>
@@ -55670,7 +56017,7 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <div class="sect4">
 <h5 id="_protocollering_3">5.3.11.5. Protocollering</h5>
 <div class="paragraph">
-<p>Verstrekking van persoonsgegevens via het endpoint /bewoningen in de BRP API worden geprotocolleerd: van elke bewoner en elke mogelijke bewoner die in het resultaat is opgenomen, wordt geprotocolleerd dat AX.BW.01 Bewoningen is verstrekt.</p>
+<p>Verstrekking van persoonsgegevens via het endpoint /bewoningen in de BRP API worden geprotocolleerd: van elke bewoner en elke mogelijke bewoner die in het resultaat is opgenomen, wordt geprotocolleerd dat <a href="#eBW01">AX.BW.01</a> Bewoningen is verstrekt.</p>
 </div>
 <hr>
 </div>
@@ -55702,10 +56049,10 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -55720,13 +56067,17 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"RaadpleegMetBurgerservicenummer" / "ZoekMetAdresseerbaarObjectIdentificatie" / "ZoekMetGeslachtsnaamEnGeboortedatum" / "ZoekMetNaamEnGemeenteVanInschrijving" / "ZoekMetNummeraanduidingIdentificatie" / "ZoekMetPostcodeEnHuisnummer" / "ZoekMetStraatHuisnummerEnGemeenteVanInschrijving"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>"RaadpleegMetBurgerservicenummer" / "ZoekMetAdresseerbaarObjectIdentificatie" / "ZoekMetGeslachtsnaamEnGeboortedatum" / "ZoekMetNaamEnGemeenteVanInschrijving" / "ZoekMetNummeraanduidingIdentificatie" / "ZoekMetPostcodeEnHuisnummer" / "ZoekMetStraatHuisnummerEnGemeenteVanInschrijving"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fields</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">array of strings</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eén of meerdere uit alle mogelijke elementen die hieronder zijn beschreven.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Eén of meerdere uit alle mogelijke elementen die hieronder zijn beschreven.</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "RaadpleegMetBurgerservicenummer":</p></td>
@@ -55735,13 +56086,17 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <td class="tableblock halign-left valign-top"><p class="tableblock">burgerservicenummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">array of strings</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0120">01.01.20</a> Burgerservicenummer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0120">01.01.20</a> Burgerservicenummer</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">gemeenteVanInschrijving</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "ZoekMetAdresseerbaarObjectIdentificatie":</p></td>
@@ -55750,20 +56105,26 @@ Het bericht uit het <a href="#Vb02">Vb02</a>-bericht wordt in een <a href="#Vb01
 <td class="tableblock halign-left valign-top"><p class="tableblock">inclusiefOverledenPersonen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
-false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
+false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">gemeenteVanInschrijving</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">adresseerbaarObjectIdentificatie</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1180">08.11.80</a> Identificatiecode verblijfplaats</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1180">08.11.80</a> Identificatiecode verblijfplaats</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "ZoekMetGeslachtsnaamEnGeboortedatum":</p></td>
@@ -55772,44 +56133,58 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inclusiefOverledenPersonen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
-false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
+false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">voornamen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0210">01.02.10</a> Voornamen</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0210">01.02.10</a> Voornamen</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">voorvoegsel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0230">01.02.30</a> Voorvoegsel geslachtsnaam</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0230">01.02.30</a> Voorvoegsel geslachtsnaam</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geslachtsnaam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0240">01.02.40</a> Geslachtsnaam</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0240">01.02.40</a> Geslachtsnaam</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geboortedatum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0310">01.03.10</a> Geboortedatum</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0310">01.03.10</a> Geboortedatum</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geslacht</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0410">01.04.10</a> Geslachtsaanduiding</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0410">01.04.10</a> Geslachtsaanduiding</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">gemeenteVanInschrijving</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "ZoekMetNaamEnGemeenteVanInschrijving":</p></td>
@@ -55818,38 +56193,50 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inclusiefOverledenPersonen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
-false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
+false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">voornamen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0210">01.02.10</a> Voornamen</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0210">01.02.10</a> Voornamen</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">voorvoegsel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0230">01.02.30</a> Voorvoegsel geslachtsnaam</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0230">01.02.30</a> Voorvoegsel geslachtsnaam</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geslachtsnaam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0240">01.02.40</a> Geslachtsnaam</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0240">01.02.40</a> Geslachtsnaam</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geslacht</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0410">01.04.10</a> Geslachtsaanduiding</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0410">01.04.10</a> Geslachtsaanduiding</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">gemeenteVanInschrijving</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "ZoekMetNummeraanduidingIdentificatie":</p></td>
@@ -55858,20 +56245,26 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inclusiefOverledenPersonen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
-false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
+false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">gemeenteVanInschrijving</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nummeraanduidingIdentificatie</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1190">08.11.90</a> Identificatiecode nummeraanduiding</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1190">08.11.90</a> Identificatiecode nummeraanduiding</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "ZoekMetPostcodeEnHuisnummer":</p></td>
@@ -55880,50 +56273,66 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inclusiefOverledenPersonen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
-false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
+false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geslachtsnaam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0240">01.02.40</a> Geslachtsnaam</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0240">01.02.40</a> Geslachtsnaam</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geboortedatum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0310">01.03.10</a> Geboortedatum</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0310">01.03.10</a> Geboortedatum</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">gemeenteVanInschrijving</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">huisnummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1120">08.11.20</a> Huisnummer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1120">08.11.20</a> Huisnummer</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">huisletter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1130">08.11.30</a> Huisletter</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1130">08.11.30</a> Huisletter</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">huisnummertoevoeging</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1140">08.11.40</a> Huisnummertoevoeging</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1140">08.11.40</a> Huisnummertoevoeging</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">postcode</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1160">08.11.60</a> Postcode</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1160">08.11.60</a> Postcode</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "ZoekMetStraatHuisnummerEnGemeenteVanInschrijving":</p></td>
@@ -55932,38 +56341,50 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inclusiefOverledenPersonen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
-false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true: geen filter op <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding<br>
+false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">gemeenteVanInschrijving</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#e0910">08.09.10</a> Gemeente van inschrijving</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">straat</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1110">08.11.10</a> Straatnaam</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1110">08.11.10</a> Straatnaam</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">huisnummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1120">08.11.20</a> Huisnummer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1120">08.11.20</a> Huisnummer</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">huisletter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1130">08.11.30</a> Huisletter</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1130">08.11.30</a> Huisletter</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">huisnummertoevoeging</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1140">08.11.40</a> Huisnummertoevoeging</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1140">08.11.40</a> Huisnummertoevoeging</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -56033,16 +56454,16 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>Als de afnemer vraagt om PA.NM.03 Aanhef, PA.NM.04 Aanspreekvorm, PA.NM.05 Aanspreeknaam of PA.NM.06 Naamgebruik in lopende tekst, dan wordt gecontroleerd of de afnemer is geautoriseerd voor PA.AD.01 Adressering of voor PA.AD.02 Elektronische adressering;</p>
+<p>Als de afnemer vraagt om <a href="#eNM03">PA.NM.03</a> Aanhef, <a href="#eNM04">PA.NM.04</a> Aanspreekvorm, <a href="#eNM05">PA.NM.05</a> Aanspreeknaam of <a href="#eNM06">PA.NM.06</a> Naamgebruik in lopende tekst, dan wordt gecontroleerd of de afnemer is geautoriseerd voor <a href="#eAD01">PA.AD.01</a> Adressering of voor <a href="#eAD02">PA.AD.02</a> Elektronische adressering;</p>
 </li>
 <li>
-<p>Als de afnemer vraagt om PA.VP.01 Begindatum adreshouding, dan wordt gecontroleerd of de afnemer is geautoriseerd voor 08.10.30 Datum aanvang adreshouding. of voor 08.13.20 Datum aanvang adres buitenland;</p>
+<p>Als de afnemer vraagt om <a href="#eVP01">PA.VP.01</a> Begindatum adreshouding, dan wordt gecontroleerd of de afnemer is geautoriseerd voor 08.10.30 Datum aanvang adreshouding. of voor 08.13.20 Datum aanvang adres buitenland;</p>
 </li>
 <li>
-<p>Als de afnemer vraagt om PA.VP.03 Adresregel 1 of PA.VP.04 Adresregel 2, dan wordt gecontroleerd of de afnemer is geautoriseerd voor PA.AD.01 Adressering;</p>
+<p>Als de afnemer vraagt om <a href="#eVP03">PA.VP.03</a> Adresregel 1 of <a href="#eVP04">PA.VP.04</a> Adresregel 2, dan wordt gecontroleerd of de afnemer is geautoriseerd voor <a href="#eAD01">PA.AD.01</a> Adressering;</p>
 </li>
 <li>
-<p>Als de afnemer vraagt om <a href="#e1350">08.13.50</a> Regel 3 adres buitenland of om <a href="#e1310">08.13.10</a> Land adres buitenland, dan wordt gecontroleerd of de afnemer is geautoriseerd voor deze rubrieken, of voor PA.AD.01 Adressering.</p>
+<p>Als de afnemer vraagt om <a href="#e1350">08.13.50</a> Regel 3 adres buitenland of om <a href="#e1310">08.13.10</a> Land adres buitenland, dan wordt gecontroleerd of de afnemer is geautoriseerd voor deze rubrieken, of voor <a href="#eAD01">PA.AD.01</a> Adressering.</p>
 </li>
 </ul>
 </div>
@@ -56081,8 +56502,8 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <col style="width: 3%;">
 <col style="width: 3%;">
 <col style="width: 28%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -56136,7 +56557,7 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">voorletters</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.01 Voorletters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM01">PA.NM.01</a> Voorletters</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -56188,7 +56609,7 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">volledigeNaam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.02 Volledige naam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM02">PA.NM.02</a> Volledige naam</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -56386,7 +56807,7 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">leeftijd</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.GL.01 Leeftijd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eGL01">PA.GL.01</a> Leeftijd</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -56518,7 +56939,7 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">voorletters</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.OU.01 Voorletters ouder van de betreffende ouder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eOU01">PA.OU.01</a> Voorletters ouder van de betreffende ouder</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -56824,7 +57245,7 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NT.01 Type nationaliteit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNT01">PA.NT.01</a> Type nationaliteit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -56993,7 +57414,7 @@ false: <a href="#e6720">07.67.20</a> is leeg of ongelijk aan "O"</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">voorletters</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.HP.01 Voorletters partner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eHP01">PA.HP.01</a> Voorletters partner</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -57660,14 +58081,14 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">datumVan</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.VP.01 Begindatum adreshouding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eVP01">PA.VP.01</a> Begindatum adreshouding</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.VP.02 Type verblijfplaats</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eVP02">PA.VP.02</a> Type verblijfplaats</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -58260,14 +58681,14 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">adresregel1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.VP.03 Adresregel 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eVP03">PA.VP.03</a> Adresregel 1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">adresregel2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.VP.04 Adresregel 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eVP04">PA.VP.04</a> Adresregel 2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -58304,7 +58725,7 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">aanhef</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.03 Aanhef</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM03">PA.NM.03</a> Aanhef</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -58319,7 +58740,7 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">naam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.05 Aanspreeknaam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM05">PA.NM.05</a> Aanspreeknaam</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -58327,14 +58748,14 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">aanspreekvorm</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.04 Aanspreekvorm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM04">PA.NM.04</a> Aanspreekvorm</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">gebruikInLopendeTekst</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.06 Naamgebruik in lopende tekst</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM06">PA.NM.06</a> Naamgebruik in lopende tekst</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -58472,14 +58893,14 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">indicatieVestigingVanuitBuitenland</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.VP.05 Indicatie vestiging vanuit buitenland</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eVP05">PA.VP.05</a> Indicatie vestiging vanuit buitenland</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">vanuitVerblijfplaatsOnbekend</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.VP.06 Indicatie vestiging vanuit onbekende verblijfplaats</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eVP06">PA.VP.06</a> Indicatie vestiging vanuit onbekende verblijfplaats</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -58562,7 +58983,7 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">voorletters</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.KD.01 Voorletters kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eKD01">PA.KD.01</a> Voorletters kind</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -58897,7 +59318,7 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">gezag</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON-object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.GZ.01 Gezagsrelaties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eGZ01">PA.GZ.01</a> Gezagsrelaties</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -59006,7 +59427,7 @@ Aanduiding gegevens in onderzoek</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="7"><p class="tableblock">Als type = "ZoekMetAdresseerbaarObjectIdentificatie" / "ZoekMetGeslachtsnaamEnGeboortedatum" / "ZoekMetNaamEnGemeenteVanInschrijving" / "ZoekMetNummeraanduidingIdentificatie" /
-"ZoekMetPostcodeEnHuisnummer" / "ZoekMetStraatHuisnummerEnGemeenteVanInschrijving"</p></td>
+"ZoekMetPostcodeEnHuisnummer" / "ZoekMetStraatHuisnummerEnGemeenteVanInschrijving":</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">personen</p></td>
@@ -59037,7 +59458,7 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">voorletters</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.01 Voorletters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM01">PA.NM.01</a> Voorletters</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -59089,7 +59510,7 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">volledigeNaam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.NM.02 Volledige naam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eNM02">PA.NM.02</a> Volledige naam</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -59194,7 +59615,7 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">leeftijd</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.GL.01 Leeftijd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eGL01">PA.GL.01</a> Leeftijd</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -59347,14 +59768,14 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">adresregel1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.VP.03 Adresregel 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eVP03">PA.VP.03</a> Adresregel 1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">adresregel2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.VP.04 Adresregel 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eVP04">PA.VP.04</a> Adresregel 2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -59463,13 +59884,13 @@ Aanduiding gegevens in onderzoek</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock">Als type = "ZoekMetAdresseerbaarObjectIdentificatie"</p></td>
+<td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock">Als type = "ZoekMetAdresseerbaarObjectIdentificatie":</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">gezag</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON-object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PA.GZ.01 Gezagsrelaties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eGZ01">PA.GZ.01</a> Gezagsrelaties</p></td>
 </tr>
 </tbody>
 </table>
@@ -59509,10 +59930,10 @@ Aanduiding gegevens in onderzoek</p></td>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -59527,31 +59948,39 @@ Aanduiding gegevens in onderzoek</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"RaadpleegMetReisdocumentnummer" / "ZoekMetBurgerservicenummer"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>"RaadpleegMetReisdocumentnummer" / "ZoekMetBurgerservicenummer"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fields</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">array of strings</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">De gewenste velden in het antwoord. Zie voor een beschrijving van de mogelijkheden hieronder.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>De gewenste velden in het antwoord. Zie voor een beschrijving van de mogelijkheden hieronder.</p>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "RaadpleegMetReisdocumentnummer"</p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "RaadpleegMetReisdocumentnummer":</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reisdocumentnummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e3520">12.35.20</a> Nummer Nederlands reisdocument</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e3520">12.35.20</a> Nummer Nederlands reisdocument</p>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "ZoekMetBurgerservicenummer"</p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type = "ZoekMetBurgerservicenummer":</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">burgerservicenummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e0120">01.01.20</a> Burgerservicenummer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e0120">01.01.20</a> Burgerservicenummer</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -59618,8 +60047,8 @@ Aanduiding gegevens in onderzoek</p></td>
 <col style="width: 3%;">
 <col style="width: 3%;">
 <col style="width: 28%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -59892,10 +60321,10 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 </div>
 <table class="tableblock frame-all grid-all center" style="width: 99%;">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -59910,13 +60339,17 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"RaadpleegMetPeildatum" / "RaadpleegMetPeriode"</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>"RaadpleegMetPeildatum" / "RaadpleegMetPeriode"</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">burgerservicenummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#e1020">01.10.20</a> Burgerservicenummer van de persoon</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#e1020">01.10.20</a> Burgerservicenummer van de persoon</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type="RaadpleegMetPeildatum":</p></td>
@@ -59925,7 +60358,9 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">peildatum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Als type="RaadpleegMetPeriode":</p></td>
@@ -59934,13 +60369,17 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">datumVan</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">datumTot</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wordt vergeleken met <a href="#e1030">08/58.10.30</a> Datum aanvang adreshouding en/of <a href="#e1320">08/58.13.20</a> Datum aanvang adres buitenland</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -59975,7 +60414,7 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <p>Of de afnemer geautoriseerd is voor het medium ad hoc (<a href="#e9567">35.95.67</a> Medium ad hoc = "N" of "A");</p>
 </li>
 <li>
-<p>Of de afnemer geautoriseerd is voor <a href="#e0120">01.01.20</a> Burgerservicenummer, <a href="#e7010">07.70.10</a> Indicatie geheim en PX.VP.07 Verblijfplaatshistorie (komen deze voor in <a href="#e9560">35.95.60</a> Rubrieknummer ad hoc?).</p>
+<p>Of de afnemer geautoriseerd is voor <a href="#e0120">01.01.20</a> Burgerservicenummer, <a href="#e7010">07.70.10</a> Indicatie geheim en <a href="#eVP07">PX.VP.07</a> Verblijfplaatshistorie (komen deze voor in <a href="#e9560">35.95.60</a> Rubrieknummer ad hoc?).</p>
 </li>
 </ul>
 </div>
@@ -60009,8 +60448,8 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <col style="width: 3%;">
 <col style="width: 3%;">
 <col style="width: 34%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -60060,7 +60499,7 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">verblijfplaatsen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON-object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PX.VP.07 Verblijfplaatshistorie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#eVP07">PX.VP.07</a> Verblijfplaatshistorie</p></td>
 </tr>
 </tbody>
 </table>
@@ -60068,7 +60507,7 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <div class="sect4">
 <h5 id="_protocollering_6">5.3.14.5. Protocollering</h5>
 <div class="paragraph">
-<p>Verstrekking van persoonsgegevens via het endpoint /verblijfplaatshistorie in de BRP API worden geprotocolleerd. Van de PL die in het resultaat is opgenomen, wordt geprotocolleerd dat <a href="#e6710">07.67.10</a> Datum opschorting bijhouding, <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding en PX.VP.07 Verblijfplaatshistorie zijn verstrekt.</p>
+<p>Verstrekking van persoonsgegevens via het endpoint /verblijfplaatshistorie in de BRP API worden geprotocolleerd. Van de PL die in het resultaat is opgenomen, wordt geprotocolleerd dat <a href="#e6710">07.67.10</a> Datum opschorting bijhouding, <a href="#e6720">07.67.20</a> Omschrijving reden opschorting bijhouding en <a href="#eVP07">PX.VP.07</a> Verblijfplaatshistorie zijn verstrekt.</p>
 </div>
 <hr>
 </div>
@@ -60078,7 +60517,7 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <div class="sect4">
 <h5 id="_beschrijving_17">5.3.15.1. Beschrijving</h5>
 <div class="paragraph">
-<p>De BRP protocolleringsoverzicht API is een API van de POAM, die uitsluitend is te gebruiken door MijnOverheid en een protocolleringsoverzicht opvraagt via de webservice van de POM en deze vervolgens aan de burger verstrekt via de MijnOverheid Berichtenbox.</p>
+<p>De BRP protocolleringsoverzicht API is een API van de POAM, die uitsluitend is te gebruiken door MijnOverheid en een protocolleringsoverzicht over een bepaalde periode voor een bepaald BSN opvraagt via de webservice van de POM en deze vervolgens aan de burger verstrekt via de MijnOverheid Berichtenbox.</p>
 </div>
 <div class="paragraph">
 <p>URI: {basis_url}/protocolleringsoverzicht</p>
@@ -60097,10 +60536,10 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 </div>
 <table class="tableblock frame-all grid-all center" style="width: 99%;">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -60115,19 +60554,25 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">bsn</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Het burgerservicenummer van de burger voor wie het protocolleringsoverzicht wordt aangevraagd.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Het burgerservicenummer van de burger voor wie het protocolleringsoverzicht wordt aangevraagd.</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">begindatum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">De begindatum van de periode waarvoor het protocolleringsoverzicht wordt opgevraagd. Deze mag niet voor 6 januari 2013 liggen, aangezien er voor deze datum geen protocolleringen zijn vastgelegd.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>De begindatum van de periode waarvoor het protocolleringsoverzicht wordt opgevraagd. Deze mag niet voor 6 januari 2013 liggen, aangezien er voor deze datum geen protocolleringen zijn vastgelegd.</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">einddatum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string (datum: jjjj-mm-dd)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">De einddatum van de periode waarvoor het protocolleringsoverzicht wordt opgevraagd (inclusief). Deze moet minimaal één dag voor de systeemdatum liggen en maximaal 1 jaar na de begindatum.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>De einddatum van de periode waarvoor het protocolleringsoverzicht wordt opgevraagd (inclusief). Deze moet minimaal één dag voor de systeemdatum liggen en maximaal 1 jaar na de begindatum.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -60159,8 +60604,8 @@ Afgeleid van <a href="#e7010">07.70.10</a> Indicatie geheim.</p></td>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -63281,7 +63726,7 @@ Na controle of het bericht afkomstig is van RvIG wordt de wijziging afhankelijk 
 <div class="paragraph">
 <p>Hierin is {tabelaanduiding} een path parameter met de naam van de te bevragen tabel:</p>
 </div>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -63359,10 +63804,10 @@ Na controle of het bericht afkomstig is van RvIG wordt de wijziging afhankelijk 
 </div>
 <table class="tableblock frame-all grid-all stretch center">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 35.3535%;">
+<col style="width: 10.101%;">
+<col style="width: 12.1212%;">
+<col style="width: 42.4243%;">
 </colgroup>
 <thead>
 <tr>
@@ -63377,19 +63822,25 @@ Na controle of het bericht afkomstig is van RvIG wordt de wijziging afhankelijk 
 <td class="tableblock halign-left valign-top"><p class="tableblock">alleenActueel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indien aanwezig worden alleen actuele tabelregels (waarin 99.99 Datum beëindiging tabelregel dus niet voorkomt) teruggegeven. Als deze parameter ontbreekt, worden alle tabelregels teruggegeven.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Indien aanwezig worden alleen actuele tabelregels (waarin 99.99 Datum beëindiging tabelregel dus niet voorkomt) teruggegeven. Als deze parameter ontbreekt, worden alle tabelregels teruggegeven.</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">datum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">De datum waarop de tabel de inhoud had die gevraagd wordt. Dus als datum=20180701, dan wordt de inhoud van de tabel teruggegeven zoals die op 1 juli 2018 van kracht was: alle tabelregels met 99.98 Datum ingang tabelregel groter dan 20180701 worden weggelaten, en uit alle tabelregels met 99.99 Datum beëindiging tabelregel groter dan 20180701 wordt die datum weggelaten. Als deze parameter ontbreekt, worden de relevante tabelregels teruggegeven zoals die op het moment van bevragen in de tabel staan.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>De datum waarop de tabel de inhoud had die gevraagd wordt. Dus als datum=20180701, dan wordt de inhoud van de tabel teruggegeven zoals die op 1 juli 2018 van kracht was: alle tabelregels met 99.98 Datum ingang tabelregel groter dan 20180701 worden weggelaten, en uit alle tabelregels met 99.99 Datum beëindiging tabelregel groter dan 20180701 wordt die datum weggelaten. Als deze parameter ontbreekt, worden de relevante tabelregels teruggegeven zoals die op het moment van bevragen in de tabel staan.</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">{elementaanduiding}</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">De waarde die een tabelregel moet hebben in het betreffende element.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>De waarde die een tabelregel moet hebben in het betreffende element.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -63416,8 +63867,8 @@ Na controle of het bericht afkomstig is van RvIG wordt de wijziging afhankelijk 
 <col style="width: 3%;">
 <col style="width: 3%;">
 <col style="width: 34%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -63467,8 +63918,8 @@ Na controle of het bericht afkomstig is van RvIG wordt de wijziging afhankelijk 
 <colgroup>
 <col style="width: 3%;">
 <col style="width: 3%;">
-<col style="width: 19%;">
-<col style="width: 25%;">
+<col style="width: 34%;">
+<col style="width: 10%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
@@ -64947,9 +65398,7 @@ Inhoud bevat
 </div>
 <div class="stemblock">
 <div class="content">
-\[\begin{equation}
-nv = \left\lbrack \frac{(79 + 5 + \text{BodyLength} + 5) + (\text{RecordSize} - 1)}{\text{RecordSize}} \right\rbrack - 1
-\end{equation}\]
+\[nv = \left\lbrack \frac{(79 + 5 + \text{BodyLength} + 5) + (\text{RecordSize} - 1)}{\text{RecordSize}} \right\rbrack - 1\]
 </div>
 </div>
 <div class="paragraph">
@@ -64957,9 +65406,7 @@ nv = \left\lbrack \frac{(79 + 5 + \text{BodyLength} + 5) + (\text{RecordSize} - 
 </div>
 <div class="stemblock">
 <div class="content">
-\[\begin{equation}
-nv = \left\lbrack \frac{(\text{BodyLength} + 88)}{\text{RecordSize}} \right\rbrack
-\end{equation}\]
+\[nv = \left\lbrack \frac{(\text{BodyLength} + 88)}{\text{RecordSize}} \right\rbrack\]
 </div>
 </div>
 <div class="paragraph">
@@ -64970,9 +65417,7 @@ nv = \left\lbrack \frac{(\text{BodyLength} + 88)}{\text{RecordSize}} \right\rbra
 </div>
 <div class="stemblock">
 <div class="content">
-\[\begin{equation}
-nf = (nv + 1) * \text{RecordSize} - 89 - \text{BodyLength}
-\end{equation}\]
+\[nf = (nv + 1) * \text{RecordSize} - 89 - \text{BodyLength}\]
 </div>
 </div>
 <div class="paragraph">
@@ -65261,7 +65706,7 @@ De werkelijke functie van de MS ligt in het namens de geadresseerde in ontvangst
 <p>Voor de beschrijving van de koppeling met de berichtendienst zullen we gebruik maken van het algemene abstracte model dat de X.400 standaards gebruiken voor de beschrijving van Message Handling Systems. Dit model kent <em>objects</em> (UA&#8217;s, MS&#8217;s, MTA&#8217;s), <em>ports</em> (verbindingspunten tussen objecten), en <em>services</em> (diensten die een object aanbiedt door middel van zijn ports). Bij iedere port hoort een <em>Application Service Entity</em> (ASE), waarin de diensten van de port worden gedefinieerd. Interacties tussen objecten kunnen plaats vinden nadat er een <em>binding</em> heeft plaats gevonden tussen twee soortgelijke ports.</p>
 </div>
 <div class="paragraph">
-<p>In de grafische voorstellingen van het model geven open blokjes <span class="image"><img src="../images/image71.svg" alt="image71" width="30"></span> gebruikers (<em>consumers</em>) aan van een dienst, gesloten blokjes <span class="image"><img src="../images/image72.svg" alt="image72" width="30"></span> poorten waarop een dienst wordt aangeboden, en grijze blokjes <span class="image"><img src="../images/image73.svg" alt="image73" width="30"></span> poorten die in beide richtingen kunnen opereren.</p>
+<p>In de grafische voorstellingen van het model geven open blokjes <span class="image"><img src="../images/image71.svg" alt="image71" width="20"></span> gebruikers (<em>consumers</em>) aan van een dienst, gesloten blokjes <span class="image"><img src="../images/image72.svg" alt="image72" width="25"></span> poorten waarop een dienst wordt aangeboden, en grijze blokjes <span class="image"><img src="../images/image73.svg" alt="image73" width="30"></span> poorten die in beide richtingen kunnen opereren.</p>
 </div>
 <div class="paragraph">
 <p>Een <em>protocol</em> is in dit model een exacte specificatie hoe de diensten van een object door een gebruiker kunnen worden aangevraagd. Een protocoldefinitie heeft dus twee aspecten: een functioneel aspect en een representatie-aspect. Het zal duidelijk zijn dat er een directe relatie bestaat tussen de functionele aspecten van een protocol en de functionaliteit van het object dat door middel van het protocol benaderd wordt.</p>
@@ -65503,8 +65948,8 @@ De volgende velden worden herhaald voor iedere geadresseerde:</p></td>
 <table id="elementen-van-listmessages" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 29. Elementen van ListMessages</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
@@ -65594,9 +66039,7 @@ De volgende velden worden herhaald voor iedere geadresseerde:</p></td>
 </div>
 <div class="stemblock">
 <div class="content">
-\[\begin{equation}
-\frac{5000 \text{ (de maximale lengte)} - (13 + 17 + 5)\text{ (de vaste header)}}{29 \text{ (de lengte van één entry)}} = 171 \text{ entries}
-\end{equation}\]
+\[\frac{5000 \, \text{(de maximale lengte)} - (13 + 17 + 5) \, \text{(de vaste header)}}{29 \, \text{(de lengte van één entry)}} = 171 \, \text{entries}\]
 </div>
 </div>
 <div class="paragraph">
@@ -65627,8 +66070,8 @@ De volgende velden worden herhaald voor iedere geadresseerde:</p></td>
 <caption class="title">Tabel 30. Elementen van SummarizeMessages</caption>
 <colgroup>
 <col style="width: 30%;">
-<col style="width: 15%;">
-<col style="width: 55%;">
+<col style="width: 20%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -65716,23 +66159,23 @@ De volgende velden worden herhaald voor iedere geadresseerde:</p></td>
 <p>De MBS controleert de syntax van dit element en zal vervolgens proberen het bericht te vinden in de mailbox van de gebruiker. Indien dit niet lukt (verkeerd nummer, geen berichten aanwezig), zal dit gemeld worden via de GetMessageConfirmation met een foutboodschap.<br></p>
 </div>
 <div class="paragraph">
-<p>Indien het bericht aanwezig is zal het worden verzonden naar het eindsysteem in het GetMessageResult. Dit GetMessageResult kan 3 soorten berichten bevatten:</p>
+<p>Indien het bericht aanwezig is zal het worden verzonden naar het eindsysteem in het GetMessageResult. Dit GetMessageResult kan 3 soorten berichten bevatten:<br></p>
 </div>
+<div class="openblock">
+<div class="content">
 <div class="dlist unordered stack">
 <dl>
 <dt><strong>MessageResult</strong></dt>
 <dd>
-<p>Een bericht, bestaande uit GetEnvelope, MessageHeading en MessageBody. Heading en Body hebben dezelfde structuur als in het PutMessage commando; de Envelope heeft een iets afwijkende structuur. De elementen van MessageResult zijn samengevat in <a href="#elementen-van-messageresult">Tabel 31</a>.</p>
+<p>Een bericht, bestaande uit GetEnvelope, MessageHeading en MessageBody. Heading en Body hebben dezelfde structuur als in het PutMessage commando; de Envelope heeft een iets afwijkende structuur. De elementen van MessageResult zijn samengevat in <a href="#elementen-van-messageresult">Tabel 31</a>.<br></p>
 </dd>
 <dt><strong>DeliveryReport</strong> (zonder Envelope)</dt>
 <dd>
-<p>Daarin wordt het mislukken van een aflevering, een nondelivery, van een eerder door de gebruiker verzonden bericht gemeld. De elementen van een delivery report zijn vermeld in <a href="#elementen-van-deliveryreport">Tabel 32</a>. Merk op dat RecipientORName, MailboxBlockDateTimeStamp en NonDeliveryReason herhaald worden voor iedere geadresseerde, waaraan het bericht niet kon worden afgeleverd.</p>
+<p>Daarin wordt het mislukken van een aflevering, een nondelivery, van een eerder door de gebruiker verzonden bericht gemeld. De elementen van een delivery report zijn vermeld in <a href="#elementen-van-deliveryreport">Tabel 32</a>. Merk op dat RecipientORName, MailboxBlockDateTimeStamp en NonDeliveryReason herhaald worden voor iedere geadresseerde, waaraan het bericht niet kon worden afgeleverd.<br></p>
 </dd>
 <dt><strong>StatusResult</strong></dt>
 <dd>
-<p>Een StatusResult bestaat uit een GetEnvelope (<a href="#elementen-van-statusresult">Tabel 33</a>), en een StatusReport. In het StatusReport wordt aangegeven dat<br></p>
-<div class="openblock">
-<div class="content">
+<p>Een StatusResult bestaat uit een GetEnvelope (<a href="#elementen-van-statusresult">Tabel 33</a>), en een StatusReport. In het StatusReport wordt aangegeven dat</p>
 <div class="ulist">
 <ul>
 <li>
@@ -65740,16 +66183,19 @@ De volgende velden worden herhaald voor iedere geadresseerde:</p></td>
 </li>
 <li>
 <p>een bericht, waarbij om een receipt- of non-receipt notification is gevraagd, niet is opgehaald door de geadresseerde.</p>
+<div class="paragraph">
+<p>Binnen het BRP beheersdomein komen ReceiptNotifications overigens in principe niet voor. sPd gebruikers kunnen er niet om vragen, terwijl gebruik er van voor P1- en P7-gebruikers verboden is.</p>
+</div>
 </li>
 </ul>
 </div>
-</div>
-</div>
 <div class="paragraph">
-<p>Binnen het BRP beheersdomein komen ReceiptNotifications overigens in principe niet voor. sPd gebruikers kunnen er niet om vragen, terwijl gebruik er van voor P1- en P7-gebruikers verboden is.<br></p>
+<p>Indien een verzonden bericht voor meerdere geadresseerden bestemd was, komt er voor iedere geadresseerde die het bericht heeft opgehaald (ReceiptNotification), respectievelijk die op dit punt in gebreke blijft (NonReceiptNotification), een apart StatusResult. De Elementen van het StatusResult antwoord zijn vermeld in <a href="#elementen-van-statusresult">Tabel 33</a>.</p>
 </div>
-<div class="paragraph">
-<p>Indien een verzonden bericht voor meerdere geadresseerden bestemd was, komt er voor iedere geadresseerde die het bericht heeft opgehaald (ReceiptNotification), respectievelijk die op dit punt in gebreke blijft (NonReceiptNotification), een apart StatusResult. De Elementen van het StatusResult antwoord zijn vermeld in <a href="#elementen-van-statusresult">Tabel 33</a><br></p>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 <table id="elementen-van-messageresult" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 31. Elementen van MessageResult</caption>
@@ -65910,16 +66356,13 @@ De volgende velden worden voor ieder bericht herhaald:</p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Van alle berichten die opgehaald zijn met het GetMessage commando wordt de MSStatus veranderd in 2 ('processed').<br></p>
+<p>Van alle berichten die opgehaald zijn met het GetMessage commando wordt de MSStatus veranderd in 2 ('processed').</p>
 </div>
 <div class="paragraph">
-<p>Merk op dat het aanpassen van de MSStatus gebeurt op het moment dat de MBS het bericht aanbiedt aan het onderliggende transportnetwerk. Dat betekent dat, als er tijdens het verzenden van het antwoord een fout optreedt, de MSStatus is gewijzigd in 'processed' zonder dat het eindsysteem het bericht ontvangen heeft. Met andere woorden, het sPd protocol voorziet op dit niveau niet in een ontvangstbevestiging. De reden hiervoor is uiteraard dat deze faciliteit ook in P7 ontbreekt.<br></p>
+<p>Merk op dat het aanpassen van de MSStatus gebeurt op het moment dat de MBS het bericht aanbiedt aan het onderliggende transportnetwerk. Dat betekent dat, als er tijdens het verzenden van het antwoord een fout optreedt, de MSStatus is gewijzigd in 'processed' zonder dat het eindsysteem het bericht ontvangen heeft. Met andere woorden, het sPd protocol voorziet op dit niveau niet in een ontvangstbevestiging. De reden hiervoor is uiteraard dat deze faciliteit ook in P7 ontbreekt.</p>
 </div>
 <div class="paragraph">
 <p>Bij het ontwerp van het BAS (dat moet voorzien in de mogelijkheid om het ophalen van berichten te hervatten nadat een storing is geconstateerd) moet met deze eigenaardigheid rekening worden gehouden. Het ligt voor de hand om het BAS het MSSequenceNumber van het laatste bericht waarvoor een GetMessage commando is gegeven te laten onthouden. Bij het hervatten van het ophalen van berichten dient dan met dit bericht te worden begonnen. Vervolgens kunnen met de standaard procedure de overige berichten worden opgehaald.</p>
-</div>
-</dd>
-</dl>
 </div>
 </dd>
 </dl>
@@ -65952,12 +66395,12 @@ De volgende velden worden voor ieder bericht herhaald:</p></td>
 <div class="paragraph">
 <p>Het resultaat van het commando wordt gemeld in de deletemessagesconfirmation.<br></p>
 </div>
-<table id="elementen-van-deletemessages" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="elementen-van-deletemessages" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 34. Elementen van DeleteMessages</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 35%;">
-<col style="width: 40%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -66014,7 +66457,7 @@ De volgende velden worden voor ieder bericht herhaald:</p></td>
 <p>Indien er geen fouten zijn geconstateerd, wordt het UserPassword veranderd in het NewPassword; de gebruiker moet bij de volgende LogonRequest dit nieuwe password meegeven.<br></p>
 </div>
 <div class="paragraph">
-<p>Er gelden stringente voorschriften voor het samenstellen van en het omgaan met een password;.</p>
+<p>Er gelden stringente voorschriften voor het samenstellen van en het omgaan met een password.</p>
 </div>
 </dd>
 </dl>
@@ -66077,7 +66520,7 @@ Nadat dit commando, waaraan geen verdere informatie wordt meegegeven, door de MB
 <dl>
 <dt class="hdlist1"><strong>Argumenten</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66096,7 +66539,7 @@ Nadat dit commando, waaraan geen verdere informatie wordt meegegeven, door de MB
 </dd>
 <dt class="hdlist1"><strong>Resultaat</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66146,7 +66589,7 @@ Nadat dit commando, waaraan geen verdere informatie wordt meegegeven, door de MB
 </dd>
 <dt class="hdlist1"><strong>Resultaat</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66184,7 +66627,7 @@ Nadat dit commando, waaraan geen verdere informatie wordt meegegeven, door de MB
 <dl>
 <dt class="hdlist1"><strong>Argumenten</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66258,7 +66701,7 @@ Nadat dit commando, waaraan geen verdere informatie wordt meegegeven, door de MB
 </dd>
 <dt class="hdlist1"><strong>Resultaat</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66296,7 +66739,7 @@ Nadat dit commando, waaraan geen verdere informatie wordt meegegeven, door de MB
 <div class="paragraph">
 <p>Sommige argumenten van de PutMessage operatie kunnen door het BAS zelf worden bepaald; andere dienen samen met de inhoud van het bericht door de applicatie te worden gespecificeerd. Voor een BAS dat volgens de BRP-richtlijnen is opgezet is dit samengevat in onderstaande tabel; daarin is ook aangegeven of het argument verplicht is (Mandatory, <strong>M</strong>) of optioneel (<strong>O</strong>).</p>
 </div>
-<table id="bron-putmessage-argumenten" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="bron-putmessage-argumenten" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 35. Bron PutMessage Argumenten</caption>
 <colgroup>
 <col style="width: 31%;">
@@ -66535,7 +66978,7 @@ In het PutMessage commando van sPd is de ReceiptNotification vooralsnog niet ge�
 <dl>
 <dt class="hdlist1"><strong>Argumenten</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66564,7 +67007,7 @@ ToDeliveryTime</p></td>
 </dd>
 <dt class="hdlist1"><strong>Resultaten</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66609,7 +67052,7 @@ Priority</p></td>
 <dl>
 <dt class="hdlist1"><strong>Argumenten</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66642,7 +67085,7 @@ ToDeliveryTime</p></td>
 </dd>
 <dt class="hdlist1"><strong>Resultaten</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66708,7 +67151,7 @@ ToDeliveryTime</p></td>
 <dl>
 <dt class="hdlist1"><strong>Argumenten</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66723,7 +67166,7 @@ ToDeliveryTime</p></td>
 </dd>
 <dt class="hdlist1"><strong>Resultaat</strong></dt>
 <dd>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<table class="tableblock frame-all grid-all stretch center">
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -66913,7 +67356,7 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 <div class="paragraph">
 <p>Voor vrije berichten gelden op dit punt geen dwingende voorschriften; het wordt aan de ontwerper van de applicatie overgelaten om te bepalen welke elementen naast de BodyString aan de gebruiker worden getoond.<br></p>
 </div>
-<table id="bestemming-getmessage-resultaat" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="bestemming-getmessage-resultaat" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 36. Bestemming GetMessage resultaat</caption>
 <colgroup>
 <col style="width: 34%;">
@@ -67191,7 +67634,7 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </li>
 </ul>
 </div>
-<table id="notatie-spd-data-dictionary" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="notatie-spd-data-dictionary" class="tableblock frame-all grid-all center" style="width: 80%;">
 <caption class="title">Tabel 37. Notatie sPd Data dictionary</caption>
 <colgroup>
 <col style="width: 20%;">
@@ -67234,14 +67677,15 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Algemene definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Algemene definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none stretch center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 70%;">
+<col style="width: 67%;">
 </colgroup>
 <tbody>
 <tr>
@@ -67293,9 +67737,9 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 <td class="tableblock halign-left valign-top"><p class="tableblock">=</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-none grid-none stretch">
 <colgroup>
-<col style="width: 70%;">
+<col style="width: 67%;">
 <col style="width: 3%;">
-<col style="width: 27%;">
+<col style="width: 30%;">
 </colgroup>
 <tbody>
 <tr>
@@ -67426,16 +67870,21 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
+</dd>
+</dl>
+</div>
 <div class="sect5">
 <h6 id="_logon">Logon</h6>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+</dl>
 </div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<table class="tableblock frame-none grid-none stretch center center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 70%;">
+<col style="width: 67%;">
 </colgroup>
 <tbody>
 <tr>
@@ -67454,10 +67903,12 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Structuur</strong></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Structuur</strong></dt>
+</dl>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock text-center text-center">
 <div class="content">
 <img src="../images/image76.svg" alt="image76" width="436" height="194">
 </div>
@@ -67472,14 +67923,15 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </div>
 <div class="sect5">
 <h6 id="_putmessage">PutMessage</h6>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none stretch center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 50%;">
+<col style="width: 47%;">
 <col style="width: 20%;">
 </colgroup>
 <tbody>
@@ -67504,7 +67956,13 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PutEnvelope</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">=</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Length &#43; "120" &#43; ( OriginatorORName ) &#43;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Length &#43; "120" &#43;</p></td>
+<td class="tableblock halign-right valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">( OriginatorORName ) &#43;</p></td>
 <td class="tableblock halign-right valign-top"></td>
 </tr>
 <tr>
@@ -67629,9 +68087,9 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Aantekeningen</strong></p>
-</div>
+</dd>
+<dt class="hdlist1"><strong>Aantekeningen</strong></dt>
+<dd>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -67648,10 +68106,11 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><strong>Structuur</strong></p>
+</dd>
+<dt class="hdlist1"><strong>Structuur</strong></dt>
+</dl>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock text-center text-center">
 <div class="content">
 <img src="../images/image78.svg" alt="image78" width="435" height="194">
 </div>
@@ -67678,14 +68137,15 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </div>
 <div class="sect5">
 <h6 id="_getmessage">GetMessage</h6>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none stretch center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 50%;">
+<col style="width: 47%;">
 <col style="width: 20%;">
 </colgroup>
 <tbody>
@@ -67931,10 +68391,11 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Structuur</strong></p>
+</dd>
+<dt class="hdlist1"><strong>Structuur</strong></dt>
+</dl>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock text-center text-center">
 <div class="content">
 <img src="../images/image82.svg" alt="image82" width="435" height="194">
 </div>
@@ -67985,14 +68446,15 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </div>
 <div class="sect5">
 <h6 id="_deletemessages">DeleteMessages</h6>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none stretch center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 50%;">
+<col style="width: 47%;">
 <col style="width: 20%;">
 </colgroup>
 <tbody>
@@ -68034,10 +68496,11 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Structuur</strong></p>
+</dd>
+<dt class="hdlist1"><strong>Structuur</strong></dt>
+</dl>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock text-center text-center">
 <div class="content">
 <img src="../images/image90.svg" alt="image90" width="436" height="195">
 </div>
@@ -68052,14 +68515,15 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </div>
 <div class="sect5">
 <h6 id="_listmessages">ListMessages</h6>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none stretch center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 50%;">
+<col style="width: 47%;">
 <col style="width: 20%;">
 </colgroup>
 <tbody>
@@ -68191,10 +68655,11 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Structuur</strong></p>
+</dd>
+<dt class="hdlist1"><strong>Structuur</strong></dt>
+</dl>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock text-center text-center">
 <div class="content">
 <img src="../images/image92.svg" alt="image92" width="436" height="194">
 </div>
@@ -68221,14 +68686,15 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </div>
 <div class="sect5">
 <h6 id="_summarizemessages">SummarizeMessages</h6>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none stretch center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 50%;">
+<col style="width: 47%;">
 <col style="width: 20%;">
 </colgroup>
 <tbody>
@@ -68324,10 +68790,11 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Structuur</strong></p>
+</dd>
+<dt class="hdlist1"><strong>Structuur</strong></dt>
+</dl>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock text-center text-center">
 <div class="content">
 <img src="../images/image96.svg" alt="image96" width="436" height="194">
 </div>
@@ -68348,14 +68815,15 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </div>
 <div class="sect5">
 <h6 id="_changepassword">ChangePassword</h6>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none stretch center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 50%;">
+<col style="width: 47%;">
 <col style="width: 20%;">
 </colgroup>
 <tbody>
@@ -68379,10 +68847,11 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Structuur</strong></p>
+</dd>
+<dt class="hdlist1"><strong>Structuur</strong></dt>
+</dl>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock text-center text-center">
 <div class="content">
 <img src="../images/image99.svg" alt="image99" width="435" height="194">
 </div>
@@ -68397,14 +68866,15 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </div>
 <div class="sect5">
 <h6 id="_logoff">Logoff</h6>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none stretch center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 50%;">
+<col style="width: 47%;">
 <col style="width: 20%;">
 </colgroup>
 <tbody>
@@ -68422,6 +68892,9 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
+</dd>
+</dl>
+</div>
 <div class="paragraph">
 <p><strong>Structuur</strong></p>
 </div>
@@ -68440,14 +68913,15 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </div>
 <div class="sect5">
 <h6 id="_overige_operaties">Overige operaties</h6>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none center" style="width: 90%;">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none stretch center">
 <colgroup>
-<col style="width: 27%;">
+<col style="width: 30%;">
 <col style="width: 3%;">
-<col style="width: 50%;">
+<col style="width: 47%;">
 <col style="width: 20%;">
 </colgroup>
 <tbody>
@@ -68465,10 +68939,11 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Structuur</strong></p>
+</dd>
+<dt class="hdlist1"><strong>Structuur</strong></dt>
+</dl>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock text-center text-center">
 <div class="content">
 <img src="../images/image103.svg" alt="image103" width="434" height="194">
 </div>
@@ -68487,7 +68962,7 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 <div class="paragraph">
 <p>Onderstaande tabel geeft een overzicht van alle codes die binnen sPd worden gebruikt en hun betekenis.</p>
 </div>
-<table id="codes-in-spd-velden" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="codes-in-spd-velden" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 38. Codes in sPd velden</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -68591,7 +69066,7 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 <div class="paragraph">
 <p>Veel van de velden binnen sPd zijn optioneel, dat wil zeggen dat ze gevuld kunnen worden met spaties; als ze aan het eind van een operationrecord voorkomen mogen ze zelfs worden weggelaten. In dat geval vult de Mailbox Server default waarden in of onderneemt default acties. <a href="#default-waarden-in-spd">Tabel 39</a> geeft een overzicht van alle velden in de commando&#8217;s die door het eindsysteem kunnen worden gegeven, met daarbij een indicatie of het veld verplicht is (Mandatory, M) of optioneel (O). Voor optionele velden wordt bovendien toegelicht wat de reactie van de Mailbox Server in dat geval is. In het algemeen wordt aanbevolen om zoveel mogelijk van default waarden gebruik te maken.</p>
 </div>
-<table id="default-waarden-in-spd" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="default-waarden-in-spd" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 39. Default waarden in sPd</caption>
 <colgroup>
 <col style="width: 30%;">
@@ -68973,7 +69448,7 @@ Dit rapport is afhankelijk van de receipt/non-receipt notification in de heading
 <div class="paragraph">
 <p>De fouten in deze groep kunnen bij alle sPd-operaties voorkomen. Ze wijzen bijvoorbeeld op protocolfouten of op problemen in de berichtendienst zelf. Sommige van deze fouten zullen worden gemeld in de antwoorden op een sPd operatie, andere in de algemene NoOperationConfirmation.</p>
 </div>
-<table id="algemene-spd-foutcodes" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="algemene-spd-foutcodes" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 40. Algemene sPd foutcodes</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69028,7 +69503,7 @@ Er is een fout geconstateerd in het lengteveld van een sPd-commando.</p></td>
 </div>
 <div class="sect5">
 <h6 id="_fouten_in_logon_operatie">Fouten in Logon operatie</h6>
-<table id="spd-foutcodes-logon" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-foutcodes-logon" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 41. sPd-foutcodes Logon</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69108,7 +69583,7 @@ De toegang tot de berichtendienst is geblokkeerd doordat de berichtendienst zelf
 </div>
 <div class="sect5">
 <h6 id="_fouten_in_putmessage">Fouten in PutMessage</h6>
-<table id="spd-foutcodes-putmessage" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-foutcodes-putmessage" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 42. sPd-foutcodes PutMessage</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69182,7 +69657,7 @@ Er is een bericht aangeboden waarvan de body meer dan 19000 tekens bevat. Van ee
 </div>
 <div class="sect5">
 <h6 id="_fouten_in_getmessage">Fouten in GetMessage</h6>
-<table id="spd-foutcodes-getmessage" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-foutcodes-getmessage" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 43. sPd-foutcodes GetMessage</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69217,7 +69692,7 @@ De Mailbox van de gebruiker bevat geen berichten meer. Van een eindsysteem wordt
 <div class="paragraph">
 <p>Onderstaande codes kunnen voorkomen als NonDeliveryReason in een DeliveryReport operation record (260).</p>
 </div>
-<table id="spd-foutcodes-deliveryreport" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-foutcodes-deliveryreport" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 44. sPd-foutcodes DeliveryReport</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69288,7 +69763,7 @@ Deze code is een verzamelnaam voor alle fouten die kunnen optreden bij het aflev
 <div class="paragraph">
 <p>Onderstaande foutcodes kunnen voorkomen in een DeleteMessagesConfirmation. Als één van deze fouten optreedt wordt het commando in zijn geheel <em>niet</em> uitgevoerd, en wordt er dus geen enkel bericht verwijderd.</p>
 </div>
-<table id="spd-foutcodes-deletemessages" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-foutcodes-deletemessages" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 45. sPd-foutcodes DeleteMessages</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69332,7 +69807,7 @@ Bij een DeleteMessages commando zijn één of meer berichten opgegeven die nog n
 </div>
 <div class="sect5">
 <h6 id="_fouten_in_listmessages">Fouten in ListMessages</h6>
-<table id="spd-foutcodes-listmessages" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-foutcodes-listmessages" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 46. sPd-foutcodes ListMessages</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69376,7 +69851,7 @@ De criteria in het ListMessages commando (status en prioriteit) bevatten één o
 </div>
 <div class="sect5">
 <h6 id="_fouten_in_summarizemessages">Fouten in SummarizeMessages</h6>
-<table id="spd-foutcodes-summarizemessages" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-foutcodes-summarizemessages" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 47. sPd-foutcodes SummarizeMessages</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69408,7 +69883,7 @@ De criteria in het SummarizeMessages commando (status en prioriteit) bevatten é
 </div>
 <div class="sect5">
 <h6 id="_fouten_in_changepassword">Fouten in ChangePassword</h6>
-<table id="spd-foutcodes-changepassword" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-foutcodes-changepassword" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 48. sPd-foutcodes ChangePassword</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69452,7 +69927,7 @@ Het nieuwe wachtwoord dat door de gebruiker is opgegeven voldoet niet aan de daa
 </div>
 <div class="sect5">
 <h6 id="_reject_foutcodes">Reject foutcodes</h6>
-<table id="spd-reject-foutcodes" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-reject-foutcodes" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 49. sPd Reject foutcodes</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69584,10 +70059,11 @@ Het is afhankelijk van het moment waarop de fout optreedt hoe de bovenliggende l
 <div class="paragraph">
 <p>We kunnen een turbo-sPd-operatie definiëren analoog aan de definities in <a href="#_spd_operaties">paragraaf 6.2.5.2</a> voor sPd:</p>
 </div>
-<div class="paragraph">
-<p><strong>Definities</strong></p>
-</div>
-<table class="tableblock frame-none grid-none stretch">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Definities</strong></dt>
+<dd>
+<table class="tableblock frame-none grid-none" style="width: 90%;">
 <colgroup>
 <col style="width: 35%;">
 <col style="width: 3%;">
@@ -69626,21 +70102,23 @@ Het is afhankelijk van het moment waarop de fout optreedt hoe de bovenliggende l
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Structuur</strong></p>
-</div>
+</dd>
+<dt class="hdlist1"><strong>Structuur</strong></dt>
+<dd>
 <div class="imageblock text-center">
 <div class="content">
 <img src="../images/image105.svg" alt="image105" width="434" height="194">
 </div>
 <div class="title">Figuur 83. Structuur ROSE header</div>
 </div>
+</dd>
+<dt class="hdlist1"><strong>Gebruik</strong></dt>
+<dd>
 <div class="paragraph">
-<p><strong>Gebruik</strong></p>
+<p>Zoals uit de definities blijkt is een ROSE-header altijd optioneel, en kan hij voor iedere sPd-operatie worden geplaatst. Er gelden echter de volgende dwingend voorgeschreven aanvullende regels:<br></p>
 </div>
-<div class="paragraph">
-<p>Zoals uit de definities blijkt is een ROSE-header altijd optioneel, en kan hij voor iedere sPd-operatie worden geplaatst. Er gelden echter de volgende dwingend voorgeschreven aanvullende regels:</p>
-</div>
+<div class="openblock">
+<div class="content">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -69651,13 +70129,15 @@ Het is afhankelijk van het moment waarop de fout optreedt hoe de bovenliggende l
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Bij een WindowSize van 1 heeft een ROSE-header geen functie, maar het gebruik ervan is wel toegestaan. De MBS volgt in alle gevallen het gedrag van het eindsysteem: als een operatie vooraf werd gegaan door een ROSE-header, dan wordt bij het antwoord ook een ROSE-header teruggestuurd, met daarin exact dezelfde InvokeId als het eindsysteem heeft meegestuurd. Bevatte de operatie geen ROSE-header, dan wordt ook geen ROSE-header teruggestuurd, ook al heeft de gebruiker een WindowSize groter dan 1 (en voldoet de operatie daarmee dus niet aan bovengenoemde regel 2).</p>
+</div>
 </div>
 <div class="paragraph">
-<p>De OperationCode in een ROSE-header heeft een van de volgende waarden:</p>
+<p>Bij een WindowSize van 1 heeft een ROSE-header geen functie, maar het gebruik ervan is wel toegestaan. De MBS volgt in alle gevallen het gedrag van het eindsysteem: als een operatie vooraf werd gegaan door een ROSE-header, dan wordt bij het antwoord ook een ROSE-header teruggestuurd, met daarin exact dezelfde InvokeId als het eindsysteem heeft meegestuurd. Bevatte de operatie geen ROSE-header, dan wordt ook geen ROSE-header teruggestuurd, ook al heeft de gebruiker een WindowSize groter dan 1 (en voldoet de operatie daarmee dus niet aan bovengenoemde regel 2).<br></p>
 </div>
-<table id="operationcodes-voor-rose-header" class="tableblock frame-all grid-all center" style="width: 90%;">
+<div class="paragraph">
+<p>De OperationCode in een ROSE-header heeft een van de volgende waarden:+</p>
+</div>
+<table id="operationcodes-voor-rose-header" class="tableblock frame-all grid-all stretch center">
 <caption class="title">Tabel 50. OperationCodes voor ROSE-header</caption>
 <colgroup>
 <col style="width: 10%;">
@@ -69689,13 +70169,16 @@ Het is afhankelijk van het moment waarop de fout optreedt hoe de bovenliggende l
 </tbody>
 </table>
 <div class="paragraph">
-<p>De syntax van de ROSE-header wordt in de MBS op een tamelijk laag niveau gecontroleerd. Als daarbij een fout wordt geconstateerd dan wordt als antwoord altijd een Reject gestuurd (OperationCode 009) en dus niet een negatief antwoord dat hoort bij het betreffende commando.</p>
+<p>De syntax van de ROSE-header wordt in de MBS op een tamelijk laag niveau gecontroleerd. Als daarbij een fout wordt geconstateerd dan wordt als antwoord altijd een Reject gestuurd (OperationCode 009) en dus niet een negatief antwoord dat hoort bij het betreffende commando.<br></p>
 </div>
 <div class="paragraph">
-<p>Tuo-operaties worden altijd afgehandeld in volgorde van binnenkomst, dus de antwoorden komen bij een eindsysteem binnen in dezelfde volgorde als waarin de opdrachten zijn verstuurd. De enige uitzondering op deze regels zijn de bovengenoemde Rejects; deze worden verstuurd zodra daar aanleiding voor is, en deze kunnen dus eerder terugkomen dan de antwoorden op eerder uitgestuurde operaties. Het is daarom essentieel dat het eindsysteem commando&#8217;s en antwoorden koppelt op basis van de InvokeId.</p>
+<p>Tuo-operaties worden altijd afgehandeld in volgorde van binnenkomst, dus de antwoorden komen bij een eindsysteem binnen in dezelfde volgorde als waarin de opdrachten zijn verstuurd. De enige uitzondering op deze regels zijn de bovengenoemde Rejects; deze worden verstuurd zodra daar aanleiding voor is, en deze kunnen dus eerder terugkomen dan de antwoorden op eerder uitgestuurde operaties. Het is daarom essentieel dat het eindsysteem commando&#8217;s en antwoorden koppelt op basis van de InvokeId.<br></p>
 </div>
 <div class="paragraph">
 <p>Logon en Logoff zijn uitgesloten van 'turbomode'; alle uitstaande opdrachten moeten zijn afgehandeld voordat een sessie kan worden afgesloten of kan worden overgeschakeld naar een andere mailbox (ReLogon).</p>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -69763,7 +70246,7 @@ Het is afhankelijk van het moment waarop de fout optreedt hoe de bovenliggende l
 <div class="paragraph">
 <p>Ter vergelijk: in het OSI-lagenmodel bevindt zich TLS op het niveau van de transportlaag direct boven de TCP/IP-stack</p>
 </div>
-<table id="spd-en-onderliggende-tcpip-lagen" class="tableblock frame-all grid-all center" style="width: 90%;">
+<table id="spd-en-onderliggende-tcpip-lagen" class="tableblock frame-all grid-all center" style="width: 80%;">
 <caption class="title">Tabel 51. sPd en onderliggende TCP/IP-lagen</caption>
 <colgroup>
 <col style="width: 20%;">
@@ -74857,8 +75340,8 @@ Voor categorie 08 Verblijfplaats: schrappen van 11.50 en groep 12; verplicht voo
 </div>
 <div id="footer">
 <div id="footer-text">
-Versie 2026.Q1<br>
-Last updated 2025-11-10 18:47:46 +0100
+Versie: 2026.Q1<br>
+Last updated 2025-12-22 17:49:46 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">
@@ -74873,7 +75356,7 @@ MathJax.Hub.Config({
     delimiters: [["\\$", "\\$"]],
     ignoreClass: "nostem|noasciimath"
   },
-  TeX: { equationNumbers: { autoNumber: "all" } }
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
 })
 MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
   MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {

@@ -3,7 +3,7 @@
 //Document attributen - moeten direct onder de titel geplaatst zijn
 :doctype: book
 :docinfo1:
-:version-label: Versie
+:version-label: Versie:
 :revnumber: 2026.Q1
 :revdate: 1 januari 2026
 :!chapter-signifier:
@@ -20,7 +20,7 @@
 :section-refsig: paragraaf
 :appendix-refsig: bijlage
 :stem: latexmath
-:eqnums: all
+:eqnums:
 :imagesdir: ../images
 
 //Wijzigingenoverzicht - geen genummerde paragraaf 
