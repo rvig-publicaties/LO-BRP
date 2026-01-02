@@ -177,6 +177,11 @@ Endpoint in het kader van het Experimentbesluit dataminimalisatie BRP, alleen te
 Endpoint in het kader van het Experimentbesluit dataminimalisatie BRP, alleen te gebruiken door deelnemers aan het experiment: raadpleeg een reisdocument door een reisdocumentnummer op te geven, of zoek reisdocumenten van een persoon door het burgerservicenummer op te geven.
 *** <<_brp_api_verblijfplaatshistorie,/verblijfplaatshistorie>> +
 Endpoint in het kader van het experimentbesluit dataminimalisatie BRP, alleen te gebruiken door deelnemers aan het experiment: zoek de verblijfplaatshistorie van een persoon op de opgegeven peildatum of binnen de opgegeven periode.
+* API's in verband met het opvragen van het protocolleringsoverzicht door MijnOverheid:
+** BRP Protocolleringsoverzicht API
+*** <<_brp_protocolleringsoverzicht_api,/protocolleringsoverzicht>> +
+API waarmee MijnOverheid een protocolleringsoverzicht over een bepaalde periode kan opvragen voor een burger, bij de POM. Het protocolleringsoverzicht wordt in de MijnOverheid Berichtenbox van de burger geplaatst.
+
 
 ===== Overige berichten
 
@@ -1170,7 +1175,7 @@ Method: POST
 ====== Input
 De input is een JSON-object waarin de volgende elementen kunnen voorkomen. 
 
-[width="100%",cols="3%,3%,29%,15%,15%,35%",options="header",]
+[width="100%",cols="3%,3%,29%,10%,12%,42%",options="header",]
 |===
 3+|Element naam |Type |Verplicht? |Omschrijving
 3+|berichten |array of objects |ja |Lijst van bericht(en)
@@ -1185,7 +1190,7 @@ De input is een JSON-object waarin de volgende elementen kunnen voorkomen.
 ====== Output
 De output is een JSON-object met de volgende elementen.
 
-[width="100%",cols="3%,37%,15%,45%",options="header",]
+[width="100%",cols="3%,37%,10%,50%",options="header",]
 |===
 2+|Element naam |Type |Omschrijving
 2+|interactieId |string |Een uniek ID wat aan het HTTP request gekoppeld wordt.
@@ -1224,7 +1229,7 @@ Method: GET
 ====== Input parameters
 De input bestaat uit de volgende (optionele) query parameters. 
 
-[width="100%",cols="35%,15%,15%,35%a",options="header",]
+[width="100%",cols="35%,10%,12%,42%a",options="header",]
 |===
 |Element naam |Type |Verplicht? |Omschrijving
 |status	|array of strings |nee |Geeft aan welke berichten opgenomen moeten worden in het resultaat. Mogelijke waardes (te scheiden door een komma): 
@@ -1244,7 +1249,7 @@ Standaard: "nieuw,gezien-in-lijst"
 ====== Output
 De output is een JSON-object met de volgende elementen.
 
-[width="100%",cols="3%,3%,34%,15%,45%",options="header",]
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
 |===
 3+|Element naam |Type |Omschrijving
 3+|interactieId |string |Een uniek ID wat aan het HTTP request gekoppeld wordt.
@@ -1293,7 +1298,7 @@ Method: GET
 ====== Input parameters
 De input is een path parameter waarin de volgende elementen kunnen voorkomen. 
 
-[width="100%",cols="35%,15%,15%,35%",options="header",]
+[width="100%",cols="35%,10%,12%,42%a",options="header",]
 |===
 |Element naam |Type |Verplicht? |Omschrijving
 |berichtTransportIdsParam |array of strings |ja |Een UUID of meerdere UUID's van het bericht of de berichten die opgehaald moet(en) worden. Indien meerdere UUID's, dan scheiden met een komma. Deze query parameter verwijst naar het berichtenId zoals deze bij de BRP berichten API bekend is, niet te verwarren met het BerichtId dat door de verzender is opgegeven. U verkrijgt deze UUID's middels GET {basis_url}/berichten.
@@ -1302,7 +1307,7 @@ De input is een path parameter waarin de volgende elementen kunnen voorkomen.
 ====== Output
 De output is een JSON-object met de volgende elementen.
 
-[width="100%",cols="3%,3%,34%,15%,45%",options="header",]
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
 |===
 3+|Element naam |Type |Omschrijving
 3+|interactieId |string |Een uniek ID wat aan het HTTP request gekoppeld wordt.
@@ -1348,7 +1353,7 @@ Method: DELETE
 ====== Input parameters
 De input is een path parameterct waarin de volgende elementen kunnen voorkomen. 
 
-[width="100%",cols="35%,15%,15%,35%",options="header",]
+[width="100%",cols="35%,10%,12%,42%a",options="header",]
 |===
 |Element naam |Type |Verplicht? |Omschrijving
 |berichtTransportIdsParam |array of strings |ja |Een of meerdere UUID's van berichten die verwijderd moeten worden. Indien meerdere UUID's, dan scheiden met een komma. Deze parameter verwijst naar het  berichtTransportId zoals deze bij de BRP berichten API bekend is, niet te verwarren met het BerichtId dat door de verzender is opgegeven. U verkrijgt deze UUID's middels een request naar /api/v1/berichten.
@@ -1357,7 +1362,7 @@ De input is een path parameterct waarin de volgende elementen kunnen voorkomen.
 ====== Output
 De output is een JSON-object met de volgende elementen.
 
-[width="100%",cols="3%,37%,15%,45%",options="header",]
+[width="100%",cols="3%,37%,10%,50%",options="header",]
 |===
 2+|Element naam |Type |Omschrijving
 2+|interactieId |string |Een uniek ID wat aan het HTTP request gekoppeld wordt.
@@ -1393,7 +1398,7 @@ Method: soort
 ====== Input parameters
 De input is een query parameter:
 
-[width="100%",cols="35%,15%,15%,35%a",options="header",]
+[width="100%",cols="35%,10%,12%,42%a",options="header",]
 |===
 |Element naam |Type |Verplicht? |Omschrijving
 |soort |string |ja |Geeft aan welke telling er uitgevoerd moet worden.
@@ -1407,7 +1412,7 @@ De input is een query parameter:
 ====== Output
 De output is een JSON-object met de volgende elementen.
 
-[width="100%",cols="40%,15%,45%",options="header",]
+[width="100%",cols="40%,10%,50%",options="header",]
 |===
 |Element naam |Type |Omschrijving
 |interactieId |string |Een uniek ID wat aan het HTTP request gekoppeld wordt.
@@ -1445,60 +1450,60 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 2+|Gemeenten en RNI onderling:
 |
 
-* 5.2.2
+* <<_vervolginschrijving_van_gemeente_naar_gemeente,5.2.2>>
 
-|Vervolginschrijving
+|Vervolginschrijving van gemeente naar gemeente
 |
 
-* 5.2.3
+* <<_vervolginschrijving_van_gemeente_naar_rni,5.2.3>>
 
 |Vervolginschrijving van gemeente naar RNI
 |
 
-* 5.2.4
+* <<_vervolginschrijving_van_rni_naar_gemeente,5.2.4>>
 
 |Vervolginschrijving van RNI naar gemeente
 |
 
-* 5.2.5
+* <<_toevallige_geboorte,5.2.5>>
 
 |Toevallige geboorte
 |
 
-* 5.2.6
+* <<_toevallige_gebeurtenis,5.2.6>>
 
 |Toevallige gebeurtenis
 |
 
-* 5.2.7
+* <<_opnemen_verwijsgegevens,5.2.7>>
 
 |Opnemen verwijsgegevens
 |
 
-* 5.2.8
+* <<_wijzigen_anummer_in_de_verwijsgegevens,5.2.8>>
 
 |Wijzigen A‑nummer in de verwijsgegevens
 2+|Gemeenten, RNI en de Minister van Justitie:
 |
 
-* 5.2.9
+* <<_opnemenwijzigen_verblijfstitel_2,5.2.9>>
 
 |Opnemen/wijzigen verblijfstitel
 2+|Gemeenten, RNI en BRP-V:
 |
 
-* 5.2.10
+* <<_synchronisatie_met_brp_verstrekkingen,5.2.10>>
 
 |Synchronisatie met BRP-V
 |
 
-* 5.2.11
+* <<_synchronisatievraag,5.2.11>>
 
 |Synchronisatievraag
 2+|Gemeenten, RNI en de synchroniciteitsmailbox:
 |
 
-* 5.2.12
+* <<_synchroniciteit_met_brp_verstrekkingen,5.2.12>>
 
 |Synchroniciteit met BRP-V
 |===
@@ -1508,58 +1513,58 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 3+|Webservices in verband met bevragen door gemeenten en de RNI van de BvBSN:
 |
 
-* 5.2.13
+* <<_webservice_aanvragen_bsn_voorraad_bij_bvbsn,5.2.13>>
 
 |GenereerDistribueerNr |Opvragen BSN-nummervoorraad
 |
 
-* 5.2.14
+* <<_webservice_presentievraag_aan_bvbsn,5.2.14>>
 
 |MatchIdenGeg |Presentievraag
 3+|
 3+|Webservices in verband met het bevragen door gemeenten en RNI van BRP-V:
 |
 
-* 5.2.15
+* <<_opvragen_persoonslijst_bij_brp_verstrekkingen,5.2.15>>
 
 |VraagPL |Geeft de volledige persoonslijst terug inclusief onjuiste historie
 |
 
-* 5.2.16
+* <<_opvragen_afnemersindicaties,5.2.16>>
 
 |VraagAI |Geeft alle afnemersinidicaties die bij een specifieke persoonslijst staan
 |
 
-* 5.2.17
+* <<_controleren_pl,5.2.17>>
 
 |ControleerPL |Controleert de opgestuurde persoonslijst (functie van de webservice StuurGBAbericht)
 3+|
 3+| Webservices en API's in verband met het aanvragen van een voorraad A-nummers door gemeenten, RNI, de Landen en eilanden van het Caribisch gebied of beheerders van BRP-V bij BRP-V:
 |
 
-* 5.2.18
+* <<_aanvragen_a_nummervoorraad_bij_brp_verstrekkingen_via_webservice,5.2.18>>
 
 |VraagVoorraadAnrs |Webservice die het gevraagde aantal A-nummers verstrekt
 |
 
-* 5.2.19
+* <<_aanvragen_a_nummervoorraad_bij_brp_verstrekkingen_via_api,5.2.19>>
 
 |A-Nummer |API die het gevraagde aantal A-nummers verstrekt
 3+|
 3+|Webservices in verband met het indienen van verzoeken door ABO's bij de RNI:
 |
 
-* 5.2.20
+* <<_indienen_verzoek_abo_aan_rni,5.2.20>>
 
 |DeelnemerOpgave |ABO verzoekt om een inschrijving, wijziging, verificatie of stuurt een aanvullend brondocument op
 |
 
-* 5.2.21
+* <<_beantwoorden_verzoek_abo_door_rni,5.2.21>>
 
 |OpgaveResultaat |RNI stuurt het inhoudelijke resultaat op een DeelnemerOpgave terug
 |
 
-* 5.2.22
+* <<_statusverzoeken_abo_opvragen_aan_rni,5.2.22>>
 
 |DeelnemerAanvraag |ABO verzoekt om statusinformatie van een of meer ingediende DeelnemerOpgaven
 |===
@@ -1825,11 +1830,11 @@ Het is ook mogelijk dat de PL in de RNI al is geblokkeerd in verband met een ver
 
 In beide situaties wordt in de kop van het bericht de gemeente vermeld waarheen de PL is verzonden.
 |[.number]#&#x2465;# |Afhankelijk van de foutreden in de kop van het <<Jf01,Jf01>>-bericht worden de volgende acties ondernomen:
-
+| |
 *Foutreden A*
 
 Als de gevonden PL in de RNI actueel blijkt te zijn, dient de RNI een correctie uit te voeren. Daarna kan de vervolginschrijvingsprocedure opnieuw worden gestart.
-| |
+
 *Foutreden B*
 
 * Als de gemeente vermeld in het <<Jf01,Jf01>>-bericht een andere gemeente betreft, dan dient een onderzoek te worden ingesteld. Wijst dit onderzoek uit dat de betrokkene zich toch in de eigen gemeente heeft gevestigd, dan wordt de PL via de vervolginschrijvingsprocedure uit die andere gemeente opgehaald.
@@ -2094,11 +2099,12 @@ De derde reden om een Foutreden N te versturen is dat het <<Tb02,Tb02>>-bericht 
 Als het <<Tb02,Tb02>>-bericht aan een gemeente is gericht, dan ligt de ingangsdatum geldigheid van het rechtsfeit na het moment van opschorten van de PL door overlijden. Als het <<Tb02,Tb02>>-bericht aan de RNI is gericht, dan is het overlijden al verwerkt op de PL. Mogelijk heeft een ABO de mutatie aangeleverd.
 
 De gebeurtenisgemeente zal de situatie moeten onderzoeken.
+| |
 
 *Foutreden U*
 
 Blijkbaar komt het A-nummer van de hoofdpersoon dubbel voor in de gemeente van inschrijving of de RNI in het PL-bestand of in het verwijsbestand. De gebeurtenisgemeente neemt contact op met de gemeente van inschrijving of de RNI om de dubbelopneming op te lossen.
-| |
+
 *Foutreden V*
 
 De PL van de gezochte persoon is verhuisd. Als uit de kop van het <<Tf21,Tf21>>-bericht blijkt dat de PL is overgedragen aan de RNI en het betreft geen overlijdensmelding, dan zal de gebeurtenisgemeente de RNI met een schriftelijke kennisgeving op de hoogte stellen van het rechtsfeit. In alle andere gevallen wordt het bericht doorgezonden naar de gemeente of de RNI die in de kop van het <<Tf21,Tf21>>-bericht staat vermeld.
@@ -2489,7 +2495,7 @@ Als antwoord wordt een set burgerservicenummers teruggegeven.
 ===== Foutcodes
 
 .Foutcodes Opvragen BSN nummervoorraad
-[width="100%",cols="15%,40%,45%",options="header",]
+[width="100%",cols="15%,35%,50%",options="header",]
 |===
 |Foutcode |Conditie |Toelichting
 |2 |Er is een fout opgetreden |Diverse technische oorzaken w.o. autorisatieprobleem
@@ -2528,7 +2534,7 @@ Als antwoord op de presentievraag worden er een vaste set aan persoonsgegevens v
 ===== Foutcodes
 
 .Foutcodes Presentievraag
-[width="100%",cols="15%,40%,45%",options="header",]
+[width="100%",cols="15%,35%,50%",options="header",]
 |===
 |Foutcode |Conditie |Toelichting
 |2 |Er is een fout opgetreden |Diverse technische oorzaken w.o. autorisatieprobleem
@@ -4212,31 +4218,28 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 2+|BRP-V en afnemers:
 |
 
-* 5.3.2 |Spontane gegevensverstrekkingen
+* <<_spontane_gegevensverstrekkingen,5.3.2>> |Spontane gegevensverstrekkingen
 
 |
 
-* 5.3.3
-
-|Selecties
-|
-
-* 5.3.4 |Ad hoc vragen
+* <<_selecties,5.3.3>> |Selecties
 
 |
 
-* 5.3.5 |Ad hoc adresvragen
+* <<_ad_hoc_vragen_via_de_berichtendienst,5.3.4>> |Ad hoc vragen
 
 |
 
-* 5.3.6
+* <<_ad_hoc_adresvragen_via_de_berichtendienst,5.3.5>> |Ad hoc adresvragen
 
-|Plaatsen afnemersindicatie op persoonslijst
 |
 
-* 5.3.7
+* <<_plaatsen_afnemersindicatie_bij_pl_2,5.3.6>> |Plaatsen afnemersindicatie op persoonslijst
 
-|Verwijderen afnemersindicatie van persoonslijst
+|
+
+* <<_verwijderen_afnemersindicatie_bij_pl,5.3.7>> |Verwijderen afnemersindicatie van persoonslijst
+
 |===
 
 [width="100%",cols="15%a,25%,60%",frame=none,grid=none]
@@ -4244,13 +4247,12 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 3+|Webservice in verband met bevragen door afnemers van BRP-V:
 |
 
-* 5.3.8
+* <<AdHocAdresVraagViaWebservice,5.3.8>> |Vraag |Afnemer stelt een ad hoc (adres)vraag aan BRP-V
 
-|Vraag |Afnemer stelt een ad hoc (adres)vraag aan BRP-V
 3+|Webservices in verband met het afhandelen van het berichtendienstverkeer via BRP-V
 |
 
-* 5.3.9
+* <<_berichtenverkeer_via_de_webservice_stuurgbabericht,5.3.9>>
 
 |StuurGBAbericht |Berichtendienstgebruiker handelt berichtenverkeer af met SummarizeMessages, ListMessages, GetMessage en PutMessage
 |===
@@ -4260,29 +4262,35 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 2+|API's in verband met bevragen door afnemers van BRP-V:
 |
 
-* 5.3.10
+* <<_brp_aantal_bewoners_api,5.3.10>>
 
 |BRP Aantal bewoners API
 |
 
-* 5.3.11
+* <<_brp_api_bewoning,5.3.11>>
 
 |BRP API - Bewoning
 |
 
-* 5.3.12
+* <<_brp_api_personen,5.3.12>>
 
 |BRP API - Personen
 |
 
-* 5.3.13
+* <<_brp_api_reisdocumenten,5.3.13>>
 
 |BRP API – Reisdocumenten
 |
 
-* 5.3.14
+* <<_brp_api_verblijfplaatshistorie,5.3.14>>
 
 |BRP API - Verblijfplaatshistorie
+2+|API's in verband met het opvragen van het protocolleringsoverzicht door MijnOverheid:
+|
+
+* <<_brp_protocolleringsoverzicht_api,5.3.15>>
+
+|BRP Protocolleringsoverzicht API
 |===
 
 De berichtencycli 5.3.2 t/m 5.3.7 kunnen behalve via de mailboxserver ook via de webservice StuurGBAbericht en via de BRP Berichten API worden uitgewisseld.
@@ -5062,7 +5070,7 @@ Voor de basis++_++url en de gedetailleerde functionele en technische specificati
 
 De input is een JSON-object waarin één element voorkomt:
 
-[width="100%",cols="35%,15%,15%,35%",options="header",]
+[width="100%",cols="35%,10%,12%,42%a",options="header",]
 |===
 |Elementnaam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
 |Burgerservicenummer |string |ja |<<e0120,01.01.20>> Burgerservicenummer
@@ -5087,7 +5095,7 @@ Tenslotte wordt het aantal PL'en bepaald dat aan deze voorwaarden voldoet. Dit i
 
 De output is een JSON-object met de volgende elementen:
 
-[width="100%",cols="40%,15%,45%",options="header",]
+[width="100%",cols="40%,10%,50%",options="header",]
 |===
 |Element naam |Type |Mogelijke waarden / corresponderende rubriek in BRP-V
 |aantalBewoners |integer |Het aantal bewoners dat in BRP-V gevonden is op het adresseerbaar object.
@@ -5134,7 +5142,7 @@ Voor gedetailleerde functionele en technische specificaties van de BRP API, zie 
 
 De input is een JSON-object waarin de volgende elementen kunnen voorkomen. Welke elementen dat kunnen zijn, hangt af van de gekozen waarde van type:
 
-[.center,width="99%" ,cols="35%,15%,15%,35%",options="header",]
+[.center,width="99%",cols="35%,10%,12%,42%a",options="header",]
 |===
 |Elementnaam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
 |type |string |ja |"BewoningMetPeildatum" / "BewoningMetPeriode"
@@ -5159,7 +5167,7 @@ Als de vraag niet afkomstig is van een gemeente of wel afkomstig is van een geme
 
 * Of de afnemer geautoriseerd is voor systematische verstrekking van gegevens (dus: of er een autorisatietabelregel voor de afnemer is met <<r359998,35.99.98>> Datum ingang =< systeemdatum en <<r359999,35.99.99>> > systeemdatum of leeg);
 * Of de afnemer geautoriseerd is voor het medium ad hoc (<<e9567,35.95.67>> Medium ad hoc = "N" of "A");
-* Of de afnemer geautoriseerd is voor AX.BW.01 Bewoningen (komt deze rubriek voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?).
+* Of de afnemer geautoriseerd is voor <<eBW01,AX.BW.01>> Bewoningen (komt deze rubriek voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?).
 
 Ongeacht van wie de vraag afkomstig is, wordt bij de gevonden PL'en (die in de gevraagde periode waren ingeschreven op het gevraagde adres) bovendien gecontroleerd:
 
@@ -5175,10 +5183,10 @@ Van de overgebleven PL'en worden de gevraagde gegevens verzameld en verstrekt in
 
 De output is een JSON-object met de volgende elementen:
 
-[width="100%",cols="40%,15%,45%",options="header",]
+[width="100%",cols="40%,10%,50%",options="header",]
 |===
 |Element naam |Type |Mogelijke waarden / corresponderende rubriek in BRP-V
-|bewoningen |JSON-object |AX.BW.01 Bewoningen
+|bewoningen |JSON-object |<<eBW01,AX.BW.01>> Bewoningen
 |===
 
 Mogelijke bewoners zijn personen waarvan door een onvolledige datum in rubriek <<e1030,08/58.10.30>> Datum aanvang adreshouding niet met zekerheid kan worden aangegeven of ze in de betreffende bewoningPeriode op het adres woonachtig waren of niet, of waarvan tijdens een onderzoek is vastgesteld dat ze in de gevraagde periode niet op het adres verbleven en onduidelijk is of er daadwerkelijk onderzoek is gedaan naar de werkelijke verblijfplaats van de persoon.
@@ -5187,7 +5195,7 @@ Omdat een adres in dit endpoint altijd wordt geïdentificeerd aan de hand van de
 
 ===== Protocollering
 
-Verstrekking van persoonsgegevens via het endpoint /bewoningen in de BRP API worden geprotocolleerd: van elke bewoner en elke mogelijke bewoner die in het resultaat is opgenomen, wordt geprotocolleerd dat AX.BW.01 Bewoningen is verstrekt.
+Verstrekking van persoonsgegevens via het endpoint /bewoningen in de BRP API worden geprotocolleerd: van elke bewoner en elke mogelijke bewoner die in het resultaat is opgenomen, wordt geprotocolleerd dat <<eBW01,AX.BW.01>> Bewoningen is verstrekt.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -5210,7 +5218,7 @@ Voor gedetailleerde functionele en technische specificaties van de BRP API, zie 
 
 De input is een JSON-object waarin de volgende elementen kunnen voorkomen. Welke elementen dat kunnen zijn, hangt af van de gekozen waarde van type:
 
-[width="100%",cols="35%,15%,15%,35%",options="header",]
+[width="100%",cols="35%,10%,12%,42%a",options="header",]
 |===
 |Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
 |type |string |ja |"RaadpleegMetBurgerservicenummer" / "ZoekMetAdresseerbaarObjectIdentificatie" / "ZoekMetGeslachtsnaamEnGeboortedatum" / "ZoekMetNaamEnGemeenteVanInschrijving" / "ZoekMetNummeraanduidingIdentificatie" / "ZoekMetPostcodeEnHuisnummer" / "ZoekMetStraatHuisnummerEnGemeenteVanInschrijving"
@@ -5291,10 +5299,10 @@ Als de vraag niet afkomstig is van een gemeente, dan wordt nog gecontroleerd:
 * Of de afnemer geautoriseerd is voor het medium ad hoc (<<e9567,35.95.67>> Medium ad hoc = "N" of "A");
 * Of de afnemer geautoriseerd is voor de gegevens in de zoekcriteria (komen de met de zoekcriteria corresponderende rubrieken voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?);
 * Of de afnemer geautoriseerd is voor de gevraagde gegevens (komen de rubrieken voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?). Daarbij geldt:
-** Als de afnemer vraagt om PA.NM.03 Aanhef, PA.NM.04 Aanspreekvorm, PA.NM.05 Aanspreeknaam of PA.NM.06 Naamgebruik in lopende tekst, dan wordt gecontroleerd of de afnemer is geautoriseerd voor PA.AD.01 Adressering of voor PA.AD.02 Elektronische adressering;
-** Als de afnemer vraagt om PA.VP.01 Begindatum adreshouding, dan wordt gecontroleerd of de afnemer is geautoriseerd voor 08.10.30 Datum aanvang adreshouding. of voor 08.13.20 Datum aanvang adres buitenland;
-** Als de afnemer vraagt om PA.VP.03 Adresregel 1 of PA.VP.04 Adresregel 2, dan wordt gecontroleerd of de afnemer is geautoriseerd voor PA.AD.01 Adressering;
-** Als de afnemer vraagt om <<e1350,08.13.50>> Regel 3 adres buitenland of om <<e1310,08.13.10>> Land adres buitenland, dan wordt gecontroleerd of de afnemer is geautoriseerd voor deze rubrieken, of voor PA.AD.01 Adressering.
+** Als de afnemer vraagt om <<eNM03,PA.NM.03>> Aanhef, <<eNM04,PA.NM.04>> Aanspreekvorm, <<eNM05,PA.NM.05>> Aanspreeknaam of <<eNM06,PA.NM.06>> Naamgebruik in lopende tekst, dan wordt gecontroleerd of de afnemer is geautoriseerd voor <<eAD01,PA.AD.01>> Adressering of voor <<eAD02,PA.AD.02>> Elektronische adressering;
+** Als de afnemer vraagt om <<eVP01,PA.VP.01>> Begindatum adreshouding, dan wordt gecontroleerd of de afnemer is geautoriseerd voor 08.10.30 Datum aanvang adreshouding. of voor 08.13.20 Datum aanvang adres buitenland;
+** Als de afnemer vraagt om <<eVP03,PA.VP.03>> Adresregel 1 of <<eVP04,PA.VP.04>> Adresregel 2, dan wordt gecontroleerd of de afnemer is geautoriseerd voor <<eAD01,PA.AD.01>> Adressering;
+** Als de afnemer vraagt om <<e1350,08.13.50>> Regel 3 adres buitenland of om <<e1310,08.13.10>> Land adres buitenland, dan wordt gecontroleerd of de afnemer is geautoriseerd voor deze rubrieken, of voor <<eAD01,PA.AD.01>> Adressering.
 
 Vervolgens worden alle PL'en gezocht die voldoen aan de zoekcriteria, en wordt per PL gecontroleerd:
 
@@ -5308,7 +5316,7 @@ Van de overgebleven PL'en worden de gevraagde gegevens verzameld en verstrekt in
 
 De output is een JSON-object met de volgende elementen (voor zover ze zijn gevraagd met de fields parameter):
 
-[width="100%",cols="3%,3%,3%,3%,28%,15%,45%",options="header",]
+[width="100%",cols="3%,3%,3%,3%,28%,10%,50%",options="header",]
 |===
 5+|Element naam |Type |Mogelijke waarden / corresponderende rubriek in BRP-V
 5+|type |string |"RaadpleegMetBurgerservicenummer" / "ZoekMetAdresseerbaarObjectIdentificatie" / "ZoekMetGeslachtsnaamEnGeboortedatum" / "ZoekMetNaamEnGemeenteVanInschrijving" / "ZoekMetNummeraanduidingIdentificatie" /
@@ -5319,14 +5327,14 @@ De output is een JSON-object met de volgende elementen (voor zover ze zijn gevra
 | 4+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer
 | 4+|naam |object |
 | | 3+|voornamen |string |<<e0210,01.02.10>> Voornamen
-| | 3+|voorletters |string |PA.NM.01 Voorletters
+| | 3+|voorletters |string |<<eNM01,PA.NM.01>> Voorletters
 | | 3+|adellijkeTitelPredicaat |object |
 | | | 2+|code |string |<<e0220,01.02.20>> Adellijke titel/predicaat
 | | | 2+|omschrijving |string |Omschrijving zoals vermeld in tabel <<t38,38>> Adellijke titel/predicaat
 | | | 2+|soort |string |Soort zoals vermeld in tabel <<t38,38>> Adellijke titel/predicaat
 | | 3+|voorvoegsel |string |<<e0230,01.02.30>> Voorvoegsel geslachtsnaam
 | | 3+|geslachtsnaam |string |<<e0240,01.02.40>> Geslachtsnaam
-| | 3+|volledigeNaam |string |PA.NM.02 Volledige naam
+| | 3+|volledigeNaam |string |<<eNM02,PA.NM.02>> Volledige naam
 | | 3+|aanduidingNaamgebruik |object |
 | | | 2+|code |string |<<e6110,01.61.10>> Aanduiding naamgebruik
 | | | 2+|omschrijving |string |Omschrijving bij de code zoals vermeld in het LO
@@ -5352,7 +5360,7 @@ De output is een JSON-object met de volgende elementen (voor zover ze zijn gevra
 | | | 2+|land |boolean |Afgeleid van <<e8310,01.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|plaats |boolean |Afgeleid van <<e8310,01.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,01.83.20>> Datum ingang onderzoek
-| 4+|leeftijd |integer |PA.GL.01 Leeftijd
+| 4+|leeftijd |integer |<<eGL01,PA.GL.01>> Leeftijd
 | 4+|geslacht |object |
 | | 3+|code|string |<<e0410,01.04.10>> Geslachtsaanduiding
 | | 3+|omschrijving |string |Omschrijving bij de code zoals vermeld in het LO
@@ -5365,14 +5373,13 @@ De output is een JSON-object met de volgende elementen (voor zover ze zijn gevra
 | | 3+|gemeenteVanInschrijving |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | 3+|datumIngangOnderzoekGemeente |date |Gebaseerd op <<e8320,08.83.20>> Datum ingang onderzoek
 | | 3+|indicatieCurateleRegister |boolean |Afgeleid van <<e8310,11.83.10>> Aanduiding gegevens in onderzoek
-| | 3+|indicatieGezagMinderjarige |boolean |Afgeleid van <<e8310,11.83.10>> Aanduiding gegevens in onderzoek
 | | 3+|datumIngangOnderzoekGezag |date |Gebaseerd op <<e8320,11.83.20>> Datum ingang onderzoek
 | 4+|ouders |array of objects |
 | | 3+|ouderAanduiding |string |Geeft aan de gegevens afkomstig zijn uit categorie <<c02-52,02>> (1 = Ouder 1) of uit categorie <<c03-53,03>> (2 = Ouder 2)
 | | 3+|burgerservicenummer |string |<<e0120,02.01.20>> dan wel <<e0120,03.01.20>> Burgerservicenummer
 | | 3+|naam |object |
 | | | 2+|voornamen |string |<<e0210,02.02.10>> dan wel <<e0210,03.02.10>> Voornamen
-| | | 2+|voorletters |string |PA.OU.01 Voorletters ouder van de betreffende ouder
+| | | 2+|voorletters |string |<<eOU01,PA.OU.01>> Voorletters ouder van de betreffende ouder
 | | | 2+|adellijkeTitelPredicaat |object |
 | | | | |code |string |<<e0220,02.02.20>> dan wel <<e0220,03.02.20>> Adellijke titel/predicaat
 | | | | |omschrijving |string |Omschrijving zoals vermeld in tabel <<t38,38>> Adellijke titel/predicaat
@@ -5409,7 +5416,7 @@ De output is een JSON-object met de volgende elementen (voor zover ze zijn gevra
 | | | 2+|geslacht |boolean |Afgeleid van <<e8310,02.83.10>> dan wel <<e8310,03.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,02.83.20>> dan wel <<e8320,03.83.20>> Datum ingang onderzoek
 | 4+|nationaliteiten |array of objects |
-| | 3+|type |string |PA.NT.01 Type nationaliteit
+| | 3+|type |string |<<eNT01,PA.NT.01>> Type nationaliteit
 | | 3+|redenOpname |object |
 | | | 2+|code |string |<<e6310,04.63.10>> Reden opname nationaliteit
 | | | 2+|omschrijving |string |Omschrijving van de reden zoals vermeld in tabel <<t37,37>> Reden opname/beëindigen nationaliteit
@@ -5432,7 +5439,7 @@ De output is een JSON-object met de volgende elementen (voor zover ze zijn gevra
 | | 3+|burgerservicenummer |string |<<e0120,05.01.20>> Burgerservicenummer
 | | 3+|naam |object |
 | | | 2+|voornamen |string |<<e0210,05.02.10>> Voornamen
-| | | 2+|voorletters |string |PA.HP.01 Voorletters partner
+| | | 2+|voorletters |string |<<eHP01,PA.HP.01>> Voorletters partner
 | | | 2+|adellijkeTitelPredicaat |object |
 | | | | |code |string |<<e0220,05.02.20>> Adellijke titel/predicaat
 | | | | |omschrijving |string |Omschrijving zoals vermeld in tabel <<t38,38>> Adellijke titel/predicaat
@@ -5517,9 +5524,8 @@ Afgeleid van <<e7010,07.70.10>> Indicatie geheim.
 | | 3+|omschrijving |string |Naam van de gemeente zoals vermeld in tabel <<t33,33>> Gemeententabel
 | 4+|datumInschrijvingInGemeente |date |Gebaseerd op <<e0920,08.09.20>> Datum inschrijving
 | 4+|verblijfplaats |object |
-| | 3+|datumVan |date |PA.VP.01 Begindatum adreshouding
-| | 3+|datumIngangGeldigheid |date |Gebaseerd op <<e8510,08.85.10>> Ingangsdatum geldigheid
-| | 3+|type |string |PA.VP.02 Type verblijfplaats
+| | 3+|datumVan |date |<<eVP01,PA.VP.01>> Begindatum adreshouding
+| | 3+|type |string |<<eVP02,PA.VP.02>> Type verblijfplaats
 | | 5+|Als type="Adres"
 | | 3+|functieAdres |object |
 | | | 2+|code |string |<<e1010,08.10.10>> Functie adres
@@ -5551,7 +5557,6 @@ Afgeleid van <<e7010,07.70.10>> Indicatie geheim.
 Aanduiding gegevens in onderzoek
 | | 3+|inOnderzoek |object |
 | | | 2+|adresseerbaarObjectIdentificatie |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
-| | | 2+|datumIngangGeldigheid |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumVan |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|functieAdres |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|nummeraanduidingIdentificatie |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
@@ -5568,7 +5573,6 @@ Aanduiding gegevens in onderzoek
 | | | | |datumIngangOnderzoek |date |Gebaseerd op <<e8320,08.83.20>> Datum ingang onderzoek
 | | 3+|indicatieVastgesteldVerblijftNietOpAdres |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | 3+|inOnderzoek |object |
-| | | 2+|datumIngangGeldigheid |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumVan |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|functieAdres |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|type |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
@@ -5588,28 +5592,26 @@ Aanduiding gegevens in onderzoek
 | | | | |regel3 |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | | |datumIngangOnderzoek |date |Gebaseerd op <<e8320,08.83.20>> Datum ingang onderzoek
 | | 3+|inOnderzoek |object |
-| | | 2+|datumIngangGeldigheid |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumVan |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|type |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,08.83.20>> Datum ingang onderzoek
 | | 5+|Als type="VerblijfplaatsOnbekend"
 | | 3+|inOnderzoek |object |
-| | | 2+|datumIngangGeldigheid |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumVan |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|type |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,08.83.20>> Datum ingang onderzoek
 | 4+|adressering |object |
-| | 3+|adresregel1 |string |PA.VP.03 Adresregel 1
-| | 3+|adresregel2 |string |PA.VP.04 Adresregel 2
+| | 3+|adresregel1 |string |<<eVP03,PA.VP.03>> Adresregel 1
+| | 3+|adresregel2 |string |<<eVP04,PA.VP.04>> Adresregel 2
 | | 3+|adresregel3 |string |<<e1350,08.13.50>> Regel 3 adres buitenland
 | | 3+|land |object |
 | | | 2+|code |string |<<e1310,08.13.10>> Land adres buitenland
 | | | 2+|omschrijving |string |Naam van het land zoals vermeld in tabel <<t34,34>> Landentabel
-| | 3+|aanhef |string |PA.NM.03 Aanhef
+| | 3+|aanhef |string |<<eNM03,PA.NM.03>> Aanhef
 | | 3+|aanschrijfwijze |object |
-| | | 2+|naam |string |PA.NM.05 Aanspreeknaam
-| | | 2+|aanspreekvorm |string |PA.NM.04 Aanspreekvorm
-| | 3+|gebruikInLopendeTekst |string |PA.NM.06 Naamgebruik in lopende tekst
+| | | 2+|naam |string |<<eNM05,PA.NM.05>> Aanspreeknaam
+| | | 2+|aanspreekvorm |string |<<eNM04,PA.NM.04>> Aanspreekvorm
+| | 3+|gebruikInLopendeTekst |string |<<eNM06,PA.NM.06>> Naamgebruik in lopende tekst
 | | 3+|indicatieVastgesteldVerblijftNietOpAdres |boolean |Afgeleid van <<e8310,08.83.10>> +
 Aanduiding gegevens in onderzoek
 | | 3+|inOnderzoek |object |
@@ -5628,8 +5630,8 @@ Aanduiding gegevens in onderzoek
 | | | 2+|code |string |<<e1410,08.14.10>> Land vanwaar ingeschreven
 | | | 2+|omschrijving |string |Naam van het land zoals vermeld in tabel <<t34,34>> Landentabel
 | | 3+|datumVestigingInNederland |date |Gebaseerd op <<e1420,08.14.20>> Datum vestiging in Nederland
-| | 3+|indicatieVestigingVanuitBuitenland |boolean |PA.VP.05 Indicatie vestiging vanuit buitenland
-| | 3+|vanuitVerblijfplaatsOnbekend |boolean |PA.VP.06 Indicatie vestiging vanuit onbekende verblijfplaats
+| | 3+|indicatieVestigingVanuitBuitenland |boolean |<<eVP05,PA.VP.05>> Indicatie vestiging vanuit buitenland
+| | 3+|vanuitVerblijfplaatsOnbekend |boolean |<<eVP06,PA.VP.06>> Indicatie vestiging vanuit onbekende verblijfplaats
 | | 3+|inOnderzoek |object |
 | | | 2+|datumVestigingInNederland |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|indicatieVestigingVanuitBuitenland |boolean |Afgeleid van <<e8310,08.83.10>> Aanduiding gegevens in onderzoek
@@ -5640,7 +5642,7 @@ Aanduiding gegevens in onderzoek
 | | 3+|burgerservicenummer |string |<<e0120,09.01.20>> Burgerservicenummer
 | | 3+|naam |object |
 | | | 2+|voornamen |string |<<e0210,09.02.10>> Voornamen
-| | | 2+|voorletters |string |PA.KD.01 Voorletters kind
+| | | 2+|voorletters |string |<<eKD01,PA.KD.01>> Voorletters kind
 | | | 2+|adellijkeTitelPredicaat |object |
 | | | | |code |string |<<e0220,09.02.20>> Adellijke titel/predicaat
 | | | | |omschrijving |string |Omschrijving zoals vermeld in tabel <<t38,38>> Adellijke titel/predicaat
@@ -5681,10 +5683,7 @@ Aanduiding gegevens in onderzoek
 | | | 2+|datumEinde |boolean |Afgeleid van <<e8310,10.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumIngang |boolean |Afgeleid van <<e8310,10.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,10.83.20>> Datum ingang onderzoek
-| 4+|indicatieGezagMinderjarige |object |
-| | 3+|code |string |<<e3210,11.32.10>> Indicatie gezag minderjarige
-| | 3+|omschrijving |string |Omschrijving van de indicatie zoals vermeld in tabel <<t61,61>> Gezagverhoudingtabel
-| 4+|gezag |JSON-object |PA.GZ.01 Gezagsrelaties
+| 4+|gezag |JSON-object |<<eGZ01,PA.GZ.01>> Gezagsrelaties
 | 4+|indicatieCurateleRegister |boolean |Afgeleid van <<e3310,11.33.10>> Indicatie curateleregister
 | 4+|europeesKiesrecht |object |
 | | 3+|aanduiding |object |
@@ -5701,19 +5700,19 @@ Aanduiding gegevens in onderzoek
 | | 3+|omschrijvingVerdrag |string |88.20 Omschrijving verdrag voor de betreffende categorie
 | | 3+|categorie |string |Naam van categorie waarop de RNI-deelnemer gegevens heeft aangeleverd
 7+|Als type = "ZoekMetAdresseerbaarObjectIdentificatie" / "ZoekMetGeslachtsnaamEnGeboortedatum" / "ZoekMetNaamEnGemeenteVanInschrijving" / "ZoekMetNummeraanduidingIdentificatie" /
-"ZoekMetPostcodeEnHuisnummer" / "ZoekMetStraatHuisnummerEnGemeenteVanInschrijving"
+"ZoekMetPostcodeEnHuisnummer" / "ZoekMetStraatHuisnummerEnGemeenteVanInschrijving":
 5+|personen |array of objects |
 | 4+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer
 | 4+|naam |object |
 | | 3+|voornamen |string |<<e0210,01.02.10>> Voornamen
-| | 3+|voorletters |string |PA.NM.01 Voorletters
+| | 3+|voorletters |string |<<eNM01,PA.NM.01>> Voorletters
 | | 3+|adellijkeTitelPredicaat |object |
 | | | 2+|code |string |<<e0220,01.02.20>> Adellijke titel/predicaat
 | | | 2+|omschrijving |string |Omschrijving zoals vermeld in tabel <<t38,38>> Adellijke titel/predicaat
 | | | 2+|soort |string |Soort zoals vermeld in tabel <<t38,38>> Adellijke titel/predicaat
 | | 3+|voorvoegsel |string |<<e0230,01.02.30>> Voorvoegsel geslachtsnaam
 | | 3+|geslachtsnaam |string |<<e0240,01.02.40>> Geslachtsnaam
-| | 3+|volledigeNaam |string |PA.NM.02 Volledige naam
+| | 3+|volledigeNaam |string |<<eNM02,PA.NM.02>> Volledige naam
 | | 3+|inOnderzoek |object |
 | | | 2+|adellijkeTitelPredicaat |boolean |Afgeleid van <<e8310,01.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|geslachtsnaam |boolean |Afgeleid van <<e8310,01.83.10>> Aanduiding gegevens in onderzoek
@@ -5727,7 +5726,7 @@ Aanduiding gegevens in onderzoek
 | | 3+|inOnderzoek |object |
 | | | 2+|datum |boolean |Afgeleid van <<e8310,01.83.10>> Aanduiding gegevens in onderzoek
 | | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,01.83.20>> Datum ingang onderzoek
-| 4+|leeftijd |integer |PA.GL.01 Leeftijd
+| 4+|leeftijd |integer |<<eGL01,PA.GL.01>> Leeftijd
 | 4+|geslacht |object |
 | | 3+|code |string |<<e0410,01.04.10>> Geslachtsaanduiding
 | | 3+|omschrijving |string |Omschrijving bij de code zoals vermeld in het LO
@@ -5750,8 +5749,8 @@ Afgeleid van <<e7010,07.70.10>> Indicatie geheim.
 | | 3+|land |object |
 | | | 2+|code |string |<<e1310,08.13.10>> Land adres buitenland
 | | | 2+|omschrijving |string |Naam van het land zoals vermeld in tabel <<t34,34>> Landentabel
-| | 3+|adresregel1 |string |PA.VP.03 Adresregel 1
-| | 3+|adresregel2 |string |PA.VP.04 Adresregel 2
+| | 3+|adresregel1 |string |<<eVP03,PA.VP.03>> Adresregel 1
+| | 3+|adresregel2 |string |<<eVP04,PA.VP.04>> Adresregel 2
 | | 3+|adresregel3 |string |<<e1350,08.13.50>> Regel 3 adres buitenland
 | | 3+|indicatieVastgesteldVerblijftNietOpAdres |boolean |Afgeleid van <<e8310,08.83.10>> +
 Aanduiding gegevens in onderzoek
@@ -5767,8 +5766,8 @@ Aanduiding gegevens in onderzoek
 | | | 2+|omschrijving |string |Naam van de RNI deelnemer zoals vermeld in tabel <<t60,60>> RNI-deelnemers
 | | 3+|omschrijvingVerdrag |string |88.20 Omschrijving verdrag voor de betreffende categorie
 | | 3+|categorie | string |Naam van de categorie waaruit elementen 88.10 en 88.20 zijn opgenomen
-| 6+|Als type = "ZoekMetAdresseerbaarObjectIdentificatie"
-| 4+|gezag |JSON-object |PA.GZ.01 Gezagsrelaties
+| 6+|Als type = "ZoekMetAdresseerbaarObjectIdentificatie":
+| 4+|gezag |JSON-object |<<eGZ01,PA.GZ.01>> Gezagsrelaties
 |===
 
 ===== Protocollering
@@ -5796,14 +5795,14 @@ Het /reisdocumenten endpoint in de BRP API wordt uitgefaseerd, en er worden geen
 
 De input is een JSON-object waarin de volgende elementen kunnen voorkomen. Welke elementen dat zijn, hangt af van de gekozen waarde van type:
 
-[width="100%",cols="35%,15%,15%,35%",options="header",]
+[width="100%",cols="35%,10%,12%,42%a",options="header",]
 |===
 |Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
 |type |string |Ja |"RaadpleegMetReisdocumentnummer" / "ZoekMetBurgerservicenummer"
 |fields |array of strings |Ja |De gewenste velden in het antwoord. Zie voor een beschrijving van de mogelijkheden hieronder.
-4+|Als type = "RaadpleegMetReisdocumentnummer"
+4+|Als type = "RaadpleegMetReisdocumentnummer":
 |reisdocumentnummer |string |ja |Wordt vergeleken met <<e3520,12.35.20>> Nummer Nederlands reisdocument
-4+|Als type = "ZoekMetBurgerservicenummer"
+4+|Als type = "ZoekMetBurgerservicenummer":
 |burgerservicenummer |string |ja |Wordt vergeleken met <<e0120,01.01.20>> Burgerservicenummer
 |===
 
@@ -5833,7 +5832,8 @@ Als de vraag niet afkomstig is van een gemeente, dan wordt een foutcode terug ge
 
 De output is een JSON-object met de volgende elementen:
 
-[width="100%",cols="3%,3%,3%,3%,28%,15%,45%",options="header",]
+
+[width="100%",cols="3%,3%,3%,3%,28%,10%,50%",options="header",]
 |===
 5+|Element naam |Type |Mogelijke waarden / corresponderende rubriek in BRP-V
 5+|type |string |"ZoekMetBurgerservicenummer" / "RaadpleegMetReisdocumentnummer"
@@ -5894,7 +5894,7 @@ Voor gedetailleerde functionele en technische specificaties van de BRP API, zie 
 
 De input is een JSON-object waarin de volgende elementen kunnen voorkomen. Welke elementen dat kunnen zijn, hangt af van de gekozen waarde van type:
 
-[.center,width="99%" ,cols="35%,15%,15%,35%",options="header",]
+[.center,width="99%" ,cols="35%,10%,12%,42%a",options="header",]
 |===
 |Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
 |type |string |ja |"RaadpleegMetPeildatum" / "RaadpleegMetPeriode"
@@ -5919,7 +5919,7 @@ Als de vraag niet afkomstig is van een gemeente, dan wordt nog gecontroleerd:
 
 * Of de afnemer geautoriseerd is voor systematische verstrekking van gegevens (dus: of er een autorisatietabelregel voor de afnemer is met <<r359998,35.99.98>> Datum ingang =++<++ systeemdatum en <<r359999,35.99.99>> ++>++ systeemdatum of leeg);
 * Of de afnemer geautoriseerd is voor het medium ad hoc (<<e9567,35.95.67>> Medium ad hoc = "N" of "A");
-* Of de afnemer geautoriseerd is voor <<e0120,01.01.20>> Burgerservicenummer, <<e7010,07.70.10>> Indicatie geheim en PX.VP.07 Verblijfplaatshistorie (komen deze voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?).
+* Of de afnemer geautoriseerd is voor <<e0120,01.01.20>> Burgerservicenummer, <<e7010,07.70.10>> Indicatie geheim en <<eVP07,PX.VP.07>> Verblijfplaatshistorie (komen deze voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?).
 
 Vervolgens worden alle PL'en gezocht die voldoen aan de zoekcriteria, en wordt per PL gecontroleerd:
 
@@ -5933,7 +5933,7 @@ Van de overgebleven PL'en worden de gevraagde gegevens verzameld en verstrekt in
 
 De output is een JSON-object met de volgende elementen:
 
-[width="100%",cols="3%,3%,34%,15%,45%",options="header",]
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
 |===
 3+|Element naam |Type |Mogelijke waarden / corresponderende rubriek in BRP-V
 3+|opschortingBijhouding |object |
@@ -5943,12 +5943,79 @@ De output is een JSON-object met de volgende elementen:
 | | |omschrijving |string |Omschrijving bij de code zoals in LO vermeld
 3+|geheimhoudingPersoonsgegevens |boolean |Geeft aan of de persoon om geheimhouding van persoonsgegevens heeft gevraagd. +
 Afgeleid van <<e7010,07.70.10>> Indicatie geheim.
-3+|verblijfplaatsen |JSON-object |PX.VP.07 Verblijfplaatshistorie
+3+|verblijfplaatsen |JSON-object |<<eVP07,PX.VP.07>> Verblijfplaatshistorie
 |===
 
 ===== Protocollering
 
-Verstrekking van persoonsgegevens via het endpoint /verblijfplaatshistorie in de BRP API worden geprotocolleerd. Van de PL die in het resultaat is opgenomen, wordt geprotocolleerd dat <<e6710,07.67.10>> Datum opschorting bijhouding, <<e6720,07.67.20>> Omschrijving reden opschorting bijhouding en PX.VP.07 Verblijfplaatshistorie zijn verstrekt.
+Verstrekking van persoonsgegevens via het endpoint /verblijfplaatshistorie in de BRP API worden geprotocolleerd. Van de PL die in het resultaat is opgenomen, wordt geprotocolleerd dat <<e6710,07.67.10>> Datum opschorting bijhouding, <<e6720,07.67.20>> Omschrijving reden opschorting bijhouding en <<eVP07,PX.VP.07>> Verblijfplaatshistorie zijn verstrekt.
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+==== BRP Protocolleringsoverzicht API
+
+===== Beschrijving
+
+De BRP protocolleringsoverzicht API is een API van de POAM, die uitsluitend is te gebruiken door MijnOverheid en een protocolleringsoverzicht over een bepaalde periode voor een bepaald BSN opvraagt via de webservice van de POM en deze vervolgens aan de burger verstrekt via de MijnOverheid Berichtenbox.
+
+URI: ++{++basis++_++url}/protocolleringsoverzicht
+
+Method: POST
+
+Voor gedetailleerde functionele en technische specificaties van de BRP Protocolleringsoverzicht API, zie de website van RvIG.
+
+===== Input
+
+De input is een JSON-object waarin de volgende elementen kunnen voorkomen:
+
+[.center,width="99%" ,cols="35%,10%,12%,42%a",options="header",]
+|===
+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
+|bsn |string |ja |Het burgerservicenummer van de burger voor wie het protocolleringsoverzicht wordt aangevraagd.
+|begindatum	|string (datum: jjjj-mm-dd) |ja |De begindatum van de periode waarvoor het protocolleringsoverzicht wordt opgevraagd. Deze mag niet voor 6 januari 2013 liggen, aangezien er voor deze datum geen protocolleringen zijn vastgelegd. 
+|einddatum	|string (datum: jjjj-mm-dd) |ja	|De einddatum van de periode waarvoor het protocolleringsoverzicht wordt opgevraagd (inclusief). Deze moet minimaal één dag voor de systeemdatum liggen en maximaal 1 jaar na de begindatum.
+
+|===
+
+===== Controles
+
+Na ontvangst van het request bericht controleert de API:
+
+* Of de syntax van het request bericht en de waarden van de zoekcriteria voldoen aan de eisen in de vorige paragraaf;
+* Of de vraag afkomstig is van MijnOverheid.
+
+Als aan deze twee voorwaarden is voldaan, wordt het verzoek in behandeling genomen en verwerkt. De POAM roept de webservice van de POM aan om het protocolleringsoverzicht van de burger met het opgegeven BSN op te vragen. Na ontvangst plaatst de POAM het overzicht in de MijnOverheid Berichtenbox van de burger.
+
+===== Output
+
+De output is een JSON-object met de volgende elementen:
+
+[width="100%",cols="40%,10%,50%",options="header",]
+|===
+|Element naam |Type |Mogelijke waarden / corresponderende rubriek in BRP-V
+|success |boolean |Geeft aan of het verzoek succesvol is verwerkt.
+|bericht |string |De tekst van de succes- of de foutmelding. Bij succes is dat: “De aanvraag is succesvol ingediend”.
+|===
+
+===== Foutsituaties
+
+[width="100%",cols="40%,15%,45%",options="header",]
+|===
+|Foutsituatie |HTTP status code |Foutmelding
+|Het BSN is niet meegestuurd |400 |BSN is verplicht
+|Het BSN is niet geldig |400 |Het BSN moet een positief getal zijn van maximaal 9 posities. BSNs van 8 posities worden zowel met als zonder voorloopnul geaccepteerd
+|De begindatum is niet meegestuurd |400 |Begindatum is verplicht
+|De begindatum heeft een ongeldig formaat |400 |Begindatum moet formaat jjjj-mm-dd hebben
+|De begindatum is niet groter dan of gelijk aan 6 januari 2013 |400 |De begindatum moet groter of gelijk zijn aan 6 januari 2013
+|De einddatum is niet meegestuurd |400 |Einddatum is verplicht
+|De einddatum heeft een ongeldig formaat |400 |Einddatum moet formaat jjjj-mm-dd hebben
+|De einddatum ligt op of na de huidige datum |400 |De einddatum moet kleiner zijn dan de systeemdatum
+|De begindatum ligt na de einddatum. |400 |De begindatum moet kleiner of gelijk zijn aan de einddatum
+|De periode tussen de begin- en einddatum is groter dan 1 jaar. |400 |De periode mag niet groter zijn dan 1 jaar
+|De aanvraag is al in behandeling |400 |Er is al een aanvraag in behandeling voor de gevraagde periode voor deze burger
+|Overige technische fouten |500 |Er is een interne serverfout opgetreden
+|===
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -6576,41 +6643,41 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 2+|BRP‑V en RvIG:
 |
 
-* 5.4.2
+* <<_onderhoud_autorisatietabel,5.4.2>>
 
 |Onderhoud autorisatietabel
 2+|
 2+|Gemeenten, RNI, afnemers, BvBSN, BRP‑V en RvIG:
 |
 
-* 5.4.3
+* <<_onderhoud_landelijke_tabellen,5.4.3>>
 
 |Onderhoud overige tabellen
 |
 
-* 5.4.4
+* <<_brp_tabellen_api,5.4.4>>
 
 |BRP Tabellen API
 2+|
 2+|Alle partijen onderling:
 |
 
-* 5.4.5
+* <<_protocolfouten_2,5.4.5>>
 
 |Protocolfouten
 |
 
-* 5.4.6
+* <<_vrij_bericht,5.4.6>>
 
 |Vrij bericht
 |
 
-* 5.4.7
+* <<_vrij_bericht_via_webservice,5.4.7>>
 
 |Vrij bericht via de webservice
 |
 
-* 5.4.8
+* <<_verwerkbevestiging,5.4.8>>
 
 |Verwerkbevestiging
 2+|
@@ -6619,12 +6686,12 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 2+|Onderstaande berichtencycli kunnen bovendien via de webservice StuurGBAbericht worden uitgewisseld:
 |
 
-* 5.4.3
+* <<_onderhoud_landelijke_tabellen,5.4.3>>
 
 |Onderhoud overige tabellen
 |
 
-* 5.4.7
+* <<_vrij_bericht_via_webservice,5.4.7>>
 
 |Vrij bericht via de webservice
 |===
@@ -6738,7 +6805,7 @@ Method: GET
 
 Hierin is {tabelaanduiding} een path parameter met de naam van de te bevragen tabel:
 
-[.center,width="90%,cols="50%,50%%",options="header",]
+[.center,width="100%,cols="50%,50%%",options="header",]
 |===
 |Tabel |Tabelaanduiding
 |32 Nationaliteitentabel |Nationaliteiten
@@ -6761,7 +6828,7 @@ Hierin is {tabelaanduiding} een path parameter met de naam van de te bevragen ta
 
 De input bestaat uit een aantal optionele query parameters:
 
-[.center,width="100%",cols="35%,15%,15%,35%",options="header",]
+[.center,width="100%",cols="35%,10%,12%,42%a",options="header",]
 |===
 |Element naam |Type |Verplicht? |Omschrijving
 |alleenActueel |string |nee |Indien aanwezig worden alleen actuele tabelregels (waarin 99.99 Datum beëindiging tabelregel dus niet voorkomt) teruggegeven. Als deze parameter ontbreekt, worden alle tabelregels teruggegeven.
@@ -6781,7 +6848,7 @@ Na ontvangst van het request bericht voert de API geen controles uit, maar stelt
 
 De output is een JSON-object met de volgende elementen:
 
-[width="100%",cols="3%,3%,34%,15%,45%",options="header",]
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
 |===
 3+|Element naam |Type |Corresponderende tabelrubriek
 3+|tabelnummer |integer |Het nummer van de tabel
@@ -6795,7 +6862,7 @@ Alle tabelrubrieken worden behandeld als strings, ook als het om een datum of ee
 
 Het aantal elementen in het object dat correspondeert met een tabelregel, verschilt per tabel. Hieronder een voorbeeld voor tabel 32 Nationaliteitentabel:
 
-[width="100%",cols="3%,3%,19%,25%,50%",options="header",]
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
 |===
 3+|Element naam |Type |Corresponderende tabelrubriek
 3+|tabelnummer |integer |32
@@ -7255,18 +7322,14 @@ Aangezien de recordlengte altijd groter is dan 87 bytes, past het vaste gedeelte
 
 [stem]
 ++++
-\begin{equation}
 nv = \left\lbrack \frac{(79 + 5 + \text{BodyLength} + 5) + (\text{RecordSize} - 1)}{\text{RecordSize}} \right\rbrack - 1
-\end{equation}
 ++++
 
 of eenvoudiger
 
 [stem]
 ++++
-\begin{equation}
 nv = \left\lbrack \frac{(\text{BodyLength} + 88)}{\text{RecordSize}} \right\rbrack
-\end{equation}
 ++++
 
 waarbij de rechte haken ++[]++ staan voor de entier-functie (trunceren).
@@ -7275,9 +7338,7 @@ Het aantal opvul-bytes nf in het laatste record is dan
 
 [stem]
 ++++
-\begin{equation}
 nf = (nv + 1) * \text{RecordSize} - 89 - \text{BodyLength}
-\end{equation}
 ++++
 
 De laatste regel voor de datarecords is dat de records behorend bij één bericht altijd op hetzelfde volume worden geplaatst. Het is de verantwoordelijkheid van het systeem dat de bestanden aanmaakt om hiervoor zorg te dragen. Dit kan door een schatting te maken van het aantal berichten dat in het bestand kan worden geplaatst en een veiligheidsmarge aan te houden, of door een eventueel gedeeltelijk geschreven bericht weer te verwijderen. Dit voorschrift maakt het teruglezen van de berichten eenvoudiger.

@@ -266,7 +266,7 @@ Sommige afgeleide gegevens vormen wel één informatieproduct, maar zijn zo comp
 
 Afgeleide gegevens van het type "date" (datum) worden verstrekt als een JSON-object met de volgende attributen (in dit voorbeeld is geboortedatum gebruikt):
 
-[width="100%",cols="3%,37%,15%,45%"]
+[width="100%",cols="3%,37%,10%,50%"]
 |===
 2+|geboortedatum |object |
 | |type |string |"Datum" / "DatumOnbekend" / "JaarDatum" / "JaarMaandDatum"
@@ -328,7 +328,7 @@ Categorienaam:: Persoon
 Toelichting:: Gegevens over de ingeschrevene.
 Aantal malen actueel:: 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g01,01>>:::: Identificatienummers
 <<g02,02>>:::: Naam
 <<g03,03>>:::: Geboorte
@@ -358,7 +358,7 @@ Categorienaam:: Ouder1
 Toelichting:: Gegevens over de ouder1 van de ingeschrevene.
 Aantal malen actueel:: 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g01,01>>:::: Identificatienummers
 <<g02,02>>:::: Naam
 <<g03,03>>:::: Geboorte
@@ -393,7 +393,7 @@ Categorienaam:: Ouder2
 Toelichting:: Gegevens over de ouder2 van de ingeschrevene.
 Aantal malen actueel:: 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g01,01>>:::: Identificatienummers
 <<g02,02>>:::: Naam
 <<g03,03>>:::: Geboorte
@@ -428,7 +428,7 @@ Categorienaam:: Nationaliteit
 Toelichting:: Gegevens over een nationaliteit van de ingeschrevene.
 Aantal malen actueel:: 0, n
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g05,05>>:::: Nationaliteit
 <<g63,63>>:::: Opnemen nationaliteit
 <<g64,64>>:::: Beëindigen nationaliteit
@@ -460,7 +460,7 @@ Categorienaam:: Huwelijk/geregistreerd partnerschap
 Toelichting:: Gegevens over een gesloten of ontbonden huwelijk/geregistreerd partnerschap van de ingeschrevene.
 Aantal malen actueel:: 0, n
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g01,01>>:::: Identificatienummers
 <<g02,02>>:::: Naam
 <<g03,03>>:::: Geboorte
@@ -496,7 +496,7 @@ Categorienaam:: Overlijden
 Toelichting:: Gegevens over het overlijden van de ingeschrevene.
 Aantal malen actueel:: 0, 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g08,08>>:::: Overlijden
 <<g81,81>>:::: Akte
 <<g82,82>>:::: Document
@@ -520,7 +520,7 @@ Categorienaam:: Inschrijving
 Toelichting:: Gegevens over de opneming en de status van de PL.
 Aantal malen actueel:: 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g66,66>>:::: Blokkering
 <<g67,67>>:::: Opschorting
 <<g68,68>>:::: Opname
@@ -544,7 +544,7 @@ Categorienaam:: Verblijfplaats
 Toelichting:: Gegevens over het verblijf en adres van de ingeschrevene.
 Aantal malen actueel:: 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g09,09>>:::: Gemeente
 <<g10,10>>:::: Adreshouding
 <<g11,11>>:::: Adres
@@ -577,7 +577,7 @@ Categorienaam:: Kind
 Toelichting:: Gegevens over een kind van de ingeschrevene.
 Aantal malen actueel:: 0, n
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g01,01>>:::: Identificatienummers
 <<g02,02>>:::: Naam
 <<g03,03>>:::: Geboorte
@@ -617,7 +617,7 @@ Categorienaam:: Verblijfstitel
 Toelichting:: Gegevens over de verblijfsrechtelijke status van de ingeschrevene.
 Aantal malen actueel:: 0,1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g39,39>>:::: Verblijfstitel
 <<g83,83>>:::: Procedure
 <<g84,84>>:::: Onjuist
@@ -637,7 +637,7 @@ Categorienaam:: Gezagsverhouding
 Toelichting:: Gegevens betreffende het gezag over de ingeschrevene.
 Aantal malen actueel:: 0, 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g32,32>>:::: Gezag minderjarige
 <<g33,33>>:::: Curatele
 <<g82,82>>:::: Document
@@ -660,7 +660,7 @@ Categorienaam:: Reisdocument
 Toelichting:: Gegevens over een reisdocument van de ingeschrevene.
 Aantal malen actueel:: 0, n
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g35,35>>:::: Nederlands reisdocument
 <<g36,36>>:::: Signalering
 <<g82,82>>:::: Document
@@ -681,7 +681,7 @@ Categorienaam:: Kiesrecht
 Toelichting:: Gegevens over het kiesrecht van de ingeschrevene.
 Aantal malen actueel:: 0, 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g31,31>>:::: Europees kiesrecht
 <<g38,38>>:::: Uitsluiting kiesrecht
 <<g82,82>>:::: Document
@@ -701,7 +701,7 @@ Categorienaam:: Afnemersindicatie bij de persoonslijst
 Toelichting:: persoonslijst is wel of niet meer onderdeel van de doelgroep van een afnemer of derde.
 Aantal malen actueel:: 0, n
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g40,40>>:::: Afnemer
 <<g85,85>>:::: Geldigheid
 Voorwaarden:: Als de categorie voorkomt, komt groep <<g85,85>> verplicht voor.
@@ -717,7 +717,7 @@ Categorienaam:: Tijdelijk verblijfsadres
 Toelichting:: adres waar betrokkene tijdelijk woont tijdens diens verblijf in Nederland
 Aantal malen actueel:: 0, 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g09,09>>:::: Gemeente
 <<g11,11>>:::: Adres
 <<g18,18>>:::: Einde geldigheid
@@ -743,7 +743,7 @@ Categorienaam:: Contactgegevens
 Toelichting:: telefoonnummer en/of e-mailadres waarop betrokkene bereikbaar is tijdens diens verblijf in Nederland
 Aantal malen actueel:: 0, 1
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g16,16>>:::: Telefoon
 <<g17,17>>:::: E-mail
 <<g88,88>>:::: Deelnemer
@@ -761,7 +761,7 @@ Categorienaam:: Verwijzing
 Toelichting:: Gegevens over de eerste of volgende gemeente van inschrijving of de RNI van de ingeschrevene.
 Aantal malen actueel:: Niet van toepassing (een verwijzing behoort niet tot de PL)
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<g01,01>>:::: Identificatienummers
 <<g02,02>>:::: Naam
 <<g03,03>>:::: Geboorte
@@ -847,7 +847,7 @@ Groepnaam:: Identificatienummers
 Toelichting:: Gegevens over de identificatienummers van respectievelijk de persoon, de ouder, de echtgenoot/geregistreerd partner, de eerdere echtgenoot/ geregistreerd partner of het kind.
 Soort:: Algemene of verwijsgegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e0110,01.10>>:::: A‑nummer
 <<e0120,01.20>>:::: Burgerservicenummer
 Voorwaarden:: Indien de groep verplicht voorkomt, komt element <<e0110,01.10>> verplicht voor. +
@@ -864,7 +864,7 @@ Groepnaam:: Naam
 Toelichting:: Gegevens over de naam van respectievelijk de persoon, de ouder, de echtgenoot/geregistreerd partner, de eerdere echtgenoot/geregistreerd partner of het kind.
 Soort:: Algemene of verwijsgegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e0210,02.10>>:::: Voornamen
 <<e0220,02.20>>:::: Adellijke titel/predicaat
 <<e0230,02.30>>:::: Voorvoegsel geslachtsnaam
@@ -882,7 +882,7 @@ Groepnaam:: Geboorte
 Toelichting:: Gegevens over de geboorte van respectievelijk de persoon, de ouder, de echtgenoot/geregistreerd partner, de eerdere echtgenoot/ geregistreerd partner of het kind.
 Soort:: Algemene of verwijsgegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e0310,03.10>>:::: Geboortedatum
 <<e0320,03.20>>:::: Geboorteplaats
 <<e0330,03.30>>:::: Geboorteland
@@ -899,7 +899,7 @@ Groepnaam:: Geslacht
 Toelichting:: Gegevens over het geslacht van respectievelijk de persoon, de ouder, de echtgenoot/geregistreerd partner, de eerdere echtgenoot/ geregistreerd partner.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e0410,04.10>>:::: Geslachtsaanduiding
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -914,7 +914,7 @@ Groepnaam:: Nationaliteit
 Toelichting:: Gegevens over de nationaliteit.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e0510,05.10>>:::: Nationaliteit
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -929,7 +929,7 @@ Groepnaam:: Huwelijkssluiting/aangaan geregistreerd partnerschap
 Toelichting:: Gegevens over het gesloten huwelijk of het aangegane geregistreerd partnerschap.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e0610,06.10>>:::: Datum huwelijkssluiting/aangaan geregistreerd partnerschap
 <<e0620,06.20>>:::: Plaats huwelijkssluiting/aangaan geregistreerd partnerschap
 <<e0630,06.30>>:::: Land huwelijkssluiting/aangaan geregistreerd partnerschap
@@ -946,7 +946,7 @@ Groepnaam:: Ontbinding huwelijk/geregistreerd partnerschap
 Toelichting:: Gegevens over het ontbonden huwelijk of geregistreerd partnerschap.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e0710,07.10>>:::: Datum ontbinding huwelijk/geregistreerd partnerschap
 <<e0720,07.20>>:::: Plaats ontbinding huwelijk/geregistreerd partnerschap
 <<e0730,07.30>>:::: Land ontbinding huwelijk/geregistreerd partnerschap
@@ -964,7 +964,7 @@ Groepnaam:: Overlijden
 Toelichting:: Gegevens over het overlijden.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e0810,08.10>>:::: Datum overlijden
 <<e0820,08.20>>:::: Plaats overlijden
 <<e0830,08.30>>:::: Land overlijden
@@ -981,7 +981,7 @@ Groepnaam:: Gemeente
 Toelichting:: Gegevens over de gemeente van inschrijving, de gemeente waarnaar is uitgeschreven of de gemeente van eerste inschrijving of de RNI.
 Soort:: Algemene of verwijsgegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e0910,09.10>>:::: Gemeente van inschrijving
 <<e0920,09.20>>:::: Datum inschrijving
 Voorwaarden:: Alle elementen komen verplicht voor.
@@ -997,7 +997,7 @@ Groepnaam:: Adreshouding
 Toelichting:: Gegevens over de functie van het adres, het gemeentedeel en de datum van inschrijving op het adres.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1010,10.10>>:::: Functie adres
 <<e1020,10.20>>:::: Gemeentedeel
 <<e1030,10.30>>:::: Datum aanvang adreshouding
@@ -1014,7 +1014,7 @@ Groepnaam:: Adres
 Toelichting:: Gegevens over het adres.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1110,11.10>>:::: Straatnaam
 <<e1115,11.15>>:::: Naam openbare ruimte
 <<e1120,11.20>>:::: Huisnummer
@@ -1047,7 +1047,7 @@ Groepnaam:: Locatie
 Toelichting:: Gegevens over de plaatsbepaling van een adres indien het niet aan te duiden is als adres.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1210,12.10>>:::: Locatiebeschrijving
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1062,7 +1062,7 @@ Groepnaam:: Adres buitenland
 Toelichting:: Gegevens over het adres buitenland.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1310,13.10>>:::: Land adres buitenland
 <<e1320,13.20>>:::: Datum aanvang adres buitenland
 <<e1330,13.30>>:::: Regel 1 adres buitenland
@@ -1083,7 +1083,7 @@ Groepnaam:: Immigratie
 Toelichting:: Gegevens over de (her)vestiging vanuit het buitenland.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1410,14.10>>:::: Land vanwaar ingeschreven
 <<e1420,14.20>>:::: Datum vestiging in Nederland
 Voorwaarden:: Indien de groep voorkomt, komen alle elementen verplicht voor.
@@ -1099,7 +1099,7 @@ Groepnaam:: Soort verbintenis
 Toelichting:: Gegevens over de soort verbintenis die is aangegaan.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1510,15.10>>:::: Soort verbintenis
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1114,7 +1114,7 @@ Groepnaam:: Telefoon
 Toelichting:: Telefoonnummer waarop betrokkene bereikbaar is
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1610,16.10>>:::: Telefoonnummer
 <<e1620,16.20>>:::: Verificatie-indicatie
 <<e1630,16.30>>:::: Geldig vanaf
@@ -1131,7 +1131,7 @@ Groepnaam:: E-mailadres
 Toelichting:: E-mailadres waarop betrokkene bereikbaar is
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1710,17.10>>:::: E-mailadres
 <<e1720,17.20>>:::: Verificatie-indicatie
 <<e1730,17.30>>:::: Geldig vanaf
@@ -1148,7 +1148,7 @@ Groepnaam:: Einde geldigheid
 Toelichting:: Datum tot waarop het gegeven geldig was
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1810,18.10>>:::: Einddatum geldigheid
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1163,7 +1163,7 @@ Groepnaam:: Adrestype
 Toelichting:: Aanduiding wat voor soort adres dit adres is voor betrokkene
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e1910,19.10>>:::: Type adres
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1178,7 +1178,7 @@ Groepnaam:: A‑nummerverwijzingen
 Toelichting:: Gegevens over de verwijzingen naar vorige en opvolgende A‑nummers.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e2010,20.10>>:::: Vorig A‑nummer
 <<e2020,20.20>>:::: Volgend A‑nummer
 Voorwaarden:: {empty}
@@ -1194,7 +1194,7 @@ Groepnaam:: Europees kiesrecht
 Toelichting:: Gegevens over het deelnemen aan verkiezingen voor het Europees parlement.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e3110,31.10>>:::: Aanduiding Europees kiesrecht
 <<e3120,31.20>>:::: Datum verzoek of mededeling Europees kiesrecht
 <<e3130,31.30>>:::: Einddatum uitsluiting Europees kiesrecht
@@ -1216,7 +1216,7 @@ Groepnaam:: Gezag minderjarige
 Toelichting:: Gegevens betreffende het gezag over de minderjarige.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e3210,32.10>>:::: Indicatie gezag minderjarige
 Voorwaarden:: {empty}
 Gebruik:: Bepaling van het recht tot het vervullen van rechtshandelingen met betrekking tot de ingeschrevene.
@@ -1231,7 +1231,7 @@ Groepnaam:: Curatele
 Toelichting:: Gegevens over curatele.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e3310,33.10>>:::: Indicatie curateleregister
 Voorwaarden:: {empty}
 Gebruik:: Bepaling van het recht tot het vervullen van rechtshandelingen door de ingeschrevene.
@@ -1246,7 +1246,7 @@ Groepnaam:: Nederlands reisdocument
 Toelichting:: Gegevens over het Nederlands reisdocument.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e3510,35.10>>:::: Soort Nederlands reisdocument
 <<e3520,35.20>>:::: Nummer Nederlands reisdocument
 <<e3530,35.30>>:::: Datum uitgifte Nederlands reisdocument
@@ -1269,7 +1269,7 @@ Groepnaam:: Signalering
 Toelichting:: Gegevens over het signaleren van een bezwaar tegen het uitgeven van een Nederlands reisdocument.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e3610,36.10>>:::: Signalering met betrekking tot verstrekken Nederlands reisdocument
 Voorwaarden:: {empty}
 Gebruik:: Beoordeling van nieuwe aanvragen van Nederlandse reisdocumenten.
@@ -1284,7 +1284,7 @@ Groepnaam:: Uitsluiting kiesrecht
 Toelichting:: Gegevens over de uitsluiting.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e3810,38.10>>:::: Aanduiding uitgesloten kiesrecht
 <<e3820,38.20>>:::: Einddatum uitsluiting kiesrecht
 Voorwaarden:: Indien de groep voorkomt, komt element <<e3810,38.10>> verplicht voor.
@@ -1300,7 +1300,7 @@ Groepnaam:: Verblijfstitel
 Toelichting:: Gegevens over de verblijfsrechtelijke status.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e3910,39.10>>:::: Aanduiding verblijfstitel
 <<e3920,39.20>>:::: Datum einde verblijfstitel
 <<e3930,39.30>>:::: Ingangsdatum verblijfstitel
@@ -1317,7 +1317,7 @@ Groepnaam:: Afnemer
 Toelichting:: Gegevens over de identificatie van de afnemer.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e4010,40.10>>:::: Afnemersindicatie
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1332,7 +1332,7 @@ Groepnaam:: Naamgebruik
 Toelichting:: Gegevens over de wijze van aanschrijving.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e6110,61.10>>:::: Aanduiding naamgebruik
 Voorwaarden:: {empty}
 Gebruik:: Aanschrijven ingeschrevene.
@@ -1347,7 +1347,7 @@ Groepnaam:: Familierechtelijke betrekking
 Toelichting:: Gegevens over de familierechtelijke betrekking tot de ouder.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e6210,62.10>>:::: Datum ingang familierechtelijke betrekking
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1362,7 +1362,7 @@ Groepnaam:: Opnemen nationaliteit
 Toelichting:: Gegevens over de verkrijging van de Nederlandse nationaliteit dan wel het opnemen van een niet-Nederlandse nationaliteit.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e6310,63.10>>:::: Reden opname nationaliteit
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1377,7 +1377,7 @@ Groepnaam:: Beëindigen nationaliteit
 Toelichting:: Gegevens over het verlies van de Nederlandse nationaliteit dan wel het beëindigen van een niet-Nederlandse nationaliteit.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e6410,64.10>>:::: Reden beëindigen nationaliteit
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1392,7 +1392,7 @@ Groepnaam:: Bijzonder Nederlanderschap
 Toelichting:: Gegevens over de behandeling als Nederlander of de gerechtelijke vaststelling dat de ingeschrevene niet de Nederlandse nationaliteit bezit.
 Soort:: Algemene gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e6510,65.10>>:::: Aanduiding bijzonder Nederlanderschap
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1407,7 +1407,7 @@ Groepnaam:: Blokkering
 Toelichting:: Gegevens over het blokkeren van de PL.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e6620,66.20>>:::: Datum ingang blokkering PL
 Voorwaarden:: {empty}
 Gebruik:: Controledoeleinden bij de uitschrijvingsprocedure en het verstrekken van persoonsgegevens.
@@ -1422,7 +1422,7 @@ Groepnaam:: Opschorting
 Toelichting:: Gegevens over het (gedeeltelijk) stoppen van de bijhouding van de PL.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e6710,67.10>>:::: Datum opschorting bijhouding
 <<e6720,67.20>>:::: Omschrijving reden opschorting bijhouding
 Voorwaarden:: Indien de groep voorkomt, komen alle elementen verplicht voor.
@@ -1438,7 +1438,7 @@ Groepnaam:: Opname
 Toelichting:: Gegevens over de eerste inschrijving in de BRP.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e6810,68.10>>:::: Datum eerste inschrijving BRP
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1453,7 +1453,7 @@ Groepnaam:: Gemeente PK
 Toelichting:: Gegevens over de gemeente waar de PK zich bevindt.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e6910,69.10>>:::: Gemeente waar de PK zich bevindt
 Voorwaarden:: {empty}
 Gebruik:: Traceren van de PK voor vragen omtrent niet naar de PL geconverteerde gegevens.
@@ -1468,7 +1468,7 @@ Groepnaam:: Geheim
 Toelichting:: Gegevens over het mogen verstrekken van informatie aan derden.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e7010,70.10>>:::: Indicatie geheim
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1483,7 +1483,7 @@ Groepnaam:: Verificatie
 Toelichting:: Gegevens over de verificatie van de PL in de RNI.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e7110,71.10>>:::: Datum verificatie
 <<e7120,71.20>>:::: Omschrijving verificatie
 Voorwaarden:: Indien de groep voorkomt, komen alle elementen verplicht voor.
@@ -1499,7 +1499,7 @@ Groepnaam:: Adresaangifte
 Toelichting:: Gegevens over de aangifte van verblijf en adres.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e7210,72.10>>:::: Omschrijving van de aangifte adreshouding
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1514,7 +1514,7 @@ Groepnaam:: Buitenlands persoonsnummer
 Toelichting:: Gegeven over het buitenlands persoonsnummer van vreemdelingen, voor zover het een nummer betreft uitgegeven door een EU-land aan een eigen onderdaan.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e7310,73.10>>:::: EU-persoonsnummer
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1529,7 +1529,7 @@ Groepnaam:: Documentindicatie
 Toelichting:: Gegevens over het feit dat gedurende de opschorting van de bijhouding van de PL documenten zijn binnengekomen die betrekking hebben op de bijhouding van de PL.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e7510,75.10>>:::: Indicatie document
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1544,7 +1544,7 @@ Groepnaam:: Synchroniciteit
 Toelichting:: Gegevens over het versienummer en de laatste wijziging op de PL.
 Soort:: Technische gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8010,80.10>>:::: Versienummer
 <<e8020,80.20>>:::: Datumtijdstempel
 Voorwaarden:: Indien de groep voorkomt, komen alle elementen verplicht voor.
@@ -1560,7 +1560,7 @@ Groepnaam:: Akte
 Toelichting:: Gegevens over de akte die is opgenomen in de registers van de burgerlijke stand in Nederland.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8110,81.10>>:::: Registergemeente akte
 <<e8120,81.20>>:::: Aktenummer
 Voorwaarden:: Indien de groep voorkomt, komen alle elementen verplicht voor.
@@ -1576,7 +1576,7 @@ Groepnaam:: Document
 Toelichting:: Gegevens over het document, dat de bron vormt van de opgenomen gegevens, niet zijnde een akte die is opgenomen in de registers van de burgerlijke stand in Nederland.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8210,82.10>>:::: Gemeente document
 <<e8220,82.20>>:::: Datum document
 <<e8230,82.30>>:::: Beschrijving document
@@ -1593,7 +1593,7 @@ Groepnaam:: Procedure
 Toelichting:: Gegevens over het onderzoek dat plaatsvindt of heeft plaatsgevonden betreffende de gegevens in de categorie.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8310,83.10>>:::: Aanduiding gegevens in onderzoek
 <<e8320,83.20>>:::: Datum ingang onderzoek
 <<e8330,83.30>>:::: Datum einde onderzoek
@@ -1610,7 +1610,7 @@ Groepnaam:: Onjuist
 Toelichting:: Gegevens over het onjuist of strijdig met de openbare orde zijn van gegevens in de categorie.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8410,84.10>>:::: Indicatie onjuist, dan wel strijdigheid met de openbare orde
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -1625,7 +1625,7 @@ Groepnaam:: Geldigheid
 Toelichting:: Gegevens over het tijdstip waarop het geheel van gegevens in de categorie geldig is geworden.
 Soort:: Algemene of verwijsgegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8510,85.10>>:::: Ingangsdatum geldigheid
 Voorwaarden:: {empty}
 Gebruik:: Bepaling van de volgorde van geldigheid van de historische gegevens.
@@ -1640,7 +1640,7 @@ Groepnaam:: Opneming
 Toelichting:: Gegevens over het tijdstip van opneming van het geheel van gegevens in deze categorie.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8610,86.10>>:::: Datum van opneming
 Voorwaarden:: {empty}
 Gebruik:: Bepaling van de volgorde van categorieën.
@@ -1655,7 +1655,7 @@ Groepnaam:: PK‑conversie
 Toelichting:: Gegevens over het feit dat bij de conversie van PK naar PL gegevens over alle kinderen, die op de PK voorkomen, zijn overgenomen op de PL.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8710,87.10>>:::: PK‑gegevens volledig meegeconverteerd
 Voorwaarden:: {empty}
 Gebruik:: Overbodig teruggaan naar de PK voorkomen.
@@ -1670,7 +1670,7 @@ Groepnaam:: RNI-deelnemer
 Toelichting:: Gegevens over de RNI-deelnemer die de gegevens heeft aangeleverd.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8810,88.10>>:::: RNI-deelnemer
 <<e8820,88.20>>:::: Omschrijving verdrag
 Voorwaarden:: Indien de groep voorkomt, komt element <<e8810,88.10>> verplicht voor.
@@ -1686,7 +1686,7 @@ Groepnaam:: Registratie afstamming
 Toelichting:: Gegevens over de bijzondere afstamming van het kind.
 Soort:: Administratieve gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<e8910,89.10>>:::: Registratie betrekking
 Voorwaarden:: {empty}
 Gebruik:: {empty}
@@ -5112,7 +5112,7 @@ Categorieaanduiding:: AX
 Categorienaam:: Bewoning op een adres
 Toelichting:: Informatie over de bewoning op een adres in een periode
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<gbw,BW>>:::: Bewoning
 
 ifdef::backend-pdf[<<<]
@@ -5124,7 +5124,7 @@ Categorieaanduiding:: PA/PH/PX
 Categorienaam:: Persoon
 Toelichting:: Informatie over één of meer ingeschrevene(n)
 Groepsopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<gad,AD>>:::: Adressering
 <<ggl,GL>>:::: Geboorte/leeftijd
 <<ggz,GZ>>:::: Gezag
@@ -5164,7 +5164,7 @@ Groepnaam:: Adressering
 Toelichting:: Informatie over de wijze van aanschrijven en het adres van een persoon.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eAD01,AD.01>>::: Adressering
 <<eAD02,AD.02>>::: Elektronische adressering
 
@@ -5178,7 +5178,7 @@ Groepnaam:: Bewoning
 Toelichting:: Informatie over de bewoning van een adres.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eBW01,BW.01>>::: Bewoningen
 
 ifdef::backend-pdf[<<<]
@@ -5191,7 +5191,7 @@ Groepnaam:: Geboorte/leeftijd
 Toelichting:: Informatie over de geboorte of de leeftijd van de ingeschrevene.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eGL01,GL.01>>::: Leeftijd
 
 ifdef::backend-pdf[<<<]
@@ -5204,7 +5204,7 @@ Groepnaam:: Gezag
 Toelichting:: Informatie over de gezagsrelaties van de ingeschrevene.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eGZ01,GZ.01>>::: Gezagsrelaties
 
 ifdef::backend-pdf[<<<]
@@ -5217,7 +5217,7 @@ Groepnaam:: Huwelijk/geregistreerd partnerschap
 Toelichting:: Informatie over een gesloten of ontbonden huwelijk/geregistreerd partnerschap van de ingeschrevene.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eHP01,HP.01>>::: Voorletters partner
 
 ifdef::backend-pdf[<<<]
@@ -5230,7 +5230,7 @@ Groepnaam:: Kind
 Toelichting:: Informatie over een kind van de ingeschrevene.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eKD01,KD.01>>::: Voorletters kind
 
 ifdef::backend-pdf[<<<]
@@ -5243,7 +5243,7 @@ Groepnaam:: Naam
 Toelichting:: Informatie over de naam van de ingeschrevene.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eNM01,NM.01>>::: Voorletters
 <<eNM02,NM.02>>::: Volledige naam
 <<eNM03,NM.03>>::: Aanhef
@@ -5261,7 +5261,7 @@ Groepnaam:: Nationaliteit
 Toelichting:: Informatie over de nationaliteit van de ingeschrevene.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eNT01,NT.01>>::: Type nationaliteit
 
 ifdef::backend-pdf[<<<]
@@ -5274,7 +5274,7 @@ Groepnaam:: Ouder
 Toelichting:: Informatie over de ouder(s) van de ingeschrevene.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eOU01,OU.01>>::: Voorletters ouder
 
 ifdef::backend-pdf[<<<]
@@ -5287,7 +5287,7 @@ Groepnaam:: Verblijfplaats
 Toelichting:: Informatie over het verblijf en adres van de ingeschrevene.
 Soort:: Afgeleide gegevens
 Elementopsomming::
-[horizontal]
+[horizontal,labelwidth=10,itemwidth=90]
 <<eVP01,VP.01>>::: Begindatum adreshouding
 <<eVP02,VP.02>>::: Type verblijfplaats
 <<eVP03,VP.03>>::: Adresregel 1
@@ -5404,17 +5404,17 @@ Als in de vraag een peildatum was meegegeven, is de datumTot de peildatum {plus}
 | 3+|bewoners |array of objects |De personen die in de bewoning periode staan ingeschreven op het adresseerbaar object.
 | | 2+|burgerservicenummer |string |<<e1020,01.10.20>> Burgerservicenummer van de bewoner
 | | 2+|naam| obect |
-| | | |volledigeNaam |string |PA.NM.02 Volledige naam van de bewoner
+| | | |volledigeNaam |string |<<eNM02,PA.NM.02>> Volledige naam van de bewoner
 | | 2+|geboorte | object |
-| | | |datum |date |Gebaseerd op 01.03.10 Geboortedatum op de PL van de bewoner
+| | | |datum |date |Gebaseerd op <<e0310,01.03.10>> Geboortedatum op de PL van de bewoner
 | | 2+|geheimhoudingPersoonsgegevens |boolean |Afgeleid van <<e7010,07.70.10>> Indicatie geheim op de PL van de bewoner
 | | 2+|inOnderzoek |boolean |Geeft aan dat de verblijfplaats in onderzoek is. Afgeleid van <<e8310,08/58.83.10>> Aanduiding gegevens in onderzoek
 | 3+|mogelijkeBewoners |array of objects |De personen die in de bewoning periode mogelijk staan ingeschreven op het adresseerbaar object.
 | | 2+|burgerservicenummer |string |<<e1020,01.10.20>> Burgerservicenummer van de bewoner
 | | 2+|naam| obect |
-| | | |volledigeNaam |string |PA.NM.02 Volledige naam van de bewoner
+| | | |volledigeNaam |string |<<eNM02,PA.NM.02>> Volledige naam van de bewoner
 | | 2+|geboorte | object |
-| | | |datum |date |Gebaseerd op 01.03.10 Geboortedatum op de PL van de bewoner
+| | | |datum |date |Gebaseerd op <<e0310,01.03.10>> Geboortedatum op de PL van de bewoner
 | | 2+|geheimhoudingPersoonsgegevens |boolean |Afgeleid van <<e7010,07.70.10>> Indicatie geheim op de PL van de bewoner
 | | 2+|inOnderzoek |boolean |Geeft aan dat de verblijfplaats in onderzoek is.
 | 3+|indicatieVeelBewoners |boolean |Geeft aan dat de bewoning in totaal meer dan 100 bewoners en/of mogelijke bewoners heeft.
@@ -5543,44 +5543,49 @@ Lengte:: {empty}
 Type:: JSON-object
 Mogelijke waarden:: {empty}
 
-[width="100%",cols="3%,3%,3%,3%,28%,10%,50%",options="header",]
+[width="100%",cols="3%,3%,3%,31%,10%,50%",options="header",]
 |===
-5+|Element naam|Type |Mogelijke waarden / corresponderende rubriek in BRP-V
-| 4+|gezag |array of objects |<<eGZ01,PA.GZ.01>> Gezagsrelaties
-| | 3+|type |string |"EenhoofdigOuderlijkGezag" / "GezagNietTeBepalen" / "GezamenlijkGezag" / "TijdelijkGeenGezag" / "TweehoofdigOuderlijkGezag" / "Voogdij"
-| | 3+|minderjarige |object |
-| | | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de minderjarige
-| | | 2+|naam |object |
-| | | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de minderjarige
-| | | 2+|leeftijd |integer |<<eGL01,PA.GL.01>> Leeftijd van de PL van de minderjarige
-| | 5+|Als type = "EenhoofdigOuderlijkGezag"
-| | 3+|ouder |object |
-| | | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de ouder
-| | | 2+|naam |object |
-| | | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de ouder
-| | 5+|Als type = "GezagNietTeBepalen"
-| | 3+|toelichting |string |Reden waarom gezag niet is vast te stellen op basis van gegevens in de BRP en wet- en regelgeving.
-| | 5+|Als type = "GezamenlijkGezag"
-| | 3+|ouder |object |
-| | | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de ouder
-| | | 2+|naam |object |
-| | | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de ouder
-| | 3+|derde |object |
-| | | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de derde
-| | | 2+|naam |object |
-| | | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de derde
-| | 5+|Als type = "TijdelijkGeenGezag"
-| | 3+|toelichting |string |Reden waarom gezag niet is vast te stellen op basis van gegevens in de BRP en wet- en regelgeving.
-| | 5+|Als type = "TweehoofdigOuderlijkGezag"
-| | 3+|ouders |array of objects |
-| | | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de ouder
-| | | 2+|naam |object |
-| | | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de ouder
-| | 5+|Als type = "Voogdij"
-| | 3+|derden |array of objects |
-| | | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de derde
-| | | 2+|naam |object |
-| | | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de derde
+4+|Element naam|Type |Mogelijke waarden / corresponderende rubriek in BRP-V
+4+|gezag |array of objects |<<eGZ01,PA.GZ.01>> Gezagsrelaties
+| 3+|type |string |"EenhoofdigOuderlijkGezag" / "GezagNietTeBepalen" / "GezamenlijkGezag" / "GezamenlijkOuderlijkGezag" / "TijdelijkGeenGezag" / "Voogdij"
+| 3+|minderjarige |object |
+| | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de minderjarige
+| | 2+|naam |object |
+| | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de minderjarige
+| | 2+|leeftijd |integer |<<eGL01,PA.GL.01>> Leeftijd van de PL van de minderjarige
+| 3+|inOnderzoek |boolean |Geeft aan dat de gezagsrelatie in onderzoek is
+| 5+|Als type = "EenhoofdigOuderlijkGezag":
+| 3+|ouder |object |
+| | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de ouder
+| | 2+|naam |object |
+| | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de ouder
+| 5+|Als type = "GezagNietTeBepalen":
+| 3+|toelichting |string |Reden waarom gezag niet is vast te stellen op basis van gegevens in de BRP en wet- en regelgeving.
+| 5+|Als type = "GezamenlijkGezag":
+| 3+|ouder |object |
+| | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de ouder
+| | 2+|naam |object |
+| | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de ouder
+| 3+|derde |object |
+| | 2+|type |string |"BekendeDerde" / "OnbekendeDerde"
+| | 4+|Als type = "BekendeDerde":
+| | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de derde
+| | 2+|naam |object |
+| | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de derde
+| 5+|Als type = "GezamenlijkOuderlijkGezag":
+| 3+|ouders |array of objects |
+| | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de ouder
+| | 2+|naam |object |
+| | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de ouder
+| 5+|Als type = "TijdelijkGeenGezag":
+| 3+|toelichting |string |Reden waarom gezag niet is vast te stellen op basis van gegevens in de BRP en wet- en regelgeving.
+| 5+|Als type = "Voogdij":
+| 3+|derden |array of objects |
+| | 2+|type |string |"BekendeDerde" / "OnbekendeDerde"
+| | 4+|Als type = "BekendeDerde":
+| | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer van de PL van de derde
+| | 2+|naam |object |
+| | | |volledigeNaam |string | <<eNM02,PA.NM.02>> Volledige naam van de PL van de derde
 |===
 
 ifdef::backend-pdf[<<<]
@@ -5926,7 +5931,7 @@ Mogelijke waarden::
 | 3+|type |string |<<eVP02,PA.VP.02>> Type verblijfplaats
 | 3+|datumVan |date |<<eVP01,PA.VP.01>> dan wel <<eVP01,PH.VP.01>> Begindatum adreshouding
 | 3+|datumTot |date |Afgeleid van <<eVP01,PA.VP.01>> dan wel <<eVP01,PH.VP.01>> Begindatum adreshouding
-| 5+|Als type = "Adres"
+| 5+|Als type = "Adres":
 | 3+|gemeenteVanInschrijving |object |
 | | 2+|code |string |<<e0910,08.09.10>> dan wel <<e0910,58.09.10>> Gemeente van inschrijving
 | | 2+|omschrijving |string |Naam van de gemeente zoals vermeld in tabel <<t33,33>> Gemeententabel
@@ -5973,7 +5978,7 @@ Mogelijke waarden::
 | | 2+|nummeraanduidingIdentificatie |boolean |Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
 | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,08.83.20>> dan wel <<e8320,58.83.20>> Datum ingang onderzoek
 | 3+|verblijftNietOpAdresVanaf |date | Afgeleid van <<e8310,08.83.10>> en <<e8320,08.83.20>> dan wel <<e8310,58.83.10>> en <<e8320,58.83.20>> Aanduiding gegevens in onderzoek en Datum ingang onderzoek
-| 5+|Als type = "Locatie"
+| 5+|Als type = "Locatie":
 | 3+|gemeenteVanInschrijving |object |
 | | 2+|code |string |<<e0910,08.09.10>> dan wel <<e0910,58.09.10>> Gemeente van inschrijving
 | | 2+|omschrijving |string |Naam van de gemeente zoals vermeld in tabek <<t33,33>> Gemeententabel
@@ -6000,7 +6005,7 @@ Mogelijke waarden::
 | | 2+|functieAdres |boolean |Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
 | | 2+|datumIngangOnderzoek |date |Gebaseerd op <<e8320,08.83.20>> dan wel <<e8320,58.83.20>> Datum ingang onderzoek
 | 3+|verblijftNietOpAdresVanaf |date |Afgeleid van <<e8310,08.83.10>> en <<e8320,08.83.20>> dan wel <<e8310,58.83.10>> en <<e8320,58.83.20>> Aanduiding gegevens in onderzoek en Datum ingang onderzoek
-| 5+|Als type = "VerblijfplaatsBuitenland"
+| 5+|Als type = "VerblijfplaatsBuitenland":
 | 3+|verblijfadres |object |
 | | 2+|regel1 |string |<<e1330,08.13.30>> dan wel <<e1330,58.13.30>> Regel 1 adres buitenland
 | | 2+|regel2 |string |<<e1340,08.13.40>> dan wel <<e1340,58.13.40>> Regel 2 adres buitenland
@@ -6037,7 +6042,7 @@ Mogelijke waarden::
 | | | |code |string |<<e8810,08.88.10>> dan wel <<e8810,58.88.10>> RNI-deelnemer
 | | | |omschrijving |string |Naam van de RNI deelnemer zoals vermeld in tabel <<t60,60>> RNI-deelnemers
 | | 2+|omschrijvingVerdrag |string |<<e8820,08.88.20>> dan wel <<e8820,58.88.20>> Omschrijving verdrag
-| 5+|Als type = "VerblijfplaatsOnbekend"
+| 5+|Als type = "VerblijfplaatsOnbekend":
 | 3+|inOnderzoek |object |
 | | 2+|type |boolean |Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
 | | 2+|datumVan |boolean |Afgeleid van <<e8310,08.83.10>> dan wel <<e8310,58.83.10>> Aanduiding gegevens in onderzoek
