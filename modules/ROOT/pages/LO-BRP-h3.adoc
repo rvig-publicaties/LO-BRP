@@ -769,7 +769,7 @@ Wanneer een afnemersindicatie voorwaardelijk fysiek wordt verwijderd bij een PL 
 
 ===== Onvoorwaardelijk fysiek verwijderen afnemersindicatie bij PL
 
-Wanneer een afnemersindicatie onvoorwaardelijk fysiek wordt verwijderd bij een PL wordt de categorie waarin de betreffende indicatie actueel en/of historisch voorkomt in zijn geheel fysiek bij de PL verwijderd, ongeacht de datum in 85.10 Ingangsdatum geldigheid in die categorie.
+Wanneer een afnemersindicatie onvoorwaardelijk fysiek wordt verwijderd bij een PL wordt de categorie waarin de betreffende indicatie actueel en/of historisch voorkomt in zijn geheel fysiek bij de PL verwijderd, ongeacht de datum in <<e9510,85.10>> Ingangsdatum geldigheid in die categorie.
 
 ==== Spontane gegevensverstrekking
 
@@ -960,7 +960,7 @@ Verstrekkingen als gevolg van selectie met plaatsen afnemersindicatie kunnen wor
 
 Er zijn twee soorten vulberichten: in de situatie dat er gegevens verstrekt worden naar aanleiding van het bericht plaatsen afnemersindicatie (<<Ap01,Ap01>>-bericht) zal dit geschieden door middel van het <<Ag01,Ag01>>-bericht. Dat <<Ag01,Ag01>>-bericht wordt verzonden via het medium ad hoc (rubriek <<e9567,35.95.67>>). In de overige situaties zal dit geschieden door middel van het <<Ag11,Ag11>>-bericht. Indien er gegevens worden verstrekt naar aanleiding van een selectie met plaatsen afnemersindicatie, dan wordt het <<Ag11,Ag11>>-bericht verzonden via het medium selectie (rubriek <<e9556,35.95.56>>). Indien er gegevens worden verstrekt naar aanleiding van het plaatsen afnemersindicatie op basis van sleutelrubrieken, dan wordt het <<Ag11,Ag11>>-bericht bericht verzonden via het medium spontaan (rubriek <<e9544,35.95.44>>).
 
-Aan de hand van bovengenoemde gegevens wordt een BRP-bericht samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
+Aan de hand van bovengenoemde gegevens wordt een bericht samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
 
 ==== (Mee)verstrekking van de groepen procedure en onjuist
 
@@ -1013,7 +1013,7 @@ Bij de verstrekking van gegevens via de Ad hoc webservice en de BRP API zullen d
 
 ===== Meeverstrekking bij verwijsgegevens aan gemeenten en de RNI
 
-Bij de verstrekking van verwijsgegevens aan gemeenten en aan de RNI zullen de elementen <<e8310,83.10>> en <<e83.20 meeverstrekt worden als één of meer van de betreffende verwijsgegevens in onderzoek staan.
+Bij de verstrekking van verwijsgegevens aan gemeenten en aan de RNI zullen de elementen <<e8310,83.10>> en <<e8320,83.20>> meeverstrekt worden als één of meer van de betreffende verwijsgegevens in onderzoek staan.
 
 ==== Meeverstrekken van verificatie en RNI-deelnemergegevens
 

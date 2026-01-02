@@ -152,6 +152,7 @@ stuurt een aanvullend brondocument op
 * Webservice in verband met het bevragen door afnemers van BRP-V:
 ** <<AdHocAdresVraagViaWebservice,Vraag>>: Afnemer stelt een ad hoc (adres)vraag aan BRP-V
 
+====== Webservices ten behoeve van de afhandeling van berichtenverkeer
 * Webservices in verband met het afhandelen van het berichtendienstverkeer via BRP-V:
 ** <<_berichtenverkeer_via_de_webservice_stuurgbabericht,StuurGBAbericht>>: Berichtendienstgebruiker handelt berichtenverkeer af met SummarizeMessages, ListMessages, GetMessage en PutMessage
 
@@ -340,7 +341,7 @@ In deze paragraaf zijn alle tekens uit de Teletex-tekenset opgesomd die als teke
 In deze paragraaf zijn alle gecombineerde tekens uit de Teletex-tekenset opgesomd die als teken binnen het BRP-systeem gebruikt mogen worden.
 
 .Overzicht gecombineerde Teletex-tekens
-[.center,width="80%" ,cols="10%,10%,10%,10%,10%,10%,40%",options="header",]
+[.center,width="80%",cols="10%,10%,10%,10%,10%,10%,40%",options="header",]
 |===
 |T.61 |UTF-8 |Char |T.61 |UTF-8 |Char |Naam
 |C1 41 |C3 80 |À |C1 61 |C3 A0 |à |A grave
@@ -4777,7 +4778,7 @@ Bij de gegevensverstrekking vanuit BRP-V aan afnemers worden gegevens over opsch
 
 ====== Gegevens over onderzoek
 
-Indien er gegevens worden verstrekt uit een categorie waarin groep <<g83,83>> Procedure voorkomt, dan wordt de in de betrokken categorie voorkomende inhoud van de elementen 83.10, 83.20 en 83.30 meeverstrekt.
+Indien er gegevens worden verstrekt uit een categorie waarin groep <<g83,83>> Procedure voorkomt, dan wordt de in de betrokken categorie voorkomende inhoud van de elementen <<e8310,83.10>>, <<e8320,83.20>> en <<38330,83.30>> meeverstrekt.
 
 ====== Gegevens over de opschorting
 

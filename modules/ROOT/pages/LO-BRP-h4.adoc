@@ -213,11 +213,11 @@ In <<_beschrijving_van_de_landelijke_tabellen>> worden de binnen de BRP voorgesc
 
 In de tabellen kunnen de elementen 99.98, Datum ingang tabelregel en 99.99, Datum beëindiging tabelregel voorkomen. Deze twee datums geven de periode aan waarbinnen de betreffende tabelregel geldig is. Een gebeurtenis, waarvan feiten met behulp van een tabelregel vastgelegd worden, moet in deze periode plaatsgevonden hebben. Bijvoorbeeld: geboorteland Rhodesië, code 5004, in de landentabel opgenomen met datum ingang tabelregel 19651111 en datum beëindiging tabelregel 19790601, kan alleen voorkomen bij een geboorte in de periode van 11‑11‑1965 tot 01‑06‑1979.
 
-In tabel 34, de Landentabel, komt het element 99.97 Indicatie einddatum fictief voor. Als hier een asterisk (*) in staat, betekent dit dat er geen officiële bron is voor de datum in element 99.99, of dat de datum in 99.99 niet overeenkomt met de officiële datum waarop het betreffende land een andere naam kreeg of ophield te bestaan.
+In tabel <<t34,34>>, de Landentabel, komt het element 99.97 Indicatie einddatum fictief voor. Als hier een asterisk (*) in staat, betekent dit dat er geen officiële bron is voor de datum in element 99.99, of dat de datum in 99.99 niet overeenkomt met de officiële datum waarop het betreffende land een andere naam kreeg of ophield te bestaan.
 
 ====== Nieuwe gemeentecode
 
-In Tabel <<t33,33>>, de Gemeententabel, komt het element Nieuwe gemeentecode voor. De functie van dit element is de volgende: wanneer in een tabelregel een datum beëindiging voorkomt, verwijst de nieuwe gemeentecode naar een andere tabelregel uit dezelfde tabel. Op deze manier vindt er een doorverwijzing plaats naar een andere tabelregel zonder datum beëindiging. Deze laatste tabelregel bevat de gemeentecode die op dat moment geldig is.
+In tabel <<t33,33>>, de Gemeententabel, komt het element 92.12 Nieuwe gemeentecode voor. De functie van dit element is de volgende: wanneer in een tabelregel een datum beëindiging voorkomt, verwijst de nieuwe gemeentecode naar een andere tabelregel uit dezelfde tabel. Op deze manier vindt er een doorverwijzing plaats naar een andere tabelregel zonder datum beëindiging. Deze laatste tabelregel bevat de gemeentecode die op dat moment geldig is.
 
 === Toelichting op gebruikte begrippen
 
@@ -1927,7 +1927,7 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 03.20
 Elementnaam:: Geboorteplaats
-Toelichting:: Een code, opgenomen in Tabel 33, Gemeententabel of een buitenlandse plaats of een plaatsbepaling, die aangeeft waar de persoon is geboren.
+Toelichting:: Een code, opgenomen in tabel 33, Gemeententabel of een buitenlandse plaats of een plaatsbepaling, die aangeeft waar de persoon is geboren.
 Lengte:: 1-40
 Type:: Alfanumeriek
 Standaardwaarde:: 0000
@@ -2053,7 +2053,7 @@ Type:: Alfanumeriek
 Standaardwaarde:: 0000
 Mogelijke waarden:: Een 4-cijferige code volgens de tabel <<t33,33>>, Gemeententabel, een buitenlandse plaatsnaam of een omschrijving zo nodig aangevuld met een aanduiding in lengte- en breedtegraden, indien het huwelijk/geregistreerd partnerschap niet is ontbonden in een gemeente of buitenlandse plaats (bijvoorbeeld bij een ontbinding op of boven internationaal gebied). +
 Standaardwaarde indien onbekend.
-Voorwaarden:: Indien het huwelijk/geregistreerd partnerschap is ontbonden in Nederland, bevat dit veld of een 4-cijferige code uit Tabel 33 Gemeententabel of een omschrijving zo nodig aangevuld met een aanduiding in lengte- en breedtegraden, indien het huwelijk/­geregistreerd partnerschap niet is ontbonden in een gemeente. +
+Voorwaarden:: Indien het huwelijk/geregistreerd partnerschap is ontbonden in Nederland, bevat dit veld of een 4-cijferige code uit tabel 33 Gemeententabel of een omschrijving zo nodig aangevuld met een aanduiding in lengte- en breedtegraden, indien het huwelijk/­geregistreerd partnerschap niet is ontbonden in een gemeente. +
 Indien het huwelijk/geregistreerd partnerschap niet is ontbonden in Nederland, zijn er geen beperkingen met betrekking tot hetgeen dit veld bevat.
 
 ifdef::backend-pdf[<<<]
@@ -2908,7 +2908,7 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 39.10
 Elementnaam:: Aanduiding verblijfstitel
-Toelichting:: Een code, opgenomen in Tabel 56, Verblijfstiteltabel, die aangeeft over welke verblijfsrechtelijke status de ingeschrevene beschikt.
+Toelichting:: Een code, opgenomen in tabel 56, Verblijfstiteltabel, die aangeeft over welke verblijfsrechtelijke status de ingeschrevene beschikt.
 Lengte:: 2
 Type:: Numeriek
 Standaardwaarde:: 00
@@ -3251,7 +3251,7 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 81.10
 Elementnaam:: Registergemeente akte
-Toelichting:: Een code, opgenomen in Tabel 33, Gemeententabel, die aangeeft in welke gemeente de akte in de registers van de burgerlijke stand in Nederland is opgenomen.
+Toelichting:: Een code, opgenomen in tabel 33, Gemeententabel, die aangeeft in welke gemeente de akte in de registers van de burgerlijke stand in Nederland is opgenomen.
 Lengte:: 4
 Type:: Numeriek
 Standaardwaarde:: 0000
@@ -3431,7 +3431,7 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 88.10
 Elementnaam:: RNI-deelnemer
-Toelichting:: Een code, voorkomend in Tabel 60, RNI-deelnemerstabel, die aangeeft welke RNI-deelnemer (een deel van) de gegevens in de betrokken categorie heeft aangeleverd.
+Toelichting:: Een code, voorkomend in tabel 60, RNI-deelnemerstabel, die aangeeft welke RNI-deelnemer (een deel van) de gegevens in de betrokken categorie heeft aangeleverd.
 Lengte:: 4
 Type:: Numeriek
 Standaardwaarde:: 0000
