@@ -4120,7 +4120,7 @@ Inhoud bevat:: de bij het <<Wa01,Wa01>>-bericht opgegeven identificerende gegeve
 
 De in de berichten voorkomende foutredenen en statusmeldingen zijn in de onderstaande opsomming opgenomen. Indien bij de omschrijving van de betekenis "datum" of "code" voorkomt, wil dat zeggen dat in het betreffende bericht ook de bedoelde datum of gemeentecode voorkomt.
 
-[width="100%",cols="10%,10%,80%",options="header",frame=none,grid=none]
+[width="100%",cols="10%,12%,78%",options="header",frame=none,grid=none]
 |===
 |Fout/ Status |Berichtnr. |Betekenis
 |A |<<Ib01,Ib01>> |PL is actueel
@@ -4746,9 +4746,9 @@ Wanneer aan al deze voorwaarden is voldaan, stelt BRP-V vast welke PL'en bij de 
 
 Indien aan alle voorwaarden wordt voldaan, vindt in een response bericht de verstrekking plaats van de gevraagde gegevens, voor zover aanwezig, van alle verzamelde PL'en. Als de ad hoc vraag is gesteld door Mijn Overheid, geldt daarbij nog het volgende:
 
-* Het BSN van kinderen (09.01.20) wordt vervangen door ********* als het kind 18 jaar of ouder is (dus als de 09.03.10 kleiner dan of gelijk is aan de systeemdatum – 18 jaar);
-* Het BSN van ouders (02/03.01.20) wordt vervangen door ********* als de persoon 18 jaar of ouder is (dus als de 01.03.10 kleiner dan of gelijk is aan de systeemdatum – 18 jaar);;
-* Gegevens van partners (categorie 05) worden uit het antwoord weggelaten als het huwelijk of geregistreerd partnerschap is beëindigd (05.07.10 Datum ontbinding huwelijk/geregistreerd partnerschap komt voor in de betreffende categorie 05) én de partner nog in leven is (<<e0740,05.07.40>> Reden ontbinding huwelijk/geregistreerd partnerschap is ongelijk aan 'O' EN <<e6720,07.67.20>> Omschrijving reden opschorting bijhouding komt niet voor of is ongelijk aan 'O').
+* Het BSN van kinderen (<<e0120,09.01.20>>) wordt vervangen door ********* als het kind 18 jaar of ouder is (dus als de <<e0310,09.03.10>> kleiner dan of gelijk is aan de systeemdatum – 18 jaar);
+* Het BSN van ouders (<<e0120,02/03.01.20>>) wordt vervangen door ********* als de persoon 18 jaar of ouder is (dus als de <<e0310,01.03.10>> kleiner dan of gelijk is aan de systeemdatum – 18 jaar);;
+* Gegevens van partners (categorie 05) worden uit het antwoord weggelaten als het huwelijk of geregistreerd partnerschap is beëindigd (<<e0710,05.07.10>> Datum ontbinding huwelijk/geregistreerd partnerschap komt voor in de betreffende categorie 05) én de partner nog in leven is (<<e0740,05.07.40>> Reden ontbinding huwelijk/geregistreerd partnerschap is ongelijk aan 'O' EN <<e6720,07.67.20>> Omschrijving reden opschorting bijhouding komt niet voor of is ongelijk aan 'O').
 
 ===== Output
 
@@ -4764,7 +4764,7 @@ Het element ++<++persoonslijsten++>++ komt niet voor als er in het antwoord geen
 
 Het element ++<++resultaat++>++ bevat de volgende gegevens: code, letter, omschrijving en referentie.
 
-[width="100%",cols="15%,85%"]
+[width="100%",cols="20%,80%",frame=none,grid=none]
 |===
 |++<++code++>++ |bevat een numerieke waarde voor het resultaat. Niet alle letter-code combinaties bij letter "X' corresponderen met de foutredenen in de bij ++<++letter++>++ genoemde berichtencycli.
 |++<++letter++>++ |bevat een letter, die, met uitzondering van de letters "A" en "T", correspondeert met een van de foutredenen die in het <<Hf01,Hf01>>- dan wel <<Xf01,Xf01>>-bericht kunnen voorkomen. Zie daarvoor de cyclusbeschrijvingen Ad hoc vraag, <<_ad_hoc_vragen_via_de_berichtendienst>> en Ad hoc adresvraag, <<_ad_hoc_adresvragen_via_de_berichtendienst>>.
@@ -5301,7 +5301,7 @@ Als de vraag niet afkomstig is van een gemeente, dan wordt nog gecontroleerd:
 * Of de afnemer geautoriseerd is voor de gegevens in de zoekcriteria (komen de met de zoekcriteria corresponderende rubrieken voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?);
 * Of de afnemer geautoriseerd is voor de gevraagde gegevens (komen de rubrieken voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?). Daarbij geldt:
 ** Als de afnemer vraagt om <<eNM03,PA.NM.03>> Aanhef, <<eNM04,PA.NM.04>> Aanspreekvorm, <<eNM05,PA.NM.05>> Aanspreeknaam of <<eNM06,PA.NM.06>> Naamgebruik in lopende tekst, dan wordt gecontroleerd of de afnemer is geautoriseerd voor <<eAD01,PA.AD.01>> Adressering of voor <<eAD02,PA.AD.02>> Elektronische adressering;
-** Als de afnemer vraagt om <<eVP01,PA.VP.01>> Begindatum adreshouding, dan wordt gecontroleerd of de afnemer is geautoriseerd voor 08.10.30 Datum aanvang adreshouding. of voor 08.13.20 Datum aanvang adres buitenland;
+** Als de afnemer vraagt om <<eVP01,PA.VP.01>> Begindatum adreshouding, dan wordt gecontroleerd of de afnemer is geautoriseerd voor <<e1030,08.10.30>> Datum aanvang adreshouding. of voor <<e1320,08.13.20>> Datum aanvang adres buitenland;
 ** Als de afnemer vraagt om <<eVP03,PA.VP.03>> Adresregel 1 of <<eVP04,PA.VP.04>> Adresregel 2, dan wordt gecontroleerd of de afnemer is geautoriseerd voor <<eAD01,PA.AD.01>> Adressering;
 ** Als de afnemer vraagt om <<e1350,08.13.50>> Regel 3 adres buitenland of om <<e1310,08.13.10>> Land adres buitenland, dan wordt gecontroleerd of de afnemer is geautoriseerd voor deze rubrieken, of voor <<eAD01,PA.AD.01>> Adressering.
 
@@ -6556,7 +6556,7 @@ ifdef::backend-html5[''']
 
 De in de berichten voorkomende foutredenen en statusmeldingen zijn in de onderstaande opsomming opgenomen. Indien bij de omschrijving van de betekenis "datum" of "code" voorkomt, wil dat zeggen dat in het betreffende bericht ook de bedoelde datum of gemeentecode voorkomt.
 
-[width="100%",cols="10%,10%,80%",options="header",frame=none,grid=none]
+[width="100%",cols="10%,12%,78%",options="header",frame=none,grid=none]
 |===
 |Fout/ Status |Berichtnr. |Betekenis
 |A |<<Ag01,Ag01>> |PL is actueel
@@ -6870,10 +6870,10 @@ Het aantal elementen in het object dat correspondeert met een tabelregel, versch
 3+|tabelnaam |string |Nationaliteitentabel
 3+|tabelData |array of objects |
 | 2+|t32 |array of objects |
-| | |e0511 |string | 32.05.11 Nationaliteitscode
-| | |e0512 |string | 32.05.12 Omschrijving nationaliteit
-| | |e9998 |string | 32.99.98 Datum ingang tabelregel
-| | |e9999 |string | 32.99.99 Datum beëindiging tabelregel
+| | |e0511 |string | <<e0511,32.05.11>> Nationaliteitscode
+| | |e0512 |string | <<e0512,32.05.12>> Omschrijving nationaliteit
+| | |e9998 |string | <<r329998,32.99.98>> Datum ingang tabelregel
+| | |e9999 |string | <<r329999,32.99.99>> Datum beëindiging tabelregel
 |===
 
 ifdef::backend-pdf[<<<]

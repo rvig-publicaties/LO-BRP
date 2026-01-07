@@ -260,7 +260,7 @@ Sommige afgeleide gegevens hebben de vorm van een boolean (een Booleaanse waarde
 
 ==== JSON-object
 
-Sommige afgeleide gegevens vormen wel één informatieproduct, maar zijn zo complex dat ze niet in één enkel gegeven te vatten zijn. In dat geval wordt een JSON-object verstrekt. Dit is een gestandaardiseerd gegevensformaat in de form van data-objecten die bestaan uit één of meer attributen en hun waarden. Die waarden kunnen zelf ook weer een data-object zijn, een lijst, een boolean, een string (tekenreeks) of een getal. Zie voor een gedetailleerde beschrijving van JSON: http://www.json.org/[www.json.org].
+Sommige afgeleide gegevens vormen wel één informatieproduct, maar zijn zo complex dat ze niet in één enkel gegeven te vatten zijn. In dat geval wordt een JSON-object verstrekt. Dit is een gestandaardiseerd gegevensformaat in de vorm van data-objecten die bestaan uit één of meer attributen en hun waarden. Die waarden kunnen zelf ook weer een data-object zijn, een lijst, een boolean, een string (tekenreeks) of een getal. Zie voor een gedetailleerde beschrijving van JSON: http://www.json.org/[www.json.org].
 
 ==== Date
 
@@ -1898,7 +1898,7 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 02.40
 Elementnaam:: Geslachtsnaam
-Toelichting:: De (geslachts)naam waarvan de eventueel aanwezige voorvoegsels (tabel <<t36,36>>) en adellijke titel/predicaat (tabel 38) zijn afgesplitst.
+Toelichting:: De (geslachts)naam waarvan de eventueel aanwezige voorvoegsels (tabel <<t36,36>>) en adellijke titel/predicaat (tabel <<t38,38>>) zijn afgesplitst.
 Lengte:: 1-200
 Type:: Alfanumeriek
 Standaardwaarde:: .
@@ -1927,7 +1927,7 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 03.20
 Elementnaam:: Geboorteplaats
-Toelichting:: Een code, opgenomen in tabel 33, Gemeententabel of een buitenlandse plaats of een plaatsbepaling, die aangeeft waar de persoon is geboren.
+Toelichting:: Een code, opgenomen in tabel <<t33,33>>, Gemeententabel of een buitenlandse plaats of een plaatsbepaling, die aangeeft waar de persoon is geboren.
 Lengte:: 1-40
 Type:: Alfanumeriek
 Standaardwaarde:: 0000
@@ -2053,7 +2053,7 @@ Type:: Alfanumeriek
 Standaardwaarde:: 0000
 Mogelijke waarden:: Een 4-cijferige code volgens de tabel <<t33,33>>, Gemeententabel, een buitenlandse plaatsnaam of een omschrijving zo nodig aangevuld met een aanduiding in lengte- en breedtegraden, indien het huwelijk/geregistreerd partnerschap niet is ontbonden in een gemeente of buitenlandse plaats (bijvoorbeeld bij een ontbinding op of boven internationaal gebied). +
 Standaardwaarde indien onbekend.
-Voorwaarden:: Indien het huwelijk/geregistreerd partnerschap is ontbonden in Nederland, bevat dit veld of een 4-cijferige code uit tabel 33 Gemeententabel of een omschrijving zo nodig aangevuld met een aanduiding in lengte- en breedtegraden, indien het huwelijk/­geregistreerd partnerschap niet is ontbonden in een gemeente. +
+Voorwaarden:: Indien het huwelijk/geregistreerd partnerschap is ontbonden in Nederland, bevat dit veld of een 4-cijferige code uit tabel <<t33,33>> Gemeententabel of een omschrijving zo nodig aangevuld met een aanduiding in lengte- en breedtegraden, indien het huwelijk/­geregistreerd partnerschap niet is ontbonden in een gemeente. +
 Indien het huwelijk/geregistreerd partnerschap niet is ontbonden in Nederland, zijn er geen beperkingen met betrekking tot hetgeen dit veld bevat.
 
 ifdef::backend-pdf[<<<]
@@ -2908,7 +2908,7 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 39.10
 Elementnaam:: Aanduiding verblijfstitel
-Toelichting:: Een code, opgenomen in tabel 56, Verblijfstiteltabel, die aangeeft over welke verblijfsrechtelijke status de ingeschrevene beschikt.
+Toelichting:: Een code, opgenomen in tabel <<t56,56>>, Verblijfstiteltabel, die aangeeft over welke verblijfsrechtelijke status de ingeschrevene beschikt.
 Lengte:: 2
 Type:: Numeriek
 Standaardwaarde:: 00
@@ -3251,7 +3251,7 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 81.10
 Elementnaam:: Registergemeente akte
-Toelichting:: Een code, opgenomen in tabel 33, Gemeententabel, die aangeeft in welke gemeente de akte in de registers van de burgerlijke stand in Nederland is opgenomen.
+Toelichting:: Een code, opgenomen in tabel <<t33,33>>, Gemeententabel, die aangeeft in welke gemeente de akte in de registers van de burgerlijke stand in Nederland is opgenomen.
 Lengte:: 4
 Type:: Numeriek
 Standaardwaarde:: 0000
@@ -3431,11 +3431,11 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 88.10
 Elementnaam:: RNI-deelnemer
-Toelichting:: Een code, voorkomend in tabel 60, RNI-deelnemerstabel, die aangeeft welke RNI-deelnemer (een deel van) de gegevens in de betrokken categorie heeft aangeleverd.
+Toelichting:: Een code, voorkomend in tabel <<t60,60>>, RNI-deelnemerstabel, die aangeeft welke RNI-deelnemer (een deel van) de gegevens in de betrokken categorie heeft aangeleverd.
 Lengte:: 4
 Type:: Numeriek
 Standaardwaarde:: 0000
-Mogelijke waarden:: Een 4-cijferige code volgens de Tabel 60, RNI‑deelnemerstabel. +
+Mogelijke waarden:: Een 4-cijferige code volgens de tabel <<t60,60>>, RNI‑deelnemerstabel. +
 Standaardwaarde indien onbekend.
 Voorwaarden:: {empty}
 
