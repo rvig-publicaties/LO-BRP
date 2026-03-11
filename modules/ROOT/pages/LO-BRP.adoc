@@ -32,17 +32,7 @@
 
 De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2026.Q1) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2026.Q2. Deze versie treedt op 1 april 2026 in werking.
 
-W201 Deprecated elementen in BRP API
-
-* <<_output_19>>
-
-W215 Centraal protocolleringsoverzicht via MO
-
-* <<_stelselarchitectuur>>, <<_berichtenverkeer_algemeen>>, <<_inleiding_23>>, <<_brp_protocolleringsoverzicht_api>>
-
-Tekstuele wijzigingen
-
-* N.v.t.
+++[++Geen wijzigingen++]++
 
 
 :sectnums:
