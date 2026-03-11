@@ -4778,7 +4778,7 @@ Bij de gegevensverstrekking vanuit BRP-V aan afnemers worden gegevens over opsch
 
 ====== Gegevens over onderzoek
 
-Indien er gegevens worden verstrekt uit een categorie waarin groep <<g83,83>> Procedure voorkomt, dan wordt de in de betrokken categorie voorkomende inhoud van de elementen <<e8310,83.10>>, <<e8320,83.20>> en <<38330,83.30>> meeverstrekt.
+Indien er gegevens worden verstrekt uit een categorie waarin groep <<g83,83>> Procedure voorkomt, dan wordt de in de betrokken categorie voorkomende inhoud van de elementen <<e8310,83.10>>, <<e8320,83.20>> en <<e3830,83.30>> meeverstrekt.
 
 ====== Gegevens over de opschorting
 
