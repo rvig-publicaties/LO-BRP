@@ -966,7 +966,7 @@ Aan de hand van bovengenoemde gegevens wordt een bericht samengesteld zoals is b
 
 Bij verstrekking van algemene gegevens aan een afnemer is het van belang om aan te geven of die gegevens in onderzoek zijn of geweest zijn dan wel gecorrigeerd zijn. Om dit te bereiken, wordt de groep <<g83,83>> Procedure of de groep <<g84,84>> Onjuist meeverstrekt. Het is ook mogelijk dat er in een bepaalde situatie alleen proceduregegevens worden opgestuurd. Dit is het geval indien er een onderzoek gestart, gewijzigd of beëindigd wordt zonder dat er andere gegevens in die categorie wijzigen en indien gegevens, welke eigenlijk verstrekt hadden moeten worden, niet voorkomen in een bepaalde categorie maar tegelijkertijd wel in onderzoek zijn.
 
-Een gegeven dat nooit behoort tot de verzameling gegevens die in onderzoek staan, is het element <<e0110,01.10>> A‑nummer in de categorieën <<c01-51,01/51?? Persoon en <<c21-71,21/71>> Verwijzing. Bij verstrekking van uitsluitend dit element worden dan ook nooit onderzoeksgegevens verstrekt.
+Een gegeven dat nooit behoort tot de verzameling gegevens die in onderzoek staan, is het element <<e0110,01.10>> A‑nummer in de categorieën <<c01-51,01/51>> Persoon en <<c21-71,21/71>> Verwijzing. Bij verstrekking van uitsluitend dit element worden dan ook nooit onderzoeksgegevens verstrekt.
 
 De betreffende groepen die bij de diverse categorieën kunnen voorkomen, zijn:
 
