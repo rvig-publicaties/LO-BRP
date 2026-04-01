@@ -1168,7 +1168,7 @@ Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezete
 [none]
 * <<g88,04.88>> Deelnemer
 
-Indien voor een persoon het bijzonder Nederlanderschap van toepassing is, mag deze procedure niet uitgevoerd worden, maar moet de procedure Verkrijging bijzonder Nederlanderschap worden uitgevoerd.
+Indien voor een persoon het bijzonder Nederlanderschap van toepassing is, mag deze procedure niet uitgevoerd worden, maar moet de procedure Opnemen bijzonder Nederlanderschap worden uitgevoerd.
 
 Indien een persoon Nederlander wordt, moet voor alle andere reeds geregistreerde nationaliteiten de procedure Beëindigen nationaliteit dan wel de procedure Wijziging in de reden beëindigen nationaliteit worden uitgevoerd.
 

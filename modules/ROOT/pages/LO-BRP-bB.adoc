@@ -1023,10 +1023,10 @@ De gemeentelijke applicatie en de RNI stuurt automatisch na het uitvoeren van de
 2+|* Naam van de gemeente die de procedure heeft uitgevoerd: |de naam van de gemeente
 2+|* Datum waarop de conversie is afgerond:|(jj-mm-dd)
 2+|* Tijdstip waarop de conversie is afgerond: |(uu.mm)
-2+|* Aantal geconverteerde PL'en opgeschort reden: |nnnnnn
-2+|* Aantal geconverteerde PL'en opgeschort reden: |nnnnnn
-2+|* Aantal geconverteerde PL'en opgeschort reden: |nnnnnn
-2+|* Aantal geconverteerde PL'en opgeschort reden: |nnnnnn
+2+|* Aantal geconverteerde PL'en opgeschort reden E: |nnnnnn
+2+|* Aantal geconverteerde PL'en opgeschort reden M: |nnnnnn
+2+|* Aantal geconverteerde PL'en opgeschort reden O: |nnnnnn
+2+|* Aantal geconverteerde PL'en opgeschort reden F: |nnnnnn
 2+|* Aantal geconverteerde actuele PL'en: |nnnnnn
 |===
 
