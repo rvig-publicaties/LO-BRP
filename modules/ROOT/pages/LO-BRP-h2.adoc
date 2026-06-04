@@ -1170,7 +1170,7 @@ Indien deze wijziging wordt uitgevoerd op de persoonslijst van een niet-ingezete
 
 Indien voor een persoon het bijzonder Nederlanderschap van toepassing is, mag deze procedure niet uitgevoerd worden, maar moet de procedure Opnemen bijzonder Nederlanderschap worden uitgevoerd.
 
-Indien een persoon Nederlander wordt, moet voor alle andere reeds geregistreerde nationaliteiten de procedure Beëindigen nationaliteit dan wel de procedure Wijziging in de reden beëindigen nationaliteit worden uitgevoerd.
+Indien een persoon Nederlander wordt, moet voor alle andere reeds geregistreerde nationaliteiten de procedure Beëindigen nationaliteit dan wel de procedure Wijziging in de reden beëindigen nationaliteit dan wel de procedure Verwijderen van nationaliteitsgegevens worden uitgevoerd.
 
 ===== Beëindigen nationaliteit
 
@@ -1246,7 +1246,7 @@ Tevens mag aanvullend de volgende groep worden opgenomen:
 [none]
 * <<g82,04.82>> Document
 
-Indien een persoon de status Behandeld als Nederlander verkrijgt, moet voor alle andere reeds geregistreerde nationaliteiten de procedure Beëindigen nationaliteit dan wel de procedure Wijziging in de reden beëindiging nationaliteit worden uitgevoerd.
+Indien een persoon de status Behandeld als Nederlander verkrijgt, moet voor alle andere reeds geregistreerde nationaliteiten de procedure Beëindigen nationaliteit dan wel de procedure Wijziging in de reden beëindiging nationaliteit dan wel de procedure Verwijderen van nationaliteitsgegevens worden uitgevoerd.
 
 ===== Verlies bijzonder Nederlanderschap
 
@@ -1274,7 +1274,13 @@ Deze wijziging leidt niet tot historie.
 
 ===== Verwijderen van nationaliteitsgegevens
 
-Op schriftelijk verzoek van de ingeschrevene kunnen in geval van adoptie nationaliteitsgegevens verwijderd worden. In dat geval worden alle actuele en historische categorieën met betrekking tot de door de adoptie-uitspraak verloren nationaliteit(en) verwijderd van de PL.
+Op schriftelijk verzoek van de ingeschrevene kunnen de gegevens van nationaliteiten verwijderd worden in geval van adoptie of in geval dat iemand de Nederlandse nationaliteit of de aanduiding Bijzonder Nederlanderschap al heeft sinds de geboorte of eerste inschrijving in de BRP.
+
+In geval van adoptie worden alle actuele en historische categorieën met betrekking tot de door de adoptie-uitspraak verloren nationaliteit(en) verwijderd van de PL.
+
+In geval dat iemand de Nederlandse nationaliteit of de aanduiding Bijzonder Nederlanderschap al heeft sinds de geboorte of eerste inschrijving in de BRP worden alle actuele en historische categorieën verwijderd met betrekking tot de vreemde nationaliteiten die de persoon niet al had voordat hij de Nederlandse nationaliteit of de aanduiding bijzonder Nederlanderschap kreeg.
+
+Ook zonder schriftelijk verzoek worden, nadat de Nederlandse nationaliteit of de aanduiding 'Bijzonder Nederlanderschap'’ is geregistreerd, alle huidige en historische categorieën met betrekking tot eventuele andere nationaliteiten verwijderd van de persoonslijst. Dit gebeurt alleen als de persoon die vreemde nationaliteiten niet al had voordat hij de Nederlandse nationaliteit of de aanduiding bijzonder Nederlanderschap kreeg.
 
 ===== Correctie van ten onrechte opgenomen gegevens
 

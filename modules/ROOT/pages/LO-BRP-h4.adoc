@@ -3513,7 +3513,7 @@ Tabelregelelementen::
 |[[r329999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e0510,05.10>>
+Gebruikt in element:: <<e0510,05.10>> Nationaliteit
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3538,14 +3538,14 @@ Tabelregelelementen::
 |[[r339999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e0320,03.20>> +
-<<e0620,06.20>> +
-<<e0720,07.20>> +
-<<e0820,08.20>> +
-<<e0910,09.10>> +
-<<e6910,69.10>> +
-<<e8110,81.10>> +
-<<e8210,82.10>>
+Gebruikt in element:: <<e0320,03.20>> Geboorteplaats +
+<<e0620,06.20>> Plaats huwelijkssluiting/aangaan geregistreerd partnerschap +
+<<e0720,07.20>> Plaats ontbinding huwelijk/geregistreerd partnerschap +
+<<e0820,08.20>> Plaats overlijden +
+<<e0910,09.10>> Gemeente van inschrijving +
+<<e6910,69.10>> Gemeente waar de PK zich bevindt +
+<<e8110,81.10>> Registergemeente akte +
+<<e8210,82.10>> Gemeente document
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3581,14 +3581,14 @@ Tabelregelelementen::
 |[[r349999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e0330,03.30>> +
-<<e0630,06.30>> +
-<<e0730,07.30>> +
-<<e0830,08.30>> +
-<<e1310,13.10>> +
-<<e1410,14.10>> +
-<<e3160,31.60>> +
-<<e8230,82.30>>
+Gebruikt in element:: <<e0330,03.30>> Geboorteland +
+<<e0630,06.30>> Land huwelijkssluiting/aangaan geregistreerd partnerschap +
+<<e0730,07.30>> Land ontbinding huwelijk/geregistreerd partnerschap +
+<<e0830,08.30>> Land overlijden +
+<<e1310,13.10>> Land adres buitenland +
+<<e1410,14.10>> Land vanwaar ingeschreven +
+<<e3160,31.60>> Land EU-lidstaat van herkomst +
+<<e8230,82.30>> Beschrijving document
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3694,7 +3694,7 @@ A = alternatief medium
 |[[r359999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e4010,40.10>>
+Gebruikt in element:: <<e4010,40.10>> Afnemersindicatie
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3711,7 +3711,7 @@ Tabelregelelementen::
 |[[e0231]]02.31 3+|Voorvoegsel
 ||Alfanumeriek |1-10 posities|
 |===
-Gebruikt in element:: <<e0230,02.30>>
+Gebruikt in element:: <<e0230,02.30>> Voorvoegsel geslachtsnaam
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3746,8 +3746,8 @@ BE = beëindiging
 |[[r379999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e6310,63.10>> +
-<<e6410,64.10>>
+Gebruikt in element:: <<e6310,63.10>> Reden opname nationaliteit +
+<<e6410,64.10>> Reden beëindigen nationaliteit
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3770,7 +3770,7 @@ Tabelregelelementen::
 | 3+|"titel" +
 "predicaat"
 |===
-Gebruikt in element:: <<e0220,02.20>>
+Gebruikt in element:: <<e0220,02.20>> Adellijke titel/predicaat
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3800,7 +3800,7 @@ Positie 3: Soort akte
 |[[e8122]]81.22 3+|Omschrijving akte
 ||Alfanumeriek |1-80 posities|
 |===
-Gebruikt in element:: <<e8120,81.20>>
+Gebruikt in element:: <<e8120,81.20>> Aktenummer
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3823,7 +3823,7 @@ Tabelregelelementen::
 |[[r419999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e0740,07.40>>
+Gebruikt in element:: <<e0740,07.40>> Reden ontbinding huwelijk/geregistreerd partnerschap
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3846,7 +3846,7 @@ Tabelregelelementen::
 |[[r489999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e3510,35.10>>
+Gebruikt in element:: <<e3510,35.10>> Soort Nederlands reisdocument
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3869,7 +3869,7 @@ Tabelregelelementen::
 |[[r499999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e3540,35.40>>
+Gebruikt in element:: <<e3540,35.40>> Autoriteit van afgifte Nederlands reisdocument
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3892,7 +3892,7 @@ Tabelregelelementen::
 |[[r569999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e3910,39.10>>
+Gebruikt in element:: <<e3910,39.10>> Aanduiding verblijfstitel
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3944,7 +3944,7 @@ Tabelregelelementen::
 |[[r609999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e8810,88.10>>
+Gebruikt in element:: <<e8810,88.10>> RNI-deelnemer
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3967,7 +3967,7 @@ Tabelregelelementen::
 |[[r619999]]99.99 3+|Datum beëindiging tabelregel
 ||Numeriek |8 posities |jjjjmmdd
 |===
-Gebruikt in element:: <<e3210,32.10>>
+Gebruikt in element:: <<e3210,32.10>> Indicatie gezag minderjarige
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
