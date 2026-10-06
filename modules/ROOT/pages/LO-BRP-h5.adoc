@@ -894,7 +894,7 @@ image::image12.svg[width=566,height=82]
 
 Ter illustratie van bovenbeschreven opbouw van de inhoud volgt onderstaand een voorbeeldbericht. Voor de nummering van de rubrieken wordt verwezen naar het Gegevenswoordenboek.
 
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Bericht++:++:: Verstrekking naam- en nationaliteitsgegevens
 Inhoud++:++:: Zie onderstaande tabel
 
@@ -934,7 +934,7 @@ In een Xa01-bericht kan de berichtinhoud meerdere plData structuren bevatten. De
 
 Ter illustratie van de hierboven beschreven opbouw van het bericht volgt hieronder een voorbeeldbericht. Voor de nummering van de rubrieken wordt verwezen naar het Gegevenswoordenboek.
 
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Bericht++:++:: Verstrekking naam- en nationaliteitsgegevens
 Inhoud++:++:: Zie onderstaande tabel
 
@@ -3123,7 +3123,7 @@ ifdef::backend-html5[''']
 ===== Beschrijving van de BRP-berichten
 
 [#Ib01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ib01
 Berichtnaam:: Verhuizen PL intergemeentelijk
 Omschrijving:: Het bericht waarmee de gehele PL (inclusief historie) door de gemeente van vertrek naar de gemeente van vestiging gestuurd wordt.
@@ -3138,7 +3138,7 @@ herhaling = 1 positie +
 status = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is actueel
 E =::: bijhouden PL opgeschort wegens emigratie m.i.v. "datum"
 M =::: bijhouden PL opgeschort wegens Ministerieel besluit m.i.v. "datum"
@@ -3151,7 +3151,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#If01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: If01
 Berichtnaam:: Fout: PL niet te verzenden
 Omschrijving:: Indien de gemeente van vertrek niet in staat is de PL te verzenden, volgt dit bericht onder vermelding van de foutreden die verzending niet mogelijk maakt.
@@ -3165,7 +3165,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 B =::: PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 E =::: bijhouden PL opgeschort wegens emigratie
 G =::: persoon komt niet voor
@@ -3183,7 +3183,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#If21]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: If21
 Berichtnaam:: Fout: de ontvangen PL is niet de aangevraagde
 Omschrijving:: Indien de gemeente van vestiging een PL ontvangt die niet voldoet aan de opgegeven identificatie, dan volgt dit bericht.
@@ -3200,7 +3200,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#If31]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: If31
 Berichtnaam:: Fout: de verwijsgegevens zijn niet correct
 Omschrijving:: Indien de gemeente van vertrek verwijsgegevens ontvangt die niet in overeenstemming zijn met de via het <<Ib01,Ib01>>-bericht verstuurde PL, wordt dit bericht verstuurd.
@@ -3217,7 +3217,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#If41]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: If41
 Berichtnaam:: Fout: verwijsgegevens kunnen niet worden opgenomen
 Omschrijving:: Indien de gemeente van vertrek dan wel de RNI niet in staat is de verwijsgegevens op te nemen, volgt dit bericht onder vermelding van de foutreden die opname niet mogelijk maakt.
@@ -3231,7 +3231,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is aanwezig en niet geblokkeerd
 B =::: PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 V =::: persoon is verhuisd naar gemeente "code"
@@ -3245,7 +3245,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ii01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ii01
 Berichtnaam:: Initiatie intergemeentelijke verhuizing
 Omschrijving:: Het bericht dat de gemeente van vestiging stuurt aan de gemeente van vertrek om kenbaar te maken dat de PL overgezonden dient te worden.
@@ -3263,7 +3263,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Iv01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Iv01
 Berichtnaam:: Verwijsgegevens
 Omschrijving:: Het bericht waarmee de verwijsgegevens door de gemeente van vestiging naar de gemeente van vertrek gestuurd worden.
@@ -3289,7 +3289,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Iv11]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Iv11
 Berichtnaam:: Verwijsgegevens
 Omschrijving:: Het bericht waarmee de verwijsgegevens door de gemeente van inschrijving dan wel de RNI naar de vorige gemeente van inschrijving dan wel naar de RNI gestuurd worden.
@@ -3315,7 +3315,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Iv21]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Iv21
 Berichtnaam:: Verificatie verwijsgegevens
 Omschrijving:: Het bericht waarmee de verwijsgegevens ter controle door de vorige gemeente van inschrijving dan wel de RNI teruggestuurd worden aan de gemeente van inschrijving dan wel aan de RNI.
@@ -3333,7 +3333,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Jb01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Jb01
 Berichtnaam:: Verhuizen PL van RNI naar gemeente
 Omschrijving:: Het bericht waarmee de gehele PL (inclusief historie) door de RNI naar de gemeente van vestiging gestuurd wordt.
@@ -3348,7 +3348,7 @@ herhaling = 1 positie +
 status = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 E =::: bijhouden PL opgeschort wegens emigratie m.i.v. "datum"
 M =::: bijhouden PL opgeschort wegens Ministerieel besluit m.i.v. "datum"
 R =::: bijhouden PL opgeschort wegens aanleg in de RNI op "datum"
@@ -3361,7 +3361,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Jf01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Jf01
 Berichtnaam:: Fout: PL niet te verzenden
 Omschrijving:: Indien de RNI niet in staat is de PL te verzenden, volgt dit bericht onder vermelding van de foutreden die verzending niet mogelijk maakt.
@@ -3374,7 +3374,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is actueel
 B =::: PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 G =::: persoon komt niet voor
@@ -3391,7 +3391,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Jf21]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Jf21
 Berichtnaam:: Fout: de ontvangen PL is niet de aangevraagde
 Omschrijving:: Indien de gemeente van vestiging een PL ontvangt die niet voldoet aan de opgegeven identificatie, dan volgt dit bericht.
@@ -3408,7 +3408,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Jf31]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Jf31
 Berichtnaam:: Fout: de verwijsgegevens zijn niet correct
 Omschrijving:: Indien de RNI verwijsgegevens ontvangt die niet in overeenstemming zijn met de via het <<Jb01,Jb01>>-bericht verstuurde PL, wordt dit bericht verstuurd.
@@ -3425,7 +3425,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ji01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ji01
 Berichtnaam:: Initiatie verhuizing PL van RNI naar gemeente
 Omschrijving:: Het bericht dat de gemeente van vestiging stuurt aan de RNI om kenbaar te maken dat de PL overgezonden dient te worden.
@@ -3443,7 +3443,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Jv01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Jv01
 Berichtnaam:: Verwijsgegevens
 Omschrijving:: Het bericht waarmee de verwijsgegevens door de gemeente van vestiging naar de RNI gestuurd worden.
@@ -3469,7 +3469,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#La01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: La01
 Berichtnaam:: Synchronisatieantwoord
 Omschrijving:: Antwoord op het verzoek van BRP-V om een kopie van de PL.
@@ -3486,7 +3486,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Lf01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Lf01
 Berichtnaam:: Fout: synchronisatievraag niet te beantwoorden
 Omschrijving:: Dit bericht wordt verstuurd wanneer de gemeente van inschrijving dan wel de RNI de gevraagde persoon niet in het PL-bestand kan vinden.
@@ -3500,7 +3500,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 G =::: persoon komt niet voor
 U =::: eenduidige identificatie niet gelukt
 V =::: persoon is verhuisd naar gemeente "code"
@@ -3513,7 +3513,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Lg01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Lg01
 Berichtnaam:: Synchronisatiebericht
 Omschrijving:: Dit bericht wordt verstuurd om: +
@@ -3537,7 +3537,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Lq01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Lq01
 Berichtnaam:: Synchronisatievraag
 Omschrijving:: Het verzoek van BRP-V om een kopie van de PL te ontvangen.
@@ -3555,7 +3555,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Of11]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Of11
 Berichtnaam:: Fout: opnemen/wijzigen verblijfstitel niet mogelijk
 Omschrijving:: Foutbericht omdat een verzoek tot opnemen/wijzigen van gegevens omtrent de verblijfstitel niet uitgevoerd kan worden en waarom dit niet kan.
@@ -3569,7 +3569,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 B =::: PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 G =::: persoon niet gevonden
 I =::: persoon is Nederlander of wordt behandeld als Nederlander
@@ -3587,7 +3587,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Og11]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Og11
 Berichtnaam:: Opnemen/wijzigen gegevens verblijfstitel
 Omschrijving:: Het bericht waarmee de Minister van Justitie gegevens omtrent de verblijfstitel van een bepaalde persoon kenbaar maakt.
@@ -3621,7 +3621,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Rb01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Rb01
 Berichtnaam:: Verhuizen PL van gemeente naar RNI
 Omschrijving:: Het bericht waarmee de gehele PL (inclusief historie) door de gemeente van vertrek naar de RNI gestuurd wordt.
@@ -3636,7 +3636,7 @@ herhaling = 1 positie +
 status = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 E =::: bijhouden PL opgeschort wegens emigratie m.i.v. "datum"
 M =::: bijhouden PL opgeschort wegens Ministerieel besluit m.i.v. "datum"
 --
@@ -3648,7 +3648,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Rf01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Rf01
 Berichtnaam:: Fout: de ontvangen PL kan niet worden opgenomen
 Omschrijving:: Indien de RNI een PL ontvangt die niet kan worden opgenomen, volgt dit bericht onder vermelding van de foutreden die opname niet mogelijk maakt.
@@ -3662,7 +3662,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is actueel
 O =::: bijhouden PL opgeschort wegens overlijden
 --
@@ -3673,7 +3673,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Rf31]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Rf31
 Berichtnaam:: Fout: de verwijsgegevens zijn niet correct
 Omschrijving:: Indien de gemeente van vertrek verwijsgegevens ontvangt die niet in overeenstemming zijn met de via het <<Rb01,Rb01>>-bericht verstuurde PL, wordt dit bericht verstuurd.
@@ -3690,7 +3690,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Rv01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Rv01
 Berichtnaam:: Verwijsgegevens
 Omschrijving:: Het bericht waarmee de verwijsgegevens door de RNI naar de gemeente van vertrek gestuurd worden.
@@ -3716,7 +3716,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Tb01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Tb01
 Berichtnaam:: Toevallige geboorte
 Omschrijving:: Indien een kind wordt geboren in een gemeente, waar het volgens de regels niet ingeschreven dient te worden, gaat dit bericht naar de gemeente waar de ouder uit wie het kind is geboren als ingezetene is ingeschreven.
@@ -3731,7 +3731,7 @@ herhaling = 1 positie +
 gezochte persoon = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 1 =::: Ouder1
 2 =::: Ouder2
 --
@@ -3791,7 +3791,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Tb02]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Tb02
 Berichtnaam:: Toevallige gebeurtenis
 Omschrijving:: Indien een akte is opgemaakt, dan wel een latere vermelding is geplaatst op een akte, in een andere gemeente dan waar de hoofdpersoon als ingezetene is ingeschreven, wordt dit bericht verstuurd naar de gemeente van inschrijving van de hoofdpersoon. Indien de opgemaakte akte een overlijden betreft en de overledene is als niet-ingezetene ingeschreven, wordt dit bericht verstuurd aan de RNI.
@@ -3961,7 +3961,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Tf01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Tf01
 Berichtnaam:: Fout: persoon niet in te schrijven
 Omschrijving:: Indien de persoon niet in te schrijven is, gaat dit bericht terug naar de gemeente van "toevallige geboorte".
@@ -3975,7 +3975,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: persoon is actueel ingeschreven
 B =::: PL ouder is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 E =::: bijhouden PL ouder opgeschort wegens emigratie ouder
@@ -3994,7 +3994,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Tf11]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Tf11
 Berichtnaam:: Fout: de verwijsgegevens zijn niet correct
 Omschrijving:: Dit bericht wordt verstuurd, indien de gemeente verwijsgegevens ontvangt van een persoon, die niet corresponderen met de eerder via het <<Tb01,Tb01>>-bericht verstuurde gegevens.
@@ -4011,7 +4011,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Tf21]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Tf21
 Berichtnaam:: Fout: gebeurtenisgegevens niet te verwerken
 Omschrijving:: Indien de gemeente van inschrijving of de RNI niet in staat is de gegevens betreffende de gebeurtenis te verwerken, volgt dit bericht onder vermelding van de foutreden die verwerking niet mogelijk maakt.
@@ -4025,7 +4025,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 B =::: PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 G =::: persoon komt niet voor
 N =::: de gegevens van het rechtsfeit kunnen of mogen niet worden verwerkt
@@ -4044,7 +4044,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Tv01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Tv01
 Berichtnaam:: Verwijsgegevens
 Omschrijving:: Het bericht waarmee de verwijsgegevens door de gemeente van eerste inschrijving naar de gemeente van "toevallige geboorte" gestuurd worden.
@@ -4071,7 +4071,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Wa01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Wa01
 Berichtnaam:: Wijziging A‑nummer
 Omschrijving:: Indien het A‑nummer wijzigt, wordt dit bericht verstuurd aan de gemeente dan wel de RNI met verwijsgegevens.
@@ -4095,7 +4095,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Wf01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Wf01
 Berichtnaam:: Fout: A‑nummerwijziging niet te verwerken
 Omschrijving:: Indien de gemeente dan wel de RNI een wijziging in het A‑nummer ontvangt die niet te verwerken is, wordt dit bericht verstuurd.
@@ -4109,7 +4109,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: persoon is actueel ingeschreven
 G =::: persoon komt niet voor in verwijsgegevens
 --
@@ -6048,7 +6048,7 @@ ifdef::backend-html5[''']
 ===== Beschrijving van de BRP-berichten
 
 [#Af01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Af01
 Berichtnaam:: Fout: plaatsen afnemersindicatie op persoonslijst onmogelijk
 Omschrijving:: Indien een afnemer een afnemersindicatie wil plaatsen terwijl dat niet mogelijk is, wordt dit bericht verstuurd.
@@ -6062,7 +6062,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 G =::: persoon komt niet voor
 H =::: betrokkene heeft om geheimhouding verzocht
 I =::: reeds een afnemersindicatie geplaatst bij deze persoon
@@ -6079,7 +6079,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Af11]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Af11
 Berichtnaam:: Fout: verwijderen afnemersindicatie van persoonslijst onmogelijk
 Omschrijving:: Dit bericht wordt verstuurd, wanneer een afnemer een afnemers­indicatie probeert te verwijderen terwijl dat niet mogelijk is.
@@ -6093,7 +6093,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 G =::: persoon komt niet voor
 H =::: betrokkene heeft om geheimhouding verzocht
 I =::: geen afnemersindicatie geplaatst bij deze persoon
@@ -6108,7 +6108,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ag01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ag01
 Berichtnaam:: Gegevensverstrekking als gevolg van ad hoc plaatsing afnemers­indicatie op persoonslijst
 Omschrijving:: Dit bericht wordt verstuurd als een afnemer een afnemersindicatie heeft geplaatst bij een persoon. Het bevat alle gegevens van de persoon, waarvoor de afnemer bij spontane gegevensverstrekking geautoriseerd is.
@@ -6122,7 +6122,7 @@ berichtnummer = 4 posities +
 status = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is actueel
 E =::: bijhouden PL opgeschort wegens emigratie m.i.v. "datum"
 M =::: bijhouden PL opgeschort wegens Ministerieel besluit m.i.v. "datum"
@@ -6139,7 +6139,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ag11]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ag11
 Berichtnaam:: Vulbericht
 Omschrijving:: Dit bericht wordt verstuurd als voor een afnemer een afnemersindicatie is geplaatst bij een persoon. Het bevat alle gegevens van die persoon, waarvoor de afnemer bij spontane gegevensverstrekking geautoriseerd is.
@@ -6153,7 +6153,7 @@ berichtnummer = 4 posities +
 status = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is actueel
 E =::: bijhouden PL opgeschort wegens emigratie m.i.v. "datum"
 M =::: bijhouden PL opgeschort wegens Ministerieel besluit m.i.v. "datum"
@@ -6170,7 +6170,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ag21]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ag21
 Berichtnaam:: Conditionele gegevensverstrekking
 Omschrijving:: Dit bericht wordt verstuurd als op een PL één of meer sleutelrubrieken van een afnemer wijzigen, de PL vervolgens aan de voorwaardenregel spontaan van de afnemer voldoet en de afnemer geautoriseerd is voor het ontvangen van conditionele verstrekkingen.
@@ -6184,7 +6184,7 @@ berichtnummer = 4 posities +
 status = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is actueel
 E =::: bijhouden PL opgeschort wegens emigratie m.i.v. "datum"
 M =::: bijhouden PL opgeschort wegens Ministerieel besluit m.i.v. "datum"
@@ -6199,7 +6199,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ag31]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ag31
 Berichtnaam:: Foutherstelbericht
 Omschrijving:: Dit bericht wordt verstuurd als door een opgetreden fout een <<Ag01,Ag01>>-, <<Ag11,Ag11>>-, <<Ag21,Ag21>>-, <<Gv01,Gv01>>- of <<Gv02,Gv02>>-bericht niet of niet correct is verstuurd.
@@ -6213,7 +6213,7 @@ berichtnummer = 4 posities +
 status = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is actueel
 E =::: bijhouden PL opgeschort wegens emigratie m.i.v. "datum"
 M =::: bijhouden PL opgeschort wegens Ministerieel besluit m.i.v. "datum"
@@ -6228,7 +6228,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ap01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ap01
 Berichtnaam:: Plaatsen afnemersindicatie op persoonslijst
 Omschrijving:: Het bericht van de afnemer aan BRP-V, waarbij de afnemer aangeeft geïnteresseerd te zijn in een gespecificeerde persoon.
@@ -6246,7 +6246,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Av01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Av01
 Berichtnaam:: Verwijderen afnemersindicatie van persoonslijst
 Omschrijving:: Het bericht van de afnemer aan BRP-V, waarbij de afnemer aangeeft niet langer geïnteresseerd te zijn in een gespecificeerde persoon.
@@ -6264,7 +6264,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Gv01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Gv01
 Berichtnaam:: Spontane mutatie
 Omschrijving:: Kennisgeving van het feit dat er een rubriek, waarvoor de betrokken afnemer bij spontane gegevensverstrekking geautoriseerd is, gewijzigd is bij een persoon waar de afnemer een afnemersindicatie heeft staan.
@@ -6288,7 +6288,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Gv02]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Gv02
 Berichtnaam:: Spontane mutatie: infrastructurele wijziging
 Omschrijving:: Kennisgeving van het feit dat er een rubriek, waarvoor de betrokken afnemer bij spontane gegevensverstrekking geautoriseerd is, gewijzigd is bij een persoon waar de afnemer een afnemersindicatie heeft staan. Deze spontane mutatie wordt alleen verstuurd, indien deze wijziging het gevolg is van een aanpassing van de verblijfplaatsgegevens vanwege een infrastructurele wijziging.
@@ -6310,7 +6310,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ha01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ha01
 Berichtnaam:: Ad hoc antwoord
 Omschrijving:: Antwoord op een gestelde ad hoc vraag. Dit antwoord wordt slechts verstuurd als de afnemer voor alle gebruikte gegevens geautoriseerd is bij de ad hoc gegevensverstrekking.
@@ -6324,7 +6324,7 @@ berichtnummer = 4 posities +
 status = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is actueel
 E =::: bijhouden PL opgeschort wegens emigratie m.i.v. "datum"
 M =::: bijhouden PL opgeschort wegens Ministerieel besluit m.i.v. "datum"
@@ -6339,7 +6339,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Hf01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Hf01
 Berichtnaam:: Fout: ad hoc vraag niet te beantwoorden
 Omschrijving:: Indien de vraag niet te beantwoorden is, wordt deze melding gestuurd.
@@ -6353,7 +6353,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 G =::: persoon komt niet voor
 H =::: betrokkene heeft om geheimhouding verzocht
 R =::: geen autorisatie voor het stellen van ad hoc vragen over deze persoon
@@ -6371,7 +6371,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Hq01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Hq01
 Berichtnaam:: Ad hoc vraag
 Omschrijving:: Dit bericht wordt door een afnemer verstuurd aan BRP-V met de bedoeling aan de hand van de opgegeven identificatie, gegevens over de persoon verstrekt te krijgen.
@@ -6391,7 +6391,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ng01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ng01
 Berichtnaam:: Afvoeren PL
 Omschrijving:: Kennisgeving van het feit dat er een PL is afgevoerd aan elke afnemer, die zijn afnemersindicatie op de betreffende PL heeft geplaatst.
@@ -6412,7 +6412,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Sv01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Sv01
 Berichtnaam:: Selectieverstrekking
 Omschrijving:: Na het draaien van de selectie zonder plaatsing van afnemersindicaties op persoonslijsten wordt voor ieder van de personen die aan de gestelde criteria voldoen, dit bericht verstuurd.
@@ -6426,7 +6426,7 @@ berichtnummer = 4 posities +
 status = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 A =::: PL is actueel
 E =::: bijhouden PL opgeschort wegens emigratie m.i.v. "datum"
 M =::: bijhouden PL opgeschort wegens Ministerieel besluit m.i.v. "datum"
@@ -6441,7 +6441,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Sv11]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Sv11
 Berichtnaam:: Niemand geselecteerd
 Omschrijving:: Indien na het draaien van de selectie door de gemeente blijkt dat niemand aan de gestelde voorwaarden voldoet, wordt dit bericht verstuurd.
@@ -6458,7 +6458,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Wa11]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Wa11
 Berichtnaam:: Wijziging A‑nummer ten behoeve van afnemers
 Omschrijving:: Melding van een wijziging van het A‑nummer aan elke afnemer die zijn afnemersindicatie op de betreffende PL heeft geplaatst.
@@ -6480,7 +6480,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Xa01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Xa01
 Berichtnaam:: Ad hoc adresantwoord
 Omschrijving:: De A‑nummers en verder gevraagde gegevens van de op het opgegeven adres ingeschreven personen.
@@ -6499,7 +6499,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Xf01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Xf01
 Berichtnaam:: Fout: ad hoc adresvraag niet te beantwoorden
 Omschrijving:: Indien de gestelde ad hoc adresvraag niet te beantwoorden is, wordt dit bericht teruggestuurd.
@@ -6513,7 +6513,7 @@ berichtnummer = 4 posities +
 foutreden = 1 positie
 +
 --
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 G =::: adres dan wel persoon komt niet voor
 P =::: antwoordbericht te groot
 U =::: eenduidige identificatie niet gelukt
@@ -6531,7 +6531,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Xq01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Xq01
 Berichtnaam:: Ad hoc adresvraag
 Omschrijving:: Op basis van de in dit bericht verstrekte unieke adresidentificatie dan wel persoonsidentificatie worden de A‑nummers en de verder gevraagde gegevens van de actueel op dat adres ingeschreven personen verstrekt, indien bij persoonsidentificatie geldt dat de persoon tot de doelgroep van de afnemer m.b.t. ad hoc gegevensverstrekking behoort en bij adresidentificatie tenminste een van die personen tot de doelgroep van de afnemer m.b.t. ad hoc gegevensverstrekking behoort.
@@ -6988,7 +6988,7 @@ ifdef::backend-html5[''']
 ===== Beschrijving van de BRP-berichten
 
 [#Cb01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Cb01
 Berichtnaam:: Beëindigen tabelregel in Autorisatietabel
 Omschrijving:: Bericht ter beëindiging van een tabelregel in de Autorisatietabel.
@@ -7009,7 +7009,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Ct01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Ct01
 Berichtnaam:: Toevoegen tabelregel aan Autorisatietabel
 Omschrijving:: Bericht ter uitbreiding van de Autorisatietabel.
@@ -7028,7 +7028,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Cw01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Cw01
 Berichtnaam:: Wijzigen tabelregel in Autorisatietabel
 Omschrijving:: Bericht ter wijziging van een tabelregel in de Autorisatietabel.
@@ -7050,7 +7050,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Dt01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Dt01
 Berichtnaam:: Toevoegen tabelregel
 Omschrijving:: Bericht ter uitbreiding van een tabel niet zijnde de autorisatietabel, de voorvoegseltabel, de tabel adellijke titel/predicaat of PK‑afnemerstabel.
@@ -7075,7 +7075,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Dw01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Dw01
 Berichtnaam:: Wijzigen tabelregel
 Omschrijving:: Bericht ter wijziging van een tabel niet zijnde de autorisatietabel, de voorvoegseltabel, de tabel adellijke titel/predicaat of PK‑afnemerstabel.
@@ -7100,7 +7100,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Pf01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Pf01
 Berichtnaam:: Fout: cyclus
 Omschrijving:: Bericht dat wordt verstuurd indien er een bericht binnenkomt dat niet in een cyclus kan worden geplaatst of waarvan het berichttype niet gedefinieerd is.
@@ -7117,7 +7117,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Pf02]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Pf02
 Berichtnaam:: Fout: syntax
 Omschrijving:: Bericht dat wordt verstuurd als reactie op een ontvangen bericht dat niet voldoet aan de specificaties van het berichtenuitwisselingsformaat.
@@ -7134,7 +7134,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Pf03]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Pf03
 Berichtnaam:: Fout: inhoudelijk
 Omschrijving:: Bericht dat wordt verstuurd bij inhoudelijke fouten die zo ernstig zijn dat het bericht niet is te verwerken.
@@ -7151,7 +7151,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Vb01]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Vb01
 Berichtnaam:: Vrij bericht
 Omschrijving:: Bericht dat niet automatisch afgehandeld wordt. Het kan binnen de BRP gebruikt worden voor bronmeldingen en foutmeldingen van algemene aard. Het is vergelijkbaar met een notitie op papier.
@@ -7170,7 +7170,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Vb02]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Vb02
 Berichtnaam:: Vrij bericht via de webservice StuurGBAbericht
 Omschrijving:: Bericht dat niet automatisch afgehandeld wordt. Het kan binnen de BRP gebruikt worden voor bronmeldingen en foutmeldingen van algemene aard. Het is vergelijkbaar met een notitie op papier.
@@ -7191,7 +7191,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Null]
-[horizontal,labelwidth=35%,itemwidth=65%]
+[horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: {empty}
 Berichtnaam:: Verwerkbevestiging (Null-bericht)
 Omschrijving:: Bericht dat in bepaalde cycli wordt verstuurd ter bevestiging van de verwerking van de gegevens die opgenomen zijn in het eraan voorafgaande bericht in de cyclus.

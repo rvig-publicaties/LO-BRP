@@ -38,14 +38,14 @@ Een aantekening wordt gerepresenteerd door middel van een afnemersaanduiding die
 
 *Verstrekkingsbeperking* (Rubriek 35.95.13):: Deze rubriek kan de waarden "0", "1" of "2" hebben, die het volgende betekenen:
 +
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 0 =::: aan een burger desgevraagd inzage geven in de bij zijn PL opgenomen afnemersindicatie van de afnemer en aan de burger desgevraagd melden welke verstrekkingen er zijn gedaan aan de afnemer, en geen beperkingen met betrekking tot het zichtbaar en beschikbaar zijn van deze informatie voor gemeentefunctionarissen;
 1 =::: aan een burger desgevraagd inzage geven in de bij zijn PL opgenomen afnemersindicatie van de afnemer en aan de burger desgevraagd melden welke verstrekkingen er zijn gedaan aan de afnemer, en deze informatie slechts zichtbaar en beschikbaar maken voor gemeentefunctionarissen die daar expliciet voor zijn geautoriseerd;
 2 =::: aan een burger geen inzage geven in de bij zijn PL opgenomen afnemersindicatie van de afnemer en aan de burger niet melden welke verstrekkingen er zijn gedaan aan de afnemer, en deze informatie slechts zichtbaar en beschikbaar maken voor gemeentefunctionarissen die daar expliciet voor zijn geautoriseerd.
 
 *Bijzondere betrekking kind verstrekken* (Rubriek 35.95.14):: Deze rubriek bepaalt of gegevens uit een categorie <<c09-59,09>> Kind waarin rubriek <<e8910,09.89.10>> Registratie betrekking voorkomt met de waarde "L" wel of niet verstrekt worden aan de afnemer. De rubriek kan de waarden "0" of "1" hebben, die het volgende betekenen:
 +
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 0 =::: niet verstrekken
 1 =::: verstrekken
 

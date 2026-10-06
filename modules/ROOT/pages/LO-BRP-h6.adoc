@@ -1310,7 +1310,7 @@ De nu volgende tabellen geven een overzicht van alle foutcodes die in sPd voorko
 
 De volgende klassen van fouten worden onderscheiden:
 
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 *T*:: Tijdelijk probleem. Het eindsysteem kan na korte tijd (15-30 minuten) de actie opnieuw proberen. Als deze fouten zich echter herhaaldelijk voordoen, verdient het aanbeveling om contact op te nemen met de beheerder. Er dient dus een controle op het aantal gesignaleerde fouten in het eindsysteem te worden ingebouwd.
 *B*:: Tijdelijke blokkering (bijvoorbeeld door het overschrijden van een limiet). Nagegaan moet worden wat de oorzaak is van de overschrijding. Indien nodig kan contact worden opgenomen met de beheerder om de limieten tijdelijk of permanent te laten verhogen. Overigens worden deze blokkeringen aan het eind van de werkdag automatisch weer opgeheven.
 *G*:: Deze fouten wijzen op een probleem waarvan de oorzaak bij de gebruiker of de beheerder van het eindsysteem ligt.

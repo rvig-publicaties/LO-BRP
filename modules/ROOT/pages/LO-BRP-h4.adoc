@@ -112,7 +112,7 @@ Voor afgeleide gegevens worden ook rubrieksaanduidingen gebruikt, maar daarin be
 
 Er zijn binnen de BRP zes soorten gegevens gedefinieerd:
 
-[horizontal,labelwidth=5%,itemwidth=95%]
+[horizontal,labelwidth=5,itemwidth=95]
 1 =:: algemeen gegeven;
 3 =:: administratief gegeven;
 4 =:: verwijsgegeven;
@@ -229,7 +229,7 @@ In  <<_beschrijving_persoonslijst_en_verwijzing_als_ingezetene_of_overleden_inge
 
 Om aan te geven dat van een verzameling groepen of elementen er slechts één tegelijkertijd voor kan komen, is de volgende notatiewijze gebruikt: of D of E. Bijvoorbeeld:
 
-[horizontal,labelwidth=15%,itemwidth=85%]
+[horizontal,labelwidth=15,itemwidth=85]
 Voorwaarden:: De groepen A, B, C en of D of E komen voor.
 
 Betekent dat de drie groepen A en B en C voorkomen, en dat van de twee groepen D en E er één (niet beide) voorkomt.

@@ -27,7 +27,7 @@ Naast dit Logisch Ontwerp BRP zijn er ook landelijke tabellen. Deze worden in di
 
 In dit Logisch Ontwerp BRP worden de volgende begrippen gehanteerd:
 
-[horizontal,labelwidth=20%,itemwidth=80%]
+[horizontal,labelwidth=20,itemwidth=80]
 Afnemer:: Overheidsorgaan waaraan of derde aan wie op systematische wijze gegevens worden verstrekt of op grond van artikel 3.14 van de Wet BRP informatie beschikbaar wordt gesteld.
 Reisdocument:: Nederlands paspoort of Nederlandse Identiteitskaart.
 
