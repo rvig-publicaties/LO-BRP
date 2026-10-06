@@ -6339,7 +6339,7 @@ ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
 [#Hf01]
-[horizontal,labelwidth=35,itemwidth=65]
+[horizontal,labelwidth=35%,itemwidth=65%]
 Berichtnummer:: Hf01
 Berichtnaam:: Fout: ad hoc vraag niet te beantwoorden
 Omschrijving:: Indien de vraag niet te beantwoorden is, wordt deze melding gestuurd.
