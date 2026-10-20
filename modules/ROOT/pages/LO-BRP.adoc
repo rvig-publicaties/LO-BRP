@@ -4,8 +4,8 @@
 :doctype: book
 :docinfo1:
 :version-label: Versie:
-:revnumber: 2026.Q3
-:revdate: 1 juli 2026
+:revnumber: 2027.Q1
+:revdate: 1 januari 2027
 :!chapter-signifier:
 :appendix-caption: Bijlage
 :table-caption: Tabel
