@@ -2509,13 +2509,13 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 16.20
 Elementnaam:: Verificatie-indicatie
-Toelichting:: Een aanduiding die aangeeft of is vastgesteld dat het een geldig telefoonnummer is en of is vastgesteld dat de betrokken persoon via dit telefoonnummer kan worden bereikt
+Toelichting:: Een aanduiding die aangeeft of is vastgesteld dat het een geldig telefoonnummer is en of is vastgesteld dat de betrokken persoon via dit telefoonnummer kan worden bereikt.
 Lengte:: 2
 Type:: Alfanumeriek
 Standaardwaarde:: {empty}
 Mogelijke waarden:: NV (Niet geverifieerd) +
-BV (Bestaan geverifieerd) +
-PV (Persoon geverifieerd (nummer hoort bij deze persoon))
+BV (Bestaan geverifieerd; iemand heeft bestaan van het telefoonnummer bevestigd)
+PV (Persoon geverifieerd; er is vastgesteld dat het telefoonnummer behoort bij de persoon van de persoon bij wie de persoonstlijst hoort)
 Voorwaarden:: {empty}
 
 ifdef::backend-pdf[<<<]
@@ -2553,13 +2553,13 @@ ifdef::backend-html5[''']
 [horizontal,labelwidth=35,itemwidth=65]
 Elementnummer:: 17.20
 Elementnaam:: Verificatie-indicatie
-Toelichting:: Een aanduiding die aangeeft of is vastgesteld dat het een geldig e-mailadres is en of is vastgesteld dat de betrokken persoon via dit e-mailadres kan worden bereikt
+Toelichting:: Een aanduiding die aangeeft of is vastgesteld dat het een geldig e-mailadres is en of is vastgesteld dat de betrokken persoon via dit e-mailadres kan worden bereikt.
 Lengte:: 2
 Type:: Alfanumeriek
 Standaardwaarde:: {empty}
 Mogelijke waarden:: NV (Niet geverifieerd) +
-BV (Bestaan geverifieerd) +
-PV (Persoon geverifieerd (e-mailadres hoort bij deze persoon))
+BV (Bestaan geverifieerd; iemand heeft bestaan van het e-mailadres bevestigd
+PV (Persoon geverifieerd; er is vastgesteld dat het e-mailadres behoort bij de persoon van de persoon bij wie de persoonstlijst hoort
 Voorwaarden:: {empty}
 
 ifdef::backend-pdf[<<<]
