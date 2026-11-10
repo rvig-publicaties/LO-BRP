@@ -560,8 +560,8 @@ Groepsopsomming::
 <<g88,88>>:::: RNI-deelnemer
 Voorwaarden:: De groepen <<g09,09>>, <<g72,72>>, <<g85,85>> en <<g86,86>> komen verplicht voor. +
 De groepen <<g13,13>> en <<g14,14>> komen niet tegelijkertijd voor; als groep <<g14,14>> eenmaal is opgenomen, blijft deze actueel totdat groep <<g13,13>> opgenomen wordt. +
-Voor categorie <<g08,08>> geldt: of groep <<g13,13>> komt voor of de groepen <<g10,10>> en <<g11,11>> komen voor. Groep <<g12,12>> komt niet voor. +
-Voor categorie <<c08-58,58>> geldt: of groep <<g13,13>> komt voor of de groepen <<g10,10>>, en of <<g11,11>> of <<g12,12>> komen voor. +
+Voor categorie <<g08,08>> geldt: of groep <<g13,13>> komt voor of de groepen <<g10,10>> en <<g11,11>> komen voor. Groep <<g12,12>> mag niet voorkomen op PL’en die op 1 januari 2024 nog niet opgeschort waren wegens overlijden, maar kan nog wel voorkomen. +
+Voor categorie <<c08-58,58>> geldt: of groep <<g13,13>> komt voor of de groepen <<g10,10>>, en of <<g11,11>> of <<g12,12>> komen voor. Groep <<g12,12>> mag niet meer voorkomen in categorieën die na 1 januari 2024 historisch zijn geworden, maar kan daar nog wel voorkomen. +
 Groep <<g84,84>> kan uitsluitend in categorie <<c08-58,58>> voorkomen. +
 Groep <<g88,88>> kan uitsluitend voorkomen op een PL die deel uitmaakt van de RNI.
 Gebruik:: {empty}
@@ -1029,12 +1029,14 @@ Voorwaarden:: Voor categorie <<c08-58,08>> geldt: +
 Indien de groep voorkomt, komen de elementen <<e1110,11.10>>, <<e1115,11.15>>, <<e1120,11.20>>, <<e1170,11.70>>, <<e1180,11.80>> en <<e1190,11.90>> verplicht voor. +
 De in deze groep opgenomen gegevens voor de elementen <<e1115,11.15>>, <<e1120,11.20>>, <<e1130,11.30>>, <<e1140,11.40>>, <<e1160,11.60>>, <<e1170,11.70>> en <<e1190,11.90>> moeten overeenkomen met die van een adres van het adresseerbare object in de BAG dat is aangeduid met de inhoud van element <<e1180,11.80>>. Zolang het via element <<e1180,11.80>> gekoppelde adresseerbaar object in de BAG de indicatie “geconstateerd” heeft of zolang het gegeven van het adres, dat via element <<e1190,11.90>> gekoppeld is, in de BAG in onderzoek staat, mag voor die rubriek een andere waarde in de BRP worden opgenomen dan in de BAG staat geregistreerd. +
 De inhoud van element <<e1190,11.90>> moet altijd het hoofdadres aanduiden van het adresseerbare object in de BAG dat is aangeduid met element <<e1180,11.80>>, tenzij in groep <<g10,10>> Adreshouding het element <<e1010,10.10>> Functie adres waarde "B" heeft en het gebruiksdoel van het adresseerbare object in de BAG niet "Woonfunctie" bevat. In dat geval mag in plaats van het hoofdadres ook een nevenadres van het adresseerbare object in de BAG worden gebruikt. +
-Het element <<e1150,11.50>> komt niet voor. +
+Het element <<e1150,11.50>> mag niet meer voorkomen op PL’en die op 1 januari 2024 nog niet opgeschort waren wegens overlijden, maar kan nog wel
+voorkomen. +
 +
 Voor categorie <<c08-58,58>>, <<c16-66,16>> en <<c16-66,66>> geldt: +
 Indien de groep voorkomt, komt element <<e1110,11.10>> verplicht voor. +
 De elementen <<e1140,11.40>> en <<e1150,11.50>> mogen niet gelijktijdig voorkomen. +
-Als één van de vier elementen <<e1115,11.15>>, <<e1170,11.70>>, <<e1180,11.80>> of <<e1190,11.90>> voorkomt, komen ook de andere drie elementen voor en ook element <<e1120,11.20>> en komt element <<e1150,11.50>> niet voor.
+Als één van de vier elementen <<e1115,11.15>>, <<e1170,11.70>>, <<e1180,11.80>> of <<e1190,11.90>> voorkomt, komen ook de andere drie elementen en element <<e1120,11.20>> voor. +
+Het element <<e1150,11.50>> mag niet meer voorkomen in categorieën die na 1 januari 2024 historisch zijn geworden, maar kan daar nog wel voorkomen.
 Gebruik:: {empty}
 
 ifdef::backend-pdf[<<<]
@@ -1049,7 +1051,13 @@ Soort:: Algemene gegevens
 Elementopsomming::
 [horizontal,labelwidth=10,itemwidth=90]
 <<e1210,12.10>>:::: Locatiebeschrijving
-Voorwaarden:: {empty}
+Voorwaarden:: Voor categorie <<c08-58,08>> geldt: +
+Deze groep mag niet meer voorkomen op PL’en die op 1 januari 2024 nog
+niet opgeschort waren wegens overlijden, maar kan daar nog wel
+voorkomen. +
+Voor categorie <<c08-58,58>> geldt: +
+Deze groep mag niet meer voorkomen in categorieën die na 1 januari 2024
+historisch zijn geworden, maar kan daar nog wel voorkomen.
 Gebruik:: {empty}
 
 ifdef::backend-pdf[<<<]
@@ -2294,7 +2302,10 @@ Type:: Alfanumeriek
 Standaardwaarde:: {empty}
 Mogelijke waarden:: by (= bij) +
 to (= tegenover)
-Voorwaarden:: Dit element komt niet voor in categorie <<c08-58,08>>.
+Voorwaarden:: Voor categorie 08 geldt: +
+Dit element mag niet meer voorkomen op PL’en die op 1 januari 2024 nog niet opgeschort waren wegens overlijden, maar kan daar nog wel voorkomen. +
+Voor categorie 58 geldt: +
+Dit element mag niet meer voorkomen in categorieën die na 1 januari 2024 historisch zijn geworden, maar kan daar nog wel voorkomen.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -2366,7 +2377,10 @@ Lengte:: 1-35
 Type:: Alfanumeriek
 Standaardwaarde:: {empty}
 Mogelijke waarden:: Als locatiebeschrijving is niet toegestaan een postbus (postbox) en een poste restante.
-Voorwaarden:: {empty}
+Voorwaarden:: Voor categorie <<c08-58,08>> geldt: +
+Dit element mag niet meer voorkomen op PL’en die op 1 januari 2024 nog niet opgeschort waren wegens overlijden, maar kan daar nog wel voorkomen. +
+Voor categorie <<c08-58,58>> geldt: +
+Dit element mag niet meer voorkomen in categorieën die na 1 januari 2024 historisch zijn geworden, maar kan daar nog wel voorkomen.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
