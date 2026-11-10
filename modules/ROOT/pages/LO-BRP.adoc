@@ -33,15 +33,17 @@
 [discrete]
 == Overzicht wijzigingen
 
-De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2026.Q2) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2026.Q3. Deze versie treedt op 1 juli 2026 in werking.
+De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2026.Q3) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2027.Q1. Deze versie treedt op 1 januari 2027 in werking.
 
-LO-444 Verwijderen beëindigde vreemde nationaliteiten bij individuele PL
+LO-462 3e Aanvulling W180 Vaste koppeling BAG-BRP
 
-* <<_opnemen_nationaliteit>>, <<_opnemen_bijzonder_nederlanderschap>>, <<_verwijderen_van_nationaliteitsgegevens>>
+* <<_beschrijving_van_de_groepen>> (de beschrijving van categorie <<c08-58,08/58>>)
+* <<_beschrijving_van_de_groepen>> (de beschrijving van groep <<g11,11>> en <<g12,12>>)
+* <<_beschrijving_van_de_elementen>> (de beschrijving van element <<e1150,11.50>> en <<e1210,12.10>>)
 
 Tekstuele wijzigingen
 
-* <<_beschrijving_van_de_landelijke_tabellen>>
+* <<_beschrijving_van_de_elementen>> (de beschrijving van element <<e1620,16.20>> en <<e1720,17.20>>)
 
 :sectnums:
 
