@@ -5115,6 +5115,7 @@ Opsomming van de categorieën van afgeleide gegevens:
 [horizontal,labelwidth=20,itemwidth=80]
 Aanduiding:: Naam
 <<cax,AX>>:: Bewoning op een adres
+<<cgx,GX>>:: Gebeurtenissen
 <<cpa-ph-px,PA/PH/PX>>:: Persoon
 
 ifdef::backend-pdf[<<<]
@@ -5146,6 +5147,8 @@ Groepsopsomming::
 <<gkd,KD>>:::: Kind
 <<gnm,NM>>:::: Naam
 <<gnt,NT>>:::: Nationaliteit
+<<gov,OV>>:::: Overlijden
+<<gvh,VH>>:::: Verhuizing
 <<gou,OU>>:::: Ouder
 <<gvp,VP>>:::: Verblijfplaats
 
@@ -5290,6 +5293,19 @@ Soort:: Afgeleide gegevens
 Elementopsomming::
 [horizontal,labelwidth=10,itemwidth=90]
 <<eOU01,OU.01>>::: Voorletters ouder
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+[#gov]
+[horizontal,labelwidth=35,itemwidth=65]
+Groepaanduiding:: OV
+Groepnaam:: Overleden
+Toelichting:: Gebeurtenissen die te maken hebben met een overlijden
+Soort:: Afgeleide gegevens
+Elementopsomming::
+[horizontal,labelwidth=10,itemwidth=90]
+<<eOV01,OV.01>>::: Overleden
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']

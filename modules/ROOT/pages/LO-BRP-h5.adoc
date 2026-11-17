@@ -471,7 +471,7 @@ De in deze paragraaf beschreven wijze van persoonsidentificatie geldt voor de vo
 * <<Ji01,Ji01>> Initiatie verhuizing PL van RNI naar gemeente
 * <<Xq01,Xq01>> Ad hoc adresvraag
 
-Voor het <<Xq01,Xq01>>-bericht geldt slechts hetgeen hierna is vermeld over '_Ingang op actuele gegevens_' en '_Ingang op historische gegevens_'.
+Voor het Ii01- en het Ji-01 bericht geldt slechts hetgeen hierna is vermeld over 'Ingang op actuele gegevens' en 'Ingang op verwijsgegevens'. Voor het <<Xq01,Xq01>>-bericht geldt slechts hetgeen hierna is vermeld over '_Ingang op actuele gegevens_' en '_Ingang op historische gegevens_'.
 
 ====== Ingang op actuele gegevens
 
@@ -483,6 +483,11 @@ Bij een persoonsidentificatie met als ingang actuele gegevens moet minimaal éé
 * <<e1160,08.11.60>> Postcode
 
 Deze rubrieken kunnen worden aangevuld met alle gegevens die op de PL voorkomen, behalve met element <<e8410,84.10>>, Indicatie onjuist.
+
+Voor het Ii01- en het Ji-01 bericht geldt dat bij een persoonsidentifactie uitsluitend gebruik mag worden gemaakt van:
+
+* <<e0110,01.01.10>> A‑nummer
+* <<e0120,01.01.20>> Burgerservicenummer
 
 ====== Ingang op historische gegevens
 
@@ -498,9 +503,7 @@ Deze rubrieken kunnen worden aangevuld met alle gegevens die op de PL voorkomen,
 
 Identificatie op verwijsgegevens kan alleen bij vervolginschrijvingen (<<Ii01,Ii01>> en <<Ji01,Ji01>>) en vindt op de volgende manier plaats:
 
-Indien wordt geïdentificeerd op de wijze zoals is beschreven bij de persoonsidentificatie bij de ingang op actuele gegevens (zie hierboven) en in het PL-bestand voldoet geen persoon aan de opgegeven identificatie, dan wordt het zoekproces automatisch voortgezet op de verwijsgegevens. Dit is echter alleen mogelijk indien tenminste het A‑nummer, het burgerservicenummer of de geslachtsnaam van de ingeschrevene is opgenomen binnen de identificerende gegevens.
-
-Bij dit zoeken in de verwijsgegevens worden alleen de identificerende gegevens uit de groepen <<g01,01>>, <<g02,02>> en <<g03,03>> van categorie <<c01-51,01>> (respectievelijk <<c01-51,51>>) betrokken in het zoekproces. De overige verstrekte identificerende gegevens blijven buiten beschouwing. Bij een identificatie met actuele gegevens als ingang, wordt de identificatie voortgezet in de actuele verwijsgegevens. Bij een identificatie met historische gegevens als ingang, wordt de identificatie voortgezet in de historische verwijsgegevens.
+Indien wordt geïdentificeerd op de wijze zoals is beschreven bij de persoonsidentificatie bij de ingang op actuele gegevens (zie hierboven) en in het PL-bestand voldoet geen persoon aan de opgegeven identificatie, dan wordt het zoekproces automatisch voortgezet op de verwijsgegevens. 
 
 Indien in de verwijsgegevens een persoon uniek wordt geïdentificeerd, wordt er altijd een foutbericht verzonden met foutreden "V". In de kop van dat foutbericht wordt in dat geval altijd het A‑nummer van de geselecteerde en de volgende gemeente van inschrijving ofwel, zo dat het geval is, de RNI opgenomen. Deze beide rubrieken (rubriek <<e0110,21.01.10>> en <<e0910,21.09.10>>) moeten worden overgenomen uit de actuele categorie Verwijzing.
 
@@ -3257,7 +3260,7 @@ Kop bevat::
 random key = 8 posities +
 berichtnummer = 4 posities +
 herhaling = 1 positie
-Inhoud bevat:: persoonsidentificerende gegevens.
+Inhoud bevat:: rubriek 01.01.10 A-nummer en/ of rubriek 01.01.20 Burgerservicenummer.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3437,7 +3440,7 @@ Kop bevat::
 random key = 8 posities +
 berichtnummer = 4 posities +
 herhaling = 1 positie
-Inhoud bevat:: persoonsidentificerende gegevens.
+Inhoud bevat:: rubriek 01.01.10 A-nummer en/ of rubriek 01.01.20 Burgerservicenummer.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -7192,14 +7195,14 @@ ifdef::backend-html5[''']
 
 [#Null]
 [horizontal,labelwidth=35,itemwidth=65]
-Berichtnummer:: {empty}
+Berichtnummer:: Null
 Berichtnaam:: Verwerkbevestiging (Null-bericht)
 Omschrijving:: Bericht dat in bepaalde cycli wordt verstuurd ter bevestiging van de verwerking van de gegevens die opgenomen zijn in het eraan voorafgaande bericht in de cyclus.
 Te verzenden door:: gemeente, RNI, terugmeldvoorziening, afnemer, BRP-V
 Te verzenden aan:: gemeente, RNI, IND, RvIG
 Volgt op bericht:: <<Av01,Av01>>, <<Cb01,Cb01>>, <<Ct01,Ct01>>, <<Cw01,Cw01>>, <<Dt01,Dt01>>, <<Dw01,Dw01>>, <<Iv01,Iv01>>, <<Jv01,Jv01>>, <<Og11,Og11>>, <<Rv01,Rv01>>, <<Tb02,Tb02>>, <<Tv01,Tv01>> en <<Wa01,Wa01>>
 Wordt gevolgd door:: {empty}
-Kop bevat:: {empty}
+Kop bevat:: berichtnummer = 4 posities (alléén in het JSON-Berichtformaat)
 Inhoud bevat:: {empty}
 
 ifdef::backend-pdf[<<<]
