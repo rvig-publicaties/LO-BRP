@@ -865,6 +865,10 @@ Indien rubriek <<e9553,35.95.53>> de waarde "1" heeft, is het resultaat van het 
 
 Aan de hand van de bovengenoemde gegevens worden de BRP-berichten samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
 
+==== API Gebeurtenissen
+De BRP API Gebeurtenissen biedt afnemers van de Basisregistratie Perosnen (BRP) de mogelijkheid om automatisch te worden geïnformeerd over gebeurtenissen in de BRP die relevant zijn voor de uitvoering van hun wettelijke taken en bedrijfsprocessen. Met deze API wordt een gebeurtenis gestuurde vorm van gegevensverstrekking geïntroduceerd. In plaats van periodiek zelf te controleren of gegevens in de BRP zijn gewijzigd, kan een afnemer een notificaties ontvangen zodra zich een relevante gebeurtenis voordoet. De notificatie stelt de afnemer is staat om tijdig actie te ondernemen binnen het eigen bedrijfsproces. Indien voor verdere verwerking aanvullende of actuele persoonsgegevens nodig zijn, kan de afnemer deze gegevens opvragen via de daarvoor bestemde BRP-API, voor zover de afnemer hiervoor geautoriseerd is. De BRP API Gebeurtenissen is daarmee gericht op het tijdig signaleren van relevante gebeurtenissen en het ondersteunen van een efficiënte, actuele verwerking daarvan in de bedrijfsprocessen van afnemers.
+
+
 ==== Ad hoc gegevensverstrekking
 
 Een afnemer is geautoriseerd voor ad hoc gegevensverstrekking als element <<e9567,35.95.67>> Medium ad hoc de waarde "N" of "A" heeft.
@@ -893,6 +897,8 @@ Om te bepalen of gegevensverstrekking aan een afnemer dient plaats te vinden, wo
 * Of de gevonden PL(-en) voldoen aan de voorwaardenregel ad hoc (rubriek <<e9561,35.95.61>>);
 * Of het niet zo is dat voor de afnemer de indicatie geheimhouding (rubriek <<e9512,35.95.12>> in de autorisatietabel "aan" staat én de indicatie geheim (rubriek <<e7010,07.70.10>>) op de gevonden PL(-en) op "2", "4", "6" of "7" staat;
 * Of er niet meer dan het maximumaantal toegestane resultaten voldoen aan de zoekcriteria.
+
+Met de inwerkingtreding van het Expirimentbesluit mogen gemeenten niet alleen gegevens, maar ook informatie raadplegen in de BRP-V middels de BRP-API. Als de gemeente de BRP-API's gebruiken, dan geldt dat als raadplegen onder het Experimentbesluit dataminimalisatie en niet als een verstrekking door de BRP-V, zels als die bevraging geen eigen inwoner van die gemeente betreft. Het automatisch versturen van notificaties met informatie is uitgesloten voor afnemers. Hiervoor moet eerst de wetgeving worden aangepast. 
 
 Afhankelijk van de soort ad hoc vraag die wordt gesteld, kunnen nog andere voorwaarden gelden. Alleen van PL'en die aan alle voorwaarden voldoen, worden de gegevens verzameld die aan de afnemer moeten worden verstrekt. Indien van toepassing, worden ook de betreffende groepen procedure en onjuist verstrekt (zie <<_meeverstrekking_van_de_groepen_procedure_en_onjuist>>). Voor ad hoc (adres)vragen via de berichtendienst en de Ad hoc webservice geldt dat indien de inhoud van een historische rubriek wordt gevraagd, de gehele historie van dit gegeven wordt verstrekt. Bij de BRP API werkt dit anders en zijn historische gegevens in een apart endpoint ondergebracht.
 

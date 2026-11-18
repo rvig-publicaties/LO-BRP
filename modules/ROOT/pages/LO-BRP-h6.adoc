@@ -1406,7 +1406,7 @@ In het PutMessage commando is door het eindsysteem de OriginatorORName ingevuld 
 |1056 |S |*Geadresseerde ontbreekt* (Inconsistent request). +
 In het PutMessage commando is geen geadresseerde opgegeven. Van het eindsysteem wordt verwacht dat het op deze fout controleert.
 |1241 |S |*Berichtinhoud te lang* (Body too long). +
-Er is een bericht aangeboden waarvan de body meer dan 19000 tekens bevat. Van een eindsysteem wordt verwacht dat het de lengte controleert voordat het bericht aan de berichtendienst wordt aangeboden.
+Er is een bericht aangeboden waarvan de body meer dan 19000 tekens bevat. Van een eindsysteem wordt verwacht dat het de lengte controleert voordat het bericht aan de berichtendienst wordt aangeboden. Om te zorgen dat een persoonslijst toch via de mailboxserver kan worden verzonden, kan RvIG een gemeente of de RNI adviseren de persoonslijst in te korten.
 |===
 
 
