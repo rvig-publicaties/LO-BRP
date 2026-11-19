@@ -8,7 +8,7 @@
 
 De BRP is opgezet als een decentrale persoonsregistratie, waarbij de persoonsgegevens ook fysiek op verschillende plaatsen opgeslagen worden. Dit heeft tot gevolg dat er gegevensuitwisseling plaats moet kunnen vinden. Deze uitwisseling gebeurt door middel van berichten, die via de berichtendienst, webservices of API's worden verzonden. De gegevensuitwisseling heeft twee functies.
 
-In de eerste plaats is dat de gegevensuitwisseling die dient om de BRP, inclusief de RNI consistent te houden. Zo dienen bij een intergemeentelijke verhuizing de persoonsgegevens met de burger mee te verhuizen. Bij een emigratie of het van kracht worden van een Ministerieel besluit dienen de persoonsgegevens van de gemeente naar de RNI te verhuizen. En bij een immigratie of het vervallen van een Ministerieel besluit dienen de persoonsgegevens, ingeval het een RNI-ingeschrevene betreft, van de RNI naar de gemeente te verhuizen. Onder het consistent houden van de gegevens vallen ook de berichten van en naar BRP-V, de BvBSN ter voorkoming van dubbele inschrijvingen, het Ministerie van Justitie vanwege het opnemen van de verblijfstitel en de berichten die nodig zijn om de landelijke tabellen consistent te houden.
+In de eerste plaats is dat de gegevensuitwisseling die dient om de BRP, inclusief de RNI consistent te houden. Zo dienen bij een intergemeentelijke verhuizing de persoonsgegevens met de burger mee te verhuizen. Bij een emigratie of het van kracht worden van een Ministerieel besluit dienen de persoonsgegevens van de gemeente naar de RNI te verhuizen. En bij een immigratie of het vervallen van een Ministerieel besluit dienen de persoonsgegevens, ingeval het een RNI-ingeschrevene betreft, van de RNI naar de gemeente te verhuizen. Onder het consistent houden van de gegevens vallen ook de berichten van en naar BRP-V, de BvBSN ter voorkoming van dubbele inschrijvingen, het Ministerie van Justitie vanwege het opnemen van de verblijfstitel , de Raad voor de rechtspraak vanwege het opnemen van gegevens omtrent het gezag over minderjarigen en de berichten die nodig zijn om de landelijke tabellen consistent te houden.
 
 Daarnaast vormt de BRP een basisregistratie, hetgeen betekent dat de overheid en andere organisaties in de contacten met de burgers gebruik maken van de in de basisregistratie opgeslagen gegevens. Dit maakt gegevensverstrekking aan die overheidsinstanties en die andere organisaties noodzakelijk.
 
@@ -20,6 +20,7 @@ De BRP-berichten zijn ingedeeld in de volgende groepen:
 * gemeenten onderling;
 * een gemeente en de RNI;
 * de IND en een gemeente of de RNI;
+* de Raad voor de rechtspraak en een gemeente;
 * een gemeente of de RNI en BRP-V.
 . De berichten ten behoeve van de gegevensverstrekkingen. Deze berichten worden uitgewisseld tussen BRP-V en een afnemer. Een afnemer kan ook weer een gemeente of de RNI zijn.
 . Overige berichten, die dan weer zijn onder te verdelen in:
@@ -77,6 +78,10 @@ De BRP-berichten zijn ingedeeld in de volgende groepen:
 * Berichten in verband met verblijfstitel:
 ** <<Og11,Og11>>: Opnemen gegevens verblijfstitel
 ** <<Of11,Of11>>: Fout: opnemen/wijzigen verblijfstitel niet mogelijk
+
+* Berichten in verband met gezag:
+** <<Og21,Og21>>: Opnemen gegevens omtrent gezag
+** <<Of21,Of21>>: Fout: opnemen/wijzigen omtrent gezag niet mogelijk
 
 ====== Berichten ten behoeve van het synchroniseren van de persoonsgegevens met BRP-V
 
@@ -471,7 +476,7 @@ De in deze paragraaf beschreven wijze van persoonsidentificatie geldt voor de vo
 * <<Ji01,Ji01>> Initiatie verhuizing PL van RNI naar gemeente
 * <<Xq01,Xq01>> Ad hoc adresvraag
 
-Voor het <<Xq01,Xq01>>-bericht geldt slechts hetgeen hierna is vermeld over '_Ingang op actuele gegevens_' en '_Ingang op historische gegevens_'.
+Voor het Ii01- en het Ji01-bericht geldt slechts hetgeen hierna is vermeld over ‘Ingang op actuele gegevens’ en ‘Ingang op verwijsgegevens’. Voor het <<Xq01,Xq01>>-bericht geldt slechts hetgeen hierna is vermeld over '_Ingang op actuele gegevens_' en '_Ingang op historische gegevens_'.
 
 ====== Ingang op actuele gegevens
 
@@ -483,6 +488,11 @@ Bij een persoonsidentificatie met als ingang actuele gegevens moet minimaal éé
 * <<e1160,08.11.60>> Postcode
 
 Deze rubrieken kunnen worden aangevuld met alle gegevens die op de PL voorkomen, behalve met element <<e8410,84.10>>, Indicatie onjuist.
+
+Voor het Ii01- en het Ji01-bericht geldt dat bij een persoonsidentificatie uitsluitend gebruik mag worden gemaakt van:
+
+* <<e0110,01.01.10>> A‑nummer
+* <<e0120,01.01.20>> Burgerservicenummer
 
 ====== Ingang op historische gegevens
 
@@ -498,9 +508,7 @@ Deze rubrieken kunnen worden aangevuld met alle gegevens die op de PL voorkomen,
 
 Identificatie op verwijsgegevens kan alleen bij vervolginschrijvingen (<<Ii01,Ii01>> en <<Ji01,Ji01>>) en vindt op de volgende manier plaats:
 
-Indien wordt geïdentificeerd op de wijze zoals is beschreven bij de persoonsidentificatie bij de ingang op actuele gegevens (zie hierboven) en in het PL-bestand voldoet geen persoon aan de opgegeven identificatie, dan wordt het zoekproces automatisch voortgezet op de verwijsgegevens. Dit is echter alleen mogelijk indien tenminste het A‑nummer, het burgerservicenummer of de geslachtsnaam van de ingeschrevene is opgenomen binnen de identificerende gegevens.
-
-Bij dit zoeken in de verwijsgegevens worden alleen de identificerende gegevens uit de groepen <<g01,01>>, <<g02,02>> en <<g03,03>> van categorie <<c01-51,01>> (respectievelijk <<c01-51,51>>) betrokken in het zoekproces. De overige verstrekte identificerende gegevens blijven buiten beschouwing. Bij een identificatie met actuele gegevens als ingang, wordt de identificatie voortgezet in de actuele verwijsgegevens. Bij een identificatie met historische gegevens als ingang, wordt de identificatie voortgezet in de historische verwijsgegevens.
+Indien wordt geïdentificeerd op de wijze zoals is beschreven bij de persoonsidentificatie bij de ingang op actuele gegevens (zie hierboven) en in het PL-bestand voldoet geen persoon aan de opgegeven identificatie, dan wordt het zoekproces automatisch voortgezet op de verwijsgegevens. 
 
 Indien in de verwijsgegevens een persoon uniek wordt geïdentificeerd, wordt er altijd een foutbericht verzonden met foutreden "V". In de kop van dat foutbericht wordt in dat geval altijd het A‑nummer van de geselecteerde en de volgende gemeente van inschrijving ofwel, zo dat het geval is, de RNI opgenomen. Deze beide rubrieken (rubriek <<e0110,21.01.10>> en <<e0910,21.09.10>>) moeten worden overgenomen uit de actuele categorie Verwijzing.
 
@@ -730,6 +738,11 @@ Mailbox PBK-module; uitwisseling in het kader van (her)vestiging van PIVA-ingeze
 Mailboxen BRP-V; uitwisseling van synchronisatieberichten (<<Lg01,Lg01>>, <<Lq01,Lq01>>, <<La01,La01>>, <<Lf01,Lf01>>).
 * 300028 ++[++BRP-V - Daft (Data Analyzing Fingerprint Tool)++]++ +
 Mailbox Synchroniciteit-Daft; uitwisseling van synchroniciteitsselecties (<<Lg01,Lg01>>).
+* 300061 ++[++Raad voor de rechtspraak++]++ +
+Mailbox Rvdr; levering van gegevens over het gezag van minderjarigen (<<Og21,Of21>>, <<Of21,Of21>>).
+* 300062 ++[++Routeringsvoorziening++]++ +
+Mailbox Rvdr; uitwisseling van gegevens over het gezag van minderjarigen +
+(<<Og21,Of21>>, <<Of21,Of21>>).  
 * 450201 Min van BZK/Logius/Inzage gegevens Basisregistratie Personen via MijnOverheid. +
 Ad hoc webservice en VraagAI
 * 700302 ++[++Immigratie- en Naturalisatiedienst++]++ +
@@ -770,6 +783,29 @@ Bevat de inhoud van het bericht gegevens van een PL, dan wordt hier de inhoud va
 
 *Aantal* (3 posities, numeriek, niet van toepassing op berichten via de BRP Berichten API):: In de berichten van de toevallige gebeurtenis (<<Tb02,Tb02>> en <<Tf21,Tf21>>) bevat dit veld het aantal identificerende rubrieken. +
 In Hf01-, Hq01-, Xf01- en Xq01-berichten bevat dit veld het aantal gevraagde rubrieken.
+
+*Aantekeningen* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat alle aantekeningen over uitspraken van rechtbanken die betrekking hebben op het gezag over de minderjarige die is aangeduid met het burgerservicenummer in het Og21bericht, in omgekeerde chronologische volgorde, dus de meest recente aantekening eerst.
+
+[width="100%",cols="3%,3%,24%,15%,10%,45%",options="header",]
+|===
+3+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in de BRP
+3+|aantekeningen |array of objects |nee
+|Indien aanwezig: bevat 1 of meer rechtsfeiten, in chronologische volgorde, met de meest recente eerst.
+| 2+|ingangsdatum |string |nee
+|De ingangsdatum van het rechtsfeit. Is verplicht aanwezig in nieuwe aantekeningen, maar kan ontbreken in oudere aantekeningen omdat het CGR deze datum in het verleden niet heeft opgeslagen. Formaat: jjjjmmdd.
+| 2+|beslissingsdatum |string |ja
+|De datum van de beslissing van het rechtsfeit. Formaat: jjjjmmdd.
+| 2+|beslissendeInstantie |string |nee
+|Instantienaam van de rechtbank die de beslissing heeft genomen. Kan ontbreken in oudere aantekeningen. Maximaal 120 posities.
+| 2+|beslissingscategorie |string |nee
+|De categorie van het rechtsfeit, bijvoorbeeld "Gezag" of "Voogdij". Kan ontbreken in oudere aantekeningen. Maximaal 50 posities; kan leeg zijn ("").
+| 2+|beslissingsnaam |string |nee
+|Het specifieke type beslissing binnen de categorie, bijvoorbeeld "Gezamenlijk gezag" of "Beëindiging voogdij". Kan ontbreken in oudere aantekeningen. Maximaal 255 posities; kan leeg zijn ("").
+| 2+|beslissingstekst |string |ja
+|De tekst van de publicatie van het rechtsfeit. Maximaal 2000 posities.
+| 2+|registratiedatum |string |ja
+|De datum van invoer van het rechtsfeit in het gezagsregister. Formaat: jjjjmmdd.
+|===
 
 *Adresfunctie* (1 positie, alfanumeriek):: Dit veld komt voor in de ad hoc adresvraag (<<Xq01,Xq01>> en <<Xf01,Xf01>>) en geeft aan of er gegevens van PL'en moeten worden verstrekt, waarvoor geldt dat rubriek <<e1010,08.10.10>>
 * de waarde "B" heeft (Adresfunctie heeft de waarde "B") of
@@ -816,12 +852,45 @@ Als het rechtsfeit wel verandering in de persoonsidentificerende gegevens veroor
 
 *Lengte bericht* (5 posities, numeriek, niet van toepassing op berichten via de BRP Berichten API):: De lengte van de tekst van het vrije bericht (<<Vb01,Vb01>> en <<Vb02,Vb02>>).
 
+*Minderjarige* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat gegevens over de minderjarige waarop de inhoud van het Og21-bericht betrekking heeft. 
+[width="100%",cols="3%,3%,24%,15%,10%,45%",options="header"]
+|===
+3+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in de BRP
+3+|minderjarige |object |ja |
+| 2+|burgerservicenummer |string |ja
+|Wordt vergeleken met 01.01.20 Burgerservicenummer
+|===
+
 *Oud A‑nummer* (10 posities, numeriek, in de BRP Berichten API: oudANummer):: Na een A‑nummerwijziging staat in het betreffende synchronisatiebericht (<<Lg01,Lg01>>) het oude A‑nummer van de persoon in dit veld. De standaardwaarde is "0000000000".
+
+*Registerkaart* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat gegevens over de regsterkaart uit het Centraal Gezagsregister waaraan de inhoud van het Og21-bericht betrekking heeft.
+
+
+[width="100%",cols="3%,3%,24%,15%,10%,45%",options="header"]
+|===
+3+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in de BRP
+3+|registerkaart |object |ja |
+| 2+|registerkaartnummer |string |ja
+|Formaat: jjjj_nnnnnnnn
+|===
 
 *Status* (1 positie, alfanumeriek):: Hiermee wordt aangegeven wat de status is van de in het bericht verstrekte gegevens. Bij de beschrijving van ieder bericht waarin dit veld voorkomt, is aangegeven wat de mogelijke waarden van Status kunnen zijn. +
 De standaardwaarde van Status is "A".
 
 *Te wijzigen tabel* (2 posities, numeriek, in de BRP Berichten API: teWijzigenTabel):: Het nummer van de uit te breiden of te wijzigen tabel ter identificatie van die tabel.
+
+*Uittreksel* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat gegevens over de het uittreksel uit het Centraal Gezagsregister waarop de inhoud van het Og21-bericht betrekking heeft.
+[width="100%",cols="3%,3%,24%,15%,10%,45%",options="header"]
+|===
+3+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in de BRP
+3+|uittreksel |object |ja |
+| 2+|aangemaaktOp |datum/tijd |ja
+|Formaat: jjjjmmddhhmmssuuu.
+| 2+|verstrekkendeInstantie |string |ja
+|De rechtbank namens wie het bericht wordt verstuurd. Maximaal 120 posities.
+| 2+|toelichting |string |nee
+|De rechtbank kan in dit veld een toelichting geven op de versie van de registerkaart die zij versturen aan de gemeente. Maximaal 2000 posities.
+|===
 
 ====== De autorisatietabelregel in de kop
 
@@ -1490,21 +1559,27 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 * <<_opnemenwijzigen_verblijfstitel_2,5.2.9>>
 
 |Opnemen/wijzigen verblijfstitel
+2+|Gemeenten, RNI en de Raad voor de rechtspraak: 
+|
+
+* <<_opnemenwijzigen_gegegevens_omtrent_gezag_2,5.2.10>>
+
+|Opnemen/wijzigen gegevens omtrent gezag 
 2+|Gemeenten, RNI en BRP-V:
 |
 
-* <<_synchronisatie_met_brp_verstrekkingen,5.2.10>>
+* <<_synchronisatie_met_brp_verstrekkingen,5.2.11>>
 
 |Synchronisatie met BRP-V
 |
 
-* <<_synchronisatievraag,5.2.11>>
+* <<_synchronisatievraag,5.2.12>>
 
 |Synchronisatievraag
 2+|Gemeenten, RNI en de synchroniciteitsmailbox:
 |
 
-* <<_synchroniciteit_met_brp_verstrekkingen,5.2.12>>
+* <<_synchroniciteit_met_brp_verstrekkingen,5.2.13>>
 
 |Synchroniciteit met BRP-V
 |===
@@ -1514,63 +1589,63 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 3+|Webservices in verband met bevragen door gemeenten en de RNI van de BvBSN:
 |
 
-* <<_webservice_aanvragen_bsn_voorraad_bij_bvbsn,5.2.13>>
+* <<_webservice_aanvragen_bsn_voorraad_bij_bvbsn,5.2.14>>
 
 |GenereerDistribueerNr |Opvragen BSN-nummervoorraad
 |
 
-* <<_webservice_presentievraag_aan_bvbsn,5.2.14>>
+* <<_webservice_presentievraag_aan_bvbsn,5.2.15>>
 
 |MatchIdenGeg |Presentievraag
 3+|
 3+|Webservices in verband met het bevragen door gemeenten en RNI van BRP-V:
 |
 
-* <<_opvragen_persoonslijst_bij_brp_verstrekkingen,5.2.15>>
+* <<_opvragen_persoonslijst_bij_brp_verstrekkingen,5.2.16>>
 
 |VraagPL |Geeft de volledige persoonslijst terug inclusief onjuiste historie
 |
 
-* <<_opvragen_afnemersindicaties,5.2.16>>
+* <<_opvragen_afnemersindicaties,5.2.17>>
 
 |VraagAI |Geeft alle afnemersinidicaties die bij een specifieke persoonslijst staan
 |
 
-* <<_controleren_pl,5.2.17>>
+* <<_controleren_pl,5.2.18>>
 
 |ControleerPL |Controleert de opgestuurde persoonslijst (functie van de webservice StuurGBAbericht)
 3+|
 3+| Webservices en API's in verband met het aanvragen van een voorraad A-nummers door gemeenten, RNI, de Landen en eilanden van het Caribisch gebied of beheerders van BRP-V bij BRP-V:
 |
 
-* <<_aanvragen_a_nummervoorraad_bij_brp_verstrekkingen_via_webservice,5.2.18>>
+* <<_aanvragen_a_nummervoorraad_bij_brp_verstrekkingen_via_webservice,5.2.19>>
 
 |VraagVoorraadAnrs |Webservice die het gevraagde aantal A-nummers verstrekt
 |
 
-* <<_aanvragen_a_nummervoorraad_bij_brp_verstrekkingen_via_api,5.2.19>>
+* <<_aanvragen_a_nummervoorraad_bij_brp_verstrekkingen_via_api,5.2.20>>
 
 |A-Nummer |API die het gevraagde aantal A-nummers verstrekt
 3+|
 3+|Webservices in verband met het indienen van verzoeken door ABO's bij de RNI:
 |
 
-* <<_indienen_verzoek_abo_aan_rni,5.2.20>>
+* <<_indienen_verzoek_abo_aan_rni,5.2.21>>
 
 |DeelnemerOpgave |ABO verzoekt om een inschrijving, wijziging, verificatie of stuurt een aanvullend brondocument op
 |
 
-* <<_beantwoorden_verzoek_abo_door_rni,5.2.21>>
+* <<_beantwoorden_verzoek_abo_door_rni,5.2.22>>
 
 |OpgaveResultaat |RNI stuurt het inhoudelijke resultaat op een DeelnemerOpgave terug
 |
 
-* <<_statusverzoeken_abo_opvragen_aan_rni,5.2.22>>
+* <<_statusverzoeken_abo_opvragen_aan_rni,5.2.23>>
 
 |DeelnemerAanvraag |ABO verzoekt om statusinformatie van een of meer ingediende DeelnemerOpgaven
 |===
 
-De berichtencycli 5.2.2 t/m 5.2.12 kunnen behalve met de mailboxserver ook via de BRP Berichten API worden uitgewisseld.
+De berichtencycli 5.2.9 en t/m 5.2.11 t/m 5.2.13 kunnen behalve met de mailboxserver ook via de BRP Berichten API worden uitgewisseld. De berichtencyclus 5.2.10 kan uitsluitend via de BRP Berichten API worden uitgewisseld. 
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -2373,6 +2448,61 @@ De Minister van Justitie kan een nieuwe cyclus starten door een <<Og11,Og11>>-be
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
+
+==== Opnemen gegevens omtrent gezag
+
+[.text-center]
+.Schematische weergave Opnemen gegevens omtrent gezag
+image::image37a.svg[width=566,height=328]
+
+===== Inleiding
+
+In het Centraal Gezagsregister (CGR) staan alle beslissingen van rechtbanken die genomen zijn over het gezag over een minderjarig kind. Wat er over het gezag over een minderjarige in de BRP wordt opgenomen, moet worden gebaseerd op deze beslissingen in het CGR. Een beslissing over het gezag over een minderjarig kind wordt door middel van deze cyclus bekend gemaakt aan de gemeente van inschrijving. 
+
+===== Toelichting
+
+Het normale verloop van de cyclus bestaat uit de volgende stappen: 
+
+. *Raad voor de rechtspraak* +
+De Raad voor de rechtspraak doet een verzoek aan RvIG om een beslissing omtrent het gezag over een minderjarige door te sturen aan de gemeente van inschrijving van die minderjarige, door middel van het versturen van een <<Og21,Og21>>-bericht naar de routeringsvoorziening van RvIG. 
+. *RvIG routeringsvoorziening* +
+Na controle of het bericht afkomstig is van de Raad voor de rechtspraak wordt, met behulp van de ontvangen identificerende gegevens in het <<Og21,Og21>>-bericht, gezocht naar een unieke PL in de BRPV. In het zoekproces worden alle PL'en betrokken, behalve de met reden "F" opgeschorte PL'en. Als de gevonden PL in de BRP-V is geblokkeerd, dan houdt de RvIG routeringsvoorziening het <<Og21,Og21>>-bericht een configureerbaar aantal keren een configureerbare periode vast en herhaalt de stappen vanaf "Zoek persoon in BRP-V". In alle andere gevallen wordt gecontroleerd bij welke gemeente van inschrijving de PL zich bevindt. Naar die gemeente wordt een vrij bericht (<<Vb01,Vb01>>) gestuurd met de inhoud van het <<Og21,Og21>>-bericht. Als blijkt dat het om een RNI-PL gaat, dan wordt het Vb01-bericht gestuurd naar de laatste gemeente van inschrijving voor de opschorting van de PL. Als de PL zich in een gemeente bevindt, wordt het <<Vb01,Vb01>>-bericht doorgestuurd naar de actuele gemeente van inschrijving. 
+. *Gemeente van inschrijving* +
+Met behulp van de ontvangen identificerende gegevens in het <<Vb01,Vb01>>-bericht wordt gezocht naar een unieke PL. In het zoekproces worden alle PL'en betrokken, behalve de met reden "F" opgeschorte PL'en. Daarbij geldt dat de gegevens uit het Vb01-bericht alleen dan op een met reden "O" opgeschorte PL kan worden verwerkt, als de datum opschorting ligt na de ingangsdatum in het <<Vb01,Vb01>>-bericht. Als de PL wordt gevonden in het verwijsbestand en daaruit blijkt dat de PL naar de RNI is verhuisd, wordt een verzoek gericht tot RvIG om wijziging van de PL of om het opnemen van een documentindicatie, door middel van het daartoe bestemde formulier. Als de datum opschorting vóór of op de ingangsdatum ligt, wordt door RvIG alleen een documentindicatie opgenomen.
+. *RvIG routeringsvoorziening* +
+De Vb01-cyclus voorziet niet in een antwoordbericht, dus de routeringsvoorziening ontvangt geen verwerkbevestiging van de gemeente. Dat betekent dat de routeringsvoorziening er, zodra een Vb01-bericht is verzonden naar een gemeente, vanuit gaat dat de gegevens kunnen worden verwerkt. De routeringsvoorziening stuurt geen verwerkbevestiging naar de Raad voor de rechtspraak.
+. *Raad voor de rechtspraak* +
+Als een foutbericht uitblijft, gaat de Raad voor de rechtspraak er vanuit dat de procedure correct is afgerond en dat de PL is bijgewerkt.
+
+Bij de uit te voeren stappen kunnen foutsituaties optreden die de volgende acties tot gevolg hebben:
+
+[width="100%",cols="5%,95%a",frame=none,grid=none]
+|===
+
+|[.number]#&#x2460;# |Als de gezochte persoon in de BRP-V niet te vinden is, dan wordt een <<Of21,Of21>>-bericht gestuurd naar de Raad voor de rechtspraak met foutreden "G".
+
+|[.number]#&#x2461;# |Wanneer meerdere personen voldoen aan de identificatie in het <<Og21,Og21>>-bericht, wordt een <<Of21,Of21>>-bericht gestuurd met foutreden "U".
+
+|[.number]#&#x2462;# |Als na een configureerbaar aantal pogingen de gevonden PL in de BRP-V nog steeds is geblokkeerd, dan wordt een <<Of21,Of21>>-bericht gestuurd naar de Raad voor de 
+rechtspraak met foutreden "B".
+
+|[.number]#&#x2463;# |Als de gevonden PL in BRP-V is opgeschort met reden "E" of "M", dan wordt het <<Og21,Og21>>-bericht doorgestuurd naar de laatste gemeente van inschrijving. Als er geen gemeente van inschrijving op de PL te vinden is in de adreshistorie, dan wordt een <<Of21,Of21>>-bericht gestuurd naar de Raad voor de rechtspraak met foutreden "R".
+
+|[.number]#&#x2464;# |Afhankelijk van de foutreden in de kop van het <<Of21,Of21>>-bericht worden de volgende acties ondernomen door de Raad voor de rechtspraak:
+
+*Foutreden B*
+
+Deze foutreden wijst erop dat ook na herhaald opzoeken van de PL in BRP-V er geen gemeente is gevonden waar de PL aanwezig is, omdat er telkens (of nog steeds) een verhuiscyclus open staat. De Raad voor de rechtspraak dient contact op te nemen met RvIG om uit te laten zoeken hoe dit kon gebeuren en waar de PL zich bevindt. Daarna kan een nieuwe cyclus worden gestart.
+
+*Foutreden G*
+
+Deze foutreden kan wijzen op onjuiste identificerende gegevens. De Raad voor de rechtspraak dient, eventueel in overleg met RvIG, uit te zoeken wat de oorzaak is van het identificatieprobleem. Daarna kan een nieuwe cyclus worden gestart.
+
+*Foutreden R*
+
+Deze foutreden wijst erop dat er geen laatste gemeente van inschrijving is gevonden op een PL in de RNI, terwijl er wel een gemeente verantwoordelijk is voor de bijhouding van de gegevens op die PL. De Raad voor de rechtspraak dient contact op te nemen met RvIG om uit te laten zoeken hoe dit kon gebeuren en waarom de adreshistorie ontbreekt op de PL. Daarna kan een nieuwe cyclus worden gestart.
+|===
+
 
 ==== Synchronisatie met BRP Verstrekkingen
 
@@ -3257,7 +3387,7 @@ Kop bevat::
 random key = 8 posities +
 berichtnummer = 4 posities +
 herhaling = 1 positie
-Inhoud bevat:: persoonsidentificerende gegevens.
+Inhoud bevat:: rubriek <<e0110,01.01.10>> A‑nummer en/of rubriek <<e0110,01.01.20>> Burgerservicenummer.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3437,7 +3567,7 @@ Kop bevat::
 random key = 8 posities +
 berichtnummer = 4 posities +
 herhaling = 1 positie
-Inhoud bevat:: persoonsidentificerende gegevens.
+Inhoud bevat:: rubriek <<e0110,01.01.10>> A‑nummer en/of rubriek <<e0110,01.01.20>> Burgerservicenummer.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3586,6 +3716,36 @@ Inhoud bevat:: {empty}
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
+[#Of21]
+[horizontal,labelwidth=35,itemwidth=65]
+Berichtnummer:: Of21
+Berichtnaam:: Fout: opnemen/wijzigen gezag niet mogelijk
+Omschrijving:: Foutbericht omdat een verzoek tot opnemen/wijzigen van gegevens omtrent gezag over een minderjarig kind niet uitgevoerd kan worden en waarom dit niet kan. 
+Te verzenden door:: gemeente van inschrijving, RvIG routeringsvoorziening
+Te verzenden aan:: RvIG routeringsvoorziening, Raad voor de rechtspraak
+Volgt op bericht:: <<Og21,Og21>>
+Wordt gevolgd door:: {empty}
+Kop bevat::
+berichtnummer = 4 posities +
+foutreden = 1 positie
++
+--
+[horizontal,labelwidth=5,itemwidth=95]
+B =::: PL is geblokkeerd i.v.m. verhuizing
+G =::: persoon niet gevonden
+R =::: er is geen gemeente van inschrijving aangetroffen waar de persoon was ingeschreven voor opschorting
+U =::: er is meer dan één persoon gevonden met het opgestuurde burgerservicenummer 
+
+--
++
+datum = 8 posities +
+gemeente = 4 posities +
+burgerservicenummer = 9 posities
+Inhoud bevat:: {empty}
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
 [#Og11]
 [horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Og11
@@ -3616,6 +3776,26 @@ Inhoud bevat:: de rubrieken:
 --
 +
 Alle genoemde rubrieken dienen voor te komen in het bericht. Indien het oude of het nieuwe gegeven niet voorkomt, wordt de betreffende rubriek toch opgenomen in het bericht. Dit wordt gerealiseerd door de betreffende rubriek in het bericht op te nemen met lengte 0 (nul). Aangezien nooit onjuiste nieuwe gegevens worden verstrekt, heeft rubriek <<e8410,10.84.10>> altijd lengte 0 (nul).
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+[#Og21]
+[horizontal,labelwidth=35,itemwidth=65]
+Berichtnummer:: Og21
+Berichtnaam:: Fout: Opnemen/wijzigen gegevens omtrent gezag 
+Omschrijving:: Het bericht waarmee de Raad voor de rechtspraak gegevens omtrent het gezag over een minderjarig kind kenbaar maakt. 
+Te verzenden door:: Raad voor de rechtspraak, RvIG routeringsvoorziening 
+Te verzenden aan:: RvIG routeringsvoorziening, gemeente van inschrijving
+Volgt op bericht:: {empty} 
+Wordt gevolgd door:: niets of <<Og21,Og21>>
+Kop bevat::
+berichtnummer = 4 posities +
+uittreksel = JSON-object +
+minderjarige = JSON-object +
+registerkaart = JSON-object +
+aantekingen = JSON-object +
+Inhoud bevat:: {empty}
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -4134,6 +4314,8 @@ De in de berichten voorkomende foutredenen en statusmeldingen zijn in de onderst
 |B |<<If41,If41>> |PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 |B |<<Jf01,Jf01>> |PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 |B |<<Of11,Of11>> |PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
+|B |<<Of21,Of21>> |PL is geblokkeerd i.v.m. verhuizing 
+|B |<<Og21,Og21>> |PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 |B |<<Tf01,Tf01>> |PL ouder is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 |B |<<Tf21,Tf21>> |PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 3+|
@@ -4147,6 +4329,7 @@ De in de berichten voorkomende foutredenen en statusmeldingen zijn in de onderst
 |G |<<Jf01,Jf01>> |Persoon komt niet voor
 |G |<<Lf01,Lf01>> |Persoon komt niet voor
 |G |<<Of11,Of11>> |Persoon niet gevonden
+|G |<<Of21,Of21>> |Persoon niet gevonden
 |G |<<Tf01,Tf01>> |Ouder komt niet voor
 |G |<<Tf21,Tf21>> |Persoon komt niet voor
 |G |<<Wf01,Wf01>> |Persoon komt niet voor in verwijsgegevens
@@ -4168,11 +4351,13 @@ De in de berichten voorkomende foutredenen en statusmeldingen zijn in de onderst
 |O |<<Tf21,Tf21>> |Bijhouden PL opgeschort wegens overlijden
 3+|
 |R |<<Jb01,Jb01>> |Bijhouden PL opgeschort wegens aanleg in de RNI op "datum"
+|R |<<Of21,Of21>> |Geen gemeente van inschrijving gevonden waar de persoon stond ingeschreven voordat de persoonslijst werd opgeschort 
 3+|
 |U |<<If01,If01>> |Eenduidige identificatie niet gelukt
 |U |<<Jf01,Jf01>> |Eenduidige identificatie niet gelukt
 |U |<<Lf01,Lf01>> |Eenduidige identificatie niet gelukt
 |U |<<Of11,Of11>> |Eenduidige identificatie niet gelukt
+|U |<<Of21,Of21>> |Eenduidige identificatie niet gelukt
 |U |<<Tf01,Tf01>> |Eenduidige identificatie niet gelukt
 |U |<<Tf21,Tf21>> |Eenduidige identificatie niet gelukt
 3+|
