@@ -33,50 +33,28 @@
 [discrete]
 == Overzicht wijzigingen
 
-<<<<<<< HEAD
 De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2026.Q3) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2027.Q1. Deze versie treedt op 1 januari 2027 in werking.
-=======
-De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2026.Q3) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2027.Q1. Deze versie treedt op 1 januari 2027 in werking.
->>>>>>> 30800619034a3e03edd3a92fbd6201e1bb365cc5
 
-<<<<<<< HEAD
-LO-244 / W214 Uitwisselen gezagsinformatie CGR - gemeenten fase I
-* <<_stelselarchitectuur>>, <<_berichtenverkeer_algemeen>>, <<_bijzondere_aangesloten_instanties>>, <<_opbouw_van de_berichtendienst_berichten>>, <<_inleiding_8>>, <<_synchronisatie_met_brp_verstrekkingen>>, <<_berichten>>
-=======
-LO-462 3e Aanvulling W180 Vaste koppeling BAG-BRP
->>>>>>> 30800619034a3e03edd3a92fbd6201e1bb365cc5
-
-<<<<<<< HEAD
-LO-448 BRP API - Gebeurtenissen
-=======
-* <<_beschrijving_van_de_groepen>> (de beschrijving van categorie <<c08-58,08/58>>)
-* <<_beschrijving_van_de_groepen>> (de beschrijving van groep <<g11,11>> en <<g12,12>>)
-* <<_beschrijving_van_de_elementen>> (de beschrijving van element <<e1150,11.50>> en <<e1210,12.10>>)
->>>>>>> 30800619034a3e03edd3a92fbd6201e1bb365cc5
-
-LO-462 3e Aanvulling W180 Vaste koppeling BAG-BRP
-* <<_beschrijving_van_de_categorieën>>, <<_beschrijving_van_de_groepen>>, <<_beschrijving_van_de_elementen>> 
-
-<<<<<<< HEAD
-LO-463 Identificerende gegevens in Ii01 en Ji01 berichten
-* <<_identificatie>>
-
-LO-465 Lange PL'en inkorten
-* <<_spd protocol>>
-
-LO-469 Null-bericht in BRP Berichten API
-* <<_berichten>>
-
-LO-451 Aanpassen tabel 33 Gemeententabel
-LO-464 Beëindigen Wijdemeren in tabel 33 Gemeententabel (herindeling)
-LO-466 Aanpassen tabel 32 Nationaliteiten
-LO-467 Aanpassen landentabel: Nauru wordt Naoëro
-
-Tekstuele wijzigingen
-
-* <<_beschrijving_van_de_landelijke_tabellen>>
-* <<_beschrijving_van_de_elementen>> (de beschrijving van element <<e1620,16.20>> en <<e1720,17.20>>)
->>>>>>> 30800619034a3e03edd3a92fbd6201e1bb365cc5
+* LO-244 / W214 Uitwisselen gezagsinformatie CGR - gemeenten fase I
+** <<_stelselarchitectuur>>, <<_berichtenverkeer_algemeen>>, <<_bijzondere_aangesloten_instanties>>, <<_opbouw_van_de_berichtendienst_berichten>>, <<_inleiding_8>>, <<_synchronisatie_met_brp_verstrekkingen>>, <<_berichten>>
+* LO-448 BRP API - Gebeurtenissen
+** <<_gebeurtenissen>>
+** <<_beschrijving_van_de_categorieën_2>> (de beschrijving van categorie <<cgx,GX>>)
+** <<_beschrijving_van_de_groepen_2>> (de beschrijving van groep <<gov,OV>> en <<gvh,VH>>)
+** <<_beschrijving_van_de_elementen_2>> (de beschrijving van element <<eov01,OV.01>>, <<evh01,VH.01>> en <<evh02,VH.02>>)
+** <<_brp_api_gebeurtenissen>>
+* LO-462 3e Aanvulling W180 Vaste koppeling BAG-BRP
+** <<_beschrijving_van_de_categorieën>> (de beschrijving van categorie <<c08-58,08/58>>)
+** <<_beschrijving_van_de_groepen>> (de beschrijving van groep <<g11,11>> en <<g12,12>>)
+** <<_beschrijving_van_de_elementen>> (de beschrijving van element <<e1150,11.50>> en <<e1210,12.10>>)
+* LO-463 Identificerende gegevens in Ii01 en Ji01 berichten
+** <<_identificatie>>
+* LO-465 Lange PL'en inkorten
+** <<_overzicht_foutcodes>>
+* LO-469 Null-bericht in BRP Berichten API
+** <<_beschrijving_van_de_brp_berichten_3>>
+* Tekstuele wijzigingen
+** <<_beschrijving_van_de_elementen>> (de beschrijving van element <<e1620,16.20>> en <<e1720,17.20>>)
 
 :sectnums:
 

@@ -560,7 +560,7 @@ Groepsopsomming::
 <<g88,88>>:::: RNI-deelnemer
 Voorwaarden:: De groepen <<g09,09>>, <<g72,72>>, <<g85,85>> en <<g86,86>> komen verplicht voor. +
 De groepen <<g13,13>> en <<g14,14>> komen niet tegelijkertijd voor; als groep <<g14,14>> eenmaal is opgenomen, blijft deze actueel totdat groep <<g13,13>> opgenomen wordt. +
-Voor categorie <<g08,08>> geldt: of groep <<g13,13>> komt voor of de groepen <<g10,10>> en <<g11,11>> komen voor. Groep <<g12,12>> mag niet voorkomen op PL’en die op 1 januari 2024 nog niet opgeschort waren wegens overlijden, maar kan nog wel voorkomen. +
+Voor categorie <<g08,08>> geldt: of groep <<g13,13>> komt voor of de groepen <<g10,10>> en <<g11,11>> komen voor. Groep <<g12,12>> mag niet meer voorkomen op PL’en die op 1 januari 2024 nog niet opgeschort waren wegens overlijden, maar kan nog wel voorkomen. +
 Voor categorie <<c08-58,58>> geldt: of groep <<g13,13>> komt voor of de groepen <<g10,10>>, en of <<g11,11>> of <<g12,12>> komen voor. Groep <<g12,12>> mag niet meer voorkomen in categorieën die na 1 januari 2024 historisch zijn geworden, maar kan daar nog wel voorkomen. +
 Groep <<g84,84>> kan uitsluitend in categorie <<c08-58,58>> voorkomen. +
 Groep <<g88,88>> kan uitsluitend voorkomen op een PL die deel uitmaakt van de RNI.

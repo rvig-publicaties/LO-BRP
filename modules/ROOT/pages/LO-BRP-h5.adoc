@@ -471,7 +471,7 @@ De in deze paragraaf beschreven wijze van persoonsidentificatie geldt voor de vo
 * <<Ji01,Ji01>> Initiatie verhuizing PL van RNI naar gemeente
 * <<Xq01,Xq01>> Ad hoc adresvraag
 
-Voor het Ii01- en het Ji-01 bericht geldt slechts hetgeen hierna is vermeld over 'Ingang op actuele gegevens' en 'Ingang op verwijsgegevens'. Voor het <<Xq01,Xq01>>-bericht geldt slechts hetgeen hierna is vermeld over '_Ingang op actuele gegevens_' en '_Ingang op historische gegevens_'.
+Voor het <<Ii01,Ii01>>- en het <<Ji01,Ji01>>-bericht geldt slechts hetgeen hierna is vermeld over '_Ingang op actuele gegevens_' en '_Ingang op verwijsgegevens_'. Voor het <<Xq01,Xq01>>-bericht geldt slechts hetgeen hierna is vermeld over '_Ingang op actuele gegevens_' en '_Ingang op historische gegevens_'.
 
 ====== Ingang op actuele gegevens
 
@@ -484,7 +484,7 @@ Bij een persoonsidentificatie met als ingang actuele gegevens moet minimaal éé
 
 Deze rubrieken kunnen worden aangevuld met alle gegevens die op de PL voorkomen, behalve met element <<e8410,84.10>>, Indicatie onjuist.
 
-Voor het Ii01- en het Ji-01 bericht geldt dat bij een persoonsidentifactie uitsluitend gebruik mag worden gemaakt van:
+Voor het <<Ii01,Ii01>>- en het <<Ji01,Ji01>>-bericht geldt dat bij een persoonsidentificatie uitsluitend gebruik mag worden gemaakt van:
 
 * <<e0110,01.01.10>> A‑nummer
 * <<e0120,01.01.20>> Burgerservicenummer
@@ -3260,7 +3260,7 @@ Kop bevat::
 random key = 8 posities +
 berichtnummer = 4 posities +
 herhaling = 1 positie
-Inhoud bevat:: rubriek 01.01.10 A-nummer en/ of rubriek 01.01.20 Burgerservicenummer.
+Inhoud bevat:: rubriek <<e0110,01.01.10>> A-nummer en/of rubriek <<e0120,01.01.20>> Burgerservicenummer.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3440,7 +3440,7 @@ Kop bevat::
 random key = 8 posities +
 berichtnummer = 4 posities +
 herhaling = 1 positie
-Inhoud bevat:: rubriek 01.01.10 A-nummer en/ of rubriek 01.01.20 Burgerservicenummer.
+Inhoud bevat:: rubriek <<e0110,01.01.10>> A-nummer en/of rubriek <<e0120,01.01.20>> Burgerservicenummer.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
