@@ -5889,14 +5889,14 @@ Mogelijke waarden:: {empty}
 | 2+|verblijfplaats |object |
 | | |datumVan |date |<<e13.20,08.13.20>> Datum aanvang adres buitenland
 |===
-[#eVH01]
+
+[#eVH02]
 [horizontal,labelwidth=35,itemwidth=65]
 Elementaanduiding:: VH.02
 Elementnaam:: Verhuisd intergemeentelijk
 Toelichting:: Gebeurtenis die aangeeft dat de persoon naar een andere gemeente is verhuisd.
 Afgeleid van::
-* <<e09.10,08.09.10>> Gemeente van inschrijving
-
+<<e09.10,08.09.10>> Gemeente van inschrijving
 Bewerking:: Afleiden
 Lengte:: {empty}
 Type:: JSON-object

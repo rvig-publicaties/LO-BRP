@@ -5967,18 +5967,21 @@ Een afnemer kan gebruik maken van verschillende taaksystemen, die elk hun eigen 
 
 De BRP API Gebeurtenissen beschikt daarom over de volgende functies:
 
-* Registreer een abonnee van een afnemer (paragraaf 5.3.15.2)
-* Raadpleeg de abonnees van de afnemer (paragraaf 5.3.15.3)
-* Ongedaan maken van een bestaande abonneeregistratie, inclusief alle abonnementen van de abonnee (paragraaf 5.3.15.4)
-* Voeg een groep toe aan een geregistreerde abonnee (paragraaf 5.3.15.5)
-* Raadpleeg de groepen van de abonnee (paragraaf 5.3.15.6)
-* Verwijder een groep, inclusief alle abonnementen op de groep (paragraaf 5.3.15.7)
-* Voeg een gebeurtenistype toe aan een groep van een abonnee (paragraaf 5.3.15.8)
-* Raadpleeg de gebeurtenistypes in de groep (paragraaf 5.3.15.9)
-* Verwijder een gebeurtenistype uit een groep (paragraaf 5.3.15.10)
-* Neem een abonnement voor een abonnee op een groep gebeurtenissen voor een bepaalde persoon of zeg een abonnement op (paragraaf 5.3.15.11)
-* Raadpleeg de abonnementen van een abonnee (paragraaf 5.3.15.12)
-* Haal gebeurtenissen op voor een abonnee (paragraaf 5.3.15.13)
+* Registreer een abonnee van een afnemer <<_post_basis_urlabonnees>>
+* Raadpleeg de abonnees van de afnemer <<_get_basis_url_abonnees>>
+* Ongedaan maken van een bestaande abonneeregistratie, inclusief alle abonnementen van de abonnee <<_delete_basis_url_abonnees_abonneenaam>>
+* Voeg een groep toe aan een geregistreerde abonnee <<_post_basis_url_abonnees_abonneenaam_groepen>>
+* Raadpleeg de groepen van de abonnee <<_get_basis_url_abonnees_abonneeNaam_groepen>>
+* Verwijder een groep, inclusief alle abonnementen op de groep <<_delete_basis_url_abonnees_abonneenaam_groepen_groepnaam>>
+* Voeg een gebeurtenistype toe aan een groep van een abonnee <<_post_basis_url_abonnees_abonneenaam_groepen_groepnaam_gebeurtenistypes>>
+* Raadpleeg de gebeurtenistypes in de groep
+<<_get_basis_url_abonnees_abonneenaam_groepen_groepnaam>> gebeurtenistypes
+* Verwijder een gebeurtenistype uit een groep <<_delete_basis_url_ abonnees_abonneeNaam_groepen_groepNaam_gebeurtenistypes_gebeurtenistype>>
+* Neem een abonnement voor een abonnee op een groep gebeurtenissen voor een bepaalde persoon of zeg een abonnement op<<_post_basis_url_abonnees_abonneenaam_abonnementen>>
+* Raadpleeg de abonnementen van een abonnee
+<<_get_basis_url_abonnees_abonneenaam_abonnementen>>
+* Haal gebeurtenissen op voor een abonnee
+<<_get_basis_url_abonnees_abonneenaam_gebeurtenissen>>
 
 De volgende gebeurtenistypen worden ondersteund:
 
