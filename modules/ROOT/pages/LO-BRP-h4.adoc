@@ -5115,7 +5115,7 @@ Opsomming van de categorieën van afgeleide gegevens:
 [horizontal,labelwidth=20,itemwidth=80]
 Aanduiding:: Naam
 <<cax,AX>>:: Bewoning op een adres
-<<cgx,GX>>:: Gebeurtenissen
+<<cgx,GX>>:: Gebeurtenis
 <<cpa-ph-px,PA/PH/PX>>:: Persoon
 
 ifdef::backend-pdf[<<<]
@@ -5129,6 +5129,19 @@ Toelichting:: Informatie over de bewoning op een adres in een periode
 Groepsopsomming::
 [horizontal,labelwidth=10,itemwidth=90]
 <<gbw,BW>>:::: Bewoning
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+[#cgx]
+[horizontal,labelwidth=35,itemwidth=65]
+Categorieaanduiding:: GX
+Categorienaam:: Gebeurtenis
+Toelichting:: Informatie over een gebeurtenis op een persoonslijst
+Groepsopsomming::
+[horizontal,labelwidth=10,itemwidth=90]
+<<gov,OV>>:::: Overleden
+<<gvh,VH>>:::: Verhuisd
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -5169,6 +5182,8 @@ Aanduiding:: Naam
 <<gnm,NM>>:: Naam
 <<gnt,NT>>:: Nationaliteit
 <<gou,OU>>:: Ouder
+<<gov,OV>>:: Overleden
+<<gvh,VH>>:: Verhuisd
 <<gvp,VP>>:: Verblijfplaats
 
 ifdef::backend-pdf[<<<]
@@ -5310,6 +5325,20 @@ Elementopsomming::
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
+[#gvh]
+[horizontal,labelwidth=35,itemwidth=65]
+Groepaanduiding:: VH
+Groepnaam:: Verhuisd
+Toelichting:: Gebeurtenissen die te maken hebben met een verhuizing 
+Soort:: Afgeleide gegevens
+Elementopsomming::
+[horizontal,labelwidth=10,itemwidth=90]
+<<eVH01,VH.01>>::: Verhuisd naar het buitenland
+<<eVH02,VH.02>>::: Verhuisd intergemeentelijk
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
 [#gvp]
 [horizontal,labelwidth=35,itemwidth=65]
 Groepaanduiding:: VP
@@ -5350,6 +5379,9 @@ Aanduiding:: Naam
 <<eNM06,NM.06>>:: Naamgebruik in lopende tekst
 <<eNT01,NT.01>>:: Type nationaliteit
 <<eOU01,OU.01>>:: Voorletters ouder
+<<eOV01,OV.01>>:: Overleden
+<<eVH01,VH.01>>:: Verhuisd naar het buitenland
+<<eVH02,VH.02>>:: Verhuisd intergemeentelijk
 <<eVP01,VP.01>>:: Begindatum adreshouding
 <<eVP02,VP.02>>:: Type verblijfplaats
 <<eVP03,VP.03>>:: Adresregel 1
@@ -5811,6 +5843,73 @@ Bewerking:: Afleiden
 Lengte:: 1-40
 Type:: Alfanumeriek
 Mogelijke waarden:: {empty}
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
+
+[#eOV01]
+[horizontal,labelwidth=35,itemwidth=65]
+Elementaanduiding:: OV.01
+Elementnaam:: Overleden
+Toelichting:: Gebeurtenis die aangeeft dat de persoon is overleden. 
+Afgeleid van::
+* <<e6720,07.67.20>> Omschrijving reden opschorting bijhouding
+Bewerking:: Afleiden
+Lengte:: {empty}
+Type:: JSON-object
+Mogelijke waarden:: {empty}
+
+[width="100%",cols="3%,3%,31%,10%,50%",options="header",]
+|===
+3+|Element naam|Type |Mogelijke waarden / corresponderende rubriek in BRP-V
+3+|data |object |<<eGX01,GX.OV.01>> Overleden
+| 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer
+| 2+|overlijden |object |
+| | |datum |date |<<e0810,06.08.10>> Datum overlijden 
+|===
+
+[#eVH01]
+[horizontal,labelwidth=35,itemwidth=65]
+Elementaanduiding:: VH.01
+Elementnaam:: Verhuisd naar het buitenland
+Toelichting:: Gebeurtenis die aangeeft dat de persoon is geëmigreerd.
+Afgeleid van::
+* <<e6720,07.67.20>> Omschrijving reden opschorting bijhouding
+* <<13.20,08.13.20>> Datum aanvang adres buitenland
+Bewerking:: Afleiden
+Lengte:: {empty}
+Type:: JSON-object
+Mogelijke waarden:: {empty}
+
+[width="100%",cols="3%,3%,31%,10%,50%",options="header",]
+|===
+3+|Element naam|Type |Mogelijke waarden / corresponderende rubriek in BRP-V
+3+|data |object |<<eGX01,GX.VH.01>> Verhuisd naar het buitenland
+| 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer
+| 2+|verblijfplaats |object |
+| | |datumVan |date |<<e13.20,08.13.20>> Datum aanvang adres buitenland
+|===
+[#eVH01]
+[horizontal,labelwidth=35,itemwidth=65]
+Elementaanduiding:: VH.02
+Elementnaam:: Verhuisd intergemeentelijk
+Toelichting:: Gebeurtenis die aangeeft dat de persoon naar een andere gemeente is verhuisd.
+Afgeleid van::
+* <<e09.10,08.09.10>> Gemeente van inschrijving
+
+Bewerking:: Afleiden
+Lengte:: {empty}
+Type:: JSON-object
+Mogelijke waarden:: {empty}
+
+[width="100%",cols="3%,3%,31%,10%,50%",options="header",]
+|===
+3+|Element naam|Type |Mogelijke waarden / corresponderende rubriek in BRP-V
+3+|data |object |<<eGX01,GX.VH.02>> Verhuisd intergemeentelijk
+| 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer
+| 2+|verblijfplaats |object |
+| | |datumVan |date |<<e10.30,08.10.30>> Datum aanvang adres buitenland
+|===
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']

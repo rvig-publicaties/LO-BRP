@@ -5957,6 +5957,290 @@ Verstrekking van persoonsgegevens via het endpoint /verblijfplaatshistorie in de
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
+==== BRP API Gebeurtenissen
+
+===== Beschrijving
+
+De BRP API gebeurtenissen is een API die mutaties op een persoonslijst in de BRP vertaalt naar gebeurtenissen. Geautoriseerde afnemers kunnen deze gebeurtenissen bevragen om hun processen en dienstverlening hierop te baseren. Afnemers kunnen zich abonneren op specifieke gebeurtenissen van personen die relevant zijn voor hun dienstverlening. Wanneer een gebeurtenis zich voordoet op een persoonslijst en een afnemer heeft zich op dat type gebeurtenis geabonneerd, dan krijgt hij die gebeurtenis toegestuurd.
+
+Een afnemer kan gebruik maken van verschillende taaksystemen, die elk hun eigen typen gebeurtenissen nodig hebben. Daarom kan een afnemer één of meer abonnees registreren. Voor elke abonnee kan de afnemer één of meer groepen van gebeurtenistypen registreren. 
+
+De BRP API Gebeurtenissen beschikt daarom over de volgende functies:
+
+* Registreer een abonnee van een afnemer (paragraaf 5.3.15.2)
+* Raadpleeg de abonnees van de afnemer (paragraaf 5.3.15.3)
+* Ongedaan maken van een bestaande abonneeregistratie, inclusief alle abonnementen van de abonnee (paragraaf 5.3.15.4)
+* Voeg een groep toe aan een geregistreerde abonnee (paragraaf 5.3.15.5)
+* Raadpleeg de groepen van de abonnee (paragraaf 5.3.15.6)
+* Verwijder een groep, inclusief alle abonnementen op de groep (paragraaf 5.3.15.7)
+* Voeg een gebeurtenistype toe aan een groep van een abonnee (paragraaf 5.3.15.8)
+* Raadpleeg de gebeurtenistypes in de groep (paragraaf 5.3.15.9)
+* Verwijder een gebeurtenistype uit een groep (paragraaf 5.3.15.10)
+* Neem een abonnement voor een abonnee op een groep gebeurtenissen voor een bepaalde persoon of zeg een abonnement op (paragraaf 5.3.15.11)
+* Raadpleeg de abonnementen van een abonnee (paragraaf 5.3.15.12)
+* Haal gebeurtenissen op voor een abonnee (paragraaf 5.3.15.13)
+
+De volgende gebeurtenistypen worden ondersteund:
+
+* nl.brp.overleden
+* nl.brp.verhuisd.intergemeentelijk
+* nl.brp.verhuisd.naar-buitenland
+
+Voor gedetailleerde functionele en technische specificaties van de BRP API Gebeurtenissen, zie de website van RvIG.
+
+===== POST {basis_url}/abonnees
+Met dit endpoint is het mogelijk om een nieuwe abonnee te registreren.
+
+URI: {basis_url}/abonnees
+Method: POST
+
+====== Input
+De input is een JSON-object waarin de volgende elementen kunnen voorkomen.
+[.center,width="99%" ,cols="35%,10%,12%,42%a",options="header",]
+|===
+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
+|naam |string |ja |De naam van de abonnee. Moet voldoen aan de volgende criteria:
+
+* bevat alleen kleine letters (a-z), cijfers (0-9) en koppeltekens (-)
+* bevat geen dubbele koppeltekens achter elkaar (--)
+* bevat minimaal 2 en maximaal 64 tekens
+* begint en eindigt niet met een koppelteken (-)
+|===
+
+====== Output
+Bij een succesvolle registratie bestaat de output uitsluitend uit een HTTP respons code 201. Er wordt geen JSON-object meegestuurd. 
+
+===== GET {basis_url}/abonnees
+Met dit endpoint is het mogelijk om een lijst van alle abonnees van de afnemer op te halen.
+
+URI: {basis_url}/abonnees
+
+Method: GET
+
+====== Input
+Geen input JSON 
+
+====== Output
+De output is een JSON-object met de abonnees van de afnemer.
+
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
+|===
+3+|Element naam |Type |Mogelijke waarden 
+3+|abonnees |array of objects |Lijst van abonnees van de afnemer.
+| 2+|naam |string |De naam van de abonnee, uniek voor een afnemer
+|===
+
+===== DELETE {basis_url}/abonnees/{abonneeNaam}
+Met dit endpoint is het mogelijk om de bestaande abonneeregistratie, inclusief alle abonnementen van de abonnee, te verwijderen.
+
+URI: {basis_url}/abonnees/{abonneeNaam}
+Method: DELETE
+
+Waarin {abonneeNaam} de naam van de abonnee is.
+
+====== Input
+Naast de path parameter abonneeNaam is er geen andere input om mee te geven.
+
+====== Output
+Bij een succesvolle registratie bestaat de output uitsluitend uit een HTTP respons code 204. Er wordt geen JSON-object meegestuurd.
+
+===== POST {basis_url}/abonnees/{abonneeNaam}/groepen
+Met dit endpoint is het mogelijk om een groep toe te voegen aan een geregistreerde abonnee.
+
+URI: {basis_url}/abonnees/{abonneeNaam}/groepen 
+Method: POST
+
+Waarin {abonneeNaam} de naam van de abonnee is.
+
+====== Input
+
+[.center,width="99%",cols="35%,10%,12%,42%a",options="header",]
+|===
+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
+|naam |string |ja |De naam van de abonnee. Moet voldoen aan de volgende criteria:
+
+* bevat alleen kleine letters (a-z), cijfers (0-9) en koppeltekens (-)
+* bevat geen dubbele koppeltekens achter elkaar (--)
+* bevat minimaal 2 en maximaal 64 tekens
+* begint en eindigt niet met een koppelteken (-)
+|===
+
+====== Output
+Bij een succesvolle registratie bestaat de output uitsluitend uit een HTTP respons code 201. Er wordt geen JSON-object meegestuurd.
+
+===== GET {basis_url}/abonnees/{abonneeNaam}/groepen
+Met dit endpoint is het mogelijk om de groepen van een abonnee te raadplegen.
+
+URI: {basis_url}/abonnees/{abonneeNaam}/groepen
+Method: GET
+
+Waarin {abonneeNaam} de naam van de abonnee is.
+
+====== Input
+Naast de path parameter abonneeNaam is er geen andere input om mee te geven.
+
+====== Output
+Bij een succesvolle raadpleging bestaat de output uit een HTTP respons code 200 en een JSON-object met daarin de volgende elementen:
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
+|===
+3+|Element naam |Type |Mogelijke waarden 
+3+|groepen |array of objects |Lijst van groepen van de abonnee.
+| 2+|naam |string |De naam van de groep
+|===
+
+===== DELETE {basis_url}/abonnees/{abonneenaam}/groepen/{groepNaam}
+Met dit endpoint is het mogelijk om een groep, inclusief alle abonnementen op die groep, te verwijderen.
+
+URI: {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam} 
+Method: DELETE
+
+Waarin {abonneeNaam} de naam van de abonnee is en {groepNaam} de naam van de te verwijderen groep.
+
+====== Input
+
+Naast de path parameters abonneeNaam en groepNaam is er geen andere input om mee te geven.
+
+====== Output
+
+Bij een succesvolle verwijdering bestaat de output uitsluitend uit een HTTP respons code 204. Er wordt geen JSON-object meegestuurd.
+
+===== POST {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/ gebeurtenistypes
+Met dit endpoint is het mogelijk om een gebeurtenistype toe te voegen aan een groep van een abonnee.Dit betekent dat het gebeurtenistype ook wordt toegevoegd aan alle bestaande abonnementen op de groep.
+
+URI: {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes 
+Method: POST
+
+Waarin {abonneeNaam} de naam van de abonnee is en {groepNaam} de naam van de groep.
+
+====== Input
+De input is een JSON-object waarin de volgende elementen kunnen voorkomen.
+[.center,width="99%" ,cols="35%,10%,12%,42%a",options="header",]
+|===
+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
+|gebeurtenistype |array of strings |ja |Eén van de gebeurtenistypen die zijn opgesomd in par. 5.3.16.1
+|===
+
+====== Output
+Bij een succesvolle registratie bestaat de output uitsluitend uit een HTTP respons code 201. Er wordt geen JSON-object meegestuurd.
+
+===== GET {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/ gebeurtenistypes
+Met dit endpoint is het mogelijk om alle gebeurtenistypen in een groep te raadplegen.
+
+URI: {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes
+Method: GET
+
+Waarin {abonneeNaam} de naam van de abonnee is en {groepNaam} de naam van de groep.
+
+====== Input
+Naast de path parameters abonneeNaam en groepNaam is er geen andere input om mee te geven.
+
+====== Output
+Bij een succesvolle raadpleging bestaat de output uit een HTTP respons code 200 en een JSON-object met daarin de volgende elementen.
+
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
+|===
+3+|Element naam |Type |Mogelijke waarden 
+3+|gebeurtenistypes |string |Eén van de gebeurtenistypen die zijn opgesomd in par. 5.3.16.1
+|===
+
+===== DELETE {basis_url}/ abonnees/{abonneeNaam}/groepen/{groepNaam}/ gebeurtenistypes/{gebeurtenistype}
+Met dit endpoint is het mogelijk om een gebeurtenistype te verwijderen uit een groep.
+
+URI: {basis_url}/ abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes/{gebeurtenistype}
+Method: DELETE
+
+Waarin {abonneeNaam} de naam van de abonnee is, {groepNaam} de naam van de groep en {gebeurtenistype} het type van de gebeurtenis dat moet worden verwijderd.
+
+====== Input
+Naast de path parameters abonneeNaam, groepNaam en gebeurtenistype is er geen andere input om mee te geven.
+
+====== Output
+Bij een succesvolle verwijdering bestaat de output uitsluitend uit een HTTP respons code 204. Er wordt geen JSON-object meegestuurd.
+
+===== POST {basis_url}/abonnees/{abonneeNaam}/abonnementen
+Met dit endpoint is het mogelijk om een abonnement te nemen of een abonnement op te zeggen.
+
+URI: {basis_url} /abonnees/{abonneeNaam}/abonnementen
+Method: POST
+
+Waarin {abonneeNaam} de naam van de abonnee is.
+
+[.center,width="99%" ,cols="35%,10%,12%,42%a",options="header",]
+|===
+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
+|type |string |ja |“AbonneerPersoonOpGroep” / “ZegOpAbonnementVanPersoonOpGroep”
+|groep |string |ja |De groep waarop de abonnee de persoon wil abonneren of het abonnement op wil zeggen.
+|burgerservicenummer |string |ja |Het burgerservicenummer (BSN) van de persoon waarvoor de abonnee gebeurtenissen wil ontvangen of het abonnement op wil zeggen.
+|===
+
+====== Output
+Bij een succesvolle plaatsing van een abonnement bestaat de output uitsluitend uit een HTTP respons code 201. Bij een succesvolle beëindiging van een abonnement is dat respons code 204. Er wordt geen JSON-object meegestuurd.
+
+===== GET {basis_url}/abonnees/{abonneeNaam}/abonnementen
+
+Met dit endpoint  is het mogelijk om de lijst van abonnementen van een abonnee te raadplegen.
+URI: {basis_url}abonnees/{abonneeNaam}/abonnementen
+Method: GET
+
+Waarin {abonneeNaam} de naam van de abonnee is.
+
+====== Input
+Naast de path parameter abonneeNaam kunnen de volgende twee query parameters worden meegegeven.
+
+[.center,width="99%" ,cols="35%,10%,12%,42%a",options="header",]
+|===
+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
+|cursor |string (uuid) |ja |Gebruik dit voor paginering. Vul hier de id van het laatst ontvangen abonnement op om de hieropvolgende abonnementen te ontvangen.
+|limit |string |ja |Geef hier het maximaal aantal abonnementen op dat je per request wilt ontvangen. De minimale waarde is 1 en de maximale 100. Als de parameter ontbreekt wordt de maximale waarde gebruikt.
+|===
+
+====== Output
+Bij een succesvolle raadpleging bestaat de output uit een HTTP respons code 200 en een JSON-object met daarin de volgende elementen.
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
+|===
+3+|Element naam |Type |Mogelijke waarden 
+3+|abonnementen |array of objects |Lijst van abonnementen van de abonnee.
+| 2+|id |string |Unieke identifier van het abonnement
+| 2+|groep |string |De groep met gebeurtenistypes waarop de abonnee een abonnement heeft voor de persoon
+| 2+|burgerservicenummer |string |Het burgerservicenummer (BSN) van de persoon waarvoor de abonnee gebeurtenissen ontvangt
+|===
+
+===== GET {basis_url}/abonnees/{abonneeNaam}/gebeurtenissen
+Met dit endpoint is het mogelijk om (ongelezen) gebeurtenissen op te vragen.
+URI: {basis_url}/abonnees/{abonneeNaam}/gebeurtenissen
+Method: GET
+
+Waarin {abonneeNaam} de naam van de abonnee is.
+
+====== Input
+Naast de path parameter abonneeNaam is er geen andere input om mee te geven.
+
+====== Output
+
+[width="100%",cols="3%,3%,34%,10%,50%",options="header",]
+|===
+3+|Element naam |Type |Mogelijke waarden 
+3+|gebeurtenissen |array of objects |Lijst van abonnementen van de abonnee.
+| 2+|id |string |Een unieke code, tekst of nummer die specifiek bedoeld is om de specifieke gebeurtenis te herkennen
+| 2+|source  |string |Het geeft aan welk systeem, welke service of welke applicatie de gebeurtenis heeft veroorzaakt.
+| 2+|specversion |string |Het definieert welke versie van de CloudEvents-architectuur wordt gebruikt
+| 2+|type |string |Type gebeurtenis
+| 2+|data |object |Zie onderstaande tabel
+|===
+
+De inhoud van het element data hangt af van de waarde van type:
+[width="100%",cols="50%,50%",options="header",]
+|===
+|type |data
+|nl.brp.overleden |<<eOV01,GX.OV.01>> Overleden
+|nl.brp.verhuisd.intergemeentelijk |<<eVH01,GX.VH.01>> Verhuisd intergemeentelijk 
+|nl.brp.verhuisd.naar-buitenland |<<eVH02,GX.VH.02>> Verhuisd naar het buitenland 
+|===
+
+====== Protocollering
+Wanneer een afnemer een gebeurtenis opvraagt, wordt de verstrekking van die gebeurtenis geprotocolleerd, alsmede de gegevens die in de data van die gebeurtenis zijn verstrekt. Bij de gebeurtenis Overleden is dat dus <<eOV01,GX.OV.01>> Overleden en de datum van overlijden: <<e0810,06.08.10>> Datum overlijden.
+
+
 ==== BRP Protocolleringsoverzicht API
 
 ===== Beschrijving
