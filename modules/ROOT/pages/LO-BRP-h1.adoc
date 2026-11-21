@@ -21,7 +21,7 @@ Van het Logisch Ontwerp BRP verschijnt in principe vier keer per jaar een nieuwe
 |===
 ** m het volgnummer van een eventuele tussentijdse release is, met dien verstande dat het volgnummer 0 van een hoofdrelease wordt weggelaten.
 +
-* Versiedatum: dd ++<++maand++>++ jjjj.
+* Versiedatum: dd <maand> jjjj.
 
 Naast dit Logisch Ontwerp BRP zijn er ook landelijke tabellen. Deze worden in dit Logisch Ontwerp BRP gedefinieerd, maar de inhoud van die tabellen maakt geen deel uit van dit Logisch Ontwerp BRP.
 
@@ -114,6 +114,8 @@ De stelselarchitectuur bestaat uit de volgende componenten die aan de berichtend
 * Afnemersystemen. Dit zijn systemen van afnemers die zijn aangesloten op een of meer centrale componenten;
 * Aangewezen BestuursOrganen (ABO's). Dit zijn organisaties die worden aangewezen in artikel 31, Besluit BRP, vanwege een taak in de bijhouding van de gegevens van niet-ingezetenen;
 * IND, de Immigratie- en Naturalisatiedienst. De IND is in het stelsel opgenomen in verband met de aanlevering van verblijfstitelgegevens;
+* Rvdr, de Raad voor de rechtspraak. Bij de Rvdr is het Centraal Gezagsregister
+ondergebracht, van waaruit uitspraken omtrent het gezag worden aangeleverd;
 * RvIG, Rijksdienst voor Identiteitsgegevens. RvIG verstuurt berichten in verband met de bijhouding van de landelijke tabellen en in verband met paspoortsignaleringen;
 * BRP-Verstrekkingsvoorziening (BRP-V). Dit is het onderdeel van de centrale voorzieningen, dat de verstrekkingen van BRP-gegevens aan afnemers verzorgt;
 * Berichtendienst. Dit is de centrale voorziening die de uitwisseling van gegevens tussen partijen via een op mailboxen gebaseerde berichtendienst mogelijk maakt;

@@ -30,39 +30,39 @@ Vooruitgeschoven tov LO 2: gemeentelijke ID-kaart, proc gem herindeling, geen A-
 |2.2 |01-11-1995 |Betreft toevoegen optionele berichtencyclus 'Opnemen/wijzigen verblijfstitel'
 |2.3 |18-10-1996 |Terugwerkend tot 01-01-1996 +
 Betreft bijstelling procedures infrastructurele wijzigingen en uitbreiding van het aantal netwerken voor het GBA-berichtenverkeer
-|2.4 |01-01-1998 |Toevoeging geregistreerd partnerschap {plus} verwijderen categorie 15 {plus} naamgebruik voor mannen {plus} akte van naamskeuze voor kinderen {plus} vervallen Datanet-1 als toegestaan transportnetwerk (LO 2.4)
+|2.4 |01-01-1998 |Toevoeging geregistreerd partnerschap + verwijderen categorie 15 + naamgebruik voor mannen + akte van naamskeuze voor kinderen + vervallen Datanet-1 als toegestaan transportnetwerk (LO 2.4)
 |2.4a |01-07-1998 |Betreft verplichting tot geautomatiseerd opnemen en wijzigen van verblijfstitels i.v.m. de invoering van de Koppelingswet
 |2.5 |12-04-1999 |Terugwerkend tot 01-01-1999
 Betreft aanpassing i.v.m. wijziging van de Kieswet betreffende het registreren van verzoekers niet-Nederlanders om te kunnen stemmen voor het Europees parlement
-|3.0 |01-02-2001 |Openstelling burgerlijk huwelijk voor partners van gelijk geslacht {plus} Adoptie door partners van gelijk geslacht {plus} Afstammingsrecht {plus} Ingangsdatum verblijfstitel {plus} Toevallige gebeurtenissen {plus} Uitbreiding Tb01-bericht {plus} Uitbreiding identificatiemogelijkheden bij de ad hoc adresvraag {plus} Verstrekken van rubriek 07.70.10 "Indicatie geheim" {plus} Berichtencyclus voor foutherstel {plus} Afvoeren PL in geval van een persoon met meerdere A-nummers {plus} geslacht onbekende ouders op basis van toepasselijk recht
+|3.0 |01-02-2001 |Openstelling burgerlijk huwelijk voor partners van gelijk geslacht + Adoptie door partners van gelijk geslacht + Afstammingsrecht + Ingangsdatum verblijfstitel + Toevallige gebeurtenissen + Uitbreiding Tb01-bericht + Uitbreiding identificatiemogelijkheden bij de ad hoc adresvraag + Verstrekken van rubriek 07.70.10 "Indicatie geheim" + Berichtencyclus voor foutherstel + Afvoeren PL in geval van een persoon met meerdere A-nummers + geslacht onbekende ouders op basis van toepasselijk recht
 | |01-09-2001 |Overnemen gegevens van PIVA-PL dan wel GBA bij verhuizingen van en naar het Caribisch deel van het Koninkrijk (alleen in LO PGK en HUP)
 |3.1 |26-05-2004 |Terugwerkend tot 01-01-2003
 Betreft ingebruikneming nieuw datacommunicatieprotocol TCP/IP in plaats van X.25
 |3.2 |01-02-2004 |Betreft het verstrekken aan afnemers van gegevens betreffende een onderzoek en het van rechtswege vervallen van de gegevens over het verblijfsrecht bij het verkrijgen van de Nederlandse nationaliteit en de invoering van de Landelijk Raadpleegbare Deelverzameling.
-|3.3 |01-10-2005 |GBA- V {plus} overgang van X.25 naar TCP/IP {plus} Infrastructurele wijzigingen op (al dan niet opgeschorte) PL-en
+|3.3 |01-10-2005 |GBA- V + overgang van X.25 naar TCP/IP + Infrastructurele wijzigingen op (al dan niet opgeschorte) PL-en
 |3.4 |01-01-2007 |Bevat uitsluitend de wijziging BSN per 1 januari 2006. Dat is later achterhaald door de feiten (oa behandeling EK), waardoor dit LO is vervallen. BSN is ingevoerd met LO 3.6 (26 november 2007).
-|3.5 |01-04-2007 |Tweewaardigheid Indicatie geheim {plus} Bijzonder Nederlanderschap {plus} Synchroniciteit van GBA-V met gemeenten {plus} Verstrekken aan afnemers door GBA-V {plus} Speciale PL-situaties {plus} De Terugmeldvoorziening
-|3.6 |26-11-2007 |Burgerservicenummer {plus} vervallen verplichting om het Vestigingsregister te bevragen
-|3.7 |01-11-2009 |GBA aanpassen voor BAG {plus} Terugmeldvoorziening
+|3.5 |01-04-2007 |Tweewaardigheid Indicatie geheim + Bijzonder Nederlanderschap + Synchroniciteit van GBA-V met gemeenten + Verstrekken aan afnemers door GBA-V + Speciale PL-situaties + De Terugmeldvoorziening
+|3.6 |26-11-2007 |Burgerservicenummer + vervallen verplichting om het Vestigingsregister te bevragen
+|3.7 |01-11-2009 |GBA aanpassen voor BAG + Terugmeldvoorziening
 |3.8 |01-10-2012 |RNI, effectief per 6 januari 2014
-|3.9 |31-01-2015 |Conversie Nationaliteit ({plus} schrappen Lengte Houder en Bezit Buitenlands reisdocument)
+|3.9 |31-01-2015 |Conversie Nationaliteit (+ schrappen Lengte Houder en Bezit Buitenlands reisdocument)
 | |01-06-2015 |vastleggen BPN in 04.82.30 (alleen in HUP)
-|3.10 |01-10-2016 |BPN {plus} Adressen o.b.v. NEN
+|3.10 |01-10-2016 |BPN + Adressen o.b.v. NEN
 |3.11 |03-02-2019 |Levenloos geboren kind
 |3.12 |01-07-2019 |TMV 2.0
-|3.13a |04-10-2020 |Gezagsverhouding in tabel 61 {plus} Vb02 voor berichtenverkeer via webservice
-|3.13.b |02-01-2022 |Tb02 i.v.m. overlijden naar RNI {plus} aanpassing omissie recht op overschrijven na geslachtswijzing
-|3.14 |02-01-2022 |Dubbelloop {plus} Documentindicatie {plus} Adellijke titel/predicaat {plus} A-nummervoorraad {plus} Italiaans persoonsnummer {plus} Wachtwoorden regels
+|3.13a |04-10-2020 |Gezagsverhouding in tabel 61 + Vb02 voor berichtenverkeer via webservice
+|3.13.b |02-01-2022 |Tb02 i.v.m. overlijden naar RNI + aanpassing omissie recht op overschrijven na geslachtswijzing
+|3.14 |02-01-2022 |Dubbelloop + Documentindicatie + Adellijke titel/predicaat + A-nummervoorraad + Italiaans persoonsnummer + Wachtwoorden regels
 |4.0 |01-04-2022 |Samenvoeging LO GBA (LO 3.14) en LO RNI 2.15 tot LO BRP 4.0.0, zonder inhoudelijke wijzigingen
-|4.1 |22-10-2022 |Bereikbaarheidsgegevens arbeidsmigranten {plus} beperken recht op overschrijven gegevens na adoptie {plus} tabelberichten via StuurGBAbericht
-|4.2 |01-01-2023 |Ad hoc adresvraag ook op tijdelijk verblijfadres {plus} Haal Centraal API's fase I (Personen)
+|4.1 |22-10-2022 |Bereikbaarheidsgegevens arbeidsmigranten + beperken recht op overschrijven gegevens na adoptie + tabelberichten via StuurGBAbericht
+|4.2 |01-01-2023 |Ad hoc adresvraag ook op tijdelijk verblijfadres + Haal Centraal API's fase I (Personen)
 |4.3 |15-05-2023 |LAA in Wet BRP
-|4.4 |15-07-2023 |Volledige registratie EU-kiesrechtgegevens {plus} BRP API's fase I-2 (Reisdocumenten)
-|4.5 |01-10-2023 |Melding aan medebewoner (Seintje) {plus} BRP API's fase I-3 (Bewoning)
+|4.4 |15-07-2023 |Volledige registratie EU-kiesrechtgegevens + BRP API's fase I-2 (Reisdocumenten)
+|4.5 |01-10-2023 |Melding aan medebewoner (Seintje) + BRP API's fase I-3 (Bewoning)
 |2024.Q1 |01-01-2024 |Vaste koppeling BAG-BRP
-|2024.Q2 |22-04-2024 |Oplossen verschillen kolomnamen landelijke tabellen {plus} BRP API Fase II {plus} Uitbreiden BRP API met informatie over gezag {plus} Aanvulling op W180 Oplossen verschillen BAG-BRP
-|2024.Q3 |01-07-2024 |Nieuw endpoint in BRP API (verblijfplaatshistorie) {plus} Verbetering spontane verstrekking afgevoerde PL'en {plus} Nieuwe zoekingang in endpoint /personen in BRP API
-|2025.Q1 |01-01-2025 |LO Beveiligingseisen conform IB-richtlijnen {plus} Slimmer zoeken in BRP-V {plus} Groepsgewijze autorisatie informatievragen {plus} Versoepelen regels afsplitsen voorvoegsels {plus} Uitbreiden syntax voorwaardenregels
+|2024.Q2 |22-04-2024 |Oplossen verschillen kolomnamen landelijke tabellen + BRP API Fase II + Uitbreiden BRP API met informatie over gezag + Aanvulling op W180 Oplossen verschillen BAG-BRP
+|2024.Q3 |01-07-2024 |Nieuw endpoint in BRP API (verblijfplaatshistorie) + Verbetering spontane verstrekking afgevoerde PL'en + Nieuwe zoekingang in endpoint /personen in BRP API
+|2025.Q1 |01-01-2025 |LO Beveiligingseisen conform IB-richtlijnen + Slimmer zoeken in BRP-V + Groepsgewijze autorisatie informatievragen + Versoepelen regels afsplitsen voorvoegsels + Uitbreiden syntax voorwaardenregels
 |2025.Q2 |01-04-2025 |Aanpassingen aan BRP API + afschaffen fysieke gegevensdragers als alternatief medium
 |2025.Q3 |01-07-2025 |Uitfaseren mailboxserver fase I (BRP Berichten API), Uitbreiden tabel 34, BRP Tabellen API, 2e Aanvulling op W180 Oplossen verschillen BAG-BRP en Afschermen gegevens gerelateerden in Ad hoc webservice voor Mijn Overheid
 |===
@@ -607,7 +607,7 @@ De door BPR aangemaakte transponeringstabel wordt aan elke gemeente geleverd via
 [.center,width="80%" ,cols="30%,10%,60%",options="header",]
 |===
 |Veld |Lengte |Betekenis/inhoud
-|Padding Characters |27 |27 Asterisks '++*++' (Teletex code 2A)
+|Padding Characters |27 |27 Asterisks '*' (Teletex code 2A)
 |Afsluitkarakter |1 |Teletex code 0D (Carriage Return)
 |===
 
@@ -1078,13 +1078,13 @@ Voor alle niet geblokkeerde PL'en waarop in categorie 04/54 een 04/54.05.10 voor
 * 0028 Tsjechische
 * 0080 Zweedse
 
-EN er een 04/54.82.30 voorkomt in hetzelfde categorievoorkomen, waarin rechte haken ++[++ en ++]++ in deze volgorde voorkomen. Als er meerdere 82.30 in één stapel voorkomen, waarvoor dit geldt, is dit uitsluitend van toepassing op de actuele categorie 04 of – als het daar niet van toepassing is – de meest recente historische categorie 54.
+EN er een 04/54.82.30 voorkomt in hetzelfde categorievoorkomen, waarin rechte haken [ en ] in deze volgorde voorkomen. Als er meerdere 82.30 in één stapel voorkomen, waarvoor dit geldt, is dit uitsluitend van toepassing op de actuele categorie 04 of – als het daar niet van toepassing is – de meest recente historische categorie 54.
 
 WORDT:
 
-. De string tussen de rechte haken gecontroleerd op het voorkomen van uitsluitend cijfers (0..9, HEX: 30..39), hoofdletters (A..Z, HEX: 41..5A), kleine letters (a..z, HEX: 61..7A), een beperkt aantal speciale tekens ( (space, HEX: 20), {plus} (plus sign, HEX: 2B), - (hyphen, HEX: 2D), . (period, HEX: 2E), / (solidus, HEX: 2F)). Indien er andere tekens voorkomen, dient deze PL op een uitvallijst te komen en vindt voor deze stapel geen verdere conversie plaats.
-. Vastgesteld dat de string tussen de rechte haken ++[++ en ++]++ met weglating van spaties aan het begin en einde van die string maximaal 15 karakters lang is. Indien de string langer is, dient deze PL op de uitvallijst te komen en vindt voor deze stapel geen verdere conversie plaats.
-. De string tussen de rechte haken ++[++ en ++]++ met weglating van de spaties aan het begin en einde van de string geplaatst in de nieuw te creëren rubriek 04/54.73.10 in hetzelfde categorievoorkomen. Daarbij worden de rechte haken ++[++ en ++]++, de daardoor ingesloten string en de spatie(s) voorafgaand aan de openingshaak ++[++ verwijderd uit de betreffende 04/54.82.30. Als na uitvoering van deze actie een lege 04/54.82.30 overblijft, wordt deze gevuld met . (period, HEX: 2E). 04/54.82.20 en 04/54.86.10 worden gevuld met de datum inwerkingtreding LO 3.10. 04/54.82.10 wordt gevuld met de code van de gemeente/RNI die de conversie uitvoert.
+. De string tussen de rechte haken gecontroleerd op het voorkomen van uitsluitend cijfers (0..9, HEX: 30..39), hoofdletters (A..Z, HEX: 41..5A), kleine letters (a..z, HEX: 61..7A), een beperkt aantal speciale tekens ( (space, HEX: 20), + (plus sign, HEX: 2B), - (hyphen, HEX: 2D), . (period, HEX: 2E), / (solidus, HEX: 2F)). Indien er andere tekens voorkomen, dient deze PL op een uitvallijst te komen en vindt voor deze stapel geen verdere conversie plaats.
+. Vastgesteld dat de string tussen de rechte haken [ en ] met weglating van spaties aan het begin en einde van die string maximaal 15 karakters lang is. Indien de string langer is, dient deze PL op de uitvallijst te komen en vindt voor deze stapel geen verdere conversie plaats.
+. De string tussen de rechte haken [ en ] met weglating van de spaties aan het begin en einde van de string geplaatst in de nieuw te creëren rubriek 04/54.73.10 in hetzelfde categorievoorkomen. Daarbij worden de rechte haken [ en ], de daardoor ingesloten string en de spatie(s) voorafgaand aan de openingshaak [ verwijderd uit de betreffende 04/54.82.30. Als na uitvoering van deze actie een lege 04/54.82.30 overblijft, wordt deze gevuld met . (period, HEX: 2E). 04/54.82.20 en 04/54.86.10 worden gevuld met de datum inwerkingtreding LO 3.10. 04/54.82.10 wordt gevuld met de code van de gemeente/RNI die de conversie uitvoert.
 
 Indien stap 3 hierboven één of meer keer op een PL is uitgevoerd, leidt dit eenmalig tot wijziging van de datumtijdstempel (element 80.20) en het versienummer (element 80.10).
 
@@ -1116,9 +1116,9 @@ ifdef::backend-html5[''']
 
 ****
 08.11.10 Straatnaam +
-Voor gegevens opgenomen voor datum inwerkingtreding LO 3.10 wordt afgekort conform de specificaties van de BOCO-norm. Voor gegevens opgenomen op of na datum inwerkingtreding LO 3.10 wordt afgekort conform de specificaties van de NEN-5825 ++[++2002++]++ norm. +
-In verband met de overgang naar de NEN-5825 ++[++2002++]++ norm. +
-Indien de inhoud van element 11.15 Naam openbare ruimte langer is dan 24 posities, dient de gemeente voor actuele adressen vast te stellen of afkorting van de openbare ruimte volgens de NEN 5825 ++[++2002++]++ norm tot een andere schrijfwijze leidt dan afkorting volgens de BOCO-norm. Als dat het geval is, dient een infrastructurele wijziging te worden uitgevoerd, waarbij de volgens NEN 5825 ++[++2002++]++ ingekorte naam openbare ruimte wordt opgenomen in element 11.10 Straatnaam. Dit moet gebeuren voor alle PL'en die staan ingeschreven, dan wel briefadres hebben op een adres waarin in element 11.15 Naam openbare ruimte de naam van de betrokken openbare ruimte voorkomt. De gemeente heeft hiervoor zes maanden de tijd te rekenen vanaf de datum inwerkingtreding LO 3.10.
+Voor gegevens opgenomen voor datum inwerkingtreding LO 3.10 wordt afgekort conform de specificaties van de BOCO-norm. Voor gegevens opgenomen op of na datum inwerkingtreding LO 3.10 wordt afgekort conform de specificaties van de NEN-5825 [2002] norm. +
+In verband met de overgang naar de NEN-5825 [2002] norm. +
+Indien de inhoud van element 11.15 Naam openbare ruimte langer is dan 24 posities, dient de gemeente voor actuele adressen vast te stellen of afkorting van de openbare ruimte volgens de NEN 5825 [2002] norm tot een andere schrijfwijze leidt dan afkorting volgens de BOCO-norm. Als dat het geval is, dient een infrastructurele wijziging te worden uitgevoerd, waarbij de volgens NEN 5825 [2002] ingekorte naam openbare ruimte wordt opgenomen in element 11.10 Straatnaam. Dit moet gebeuren voor alle PL'en die staan ingeschreven, dan wel briefadres hebben op een adres waarin in element 11.15 Naam openbare ruimte de naam van de betrokken openbare ruimte voorkomt. De gemeente heeft hiervoor zes maanden de tijd te rekenen vanaf de datum inwerkingtreding LO 3.10.
 ****
 
 ifdef::backend-pdf[<<<]

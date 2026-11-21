@@ -821,16 +821,16 @@ Van alle sPd-operaties wordt in deze paragraaf aangegeven
 |===
 |Symbool |Betekenis
 |.... = .... |bestaat uit
-|.... {plus} .... |en
+|.... + .... |en
 |( .... ) |de items tussen haakjes zijn niet verplicht
-|++{++ .... } |de items tussen accolades kunnen herhaald voorkomen
-|++[++ .... {vbar} .... ++]++ |keuze: de items links óf de items rechts van de streep komen voor
+|{ .... } |de items tussen accolades kunnen herhaald voorkomen
+|[ .... {vbar} .... ] |keuze: de items links óf de items rechts van de streep komen voor
 |" ... " |item komt letterlijk voor in OperationRecord
 |++**++ .... ++**++ |De tekst tussen de sterretjes geeft commentaar aan
 |===
 
 *Algemene definities*::
-+
+
 [.center,width="100%",cols="30%,3%,67%a",frame=none,grid=none]
 |===
 |sPd protocol |= |++**++ sPd staat voor "Simple Pd". Het kan beschouwd worden als een tussenvorm tussen de echte Pd (P7) Protocol Data Unit en de binnen de applicatie gehanteerde formaten. Een interactie binnen sPd wordt geïnitieerd door een eindsysteem, dat een Operation met daarin een Request naar de Mailbox Server (MBS) stuurt. De MBS antwoordt eveneens met een Operation; afhankelijk van de gevraagde Operation en het resultaat van de verwerking in de MBS kan dat een Result of een Confirmation zijn. +
@@ -840,34 +840,34 @@ Iedere Operation bestaat uit één of meer OperationRecords; ieder OperationReco
 Iedere Operation moet afgesloten worden met een speciaal TerminationRecord, dat alleen een Length veld met daarin '00000' bevat. +
 
 Een Result of Confirmation kan foutmeldingen in de vorm van een code bevatten. Voor iedere Operation is een bepaald bereik aan foutcodes gereserveerd. Een compleet overzicht met toelichting is te vinden in <<_overzicht_foutcodes>>. ++**++
-|Operation |= |++{++OperationRecord++}++ {plus} TerminationRecord
-|OperationRecord |= |Length {plus} OperationCode {plus} ++{++OperationItems++}++
+|Operation |= |{OperationRecord} + TerminationRecord
+|OperationRecord |= |Length + OperationCode + {OperationItems}
 |OperationCode |= |++**++ Zie het commentaar in de tabel met Operations hieronder ++**++
 |OperationItems |= |++**++ worden gedefinieerd op de volgende pagina's ++**++
 |Operation |= |
 
 [width="100%",cols="<67%,3%,>30%",frame=none,grid=none]
 !===
-!++[++ LogonRequest!\| !++**++ 900 ++**++
-!LogonConfirmation!\| !++**++ 909 ++**++
-!LogoffRequest!\| !++**++ 990 ++**++
-!LogoffConfirmation!\| !++**++ 999 ++**++
-!PutMessage!\| !++**++ 120 -180 ++**++
-!PutMessageConfirmation!\| !++**++ 190 ++**++
-!GetMessage!\| !++**++ 200 ++**++
-!GetMessageResult!\| !++**++ 210 -280 ++**++
-!GetMessageConfirmation!\| !++**++ 290 ++**++
-!DeleteMessages!\| !++**++ 300 ++**++
-!DeleteMessagesConfirmation!\| !++**++ 309 ++**++
-!ListMessages!\| !++**++ 400 ++**++
-!ListMessagesResult!\| !++**++ 410 - 411 ++**++
-!ListMessagesConfirmation!\| !++**++ 419 ++**++
-!SummarizeMessages!\| !++**++ 500 ++**++
-!SummarizeResult!\| !++**++ 510 ++**++
-!SummarizeConfirmation!\| !++**++ 590 ++**++
-!ChangePasswordRequest!\| !++**++ 910 ++**++
-!ChangePasswordConfirmation!\| !++**++ 919 ++**++
-!NoOperationConfirmation++]++!\| !++**++ 009 ++**++
+![ LogonRequest !\| !++**++ 900 ++**++
+!LogonConfirmation !\| !++**++ 909 ++**++
+!LogoffRequest !\| !++**++ 990 ++**++
+!LogoffConfirmation !\| !++**++ 999 ++**++
+!PutMessage !\| !++**++ 120 -180 ++**++
+!PutMessageConfirmation !\| !++**++ 190 ++**++
+!GetMessage !\| !++**++ 200 ++**++
+!GetMessageResult !\| !++**++ 210 -280 ++**++
+!GetMessageConfirmation !\| !++**++ 290 ++**++
+!DeleteMessages !\| !++**++ 300 ++**++
+!DeleteMessagesConfirmation !\| !++**++ 309 ++**++
+!ListMessages !\| !++**++ 400 ++**++
+!ListMessagesResult !\| !++**++ 410 - 411 ++**++
+!ListMessagesConfirmation !\| !++**++ 419 ++**++
+!SummarizeMessages !\| !++**++ 500 ++**++
+!SummarizeResult !\| !++**++ 510 ++**++
+!SummarizeConfirmation !\| !++**++ 590 ++**++
+!ChangePasswordRequest !\| !++**++ 910 ++**++
+!ChangePasswordConfirmation !\| !++**++ 919 ++**++
+!NoOperationConfirmation] !\| !++**++ 009 ++**++
 !===
 
 |TerminationRecord |= |
@@ -887,8 +887,8 @@ Een Result of Confirmation kan foutmeldingen in de vorm van een code bevatten. V
 // alle tabellen met definities zo doen, met label en = teken in aparte kolommen!
 [.center,width="100%",cols="30%,3%,67%a",frame=none,grid=none]
 |===
-|LogonRequest |= |Length {plus} "900" {plus} UserName {plus} UserPassword
-|LogonConfirmation |= |Length {plus} "909" {plus} LogonResult {plus} (MessageEntryDTS {plus} SystemmanagerMessage)
+|LogonRequest |= |Length + "900" + UserName + UserPassword
+|LogonConfirmation |= |Length + "909" + LogonResult + (MessageEntryDTS + SystemmanagerMessage)
 |===
 
 *Structuur*::
@@ -907,29 +907,29 @@ image::image77.svg[width=435,height=194]
 +
 [.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
-|PutMessage |= |PutEnvelope {plus} |++**++ 120 ++**++ +
-|||MessageHeading {plus} |++**++ 150 ++**++ +
+|PutMessage |= |PutEnvelope + |++**++ 120 ++**++ +
+|||MessageHeading + |++**++ 150 ++**++ +
 |||MessageBody |++**++ 180 ++**++
-|PutEnvelope |= |Length {plus} "120" {plus} |
-|||( OriginatorORName ) {plus} |
-|||( ContentType ) {plus} |
-|||( Priority ) {plus} |
-|||( DeferredDeliveryTime ) {plus} |
+|PutEnvelope |= |Length + "120" + |
+|||( OriginatorORName ) + |
+|||( ContentType ) + |
+|||( Priority ) + |
+|||( DeferredDeliveryTime ) + |
 |||( Attention )|
-|MessageHeading |= |Length {plus} "150" {plus} |
-|||MessageId {plus} |++**++ Ref.nr 1 ++**++
-|||( CrossReference ) {plus} |++**++ Ref.nr 2 ++**++
-|||( OriginatorORName ) {plus} |
-|||NumberOfRecipients {plus} |
-|||++{++ RecipientORName {plus} |
-|||NotificationRequest ++}++ |
-|NotificationRequest |= |++[++"ReceiptNotification" \| |
+|MessageHeading |= |Length + "150" + |
+|||MessageId + |++**++ Ref.nr 1 ++**++
+|||( CrossReference ) + |++**++ Ref.nr 2 ++**++
+|||( OriginatorORName ) + |
+|||NumberOfRecipients + |
+|||{ RecipientORName + |
+|||NotificationRequest } |
+|NotificationRequest |= |["ReceiptNotification" \| |
 |||"NonReceiptNotification" \| |
-|||None ++]++ |
-|MessageBody |= |Length {plus} "180" {plus} (BodyString) |
-|PutMessageConfirmation |= |Length {plus} "190" {plus} PutResult {plus} |
-|||( DispatchSequenceNumber {plus} |
-|||SubmissionTime {plus} |
+|||None ] |
+|MessageBody |= |Length + "180" + (BodyString) |
+|PutMessageConfirmation |= |Length + "190" + PutResult + |
+|||( DispatchSequenceNumber + |
+|||SubmissionTime + |
 |||MessageId ) |
 |||++**++ Alleen als er geen fout is opgetreden++**++ |
 |===
@@ -964,46 +964,46 @@ image::image81.svg[width=435,height=194]
 +
 [.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
-|GetMessage |= |Length {plus} "200" {plus} MSSequenceNumber |
-|GetMessageResult |= |MSEntry {plus} |++**++ 210 ++**++
-|||++[++MessageResult \| |
+|GetMessage |= |Length + "200" + MSSequenceNumber |
+|GetMessageResult |= |MSEntry + |++**++ 210 ++**++
+|||[MessageResult \| |
 |||StatusResult \| |
-|||DeliveryReport++]++ |++**++ 260 ++**++
-|MSEntry |= |Length {plus} "210" {plus} MSSequenceNumber |
-|MessageResult |= |GetEnvelope {plus} |++**++ 220 ++**++
-|||MessageHeading {plus} |++**++ 250 ++**++
+|||DeliveryReport] |++**++ 260 ++**++
+|MSEntry |= |Length + "210" + MSSequenceNumber |
+|MessageResult |= |GetEnvelope + |++**++ 220 ++**++
+|||MessageHeading + |++**++ 250 ++**++
 |||MessageBody |++**++ 280 ++**++
-|GetEnvelope |= |Length {plus} "220" {plus} |
-|||OriginatorORName {plus} |
-|||ContentType {plus} |
-|||Priority {plus} |
-|||DeliveryTime {plus} |
-|||SubmissionTime {plus} |
+|GetEnvelope |= |Length + "220" + |
+|||OriginatorORName + |
+|||ContentType + |
+|||Priority + |
+|||DeliveryTime + |
+|||SubmissionTime + |
 |||ActualRecipientORName |
-|MessageHeading |= |Length {plus} "250" {plus} |
-|||MessageId {plus} |++**++ Ref.nr 1 ++**++ +
-|||(CrossReference) {plus} |++**++ Ref.nr 2 ++**++
-|||OriginatorUserName {plus} |
-|||ActualRecipientORName {plus} |
+|MessageHeading |= |Length + "250" + |
+|||MessageId + |++**++ Ref.nr 1 ++**++ +
+|||(CrossReference) + |++**++ Ref.nr 2 ++**++
+|||OriginatorUserName + |
+|||ActualRecipientORName + |
 |||(ActualNotificationRequest) |
-|MessageBody |= |Length {plus} "280" {plus} BodyString |
-|StatusResult |= |GetEnvelope {plus} |++**++ 220 ++**++
+|MessageBody |= |Length + "280" + BodyString |
+|StatusResult |= |GetEnvelope + |++**++ 220 ++**++
 |||StatusReport |++**++ 270 ++**++
-|StatusReport |= |Length {plus} "270" {plus} |
-|||ActualRecipientORName {plus} |
-|||NotificationType {plus} |
-|||ReportedMessageId {plus} |
+|StatusReport |= |Length + "270" + |
+|||ActualRecipientORName + |
+|||NotificationType + |
+|||ReportedMessageId + |
 |||NonReceiptReason |++**++ Expired++**++
-|NotificationType |= |++[++ "ReceiptNotification" \| |
-|||"NonReceiptNotification" ++]++ |
-|DeliveryReport |= |Length {plus} "260" {plus} ReportDeliveryTime {plus} |
-|||DispatchSequenceNumber {plus} |
-|||NumberOfRecipients {plus} |
-|||++{++RecipientORName {plus} Report++}++ |
-|Report |= |++[++DeliveryTime \| |
-|||MailboxBlockDateTimeStamp {plus} |
-|||NonDeliveryReason++]++ |
-|GetMessageConfirmation |= |Length {plus} "290" {plus} GetError |
+|NotificationType |= |[ "ReceiptNotification" \| |
+|||"NonReceiptNotification" ] |
+|DeliveryReport |= |Length + "260" + ReportDeliveryTime + |
+|||DispatchSequenceNumber + |
+|||NumberOfRecipients + |
+|||{RecipientORName + Report} |
+|Report |= |[DeliveryTime \| |
+|||MailboxBlockDateTimeStamp + |
+|||NonDeliveryReason] |
+|GetMessageConfirmation |= |Length + "290" + GetError |
 |===
 
 *Structuur*::
@@ -1046,12 +1046,12 @@ image::image89.svg[width=435,height=194]
 +
 [.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
-|DeleteMessages |= |Length {plus} "300" {plus} |
-|||++[++(DeleteRange) \| DeleteNumbers++]++ |
-|DeleteRange |= |FromMSSequenceNumber {plus} |
+|DeleteMessages |= |Length + "300" + |
+|||[(DeleteRange) \| DeleteNumbers] |
+|DeleteRange |= |FromMSSequenceNumber + |
 |||ToMSSequenceNumber |
-|DeleteNumbers |= |NumberOfNumbers {plus} ++{++MSSequenceNumber++}++ |
-|DeleteMessagesConfirmation |= |Length {plus} "309" {plus} DeleteResult |
+|DeleteNumbers |= |NumberOfNumbers + {MSSequenceNumber} |
+|DeleteMessagesConfirmation |= |Length + "309" + DeleteResult |
 |===
 
 *Structuur*::
@@ -1070,27 +1070,27 @@ image::image91.svg[width=436,height=194]
 +
 [.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
-|ListMessages |= |Length {plus} "400" {plus} |
-|||(LimitNumber) {plus} |
-|||(TypeSelection) {plus} |
+|ListMessages |= |Length + "400" + |
+|||(LimitNumber) + |
+|||(TypeSelection) + |
 |||(RangeSelection) |
-|TypeSelection |= |++{++(MSStatus)++}++ {plus} (Priority) |
-|RangeSelection |= |++[++FromMSSequenceNumber {plus} |
+|TypeSelection |= |{(MSStatus)} + (Priority) |
+|RangeSelection |= |[FromMSSequenceNumber + |
 |||ToMSSequenceNumber \| |
-|||FromDeliveryTime {plus} |
-|||ToDeliveryTime++]++ |
-|ListMessagesResult |= |ListResult {plus} |++**++ 410 ++**++
+|||FromDeliveryTime + |
+|||ToDeliveryTime] |
+|ListMessagesResult |= |ListResult + |++**++ 410 ++**++
 |||MSList |++**++ 411 ++**++
-|ListResult |= |Length {plus} "410" {plus} (NextMSSequenceNumber) |
-|MSList |= |Length {plus} "411" |
-|||NumberOfMSEntries {plus} |
-|||++{++MSEntry++}++ |
-|MSEntry |= |MSSequenceNumber {plus} |
-|||MSStatus {plus} |
-|||Priority {plus} |
-|||DeliveryTime {plus} |
+|ListResult |= |Length + "410" + (NextMSSequenceNumber) |
+|MSList |= |Length + "411" |
+|||NumberOfMSEntries + |
+|||{MSEntry} |
+|MSEntry |= |MSSequenceNumber + |
+|||MSStatus + |
+|||Priority + |
+|||DeliveryTime + |
 |||OriginatorORName |
-|ListMessagesConfirmation |= |Length {plus} "419" {plus} ListError |
+|ListMessagesConfirmation |= |Length + "419" + ListError |
 |===
 
 *Structuur*::
@@ -1117,21 +1117,21 @@ image::image95.svg[width=436,height=194]
 +
 [.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
-|SummarizeMessages |= |Length {plus} "500" {plus} |
-|||(TypeSelection) {plus} |
+|SummarizeMessages |= |Length + "500" + |
+|||(TypeSelection) + |
 |||(RangeSelection) |
-|TypeSelection |= |++{++(MSStatus)++}++ {plus} (Priority) |
-|RangeSelection |= |++[++FromMSSequenceNumber {plus} |
+|TypeSelection |= |{(MSStatus)} + (Priority) |
+|RangeSelection |= |[FromMSSequenceNumber + |
 |||ToMSSequenceNumber \| |
-|||FromDeliveryTime {plus} |
-|||ToDeliveryTime++]++ |
-|SummarizeResult |= |Length {plus} "510" {plus} |
-|||NumberOfCounts {plus} |
-|||++{++Count++}++|
-|Count |= |NumberOfEntries {plus} |
-|||MSStatus {plus} |
+|||FromDeliveryTime + |
+|||ToDeliveryTime] |
+|SummarizeResult |= |Length + "510" + |
+|||NumberOfCounts + |
+|||{Count}|
+|Count |= |NumberOfEntries + |
+|||MSStatus + |
 |||Priority |
-|SummarizeConfirmation |= |Length {plus} "590" {plus} SummarizeError |
+|SummarizeConfirmation |= |Length + "590" + SummarizeError |
 |===
 
 *Structuur*::
@@ -1154,9 +1154,9 @@ image::image98.svg[width=436,height=194]
 +
 [.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
-|ChangePasswordRequest |= |Length {plus} "910" {plus} |
-|||OldPassword {plus} NewPassword |
-|ChangePasswordConfirmation |= |Length {plus} "919" {plus} ChangePasswordResult |
+|ChangePasswordRequest |= |Length + "910" + |
+|||OldPassword + NewPassword |
+|ChangePasswordConfirmation |= |Length + "919" + ChangePasswordResult |
 |===
 
 *Structuur*::
@@ -1175,8 +1175,8 @@ image::image100.svg[width=434,height=194]
 +
 [.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
-|LogoffRequest |= |Length {plus} "990" ++**++ geen parameters ++**++ |
-|LogoffConfirmation |= |Length {plus} "999" {plus} LogoffResult |
+|LogoffRequest |= |Length + "990" ++**++ geen parameters ++**++ |
+|LogoffConfirmation |= |Length + "999" + LogoffResult |
 |===
 
 *Structuur*
@@ -1195,7 +1195,7 @@ image::image102.svg[width=436,height=194]
 +
 [.center,width="100%",cols="30%,3%,47%,>20%",frame=none,grid=none]
 |===
-|NoOperationConfirmation |= |Length {plus} "009" {plus} NoOperationError |
+|NoOperationConfirmation |= |Length + "009" + NoOperationError |
 |Termination |= |Length |
 |===
 
@@ -1560,7 +1560,7 @@ Wanneer er in de MBS een fatale fout wordt ontdekt, wordt over het algemeen de m
 
 Voor de te gebruiken tekenset geldt het volgende:
 
-* Alle velden in het sPd protocol, met uitzondering van de MessageBody en de wachtwoorden, mogen alleen waarden van het type 'printable string' bevatten. Printable string is een beperkte tekenset, die compatibel is met ASCII, en gedefinieerd is in CCITT aanbeveling X.208. Hij omvat de tekens A…Z, a…z, 0…9, spatie, en de speciale tekens '(){plus}-/:=?,.
+* Alle velden in het sPd protocol, met uitzondering van de MessageBody en de wachtwoorden, mogen alleen waarden van het type 'printable string' bevatten. Printable string is een beperkte tekenset, die compatibel is met ASCII, en gedefinieerd is in CCITT aanbeveling X.208. Hij omvat de tekens A…Z, a…z, 0…9, spatie, en de speciale tekens '()+-/:=?,.
 * Een MessageBody en een wachtwoord mogen octets bevatten met ieder mogelijk bitpatroon (waarden 0 tot en met 255). Dit maakt het mogelijk om berichten te vercijferen, maar het stelt wel eisen aan de te gebruiken randapparatuur.
 
 ==== Turbo-sPd protocol
@@ -1591,9 +1591,9 @@ We kunnen een turbo-sPd-operatie definiëren analoog aan de definities in <<_spd
 +
 [width="90%",cols="35%,3%,62%",frame=none,grid=none]
 |===
-|TurboOperation |= |(ROSEHeader) {plus} Operation {plus} +
+|TurboOperation |= |(ROSEHeader) + Operation + +
 |||TerminationRecord
-|ROSEHeader |= |Length {plus} OperationCode {plus} InvokeId
+|ROSEHeader |= |Length + OperationCode + InvokeId
 |Operation |= |++**++ een van de sPd-operaties
 |OperationCode |= |++**++ een code die het type van de er op volgende OperationRecords aangeeft++**++
 |InvokeId |= |++**++ een door de MC toegekend getal waarmee het commando wordt geïdentificeerd. De MC is vrij in het bepalen van de waarden, maar het wordt aanbevolen om de commando's opvolgend te nummeren, te beginnen bij 1 in iedere nieuwe sessie.++**++

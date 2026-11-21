@@ -50,7 +50,7 @@ Afnemers kunnen als gevolg van meerdere taakstellingen ook meerdere autorisaties
 
 Authenticatie van de afnemer vindt naast controle op geldigheid van de combinatie gebruikersaccount en wachtwoord ook plaats op een geldig PKIO-certificaat met OIN (Organisatie Identificatie Nummer).
 
-Voor toegang tot de BRP API's geldt bovendien dat een OAuth-token benodigd is, dat wordt verstrekt via de Oauth 2.0 client credential flow. Het Oauth token heeft een beperkte geldigheidsduur. Indien de geldigheidsduur is verlopen dient de afnemer een nieuw token aan te vragen. De BRP API's maken geen gebruik van het Oauth token++_++refresh mechanisme.
+Voor toegang tot de BRP API's geldt bovendien dat een OAuth-token benodigd is, dat wordt verstrekt via de Oauth 2.0 client credential flow. Het Oauth token heeft een beperkte geldigheidsduur. Indien de geldigheidsduur is verlopen dient de afnemer een nieuw token aan te vragen. De BRP API's maken geen gebruik van het Oauth token_refresh mechanisme.
 
 ==== Beveiligingscertificaten
 
@@ -84,7 +84,7 @@ De openstelling is de tijd waarbinnen de dienst beschikbaar is voor de afnemers.
 [width="100%",cols="35%,50%a,15%",options="header",]
 |===
 |Soort afspraak |Niveau |Criterium
-|Beschikbaarheid van BRP-V (productieomgeving) | De productieomgeving van BRP-V is 7++*++24 uur, alle dagen van het jaar, beschikbaar voor:
+|Beschikbaarheid van BRP-V (productieomgeving) | De productieomgeving van BRP-V is 7*24 uur, alle dagen van het jaar, beschikbaar voor:
 
 * Het stellen van zoekvragen aan BRP-V
 * Het wijzigen van het wachtwoord
@@ -392,9 +392,9 @@ In het wachtwoord van de webservices van BRP-V zijn de volgende tekens toegestaa
 * 'Cijfers': de tekens 0-9 (decimaal 048 t/m 057).
 * 'Overige tekens': alle overige tekens met een decimale waarde groter dan 32 en kleiner dan 127.
 
-Er wordt gecontroleerd of elk gebruikt teken ligt in de (ASCII/UTF-8) reeks: 32 ++<++ x ++<++ 127 (hexadecimaal: 20 ++<++ x ++<++ 7f). De complete reeks is dan:
+Er wordt gecontroleerd of elk gebruikt teken ligt in de (ASCII/UTF-8) reeks: 32 < x < 127 (hexadecimaal: 20 < x < 7f). De complete reeks is dan:
 
-a-z, A-Z, 0-9, !@#$%^&++*++()++_++-{plus}=++{++}++[]++'"++|++/++\++?.;:++><++,~++`++
+a-z, A-Z, 0-9, !@#$%^&*()_-+={}[]'"|/\?.;:><,~`
 
 ===== Regels voor de samenstelling van het wachtwoord:
 

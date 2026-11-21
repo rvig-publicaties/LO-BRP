@@ -36,12 +36,21 @@
 De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versie (versie 2026.Q3) van het Logisch Ontwerp BRP. De aanpassingen zijn het gevolg van de hieronder opgesomde wijzigingen, die behoren tot LO 2027.Q1. Deze versie treedt op 1 januari 2027 in werking.
 
 * LO-244 / W214 Uitwisselen gezagsinformatie CGR - gemeenten fase I
-** <<_stelselarchitectuur>>, <<_berichtenverkeer_algemeen>>, <<_bijzondere_aangesloten_instanties>>, <<_opbouw_van_de_berichtendienst_berichten>>, <<_inleiding_8>>, <<_synchronisatie_met_brp_verstrekkingen>>, <<_berichten>>
+** <<_stelselarchitectuur>>
+** <<_berichtenverkeer_algemeen>>
+** <<_bijzondere_aangesloten_instanties>>
+** <<_opbouw_van_de_kop>>
+** <<_inleiding_10>>
+** <<_opnemenwijzigen_gegevens_omtrent_gezag>>
+** <<_beschrijving_van_de_brp_berichten>>
+** <<_overzicht_foutredenen_en_statusmeldingen>>
 * LO-448 BRP API - Gebeurtenissen
 ** <<_gebeurtenissen>>
 ** <<_beschrijving_van_de_categorieën_2>> (de beschrijving van categorie <<cgx,GX>>)
 ** <<_beschrijving_van_de_groepen_2>> (de beschrijving van groep <<gov,OV>> en <<gvh,VH>>)
 ** <<_beschrijving_van_de_elementen_2>> (de beschrijving van element <<eov01,OV.01>>, <<evh01,VH.01>> en <<evh02,VH.02>>)
+** <<_berichten_ten_behoeve_van_de_gegevensverstrekkingen>>
+** <<_inleiding_24>>
 ** <<_brp_api_gebeurtenissen>>
 * LO-462 3e Aanvulling W180 Vaste koppeling BAG-BRP
 ** <<_beschrijving_van_de_categorieën>> (de beschrijving van categorie <<c08-58,08/58>>)

@@ -32,7 +32,7 @@ De afnemerbeschrijving bevat de volgende componenten.
 *Afnemersindicatie* (Rubriek 35.95.10):: De afnemersindicatie van de afnemer.
 
 *Aantekening* (Rubriek 35.95.11):: Een opsomming van aantekeningen. Deze rubriek wordt gebruikt om op de PL voorkomende aantekeningen om te zetten naar afnemersindicaties. +
-Een aantekening wordt gerepresenteerd door middel van een afnemersaanduiding die gedefinieerd is in tabel 55 (element 93.10). Deze kan gevolgd worden door de wildcard "/++*++" of een reeks tekens, opgebouwd conform de syntax van het element _tekst_. Dit veld komt alleen voor in oude versies van de autorisatietabelregel.
+Een aantekening wordt gerepresenteerd door middel van een afnemersaanduiding die gedefinieerd is in tabel 55 (element 93.10). Deze kan gevolgd worden door de wildcard "/*" of een reeks tekens, opgebouwd conform de syntax van het element _tekst_. Dit veld komt alleen voor in oude versies van de autorisatietabelregel.
 
 *Indicatie geheimhouding* (Rubriek 35.95.12):: Indien deze indicatie "aan" staat (waarde "1") en de afnemer behoort tot de afnemers, waarvoor de burger om geheimhouding heeft verzocht (zie rubriek <<e7010,07.70.10>>), zullen er geen gegevens verstrekt worden. Indien deze indicatie "uit" staat (waarde "0"), worden er gegevens verstrekt, ook als er om geheimhouding is verzocht.
 
@@ -499,7 +499,7 @@ vrkop ::=:: KV | KNV
 ===== Verklaring van de operatoren (in alfabetische volgorde)
 
 [horizontal,labelwidth=10,itemwidth=90]
-{plus}:: Plus (voor datumwaarden).
++:: Plus (voor datumwaarden).
 -:: Min (voor datumwaarden).
 ALS DAN:: Zie nadere toelichting op de syntax.
 ENVGL:: EN (logische EN binnen een vergelijking).
@@ -610,20 +610,20 @@ Het is ook mogelijk om onderscheid te maken tussen verschillende persoonslijsten
 +
 --
 ** Een punt (.) staat voor een willekeurig karakter met uitzondering van de besturings-karakters.
-** Vierkante haken geven een lijst van mogelijke karakters; bijvoorbeeld ++[++xyz++]++.
-** Binnen de vierkante haken kan een minteken gebruikt worden om een reeks van karakters op te geven; bijvoorbeeld ++[++a-zA-Z++]++ is het patroon voor alle kleine letters en hoofdletters uit het alfabet.
-** Een dakje als eerste teken binnen de vierkante haken verandert de karakterverzameling in het omgekeerde: bijvoorbeeld ++[++^0-9++]++ herkent alles wat geen cijfer is.
+** Vierkante haken geven een lijst van mogelijke karakters; bijvoorbeeld [xyz].
+** Binnen de vierkante haken kan een minteken gebruikt worden om een reeks van karakters op te geven; bijvoorbeeld [a-zA-Z] is het patroon voor alle kleine letters en hoofdletters uit het alfabet.
+** Een dakje als eerste teken binnen de vierkante haken verandert de karakterverzameling in het omgekeerde: bijvoorbeeld [^0-9] herkent alles wat geen cijfer is.
 --
 +
 Bovenstaande basispatronen kunnen worden gecombineerd middels de volgende constructies: +
 +
 --
 ** Een rechtopstaande streep (|) om alternatieve tekstpatronen aan te geven; bijvoorbeeld "M|V" herkent "M" of "V".
-** Een tekstpatroon gevolgd door een {plus}, ? en ++*++ teken geeft aan hoe vaak het voorgaande tekstpatroon voor mag komen. Het plusteken ({plus}) geeft aan dat het voorafgaande patroon ten minste één keer moet voorkomen. Het vraagteken (?) geeft aan dat het voorgaande patroon ten hoogste één keer mag voorkomen. Het asteriskteken (++*++) geeft aan dat het voorgaande patroon nul of meer keer mag voorkomen.
+** Een tekstpatroon gevolgd door een +, ? en * teken geeft aan hoe vaak het voorgaande tekstpatroon voor mag komen. Het plusteken (+) geeft aan dat het voorafgaande patroon ten minste één keer moet voorkomen. Het vraagteken (?) geeft aan dat het voorgaande patroon ten hoogste één keer mag voorkomen. Het asteriskteken (*) geeft aan dat het voorgaande patroon nul of meer keer mag voorkomen.
 ** Door middel van haken is het mogelijk om patronen samen te stellen. Bijvoorbeeld "(va|moe)der" is hetzelfde als "vader|moeder" en "(groot)?vader" herkent zowel "vader" als "grootvader".
 --
 +
-Tekens die een speciale betekenis hebben, dienen vooraf gegaan te worden door een ++\++ (backslash) indien deze als een normaal teken behandeld moeten worden.
+Tekens die een speciale betekenis hebben, dienen vooraf gegaan te worden door een \ (backslash) indien deze als een normaal teken behandeld moeten worden.
 
 *Tekst*:: Indien in een vergelijking een alfanumrubriekwaarde voorkomt, moet dat altijd een van de waarden zijn die volgens het Gegevenswoordenboek (<<_gegevenswoordenboek>>) kunnen voorkomen bij het ook in de vergelijking voorkomende alfanumrubrieknummer.
 
@@ -831,6 +831,18 @@ Per verstrekking aan een afnemer wordt een BRP-bericht samengesteld zoals is bes
 
 Een constatering van een wijziging van het A‑nummer (rubriek <<e0110,01.01.10>>) leidt niet tot het versturen van een conditionele gegevensverstrekking, maar alleen tot het bericht wijziging A‑nummer t.b.v. afnemers (<<Wa11,Wa11>>) voor die afnemers waarvan de afnemersindicatie bij de persoon voorkomt.
 
+==== Gebeurtenissen
+
+De BRP kent een vorm van gebeurtenisgestuurde gegevensverstrekking waarbij afnemers automatisch worden geïnformeerd over gebeurtenissen in de BRP die relevant zijn voor de uitvoering van hun wettelijke taken en bedrijfsprocessen. Gebeurtenissen vormen daarmee een bijzondere vorm van spontane gegevensverstrekking: de afnemer ontvangt ongevraagd een notificatie zodra zich een gebeurtenis voordoet waarop deze een abonnement heeft geplaatst.
+
+Een afnemer bepaalt wie in zijn organisatie abonnee mag zijn en bepaalt welke soorten gebeurtenissen elke abonnee mag volgen. De abonnee beheert abonnementen en vraagt, ontvangt en verwerkt gebeurtenissen. 
+
+Afnemers kunnen zelf abonnementen plaatsen op gebeurtenissen waarvan zij op de hoogte willen blijven. Afnemers kunnen hun abonnementen beheren door nieuwe abonnementen te plaatsen en bestaande abonnementen te verwijderen. Het plaatsen van een abonnement maakt het mogelijk om notificaties over een specifiek type gebeurtenis te ontvangen. Wanneer een abonnement niet langer nodig is, kan de afnemer dit verwijderen. Vanaf dat moment ontvangt de afnemer geen notificaties meer op basis van dat abonnement. Op deze manier kan iedere afnemer de informatievoorziening afstemmen op de eigen informatiebehoefte en bedrijfsprocessen.
+
+De ontvangen notificatie bevat alleen de informatie over het soort gebeurtenis, de persoon waarbij de gebeurtenis heeft plaatsgevonden en de datum.  Wanneer voor de verdere verwerking aanvullende of actuele persoonsgegevens nodig zijn, kan de afnemer deze opvragen via de daarvoor bestemde voorzieningen voor gegevensverstrekking uit de BRP, voor zover de afnemer hiervoor is geautoriseerd.
+
+Gebeurtenissen zijn daarmee gericht op het tijdig signaleren van relevante gebeurtenissen en het ondersteunen van een efficiënte, actuele verwerking daarvan in de bedrijfsprocessen
+
 ==== Selectie
 
 Een afnemer is geautoriseerd voor selectieverstrekking als element <<e9556,35.95.56>> Medium selectie de waarde 'N' of 'A' heeft.
@@ -865,18 +877,6 @@ Indien rubriek <<e9553,35.95.53>> de waarde "1" heeft, is het resultaat van het 
 
 Aan de hand van de bovengenoemde gegevens worden de BRP-berichten samengesteld zoals is beschreven in <<_opbouw_van_de_berichtendienst_berichten>> Opbouw van de berichtendienst berichten.
 
-==== API Gebeurtenissen
-De BRP kent een vorm van gebeurtenisgestuurde gegevensverstrekking waarbij afnemers automatisch worden geïnformeerd over gebeurtenissen in de Basisregistratie Personen (BRP) die relevant zijn voor de uitvoering van hun wettelijke taken en bedrijfsprocessen. Gebeurtenissen vormen daarmee een bijzondere vorm van spontane gegevensverstrekking: de afnemer ontvangt ongevraagd een notificatie zodra zich een gebeurtenis voordoet waarop deze een abonnement heeft geplaatst.
-
-Een afnemer bepaalt wie in zijn organisatie abonnee mag zijn en bepaalt welke soorten gebeurtenissen elke abonnee mag volgen. De abonnee beheert abonnementen en vraagt, ontvangt en verwerkt gebeurtenissen. 
-
-Afnemers kunnen zelf abonnementen plaatsen op gebeurtenissen waarvan zij op de hoogte willen blijven. Afnemers kunnen hun abonnementen beheren door nieuwe abonnementen te plaatsen en bestaande abonnementen te verwijderen. Het plaatsen van een abonnement maakt het mogelijk om notificaties over een specifiek type gebeurtenis te ontvangen. Wanneer een abonnement niet langer nodig is, kan de afnemer dit verwijderen. Vanaf dat moment ontvangt de afnemer geen notificaties meer op basis van dat abonnement. Op deze manier kan iedere afnemer de informatievoorziening afstemmen op de eigen informatiebehoefte en bedrijfsprocessen.
-
-De ontvangen notificatie bevat alleen de informatie over het soort gebeurtenis, de persoon waarbij de gebeurtenis heeft plaatsgevonden en de datum.  Wanneer voor de verder verwerking aanvullen of actuele persoonsgegevens nodig zijn, kan de afnemer deze opvragen via de daarvoor bestemde voorzieningen voor gegevensverstrekking uit de BRP, voor zover de afnemer hiervoor is geautoriseerd.
-
-Gebeurtenissen zijn daarmee gericht op het tijdig signaleren van relevante gebeurtenissen en het ondersteunen van een efficiënte, actuele verwerking daarvan in de bedrijfsprocessen
-
-
 ==== Ad hoc gegevensverstrekking
 
 Een afnemer is geautoriseerd voor ad hoc gegevensverstrekking als element <<e9567,35.95.67>> Medium ad hoc de waarde "N" of "A" heeft.
@@ -906,7 +906,7 @@ Om te bepalen of gegevensverstrekking aan een afnemer dient plaats te vinden, wo
 * Of het niet zo is dat voor de afnemer de indicatie geheimhouding (rubriek <<e9512,35.95.12>> in de autorisatietabel "aan" staat én de indicatie geheim (rubriek <<e7010,07.70.10>>) op de gevonden PL(-en) op "2", "4", "6" of "7" staat;
 * Of er niet meer dan het maximumaantal toegestane resultaten voldoen aan de zoekcriteria.
 
-Met de inwerkingtreding van het Experimentbesluit mogen gemeenten niet alleen gegevens, maar ook informatie raadplegen in de BRP-V middels de BRP-API. Als de gemeente de BRP-API's gebruiken, dan geldt dat als raadplegen onder het Experimentbesluit dataminimalisatie en niet als een verstrekking door de BRP-V, zels als die bevraging geen eigen inwoner van die gemeente betreft. Het automatisch versturen van notificaties met informatie is uitgesloten voor afnemers. Hiervoor moet eerst de wetgeving worden aangepast. 
+Met de inwerkingtreding van het Experimentbesluit dataminimalisatie BRP mogen gemeenten niet alleen gegevens, maar ook informatie raadplegen in de BRP-V middels de BRP-API's. Als de gemeente de BRP-API's gebruiken, dan geldt dat als raadplegen onder het Experimentbesluit en niet als een verstrekking door de BRP-V, zels als die bevraging geen eigen inwoner van die gemeente betreft. Het automatisch versturen van notificaties met informatie is uitgesloten voor afnemers. Hiervoor moet eerst de wetgeving worden aangepast. 
 
 Afhankelijk van de soort ad hoc vraag die wordt gesteld, kunnen nog andere voorwaarden gelden. Alleen van PL'en die aan alle voorwaarden voldoen, worden de gegevens verzameld die aan de afnemer moeten worden verstrekt. Indien van toepassing, worden ook de betreffende groepen procedure en onjuist verstrekt (zie <<_meeverstrekking_van_de_groepen_procedure_en_onjuist>>). Voor ad hoc (adres)vragen via de berichtendienst en de Ad hoc webservice geldt dat indien de inhoud van een historische rubriek wordt gevraagd, de gehele historie van dit gegeven wordt verstrekt. Bij de BRP API werkt dit anders en zijn historische gegevens in een apart endpoint ondergebracht.
 

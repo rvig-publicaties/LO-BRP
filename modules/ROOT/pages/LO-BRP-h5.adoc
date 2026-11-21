@@ -8,7 +8,7 @@
 
 De BRP is opgezet als een decentrale persoonsregistratie, waarbij de persoonsgegevens ook fysiek op verschillende plaatsen opgeslagen worden. Dit heeft tot gevolg dat er gegevensuitwisseling plaats moet kunnen vinden. Deze uitwisseling gebeurt door middel van berichten, die via de berichtendienst, webservices of API's worden verzonden. De gegevensuitwisseling heeft twee functies.
 
-In de eerste plaats is dat de gegevensuitwisseling die dient om de BRP, inclusief de RNI consistent te houden. Zo dienen bij een intergemeentelijke verhuizing de persoonsgegevens met de burger mee te verhuizen. Bij een emigratie of het van kracht worden van een Ministerieel besluit dienen de persoonsgegevens van de gemeente naar de RNI te verhuizen. En bij een immigratie of het vervallen van een Ministerieel besluit dienen de persoonsgegevens, ingeval het een RNI-ingeschrevene betreft, van de RNI naar de gemeente te verhuizen. Onder het consistent houden van de gegevens vallen ook de berichten van en naar BRP-V, de BvBSN ter voorkoming van dubbele inschrijvingen, het Ministerie van Justitie vanwege het opnemen van de verblijfstitel , de Raad voor de rechtspraak vanwege het opnemen van gegevens omtrent het gezag over minderjarigen en de berichten die nodig zijn om de landelijke tabellen consistent te houden.
+In de eerste plaats is dat de gegevensuitwisseling die dient om de BRP, inclusief de RNI consistent te houden. Zo dienen bij een intergemeentelijke verhuizing de persoonsgegevens met de burger mee te verhuizen. Bij een emigratie of het van kracht worden van een Ministerieel besluit dienen de persoonsgegevens van de gemeente naar de RNI te verhuizen. En bij een immigratie of het vervallen van een Ministerieel besluit dienen de persoonsgegevens, ingeval het een RNI-ingeschrevene betreft, van de RNI naar de gemeente te verhuizen. Onder het consistent houden van de gegevens vallen ook de berichten van en naar BRP-V, de BvBSN ter voorkoming van dubbele inschrijvingen, het Ministerie van Justitie vanwege het opnemen van de verblijfstitel, de Raad voor de rechtspraak vanwege het opnemen van gegevens omtrent het gezag over minderjarigen en de berichten die nodig zijn om de landelijke tabellen consistent te houden.
 
 Daarnaast vormt de BRP een basisregistratie, hetgeen betekent dat de overheid en andere organisaties in de contacten met de burgers gebruik maken van de in de basisregistratie opgeslagen gegevens. Dit maakt gegevensverstrekking aan die overheidsinstanties en die andere organisaties noodzakelijk.
 
@@ -80,7 +80,7 @@ De BRP-berichten zijn ingedeeld in de volgende groepen:
 ** <<Of11,Of11>>: Fout: opnemen/wijzigen verblijfstitel niet mogelijk
 
 * Berichten in verband met gezag:
-** <<Og21,Og21>>: Opnemen gegevens omtrent gezag
+** <<Og21,Og21>>: Opnemen/wijzigen gegevens omtrent gezag
 ** <<Of21,Of21>>: Fout: opnemen/wijzigen omtrent gezag niet mogelijk
 
 ====== Berichten ten behoeve van het synchroniseren van de persoonsgegevens met BRP-V
@@ -183,6 +183,13 @@ Endpoint in het kader van het Experimentbesluit dataminimalisatie BRP, alleen te
 Endpoint in het kader van het Experimentbesluit dataminimalisatie BRP, alleen te gebruiken door deelnemers aan het experiment: raadpleeg een reisdocument door een reisdocumentnummer op te geven, of zoek reisdocumenten van een persoon door het burgerservicenummer op te geven.
 *** <<_brp_api_verblijfplaatshistorie,/verblijfplaatshistorie>> +
 Endpoint in het kader van het experimentbesluit dataminimalisatie BRP, alleen te gebruiken door deelnemers aan het experiment: zoek de verblijfplaatshistorie van een persoon op de opgegeven peildatum of binnen de opgegeven periode.
+*** <<_brp_api_gebeurtenissen,/abonnees>> (gebeurtenissen) +
+Endpoints in het kader van het experimentbesluit dataminimalisatie BRP, alleen te gebruiken door gemeenten die deelnemen aan het experiment. Zij kunnen met deze endpoints: +
+**** abonneees registreren, raadplegen en verwijderen
+**** voor deze abonnees groepen toevoegen, raadplegen en verwijderen
+**** gebeurtenistypen aan een groep toevoegen, ze raadplegen en verwijderen
+**** abonnementen nemen op een groep gebeurtenistypen op een bepaalde persoonslijst en die abonnementen raadplegen
+**** gebeurtenissen opvragen
 * API's in verband met het opvragen van het protocolleringsoverzicht door MijnOverheid:
 ** BRP Protocolleringsoverzicht API
 *** <<_brp_protocolleringsoverzicht_api,/protocolleringsoverzicht>> +
@@ -244,7 +251,7 @@ Omdat binnen de BRP steeds meer uitwisseling via webservices en API's plaatsvind
 |===
 | |0 |1 |2 |3 |4 |5 |6 |7 |8 |9 |A |B |C |D |E |F
 |0 | | |SP |0 |@ |P | |p | | | |° | | |Ω |ĸ
-|1 | | |! |1 |A |Q |a |q | | |¡ |± |++'++ | |Æ |æ
+|1 | | |! |1 |A |Q |a |q | | |¡ |± |' | |Æ |æ
 |2 | | |" |2 |B |R |b |r | | |¢ |2 |´ | |Đ |đ
 |3 | | | |3 |C |S |c |s | | |£ |3 |ˆ | |ª |ð
 |4 | | | |4 |D |T |d |t | | |$ |× |˜ | |Ħ |ħ
@@ -253,12 +260,12 @@ Omdat binnen de BRP steeds meer uitwisseling via webservices en API's plaatsvind
 |7 | | |' |7 |G |W |g |w | | |§ |· |˙ | |Ŀ |ŀ
 |8 | | |( |8 |H |X |h |x | | |¤ |÷ |¨ | |Ł |ł
 |9 | | |) |9 |I |Y |i |y | | | | | | |Ø |ø
-|A | | |++*++ |: |J |Z |j |z | | | | |˚ | |Œ |œ
-|B | | |{plus} |; |K |++[++ |k | | | |« |» |¸ | |º |ß
-|C | | |, |++<++ |L | |l |{vbar} | | | |¼ |~-~ | |Þ |þ
-|D | | |- |= |M |++]++ |m | | | | |½ |˝ | |Ŧ |ŧ
-|E | | |. |++>++ |N | |n | | | | |¾ |˛ | |Ŋ |ŋ
-|F | | |/ |? |O |++_++ |o | | | | |¿ |ˇ | |ŉ |
+|A | | |* |: |J |Z |j |z | | | | |˚ | |Œ |œ
+|B | | |+ |; |K |[ |k | | | |« |» |¸ | |º |ß
+|C | | |, |< |L | |l |{vbar} | | | |¼ |~-~ | |Þ |þ
+|D | | |- |= |M |] |m | | | | |½ |˝ | |Ŧ |ŧ
+|E | | |. |> |N | |n | | | | |¾ |˛ | |Ŋ |ŋ
+|F | | |/ |? |O |_ |o | | | | |¿ |ˇ | |ŉ |
 |===
 
 ===== Overzicht van de te gebruiken Teletex-tekens
@@ -272,13 +279,13 @@ In deze paragraaf zijn alle tekens uit de Teletex-tekenset opgesomd die als teke
 |20 |20 |SP |Space |39 |39 |9 |Digit 9
 |21 |21 |! |Exclamation mark |3A |3A |: |Colon
 |22 |22 |" |Quotation mark |3B |3B |; |Semicolon
-|25 |25 |% |Procent sign |3C |3C |++<++ |Less-than sign
+|25 |25 |% |Procent sign |3C |3C |< |Less-than sign
 |26 |26 |& |Ampersand |3D |3D |= |Equals sign
-|27 |27 |' |Apostrophe |3E |3E |++>++ |Greater-than sign
+|27 |27 |' |Apostrophe |3E |3E |> |Greater-than sign
 |28 |28 |( |Left parenthesis |3F |3F |? |Question mark
 |29 |29 |) |Right parenthesis |40 |40 |@ |Commercial at
-|2A |2A |++*++ |Asterisk |41 |41 |A |Capital A
-|2B |2B |{plus} |Plus sign |42 |42 |B |Capital B
+|2A |2A |* |Asterisk |41 |41 |A |Capital A
+|2B |2B |+ |Plus sign |42 |42 |B |Capital B
 |2C |2C |, |Comma |43 |43 |C |Capital C
 |2D |2D |- |Hyphen or minus sign |44 |44 |D |Capital D
 |2E |2E |. |Full stop, period |45 |45 |E |Capital E
@@ -303,9 +310,9 @@ In deze paragraaf zijn alle tekens uit de Teletex-tekenset opgesomd die als teke
 |58 |58 |X |Capital X |70 |70 |p |Small p
 |59 |59 |Y |Capital Y |71 |71 |q |Small q
 |5A |5A |Z |Capital Z |72 |72 |r |Small r
-|5B |5B |++[++ |Left square bracket |73 |73 |s |Small s
-|5D |5D |++]++ |Right square bracket |74 |74 |t |Small t
-|5F |5F |++_++ |Low line |75 |75 |u |Small u
+|5B |5B |[ |Left square bracket |73 |73 |s |Small s
+|5D |5D |] |Right square bracket |74 |74 |t |Small t
+|5F |5F |_ |Low line |75 |75 |u |Small u
 |61 |61 |a |Small a |76 |76 |v |Small v
 |62 |62 |b |Small b |77 |77 |w |Small w
 |63 |63 |c |Small c |78 |78 |x |Small x
@@ -541,11 +548,11 @@ Naast deze methode van exacte matching, voorziet de ad hoc (adres)vraag via de A
 . *_Zoeken op een gedeelte van de rubriekwaarde_*
 +
 _Alleen voor de actuele Voornamen (<<e0210,01.02.10>>) en actuele Geslachtsnaam (<<e0240,01.02.40>>) geldt:_ +
-Het sterretje "++*++" (wildcard voor 0 of meer karakters) mag op elke mogelijke positie in de zoekwaarde voorkomen, mits de zoekwaarde daarnaast ten minste één ander alfanumeriek karakter bevat. De zoekwaarde mag ook meerdere sterretjes bevatten, maar alleen als die niet direct naast elkaar staan, worden ze beschouwd als twee wildcards; sterretjes direct naast elkaar tellen als één. +
+Het sterretje "*" (wildcard voor 0 of meer karakters) mag op elke mogelijke positie in de zoekwaarde voorkomen, mits de zoekwaarde daarnaast ten minste één ander alfanumeriek karakter bevat. De zoekwaarde mag ook meerdere sterretjes bevatten, maar alleen als die niet direct naast elkaar staan, worden ze beschouwd als twee wildcards; sterretjes direct naast elkaar tellen als één. +
 Met dit gebruik van het sterretje kan ook gezocht worden op voorletters in de actuele rubriek Voornamen (<<e0210,01.02.10>>).
 +
 _Voor datums geldt:_ +
-Met het sterretje "++*++" kan gezocht worden naar een deels bekende datum:
+Met het sterretje "*" kan gezocht worden naar een deels bekende datum:
 +
 --
 * Met onbekende maand en dag (maar bekend jaar). De wildcard staat aan het eind van de zoekstring en moet voorafgegaan worden door 4 karakters die het jaartal uitdrukken.
@@ -553,7 +560,7 @@ Met het sterretje "++*++" kan gezocht worden naar een deels bekende datum:
 --
 +
 _Voor alle overige rubrieken geldt:_ +
-De zoekwaarde eindigt met een sterretje "++*++" (wildcard voor 0 of meer karakters). Alleen de tekens tot aan de wildcard doen mee in het zoekproces. Het sterretje functioneert alleen als wildcard indien het aan het eind van de zoekwaarde staat en niet op eerste positie (dus het sterretje moet voorafgegaan worden door minimaal één ander teken). In alle andere gevallen functioneert het sterretje als een normaal teken.
+De zoekwaarde eindigt met een sterretje "*" (wildcard voor 0 of meer karakters). Alleen de tekens tot aan de wildcard doen mee in het zoekproces. Het sterretje functioneert alleen als wildcard indien het aan het eind van de zoekwaarde staat en niet op eerste positie (dus het sterretje moet voorafgegaan worden door minimaal één ander teken). In alle andere gevallen functioneert het sterretje als een normaal teken.
 +
 . *_Zoeken zonder onderscheid tussen hoofdletters en kleine letters (case insenstive)_*
 +
@@ -563,7 +570,7 @@ De zoekwaarde bevat geen hoofdletters. In dat geval zal er onafhankelijk van hoo
 +
 De zoekwaarde bevat geen diakritische tekens. In dat geval wordt er onafhankelijk van diakritische tekens gezocht. Indien er in een zoekwaarde diakritische tekens worden gebruikt, dan wordt precies die waarde gezocht.
 
-[.underline]#Let op#: Een backslash "++\++" schakelt het slim zoeken uit: een zoekwaarde startend met een backslash wordt gezien als een letterlijke zoekwaarde.
+[.underline]#Let op#: Een backslash "\" schakelt het slim zoeken uit: een zoekwaarde startend met een backslash wordt gezien als een letterlijke zoekwaarde.
 
 Hierna volgt een voorbeeld om een en ander te verduidelijken. De volgende gegevenssets komen (in willekeurige volgorde) voor in BRP-V.
 
@@ -607,25 +614,25 @@ Wanneer deze verzameling wordt doorzocht met de hierna vermelde sets identificer
 [.center,width="80%" ,cols="20%,20%,60%",options="header",]
 |===
 |Geslachtsnaam |Voornamen |Zoekresultaat
-|Janse |He++*++ |Gegevensset 1 t/m 5
-|Janse++*++ |He++*++ |Gegevensset 1 t/m 10
-|Jan++*++ |Hendrik |Gegevensset 2, 5, 7, 10, 12, 15, 17, 20
-|jans++*++ |he++*++ |Gegevensset 1 t/m 20
-|jans++*++ |Hè++*++ |Gegevensset 1, 5, 6, 10, 11, 15, 16, 20
-|Jan++*++ |Hendrik-jan |Gegevensset 4, 9, 14, 19
-|Jan++*++ |hendrik-jan |Gegevensset 3, 4, 8, 9, 13, 14, 18, 19
-|Jan++*++ |++\++hendrik-jan |Geen gegevensset gevonden
-|J++*++nsen |Hendrik |Gegevensset 7, 10, 22 t/m 24
-|++*++Jansen |Hendrik |Gegevensset 7, 10, 21
-|++*++ Jansen |Hendrik |Gegevensset 21
-|Jensen |H++*++ |Gegevensset 24 t/m 28
-|Jensen |H++*++ J++*++ |Gegevensset 25 t/m 27
-|Jensen |H++*++J++*++ |Gegevensset 25 t/m 28
-|Jensen |++*++ J++*++ |Gegevensset 25 t/m 27
-|Jensen |++*++ J++*++ P++*++ |Gegevensset 26, 27
-|Jensen |H++*++ ++*++ |Gegevensset 25 t/m 28
-|Jensen |h++*++ k++*++ |Gegevensset 27, 28
-|Jensen |H++*++ k++*++ |Geen gegevensset gevonden
+|Janse |He* |Gegevensset 1 t/m 5
+|Janse* |He* |Gegevensset 1 t/m 10
+|Jan* |Hendrik |Gegevensset 2, 5, 7, 10, 12, 15, 17, 20
+|jans* |he* |Gegevensset 1 t/m 20
+|jans* |Hè* |Gegevensset 1, 5, 6, 10, 11, 15, 16, 20
+|Jan* |Hendrik-jan |Gegevensset 4, 9, 14, 19
+|Jan* |hendrik-jan |Gegevensset 3, 4, 8, 9, 13, 14, 18, 19
+|Jan* |\hendrik-jan |Geen gegevensset gevonden
+|J*nsen |Hendrik |Gegevensset 7, 10, 22 t/m 24
+|*Jansen |Hendrik |Gegevensset 7, 10, 21
+|* Jansen |Hendrik |Gegevensset 21
+|Jensen |H* |Gegevensset 24 t/m 28
+|Jensen |H* J* |Gegevensset 25 t/m 27
+|Jensen |H*J* |Gegevensset 25 t/m 28
+|Jensen |* J* |Gegevensset 25 t/m 27
+|Jensen |* J* P* |Gegevensset 26, 27
+|Jensen |H* * |Gegevensset 25 t/m 28
+|Jensen |h* k* |Gegevensset 27, 28
+|Jensen |H* k* |Geen gegevensset gevonden
 |===
 
 ==== Berichtenafhandelingssysteem
@@ -723,31 +730,30 @@ De cyclus mag vier werkdagen na het versturen c.q. het ontvangen van het laatste
 
 Naast afnemersindicaties voor gemeenten en afnemers wordt een aantal bijzondere afnemersindicaties gebruikt in het BRP-stelsel om bijzondere instanties te identificeren. Deze afnemersindicaties staan hieronder opgesomd, met tussen haakjes de berichten die daarbij betrokken zijn:
 
-* 199901 ++[++Registratie Niet-Ingezetenen++]++ +
+* 199901 [Registratie Niet-Ingezetenen] +
 Mailbox RNI; uitwisseling i.h.k.v. emigraties, (her)vestiging en overlijden van niet-ingezetenen (<<Ji01,Ji01>>, <<Jb01,Jb01>>, <<Jv01,Jv01>>, <<Jf01,Jf01>>, <<Jf21,Jf21>>, <<Jf31,Jf31>>, <<Rb01,Rb01>>, <<Rv01,Rv01>>, <<Rf01,Rf01>>, <<Rf31,Rf31>>, <<Tb01,Tb01>> en <<Tf21,Tf21>>); +
 Ook gebruik als 'gemeente'-mailbox voor verwijsgegevens (<<Iv11,Iv11>>, <<Iv21,Iv21>>, <<If41,If41>>) en wijzigen A-nummer (<<Wa01,Wa01>>, <<Wf01,Wf01>>).
-* 300002 ++[++PIVA-BRP Koppeling++]++ +
+* 300002 [PIVA-BRP Koppeling] +
 Mailbox PBK-module; uitwisseling in het kader van (her)vestiging van PIVA-ingezetenen in de BRP en vice versa (<<Vb01,Vb01>>).
-* 300020 ++[++BRP-V - gemeenten, groep 1++]++ +
-300021 ++[++BRP-V - gemeenten, groep 2++]++ +
-300022 ++[++BRP-V - gemeenten, groep 3++]++ +
-300023 ++[++BRP-V - gemeenten, groep 4++]++ +
-300025 ++[++BRP-V - afnemers, groep 1++]++ +
-300026 ++[++BRP-V - afnemers, groep 2++]++ +
-300027 ++[++BRP-V - RNI++]++) +
+* 300020 [BRP-V - gemeenten, groep 1] +
+300021 [BRP-V - gemeenten, groep 2] +
+300022 [BRP-V - gemeenten, groep 3] +
+300023 [BRP-V - gemeenten, groep 4] +
+300025 [BRP-V - afnemers, groep 1] +
+300026 [BRP-V - afnemers, groep 2] +
+300027 [BRP-V - RNI]) +
 Mailboxen BRP-V; uitwisseling van synchronisatieberichten (<<Lg01,Lg01>>, <<Lq01,Lq01>>, <<La01,La01>>, <<Lf01,Lf01>>).
-* 300028 ++[++BRP-V - Daft (Data Analyzing Fingerprint Tool)++]++ +
+* 300028 [BRP-V - Daft (Data Analyzing Fingerprint Tool)] +
 Mailbox Synchroniciteit-Daft; uitwisseling van synchroniciteitsselecties (<<Lg01,Lg01>>).
-* 300061 ++[++Raad voor de rechtspraak++]++ +
-Mailbox Rvdr; levering van gegevens over het gezag van minderjarigen (<<Og21,Of21>>, <<Of21,Of21>>).
-* 300062 ++[++Routeringsvoorziening++]++ +
-Mailbox Rvdr; uitwisseling van gegevens over het gezag van minderjarigen +
-(<<Og21,Of21>>, <<Of21,Of21>>).  
+* 300061 [Raad voor de rechtspraak] +
+Mailbox Rvdr; levering van gegevens over het gezag over minderjarigen (<<Og21,Of21>>, <<Of21,Of21>>).
+* 300062 [Routeringsvoorziening] +
+Mailbox Routeringsvoorziening; uitwisseling van gegevens over het gezag over minderjarigen (<<Og21,Og21>>, <<Of21,Of21>>).  
 * 450201 Min van BZK/Logius/Inzage gegevens Basisregistratie Personen via MijnOverheid. +
 Ad hoc webservice en VraagAI
-* 700302 ++[++Immigratie- en Naturalisatiedienst++]++ +
+* 700302 [Immigratie- en Naturalisatiedienst] +
 Mailbox IND; levering van gegevens over het verblijfrecht (<<Og11,Og11>>, <<Of11,Of11>>).
-* 999904 ++[++Rijksdienst voor Identiteitsgegevens++]++ +
+* 999904 [Rijksdienst voor Identiteitsgegevens] +
 Mailbox Paspoortregister; versturen van paspoortsignaleringen naar gemeenten (<<Vb01,Vb01>>); +
 Mailbox Tabelberichten; uitwisseling van tabelberichten (<<Dt01,Dt01>>, <<Dw01,Dw01>>, <<Ct01,Ct01>>, <<Cw01,Cw01>>, <<Cb01,Cb01>>). De Tabelberichten <<Dt01,Dt01>>, <<Dw01,Dw01>> kunnen worden doorgestuurd via de webservice StuurGBAbericht.
 
@@ -773,7 +779,7 @@ De kop bestaat minimaal uit de volgende velden:
 De standaardwaarde is 00000000.
 *Berichtnummer* (4 posities, alfanumeriek, in de BRP Berichten API: berichtType):: Het nummer van het bericht
 
-De kop bestaat dus minimaal uit 12 (= 8{plus}4) posities. De velden worden achter elkaar opgenomen.
+De kop bestaat dus minimaal uit 12 (= 8+4) posities. De velden worden achter elkaar opgenomen.
 
 Naast de twee bovengenoemde velden kunnen één of meer van de hierna opgesomde velden voorkomen in de kop van een bericht. Deze velden worden achter de bovengenoemde elementen geplaatst, in de volgorde zoals ze ook in de opsomming bij het betreffende bericht zijn opgenomen. Mogelijke overige velden zijn:
 
@@ -784,7 +790,7 @@ Bevat de inhoud van het bericht gegevens van een PL, dan wordt hier de inhoud va
 *Aantal* (3 posities, numeriek, niet van toepassing op berichten via de BRP Berichten API):: In de berichten van de toevallige gebeurtenis (<<Tb02,Tb02>> en <<Tf21,Tf21>>) bevat dit veld het aantal identificerende rubrieken. +
 In Hf01-, Hq01-, Xf01- en Xq01-berichten bevat dit veld het aantal gevraagde rubrieken.
 
-*Aantekeningen* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat alle aantekeningen over uitspraken van rechtbanken die betrekking hebben op het gezag over de minderjarige die is aangeduid met het burgerservicenummer in het Og21bericht, in omgekeerde chronologische volgorde, dus de meest recente aantekening eerst.
+*Aantekeningen* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat alle aantekeningen over uitspraken van rechtbanken die betrekking hebben op het gezag over de minderjarige die is aangeduid met het burgerservicenummer in het <<Og21,Og21>>-bericht, in omgekeerde chronologische volgorde, dus de meest recente aantekening eerst.
 
 [width="100%",cols="3%,3%,24%,15%,10%,45%",options="header",]
 |===
@@ -852,7 +858,7 @@ Als het rechtsfeit wel verandering in de persoonsidentificerende gegevens veroor
 
 *Lengte bericht* (5 posities, numeriek, niet van toepassing op berichten via de BRP Berichten API):: De lengte van de tekst van het vrije bericht (<<Vb01,Vb01>> en <<Vb02,Vb02>>).
 
-*Minderjarige* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat gegevens over de minderjarige waarop de inhoud van het Og21-bericht betrekking heeft. 
+*Minderjarige* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat gegevens over de minderjarige waarop de inhoud van het <<Og21,Og21>>-bericht betrekking heeft. 
 [width="100%",cols="3%,3%,24%,15%,10%,45%",options="header"]
 |===
 3+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in de BRP
@@ -863,8 +869,7 @@ Als het rechtsfeit wel verandering in de persoonsidentificerende gegevens veroor
 
 *Oud A‑nummer* (10 posities, numeriek, in de BRP Berichten API: oudANummer):: Na een A‑nummerwijziging staat in het betreffende synchronisatiebericht (<<Lg01,Lg01>>) het oude A‑nummer van de persoon in dit veld. De standaardwaarde is "0000000000".
 
-*Registerkaart* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat gegevens over de regsterkaart uit het Centraal Gezagsregister waaraan de inhoud van het Og21-bericht betrekking heeft.
-
+*Registerkaart* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat gegevens over de registerkaart uit het Centraal Gezagsregister waaraan de inhoud van het <<Og21,Og21>>-bericht betrekking heeft.
 
 [width="100%",cols="3%,3%,24%,15%,10%,45%",options="header"]
 |===
@@ -879,13 +884,13 @@ De standaardwaarde van Status is "A".
 
 *Te wijzigen tabel* (2 posities, numeriek, in de BRP Berichten API: teWijzigenTabel):: Het nummer van de uit te breiden of te wijzigen tabel ter identificatie van die tabel.
 
-*Uittreksel* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat gegevens over de het uittreksel uit het Centraal Gezagsregister waarop de inhoud van het Og21-bericht betrekking heeft.
+*Uittreksel* (JSON-object, dus alleen van toepassing op de BRP Berichten API):: Dit object bevat gegevens over  het uittreksel uit het Centraal Gezagsregister waarop de inhoud van het <<Og21,Og21>>-bericht betrekking heeft.
 [width="100%",cols="3%,3%,24%,15%,10%,45%",options="header"]
 |===
 3+|Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in de BRP
 3+|uittreksel |object |ja |
 | 2+|aangemaaktOp |datum/tijd |ja
-|Formaat: jjjjmmddhhmmssuuu.
+|Formaat: jjjjmmddhhmmssμμμ.
 | 2+|verstrekkendeInstantie |string |ja
 |De rechtbank namens wie het bericht wordt verstuurd. Maximaal 120 posities.
 | 2+|toelichting |string |nee
@@ -1212,7 +1217,7 @@ De webservices van BRP-V zijn uitsluitend te benaderen via het Diginetwerk. Ze m
 
 ==== Opbouw van API berichten
 
-De API's van BRP-V zijn uitsluitend te benaderen via Diginetwerk. Het zijn web API's waarmee over HTTPS gecommuniceerd kan worden. Headers en response codes zijn dan ook conform de HTTP standaard (RFC 7230) en de input en output bestaan altijd uit JSON-berichten (content-type: application/json, of application/hal{plus}json). In foutsituaties wordt een HTTP-statusbericht gestuurd conform RFC 7231 en RFC 7807 in problem/json (content-type: application/problem{plus}json). Voor elk API endpoint worden in <<_berichtuitwisseling_via_de_brp_berichten_api>>, <<_berichten_in_verband_met_de_bijhouding>>, <<_berichten_in_verband_met_verstrekkingen>> en <<_overige_berichten_2>> achtereenvolgens beschreven: de functionaliteit van het endpoint, de methode en de URI waarmee het endpoint aangeroepen kan worden, de parameters die in de URI moeten worden gebruikt (path-parameters en query parameters), de elementen die in de input JSON mogen of zelfs moeten worden meegegeven bij het aanroepen van de API, en de elementen die in de output JSON worden terug gegeven door de API. De API's zijn benaderbaar via de basis-URLs die zijn gepubliceerd op de website van RvIG.
+De API's van BRP-V zijn uitsluitend te benaderen via Diginetwerk. Het zijn web API's waarmee over HTTPS gecommuniceerd kan worden. Headers en response codes zijn dan ook conform de HTTP standaard (RFC 7230) en de input en output bestaan altijd uit JSON-berichten (content-type: application/json, of application/hal+json). In foutsituaties wordt een HTTP-statusbericht gestuurd conform RFC 7231 en RFC 7807 in problem/json (content-type: application/problem+json). Voor elk API endpoint worden in <<_berichtuitwisseling_via_de_brp_berichten_api>>, <<_berichten_in_verband_met_de_bijhouding>>, <<_berichten_in_verband_met_verstrekkingen>> en <<_overige_berichten_2>> achtereenvolgens beschreven: de functionaliteit van het endpoint, de methode en de URI waarmee het endpoint aangeroepen kan worden, de parameters die in de URI moeten worden gebruikt (path-parameters en query parameters), de elementen die in de input JSON mogen of zelfs moeten worden meegegeven bij het aanroepen van de API, en de elementen die in de output JSON worden terug gegeven door de API. De API's zijn benaderbaar via de basis-URLs die zijn gepubliceerd op de website van RvIG.
 
 De berichtencyclus ziet er voor alle API's hetzelfde uit en is weergegeven in onderstaand diagram.
 
@@ -1463,7 +1468,7 @@ Met dit endpoint kunnen verschillende soorten tellingen worden uitgevoerd waarme
 
 URI: {basis_url}/berichten/telling
 
-Method: soort
+Method: GET
 
 ====== Input parameters
 De input is een query parameter:
@@ -1562,7 +1567,7 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 2+|Gemeenten, RNI en de Raad voor de rechtspraak: 
 |
 
-* <<_opnemenwijzigen_gegegevens_omtrent_gezag_2,5.2.10>>
+* <<_opnemenwijzigen_gegevens_omtrent_gezag,5.2.10>>
 
 |Opnemen/wijzigen gegevens omtrent gezag 
 2+|Gemeenten, RNI en BRP-V:
@@ -1645,7 +1650,7 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 |DeelnemerAanvraag |ABO verzoekt om statusinformatie van een of meer ingediende DeelnemerOpgaven
 |===
 
-De berichtencycli 5.2.9 en t/m 5.2.11 t/m 5.2.13 kunnen behalve met de mailboxserver ook via de BRP Berichten API worden uitgewisseld. De berichtencyclus 5.2.10 kan uitsluitend via de BRP Berichten API worden uitgewisseld. 
+De berichtencycli 5.2.2 t/m 5.2.9 en 5.2.11 t/m 5.2.13 kunnen behalve met de mailboxserver ook via de BRP Berichten API worden uitgewisseld. De berichtencyclus 5.2.10 kan uitsluitend via de BRP Berichten API worden uitgewisseld. 
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -2188,6 +2193,7 @@ De PL van de gezochte persoon is verhuisd. Als uit de kop van het <<Tf21,Tf21>>-
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
+
 ==== Opnemen verwijsgegevens
 
 [.text-center]
@@ -2449,7 +2455,7 @@ De Minister van Justitie kan een nieuwe cyclus starten door een <<Og11,Og11>>-be
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
-==== Opnemen gegevens omtrent gezag
+==== Opnemen/wijzigen gegevens omtrent gezag
 
 [.text-center]
 .Schematische weergave Opnemen gegevens omtrent gezag
@@ -2466,11 +2472,11 @@ Het normale verloop van de cyclus bestaat uit de volgende stappen:
 . *Raad voor de rechtspraak* +
 De Raad voor de rechtspraak doet een verzoek aan RvIG om een beslissing omtrent het gezag over een minderjarige door te sturen aan de gemeente van inschrijving van die minderjarige, door middel van het versturen van een <<Og21,Og21>>-bericht naar de routeringsvoorziening van RvIG. 
 . *RvIG routeringsvoorziening* +
-Na controle of het bericht afkomstig is van de Raad voor de rechtspraak wordt, met behulp van de ontvangen identificerende gegevens in het <<Og21,Og21>>-bericht, gezocht naar een unieke PL in de BRPV. In het zoekproces worden alle PL'en betrokken, behalve de met reden "F" opgeschorte PL'en. Als de gevonden PL in de BRP-V is geblokkeerd, dan houdt de RvIG routeringsvoorziening het <<Og21,Og21>>-bericht een configureerbaar aantal keren een configureerbare periode vast en herhaalt de stappen vanaf "Zoek persoon in BRP-V". In alle andere gevallen wordt gecontroleerd bij welke gemeente van inschrijving de PL zich bevindt. Naar die gemeente wordt een vrij bericht (<<Vb01,Vb01>>) gestuurd met de inhoud van het <<Og21,Og21>>-bericht. Als blijkt dat het om een RNI-PL gaat, dan wordt het Vb01-bericht gestuurd naar de laatste gemeente van inschrijving voor de opschorting van de PL. Als de PL zich in een gemeente bevindt, wordt het <<Vb01,Vb01>>-bericht doorgestuurd naar de actuele gemeente van inschrijving. 
+Na controle of het bericht afkomstig is van de Raad voor de rechtspraak wordt, met behulp van de ontvangen identificerende gegevens in het <<Og21,Og21>>-bericht, gezocht naar een unieke PL in de BRP-V. In het zoekproces worden alle PL'en betrokken, behalve de met reden "F" opgeschorte PL'en. Als de gevonden PL in de BRP-V is geblokkeerd, dan houdt de RvIG routeringsvoorziening het <<Og21,Og21>>-bericht een configureerbaar aantal keren een configureerbare periode vast en herhaalt de stappen vanaf "Zoek persoon in BRP-V". In alle andere gevallen wordt gecontroleerd bij welke gemeente van inschrijving de PL zich bevindt. Naar die gemeente wordt een vrij bericht (<<Vb01,Vb01>>) gestuurd met de inhoud van het <<Og21,Og21>>-bericht. Als blijkt dat het om een RNI-PL gaat, dan wordt het <<Vb01,Vb01>>-bericht gestuurd naar de laatste gemeente van inschrijving voor de opschorting van de PL. Als de PL zich in een gemeente bevindt, wordt het <<Vb01,Vb01>>-bericht doorgestuurd naar de actuele gemeente van inschrijving. 
 . *Gemeente van inschrijving* +
-Met behulp van de ontvangen identificerende gegevens in het <<Vb01,Vb01>>-bericht wordt gezocht naar een unieke PL. In het zoekproces worden alle PL'en betrokken, behalve de met reden "F" opgeschorte PL'en. Daarbij geldt dat de gegevens uit het Vb01-bericht alleen dan op een met reden "O" opgeschorte PL kan worden verwerkt, als de datum opschorting ligt na de ingangsdatum in het <<Vb01,Vb01>>-bericht. Als de PL wordt gevonden in het verwijsbestand en daaruit blijkt dat de PL naar de RNI is verhuisd, wordt een verzoek gericht tot RvIG om wijziging van de PL of om het opnemen van een documentindicatie, door middel van het daartoe bestemde formulier. Als de datum opschorting vóór of op de ingangsdatum ligt, wordt door RvIG alleen een documentindicatie opgenomen.
+Met behulp van de ontvangen identificerende gegevens in het <<Vb01,Vb01>>-bericht wordt gezocht naar een unieke PL. In het zoekproces worden alle PL'en betrokken, behalve de met reden "F" opgeschorte PL'en. Daarbij geldt dat de gegevens uit het <<Vb01,Vb01>>-bericht alleen dan op een met reden "O" opgeschorte PL kan worden verwerkt, als de datum opschorting ligt na de ingangsdatum in het <<Vb01,Vb01>>-bericht. Als de PL wordt gevonden in het verwijsbestand en daaruit blijkt dat de PL naar de RNI is verhuisd, wordt een verzoek gericht tot RvIG om wijziging van de PL of om het opnemen van een documentindicatie, door middel van het daartoe bestemde formulier. Als de datum opschorting vóór of op de ingangsdatum ligt, wordt door RvIG alleen een documentindicatie opgenomen.
 . *RvIG routeringsvoorziening* +
-De Vb01-cyclus voorziet niet in een antwoordbericht, dus de routeringsvoorziening ontvangt geen verwerkbevestiging van de gemeente. Dat betekent dat de routeringsvoorziening er, zodra een Vb01-bericht is verzonden naar een gemeente, vanuit gaat dat de gegevens kunnen worden verwerkt. De routeringsvoorziening stuurt geen verwerkbevestiging naar de Raad voor de rechtspraak.
+De <<Vb01,Vb01>>-cyclus voorziet niet in een antwoordbericht, dus de routeringsvoorziening ontvangt geen verwerkbevestiging van de gemeente. Dat betekent dat de routeringsvoorziening er, zodra een <<Vb01,Vb01>>-bericht is verzonden naar een gemeente, vanuit gaat dat de gegevens kunnen worden verwerkt. De routeringsvoorziening stuurt geen verwerkbevestiging naar de Raad voor de rechtspraak.
 . *Raad voor de rechtspraak* +
 Als een foutbericht uitblijft, gaat de Raad voor de rechtspraak er vanuit dat de procedure correct is afgerond en dat de PL is bijgewerkt.
 
@@ -2486,7 +2492,7 @@ Bij de uit te voeren stappen kunnen foutsituaties optreden die de volgende actie
 |[.number]#&#x2462;# |Als na een configureerbaar aantal pogingen de gevonden PL in de BRP-V nog steeds is geblokkeerd, dan wordt een <<Of21,Of21>>-bericht gestuurd naar de Raad voor de 
 rechtspraak met foutreden "B".
 
-|[.number]#&#x2463;# |Als de gevonden PL in BRP-V is opgeschort met reden "E" of "M", dan wordt het <<Og21,Og21>>-bericht doorgestuurd naar de laatste gemeente van inschrijving. Als er geen gemeente van inschrijving op de PL te vinden is in de adreshistorie, dan wordt een <<Of21,Of21>>-bericht gestuurd naar de Raad voor de rechtspraak met foutreden "R".
+|[.number]#&#x2463;# |Als de gevonden PL in BRP-V is opgeschort met reden "E" of "M", dan wordt het <<Vb01,Vb01>>-bericht gestuurd naar de laatste gemeente van inschrijving. Als er geen gemeente van inschrijving op de PL te vinden is in de adreshistorie, dan wordt een <<Of21,Of21>>-bericht gestuurd naar de Raad voor de rechtspraak met foutreden "R".
 
 |[.number]#&#x2464;# |Afhankelijk van de foutreden in de kop van het <<Of21,Of21>>-bericht worden de volgende acties ondernomen door de Raad voor de rechtspraak:
 
@@ -2501,6 +2507,9 @@ Deze foutreden kan wijzen op onjuiste identificerende gegevens. De Raad voor de 
 *Foutreden R*
 
 Deze foutreden wijst erop dat er geen laatste gemeente van inschrijving is gevonden op een PL in de RNI, terwijl er wel een gemeente verantwoordelijk is voor de bijhouding van de gegevens op die PL. De Raad voor de rechtspraak dient contact op te nemen met RvIG om uit te laten zoeken hoe dit kon gebeuren en waarom de adreshistorie ontbreekt op de PL. Daarna kan een nieuwe cyclus worden gestart.
+
+*Foutreden U*
+Deze foutreden wijst erop dat zelfs in BRP-V meer dan één PL is aangetroffen met het burgerservicenummer in het <<Og21,Og21>>-bericht. De Raad voor de rechtspraak dient contact op te nemen met RvIG om uit te laten zoeken wat de oorzaak is van dit probleem. Daarna kan een nieuwe cyclus worden gestart
 |===
 
 
@@ -2719,12 +2728,12 @@ De output is de volledige persoonslijst, of een melding van een ander resultaat,
 |X011 |Service niet geactiveerd |Melding: Service is niet geactiveerd voor dit account
 |X012 |Wachtwoord verlopen |Melding: Wachtwoord verlopen
 |X013 |Geen autorisatietabelregel |Melding: Geen actuele autorisatietabelregel
-|X018 |Rubriek niet toegestaan |Melding: Niet toegestaan zoekcriterium gebruikt: ++'++rubrieknummer++'++
-|X019 |Rubriek dubbel opgenomen |Melding: Dubbel rubrieknummer in zoekcriteria niet toegestaan: ++'++rubrieknummer++'++
+|X018 |Rubriek niet toegestaan |Melding: Niet toegestaan zoekcriterium gebruikt: 'rubrieknummer'
+|X019 |Rubriek dubbel opgenomen |Melding: Dubbel rubrieknummer in zoekcriteria niet toegestaan: 'rubrieknummer'
 |X019 |Rubriek niet numeriek |Melding: Numeriek zoekcriterium rubrieknummer bevat geen numerieke waarde
-|X019 |Onjuiste lengte |Melding: Onjuiste lengte voor rubriek: rubrieknummer=++'++waarde++'++
+|X019 |Onjuiste lengte |Melding: Onjuiste lengte voor rubriek: rubrieknummer='waarde'
 |X019 |Geen correcte persoonsidentificatie |Melding: Geen correcte persoonsidentificatie
-|X025 |Gevraagde rubriek dubbel opgenomen |Melding: Dubbel rubrieknummer in masker niet toegestaan: ++'++rubrieknummer++'++
+|X025 |Gevraagde rubriek dubbel opgenomen |Melding: Dubbel rubrieknummer in masker niet toegestaan: 'rubrieknummer'
 |X027 |Niet geautoriseerd voor opvragen PL |Melding: Niet geautoriseerd voor opvragen PL
 |===
 
@@ -2776,14 +2785,14 @@ Bij onduidelijkheden over het resultaat kan het referentienummer doorgegeven wor
 |X011 |Service niet geactiveerd |Melding: Service is niet geactiveerd voor dit account.
 |X012 |Wachtwoord verlopen |Melding: wachtwoord verlopen
 |X013 |Geen autorisatietabelregel |Melding: Geen actuele autorisatietabelregel. De gehele autorisatietabel ontbreekt of de vragende partij is niet geautoriseerd voor ad hoc vragen.
-|X018 |Rubriek niet toegestaan |Melding: Niet toegestaan zoekcriterium gebruikt: ++'++rubrieknummer++'++
-|X019 |Rubriek dubbel opgenomen |Melding: Dubbel rubrieknummer in zoekcriteria niet toegestaan: ++'++rubrieknummer++'++
+|X018 |Rubriek niet toegestaan |Melding: Niet toegestaan zoekcriterium gebruikt: 'rubrieknummer'
+|X019 |Rubriek dubbel opgenomen |Melding: Dubbel rubrieknummer in zoekcriteria niet toegestaan: 'rubrieknummer'
 |X019 |Rubriek niet numeriek |Melding: Numeriek zoekcriterium rubrieknummer bevat geen numerieke waarde
-|X019 |Onjuiste lengte |Melding: Onjuiste lengte voor rubriek: rubrieknummer=++'++waarde++'++
+|X019 |Onjuiste lengte |Melding: Onjuiste lengte voor rubriek: rubrieknummer='waarde'
 |X019 |Geen correcte persoonsidentificatie |Melding: Geen correcte persoonsidentificatie
 
 In het vraagbericht zijn A-nr of BSN niet opgenomen.
-|X025 |Gevraagde rubriek dubbel opgenomen |Melding: Dubbel rubrieknummer in masker niet toegestaan: ++'++rubrieknummer++'++
+|X025 |Gevraagde rubriek dubbel opgenomen |Melding: Dubbel rubrieknummer in masker niet toegestaan: 'rubrieknummer'
 |X028 |Niet geautoriseerd voor opvragen Afnemersindicaties |Melding: Niet geautoriseerd voor opvragen AI
 
 Afnemer is geen gemeente, RNI of geregistreerde afnemer.
@@ -2813,16 +2822,16 @@ Persoonslijsten die ten onrechte zijn opgenomen in de BRP (opgeschort reden F) m
 ====== Elementen in het vraagbericht
 
 ====== gbabericht
-++<++gbabericht++>++ bevat de te controleren PL. Het betreft een <<Lg01,Lg01>> zoals ook via de mailboxserver wordt verstuurd. Standaard is de codering in Teletex. Optioneel kan worden aangegeven dat de codering UTF-8 is.
+<gbabericht> bevat de te controleren PL. Het betreft een <<Lg01,Lg01>> zoals ook via de mailboxserver wordt verstuurd. Standaard is de codering in Teletex. Optioneel kan worden aangegeven dat de codering UTF-8 is.
 
 ====== actie
-De ++<++actie++>++ bevat de waarde: valideer++_++pl.
+De <actie> bevat de waarde: valideer_pl.
 
 ====== aanleiding
-De ++<++aanleiding++>++ is een facultatief gegeven en mag weggelaten worden. Voorgestelde waarde is: kwaliteitscontrole.
+De <aanleiding> is een facultatief gegeven en mag weggelaten worden. Voorgestelde waarde is: kwaliteitscontrole.
 
 ====== berichtnummer
-Het ++<++berichtnummer++>++ bevat de waarde: <<Lg01,Lg01>>.
+Het <berichtnummer> bevat de waarde: <<Lg01,Lg01>>.
 
 ===== Output
 
@@ -2831,19 +2840,19 @@ BRP-V controleert de PL op juistheid en meldt de bevindingen terug.
 ====== Elementen in het antwoordbericht
 
 ====== resultaatcode
-De ++<++resultaatcode++>++ bevat de waarde: pl++_++ok of pl++_++nok of een foutcode.
+De <resultaatcode> bevat de waarde: pl_ok of pl_nok of een foutcode.
 
-pl++_++ok betekent dat de validatie is doorlopen en er geen bevindingen in de PL zijn geconstateerd. +
-pl++_++nok betekent dat de validatie is doorlopen en er een of meer bevindingen zijn geconstateerd. Dan wordt ook de sectie details (elementen code en omschrijving) in het antwoord opgenomen met hierin voor elk van de bevindingen een detail.
+pl_ok betekent dat de validatie is doorlopen en er geen bevindingen in de PL zijn geconstateerd. +
+pl_nok betekent dat de validatie is doorlopen en er een of meer bevindingen zijn geconstateerd. Dan wordt ook de sectie details (elementen code en omschrijving) in het antwoord opgenomen met hierin voor elk van de bevindingen een detail.
 
 ====== toelichting
-Bevat bij een resultaatcode pl++_++ok of pl++_++nok een vermelding van de naam en de versie van het evaluatie-instrument PL heeft gevalideerd. Als de resultaatcode een foutcode bevat dan wordt hier een toelichting op de foutcode opgenomen.
+Bevat bij een resultaatcode pl_ok of pl_nok een vermelding van de naam en de versie van het evaluatie-instrument PL heeft gevalideerd. Als de resultaatcode een foutcode bevat dan wordt hier een toelichting op de foutcode opgenomen.
 
 ====== details
-Wanneer de validatie succesvol is doorlopen en er bevindingen in de PL zijn geconstateerd, dan bevat ++<++details++>++ een of meer detailelementen met elk een code en omschrijving. Het element details is facultatief. Details en de detailelementen code en omschrijving zijn afwezig als resultaatcode pl++_++ok of een foutcode bevat.
+Wanneer de validatie succesvol is doorlopen en er bevindingen in de PL zijn geconstateerd, dan bevat <details> een of meer detailelementen met elk een code en omschrijving. Het element details is facultatief. Details en de detailelementen code en omschrijving zijn afwezig als resultaatcode pl_ok of een foutcode bevat.
 
 ====== code
-++<++code++>++ bevat een bevindingscode van vijf tekens. De gebruikte codes komen overeen met de bevindingencodes die worden gehanteerd in het evaluatie-instrument en zijn aan uitbreiding en verandering onderhevig. Iedere code bestaat uit een letter gevolgd door vier cijfers.
+<code> bevat een bevindingscode van vijf tekens. De gebruikte codes komen overeen met de bevindingencodes die worden gehanteerd in het evaluatie-instrument en zijn aan uitbreiding en verandering onderhevig. Iedere code bestaat uit een letter gevolgd door vier cijfers.
 
 ====== omschrijving
 Bij iedere bevinding wordt de omschrijving toegevoegd zoals die in het evaluatie-instrument is opgenomen.
@@ -2864,10 +2873,10 @@ Onderstaande tabel bevat de meldingen waarbij foutcodes meegegeven worden. Naast
 |X011 |Controleren PL is alleen te gebruiken door gemeenten of de RNI. Behoort de vraagsteller niet tot deze groep, dan volgt deze foutmelding. |Melding: Service is niet geactiveerd voor dit account
 |X012 |Wachtwoord verlopen |Melding: Wachtwoord verlopen
 |X013 |Geen actuele autorisatietabelregel |Melding: Geen actuele autorisatietabelregel
-|X021 |Onbekende actie |Melding: Ongeldige waarde voor parameter ++<++actie++>++
-|X021 |Mismatch tussen berichtnummer en berichtinhoud |Melding: Ongeldige waarde voor parameter ++<++berichtnummer++>++
-|X021 |Berichtnummer is niet <<Lg01,Lg01>> |Melding: Ongeldige waarde voor parameter ++<++berichtnummer++>++
-|X021 |<<Lg01,Lg01>> bericht is niet valide |Melding: Ongeldige waarde voor parameter ++<++gbabericht++>++
+|X021 |Onbekende actie |Melding: Ongeldige waarde voor parameter <actie>
+|X021 |Mismatch tussen berichtnummer en berichtinhoud |Melding: Ongeldige waarde voor parameter <berichtnummer>
+|X021 |Berichtnummer is niet <<Lg01,Lg01>> |Melding: Ongeldige waarde voor parameter <berichtnummer>
+|X021 |<<Lg01,Lg01>> bericht is niet valide |Melding: Ongeldige waarde voor parameter <gbabericht>
 |===
 
 ifdef::backend-pdf[<<<]
@@ -2886,7 +2895,7 @@ De webservice VraagVoorraadAnrs is uitsluitend te gebruiken door gemeenten, de R
 ===== Input
 
 ====== aantal
-Het element ++<++aantal++>++ bevat het gevraagde aantal A-nummers. Deze parameter heeft een technisch maximale waarde van 1.000.000. Er is echter een limiet dat per aanvrager verschillend kan zijn. Deze limiet is opgesteld aan de hand van het aantal inwoners van de gemeente; zie onderstaande tabel. Als er geen aantal meegegeven wordt, wordt door de server het resterende toegestane aantal A-nummers teruggegeven voor de betreffende periode.
+Het element <aantal> bevat het gevraagde aantal A-nummers. Deze parameter heeft een technisch maximale waarde van 1.000.000. Er is echter een limiet dat per aanvrager verschillend kan zijn. Deze limiet is opgesteld aan de hand van het aantal inwoners van de gemeente; zie onderstaande tabel. Als er geen aantal meegegeven wordt, wordt door de server het resterende toegestane aantal A-nummers teruggegeven voor de betreffende periode.
 
 Als het opgegeven aantal gelijk aan nul is, dan wordt een lege lijst met A-nummers versterkt, met daarbij de actuele waardes van gebruikerResterend, gebruikerLimiet en gebruikerReset.
 
@@ -2917,7 +2926,7 @@ Bij elke aanroep van de webservice wordt gecontroleerd of deze is gedaan met een
 
 ===== Output
 
-Het antwoordbericht bevat ofwel een element ++<++aNummerData++>++, ofwel een element ++<++fout++>++. In het element ++<++aNummerData++>++ komt een lijst A-nummers voor, elk in een element ++<++aNummers++>++, en een element ++<++limiet++>++. In het element ++<++limiet++>++ komen de elementen ++<++gebruikerResterend++>++, ++<++gebruikerLimiet++>++ en (optioneel) ++<++gebruikerReset++>++ voor.
+Het antwoordbericht bevat ofwel een element <aNummerData>, ofwel een element <fout>. In het element <aNummerData> komt een lijst A-nummers voor, elk in een element <aNummers>, en een element <limiet>. In het element <limiet> komen de elementen <gebruikerResterend>, <gebruikerLimiet> en (optioneel) <gebruikerReset> voor.
 
 ====== aNummers
 Elk A-nummer wordt in een afzonderlijk element opgenomen. Als het gevraagde aantal nul is, dan worden geen A-nummers opgenomen.
@@ -2954,15 +2963,15 @@ ifdef::backend-html5[''']
 
 Endpoint voor het aanvragen van een nieuwe voorraad A-nummers. Met dit endpoint kunnen gemeenten en RNI, maar ook het Caribische deel van het Koninkrijk, een nieuwe voorraad A-nummers aanvragen ten behoeve van nieuwe inschrijvingen in de BRP of PIVA.
 
-URI: ++{++basis++_++url}/a-nummers
+URI: {basis_url}/a-nummers
 
 Method: GET
 
-Voor de basis++_++url en de gedetailleerde functionele en technische specificaties van de A-nummer API, zie de Open API Specificaties op de website van RvIG.
+Voor de basis_url en de gedetailleerde functionele en technische specificaties van de A-nummer API, zie de Open API Specificaties op de website van RvIG.
 
 ===== Input
 
-De input is een query parameter met een sleutel met de naam ++<++aantal++>++ (bijvoorbeeld GET ++{++basis++_++url}/a-nummers?aantal=1000). Deze parameter is optioneel en geeft het aantal A-nummers weer dat teruggegeven moet worden. De maximale waarde die gegeven kan worden is 1.000.000, maar aan het aantal dat de gebruiker mag opvragen zit een limiet dat per aanvrager verschillend kan zijn. Die limiet is opgesteld aan de hand van het aantal inwoners van de gemeente. Als er geen aantal meegegeven wordt, wordt door de server het resterende toegestane aantal A-nummers teruggegeven in de betreffende periode. Als het aantal 0 meegegeven wordt, wordt een lege lijst A-nummers teruggegeven, maar met de standaard aanwezige informatie over actuele limieten.
+De input is een query parameter met een sleutel met de naam <aantal> (bijvoorbeeld GET {basis_url}/a-nummers?aantal=1000). Deze parameter is optioneel en geeft het aantal A-nummers weer dat teruggegeven moet worden. De maximale waarde die gegeven kan worden is 1.000.000, maar aan het aantal dat de gebruiker mag opvragen zit een limiet dat per aanvrager verschillend kan zijn. Die limiet is opgesteld aan de hand van het aantal inwoners van de gemeente. Als er geen aantal meegegeven wordt, wordt door de server het resterende toegestane aantal A-nummers teruggegeven in de betreffende periode. Als het aantal 0 meegegeven wordt, wordt een lege lijst A-nummers teruggegeven, maar met de standaard aanwezige informatie over actuele limieten.
 
 ===== Controles
 
@@ -2984,7 +2993,7 @@ Het aantal A-nummers dat de gebruiker mag opvragen binnen één periode.
 De datum waarop de limiet gereset wordt en de gebruiker weer nieuwe A-nummers kan opvragen, in het formaat volgens de RFC-2616. Voorbeeld: Fri, 31 Dec 2022 23:59:59 GMT.
 
 ====== Retry-After
-In het geval er geen A-nummers meer opgevraagd mogen worden omdat de limiet bereikt is (HTTP foutcode 429), wordt er een response header element ++<++Retry-After++>++ opgenomen. Die bevat de datum waarop de limiet gereset wordt en waarna de gebruiker weer nieuwe A-nummers kan opvragen. Deze datum heeft het formaat volgens de RFC-2616 specificatie. Voorbeeld: Fri, 31 Dec 2022 23:59:59 GMT.
+In het geval er geen A-nummers meer opgevraagd mogen worden omdat de limiet bereikt is (HTTP foutcode 429), wordt er een response header element <Retry-After> opgenomen. Die bevat de datum waarop de limiet gereset wordt en waarna de gebruiker weer nieuwe A-nummers kan opvragen. Deze datum heeft het formaat volgens de RFC-2616 specificatie. Voorbeeld: Fri, 31 Dec 2022 23:59:59 GMT.
 
 ===== Foutsituaties
 
@@ -3039,12 +3048,12 @@ Als antwoord op het opgavebericht stuurt de RNI onmiddellijk (synchroon) een ont
 |Foutcode |Conditie |Toelichting
 |100 |Er is een technische fout opgetreden. |Indien dit vaker voorkomt, moet contact opgenomen worden met de RNI-registratiehouder.
 |101 |Niet geautoriseerd. |Indien dit niet overeenstemt met rapport ketentest: neem contact op met RvIG, Functioneel Beheer RNI.
-|103 |De opgave met RNI referentienummer ++<++referentienummer++>++ is ingetrokken. |Dit zou duiden op een verkeerde versie van de WSDL: neem contact op met RvIG, Functioneel Beheer RNI.
-|104 |Deelnemer heeft al eerder een opgave gedaan met uw referentienummer ++<++referentienummer++>++ |Dit duidt op een fout in het proces. +
+|103 |De opgave met RNI referentienummer <referentienummer> is ingetrokken. |Dit zou duiden op een verkeerde versie van de WSDL: neem contact op met RvIG, Functioneel Beheer RNI.
+|104 |Deelnemer heeft al eerder een opgave gedaan met uw referentienummer <referentienummer> |Dit duidt op een fout in het proces. +
 Onderzoek de oorzaak.
-|105 |Deelnemer ++<++deelnemerscode++>++ is niet bekend. |Neem contact op met RvIG, Functioneel Beheer RNI.
+|105 |Deelnemer <deelnemerscode> is niet bekend. |Neem contact op met RvIG, Functioneel Beheer RNI.
 |109 |Computervirus aangetroffen. |Dit is een ernstige bevinding. Neem contact op met RvIG, Functioneel beheer RNI en schakel tevens de eigen afdeling van informatiebeveiliging in.
-|110 |Probleem opgetreden tijdens gebruik van externe service. Details: ++<++details++>++ |Neem contact op met RvIG, Functioneel Beheer RNI.
+|110 |Probleem opgetreden tijdens gebruik van externe service. Details: <details> |Neem contact op met RvIG, Functioneel Beheer RNI.
 |200 |PL met het aangeleverde BSN is niet in de RNI aangetroffen. |Opnieuw indienen van de mutatie is nog niet zinvol. Het ABO-systeem bevat (nog) niet de meest actuele gegevens. Onderzoek zo nodig de oorzaak en vraag de meest actuele gegevens op in de BRP.
 |201 |Op basis van het BSN is een PL gevonden maar deze PL heeft een ander A-nummer dan het meegeleverde A-nummer. |Onderzoek de situatie. Mogelijk zijn verstrekkingen met betrekking tot wijzigingen van identificatienummers niet juist verwerkt.
 |202 |Er zijn meerdere PL'en gevonden met het aangeleverde BSN. Voeg aan de identificatie zo mogelijk het A-nummer toe. |Neem contact op met RvIG, Gegevensbeheer RNI.
@@ -3056,21 +3065,21 @@ Onderzoek de oorzaak.
 |1013 |De inschrijvingsopgave is niet uitgevoerd. Reden: Zie DetailsGeconstateerdeFouten. |Corrigeer de inschrijving en dien deze opnieuw in met een nieuwe unieke referentie.
 |1020 |De actualisering is gelijk aan de huidige gegevens op de PL. De actualisering is niet uitgevoerd. |Opnieuw indienen van de mutatie is niet zinvol.
 |1021 |De actualisering is niet consistent met de huidige gegevens op de PL en kan daarom niet doorgevoerd worden. Zie DetailsGeconstateerdeFouten. |Het ABO-systeem bevat (nog) niet de meest actuele gegevens. Ook is het mogelijk dat de gegevens in de RNI actueler (juister, vollediger) zijn dan waarover de ABO beschikt. Onderzoek de situatie.
-|1022 |De PL is opgeschort met reden O (overlijden) en de ingangsdatum van het gegeven (++<++datum ingang geldigheid++>++) ligt na de datum opschorting (++<++datum opschorting dd-mm-jjjj++>++). |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
-|1024 |De actualisering ++<++naam++>++ voldoet inhoudelijk niet aan de voorschriften. Zie DetailsGeconstateerdeFouten |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
-|1025 |Op de PL zijn geen gegevens aangetroffen die betrekking hebben op de aangegeven nationaliteit met code ++<++nationaliteitscode++>++ |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
+|1022 |De PL is opgeschort met reden O (overlijden) en de ingangsdatum van het gegeven (<datum ingang geldigheid>) ligt na de datum opschorting (<datum opschorting dd-mm-jjjj>). |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
+|1024 |De actualisering <naam> voldoet inhoudelijk niet aan de voorschriften. Zie DetailsGeconstateerdeFouten |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
+|1025 |Op de PL zijn geen gegevens aangetroffen die betrekking hebben op de aangegeven nationaliteit met code <nationaliteitscode> |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
 |1026 |De actualiseringsopgave is niet doorgevoerd. Reden: zie DetailsGeconstateerdeFouten |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1028 |Actualisering ingangsdatum adres buitenland voldoet inhoudelijk niet aan de voorschriften. In DetailsGeconstateerdeFouten staat een opsomming van de constateringen. |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1031 |De verificatieopgave voldoet inhoudelijk niet aan de voorschriften. In DetailsGeconstateerdeFouten staat een opsomming van de constateringen. |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie.
-|1032 |De aangeleverde verificatiedatum ++<++datum++>++ is fout (ligt in de toekomst). |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie
-|1033 |De PL is opgeschort met reden O (overlijden) en de verificatiedatum ligt na de datum opschorting (++<++datum opschorting dd-mm-jjjj++>++). |Onderzoek de situatie.
-|1035 |In de RNI is reeds een latere verificatiedatum (++<++RNI-datum++>++, bron: ++<++deelnemer-meest-recente-verificatie.) geregistreerd dan nu door de deelnemer is aangeleverd (++<++Deelnemer-datum++>++); geen wijziging doorgevoerd. |Opnieuw indienen van de verificatie is niet zinvol.
+|1032 |De aangeleverde verificatiedatum <datum> is fout (ligt in de toekomst). |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie
+|1033 |De PL is opgeschort met reden O (overlijden) en de verificatiedatum ligt na de datum opschorting (<datum opschorting dd-mm-jjjj>). |Onderzoek de situatie.
+|1035 |In de RNI is reeds een latere verificatiedatum (<RNI-datum>, bron: <deelnemer-meest-recente-verificatie.) geregistreerd dan nu door de deelnemer is aangeleverd (<Deelnemer-datum>); geen wijziging doorgevoerd. |Opnieuw indienen van de verificatie is niet zinvol.
 |1036 |De verificatiedatum in de RNI heeft al de waarde die nu door de deelnemer is aangeleverd: geen wijziging doorgevoerd. |Opnieuw indienen van de verificatie is niet zinvol.
 |1037 |De verificatieopgave is niet doorgevoerd. In DetailsGeconstateerdeFouten staat een opsomming van de constateringen. |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1041 |Op basis van het bestandskenmerk is vastgesteld dat de scan al bij het dossier is opgenomen. Mogelijk is de opgave dubbel aangeleverd. De scan(s) is (zijn) niet opgenomen. Zie DetailsGeconstateerdeFouten voor de betreffende bestandsnaam. |Opnieuw indienen van de scan is niet zinvol.
 |1303 |Overlijdensdatum mag niet in de toekomst liggen. |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1304 |Overlijdensdatum mag niet voor geboortedatum liggen. |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
-|9999 |++<++unexpected error met nadere omschrijving++>++ |Neem contact op met RvIG, Functioneel Beheer RNI.
+|9999 |<unexpected error met nadere omschrijving> |Neem contact op met RvIG, Functioneel Beheer RNI.
 |===
 
 ifdef::backend-pdf[<<<]
@@ -3108,12 +3117,12 @@ De uitslag van de verwerking wordt asynchroon gestuurd. Dit kan een verwerkbeves
 |Foutcode |Conditie |Toelichting
 |100 |Er is een technische fout opgetreden. |Deze response wordt gegeven bij een technische fout. Indien dit vaker voorkomt, moet contact opgenomen worden met de RNI-registratiehouder.
 |101 |Niet geautoriseerd. |Indien dit niet overeenstemt met rapport ketentest: neem contact op met RvIG, Functioneel Beheer RNI.
-|103 |De opgave met RNI referentienummer ++<++referentienummer++>++ is ingetrokken. |Dit zou duiden op een verkeerde versie van de WSDL: neem contact op met RvIG, Functioneel Beheer RNI.
-|104 |Deelnemer heeft al eerder een opgave gedaan met uw referentienummer ++<++referentienummer++>++ |Dit duidt op een fout in het proces. +
+|103 |De opgave met RNI referentienummer <referentienummer> is ingetrokken. |Dit zou duiden op een verkeerde versie van de WSDL: neem contact op met RvIG, Functioneel Beheer RNI.
+|104 |Deelnemer heeft al eerder een opgave gedaan met uw referentienummer <referentienummer> |Dit duidt op een fout in het proces. +
 Onderzoek de oorzaak.
-|105 |Deelnemer ++<++deelnemerscode++>++ is niet bekend. |Neem contact op met RvIG, Functioneel Beheer RNI.
+|105 |Deelnemer <deelnemerscode> is niet bekend. |Neem contact op met RvIG, Functioneel Beheer RNI.
 |109 |Computervirus aangetroffen. |Dit is een ernstige bevinding. Neem contact op met RvIG, Functioneel beheer RNI en schakel tevens de eigen afdeling van informatiebeveiliging in.
-|110 |Probleem opgetreden tijdens gebruik van externe service. Details: ++<++details++>++ |Neem contact op met RvIG, Functioneel Beheer RNI.
+|110 |Probleem opgetreden tijdens gebruik van externe service. Details: <details> |Neem contact op met RvIG, Functioneel Beheer RNI.
 |200 |PL met het aangeleverde BSN is niet in de RNI aangetroffen. |Opnieuw indienen van de mutatie is nog niet zinvol. Het ABO-systeem bevat (nog) niet de meest actuele gegevens. Onderzoek zo nodig de oorzaak en vraag de meest actuele gegevens op in de BRP.
 |201 |Op basis van het BSN is een PL gevonden maar deze PL heeft een ander A-nummer dan het meegeleverde A-nummer. |Onderzoek de situatie. Mogelijk zijn verstrekkingen met betrekking tot wijzigingen van identificatienummers niet juist verwerkt.
 |202 |Er zijn meerdere PL'en gevonden met het aangeleverde BSN. Voeg aan de identificatie zo mogelijk het A-nummer toe. |Neem contact op met RvIG, Gegevensbeheer RNI.
@@ -3125,21 +3134,21 @@ Onderzoek de oorzaak.
 |1013 |De inschrijvingsopgave is niet uitgevoerd. Reden: Zie DetailsGeconstateerdeFouten. |Corrigeer de inschrijving en dien deze opnieuw in met een nieuwe unieke referentie.
 |1020 |De actualisering is gelijk aan de huidige gegevens op de PL. De actualisering is niet uitgevoerd. |Opnieuw indienen van de mutatie is niet zinvol.
 |1021 |De actualisering is niet consistent met de huidige gegevens op de PL en kan daarom niet doorgevoerd worden. Zie DetailsGeconstateerdeFouten. |Het ABO-systeem bevat (nog) niet de meest actuele gegevens. Ook is het mogelijk dat de gegevens in de RNI actueler (juister, vollediger) zijn dan waarover de ABO beschikt. Onderzoek de situatie.
-|1022 |De PL is opgeschort met reden O (overlijden) en de ingangsdatum van het gegeven (++<++datum ingang geldigheid++>++) ligt na de datum opschorting (++<++datum opschorting dd-mm-jjjj++>++). |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
-|1024 |De actualisering ++<++naam++>++ voldoet inhoudelijk niet aan de voorschriften. Zie DetailsGeconstateerdeFouten |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
-|1025 |Op de PL zijn geen gegevens aangetroffen die betrekking hebben op de aangegeven nationaliteit met code ++<++nationaliteitscode++>++ |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
+|1022 |De PL is opgeschort met reden O (overlijden) en de ingangsdatum van het gegeven (<datum ingang geldigheid>) ligt na de datum opschorting (<datum opschorting dd-mm-jjjj>). |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
+|1024 |De actualisering <naam> voldoet inhoudelijk niet aan de voorschriften. Zie DetailsGeconstateerdeFouten |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
+|1025 |Op de PL zijn geen gegevens aangetroffen die betrekking hebben op de aangegeven nationaliteit met code <nationaliteitscode> |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
 |1026 |De actualiseringsopgave is niet doorgevoerd. Reden: zie DetailsGeconstateerdeFouten |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1028 |Actualisering ingangsdatum adres buitenland voldoet inhoudelijk niet aan de voorschriften. In DetailsGeconstateerdeFouten staat een opsomming van de constateringen. |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1031 |De verificatieopgave voldoet inhoudelijk niet aan de voorschriften. In DetailsGeconstateerdeFouten staat een opsomming van de constateringen. |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie.
-|1032 |De aangeleverde verificatiedatum ++<++datum++>++ is fout (ligt in de toekomst). |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie
-|1033 |De PL is opgeschort met reden O (overlijden) en de verificatiedatum ligt na de datum opschorting (++<++datum opschorting dd-mm-jjjj++>++). |Onderzoek de situatie.
-|1035 |In de RNI is reeds een latere verificatiedatum (++<++RNI-datum++>++, bron: ++<++deelnemer-meest-recente-verificatie.) geregistreerd dan nu door de deelnemer is aangeleverd (++<++Deelnemer-datum++>++); geen wijziging doorgevoerd. |Opnieuw indienen van de verificatie is niet zinvol.
+|1032 |De aangeleverde verificatiedatum <datum> is fout (ligt in de toekomst). |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie
+|1033 |De PL is opgeschort met reden O (overlijden) en de verificatiedatum ligt na de datum opschorting (<datum opschorting dd-mm-jjjj>). |Onderzoek de situatie.
+|1035 |In de RNI is reeds een latere verificatiedatum (<RNI-datum>, bron: <deelnemer-meest-recente-verificatie.) geregistreerd dan nu door de deelnemer is aangeleverd (<Deelnemer-datum>); geen wijziging doorgevoerd. |Opnieuw indienen van de verificatie is niet zinvol.
 |1036 |De verificatiedatum in de RNI heeft al de waarde die nu door de deelnemer is aangeleverd: geen wijziging doorgevoerd. |Opnieuw indienen van de verificatie is niet zinvol.
 |1037 |De verificatieopgave is niet doorgevoerd. In DetailsGeconstateerdeFouten staat een opsomming van de constateringen. |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1041 |Op basis van het bestandskenmerk is vastgesteld dat de scan al bij het dossier is opgenomen. Mogelijk is de opgave dubbel aangeleverd. De scan(s) is (zijn) niet opgenomen. Zie DetailsGeconstateerdeFouten voor de betreffende bestandsnaam. |Opnieuw indienen van de scan is niet zinvol.
 |1303 |Overlijdensdatum mag niet in de toekomst liggen. |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1304 |Overlijdensdatum mag niet voor geboortedatum liggen. |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
-|9999 |++<++unexpected error met nadere omschrijving++>++ |Neem contact op met RvIG, Functioneel Beheer RNI.
+|9999 |<unexpected error met nadere omschrijving> |Neem contact op met RvIG, Functioneel Beheer RNI.
 |===
 
 ifdef::backend-pdf[<<<]
@@ -3190,12 +3199,12 @@ een algemeen verplicht deel Verwerking en een specifiek optioneel deel Informati
 |Foutcode |Conditie |Toelichting
 |100 |Er is een technische fout opgetreden. |Deze response wordt gegeven bij een technische fout. Indien dit vaker voorkomt, moet contact opgenomen worden met de RNI-registratiehouder.
 |101 |Niet geautoriseerd. |Indien dit niet overeenstemt met rapport ketentest: neem contact op met RvIG, Functioneel Beheer RNI.
-|103 |De opgave met RNI referentienummer ++<++referentienummer++>++ is ingetrokken. |Dit zou duiden op een verkeerde versie van de WSDL: neem contact op met RvIG, Functioneel Beheer RNI.
-|104 |Deelnemer heeft al eerder een opgave gedaan met uw referentienummer ++<++referentienummer++>++ |Dit duidt op een fout in het proces. +
+|103 |De opgave met RNI referentienummer <referentienummer> is ingetrokken. |Dit zou duiden op een verkeerde versie van de WSDL: neem contact op met RvIG, Functioneel Beheer RNI.
+|104 |Deelnemer heeft al eerder een opgave gedaan met uw referentienummer <referentienummer> |Dit duidt op een fout in het proces. +
 Onderzoek de oorzaak.
-|105 |Deelnemer ++<++deelnemerscode++>++ is niet bekend. |Neem contact op met RvIG, Functioneel Beheer RNI.
+|105 |Deelnemer <deelnemerscode> is niet bekend. |Neem contact op met RvIG, Functioneel Beheer RNI.
 |109 |Computervirus aangetroffen. |Dit is een ernstige bevinding. Neem contact op met RvIG, Functioneel beheer RNI en schakel tevens de eigen afdeling van informatiebeveiliging in.
-|110 |Probleem opgetreden tijdens gebruik van externe service. Details: ++<++details++>++ |Neem contact op met RvIG, Functioneel Beheer RNI.
+|110 |Probleem opgetreden tijdens gebruik van externe service. Details: <details> |Neem contact op met RvIG, Functioneel Beheer RNI.
 |200 |PL met het aangeleverde BSN is niet in de RNI aangetroffen. |Opnieuw indienen van de mutatie is nog niet zinvol. Het ABO-systeem bevat (nog) niet de meest actuele gegevens. Onderzoek zo nodig de oorzaak en vraag de meest actuele gegevens op in de BRP.
 |201 |Op basis van het BSN is een PL gevonden maar deze PL heeft een ander A-nummer dan het meegeleverde A-nummer. |Onderzoek de situatie. Mogelijk zijn verstrekkingen met betrekking tot wijzigingen van identificatienummers niet juist verwerkt.
 |202 |Er zijn meerdere PL'en gevonden met het aangeleverde BSN. Voeg aan de identificatie zo mogelijk het A-nummer toe. |Neem contact op met RvIG, Gegevensbeheer RNI.
@@ -3207,21 +3216,21 @@ Onderzoek de oorzaak.
 |1013 |De inschrijvingsopgave is niet uitgevoerd. Reden: Zie DetailsGeconstateerdeFouten. |Corrigeer de inschrijving en dien deze opnieuw in met een nieuwe unieke referentie.
 |1020 |De actualisering is gelijk aan de huidige gegevens op de PL. De actualisering is niet uitgevoerd. |Opnieuw indienen van de mutatie is niet zinvol.
 |1021 |De actualisering is niet consistent met de huidige gegevens op de PL en kan daarom niet doorgevoerd worden. Zie DetailsGeconstateerdeFouten. |Het ABO-systeem bevat (nog) niet de meest actuele gegevens. Ook is het mogelijk dat de gegevens in de RNI actueler (juister, vollediger) zijn dan waarover de ABO beschikt. Onderzoek de situatie.
-|1022 |De PL is opgeschort met reden O (overlijden) en de ingangsdatum van het gegeven (++<++datum ingang geldigheid++>++) ligt na de datum opschorting (++<++datum opschorting dd-mm-jjjj++>++). |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
-|1024 |De actualisering ++<++naam++>++ voldoet inhoudelijk niet aan de voorschriften. Zie DetailsGeconstateerdeFouten |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
-|1025 |Op de PL zijn geen gegevens aangetroffen die betrekking hebben op de aangegeven nationaliteit met code ++<++nationaliteitscode++>++ |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
+|1022 |De PL is opgeschort met reden O (overlijden) en de ingangsdatum van het gegeven (<datum ingang geldigheid>) ligt na de datum opschorting (<datum opschorting dd-mm-jjjj>). |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
+|1024 |De actualisering <naam> voldoet inhoudelijk niet aan de voorschriften. Zie DetailsGeconstateerdeFouten |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
+|1025 |Op de PL zijn geen gegevens aangetroffen die betrekking hebben op de aangegeven nationaliteit met code <nationaliteitscode> |Onderzoek de situatie en neem zo nodig contact op met RvIG, Gegevensbeheer RNI.
 |1026 |De actualiseringsopgave is niet doorgevoerd. Reden: zie DetailsGeconstateerdeFouten |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1028 |Actualisering ingangsdatum adres buitenland voldoet inhoudelijk niet aan de voorschriften. In DetailsGeconstateerdeFouten staat een opsomming van de constateringen. |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1031 |De verificatieopgave voldoet inhoudelijk niet aan de voorschriften. In DetailsGeconstateerdeFouten staat een opsomming van de constateringen. |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie.
-|1032 |De aangeleverde verificatiedatum ++<++datum++>++ is fout (ligt in de toekomst). |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie
-|1033 |De PL is opgeschort met reden O (overlijden) en de verificatiedatum ligt na de datum opschorting (++<++datum opschorting dd-mm-jjjj++>++). |Onderzoek de situatie.
-|1035 |In de RNI is reeds een latere verificatiedatum (++<++RNI-datum++>++, bron: ++<++deelnemer-meest-recente-verificatie.) geregistreerd dan nu door de deelnemer is aangeleverd (++<++Deelnemer-datum++>++); geen wijziging doorgevoerd. |Opnieuw indienen van de verificatie is niet zinvol.
+|1032 |De aangeleverde verificatiedatum <datum> is fout (ligt in de toekomst). |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie
+|1033 |De PL is opgeschort met reden O (overlijden) en de verificatiedatum ligt na de datum opschorting (<datum opschorting dd-mm-jjjj>). |Onderzoek de situatie.
+|1035 |In de RNI is reeds een latere verificatiedatum (<RNI-datum>, bron: <deelnemer-meest-recente-verificatie.) geregistreerd dan nu door de deelnemer is aangeleverd (<Deelnemer-datum>); geen wijziging doorgevoerd. |Opnieuw indienen van de verificatie is niet zinvol.
 |1036 |De verificatiedatum in de RNI heeft al de waarde die nu door de deelnemer is aangeleverd: geen wijziging doorgevoerd. |Opnieuw indienen van de verificatie is niet zinvol.
 |1037 |De verificatieopgave is niet doorgevoerd. In DetailsGeconstateerdeFouten staat een opsomming van de constateringen. |Corrigeer de verificatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1041 |Op basis van het bestandskenmerk is vastgesteld dat de scan al bij het dossier is opgenomen. Mogelijk is de opgave dubbel aangeleverd. De scan(s) is (zijn) niet opgenomen. Zie DetailsGeconstateerdeFouten voor de betreffende bestandsnaam. |Opnieuw indienen van de scan is niet zinvol.
 |1303 |Overlijdensdatum mag niet in de toekomst liggen. |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
 |1304 |Overlijdensdatum mag niet voor geboortedatum liggen. |Corrigeer de mutatie en dien deze opnieuw in met een nieuwe unieke referentie.
-|9999 |++<++unexpected error met nadere omschrijving++>++ |Neem contact op met RvIG, Functioneel Beheer RNI.
+|9999 |<unexpected error met nadere omschrijving> |Neem contact op met RvIG, Functioneel Beheer RNI.
 |===
 
 ifdef::backend-pdf[<<<]
@@ -3721,8 +3730,8 @@ ifdef::backend-html5[''']
 Berichtnummer:: Of21
 Berichtnaam:: Fout: opnemen/wijzigen gezag niet mogelijk
 Omschrijving:: Foutbericht omdat een verzoek tot opnemen/wijzigen van gegevens omtrent gezag over een minderjarig kind niet uitgevoerd kan worden en waarom dit niet kan. 
-Te verzenden door:: gemeente van inschrijving, RvIG routeringsvoorziening
-Te verzenden aan:: RvIG routeringsvoorziening, Raad voor de rechtspraak
+Te verzenden door:: RvIG routeringsvoorziening
+Te verzenden aan:: Raad voor de rechtspraak
 Volgt op bericht:: <<Og21,Og21>>
 Wordt gevolgd door:: {empty}
 Kop bevat::
@@ -3783,12 +3792,12 @@ ifdef::backend-html5[''']
 [#Og21]
 [horizontal,labelwidth=35,itemwidth=65]
 Berichtnummer:: Og21
-Berichtnaam:: Fout: Opnemen/wijzigen gegevens omtrent gezag 
+Berichtnaam:: Opnemen/wijzigen gegevens omtrent gezag 
 Omschrijving:: Het bericht waarmee de Raad voor de rechtspraak gegevens omtrent het gezag over een minderjarig kind kenbaar maakt. 
-Te verzenden door:: Raad voor de rechtspraak, RvIG routeringsvoorziening 
-Te verzenden aan:: RvIG routeringsvoorziening, gemeente van inschrijving
+Te verzenden door:: Raad voor de rechtspraak
+Te verzenden aan:: RvIG routeringsvoorziening
 Volgt op bericht:: {empty} 
-Wordt gevolgd door:: niets of <<Og21,Og21>>
+Wordt gevolgd door:: niets of <<Of21,Of21>>
 Kop bevat::
 berichtnummer = 4 posities +
 uittreksel = JSON-object +
@@ -4315,7 +4324,6 @@ De in de berichten voorkomende foutredenen en statusmeldingen zijn in de onderst
 |B |<<Jf01,Jf01>> |PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 |B |<<Of11,Of11>> |PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 |B |<<Of21,Of21>> |PL is geblokkeerd i.v.m. verhuizing 
-|B |<<Og21,Og21>> |PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 |B |<<Tf01,Tf01>> |PL ouder is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 |B |<<Tf21,Tf21>> |PL is geblokkeerd i.v.m. verhuizing naar gemeente "code"
 3+|
@@ -4471,10 +4479,15 @@ In het overzicht hierna zijn de berichtencycli gegroepeerd uitgaande van de betr
 * <<_brp_api_verblijfplaatshistorie,5.3.14>>
 
 |BRP API - Verblijfplaatshistorie
+|
+
+* <<_brp_api_gebeurtenissen,5.3.15>>
+
+|BRP API - Gebeurtenissen
 2+|API's in verband met het opvragen van het protocolleringsoverzicht door MijnOverheid:
 |
 
-* <<_brp_protocolleringsoverzicht_api,5.3.15>>
+* <<_brp_protocolleringsoverzicht_api,5.3.16>>
 
 |BRP Protocolleringsoverzicht API
 |===
@@ -4838,7 +4851,7 @@ image::image56.svg[width=566,height=243]
 
 De Ad hoc webservice zorgt ervoor dat een afnemer gegevens kan opvragen van een ingezetene of niet-ingezetene. Het is een synchrone webservice die voldoet aan de WSDL die op de website van RvIG is gepubliceerd.
 
-De Ad hoc webservice kent twee varianten: de ad hoc vraag en de ad hoc adresvraag (het element ++<++indicatieAdresvraag++>++ in de vraag is "0" resp. "1"). Met een ad hoc vraag kunnen gegevens worden opgevraagd van personen die voldoen aan de zoekcriteria. Daarin dient dan ook een persoonsidentificatie te worden opgenomen. Met een ad hoc adresvraag kunnen gegevens worden opgevraagd van personen die een bepaald adres gebruiken als brief- of woonadres, of van personen die een adres gebruiken als tijdelijk verblijfsadres. Dat adres kan zowel met een persoonsidentificatie als met een adresidentificatie worden opgegeven. Bij een persoonsidentificatie worden dan gegevens verstrekt van alle personen die hetzelfde adres gebruiken als brief- of woonadres als de opgegeven persoon, of als de gezochte persoon het adres gebruikt als tijdelijk verblijfsadres, alle personen die datzelfde adres ook gebruiken als tijdelijk verblijfsadres. Het zoeken naar de gebruikers van een adres gebeurt dan ook in twee stappen: in de eerste stap (de tussenstap) worden alle PL'en gezocht die voldoen aan de opgegeven zoekcriteria, om vervolgens de adressen te bepalen waar die personen zijn ingeschreven. In de tweede stap worden vervolgens alle PL'en gezocht van alle andere personen die op de gevonden adressen zijn ingeschreven. Om alle gebruikers van een adres te achterhalen, is het nodig om twee adresvragen te stellen: één keer om alle gebruikers van het adres als brief- of woonadres op te vragen, en één keer om alle gebruikers van het adres als tijdelijk verblijfsadres op te vragen.
+De Ad hoc webservice kent twee varianten: de ad hoc vraag en de ad hoc adresvraag (het element <indicatieAdresvraag> in de vraag is "0" resp. "1"). Met een ad hoc vraag kunnen gegevens worden opgevraagd van personen die voldoen aan de zoekcriteria. Daarin dient dan ook een persoonsidentificatie te worden opgenomen. Met een ad hoc adresvraag kunnen gegevens worden opgevraagd van personen die een bepaald adres gebruiken als brief- of woonadres, of van personen die een adres gebruiken als tijdelijk verblijfsadres. Dat adres kan zowel met een persoonsidentificatie als met een adresidentificatie worden opgegeven. Bij een persoonsidentificatie worden dan gegevens verstrekt van alle personen die hetzelfde adres gebruiken als brief- of woonadres als de opgegeven persoon, of als de gezochte persoon het adres gebruikt als tijdelijk verblijfsadres, alle personen die datzelfde adres ook gebruiken als tijdelijk verblijfsadres. Het zoeken naar de gebruikers van een adres gebeurt dan ook in twee stappen: in de eerste stap (de tussenstap) worden alle PL'en gezocht die voldoen aan de opgegeven zoekcriteria, om vervolgens de adressen te bepalen waar die personen zijn ingeschreven. In de tweede stap worden vervolgens alle PL'en gezocht van alle andere personen die op de gevonden adressen zijn ingeschreven. Om alle gebruikers van een adres te achterhalen, is het nodig om twee adresvragen te stellen: één keer om alle gebruikers van het adres als brief- of woonadres op te vragen, en één keer om alle gebruikers van het adres als tijdelijk verblijfsadres op te vragen.
 
 ===== Input
 
@@ -4850,17 +4863,17 @@ Dit element heeft twee mogelijke waarden: "0" of "1". De waarde "0" betekent dat
 
 ====== indicatieZoekenInHistorie
 
-Dit element heeft twee mogelijke waarden: "0" of "1". De waarde "0" betekent dat gezocht wordt in actuele categorieën. Als ++<++indicatieZoekenInHistorie++>++ met 1 is gevuld, wordt ook in de historische categorieën gezocht.
+Dit element heeft twee mogelijke waarden: "0" of "1". De waarde "0" betekent dat gezocht wordt in actuele categorieën. Als <indicatieZoekenInHistorie> met 1 is gevuld, wordt ook in de historische categorieën gezocht.
 
-Voor het zoeken in historie geldt voor de afnemer dezelfde autorisatie als voor de actuele gegevens. De autorisatie voor de historische rubrieken uit de autorisatietabelregel is bij het zoeken niet van toepassing (wel bij de opgevraagde rubrieken). Bij een ad hoc adresvraag met adresidentificatie wordt de parameter ++<++indicatieZoekenInHistorie++>++ genegeerd (de waarde moet wel in het waardebereik liggen). Deze parameter is dan niet van toepassing: alleen personen die actueel op het adres zijn ingeschreven worden geselecteerd.
+Voor het zoeken in historie geldt voor de afnemer dezelfde autorisatie als voor de actuele gegevens. De autorisatie voor de historische rubrieken uit de autorisatietabelregel is bij het zoeken niet van toepassing (wel bij de opgevraagde rubrieken). Bij een ad hoc adresvraag met adresidentificatie wordt de parameter <indicatieZoekenInHistorie> genegeerd (de waarde moet wel in het waardebereik liggen). Deze parameter is dan niet van toepassing: alleen personen die actueel op het adres zijn ingeschreven worden geselecteerd.
 
 ====== masker
 
-Het element ++<++masker++>++ bevat de opsomming (telkens binnen een element ++<++item++>++) van de gevraagde rubrieken van de persoonslijst.
+Het element <masker> bevat de opsomming (telkens binnen een element <item>) van de gevraagde rubrieken van de persoonslijst.
 
 ====== parameters
 
-Het element ++<++parameters++>++ bevat de opsomming (telkens binnen een element ++<++item++>++) van de zoekcriteria. Elk zoekcriterium bestaat uit een ++<++rubrieknummer++>++ en een ++<++zoekwaarde++>++. De zoekcriteria werken als een logische 'and': aan alle zoekcriteria moet worden voldaan. Het feit dat een bepaald gegeven niet mag voorkomen, wordt aangegeven door het opnemen van een leeg element ++<++zoekwaarde++>++ in de vraag. Historische categorieën waarin rubriek 84.10 (Indicatie onjuist dan wel strijdigheid met de openbare orde) voorkomt, worden bij het zoeken genegeerd.
+Het element <parameters> bevat de opsomming (telkens binnen een element <item>) van de zoekcriteria. Elk zoekcriterium bestaat uit een <rubrieknummer> en een <zoekwaarde>. De zoekcriteria werken als een logische 'and': aan alle zoekcriteria moet worden voldaan. Het feit dat een bepaald gegeven niet mag voorkomen, wordt aangegeven door het opnemen van een leeg element <zoekwaarde> in de vraag. Historische categorieën waarin rubriek 84.10 (Indicatie onjuist dan wel strijdigheid met de openbare orde) voorkomt, worden bij het zoeken genegeerd.
 
 ====== Persoonsidentificatie (ad hoc vraag en ad hoc adresvraag)
 
@@ -4907,9 +4920,9 @@ Bij adresidentificatie kunnen wel zoekcriteria in de parameters worden opgenomen
 
 ===== Controles
 
-Bij een ad hoc vraag (++<++indicatieAdresVraag++>++ heeft waarde "0") voert BRP-V de controles uit die zijn beschreven in <<_toelichting_15>>; deze zijn dan van overeenkomstige toepassing.
+Bij een ad hoc vraag (<indicatieAdresVraag> heeft waarde "0") voert BRP-V de controles uit die zijn beschreven in <<_toelichting_15>>; deze zijn dan van overeenkomstige toepassing.
 
-Bij een ad hoc adresvraag (++<++indicatieAdresVraag++>++ heeft waarde "1") wijken de controles die BRP-V uitvoert, enigszins af van die welke worden uitgevoerd na ontvangst van een <<Xq01,Xq01>>-bericht. BRP-V controleert dan:
+Bij een ad hoc adresvraag (<indicatieAdresVraag> heeft waarde "1") wijken de controles die BRP-V uitvoert, enigszins af van die welke worden uitgevoerd na ontvangst van een <<Xq01,Xq01>>-bericht. BRP-V controleert dan:
 
 * of de afnemer is geautoriseerd voor het stellen van ad hoc adresvragen;
 * of de afnemer is geautoriseerd voor de ad hoc gegevensverstrekking van de gegevens die de afnemer gebruikt in de parameters;
@@ -4941,20 +4954,20 @@ Als antwoord op de ad hoc (adres)vraag wordt er één of meer persoonslijsten te
 
 ====== Persoonslijsten
 
-De gevonden gegevens worden in een geneste structuur binnen het element ++<++persoonslijsten++>++ teruggestuurd. Als er voor een gevonden PL geen enkele rubriek verstrekt kan worden, dan wordt voor die PL een leeg ++<++item++>++ binnen ++<++persoonslijsten++>++ opgenomen in het antwoord.
+De gevonden gegevens worden in een geneste structuur binnen het element <persoonslijsten> teruggestuurd. Als er voor een gevonden PL geen enkele rubriek verstrekt kan worden, dan wordt voor die PL een leeg <item> binnen <persoonslijsten> opgenomen in het antwoord.
 
-Het element ++<++persoonslijsten++>++ komt niet voor als er in het antwoord geen persoonsgegevens worden verstrekt.
+Het element <persoonslijsten> komt niet voor als er in het antwoord geen persoonsgegevens worden verstrekt.
 
 ====== Resultaat
 
-Het element ++<++resultaat++>++ bevat de volgende gegevens: code, letter, omschrijving en referentie.
+Het element <resultaat> bevat de volgende gegevens: code, letter, omschrijving en referentie.
 
 [width="100%",cols="20%,80%",frame=none,grid=none]
 |===
-|++<++code++>++ |bevat een numerieke waarde voor het resultaat. Niet alle letter-code combinaties bij letter "X' corresponderen met de foutredenen in de bij ++<++letter++>++ genoemde berichtencycli.
-|++<++letter++>++ |bevat een letter, die, met uitzondering van de letters "A" en "T", correspondeert met een van de foutredenen die in het <<Hf01,Hf01>>- dan wel <<Xf01,Xf01>>-bericht kunnen voorkomen. Zie daarvoor de cyclusbeschrijvingen Ad hoc vraag, <<_ad_hoc_vragen_via_de_berichtendienst>> en Ad hoc adresvraag, <<_ad_hoc_adresvragen_via_de_berichtendienst>>.
-|++<++omschrijving++>++ |geeft een tekstuele omschrijving van het resultaat,
-|++<++referentie++>++ |bevat gegevens waarmee het bij onduidelijkheden en dergelijke mogelijk is om bij RvIG navraag te doen over het geautomatiseerde proces dat het sturen van het bericht tot gevolg had.
+|<code> |bevat een numerieke waarde voor het resultaat. Niet alle letter-code combinaties bij letter "X' corresponderen met de foutredenen in de bij <letter> genoemde berichtencycli.
+|<letter> |bevat een letter, die, met uitzondering van de letters "A" en "T", correspondeert met een van de foutredenen die in het <<Hf01,Hf01>>- dan wel <<Xf01,Xf01>>-bericht kunnen voorkomen. Zie daarvoor de cyclusbeschrijvingen Ad hoc vraag, <<_ad_hoc_vragen_via_de_berichtendienst>> en Ad hoc adresvraag, <<_ad_hoc_adresvragen_via_de_berichtendienst>>.
+|<omschrijving> |geeft een tekstuele omschrijving van het resultaat,
+|<referentie> |bevat gegevens waarmee het bij onduidelijkheden en dergelijke mogelijk is om bij RvIG navraag te doen over het geautomatiseerde proces dat het sturen van het bericht tot gevolg had.
 |===
 
 ====== Meeverstrekken
@@ -4989,7 +5002,7 @@ Het opnemen, wijzigen, corrigeren of verwijderen van gegevens van kinderen waarb
 [width="100%",cols="15%,85%",options="header",]
 |===
 |Foutcode |Conditie
-|A000 |++<++leeg++>++
+|A000 |<leeg>
 |G033 |Geen gegevens gevonden
 |H035 |Geen verstrekking vanwege indicatie geheim
 |P032 |Te veel zoekresultaten
@@ -5003,16 +5016,16 @@ Het opnemen, wijzigen, corrigeren of verwijderen van gegevens van kinderen waarb
 |X013 |Geen actuele autorisatietabelregel
 |X014 |Niet geautoriseerd voor ad hoc vragen
 |X015 |Niet adresvraagbevoegd
-|X017 |Geen autorisatie voor rubriek: ++<++rubrieknummer++>++
-|X018 |Niet toegestaan zoekcriterium gebruikt: ++<++rubrieknummer++>++
+|X017 |Geen autorisatie voor rubriek: <rubrieknummer>
+|X018 |Niet toegestaan zoekcriterium gebruikt: <rubrieknummer>
 |X019 |Geen correcte persoonsidentificatie
 |X020 |Geen correcte persoons- of adresidentificatie
-|X021 |Ongeldige waarde voor parameter ++<++xml-tag-naam++>++
-|X022 |Numeriek zoekcriterium ++<++rubrieknummer++>++ bevat geen numerieke waarde
-|X023 |Zoekcriterium ++<++rubrieknummer++>++ bevat ongeldig teken op positie ++<++x++>++
-|X024 |Dubbel rubrieknummer in zoekcriteria niet toegestaan: ++<++rubrieknummer++>++
-|X025 |Dubbel rubrieknummer in masker niet toegestaan: ++<++rubrieknummer++>++
-|X026 |Onjuiste lengte voor rubriek: ++<++rubrieknummer++>++=++<++waarde++>++
+|X021 |Ongeldige waarde voor parameter <xml-tag-naam>
+|X022 |Numeriek zoekcriterium <rubrieknummer> bevat geen numerieke waarde
+|X023 |Zoekcriterium <rubrieknummer> bevat ongeldig teken op positie <x>
+|X024 |Dubbel rubrieknummer in zoekcriteria niet toegestaan: <rubrieknummer>
+|X025 |Dubbel rubrieknummer in masker niet toegestaan: <rubrieknummer>
+|X026 |Onjuiste lengte voor rubriek: <rubrieknummer>=<waarde>
 |X027 |Niet geautoriseerd voor opvragen PL
 |X028 |Niet geautoriseerd voor opvragen afnemersindicaties
 |Z037 |Geen PL'en die aan de verstrekkingscondities voldoen
@@ -5065,7 +5078,7 @@ http://www.w3.org/2005/08/addressing/anonymous
 In het eerste bericht van een cylcus is het element leeg of niet aanwezig.
 |===
 
-%MessageID% is maximaal 12 karakters lang. BRP-V zelf gebruikt hier numerieke IDs. Een MessageID is een URN en begint altijd met urn:brp:spd:messageid:.MessageID is een verplicht element en is leeg in alle gevallen waarin geen ++<++gbabericht++>++ aanwezig is in het bericht.
+%MessageID% is maximaal 12 karakters lang. BRP-V zelf gebruikt hier numerieke IDs. Een MessageID is een URN en begint altijd met urn:brp:spd:messageid:.MessageID is een verplicht element en is leeg in alle gevallen waarin geen <gbabericht> aanwezig is in het bericht.
 
 De volgende paragrafen beschrijven per actie de betekenis en het gebruik van de in de WSDL-beschrijving opgenomen elementen.
 
@@ -5075,24 +5088,24 @@ Summarize Messages geeft het totaal aantal klaarstaande berichten terug. Deze ac
 
 ====== Het vraagbericht
 
-*++<++actie++>++* +
+*<actie>* +
 De actie bevat de waarde: SummarizeMessages.
 
 ====== Het antwoordbericht
 
-*++<++resultaatcode++>++* +
+*<resultaatcode>* +
 De resultaatcode bevat de waarde SummarizeResult bij het succesvol ophalen van het aantal berichten of een foutcode.
 
-*++<++toelichting++>++* +
+*<toelichting>* +
 Als de resultaatcode een foutcode bevat, dan wordt hier een toelichting op de foutcode opgenomen.
 
-*++<++details++>++* +
+*<details>* +
 Bij het succesvol ophalen van het aantal berichten bevat details een element code. Er is geen omschrijving.
 
-*++<++code++>++* +
+*<code>* +
 Code bevat het aantal BRP-berichten dat klaar staat ter verzending.
 
-*++<++referentie++>++* +
+*<referentie>* +
 Referentie bevat gegevens waarmee het bij onduidelijkheden en dergelijke mogelijk is om bij RvIG navraag te doen over het geautomatiseerde proces dat het sturen van het bericht tot gevolg had.
 
 ===== List Messages
@@ -5101,32 +5114,32 @@ Met deze actie kan een lijst van MessageID's worden opgevraagd van BRP-berichten
 
 ====== Het vraagbericht
 
-*++<++actie++>++* +
+*<actie>* +
 De actie bevat de waarde: ListMessages.
 
 ====== Het antwoordbericht
 
-*++<++resultaatcode++>++* +
+*<resultaatcode>* +
 De resultaatcode bevat de waarde:
 
 * ListMessagesResult bij het succesvol ophalen van de lijst MessageID's of
 * ListMessageConfirmation als er geen berichten gevonden worden of
 * een foutcode.
 
-*++<++toelichting++>++* +
+*<toelichting>* +
 Als de resultaatcode een foutcode bevat, dan wordt hier een toelichting op de foutcode opgenomen.
 
-*++<++details++>++* +
+*<details>* +
 Bij het succesvol ophalen van de lijst MessageID's bevat details een of meer elementen code. Er is geen omschrijving.
 
 Als er geen berichten gevonden zijn, is dit element afwezig.
 
-*++<++code++>++* +
+*<code>* +
 Code bevat het MessageID van een ter verzending klaarstaand bericht.
 
 Als er geen berichten gevonden zijn, is dit element afwezig.
 
-*++<++referentie++>++* +
+*<referentie>* +
 Referentie bevat gegevens waarmee het bij onduidelijkheden en dergelijke mogelijk is om bij RvIG navraag te doen over het geautomatiseerde proces dat het sturen van het bericht tot gevolg had.
 
 ===== Get Message
@@ -5135,30 +5148,30 @@ Met deze actie kan een enkel bericht opgehaald worden.
 
 ====== Het vraagbericht
 
-*++<++actie++>++* +
+*<actie>* +
 De actie bevat de waarde: GetMessage.
 
-*++<++berichtnummer++>++* +
+*<berichtnummer>* +
 Het berichtnummer bevat een MessageID dat via een actie List Messages is verkregen.
 
 ====== Het antwoordbericht
 
-*++<++resultaatcode++>++* +
+*<resultaatcode>* +
 De resultaatcode bevat de waarde:
 
 * GetMessagesResult bij het succesvol ophalen van een bericht of
 * GetMessageConfirmation als er geen bericht gevonden wordt of
 * een foutcode.
 
-*++<++toelichting++>++* +
+*<toelichting>* +
 Als de resultaatcode een foutcode bevat, dan wordt hier een toelichting op de foutcode opgenomen.
 
-*++<++gbabericht++>++* +
+*<gbabericht>* +
 Bevat het complete BRP-bericht. De codering is Teletex of UTF-8. Het BRP-bericht is opgebouwd zoals in <<_opbouw_van_de_berichtendienst_berichten>> en in <<_berichten>>, <<_berichten_2>> en <<_berichten_3>> is beschreven. Het <<Vb01,Vb01>>-bericht wordt niet via deze webservice ontvangen.
 
 Als er geen bericht gevonden wordt, is dit element afwezig.
 
-*++<++referentie++>++* +
+*<referentie>* +
 Referentie bevat gegevens waarmee het bij onduidelijkheden en dergelijke mogelijk is om bij RvIG navraag te doen over het geautomatiseerde proces dat het sturen van het bericht tot gevolg had.
 
 ===== Put Message
@@ -5167,27 +5180,27 @@ Met deze actie wordt een bericht naar BRP-V verstuurd. Het WS-Adressing element 
 
 *Het vraagbericht*
 
-*++<++gbabericht++>++* +
+*<gbabericht>* +
 Het te versturen BRP-bericht. De codering is Teletex of UTF-8. Het BRP-bericht is opgebouwd zoals in <<_opbouw_van_de_berichtendienst_berichten>> en in <<_berichten>>, <<_berichten_2>> en <<_berichten_3>> is beschreven. Het <<Vb01,Vb01>>-bericht wordt niet via deze webservice verstuurd.
 
-**++<++actie++>++ +
+**<actie> +
 **De actie bevat de waarde: PutMessage.
 
-**++<++berichtnummer++>++ +
+**<berichtnummer> +
 **Dit is verplicht om mee te geven en bevat altijd de waarde die overeenkomt met het berichtnummer van het te versturen BRP-bericht.
 
 *Het antwoordbericht*
 
-*++<++resultaatcode++>++* +
+*<resultaatcode>* +
 De resultaatcode bevat de waarde:
 
 * PutMessageConfirmation bij het succesvol plaatsen van een bericht of
 * een foutcode.
 
-*++<++toelichting++>++* +
+*<toelichting>* +
 Als de resultaatcode een foutcode bevat, dan wordt hier een toelichting op de foutcode opgenomen.
 
-*++<++referentie++>++* +
+*<referentie>* +
 Referentie bevat gegevens waarmee het bij onduidelijkheden en dergelijke mogelijk is om bij RvIG navraag te doen over het geautomatiseerde proces dat het sturen van het bericht tot gevolg had. Voor het versturen van vrije berichten (<<Vb01,Vb01>>/<<Vb02,Vb02>>) tussen partijen is een routeringsfunctie in BRP-V gerealiseerd. Deze is beschreven in <<_routering_vrij_bericht>> Routering vrij bericht.
 
 ===== Routering vrij bericht
@@ -5232,9 +5245,9 @@ Onderstaande tabel bevat de meldingen waarbij foutcodes meegegeven worden. Naast
 |X010 |Ongeldige combinatie gebruikersnaam / wachtwoord |Bij onjuiste credentials of ongeldig certificaat
 |X011 |Service is niet geactiveerd voor dit account |Controleren PL is alleen te gebruiken door gemeenten of de RNI. Behoort de vraagsteller niet tot deze groep, dan volgt deze foutmelding.
 |X012 |Wachtwoord verlopen |
-|X021 |Onbekende actie |Melding: ongeldige waarde voor parameter ++<++actie++>++
-|X021 |Mismatch tussen berichtnummer en berichtinhoud |Melding: ongeldige waarde voor parameter ++<++berichtnummer++>++
-|X021 |<<Lg01,Lg01>> bericht is niet valide |Melding: ongeldige waarde voor parameter ++<++gbabericht++>++
+|X021 |Onbekende actie |Melding: ongeldige waarde voor parameter <actie>
+|X021 |Mismatch tussen berichtnummer en berichtinhoud |Melding: ongeldige waarde voor parameter <berichtnummer>
+|X021 |<<Lg01,Lg01>> bericht is niet valide |Melding: ongeldige waarde voor parameter <gbabericht>
 |===
 
 ifdef::backend-pdf[<<<]
@@ -5246,11 +5259,11 @@ ifdef::backend-html5[''']
 
 De BRP Aantal bewoners API is een API in het kader van Experimentbesluit bijhouding BRP. Met deze API kan MijnOverheid het aantal bewoners van een adres opvragen op basis van het BSN van één van die bewoners.
 
-URI: ++{++basis++_++url}/adres/telling/aantalbewoners
+URI: {basis_url}/adres/telling/aantalbewoners
 
 Method: POST
 
-Voor de basis++_++url en de gedetailleerde functionele en technische specificaties van de BRP Aantal bewoners API, zie de Open API Specificaties op de website van RvIG.
+Voor de basis_url en de gedetailleerde functionele en technische specificaties van de BRP Aantal bewoners API, zie de Open API Specificaties op de website van RvIG.
 
 ===== Input
 
@@ -5318,7 +5331,7 @@ ifdef::backend-html5[''']
 
 De BRP API is een API in het kader van het Experimentbesluit dataminimalisatie BRP. Met dit endpoint in de API is het voor deelnemers aan het experiment mogelijk om de gegevens van bewoningen te raadplegen voor een bepaald adres in een op te geven periode of op een op te geven peildatum. Een bewoning is een combinatie van een adresseerbaar object en één of meer bewoners van dat object op een bepaalde datum of in een bepaalde periode.
 
-URI: ++{++basis++_++url}/bewoningen
+URI: {basis_url}/bewoningen
 
 Method: POST
 
@@ -5392,7 +5405,7 @@ ifdef::backend-html5[''']
 
 De BRP API is een API in het kader van het Experimentbesluit dataminimalisatie BRP. Met dit endpoint in de API is het voor deelnemers aan het experiment mogelijk om persoonsgegevens te raadplegen of te zoeken in de BRP-V.
 
-URI: ++{++basis++_++url}/personen
+URI: {basis_url}/personen
 
 Method: POST
 
@@ -5481,7 +5494,7 @@ Als de vraag afkomstig is van een gemeente, dan wordt de vraag beantwoord. Van d
 
 Als de vraag niet afkomstig is van een gemeente, dan wordt nog gecontroleerd:
 
-* Of de afnemer geautoriseerd is voor systematische verstrekking van gegevens (dus: of er een autorisatietabelregel voor de afnemer is met <<r359998,35.99.98>> Datum ingang =++<++ systeemdatum en <<r359999,35.99.99>> ++>++ systeemdatum of leeg);
+* Of de afnemer geautoriseerd is voor systematische verstrekking van gegevens (dus: of er een autorisatietabelregel voor de afnemer is met <<r359998,35.99.98>> Datum ingang =< systeemdatum en <<r359999,35.99.99>> > systeemdatum of leeg);
 * Of de afnemer geautoriseerd is voor het medium ad hoc (<<e9567,35.95.67>> Medium ad hoc = "N" of "A");
 * Of de afnemer geautoriseerd is voor de gegevens in de zoekcriteria (komen de met de zoekcriteria corresponderende rubrieken voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?);
 * Of de afnemer geautoriseerd is voor de gevraagde gegevens (komen de rubrieken voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?). Daarbij geldt:
@@ -5969,7 +5982,7 @@ ifdef::backend-html5[''']
 
 De BRP API is een API in het kader van het Experimentbesluit dataminimalisatie BRP. Met dit endpoint in de API is het voor gemeenten die deelnemen aan het experiment mogelijk om te zoeken naar reisdocumenten van een specifiek persoon, of om de gegevens van een specifiek reisdocument op te vragen.
 
-URI: ++{++basis++_++url}/reisdocumenten
+URI: {basis_url}/reisdocumenten
 
 Method: POST
 
@@ -6070,7 +6083,7 @@ ifdef::backend-html5[''']
 
 De BRP API is een API in het kader van het Experimentbesluit dataminimalisatie BRP. Met dit endpoint in de API is het voor deelnemers aan het experiment mogelijk om historische gegevens op te vragen over de verblijfplaats van een persoon op een op te geven peildatum of in een op te geven periode.
 
-URI: ++{++basis++_++url}/verblijfplaatshistorie
+URI: {basis_url}/verblijfplaatshistorie
 
 Method: POST
 
@@ -6103,7 +6116,7 @@ Als de vraag afkomstig is van een gemeente, dan wordt de vraag beantwoord. Van d
 
 Als de vraag niet afkomstig is van een gemeente, dan wordt nog gecontroleerd:
 
-* Of de afnemer geautoriseerd is voor systematische verstrekking van gegevens (dus: of er een autorisatietabelregel voor de afnemer is met <<r359998,35.99.98>> Datum ingang =++<++ systeemdatum en <<r359999,35.99.99>> ++>++ systeemdatum of leeg);
+* Of de afnemer geautoriseerd is voor systematische verstrekking van gegevens (dus: of er een autorisatietabelregel voor de afnemer is met <<r359998,35.99.98>> Datum ingang =< systeemdatum en <<r359999,35.99.99>> > systeemdatum of leeg);
 * Of de afnemer geautoriseerd is voor het medium ad hoc (<<e9567,35.95.67>> Medium ad hoc = "N" of "A");
 * Of de afnemer geautoriseerd is voor <<e0120,01.01.20>> Burgerservicenummer, <<e7010,07.70.10>> Indicatie geheim en <<eVP07,PX.VP.07>> Verblijfplaatshistorie (komen deze voor in <<e9560,35.95.60>> Rubrieknummer ad hoc?).
 
@@ -6139,31 +6152,31 @@ Verstrekking van persoonsgegevens via het endpoint /verblijfplaatshistorie in de
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
 
-==== BRP API Gebeurtenissen
+==== BRP API - Gebeurtenissen
 
 ===== Beschrijving
 
-De BRP API gebeurtenissen is een API die mutaties op een persoonslijst in de BRP vertaalt naar gebeurtenissen. Geautoriseerde afnemers kunnen deze gebeurtenissen bevragen om hun processen en dienstverlening hierop te baseren. Afnemers kunnen zich abonneren op specifieke gebeurtenissen van personen die relevant zijn voor hun dienstverlening. Wanneer een gebeurtenis zich voordoet op een persoonslijst en een afnemer heeft zich op dat type gebeurtenis geabonneerd, dan krijgt hij die gebeurtenis toegestuurd.
+De BRP API is een API in het kader van het Experimentbesluit dataminimalisatie BRP. In de BRP-V worden mutaties op een persoonslijst in de BRP vertaald naar gebeurtenissen. Gebruikers kunnen deze gebeurtenissen bevragen om hun processen en dienstverlening hierop te baseren. Zij kunnen zich abonneren op specifieke gebeurtenissen op de persoonslijsten die relevant zijn voor hun dienstverlening. Wanneer een gebeurtenis zich voordoet op een persoonslijst en een gebruiker heeft zich op dat type gebeurtenis geabonneerd, dan krijgt hij die gebeurtenis toegestuurd.
 
-Een afnemer kan gebruik maken van verschillende taaksystemen, die elk hun eigen typen gebeurtenissen nodig hebben. Daarom kan een afnemer één of meer abonnees registreren. Voor elke abonnee kan de afnemer één of meer groepen van gebeurtenistypen registreren. 
+Een gebruiker kan gebruik maken van verschillende taaksystemen, die elk hun eigen typen gebeurtenissen nodig hebben. Daarom kan een gebruiker één of meer abonnees registreren. Voor elke abonnee kan de gebruiker één of meer groepen van gebeurtenistypen registreren. 
 
 De BRP API Gebeurtenissen beschikt daarom over de volgende functies:
 
-* Registreer een abonnee van een afnemer <<_post_basis_urlabonnees>>
-* Raadpleeg de abonnees van de afnemer <<_get_basis_url_abonnees>>
-* Ongedaan maken van een bestaande abonneeregistratie, inclusief alle abonnementen van de abonnee <<_delete_basis_url_abonnees_abonneenaam>>
-* Voeg een groep toe aan een geregistreerde abonnee <<_post_basis_url_abonnees_abonneenaam_groepen>>
-* Raadpleeg de groepen van de abonnee <<_get_basis_url_abonnees_abonneeNaam_groepen>>
-* Verwijder een groep, inclusief alle abonnementen op de groep <<_delete_basis_url_abonnees_abonneenaam_groepen_groepnaam>>
-* Voeg een gebeurtenistype toe aan een groep van een abonnee <<_post_basis_url_abonnees_abonneenaam_groepen_groepnaam_gebeurtenistypes>>
+* Registreer een abonnee van een gebruiker <<_post_basis_urlabonnees>>
+* Raadpleeg de abonnees van de gebruiker <<_get_basis_urlabonnees>>
+* Ongedaan maken van een bestaande abonneeregistratie, inclusief alle abonnementen van de abonnee <<_delete_basis_urlabonneesabonneenaam>>
+* Voeg een groep toe aan een geregistreerde abonnee <<_post_basis_urlabonneesabonneenaamgroepen>>
+* Raadpleeg de groepen van de abonnee <<_get_basis_urlabonneesabonneenaamgroepen>>
+* Verwijder een groep, inclusief alle abonnementen op de groep <<_delete_basis_urlabonneesabonneenaamgroepengroepnaam>>
+* Voeg een gebeurtenistype toe aan een groep van een abonnee <<_post_basis_urlabonneesabonneenaamgroepengroepnaamgebeurtenistypes>>
 * Raadpleeg de gebeurtenistypes in de groep
-<<_get_basis_url_abonnees_abonneenaam_groepen_groepnaam>> gebeurtenistypes
-* Verwijder een gebeurtenistype uit een groep <<_delete_basis_url_ abonnees_abonneeNaam_groepen_groepNaam_gebeurtenistypes_gebeurtenistype>>
-* Neem een abonnement voor een abonnee op een groep gebeurtenissen voor een bepaalde persoon of zeg een abonnement op<<_post_basis_url_abonnees_abonneenaam_abonnementen>>
+<<_get_basis_urlabonneesabonneenaamgroepengroepnaamgebeurtenistypes>>
+* Verwijder een gebeurtenistype uit een groep <<_delete_basis_urlabonneesabonneenaamgroepengroepnaamgebeurtenistypesgebeurtenistype>>
+* Neem een abonnement voor een abonnee op een groep gebeurtenissen voor een bepaalde persoon of zeg een abonnement op <<_post_basis_urlabonneesabonneenaamabonnementen>>
 * Raadpleeg de abonnementen van een abonnee
-<<_get_basis_url_abonnees_abonneenaam_abonnementen>>
+<<_get_basis_urlabonneesabonneenaamabonnementen>>
 * Haal gebeurtenissen op voor een abonnee
-<<_get_basis_url_abonnees_abonneenaam_gebeurtenissen>>
+<<_get_basis_urlabonneesabonneenaamgebeurtenissen>>
 
 De volgende gebeurtenistypen worden ondersteund:
 
@@ -6177,6 +6190,7 @@ Voor gedetailleerde functionele en technische specificaties van de BRP API Gebeu
 Met dit endpoint is het mogelijk om een nieuwe abonnee te registreren.
 
 URI: {basis_url}/abonnees
+
 Method: POST
 
 ====== Input
@@ -6196,29 +6210,30 @@ De input is een JSON-object waarin de volgende elementen kunnen voorkomen.
 Bij een succesvolle registratie bestaat de output uitsluitend uit een HTTP respons code 201. Er wordt geen JSON-object meegestuurd. 
 
 ===== GET {basis_url}/abonnees
-Met dit endpoint is het mogelijk om een lijst van alle abonnees van de afnemer op te halen.
+Met dit endpoint is het mogelijk om een lijst van alle abonnees van de gebruiker op te halen.
 
 URI: {basis_url}/abonnees
 
 Method: GET
 
 ====== Input
-Geen input JSON 
+Er hoef geen input JSON te worden meegeleverd in het request.
 
 ====== Output
-De output is een JSON-object met de abonnees van de afnemer.
+De output is een JSON-object met de abonnees van de gebruiker.
 
 [width="100%",cols="3%,3%,34%,10%,50%",options="header",]
 |===
 3+|Element naam |Type |Mogelijke waarden 
-3+|abonnees |array of objects |Lijst van abonnees van de afnemer.
-| 2+|naam |string |De naam van de abonnee, uniek voor een afnemer
+3+|abonnees |array of objects |Lijst van abonnees van de gebruiker.
+| 2+|naam |string |De naam van de abonnee, uniek voor een gebruiker
 |===
 
 ===== DELETE {basis_url}/abonnees/{abonneeNaam}
-Met dit endpoint is het mogelijk om de bestaande abonneeregistratie, inclusief alle abonnementen van de abonnee, te verwijderen.
+Met dit endpoint is het mogelijk om een bestaande abonnee, inclusief alle abonnementen van de abonnee, te verwijderen.
 
 URI: {basis_url}/abonnees/{abonneeNaam}
+
 Method: DELETE
 
 Waarin {abonneeNaam} de naam van de abonnee is.
@@ -6233,6 +6248,7 @@ Bij een succesvolle registratie bestaat de output uitsluitend uit een HTTP respo
 Met dit endpoint is het mogelijk om een groep toe te voegen aan een geregistreerde abonnee.
 
 URI: {basis_url}/abonnees/{abonneeNaam}/groepen 
+
 Method: POST
 
 Waarin {abonneeNaam} de naam van de abonnee is.
@@ -6257,6 +6273,7 @@ Bij een succesvolle registratie bestaat de output uitsluitend uit een HTTP respo
 Met dit endpoint is het mogelijk om de groepen van een abonnee te raadplegen.
 
 URI: {basis_url}/abonnees/{abonneeNaam}/groepen
+
 Method: GET
 
 Waarin {abonneeNaam} de naam van de abonnee is.
@@ -6277,6 +6294,7 @@ Bij een succesvolle raadpleging bestaat de output uit een HTTP respons code 200 
 Met dit endpoint is het mogelijk om een groep, inclusief alle abonnementen op die groep, te verwijderen.
 
 URI: {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam} 
+
 Method: DELETE
 
 Waarin {abonneeNaam} de naam van de abonnee is en {groepNaam} de naam van de te verwijderen groep.
@@ -6289,10 +6307,11 @@ Naast de path parameters abonneeNaam en groepNaam is er geen andere input om mee
 
 Bij een succesvolle verwijdering bestaat de output uitsluitend uit een HTTP respons code 204. Er wordt geen JSON-object meegestuurd.
 
-===== POST {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/ gebeurtenistypes
+===== POST {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes
 Met dit endpoint is het mogelijk om een gebeurtenistype toe te voegen aan een groep van een abonnee.Dit betekent dat het gebeurtenistype ook wordt toegevoegd aan alle bestaande abonnementen op de groep.
 
 URI: {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes 
+
 Method: POST
 
 Waarin {abonneeNaam} de naam van de abonnee is en {groepNaam} de naam van de groep.
@@ -6302,16 +6321,17 @@ De input is een JSON-object waarin de volgende elementen kunnen voorkomen.
 [.center,width="99%" ,cols="35%,10%,12%,42%a",options="header",]
 |===
 |Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
-|gebeurtenistype |array of strings |ja |Eén van de gebeurtenistypen die zijn opgesomd in par. 5.3.16.1
+|gebeurtenistype |string |ja |Eén van de gebeurtenistypen die zijn opgesomd in <<_beschrijving_17>>.
 |===
 
 ====== Output
 Bij een succesvolle registratie bestaat de output uitsluitend uit een HTTP respons code 201. Er wordt geen JSON-object meegestuurd.
 
-===== GET {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/ gebeurtenistypes
+===== GET {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes
 Met dit endpoint is het mogelijk om alle gebeurtenistypen in een groep te raadplegen.
 
 URI: {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes
+
 Method: GET
 
 Waarin {abonneeNaam} de naam van de abonnee is en {groepNaam} de naam van de groep.
@@ -6325,13 +6345,14 @@ Bij een succesvolle raadpleging bestaat de output uit een HTTP respons code 200 
 [width="100%",cols="3%,3%,34%,10%,50%",options="header",]
 |===
 3+|Element naam |Type |Mogelijke waarden 
-3+|gebeurtenistypes |string |Eén van de gebeurtenistypen die zijn opgesomd in par. 5.3.16.1
+3+|gebeurtenistypes |array of strings |Lijst met de gebeurtenistypen die zijn opgenomen in de groep. Mogelijke waarden zijn zoals opgesomd in <<_beschrijving_17>>.
 |===
 
-===== DELETE {basis_url}/ abonnees/{abonneeNaam}/groepen/{groepNaam}/ gebeurtenistypes/{gebeurtenistype}
+===== DELETE {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes/{gebeurtenistype}
 Met dit endpoint is het mogelijk om een gebeurtenistype te verwijderen uit een groep.
 
-URI: {basis_url}/ abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes/{gebeurtenistype}
+URI: {basis_url}/abonnees/{abonneeNaam}/groepen/{groepNaam}/gebeurtenistypes/{gebeurtenistype}
+
 Method: DELETE
 
 Waarin {abonneeNaam} de naam van de abonnee is, {groepNaam} de naam van de groep en {gebeurtenistype} het type van de gebeurtenis dat moet worden verwijderd.
@@ -6346,6 +6367,7 @@ Bij een succesvolle verwijdering bestaat de output uitsluitend uit een HTTP resp
 Met dit endpoint is het mogelijk om een abonnement te nemen of een abonnement op te zeggen.
 
 URI: {basis_url} /abonnees/{abonneeNaam}/abonnementen
+
 Method: POST
 
 Waarin {abonneeNaam} de naam van de abonnee is.
@@ -6364,7 +6386,9 @@ Bij een succesvolle plaatsing van een abonnement bestaat de output uitsluitend u
 ===== GET {basis_url}/abonnees/{abonneeNaam}/abonnementen
 
 Met dit endpoint  is het mogelijk om de lijst van abonnementen van een abonnee te raadplegen.
+
 URI: {basis_url}abonnees/{abonneeNaam}/abonnementen
+
 Method: GET
 
 Waarin {abonneeNaam} de naam van de abonnee is.
@@ -6376,7 +6400,7 @@ Naast de path parameter abonneeNaam kunnen de volgende twee query parameters wor
 |===
 |Element naam |Type |Verplicht? |Mogelijke waarden / corresponderende rubriek in BRP-V
 |cursor |string (uuid) |ja |Gebruik dit voor paginering. Vul hier de id van het laatst ontvangen abonnement op om de hieropvolgende abonnementen te ontvangen.
-|limit |string |ja |Geef hier het maximaal aantal abonnementen op dat je per request wilt ontvangen. De minimale waarde is 1 en de maximale 100. Als de parameter ontbreekt wordt de maximale waarde gebruikt.
+|limit |string |ja |Geef hier het maximaal aantal abonnementen op dat je per request wilt ontvangen. De minimale waarde is 1 en de maximale 10. Als de parameter ontbreekt wordt de maximale waarde gebruikt.
 |===
 
 ====== Output
@@ -6385,14 +6409,16 @@ Bij een succesvolle raadpleging bestaat de output uit een HTTP respons code 200 
 |===
 3+|Element naam |Type |Mogelijke waarden 
 3+|abonnementen |array of objects |Lijst van abonnementen van de abonnee.
-| 2+|id |string |Unieke identifier van het abonnement
-| 2+|groep |string |De groep met gebeurtenistypes waarop de abonnee een abonnement heeft voor de persoon
-| 2+|burgerservicenummer |string |Het burgerservicenummer (BSN) van de persoon waarvoor de abonnee gebeurtenissen ontvangt
+| 2+|id |string |Unieke identifier van het abonnement.
+| 2+|groep |string |De groep met gebeurtenistypes waarop de abonnee een abonnement heeft voor de persoon.
+| 2+|burgerservicenummer |string |Het burgerservicenummer (BSN) van de persoon waarvoor de abonnee een abonnement heeft.
 |===
 
 ===== GET {basis_url}/abonnees/{abonneeNaam}/gebeurtenissen
 Met dit endpoint is het mogelijk om (ongelezen) gebeurtenissen op te vragen.
+
 URI: {basis_url}/abonnees/{abonneeNaam}/gebeurtenissen
+
 Method: GET
 
 Waarin {abonneeNaam} de naam van de abonnee is.
@@ -6423,7 +6449,7 @@ De inhoud van het element data hangt af van de waarde van type:
 |===
 
 ====== Protocollering
-Wanneer een afnemer een gebeurtenis opvraagt, wordt de verstrekking van die gebeurtenis geprotocolleerd, alsmede de gegevens die in de data van die gebeurtenis zijn verstrekt. Bij de gebeurtenis Overleden is dat dus <<eOV01,GX.OV.01>> Overleden en de datum van overlijden: <<e0810,06.08.10>> Datum overlijden.
+Wanneer een gebruiker een gebeurtenis opvraagt, wordt de verstrekking van die gebeurtenis geprotocolleerd, alsmede de gegevens die in de data van die gebeurtenis zijn verstrekt. Bij de gebeurtenis Overleden is dat dus <<eOV01,GX.OV.01>> Overleden en de datum van overlijden: <<e0810,06.08.10>> Datum overlijden.
 
 
 ==== BRP Protocolleringsoverzicht API
@@ -6432,7 +6458,7 @@ Wanneer een afnemer een gebeurtenis opvraagt, wordt de verstrekking van die gebe
 
 De BRP protocolleringsoverzicht API is een API van de POAM, die uitsluitend is te gebruiken door MijnOverheid en een protocolleringsoverzicht over een bepaalde periode voor een bepaald BSN opvraagt via de webservice van de POM en deze vervolgens aan de burger verstrekt via de MijnOverheid Berichtenbox.
 
-URI: ++{++basis++_++url}/protocolleringsoverzicht
+URI: {basis_url}/protocolleringsoverzicht
 
 Method: POST
 
@@ -7272,7 +7298,7 @@ ifdef::backend-html5[''']
 
 De BRP Tabellen API is een API waarmee het voor gemeenten, RNI en afnemers mogelijk is om de landelijke tabellen te raadplegen.
 
-URI: ++{++basis++_++url++}++/tabellen/{tabelaanduiding}
+URI: {basis_url}/tabellen/{tabelaanduiding}
 
 Method: GET
 
@@ -7744,7 +7770,7 @@ De velden in het stuurrecord hebben de volgende betekenis:
 |Version |5 |Het versienummer van de standaard, in de vorm VV.MM, waarbij VV het eigenlijke versienummer is, en MM een postfix die het medium aangeeft.
 |VolSeqNo |3 |Volgnummer van dit volume. De verschillende volumes in een volume set worden met dit veld opeenvolgend genummerd, te beginnen met 001.
 |RecordSize |5 |De grootte van een record, in bytes. De stelregel dat alle records binnen één volume dezelfde lengte hebben wordt echter altijd gehandhaafd. De minimale recordlengte wordt gesteld op 128.
-|PaddingCharacter |1 |Het teken dat gebruikt wordt om het laatste record van een bericht of het afsluitrecord aan te vullen tot de gebruikte record grootte. Hiervoor wordt bij default de asterisk "++*++" gebruikt (Teletexcode 2A), omdat dit teken in de BRP-gegevens niet of nauwelijks voorkomt. Het teken is opgenomen in het stuurrecord voor het geval het gebruik van de ++*++ op enigerlei systeem problemen op zou leveren.
+|PaddingCharacter |1 |Het teken dat gebruikt wordt om het laatste record van een bericht of het afsluitrecord aan te vullen tot de gebruikte record grootte. Hiervoor wordt bij default de asterisk "*" gebruikt (Teletexcode 2A), omdat dit teken in de BRP-gegevens niet of nauwelijks voorkomt. Het teken is opgenomen in het stuurrecord voor het geval het gebruik van de * op enigerlei systeem problemen op zou leveren.
 |Reserved |480 |De overige bytes in het stuurrecord hebben geen betekenis.
 |===
 
@@ -7805,7 +7831,7 @@ of eenvoudiger
 nv = \left\lbrack \frac{(\text{BodyLength} + 88)}{\text{RecordSize}} \right\rbrack
 ++++
 
-waarbij de rechte haken ++[]++ staan voor de entier-functie (trunceren).
+waarbij de rechte haken [] staan voor de entier-functie (trunceren).
 
 Het aantal opvul-bytes nf in het laatste record is dan
 
@@ -7849,7 +7875,7 @@ De puntkomma-constructie en met name het variabel aantal puntkommatekens per rec
 
 Gegevens die in een AM-bestand en in het berichtenverkeer worden "meeverstrekt" (zie <<_meeverstrekking_van_de_groepen_procedure_en_onjuist>> en <<_meeverstrekken_van_verificatie_en_rni_deelnemergegevens>>) worden niet meeverstrekt in een CSV-bestand. Door de rubrieknummers waarmee dergelijke gegevens corresponderen op te nemen in de kopregel kunnen deze gegevens wel verstrekt worden.
 
-Scheidingstekens die in de inhoud voorkomen, worden vooraf gegaan door een '++\++' (backslash). Indien een '++\++'-teken zelf in de inhoud voorkomt, wordt deze ook voorafgegaan door een '++\++'.
+Scheidingstekens die in de inhoud voorkomen, worden vooraf gegaan door een '\' (backslash). Indien een '\'-teken zelf in de inhoud voorkomt, wordt deze ook voorafgegaan door een '\'.
 
 De voor de codering gebruikte karakterset is UTF-8.
 
@@ -7887,7 +7913,7 @@ Rubriek 1: Pietersen (de naam van de persoon)
 
 Rubriek 2: 19600120 (de geboortedatum van de persoon)
 
-Rubriek 3: ++<++afwezig++>++ (Ouder1, Brood, heeft geen voorvoegsel)
+Rubriek 3: <afwezig> (Ouder1, Brood, heeft geen voorvoegsel)
 
 Rubriek 4: Brood (de geslachtsnaam van Ouder1)
 

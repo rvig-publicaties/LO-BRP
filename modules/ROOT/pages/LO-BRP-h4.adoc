@@ -1836,8 +1836,8 @@ Mogelijke waarden:: De uitkomsten van een specifiek algoritme dat is ontworpen v
 Voorwaarden:: Indien het nummer per cijfer wordt aangeduid (a0 a1 a2 a3 a4 a5 a6 a7 a8 a9), dan zijn de volgende voorwaarden te controleren:
 * a0 is altijd ongelijk aan nul "0";
 * 2 opeenvolgende cijfers zijn ongelijk;
-* a0{plus}a1{plus}…{plus}a9 is deelbaar door 11, met rest 0 of 5;
-* (1++*++a0){plus}(2++*++a1){plus}(4++*++a2){plus}…{plus}(512++*++a9) is deelbaar door 11;
+* a0+a1+…+a9 is deelbaar door 11, met rest 0 of 5;
+* (1*a0)+(2*a1)+(4*a2)+…+(512*a9) is deelbaar door 11;
 * het nummer moet uniek zijn. Dit wordt alleen binnen de gemeente gecontroleerd.
 
 ifdef::backend-pdf[<<<]
@@ -1854,7 +1854,7 @@ Standaardwaarde:: Uitsluitend voor categorie <<c01-51,01>> Persoon is de standaa
 Voor de overige categorieën is de standaardwaarde niet van toepassing.
 Mogelijke waarden:: Elk nummer dat voldoet aan de bij de voorwaarden beschreven proef.
 Voorwaarden:: Indien het nummer per cijfer wordt aangeduid (s0 s1 s2 s3 s4 s5 s6 s7 s8), dan is de volgende voorwaarde te controleren:
-* (9++*++s0){plus}(8++*++s1){plus}(7++*++s2){plus}…{plus}(2++*++s7)-(1++*++s8) is deelbaar door 11.
+* (9*s0)+(8*s1)+(7*s2)+…+(2*s7)-(1*s8) is deelbaar door 11.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -2221,15 +2221,15 @@ ifdef::backend-html5[''']
 Elementnummer:: 11.10
 Elementnaam:: Straatnaam
 Toelichting:: De officiële straatnaam zoals door het gemeentebestuur is vastgesteld dan wel een kopie van de inhoud van element <<e1115,11.15>> Naam openbare ruimte, +
-indien noodzakelijk afgekort volgens de NEN-5825 ++[++2002++]++ norm.
+indien noodzakelijk afgekort volgens de NEN-5825 [2002] norm.
 Lengte:: 1-24
 Type:: Alfanumeriek
 Standaardwaarde:: .
-Mogelijke waarden:: Straatnaam volgens NEN 5825 ++[++2002++]++-norm +
+Mogelijke waarden:: Straatnaam volgens NEN 5825 [2002]-norm +
 Standaardwaarde indien onbekend. +
 Als straatnaam is niet toegestaan een postbus (postbox) en een poste restante.
 Voorwaarden:: Voor categorie <<c08-58,08>> geldt: +
-De waarde komt overeen met de inhoud van element <<e1115,11.15>> Naam openbare ruimte, indien langer dan 24 tekens verkort volgens de NEN-5825 ++[++2002++]++ norm. De standaardwaarde komt niet voor.
+De waarde komt overeen met de inhoud van element <<e1115,11.15>> Naam openbare ruimte, indien langer dan 24 tekens verkort volgens de NEN-5825 [2002] norm. De standaardwaarde komt niet voor.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -2633,8 +2633,8 @@ Mogelijke waarden:: De uitkomsten van een specifiek algoritme dat is ontworpen v
 Voorwaarden:: Indien het nummer per cijfer wordt aangeduid (a0 a1 a2 a3 a4 a5 a6 a7 a8 a9), dan zijn de volgende voorwaarden te controleren:
 * a0 is altijd ongelijk aan nul "0";
 * 2 opeenvolgende cijfers zijn ongelijk;
-* a0{plus}a1{plus}…{plus}a9 is deelbaar door 11, met rest 0 of 5;
-* (1++*++a0){plus}(2++*++a1){plus}(4++*++a2){plus}…{plus}(512++*++a9) is deelbaar door 11.
+* a0+a1+…+a9 is deelbaar door 11, met rest 0 of 5;
+* (1*a0)+(2*a1)+(4*a2)+…+(512*a9) is deelbaar door 11.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -2651,8 +2651,8 @@ Mogelijke waarden:: De uitkomsten van een specifiek algoritme dat is ontworpen v
 Voorwaarden:: Indien het nummer per cijfer wordt aangeduid (a0 a1 a2 a3 a4 a5 a6 a7 a8 a9), dan zijn de volgende voorwaarden te controleren:
 * a0 is altijd ongelijk aan nul "0";
 * 2 opeenvolgende cijfers zijn ongelijk;
-* a0{plus}a1{plus}…{plus}a9 is deelbaar door 11, met rest 0 of 5;
-* (1++*++a0){plus}(2++*++a1){plus}(4++*++a2){plus}…{plus}(512++*++a9) is deelbaar door 11.
+* a0+a1+…+a9 is deelbaar door 11, met rest 0 of 5;
+* (1*a0)+(2*a1)+(4*a2)+…+(512*a9) is deelbaar door 11.
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
@@ -3212,7 +3212,7 @@ Toelichting:: Het persoonsnummer dat door een EU-land is afgegeven aan een onder
 Lengte:: 1-40
 Type:: Alfanumeriek
 Standaardwaarde:: {empty}
-Mogelijke waarden:: Het buitenlands persoonsnummer zoals dat is opgenomen op het overgelegde reisdocument. Het nummer bestaat uit cijfers (0...9, HEX 30...39), hoofdletters (A...Z, HEX 41...5A), kleine letters (a...z, HEX 61...7A) en/of een beperkt aantal speciale tekens ( (spatie, HEX 20), {plus} (plus, HEX 2B), - (strepje, HEX 2D), . (punt, HEX 2E), / (schuine streep, HEX 2F))
+Mogelijke waarden:: Het buitenlands persoonsnummer zoals dat is opgenomen op het overgelegde reisdocument. Het nummer bestaat uit cijfers (0...9, HEX 30...39), hoofdletters (A...Z, HEX 41...5A), kleine letters (a...z, HEX 61...7A) en/of een beperkt aantal speciale tekens ( (spatie, HEX 20), + (plus, HEX 2B), - (strepje, HEX 2D), . (punt, HEX 2E), / (schuine streep, HEX 2F))
 Voorwaarden:: De persoon heeft de betrokken EU-nationaliteit en is op het moment van opname geen Nederlander en wordt niet behandeld als Nederlander.
 
 ifdef::backend-pdf[<<<]
@@ -5160,13 +5160,12 @@ Groepsopsomming::
 <<gkd,KD>>:::: Kind
 <<gnm,NM>>:::: Naam
 <<gnt,NT>>:::: Nationaliteit
-<<gov,OV>>:::: Overlijden
-<<gvh,VH>>:::: Verhuizing
 <<gou,OU>>:::: Ouder
 <<gvp,VP>>:::: Verblijfplaats
 
 ifdef::backend-pdf[<<<]
 ifdef::backend-html5[''']
+
 ==== Beschrijving van de groepen
 
 Opsomming van de groepen:
@@ -5462,7 +5461,7 @@ Mogelijke waarden:: {empty}
 | | 2+|datumVan |date |Begindatum van de periode waarin de bewoners in deze samenstelling woonachtig waren op het gegeven adresseerbare object.
 | | 2+|datumTot |date |Einddatum van de periode waarin de bewoners in deze samenstelling woonachtig waren op het gegeven adresseerbare object.
 
-Als in de vraag een peildatum was meegegeven, is de datumTot de peildatum {plus} 1 dag.
+Als in de vraag een peildatum was meegegeven, is de datumTot de peildatum + 1 dag.
 | 3+|bewoners |array of objects |De personen die in de bewoning periode staan ingeschreven op het adresseerbaar object.
 | | 2+|burgerservicenummer |string |<<e1020,01.10.20>> Burgerservicenummer van de bewoner
 | | 2+|naam| obect |
@@ -5862,11 +5861,14 @@ Mogelijke waarden:: {empty}
 [width="100%",cols="3%,3%,31%,10%,50%",options="header",]
 |===
 3+|Element naam|Type |Mogelijke waarden / corresponderende rubriek in BRP-V
-3+|data |object |<<eGX01,GX.OV.01>> Overleden
+3+|data |object |<<eOV01,GX.OV.01>> Overleden
 | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer
 | 2+|overlijden |object |
 | | |datum |date |<<e0810,06.08.10>> Datum overlijden 
 |===
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
 
 [#eVH01]
 [horizontal,labelwidth=35,itemwidth=65]
@@ -5875,7 +5877,7 @@ Elementnaam:: Verhuisd naar het buitenland
 Toelichting:: Gebeurtenis die aangeeft dat de persoon is geëmigreerd.
 Afgeleid van::
 * <<e6720,07.67.20>> Omschrijving reden opschorting bijhouding
-* <<13.20,08.13.20>> Datum aanvang adres buitenland
+* <<e1320,08.13.20>> Datum aanvang adres buitenland
 Bewerking:: Afleiden
 Lengte:: {empty}
 Type:: JSON-object
@@ -5884,11 +5886,14 @@ Mogelijke waarden:: {empty}
 [width="100%",cols="3%,3%,31%,10%,50%",options="header",]
 |===
 3+|Element naam|Type |Mogelijke waarden / corresponderende rubriek in BRP-V
-3+|data |object |<<eGX01,GX.VH.01>> Verhuisd naar het buitenland
+3+|data |object |<<eVH01,GX.VH.01>> Verhuisd naar het buitenland
 | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer
 | 2+|verblijfplaats |object |
-| | |datumVan |date |<<e13.20,08.13.20>> Datum aanvang adres buitenland
+| | |datumVan |date |<<e1320,08.13.20>> Datum aanvang adres buitenland
 |===
+
+ifdef::backend-pdf[<<<]
+ifdef::backend-html5[''']
 
 [#eVH02]
 [horizontal,labelwidth=35,itemwidth=65]
@@ -5896,7 +5901,7 @@ Elementaanduiding:: VH.02
 Elementnaam:: Verhuisd intergemeentelijk
 Toelichting:: Gebeurtenis die aangeeft dat de persoon naar een andere gemeente is verhuisd.
 Afgeleid van::
-<<e09.10,08.09.10>> Gemeente van inschrijving
+* <<e0910,08.09.10>> Gemeente van inschrijving
 Bewerking:: Afleiden
 Lengte:: {empty}
 Type:: JSON-object
@@ -5905,10 +5910,10 @@ Mogelijke waarden:: {empty}
 [width="100%",cols="3%,3%,31%,10%,50%",options="header",]
 |===
 3+|Element naam|Type |Mogelijke waarden / corresponderende rubriek in BRP-V
-3+|data |object |<<eGX01,GX.VH.02>> Verhuisd intergemeentelijk
+3+|data |object |<<eVH02,GX.VH.02>> Verhuisd intergemeentelijk
 | 2+|burgerservicenummer |string |<<e0120,01.01.20>> Burgerservicenummer
 | 2+|verblijfplaats |object |
-| | |datumVan |date |<<e10.30,08.10.30>> Datum aanvang adres buitenland
+| | |datumVan |date |<<e1030,08.10.30>> Datum aanvang adres buitenland
 |===
 
 ifdef::backend-pdf[<<<]
