@@ -2528,7 +2528,7 @@ Lengte:: 2
 Type:: Alfanumeriek
 Standaardwaarde:: {empty}
 Mogelijke waarden:: NV (Niet geverifieerd) +
-BV (Bestaan geverifieerd; iemand heeft bestaan van het telefoonnummer bevestigd)
+BV (Bestaan geverifieerd; iemand heeft bestaan van het telefoonnummer bevestigd) +
 PV (Persoon geverifieerd; er is vastgesteld dat het telefoonnummer behoort bij de persoon van de persoon bij wie de persoonstlijst hoort)
 Voorwaarden:: {empty}
 

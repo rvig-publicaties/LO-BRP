@@ -57,11 +57,12 @@ De hieronder genoemde paragrafen zijn gewijzigd ten opzichte van de vorige versi
 ** <<_beschrijving_van_de_groepen>> (de beschrijving van groep <<g11,11>> en <<g12,12>>)
 ** <<_beschrijving_van_de_elementen>> (de beschrijving van element <<e1150,11.50>> en <<e1210,12.10>>)
 * LO-463 Identificerende gegevens in Ii01 en Ji01 berichten
-** <<_identificatie>>
+** <<_persoonsidentificatie>>
+** <<_beschrijving_van_de_brp_berichten>> (de beschrijving van het <<Ii01,Ii01>>-bericht en het <<Ji01,Ji01>>-bericht)
 * LO-465 Lange PL'en inkorten
 ** <<_overzicht_foutcodes>>
 * LO-469 Null-bericht in BRP Berichten API
-** <<_beschrijving_van_de_brp_berichten_3>>
+** <<_beschrijving_van_de_brp_berichten_3>> (beschrijving van het <<Null,Null>>-bericht)
 * Tekstuele wijzigingen
 ** <<_beschrijving_van_de_elementen>> (de beschrijving van element <<e1620,16.20>> en <<e1720,17.20>>)
 
